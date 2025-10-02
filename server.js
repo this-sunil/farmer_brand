@@ -1,0 +1,23 @@
+import express from "express";
+import dotenv from "dotenv";
+import path from "path";
+import cors from "cors";
+import authRoute from "./src/routes/authRoute.js";
+
+const app=express();
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+dotenv.config({debug:true,encoding:"utf-8"});
+cors({
+    methods:["GET","POST","PUT","DELETE"],
+    optionsSuccessStatus:200,
+    origin: `http:localhost://${process.env.PORT}`,
+    credentials:true
+});
+app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
+app.set("view engine","ejs");
+app.use("views",express.static(path.join(process.cwd(),"/src/views")));
+app.use("/api",authRoute);
+app.listen(process.env.PORT,()=>{
+    console.log(`Server Started at http://localhost:${process.env.PORT}`);
+});
