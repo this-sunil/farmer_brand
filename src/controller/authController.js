@@ -126,8 +126,8 @@ export const updateUserController=async(req,res)=>{
     const field=[];
     const values=[];
     let index=1;
+
     const data={name,phone,state,city};
-    
     for(const [key,value] of Object.entries(data)){
        if(value!==undefined){
         field.push(`${key}=$${index++}`);
@@ -135,13 +135,14 @@ export const updateUserController=async(req,res)=>{
        }
     }
     values.push(id);
+
     const query=`UPDATE users SET ${field.join(", ")} WHERE id=$${index} RETURNING *`;
     const { rows }=await pool.query(query,values);
     delete rows[0].pass;
     if(rows.length===0){
         return res.status(404).json({
             status:false,
-            msg:"No Updates"
+            msg:"No Update User"
         });
     }
     return res.status(200).json({
