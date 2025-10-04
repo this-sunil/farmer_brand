@@ -109,15 +109,22 @@ export const registerController = async (req, res) => {
 export const getProfileController = async (req, res) => {
   const id = req.body.id;
   try {
+    if(!id){
+      return res.status(400).json({
+        status:false,
+        msg:"Missing User id"
+      });
+    }
     const query = `SELECT * FROM users WHERE id=$1`;
     const { rows } = await pool.query(query, [id]);
-    delete rows[0].pass;
+   
     if (rows.length === 0) {
-      return res.status(404).json({
+      return res.status(400).json({
         status: false,
         msg: "User doesn't Exist",
       });
     }
+     delete rows[0].pass;
     return res.status(200).json({
       status: true,
       msg: "Fetch User Successfully",
