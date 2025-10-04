@@ -51,7 +51,7 @@ export const loginController = async (req, res) => {
     }
     
     if(rows.length===0){
-      return res.status(404).json({
+      return res.status(400).json({
         status:false,
         msg:"User doesn't exist"
       });
