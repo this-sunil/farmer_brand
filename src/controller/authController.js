@@ -128,10 +128,16 @@ export const getProfileController = async (req, res) => {
 export const updateUserController = async (req, res) => {
   const { id, name, phone, state, city } = req.body;
   try {
+    if(!id){
+      return res.status(404).json({
+        status:false,
+        msg:"Missing userid"
+      });
+    }
     const field = [];
     const values = [];
     let index = 1;
-
+    const photo=req.file?req.file.filename:"";
     const data = { name, phone, state, city };
     for (const [key, value] of Object.entries(data)) {
       if (value !== undefined) {
@@ -139,6 +145,8 @@ export const updateUserController = async (req, res) => {
         values.push(value);
       }
     }
+    field.push(`photo=$${index++}`);
+    values.push(photo);
     values.push(id);
 
     const query = `UPDATE users SET ${field.join(
