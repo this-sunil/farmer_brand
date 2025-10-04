@@ -76,6 +76,12 @@ export const loginController = async (req, res) => {
 export const registerController = async (req, res) => {
   const { name, phone, pass, state, city } = req.body;
   try {
+    if(!name || !phone || !pass || !state || !city ){
+      return res.status(400).json({
+        status:false,
+        msg:"Missing Params"
+      });
+    }
     const query = `INSERT INTO users(name,phone,photo,pass,state,city,role) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
     const hashPass = await bcrypt.hash(pass, 10);
     const { rows } = await pool.query(query, [
