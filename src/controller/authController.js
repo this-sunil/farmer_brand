@@ -49,14 +49,15 @@ export const loginController = async (req, res) => {
         msg: "Password doesn't Match",
       });
     }
-    delete rows[0].pass;
-    const token = await generateToken(rows[0].role);
+    
     if(rows.length===0){
       return res.status(404).json({
         status:false,
         msg:"User doesn't exist"
       });
     }
+    delete rows[0].pass;
+    const token = await generateToken(rows[0].role);
     return res.status(200).json({
       status: true,
       msg: "User Login Successfully",
