@@ -11,11 +11,11 @@ dotenv.config({debug:true,encoding:"utf-8"});
 cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
-    origin: `http:localhost://${process.env.PORT}`,
+    origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
-app.set("view engine","ejs");
+app.set('view engine', 'ejs');
 app.use("views",express.static(path.join(process.cwd(),"/src/views")));
 app.get("/",(req,res)=>{
     return res.render("index");
@@ -23,5 +23,5 @@ app.get("/",(req,res)=>{
 app.use("/api",authRoute);
 
 app.listen(process.env.PORT,()=>{
-    console.log(`Server Started at http://localhost:${process.env.PORT}`);
+    console.log(`Server Started at https://farmer-brand.vercel.app/`);
 });
