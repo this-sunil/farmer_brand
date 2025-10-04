@@ -39,7 +39,7 @@ createUserTable();
 
 export const loginController = async (req, res) => {
   const { phone, pass } = req.body;
-  //try {
+  try {
     const existUser = `SELECT * FROM users WHERE phone=$1`;
     const { rows } = await pool.query(existUser, [phone]);
     const isMatch = await bcrypt.compare(pass, rows[0].pass);
@@ -64,13 +64,13 @@ export const loginController = async (req, res) => {
       token,
       result: rows[0]
     });
-  // } catch (error) {
-  //   console.log(`Login Controller Error=>${error.message}`);
-  //   return res.status(500).json({
-  //     status: false,
-  //     msg: `Internal Server Error ${error.message}`
-  //   });
-  // }
+  } catch (error) {
+    console.log(`Login Controller Error=>${error.message}`);
+    return res.status(500).json({
+      status: false,
+      msg: `Internal Server Error ${error.message}`
+    });
+  }
 };
 
 export const registerController = async (req, res) => {
