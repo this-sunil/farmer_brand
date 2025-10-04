@@ -15,10 +15,11 @@ cors({
     credentials:true
 });
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
-app.set('view engine', 'ejs');
-app.use("views",express.static(path.join(process.cwd(),"/src/views")));
+app.set("view engine","ejs");
+
+app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
-    return res.render("index");
+    return res.render("dashboard");
 });
 app.use("/api",authRoute);
 
