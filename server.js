@@ -18,6 +18,7 @@ app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.set("view engine","ejs");
 app.use("views",express.static(path.join(process.cwd(),"/src/views")));
 app.use("/api",authRoute);
+
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started at http://localhost:${process.env.PORT}`);
 });
