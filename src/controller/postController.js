@@ -52,8 +52,8 @@ export const addPostController = async (req, res) => {
     } else {
       fileType = "unsupported";
     }
-    const fileTextType = fileType === 'image' ? 'Image File' :
-                     fileType === 'video' ? 'Video File' : 'Unsupported';
+    const fileTextType = fileType === 'image' ? 'image' :
+                     fileType === 'video' ? 'video' : 'Unsupported';
     const { rows } = await pool.query(query, [
       uid,
       title,
