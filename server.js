@@ -30,8 +30,6 @@ process.on('exit', (code) => {
   console.log('Process exited with code:', code);
 });
 
-
-
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started at https://farmer-brand.vercel.app/`);
 });
