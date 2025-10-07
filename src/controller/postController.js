@@ -33,7 +33,7 @@ export const addPostController=async(req,res)=>{
         });
     }
     const url=req.file?req.file.filename:"";
-    const query=`INSERT INTO posts(uid,title,description,url) VALUES($1,$2,$3,$4) RETURNING *`;
+    const query=`INSERT INTO posts(uid,post_title,post_desc,post_url) VALUES($1,$2,$3,$4) RETURNING *`;
     const {rows}=await pool.query(query,[uid,title,description,url]);
     if(rows.length>0){
         return res.status(200).json({
