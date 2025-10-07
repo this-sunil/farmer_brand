@@ -32,13 +32,13 @@ export const addPostController = async (req, res) => {
         msg: "Missing user id",
       });
     }
-    
+
     const url = req.file ? req.file.filename : "";
     const query = `INSERT INTO posts(uid,post_title,post_desc,post_url,post_type) VALUES($1,$2,$3,$4,$5) RETURNING *`;
     
 
   
-    const ext = path.extname(req.file.originalname).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
+    const ext = path.extname(req.file.filename).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
 
     const imageTypes = ["jpeg", "jpg", "png", "gif", "webp"];
     const videoTypes = ["mp4", "mov", "avi", "webm", "mkv"];
