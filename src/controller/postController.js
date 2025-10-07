@@ -2,7 +2,7 @@ import pool from "../dbHelper/dbHelper.js";
 import path from "path";
 const createPostTable = async () => {
   const query = `
-
+  
   CREATE TABLE IF NOT EXISTS posts (
     pid SERIAL PRIMARY KEY,
     post_title TEXT NOT NULL,
@@ -48,7 +48,7 @@ export const addPostController = async (req, res) => {
     } else if (videoTypes.includes(ext)) {
       fileType = "video";
     } else {
-      fileType = "unsupported";
+      fileType = " ";
     }
     const fileTextType = fileType === 'image' ? 'image' :
                      fileType === 'video' ? 'video' : 'Unsupported';
@@ -63,6 +63,7 @@ export const addPostController = async (req, res) => {
       return res.status(200).json({
         status: true,
         msg: "Post Inserted Successfully",
+        result:rows[0],
       });
     }
   } catch (e) {
