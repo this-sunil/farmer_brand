@@ -84,6 +84,7 @@ export const registerController = async (req, res) => {
     }
     const query = `INSERT INTO users(name,phone,photo,pass,state,city,role) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
     const hashPass = await bcrypt.hash(pass, 10);
+    
     const { rows } = await pool.query(query, [
       name,
       phone,
@@ -93,6 +94,7 @@ export const registerController = async (req, res) => {
       city,
       "user"
     ]);
+
     delete rows[0].pass;
     const token = await generateToken(rows[0].role);
     if (rows.length > 0) {
