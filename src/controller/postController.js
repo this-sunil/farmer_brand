@@ -37,10 +37,8 @@ export const addPostController = async (req, res) => {
     }
 
     const url = req.file ? req.file.filename : "";
-    const query = `INSERT INTO posts(uid,post_title,post_desc,post_url,post_type) VALUES($1,$2,$3,$4,$5) RETURNING *`;
+    const query = `INSERT INTO posts(post_title,post_desc,post_url,post_type,uid) VALUES($1,$2,$3,$4,$5) RETURNING *`;
     
-
-  
     const ext = path.extname(url).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
 
     const imageTypes = ["jpeg", "jpg", "png", "gif", "webp"];
@@ -58,11 +56,11 @@ export const addPostController = async (req, res) => {
     const fileTextType = fileType === 'image' ? 'image' :
                      fileType === 'video' ? 'video' : 'Unsupported';
     const { rows } = await pool.query(query, [
-      uid,
       title,
       description,
       url,
-      fileTextType
+      fileTextType,
+      uid
     ]);
     if (rows.length > 0) {
       return res.status(200).json({
