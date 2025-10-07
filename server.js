@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
 import authRoute from "./src/routes/authRoute.js";
+import postRoute from "./src/routes/postRoute.js";
 
 const app=express();
 app.use(express.json());
@@ -22,6 +23,7 @@ app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
 app.use("/api",authRoute);
+app.use("/api",postRoute);
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started at https://farmer-brand.vercel.app/`);
