@@ -2,7 +2,7 @@ import pool from "../dbHelper/dbHelper.js";
 import path from "path";
 const createPostTable = async () => {
   const query = `
-  DROP TABLE IF NOT EXISTS posts;
+
   CREATE TABLE IF NOT EXISTS posts (
     pid SERIAL PRIMARY KEY,
     post_title TEXT NOT NULL,
