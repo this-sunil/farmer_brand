@@ -38,7 +38,7 @@ export const addPostController = async (req, res) => {
     
 
   
-    const ext = path.extname(req.file.filename).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
+    const ext = path.extname(url).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
 
     const imageTypes = ["jpeg", "jpg", "png", "gif", "webp"];
     const videoTypes = ["mp4", "mov", "avi", "webm", "mkv"];
