@@ -2,6 +2,7 @@ import pool from "../dbHelper/dbHelper.js";
 import path from "path";
 const createPostTable = async () => {
   const query = `
+  DROP TABLE IF NOT EXISTS posts;
   CREATE TABLE IF NOT EXISTS posts (
     pid SERIAL PRIMARY KEY,
     post_title TEXT NOT NULL,
@@ -10,11 +11,7 @@ const createPostTable = async () => {
     post_type TEXT NOT NULL,
     fav INTEGER DEFAULT 0,
     uid INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT posts_uid_fkey
-      FOREIGN KEY (uid)
-      REFERENCES users(id)
-      ON DELETE CASCADE
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );`;
   pool.query(query, (err) => {
     if (err) {
