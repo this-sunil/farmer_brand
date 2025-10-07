@@ -15,6 +15,7 @@ cors({
     origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
+
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.set("view engine","ejs");
 
@@ -22,6 +23,7 @@ app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
+
 app.use("/api",authRoute);
 app.use("/api",postRoute);
 

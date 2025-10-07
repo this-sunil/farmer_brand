@@ -1,16 +1,16 @@
-import pool from "../dbHelper/dbHelper";
+import pool from "../dbHelper/dbHelper.js";
 
 const createPostTable=async()=>{
-    const query=`CREATE TABLE IF NOT EXISTS posts(
+    const query=`
+    CREATE TABLE IF NOT EXISTS posts(
     pid SERIAL PRIMARY KEY,
     post_title TEXT NOT NULL,
     post_desc TEXT NOT NULL,
     post_url TEXT NOT NULL,
-
     post_type TEXT NOT NULL,
     fav INTEGER DEFAULT 0,
-    uid TEXT NOT NULL,
-    FOREIGN KEY (uid) REFERENCES users(id),
+    uid INTEGER NOT NULL,
+    FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE,
     created_at DATE DEFAULT CURRENT_TIMESTAMP
     )`;
     pool.query(query,(err)=>{
@@ -20,9 +20,9 @@ const createPostTable=async()=>{
         console.log("Create Post Successfully");
     });
 };
+
 createPostTable();
  
-
 export const addPostController=async(req,res)=>{
     const {uid,title,description}=req.body;
     try{
