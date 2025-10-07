@@ -33,7 +33,7 @@ export const addPostController = async (req, res) => {
       });
     }
     const url = req.file ? req.file.filename : "";
-    const query = `INSERT INTO posts(uid,post_title,post_desc,post_url,post_type) VALUES($1,$2,$3,$4) RETURNING *`;
+    const query = `INSERT INTO posts(uid,post_title,post_desc,post_url,post_type) VALUES($1,$2,$3,$4,$5) RETURNING *`;
     
 
   
