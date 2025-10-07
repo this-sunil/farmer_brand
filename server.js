@@ -26,6 +26,19 @@ app.get("/",(req,res)=>{
 
 app.use("/api",authRoute);
 app.use("/api",postRoute);
+process.on('exit', (code) => {
+  console.log('Process exited with code:', code);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+  process.exit(249); // or let it crash to get full stack trace
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(249);
+});
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started at https://farmer-brand.vercel.app/`);
