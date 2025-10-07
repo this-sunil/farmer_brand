@@ -23,7 +23,7 @@ const createPostTable=async()=>{
 createPostTable();
  
 
-const addPostController=async(req,res)=>{
+export const addPostController=async(req,res)=>{
     const {uid,title,description}=req.body;
     try{
     if(!uid){
@@ -50,7 +50,7 @@ const addPostController=async(req,res)=>{
   }
 };
 
-const deletePostController=async(req,res)=>{
+export const deletePostController=async(req,res)=>{
     const postId=req.body.postId;
     try{
         if(!postId){
