@@ -109,7 +109,7 @@ export const deletePostController = async (req, res) => {
 export const getAllPostController = async (req, res) => {
   try {
     const query = `SELECT * FROM posts p LEFT JOIN users u ON p.uid=u.id`;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(query,[4]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
