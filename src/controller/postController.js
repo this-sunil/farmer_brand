@@ -119,7 +119,6 @@ export const getAllPostController = async (req, res) => {
     const userIds = rows.map(row => row.uid);
     const placeholders = userIds.map((_, index) => `$${index + 1}`).join(", ");
     const existUsersQuery = `SELECT * FROM users WHERE id IN (${placeholders})`;
-
     const userResult = await pool.query(existUsersQuery, userIds);
     const result = rows.map((e) => ({
       pid: e.pid,
@@ -141,7 +140,7 @@ export const getAllPostController = async (req, res) => {
     console.log(`Error in =>${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: `Internal Server Error ${error.message}`,
     });
   }
 };
