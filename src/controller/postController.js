@@ -1,9 +1,7 @@
 import pool from "../dbHelper/dbHelper.js";
 import path from "path";
 const createPostTable = async () => {
-  const query = `
-  
-  CREATE TABLE IF NOT EXISTS posts (
+  const query = `CREATE TABLE IF NOT EXISTS posts (
     pid SERIAL PRIMARY KEY,
     post_title TEXT NOT NULL,
     post_desc TEXT NOT NULL,
@@ -35,7 +33,6 @@ export const addPostController = async (req, res) => {
 
     const url = req.file ? req.file.filename : "";
     const query = `INSERT INTO posts(post_title,post_desc,post_url,post_type,uid) VALUES($1,$2,$3,$4,$5) RETURNING *`;
-
     const ext = path.extname(url).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
 
     const imageTypes = ["jpeg", "jpg", "png", "gif", "webp"];
@@ -55,26 +52,26 @@ export const addPostController = async (req, res) => {
         ? "image"
         : fileType === "video"
         ? "video"
-        : "Unsupported";
+        : " ";
     const { rows } = await pool.query(query, [
       title,
       description,
       url,
       fileTextType,
-      uid,
+      uid
     ]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
         msg: "Post Inserted Successfully",
-        result: rows[0],
+        result: rows[0]
       });
     }
   } catch (e) {
-    console.log(`Error in addPostController=>${e.message}`);
+    console.log(`Error in add PostController=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: "Internal Server Error"
     });
   }
 };
@@ -97,14 +94,13 @@ export const deletePostController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
-        msg: "No post found with the provided ID.",
+        msg: "Post doesn't exist",
       });
     }
 
     return res.status(200).json({
       status: true,
-      msg: "Post deleted successfully.",
-      result: rows[0]
+      msg: "Post deleted successfully."
     });
 
   } catch (error) {
@@ -116,13 +112,11 @@ export const deletePostController = async (req, res) => {
    }
 };
 
-
-
 export const getAllPostController = async (req, res) => {
   try {
     const query = `
    SELECT JSON_AGG(
-  JSON_BUILD_OBJECT(
+   JSON_BUILD_OBJECT(
     'pid', p.pid,
     'post_title', p.post_title,
     'post_desc', p.post_desc,
@@ -142,20 +136,19 @@ export const getAllPostController = async (req, res) => {
 FROM posts p
 LEFT JOIN users u ON p.uid = u.id;`;
     const { rows } = await pool.query(query);
-    if (rows.length === 0) {
+    if (rows.length > 0) {
       return res.status(404).json({
         status: false,
         msg: "No Post Found !!!"
       });
-    }
     
     
-
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
       result: rows[0].posts
     });
+  }
   } catch (error) {
     console.log(`Error in =>${error.message}`);
     return res.status(500).json({
