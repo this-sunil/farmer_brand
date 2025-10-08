@@ -80,7 +80,7 @@ export const addPostController = async (req, res) => {
 };
 
 export const deletePostController = async (req, res) => {
-  const { pid: postId } = req.body;
+  const { pid: postId } = req.params;
 
   if (!postId) {
     return res.status(400).json({
@@ -91,7 +91,7 @@ export const deletePostController = async (req, res) => {
 
   try {
     const query = `DELETE FROM posts WHERE pid = $1 RETURNING *`;
-    const { rows } = await pool.query(query, [Number.parseInt(pid)]);
+    const { rows } = await pool.query(query, [postId]);
 
     if (rows.length === 0) {
       return res.status(404).json({
@@ -110,7 +110,7 @@ export const deletePostController = async (req, res) => {
     console.error(`Error in deletePostController: ${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error: ${pid}`,
+      msg: `Internal Server Error: ${postId}`,
     });
   }
 };
