@@ -101,3 +101,27 @@ export const deletePostController = async (req, res) => {
     });
   }
 };
+
+export const getAllPostController=async(req,res)=>{
+  try {
+    const query=`SELECT * FROM posts`;
+    const {rows}=await pool.query(query);
+    if(rows.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:"No Post Found !!!"
+      });
+    }
+    return res.status(200).json({
+      status:true,
+      msg:"Fetch Post Successfully !!!",
+      result:rows
+    });
+  } catch (error) {
+    console.log(`Error in =>${error.message}`);
+    return res.status(500).json({
+      status:false,
+      msg:"Internal Server Error"
+    });
+  }
+};
