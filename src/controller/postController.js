@@ -89,14 +89,7 @@ export const deletePostController = async (req, res) => {
     });
   }
 
-  const pid = parseInt(postId, 10);
-
-  if (isNaN(pid)) {
-    return res.status(400).json({
-      status: false,
-      msg: "Invalid Post ID format. Must be a number.",
-    });
-  }
+  const pid = Number.parseInt(postId);
 
   try {
 
