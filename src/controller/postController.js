@@ -108,7 +108,24 @@ export const deletePostController = async (req, res) => {
 
 export const getAllPostController = async (req, res) => {
   try {
-    const query = `SELECT * FROM posts`;
+    const query = `
+   SELECT JSON_AGG(
+  JSON_BUILD_OBJECT(
+    'pid', p.pid,
+    'post_title', p.post_title,
+    'post_desc', p.post_desc,
+    'post_url', p.post_url,
+    'post_type', p.post_type,
+    'fav', p.fav,
+    'user', JSON_BUILD_OBJECT(
+      'id', u.id,
+      'name', u.name
+    ),
+    'created_at', p.created_at
+  )
+) AS posts
+FROM posts p
+LEFT JOIN users u ON p.uid = u.id;`;
     const { rows } = await pool.query(query,[4]);
     if (rows.length === 0) {
       return res.status(404).json({
@@ -116,25 +133,13 @@ export const getAllPostController = async (req, res) => {
         msg: "No Post Found !!!"
       });
     }
-    const userIds = rows.map(row => row.uid);
-    const placeholders = userIds.map((_, index) => `$${index + 1}`).join(", ");
-    const existUsersQuery = `SELECT * FROM users WHERE id IN (${placeholders})`;
-    const userResult = await pool.query(existUsersQuery, userIds);
-    const result = rows.map((e) => ({
-      pid: e.pid,
-      post_title: e.post_title,
-      post_desc: e.post_desc,
-      post_url: e.post_url,
-      post_type: e.post_type,
-      fav: e.fav,
-      users: userResult,
-      created_at: e.created_at,
-    }));
+    
+    
 
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
-      result: result
+      result: rows
     });
   } catch (error) {
     console.log(`Error in =>${error.message}`);
