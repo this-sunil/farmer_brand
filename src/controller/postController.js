@@ -112,6 +112,18 @@ export const getAllPostController=async(req,res)=>{
         msg:"No Post Found !!!"
       });
     }
+    const result=rows.map((e)=>{
+      {
+            "pid",e.pid,
+            "post_title",e.post_title,
+            "post_desc",e.post_desc,
+            "post_url",e.post_url,
+            "post_type",e.post_type,
+            "fav",e.fav,
+            "uid",{"name":"HELOO"},
+            "created_at",e.created_at
+        }
+    });
     return res.status(200).json({
       status:true,
       msg:"Fetch Post Successfully !!!",
