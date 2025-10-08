@@ -116,10 +116,10 @@ export const getAllPostController = async (req, res) => {
         msg: "No Post Found !!!",
       });
     }
-    const existUser=`SELECT * FROM users WHERE uid=$1`;
+    const existUser=`SELECT * FROM users WHERE id=$1`;
     const results=await pool.query(existUser,[rows[0].uid]);
     if(results.rows.length===0){
-      return res.status(404).json({
+      return res.status(400).json({
         status:false,
         msg:"User doesn't exist"
       });
