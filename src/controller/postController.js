@@ -108,15 +108,19 @@ export const deletePostController = async (req, res) => {
 
 export const getAllPostController = async (req, res) => {
   try {
-    const query = `SELECT * FROM posts p LEFT JOIN users u ON p.uid=u.id`;
+    const query = `SELECT * FROM posts`;
     const { rows } = await pool.query(query,[4]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Post Found !!!",
+        msg: "No Post Found !!!"
       });
     }
-   
+    const userIds = rows.map(row => row.uid);
+    const placeholders = userIds.map((_, index) => `$${index + 1}`).join(", ");
+    const existUsersQuery = `SELECT * FROM users WHERE id IN (${placeholders})`;
+
+    const userResult = await pool.query(existUsersQuery, userIds);
     const result = rows.map((e) => ({
       pid: e.pid,
       post_title: e.post_title,
@@ -124,14 +128,14 @@ export const getAllPostController = async (req, res) => {
       post_url: e.post_url,
       post_type: e.post_type,
       fav: e.fav,
-      users: {name:e.uid},
+      users: userResult,
       created_at: e.created_at,
     }));
 
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
-      result: rows,
+      result: result
     });
   } catch (error) {
     console.log(`Error in =>${error.message}`);
