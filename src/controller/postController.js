@@ -123,7 +123,7 @@ export const getAllPostController = async (req, res) => {
       post_url: e.post_url,
       post_type: e.post_type,
       fav: e.fav,
-      uid: { name: "HELOO" },
+      users: { name: "HELOO" },
       created_at: e.created_at,
     }));
 
