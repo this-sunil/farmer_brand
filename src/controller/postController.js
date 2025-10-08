@@ -35,7 +35,7 @@ export const addPostController = async (req, res) => {
 
     const url = req.file ? req.file.filename : "";
     const query = `INSERT INTO posts(post_title,post_desc,post_url,post_type,uid) VALUES($1,$2,$3,$4,$5) RETURNING *`;
-    
+
     const ext = path.extname(url).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
 
     const imageTypes = ["jpeg", "jpg", "png", "gif", "webp"];
@@ -50,20 +50,24 @@ export const addPostController = async (req, res) => {
     } else {
       fileType = " ";
     }
-    const fileTextType = fileType === 'image' ? 'image' :
-                     fileType === 'video' ? 'video' : 'Unsupported';
+    const fileTextType =
+      fileType === "image"
+        ? "image"
+        : fileType === "video"
+        ? "video"
+        : "Unsupported";
     const { rows } = await pool.query(query, [
       title,
       description,
       url,
       fileTextType,
-      uid
+      uid,
     ]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
         msg: "Post Inserted Successfully",
-        result:rows[0],
+        result: rows[0],
       });
     }
   } catch (e) {
@@ -102,38 +106,37 @@ export const deletePostController = async (req, res) => {
   }
 };
 
-export const getAllPostController=async(req,res)=>{
+export const getAllPostController = async (req, res) => {
   try {
-    const query=`SELECT * FROM posts`;
-    const {rows}=await pool.query(query);
-    if(rows.length===0){
+    const query = `SELECT * FROM posts`;
+    const { rows } = await pool.query(query);
+    if (rows.length === 0) {
       return res.status(404).json({
-        status:false,
-        msg:"No Post Found !!!"
+        status: false,
+        msg: "No Post Found !!!",
       });
     }
-    const result=rows.map((e)=>{
-      {
-            "pid",e.pid,
-            "post_title",e.post_title,
-            "post_desc",e.post_desc,
-            "post_url",e.post_url,
-            "post_type",e.post_type,
-            "fav",e.fav,
-            "uid",{"name":"HELOO"},
-            "created_at",e.created_at
-        }
-    });
+    const result = rows.map((e) => ({
+      pid: e.pid,
+      post_title: e.post_title,
+      post_desc: e.post_desc,
+      post_url: e.post_url,
+      post_type: e.post_type,
+      fav: e.fav,
+      uid: { name: "HELOO" },
+      created_at: e.created_at,
+    }));
+
     return res.status(200).json({
-      status:true,
-      msg:"Fetch Post Successfully !!!",
-      result:result
+      status: true,
+      msg: "Fetch Post Successfully !!!",
+      result: result,
     });
   } catch (error) {
     console.log(`Error in =>${error.message}`);
     return res.status(500).json({
-      status:false,
-      msg:"Internal Server Error"
+      status: false,
+      msg: "Internal Server Error",
     });
   }
 };
