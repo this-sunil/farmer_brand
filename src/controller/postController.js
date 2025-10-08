@@ -110,7 +110,7 @@ export const deletePostController = async (req, res) => {
     console.error(`Error in deletePostController: ${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error: ${error.message}`,
+      msg: `Internal Server Error: ${pid}`,
     });
   }
 };
