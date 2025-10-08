@@ -91,7 +91,6 @@ export const deletePostController = async (req, res) => {
 
   const pid = parseInt(postId, 10);
 
-  // Check if the parsed ID is a valid number
   if (isNaN(pid)) {
     return res.status(400).json({
       status: false,
@@ -99,12 +98,12 @@ export const deletePostController = async (req, res) => {
     });
   }
 
-  //try {
+  try {
     const query = `DELETE FROM posts WHERE pid = $1 RETURNING *`;
     const { rows } = await pool.query(query, [pid]);
 
     if (rows.length === 0) {
-      return res.status(404).json({
+      return res.status(400).json({
         status: false,
         msg: "No post found with the provided ID.",
       });
@@ -116,13 +115,13 @@ export const deletePostController = async (req, res) => {
       result: rows[0],
     });
 
-  // } catch (error) {
-  //   console.error(`Error in deletePostController: ${error.message}`);
-  //   return res.status(500).json({
-  //     status: false,
-  //     msg: `Internal Server Error: ${error.message}`,
-  //   });
-  // }
+  } catch (error) {
+    console.error(`Error in deletePostController: ${error.message}`);
+    return res.status(500).json({
+      status: false,
+      msg: `Internal Server Error: ${error.message}`,
+    });
+   }
 };
 
 
