@@ -126,7 +126,7 @@ export const getAllPostController = async (req, res) => {
 ) AS posts
 FROM posts p
 LEFT JOIN users u ON p.uid = u.id;`;
-    const { rows } = await pool.query(query,[4]);
+    const { rows } = await pool.query(query);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
