@@ -112,7 +112,7 @@ export const deletePostController = async (req, res) => {
     return res.status(200).json({
       status: true,
       msg: "Post deleted successfully.",
-      result: rows[0],
+      result: rows[0]
     });
 
   } catch (error) {
@@ -139,7 +139,10 @@ export const getAllPostController = async (req, res) => {
     'fav', p.fav,
     'user', JSON_BUILD_OBJECT(
       'id', u.id,
-      'name', u.name
+      'name', u.name,
+      'phone',u.phone,
+      'city',u.city,
+      'state',u.state
     ),
     'created_at', p.created_at
   )
