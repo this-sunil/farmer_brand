@@ -48,30 +48,26 @@ export const addPostController = async (req, res) => {
       fileType = " ";
     }
     const fileTextType =
-      fileType === "image"
-        ? "image"
-        : fileType === "video"
-        ? "video"
-        : " ";
+      fileType === "image" ? "image" : fileType === "video" ? "video" : " ";
     const { rows } = await pool.query(query, [
       title,
       description,
       url,
       fileTextType,
-      uid
+      uid,
     ]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
         msg: "Post Inserted Successfully",
-        result: rows[0]
+        result: rows[0],
       });
     }
   } catch (e) {
     console.log(`Error in add PostController=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error"
+      msg: "Internal Server Error",
     });
   }
 };
@@ -100,16 +96,15 @@ export const deletePostController = async (req, res) => {
 
     return res.status(200).json({
       status: true,
-      msg: "Post deleted successfully."
+      msg: "Post deleted successfully.",
     });
-
   } catch (error) {
     console.error(`Error in deletePostController: ${error.message}`);
     return res.status(500).json({
       status: false,
       msg: `Internal Server Error: ${error.message}`,
     });
-   }
+  }
 };
 
 export const getAllPostController = async (req, res) => {
@@ -139,16 +134,9 @@ LEFT JOIN users u ON p.uid = u.id;`;
     if (rows.length > 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Post Found !!!"
+        msg: "No Post Found !!!",
       });
-    
-    
-    return res.status(200).json({
-      status: true,
-      msg: "Fetch Post Successfully !!!",
-      result: rows[0].posts
-    });
-  }
+    }
   } catch (error) {
     console.log(`Error in =>${error.message}`);
     return res.status(500).json({
