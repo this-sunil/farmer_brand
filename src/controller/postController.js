@@ -80,7 +80,7 @@ export const addPostController = async (req, res) => {
 };
 
 export const deletePostController = async (req, res) => {
-  const { pid: postId } = req.params;
+  const { pid: postId } = req.body;
 
   if (!postId) {
     return res.status(400).json({
