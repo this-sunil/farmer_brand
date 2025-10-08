@@ -108,7 +108,7 @@ export const deletePostController = async (req, res) => {
 
 export const getAllPostController = async (req, res) => {
   try {
-    const query = `SELECT * FROM posts`;
+    const query = `SELECT * FROM posts p LEFT JOIN users u ON p.uid=u.id`;
     const { rows } = await pool.query(query);
     if (rows.length === 0) {
       return res.status(404).json({
@@ -116,14 +116,7 @@ export const getAllPostController = async (req, res) => {
         msg: "No Post Found !!!",
       });
     }
-    const existUser=`SELECT * FROM users WHERE id=$1`;
-    const results=await pool.query(existUser,[rows[0].uid]);
-    if(results.rows.length===0){
-      return res.status(400).json({
-        status:false,
-        msg:"User doesn't exist"
-      });
-    }
+   
     const result = rows.map((e) => ({
       pid: e.pid,
       post_title: e.post_title,
@@ -131,7 +124,7 @@ export const getAllPostController = async (req, res) => {
       post_url: e.post_url,
       post_type: e.post_type,
       fav: e.fav,
-      users: userData,
+      users: {name:e.uid},
       created_at: e.created_at,
     }));
 
