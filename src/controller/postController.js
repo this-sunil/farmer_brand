@@ -117,8 +117,8 @@ export const getAllPostController = async (req, res) => {
       });
     }
     const existUser=`SELECT * FROM users WHERE uid=$1`;
-    const {userData}=await pool.query(existUser,[rows[0].uid]);
-    if(userData.length===0){
+    const results=await pool.query(existUser,[rows[0].uid]);
+    if(results.rows.length===0){
       return res.status(404).json({
         status:false,
         msg:"User doesn't exist"
