@@ -127,7 +127,7 @@ export const getAllPostController=async(req,res)=>{
     return res.status(200).json({
       status:true,
       msg:"Fetch Post Successfully !!!",
-      result:rows
+      result:result
     });
   } catch (error) {
     console.log(`Error in =>${error.message}`);
