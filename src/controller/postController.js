@@ -98,10 +98,10 @@ export const deletePostController = async (req, res) => {
       });
     }
   } catch (e) {
-    console.log(`Error in addPostController=>${e.message}`);
+    console.log(`Error in deletePostController=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: `Internal Server Error ${e.message}`,
     });
   }
 };
