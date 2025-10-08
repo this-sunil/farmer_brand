@@ -99,7 +99,7 @@ export const deletePostController = async (req, res) => {
     });
   }
 
-  try {
+  //try {
     const query = `DELETE FROM posts WHERE pid = $1 RETURNING *`;
     const { rows } = await pool.query(query, [pid]);
 
@@ -116,13 +116,13 @@ export const deletePostController = async (req, res) => {
       result: rows[0],
     });
 
-  } catch (error) {
-    console.error(`Error in deletePostController: ${error.message}`);
-    return res.status(500).json({
-      status: false,
-      msg: `Internal Server Error: ${error.message}`,
-    });
-  }
+  // } catch (error) {
+  //   console.error(`Error in deletePostController: ${error.message}`);
+  //   return res.status(500).json({
+  //     status: false,
+  //     msg: `Internal Server Error: ${error.message}`,
+  //   });
+  // }
 };
 
 
