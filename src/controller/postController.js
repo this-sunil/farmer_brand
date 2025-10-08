@@ -116,6 +116,14 @@ export const getAllPostController = async (req, res) => {
         msg: "No Post Found !!!",
       });
     }
+    const existUser=`SELECT * FROM users WHERE uid=$1`;
+    const {userData}=await pool.query(existUser,[rows[0].uid]);
+    if(userData.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:"User doesn't exist"
+      });
+    }
     const result = rows.map((e) => ({
       pid: e.pid,
       post_title: e.post_title,
@@ -123,7 +131,7 @@ export const getAllPostController = async (req, res) => {
       post_url: e.post_url,
       post_type: e.post_type,
       fav: e.fav,
-      users: { name: "HELOO" },
+      users: userData,
       created_at: e.created_at,
     }));
 
