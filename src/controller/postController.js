@@ -92,7 +92,6 @@ export const deletePostController = async (req, res) => {
   const pid = Number.parseInt(postId);
 
   try {
-
     const query = `DELETE FROM posts WHERE pid = $1 RETURNING *`;
     const { rows } = await pool.query(query, [pid]);
     if (rows.length === 0) {
