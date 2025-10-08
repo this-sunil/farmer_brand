@@ -90,13 +90,17 @@ export const deletePostController = async (req, res) => {
     }
     const query = `DELETE FROM posts WHERE pid=$1 RETURNING *`;
     const { rows } = await pool.query(query, [postId]);
-    if (rows.length > 0) {
-      return res.status(200).json({
-        status: true,
-        msg: "Delete Post Successfully !!!",
-        result: rows[0],
+    if (rows.length===0) {
+      return res.status(404).json({
+        status: false,
+        msg: "No Post Found !!!"
       });
     }
+    return res.status(200).json({
+      status:true,
+      msg:"Delete Post Successfully !!!",
+      result:rows[0]
+    });
   } catch (e) {
     console.log(`Error in deletePostController=>${e.message}`);
     return res.status(500).json({
