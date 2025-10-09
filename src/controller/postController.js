@@ -101,7 +101,6 @@ export const getAllPostController = async (req, res) => {
     'post_title', p.post_title,
     'post_desc', p.post_desc,
     'post_url', p.post_url,
-    'post_type', p.post_type,
     'fav', p.fav,
     'user', JSON_BUILD_OBJECT(
       'id', u.id,
