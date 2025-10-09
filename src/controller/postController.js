@@ -1,12 +1,12 @@
 import pool from "../dbHelper/dbHelper.js";
-import path from "path";
+
 const createPostTable = async () => {
-  const query = `CREATE TABLE IF NOT EXISTS posts (
+  const query = `
+  CREATE TABLE IF NOT EXISTS posts (
     pid SERIAL PRIMARY KEY,
     post_title TEXT NOT NULL,
     post_desc TEXT NOT NULL,
     post_url TEXT NOT NULL,
-    post_type TEXT NOT NULL,
     fav INTEGER DEFAULT 0,
     uid INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -32,32 +32,12 @@ export const addPostController = async (req, res) => {
     }
 
     const photo = req.file ? req.file.filename : "";
-    const query = `INSERT INTO posts(post_title,post_desc,post_url,post_type,uid) VALUES($1,$2,$3,$4,$5) RETURNING *`;
-    const ext = path.extname(photo).toLowerCase().slice(1); // 'jpg', 'mp4', etc.
-
-    const imageTypes = ["jpeg", "jpg", "png", "gif", "webp"];
-    const videoTypes = ["mp4", "mov", "avi", "webm", "mkv"];
-
-    let fileType = "";
-
-    if (imageTypes.includes(ext)) {
-      fileType = "image";
-    } else if (videoTypes.includes(ext)) {
-      fileType = "video";
-    } else {
-      fileType = " ";
-    }
-    const fileTextType =
-      fileType === "image"
-        ? "image"
-        : fileType === "video"
-        ? "video"
-        : " ";
+    const query = `INSERT INTO posts(post_title,post_desc,post_url,uid) VALUES($1,$2,$3,$4) RETURNING *`;
+    
     const { rows } = await pool.query(query, [
       title,
       description,
       photo,
-      fileTextType,
       uid
     ]);
     if (rows.length > 0) {
