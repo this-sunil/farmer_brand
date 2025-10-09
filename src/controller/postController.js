@@ -142,11 +142,16 @@ LEFT JOIN users u ON p.uid = u.id;`;
         msg: "No Post Found !!!"
       });
     }
-    
+    if(rows[0].posts==='null'){
+      return res.status(404).json({
+        status:false,
+        msg:"No Post Found !!!",
+      });
+    }
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
-      result: rows[0].posts==='null'?[]:rows[0].posts
+      result: 
     });
   } catch (error) {
     console.log(`Error in =>${error.message}`);
