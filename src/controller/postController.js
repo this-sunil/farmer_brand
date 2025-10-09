@@ -151,7 +151,7 @@ LEFT JOIN users u ON p.uid = u.id;`;
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
-      result: rows[0].posts
+      result: rows[0]
     });
   
   } catch (error) {
