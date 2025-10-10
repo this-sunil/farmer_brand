@@ -22,13 +22,14 @@ const storage = new CloudinaryStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  const allowedMimeTypes = /jpeg|jpg|png|gif/;
+  const allowedMimeTypes = /image\/(jpeg|jpg|png|gif)/;
   const isValidMime = allowedMimeTypes.test(file.mimetype.toLowerCase());
   if (!isValidMime) {
     return cb(new Error("Only image files are allowed!"), false);
   }
   cb(null, true);
 };
+
 
 const upload = multer({
   storage,
