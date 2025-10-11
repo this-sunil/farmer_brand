@@ -1,24 +1,27 @@
-import { v2 as cloudinary } from 'cloudinary';
-import { CloudinaryStorage } from 'multer-storage-cloudinary';
-import multer from 'multer';
+import { v2 as cloudinary } from "cloudinary";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import multer from "multer";
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,  
-  api_key: process.env.CLOUDINARY_API_KEY,       
-  api_secret: process.env.CLOUDINARY_API_SECRET 
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'uploads',
-    allowed_formats: ['jpg', 'jpeg', 'png', 'gif'],
+    folder: "uploads",
+    allowed_formats: ["jpg", "jpeg", "png", "gif"],
     public_id: (req, file) => {
       const timestamp = Date.now();
-      //const ext = path.extname(file.originalname).toLowerCase();
-      return `${timestamp}`; 
-    }
-  }
+      const name = path
+        .basename(file.originalname, path.extname(file.originalname))
+        .replace(/\s+/g, "-")
+        .toLowerCase();
+      return `${name}-${timestamp}`; // e.g., "my-photo-1697043845123"
+    },
+  },
 });
 
 const fileFilter = (req, file, cb) => {
@@ -30,10 +33,9 @@ const fileFilter = (req, file, cb) => {
   cb(null, true);
 };
 
-
 const upload = multer({
   storage,
-  limits: { fileSize: 50 * 1024 * 1024 } 
+  limits: { fileSize: 50 * 1024 * 1024 },
 });
 
 export default upload;
