@@ -121,12 +121,7 @@ LEFT JOIN users u ON p.uid = u.id;`;
         msg: "No Post Found !!!"
       });
     }
-    if(rows[0].posts==[]){
-      return res.status(404).json({
-        status:false,
-        msg:"No Post Found !!!"
-      });
-    }
+    
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
