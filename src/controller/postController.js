@@ -33,25 +33,20 @@ export const addPostController = async (req, res) => {
 
     const photo = req.file ? req.file.filename : "";
     const query = `INSERT INTO posts(post_title,post_desc,post_url,uid) VALUES($1,$2,$3,$4) RETURNING *`;
-    
-    const { rows } = await pool.query(query, [
-      title,
-      description,
-      photo,
-      uid
-    ]);
+
+    const { rows } = await pool.query(query, [title, description, photo, uid]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
         msg: "Post Inserted Successfully",
-        result: rows[0]
+        result: rows[0],
       });
     }
   } catch (e) {
     console.log(`Error in add PostController=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${e.message}`
+      msg: `Internal Server Error ${e.message}`,
     });
   }
 };
@@ -80,16 +75,15 @@ export const deletePostController = async (req, res) => {
 
     return res.status(200).json({
       status: true,
-      msg: "Post deleted successfully."
+      msg: "Post deleted successfully.",
     });
-
   } catch (error) {
     console.error(`Error in deletePostController: ${error.message}`);
     return res.status(500).json({
       status: false,
       msg: `Internal Server Error: ${error.message}`,
     });
-   }
+  }
 };
 
 export const getAllPostController = async (req, res) => {
@@ -118,21 +112,39 @@ LEFT JOIN users u ON p.uid = u.id;`;
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Post Found !!!"
+        msg: "No Post Found !!!",
       });
     }
-    
+
     return res.status(200).json({
       status: true,
       msg: "Fetch Post Successfully !!!",
-      result: rows[0].posts || []
+      result: rows[0].posts || [],
     });
-  
   } catch (error) {
     console.log(`Error in =>${error.message}`);
     return res.status(500).json({
       status: false,
       msg: `Internal Server Error ${error.message}`,
+    });
+  }
+};
+
+const addFavController = async (req, res) => {
+  const { pid, fav } = req.body;
+  try {
+    const query = `UPDATE posts SET fav=$1 WHERE pid=$2`;
+    const { rows } = await pool.query(query, [pid, fav]);
+    if (rows.length > 0) {
+      return res.status(200).json({
+        status: true,
+        msg: "Fav Added Successfully",
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      msg: "Internal Server Error",
     });
   }
 };
