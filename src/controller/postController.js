@@ -31,7 +31,7 @@ export const addPostController = async (req, res) => {
       });
     }
 
-    const photo = req.file ? req.file.filename : "";
+    const photo = req.file ? req.file.path : "";
     const query = `INSERT INTO posts(post_title,post_desc,post_url,uid) VALUES($1,$2,$3,$4) RETURNING *`;
 
     const { rows } = await pool.query(query, [title, description, photo, uid]);
