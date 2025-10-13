@@ -12,11 +12,12 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: "uploads",
-   
     public_id: (req, file) => {
       const timestamp = Date.now();
-      return `${timestamp}`; // e.g., "my-photo-1697043845123"
-    },
+      const filename=file.originalname;
+      
+      return `${timestamp}-${filename}`; // e.g., "my-photo-1697043845123"
+    }
   },
 });
 
