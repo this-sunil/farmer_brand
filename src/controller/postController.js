@@ -33,13 +33,12 @@ export const addPostController = async (req, res) => {
 
     const photo = req.file ? req.file.path : "";
     const query = `INSERT INTO posts(post_title,post_desc,post_url,uid) VALUES($1,$2,$3,$4) RETURNING *`;
-
     const { rows } = await pool.query(query, [title, description, photo, uid]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
         msg: "Post Inserted Successfully",
-        result: rows[0],
+        result: rows[0]
       });
     }
   } catch (e) {
