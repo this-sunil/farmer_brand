@@ -15,10 +15,7 @@ const storage = new CloudinaryStorage({
     allowed_formats: ["jpg", "jpeg", "png", "gif"],
     public_id: (req, file) => {
       const timestamp = Date.now();
-      const name = path
-        .basename(file.originalname, path.extname(file.originalname))
-        .replace(/\s+/g, "-")
-        .toLowerCase();
+      const name = path.extname(file.originalname);
       return `${name}-${timestamp}`; // e.g., "my-photo-1697043845123"
     },
   },
