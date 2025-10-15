@@ -28,6 +28,7 @@ app.get("/",(req,res)=>{
 app.use("/api",authRoute);
 app.use("/api",postRoute);
 app.use("/api",bannerRoute);
+
 process.on('exit', (code) => {
   console.log('Process exited with code:', code);
 });
