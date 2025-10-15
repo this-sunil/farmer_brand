@@ -15,15 +15,15 @@ createBannerTable();
 export const addBannerController = async (req, res) => {
   const { title, desc } = req.body;
   try {
-    const photos = req.file ? req.file.path : "";
-    if (!title || !desc || !photos) {
+    const photo = req.file ? req.file.path : "";
+    if (!title || !desc || !photo) {
       return res.status(404).json({
         status: false,
         msg: "Missing params"
       });
     }
     const query = `INSERT INTO banners(title,subtitle,photo) VALUES($1,$2,$3) RETURNING *`;
-    const { rows } = await pool.query(query, [title, desc, photos]);
+    const { rows } = await pool.query(query, [title, desc, photo]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
