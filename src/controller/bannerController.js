@@ -110,7 +110,7 @@ export const getBannerController=async (req,res) => {
         return res.status(200).json({
             status:true,
             msg:"Fetch Banner Successfully",
-            result:rows[0]
+            result:rows
         });
     } catch (error) {
         console.log(`Error in Banner Controller=>${error.message}`);
