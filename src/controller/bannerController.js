@@ -1,5 +1,5 @@
 import pool from "../dbHelper/dbHelper.js";
-// TODO: Creating Banner Table
+// TODO: Creating Banner
 const createBannerTable = async () => {
   const query = `CREATE TABLE IF NOT EXISTS banners(id SERIAL PRIMARY KEY,title TEXT NOT NULL,subtitle TEXT NOT NULL,photo TEXT NOT NULL,createdAt DATE DEFAULT CURRENT_DATE)`;
   pool.query(query, (err) => {
@@ -13,17 +13,17 @@ const createBannerTable = async () => {
 createBannerTable();
 
 export const addBannerController = async (req, res) => {
-  const { title, desc } = req.body;
+  const { title, subtitle } = req.body;
   try {
-    const photo = req.file ? req.file.path : "";
-    if (!title || !desc) {
+    const photos = req.file ? req.file.path : "";
+    if (!title || !subtitle || !photos) {
       return res.status(404).json({
         status: false,
         msg: "Missing params"
       });
     }
     const query = `INSERT INTO banners(title,subtitle,photo) VALUES($1,$2,$3) RETURNING *`;
-    const { rows } = await pool.query(query, [title, desc, photo]);
+    const { rows } = await pool.query(query, [title, subtitle, photos]);
     if (rows.length > 0) {
       return res.status(200).json({
         status: true,
