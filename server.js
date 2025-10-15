@@ -24,6 +24,7 @@ app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
+// TODO: Routing banner
 
 app.use("/api",authRoute);
 app.use("/api",postRoute);
