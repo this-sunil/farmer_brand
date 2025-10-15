@@ -16,7 +16,7 @@ export const addBannerController = async (req, res) => {
   const { title, desc } = req.body;
   try {
     const photo = req.file ? req.file.path : "";
-    if (!title || !desc || !photo) {
+    if (!title || !desc) {
       return res.status(404).json({
         status: false,
         msg: "Missing params"
