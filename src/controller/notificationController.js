@@ -1,10 +1,13 @@
 import pool from "../dbHelper/dbHelper.js";
 
 const createNotificationTable=async()=>{
-  const query=`CREATE TABLE IF NOT EXISTS notification(
+  const query=`
+  
+  CREATE TABLE IF NOT EXISTS notification(
    id SERIAL PRIMARY KEY,
    title TEXT NOT NULL,
    subtitle TEXT NOT NULL,
+   photo TEXT NOT NULL,
    created_at DATE DEFAULT CURRENT_DATE
   )`;
   pool.query(query,(err)=>{
@@ -36,7 +39,7 @@ export const fetchNotificationController=async (req,res) => {
       console.log(`Error in notification controller=>${e.message}`);
       return res.status(500).json({
         status:false,
-        msg:"Internal Server Error"
+        msg:`Internal Server Error ${e.message}`
       });
     }
 };
