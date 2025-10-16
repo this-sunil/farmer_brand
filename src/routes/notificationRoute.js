@@ -1,5 +1,5 @@
 import express from "express";
-import { upload } from "/src/middleware/upload.js";
+import upload from "../middleware/upload.js";
 import { addNotificationController,deleteNotificationController,fetchNotificationController } from "../controller/notificationController.js";
 const router=express.Router();
 router.post("/fetchNotification",upload.none(),fetchNotificationController);
