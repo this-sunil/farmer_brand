@@ -1,4 +1,4 @@
-import pool from "../dbHelper/dbHelper";
+import pool from "../dbHelper/dbHelper.js";
 
 const createNotificationTable=async()=>{
   const query=`CREATE TABLE IF NOT EXISTS notification(
