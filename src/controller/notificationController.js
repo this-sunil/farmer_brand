@@ -67,3 +67,27 @@ export const addNotificationController=async (req,res) => {
       });
     }
 };
+
+export const deleteNotificationController=async (req,res) => {
+  const id=req.body.id;
+  try {
+    const query=`DELETE FROM notification WHERE id=$1`;
+    const {rows}=await pool.query(query,[id]);
+    if(rows.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:"Notification doesn't exist"
+      });
+    }
+    return res.status(200).json({
+      status:true,
+      msg:"Notification Deleted Successfully !!!",
+      result:rows
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status:false,
+      msg:"Internal Server Error"
+    });
+  }
+};
