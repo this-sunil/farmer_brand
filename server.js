@@ -5,6 +5,7 @@ import cors from "cors";
 import authRoute from "./src/routes/authRoute.js";
 import postRoute from "./src/routes/postRoute.js";
 import bannerRoute from "./src/routes/bannerRoute.js"
+import notificationRoute from "./src/routes/notificationRoute.js";
 
 const app=express();
 app.use(express.json());
@@ -29,6 +30,7 @@ app.get("/",(req,res)=>{
 app.use("/api",authRoute);
 app.use("/api",postRoute);
 app.use("/api",bannerRoute);
+app.use("/api",notificationRoute);
 
 process.on('exit', (code) => {
   console.log('Process exited with code:', code);
