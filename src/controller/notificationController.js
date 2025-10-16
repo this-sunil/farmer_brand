@@ -58,8 +58,7 @@ export const addNotificationController=async (req,res) => {
       if(rows.length>0){
         return res.status(200).json({
           status:true,
-          msg:"Inserted Successfully !!!",
-          result:rows
+          msg:"Inserted Successfully !!!"
         });
       }
     } catch (error) {
