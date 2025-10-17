@@ -2,7 +2,6 @@ import pool from "../dbHelper/dbHelper.js";
 
 const createNotificationTable=async()=>{
   const query=`
-  
   CREATE TABLE IF NOT EXISTS notification(
    id SERIAL PRIMARY KEY,
    title TEXT NOT NULL,
@@ -21,8 +20,13 @@ const createNotificationTable=async()=>{
 createNotificationTable();
 export const fetchNotificationController=async (req,res) => {
     try{
+      const { page }=req.body;
+      const limit=10;
       const query=`SELECT * FROM notification`;
       const {rows}=await pool.query(query);
+      const totalPage=rows.length/limit;
+      const prevPage=page < totalPage;
+      const nextPage=page > totalPage;
       if(rows.length===0){
         return res.status(404).json({
           status:false,
@@ -32,6 +36,9 @@ export const fetchNotificationController=async (req,res) => {
       return res.status(200).json({
         status:true,
         msg:"Fetch notification Successfully !!!",
+        prevPage,
+        nextPage,
+        totalPage,
         result:rows
       });
     }
