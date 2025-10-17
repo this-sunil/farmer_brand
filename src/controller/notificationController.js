@@ -18,51 +18,39 @@ const createNotificationTable=async()=>{
 };
 
 createNotificationTable();
-export const fetchNotificationController = async (req, res) => {
-  try {
-    const { page = 1 } = req.body;
-    const limit = 10;
-    const offset = (page - 1) * limit;
-
-    
-    const totalQuery = `SELECT COUNT(*) FROM notification`;
-    const totalResult = await pool.query(totalQuery);
-    const totalItem = parseInt(totalResult.rows[0].count);
-    const totalPage = Math.ceil(totalItem / limit);
-
-    
-    const query = `SELECT * FROM notification ORDER BY created_at DESC LIMIT $1 OFFSET $2`;
-    const { rows } = await pool.query(query, [limit, offset]);
-
-    if (rows.length === 0) {
-      return res.status(404).json({
-        status: false,
-        msg: "No Data Found !!!"
+export const fetchNotificationController=async (req,res) => {
+    try{
+      const { page }=req.body;
+      const limit=10;
+      const query=`SELECT * FROM notification ORDER BY id ASC LIMIT $1`;
+      const {rows}=await pool.query(query,[limit]);
+      const totalItem=rows.length;
+      const totalPage=Math.ceil(totalItem/limit);
+      const prevPage=page < totalPage;
+      const nextPage=page > totalPage;
+      if(rows.length===0){
+        return res.status(404).json({
+          status:false,
+          msg:"No Data Found !!!"
+        });
+      }
+      return res.status(200).json({
+        status:true,
+        msg:"Fetch notification Successfully !!!",
+        prevPage,
+        nextPage,
+        totalPage,
+        result:rows
       });
     }
-
-    const prevPage = page > 1 ? page - 1 : '';
-    const nextPage = page < totalPage ? page + 1 : '';
-
-    return res.status(200).json({
-      status: true,
-      msg: "Fetch notification Successfully !!!",
-      currentPage: page,
-      prevPage,
-      nextPage,
-      totalPage,
-      totalItem,
-      result: rows
-    });
-  } catch (e) {
-    console.error(`Error in notification controller => ${e.message}`);
-    return res.status(500).json({
-      status: false,
-      msg: `Internal Server Error`
-    });
-  }
+    catch(e){
+      console.log(`Error in notification controller=>${e.message}`);
+      return res.status(500).json({
+        status:false,
+        msg:`Internal Server Error ${e.message}`
+      });
+    }
 };
-
 export const addNotificationController=async (req,res) => {
     try {
       const {title,subtitle}=req.body;
