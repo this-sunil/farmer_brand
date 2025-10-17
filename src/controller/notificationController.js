@@ -24,7 +24,7 @@ export const fetchNotificationController = async (req, res) => {
     const limit = 10;
     const offset = (page - 1) * limit;
 
-    // Get total number of items
+    
     const totalQuery = `SELECT COUNT(*) FROM notification`;
     const totalResult = await pool.query(totalQuery);
     const totalItem = parseInt(totalResult.rows[0].count);
