@@ -40,6 +40,7 @@ export const fetchNotificationController=async (req,res) => {
         prevPage,
         nextPage,
         totalPage,
+        totalItem,
         result:rows
       });
     }
