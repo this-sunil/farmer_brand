@@ -24,7 +24,7 @@ export const fetchNotificationController=async (req,res) => {
       const limit=10;
       const query=`SELECT * FROM notification`;
       const {rows}=await pool.query(query);
-      const totalPage=rows.length/limit;
+      const totalPage=(rows.length-1)*10/limit;
       const prevPage=page < totalPage;
       const nextPage=page > totalPage;
       if(rows.length===0){
