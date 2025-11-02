@@ -95,12 +95,16 @@ export const deleteCategoryController = async (req, res) => {
     }
     const query = `DELETE FROM category WHERE cid=$1`;
     const { rows } = await pool.query(query, [cid]);
-    if (rows.length > 0) {
-      return res.status(200).json({
+    if (rows.length === 0) {
+      return res.status(404).json({
+        status:false,
+        msg:"Failed to Delete"
+      })
+    }
+    return res.status(200).json({
         status:true,
         msg:"Deleted Successfully"
       });
-    }
 
   } catch (e) {
     console.log(`Error =>${e.message}`);
