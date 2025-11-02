@@ -15,13 +15,14 @@ createCatTable();
 export const addCategoryController = async (req, res) => {
   const { cat_title } = req.body;
   const photo = req.file ? req.file.filename : "";
-  try {
-    if (!photo) {
+  if (!photo) {
       return res.status(404).json({
         status: false,
         msg: "Missing params",
       });
     }
+  try {
+    
     const query = `INSERT INTO category(cat_title,cat_photo) VALUES($1,$2) RETURNING *`;
     const { rows } = await pool.query(query, [cat_title, photo]);
     if (rows.length === 0) {
