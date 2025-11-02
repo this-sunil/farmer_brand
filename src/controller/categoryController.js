@@ -134,10 +134,10 @@ export const getAllCategory = async (req, res) => {
       result: rows,
     });
   } catch (e) {
-    console.log(`Error in ${e.message}`);
+    console.log(`Error in ${e}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${e.message}`,
+      msg: `Internal Server Error ${e}`,
     });
   }
 };
