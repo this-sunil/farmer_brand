@@ -99,7 +99,7 @@ export const deleteCategoryController = async (req, res) => {
       return res.status(404).json({
         status:false,
         msg:"Failed to Delete"
-      })
+      });
     }
     return res.status(200).json({
         status:true,
