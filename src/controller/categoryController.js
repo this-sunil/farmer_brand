@@ -14,7 +14,7 @@ createCatTable();
 
 export const addCategoryController = async (req, res) => {
   const { cat_title } = req.body;
-  const photo = req.file ? req.file.filename : "";
+  const photo = req.file ? req.file.path : "";
   if (!photo) {
       return res.status(404).json({
         status: false,

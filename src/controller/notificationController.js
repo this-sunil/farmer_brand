@@ -27,8 +27,8 @@ export const fetchNotificationController=async (req,res) => {
       const {rows}=await pool.query(query,[limit]);
       const totalItem=rows.length;
       const totalPage=Math.ceil(totalItem/limit);
-      const prevPage=page < totalPage;
-      const nextPage=page > totalPage;
+      const prevPage = page > 1;
+      const nextPage = page < totalPage;
       if(rows.length===0){
         return res.status(404).json({
           status:false,

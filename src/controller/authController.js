@@ -159,7 +159,7 @@ export const updateUserController = async (req, res) => {
     const field = [];
     const values = [];
     let index = 1;
-    const photo=req.file?req.file.filename:"";
+    const photo=req.file?req.file.path:"";
     const data = { name, phone, state, city };
     for (const [key, value] of Object.entries(data)) {
       if (value !== undefined) {
