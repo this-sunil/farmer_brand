@@ -18,6 +18,7 @@ const createNotificationTable=async()=>{
 };
 
 createNotificationTable();
+
 export const fetchNotificationController=async (req,res) => {
     try{
       const { page }=req.body;
