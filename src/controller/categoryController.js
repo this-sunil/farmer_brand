@@ -108,8 +108,9 @@ export const deleteCategoryController = async (req, res) => {
 };
 
 export const getAllCategory = async (req, res) => {
+  const page = req.body.page || 1;
   try {
-    const page = req.body.page || 1;
+    
     const limit = 10;
     const query = `SELECT * FROM category ORDER BY cid LIMIT $1 OFFSET $2`;
     const offset = (page - 1) * limit;
