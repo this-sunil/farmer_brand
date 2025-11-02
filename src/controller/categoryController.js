@@ -1,7 +1,7 @@
 import pool from "../dbHelper/dbHelper.js";
 
 const createCatTable = async () => {
-  const query = `CREATE TABLE category(cid SERIAL PRIMARY KEY,cat_title TEXT,cat_photo TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
+  const query = `CREATE TABLE IF NOT EXISTS category(cid SERIAL PRIMARY KEY,cat_title TEXT,cat_photo TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
   pool.query(query, (err) => {
     if (err) {
       throw err;
@@ -22,8 +22,8 @@ export const addCategoryController = async (req, res) => {
         msg: "Missing params",
       });
     }
-    const query = `INSERT INTO category(cid,cat_title,cat_photo) VALUES($1,$2,$3) RETURNING *`;
-    const { rows } = await pool.query(query, [cid, cat_title, photo]);
+    const query = `INSERT INTO category(cat_title,cat_photo) VALUES($1,$2) RETURNING *`;
+    const { rows } = await pool.query(query, [cat_title, photo]);
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
