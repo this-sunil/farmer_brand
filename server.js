@@ -6,7 +6,7 @@ import authRoute from "./src/routes/authRoute.js";
 import postRoute from "./src/routes/postRoute.js";
 import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
-
+import categoryRoute from "./src/routes/categoryRoute.js"
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -31,6 +31,7 @@ app.use("/api",authRoute);
 app.use("/api",postRoute);
 app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
+app.use("/api",categoryRoute);
 
 process.on('exit', (code) => {
   console.log('Process exited with code:', code);
