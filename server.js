@@ -10,7 +10,7 @@ import categoryRoute from "./src/routes/categoryRoute.js"
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-dotenv.config({debug:true,encoding:"utf-8"});
+dotenv.config({debug:true,encoding:"utf-8",override:true});
 cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
