@@ -19,8 +19,8 @@ cors({
 });
 
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
-app.use('/node_modules/bootstrap/dist/css', express.static(process.cwd(),'/bootstrap-css'));
-app.use('/node_modules/bootstrap/dist/js', express.static(process.cwd(),'/bootstrap-js'));
+app.use('/bootstrap-css', express.static(process.cwd() + '/node_modules/bootstrap/dist/css'));
+app.use('/bootstrap-js', express.static(process.cwd() + '/node_modules/bootstrap/dist/js'));
 
 app.set("view engine","ejs");
 app.set("views",path.join(process.cwd(),"/src/views"));
