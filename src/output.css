@@ -9,6 +9,7 @@
     --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-black: #000;
     --color-white: #fff;
+    --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -162,11 +163,32 @@
   }
 }
 @layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .flex {
     display: flex;
   }
   .table {
     display: table;
+  }
+  .h-60 {
+    height: calc(var(--spacing) * 60);
   }
   .w-full {
     width: 100%;
@@ -179,6 +201,9 @@
   }
   .stroke-amber-600 {
     stroke: var(--color-amber-600);
+  }
+  .text-center {
+    text-align: center;
   }
   .text-black {
     color: var(--color-black);
