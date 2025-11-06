@@ -1,26 +1,29 @@
 import pool from "../dbHelper/dbHelper.js";
 
 const productTable = async () => {
-  const query = `CREATE TABLE IF NOT EXISTS products(
+const query = `
+CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
     product_desc TEXT NOT NULL,
-    product_photo TEXT NOT NULL,
+    product_photo TEXT DEFAULT '',
     product_qty INTEGER DEFAULT 0,
     product_stock INTEGER DEFAULT -1,
     product_weight TEXT NOT NULL,
     cid INT NOT NULL,
-    FOREIGN KEY (cid) REFERENCES  category(cid) ON DELETE CASCADE ON UPDATE CASCADE,
-    created_at DATE DEFAULT CURRENT_DATE);
-    
-    CREATE TABLE IF NOT EXISTS users_product(
-      uid INT NOT NULL,
-      pid INT NOT NULL,
-      qty INT NOT NULL,
-      FOREIGN KEY (uid) REFERENCES  users(uid) ON DELETE CASCADE ON UPDATE CASCADE,
-      FOREIGN KEY (pid) REFERENCES  product(pid) ON DELETE CASCADE ON UPDATE CASCADE,
-    );
-    `;
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cid) REFERENCES category(cid) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS users_product (
+    uid INT NOT NULL,
+    pid INT NOT NULL,
+    qty INT NOT NULL,
+    PRIMARY KEY(uid,pid),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE ON UPDATE CASCADE
+);`;
 
   const existCategory = `SELECT * FROM category`;
   const { rows } = await pool.query(existCategory);
@@ -28,7 +31,7 @@ const productTable = async () => {
   if (rows.length > 0) {
     pool.query(query, (err) => {
       if (err) {
-        console.log(`Error in product Table=>${err.message}`);
+        console.log(`Error in Table=>${err.message}`);
       }
       console.log(`Product Table Successfully`);
     });
