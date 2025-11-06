@@ -3,7 +3,6 @@ import pool from "../dbHelper/dbHelper.js";
 const productTable = async () => {
 
   const query = `
- 
   CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
@@ -22,7 +21,6 @@ CREATE TABLE IF NOT EXISTS users_product (
     uid INT NOT NULL,
     pid INT NOT NULL,
     qty INT NOT NULL,
-    PRIMARY KEY (uid, pid),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT users_product_uid_fkey FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE,
     CONSTRAINT users_product_pid_fkey FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE
@@ -89,7 +87,7 @@ export const addProductController = async (req, res) => {
 export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
   try {
-    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) ON CONFLICT (uid, pid) DO NOTHING RETURNING *`;
+    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) RETURNING *`;
     const { rows } = await pool.query(query, [uid, pid, qty]);
     if (rows.length === 0) {
       return res.status(404).json({
