@@ -41,14 +41,7 @@ CREATE TABLE IF NOT EXISTS users_product (
 productTable();
 
 export const addProductController = async (req, res) => {
-  const {
-    product_title,
-    product_desc,
-    product_qty,
-    product_stock,
-    product_weight,
-    cid,
-  } = req.body;
+  const { title, description, qty, stock, weight, cid } = req.body;
   try {
     const query = `INSERT INTO products(
     product_title,
@@ -60,12 +53,11 @@ export const addProductController = async (req, res) => {
     cid) VALUES($1,$2,$3,$4,$5,$6) RETURNING *`;
     const photo = req.file ? req.file.path : "";
     const { rows } = await pool.query(query, [
-      product_title,
-      product_desc,
-      photo,
-      product_qty,
-      product_stock,
-      product_weight,
+      title,
+      description,
+      qty,
+      stock,
+      weight,
       cid,
     ]);
     if (rows.length === 0) {
@@ -130,10 +122,10 @@ export const deleteProductController = async (req, res) => {
       result: rows[0],
     });
   } catch (error) {
-      console.log(`Something Went Wrong=>${e.message}`);
+    console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error"
+      msg: "Internal Server Error",
     });
   }
 };
@@ -145,7 +137,7 @@ export const updateProduct = async (req, res) => {
     product_desc,
     product_qty,
     product_stock,
-    product_weight
+    product_weight,
   } = req.body;
   try {
     const fields = [];
@@ -175,17 +167,17 @@ export const updateProduct = async (req, res) => {
     const query = `UPDATE products SET ${fields.join(
       ", "
     )} WHERE pid=$${index}`;
-    const {rows}=await pool.query(query);
-    if(rows.length===0){
-        return res.status(404).json({
-            status:false,
-            msg:""
-        });
+    const { rows } = await pool.query(query);
+    if (rows.length === 0) {
+      return res.status(404).json({
+        status: false,
+        msg: "",
+      });
     }
     return res.status(200).json({
-        status:true,
-        msg:"Update Product Successfully !!!",
-        result:rows[0]
+      status: true,
+      msg: "Update Product Successfully !!!",
+      result: rows[0],
     });
   } catch (e) {
     console.log(`Something Went Wrong=>${e.message}`);
@@ -211,7 +203,7 @@ export const getAllProductController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
-        msg: "No Data Found !!!"
+        msg: "No Data Found !!!",
       });
     }
     return res.status(200).json({
@@ -220,7 +212,7 @@ export const getAllProductController = async (req, res) => {
       result: rows,
     });
   } catch (e) {
-      console.log(`Something Went Wrong=>${e.message}`);
+    console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
       msg: "Internal Server Error",
