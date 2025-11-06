@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS products (
     product_title TEXT NOT NULL,
     product_desc TEXT NOT NULL,
     product_photo TEXT DEFAULT '',
+    product_price FLOAT NOT NULL,
     product_qty INTEGER DEFAULT 0,
     product_stock INTEGER DEFAULT -1,
     product_weight TEXT NOT NULL,
@@ -41,20 +42,23 @@ CREATE TABLE IF NOT EXISTS users_product (
 productTable();
 
 export const addProductController = async (req, res) => {
-  const { title, description, qty, stock, weight, cid } = req.body;
+  const { title, description, price, qty, stock, weight, cid } = req.body;
   try {
     const query = `INSERT INTO products(
     product_title,
     product_desc,
     product_photo,
+    product_price,
     product_qty,
     product_stock,
     product_weight,
-    cid) VALUES($1,$2,$3,$4,$5,$6) RETURNING *`;
+    cid) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
     const photo = req.file ? req.file.path : "";
     const { rows } = await pool.query(query, [
       title,
       description,
+      photo,
+      price,
       qty,
       stock,
       weight,
@@ -63,7 +67,7 @@ export const addProductController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "Product Insertion failed !!!",
+        msg: "Product Insertion Failed !!!",
       });
     }
     return res.status(200).json({
@@ -131,25 +135,19 @@ export const deleteProductController = async (req, res) => {
 };
 
 export const updateProduct = async (req, res) => {
-  const {
-    pid,
-    product_title,
-    product_desc,
-    product_qty,
-    product_stock,
-    product_weight,
-  } = req.body;
+  const { pid, title, description, price, qty, stock, weight } = req.body;
   try {
     const fields = [];
     const values = [];
     let index = 1;
 
     const data = {
-      product_title,
-      product_desc,
-      product_qty,
-      product_stock,
-      product_weight,
+      title,
+      description,
+      price,
+      qty,
+      stock,
+      weight,
     };
     for (const [key, value] in Object.entries(data)) {
       if (value !== "undefined") {
@@ -171,19 +169,19 @@ export const updateProduct = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "",
+        msg: "No data updated !!!"
       });
     }
     return res.status(200).json({
       status: true,
       msg: "Update Product Successfully !!!",
-      result: rows[0],
+      result: rows[0]
     });
   } catch (e) {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: "Internal Server Error"
     });
   }
 };
