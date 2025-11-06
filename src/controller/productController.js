@@ -198,7 +198,7 @@ export const getAllProductController = async (req, res) => {
           'product_title', p.product_title,
           'product_desc', p.product_desc,
           'product_photo', p.product_photo,
-          'product_qty', COALESCE(up.product_qty, 0),
+          'product_qty', COALESCE(up.qty, 0),
           'product_stock', p.stock,
           'product_weight', p.product_weight
         )) AS products
