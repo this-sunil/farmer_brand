@@ -3,7 +3,6 @@ import pool from "../dbHelper/dbHelper.js";
 const productTable = async () => {
 
   const query = `
-
   CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
@@ -88,18 +87,26 @@ export const addProductController = async (req, res) => {
 export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
   try {
-    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) ON CONFLICT DO NOTHING RETURNING *`;
+    const existUser=`SELECT * FROM users WHERE uid=$1`;
+    const result=await pool.query(existUser,[uid]);
+    if(result.rows.length===0){
+        return res.status(404).json({
+          status:false,
+          msg:"User doesn't exist"
+        });
+    }
+    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) RETURNING *`;
     const { rows } = await pool.query(query, [uid, pid, qty]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Data Found !!!",
+        msg: "No Data Found !!!"
       });
     }
     return res.status(200).json({
       status: true,
       msg: "Product qty Inserted !!!",
-      result: rows[0],
+      result: rows[0]
     });
   } catch (error) {
     console.log(`Something Went Wrong=>${error.message}`);
