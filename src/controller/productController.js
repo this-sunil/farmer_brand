@@ -1,7 +1,6 @@
 import pool from "../dbHelper/dbHelper.js";
 
 const productTable = async () => {
-
   const query = `
   CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
@@ -87,7 +86,7 @@ export const addProductController = async (req, res) => {
 export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
   try {
-    const existUser=`SELECT * FROM users WHERE uid=$1`;
+    const existUser=`SELECT * FROM users WHERE id=$1`;
     const result=await pool.query(existUser,[uid]);
     if(result.rows.length===0){
         return res.status(400).json({
@@ -125,7 +124,7 @@ export const deleteProductController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Product found !!!",
+        msg: "No Product found !!!"
       });
     }
     return res.status(200).json({
@@ -137,7 +136,7 @@ export const deleteProductController = async (req, res) => {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: "Internal Server Error"
     });
   }
 };
