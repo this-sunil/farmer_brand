@@ -3,6 +3,7 @@ import pool from "../dbHelper/dbHelper.js";
 const productTable = async () => {
 
   const query = `
+ 
   CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
@@ -21,10 +22,10 @@ CREATE TABLE IF NOT EXISTS users_product (
     uid INT NOT NULL,
     pid INT NOT NULL,
     qty INT NOT NULL,
-    PRIMARY KEY(uid,pid),
+    PRIMARY KEY (uid, pid),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT users_product_uid_fkey FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE,
+    CONSTRAINT users_product_pid_fkey FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE
 );`;
 
   const existCategory = `SELECT * FROM category`;
