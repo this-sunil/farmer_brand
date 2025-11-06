@@ -47,7 +47,7 @@ export const addCategoryController = async (req, res) => {
 
 export const editCategoryController = async (req, res) => {
   const { cid, cat_title } = req.body;
-  const photo = req.file ? req.file.filename : "";
+  const photo = req.file ? req.file.path : "";
   try {
     const field = [];
     const values = [];
