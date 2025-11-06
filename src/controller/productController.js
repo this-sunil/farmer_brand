@@ -189,39 +189,46 @@ export const updateProduct = async (req, res) => {
 
 export const getAllProductController = async (req, res) => {
   try {
-    const query = `SELECT 
-    cat.cid,
-    cat.cat_title,
-    JSON_AGG(JSON_BUILD_OBJECT(
-        'pid', p.pid,
-        'product_title', p.product_title,
-        'product_desc', p.product_desc,
-        'product_photo', p.product_photo,
-        'product_qty', COALESCE(up.product_qty, 0),
-        'product_stock', p.stock,
-        'product_weight', p.product_weight
-    )) AS products
-FROM products p
-LEFT JOIN category cat ON cat.cid = p.cid
-LEFT JOIN users_product up ON p.pid = up.pid
-GROUP BY cat.cid, cat.cat_title;`;
+    const query = `
+      SELECT 
+        cat.cid,
+        cat.cat_title,
+        JSON_AGG(JSON_BUILD_OBJECT(
+          'pid', p.pid,
+          'product_title', p.product_title,
+          'product_desc', p.product_desc,
+          'product_photo', p.product_photo,
+          'product_qty', COALESCE(up.product_qty, 0),
+          'product_stock', p.stock,
+          'product_weight', p.product_weight
+        )) AS products
+      FROM products p
+      LEFT JOIN category cat ON cat.cid = p.cid
+      LEFT JOIN users_product up ON p.pid = up.pid
+      GROUP BY cat.cid, cat.cat_title;
+    `;
+    
     const { rows } = await pool.query(query);
+    
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
         msg: "No Data Found !!!",
       });
     }
+    
     return res.status(200).json({
       status: true,
       msg: "Fetch Product Successfully",
       result: rows,
     });
+    
   } catch (e) {
-    console.log(`Something Went Wrong=>${e.message}`);
+    console.log(`Something Went Wrong => ${e.message}`);
     return res.status(500).json({
       status: false,
       msg: `Internal Server Error ${e.message}`,
     });
   }
 };
+
