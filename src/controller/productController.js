@@ -195,6 +195,16 @@ export const updateProduct = async (req, res) => {
 
 export const getAllProductController = async (req, res) => {
   try {
+    const page = Number(req.body.page) || 1;
+    const limit = 10;
+    const offset = (page - 1) * limit;
+
+    
+    const countQuery = `SELECT COUNT(DISTINCT cid) AS total FROM category;`;
+    const countResult = await pool.query(countQuery);
+    const totalItem = Number(countResult.rows[0].total);
+    const totalPages = Math.ceil(totalItem / limit);
+
     const query = `
       SELECT 
         cat.cid,
@@ -208,33 +218,43 @@ export const getAllProductController = async (req, res) => {
           'product_stock', p.product_stock,
           'product_weight', p.product_weight
         )) AS products
-      FROM products p
-      LEFT JOIN category cat ON cat.cid = p.cid
+      FROM category cat
+      LEFT JOIN products p ON cat.cid = p.cid
       LEFT JOIN users_product up ON p.pid = up.pid
-      GROUP BY cat.cid, cat.cat_title;
+      GROUP BY cat.cid, cat.cat_title
+      ORDER BY cat.cid
+      LIMIT $1 OFFSET $2;
     `;
     
-    const { rows } = await pool.query(query);
-    
+    const { rows } = await pool.query(query, [limit, offset]);
+
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
-        msg: "No Data Found !!!",
+        msg: "No Data Found"
       });
     }
-    
+
+    const prevPage = page > 1;
+    const nextPage = page < totalPages;
+
     return res.status(200).json({
       status: true,
-      msg: "Fetch Product Successfully",
+      msg: "Fetched Products Successfully",
+      currentPage: page,
+      totalPages,
+      prevPage,
+      nextPage,
       result: rows,
     });
-    
+
   } catch (e) {
-    console.log(`Something Went Wrong => ${e.message}`);
+    console.error(`Something Went Wrong => ${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${e.message}`,
+      msg: `Internal Server Error: ${e.message}`,
     });
   }
 };
+
 
