@@ -105,7 +105,7 @@ export const addQtyController = async (req, res) => {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: `Internal Server Error ${e.message}`,
     });
   }
 };
