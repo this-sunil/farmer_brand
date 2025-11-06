@@ -90,7 +90,7 @@ export const addQtyController = async (req, res) => {
     const existUser=`SELECT * FROM users WHERE uid=$1`;
     const result=await pool.query(existUser,[uid]);
     if(result.rows.length===0){
-        return res.status(404).json({
+        return res.status(400).json({
           status:false,
           msg:"User doesn't exist"
         });
