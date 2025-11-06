@@ -1,7 +1,7 @@
 import pool from "../dbHelper/dbHelper.js";
 
 const productTable = async () => {
-const query = `
+  const query = `
 CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
@@ -47,7 +47,7 @@ export const addProductController = async (req, res) => {
     product_qty,
     product_stock,
     product_weight,
-    cid
+    cid,
   } = req.body;
   try {
     const query = `INSERT INTO products(
@@ -58,7 +58,7 @@ export const addProductController = async (req, res) => {
     product_stock,
     product_weight,
     cid) VALUES($1,$2,$3,$4,$5,$6) RETURNING *`;
-    const photo=req.file?req.file.path:'';
+    const photo = req.file ? req.file.path : "";
     const { rows } = await pool.query(query, [
       product_title,
       product_desc,
@@ -66,7 +66,7 @@ export const addProductController = async (req, res) => {
       product_qty,
       product_stock,
       product_weight,
-      cid
+      cid,
     ]);
     if (rows.length === 0) {
       return res.status(404).json({
@@ -77,9 +77,10 @@ export const addProductController = async (req, res) => {
     return res.status(200).json({
       status: true,
       msg: "Product Inserted Successfully !!!",
-      result: rows[0]
+      result: rows[0],
     });
   } catch (e) {
+    console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
       msg: "Internal Server Error",
@@ -95,18 +96,19 @@ export const addQtyController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Data Found !!!"
+        msg: "No Data Found !!!",
       });
     }
     return res.status(200).json({
       status: true,
       msg: "Product qty Inserted !!!",
-      result: rows[0]
+      result: rows[0],
     });
   } catch (error) {
+    console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error"
+      msg: "Internal Server Error",
     });
   }
 };
@@ -128,6 +130,65 @@ export const deleteProductController = async (req, res) => {
       result: rows[0],
     });
   } catch (error) {
+      console.log(`Something Went Wrong=>${e.message}`);
+    return res.status(500).json({
+      status: false,
+      msg: "Internal Server Error"
+    });
+  }
+};
+
+export const updateProduct = async (req, res) => {
+  const {
+    pid,
+    product_title,
+    product_desc,
+    product_qty,
+    product_stock,
+    product_weight
+  } = req.body;
+  try {
+    const fields = [];
+    const values = [];
+    let index = 1;
+
+    const data = {
+      product_title,
+      product_desc,
+      product_qty,
+      product_stock,
+      product_weight,
+    };
+    for (const [key, value] in Object.entries(data)) {
+      if (value !== "undefined") {
+        fields.push(`${key}==$${index++}`);
+        values.push(value);
+      }
+    }
+    const photo = req.file ? req.file.path : "";
+    if (!photo) {
+      fields.push(`product_photo=$${index++}`);
+      values.push(photo);
+    }
+    values.push(pid);
+
+    const query = `UPDATE products SET ${fields.join(
+      ", "
+    )} WHERE pid=$${index}`;
+    const {rows}=await pool.query(query);
+    if(rows.length===0){
+        return res.status(404).json({
+            status:false,
+            msg:""
+        });
+    }
+    return res.status(200).json({
+        status:true,
+        msg:"Update Product Successfully !!!",
+        result:rows[0]
+    });
+  } catch (e) {
+    console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
       msg: "Internal Server Error",
@@ -135,9 +196,9 @@ export const deleteProductController = async (req, res) => {
   }
 };
 
-export const getAllProductController=async(req,res)=>{
-    try{
-        const query=`SELECT cat.cid,cat_title,JSON_AGG(JSON_BUILD_OBJECT(
+export const getAllProductController = async (req, res) => {
+  try {
+    const query = `SELECT cat.cid,cat_title,JSON_AGG(JSON_BUILD_OBJECT(
            'pid',p.pid,
            'product_title',p.product_title,
            'product_desc',p.product_desc,
@@ -146,23 +207,23 @@ export const getAllProductController=async(req,res)=>{
            'product_stock',p.stock,
            'product_weight',p.product_weight,
         )) AS product FROM products p LEFT JOIN category cat ON cat.cid=p.cid LEFT JOIN users_product up ON p.pid=p.pid GROUP BY cat.cid,cat_title`;
-        const {rows}=await pool.query(query);
-        if(rows.length===0){
-            return res.status(400).json({
-                status:false,
-                msg:"No Data Found !!!"
-            });
-        }
-        return res.status(200).json({
-            status:true,
-            msg:"Fetch Product Successfully",
-            result:rows
-        });
+    const { rows } = await pool.query(query);
+    if (rows.length === 0) {
+      return res.status(400).json({
+        status: false,
+        msg: "No Data Found !!!"
+      });
     }
-    catch(e){
-        return res.status(500).json({
-            status:false,
-            msg:"Internal Server Error"
-        });
-    }
-}
+    return res.status(200).json({
+      status: true,
+      msg: "Fetch Product Successfully",
+      result: rows,
+    });
+  } catch (e) {
+      console.log(`Something Went Wrong=>${e.message}`);
+    return res.status(500).json({
+      status: false,
+      msg: "Internal Server Error",
+    });
+  }
+};
