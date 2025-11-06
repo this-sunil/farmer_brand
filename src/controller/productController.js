@@ -197,7 +197,7 @@ export const getAllProductController = async (req, res) => {
            'product_qty',COALESCE(up.product_qty,0),
            'product_stock',p.stock,
            'product_weight',p.product_weight,
-        )) AS product FROM products p LEFT JOIN category cat ON cat.cid=p.cid LEFT JOIN users_product up ON p.pid=p.pid GROUP BY cat.cid,cat_title`;
+        ) AS product) FROM products p LEFT JOIN category cat ON cat.cid=p.cid LEFT JOIN users_product up ON p.pid=p.pid GROUP BY cat.cid,cat_title`;
     const { rows } = await pool.query(query);
     if (rows.length === 0) {
       return res.status(400).json({
