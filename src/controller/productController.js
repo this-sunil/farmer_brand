@@ -222,7 +222,7 @@ export const getAllProductController = async (req, res) => {
       LEFT JOIN products p ON cat.cid = p.cid
       LEFT JOIN users_product up ON p.pid = up.pid
       GROUP BY cat.cid, cat.cat_title
-      ORDER BY cat.cid
+      ORDER BY cat.cid,p.pid
       LIMIT $1 OFFSET $2;
     `;
     
