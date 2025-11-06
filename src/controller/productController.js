@@ -51,7 +51,7 @@ export const addProductController = async (req, res) => {
     product_qty,
     product_stock,
     product_weight,
-    cid) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
+    cid) VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`;
     const photo = req.file ? req.file.path : "";
     const { rows } = await pool.query(query, [
       title,
@@ -61,7 +61,7 @@ export const addProductController = async (req, res) => {
       qty,
       stock,
       weight,
-      cid,
+      cid
     ]);
     if (rows.length === 0) {
       return res.status(404).json({
