@@ -102,10 +102,10 @@ export const addQtyController = async (req, res) => {
       result: rows[0],
     });
   } catch (error) {
-    console.log(`Something Went Wrong=>${e.message}`);
+    console.log(`Something Went Wrong=>${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${e.message}`,
+      msg: `Internal Server Error ${error.message}`,
     });
   }
 };
