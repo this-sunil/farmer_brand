@@ -221,8 +221,8 @@ export const getAllProductController = async (req, res) => {
       FROM category cat
       LEFT JOIN products p ON cat.cid = p.cid
       LEFT JOIN users_product up ON p.pid = up.pid
-      GROUP BY cat.cid, cat.cat_title,p.pid
-      ORDER BY cat.cid,p.pid
+      GROUP BY cat.cid, cat.cat_title
+      ORDER BY cat.cid
       LIMIT $1 OFFSET $2;
     `;
     
