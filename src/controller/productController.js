@@ -89,7 +89,7 @@ export const addProductController = async (req, res) => {
 export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
   try {
-    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) RETURNING *`;
+    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) ON CONFLICT (uid, pid) DO NOTHING RETURNING *`;
     const { rows } = await pool.query(query, [uid, pid, qty]);
     if (rows.length === 0) {
       return res.status(404).json({
