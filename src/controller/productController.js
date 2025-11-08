@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS users_product (
 productTable();
 
 export const addProductController = async (req, res) => {
-  const { title, description, price, qty, stock, weight, cid } = req.body;
+  const { title, description, price, qty, stock, weight, fid } = req.body;
   try {
     const query = `INSERT INTO products(
     product_title,
@@ -51,7 +51,7 @@ export const addProductController = async (req, res) => {
     product_qty,
     product_stock,
     product_weight,
-    cid) VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`;
+    fid) VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`;
     const photo = req.file ? req.file.path : "";
     const { rows } = await pool.query(query, [
       title,
@@ -61,7 +61,7 @@ export const addProductController = async (req, res) => {
       qty,
       stock,
       weight,
-      cid
+      fid
     ]);
     if (rows.length === 0) {
       return res.status(404).json({
@@ -206,8 +206,10 @@ export const getAllProductController = async (req, res) => {
     const totalPages = Math.ceil(totalItem / limit);
 
     const query = `SELECT 
-    cat.cid,
-    cat.cat_title,
+    f.fid,
+    f.farmer_title,
+    f.city,
+    f.pin,
     JSON_AGG(
       JSON_BUILD_OBJECT(
         'pid', p.pid,
@@ -220,11 +222,11 @@ export const getAllProductController = async (req, res) => {
       )
       ORDER BY p.pid
     ) AS products
-  FROM category cat
-  LEFT JOIN products p ON cat.cid = p.cid
+  FROM farmer f
+  LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
-  GROUP BY cat.cid, cat.cat_title
-  ORDER BY cat.cid
+  GROUP BY f.cid, f.farmer_title
+  ORDER BY f.cid
   LIMIT $1 OFFSET $2;
 `;
 
@@ -256,6 +258,32 @@ export const getAllProductController = async (req, res) => {
     return res.status(500).json({
       status: false,
       msg: `Internal Server Error: ${e.message}`,
+    });
+  }
+};
+
+export const getCartController=async(req,res)=>{
+  const uid=req.body.uid;
+  try{
+    const query=`SELECT * FROM products p LEFT JOIN user_products up ON p.pid=up.pid AND up.uid=$1 GROUP BY p.pid ORDER BY p.pid`;
+    const { rows }=await pool.query(query,[uid]);
+    if(rows.length===0){
+      return res.status(400).json({
+        status:false,
+        msg:"No Product Found !!!"
+      });
+    }
+    return res.status(200).json({
+      status:true,
+      msg:"Fetch Cart Successfully",
+      result:rows
+    });
+  }
+  catch(e){
+    console.log(`Error Message=>${e.message}`);
+    return res.status(500).json({
+      status:false,
+      msg:"Internal Server Error"
     });
   }
 };
