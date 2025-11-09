@@ -1,7 +1,9 @@
 import pool from "../dbHelper/dbHelper.js";
 
 const createFarmerTable = async () => {
-  const query = `CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,farmer_title TEXT,farmer_photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
+  const query = `
+  
+  CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,farmer_title TEXT,farmer_photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
   pool.query(query, (err) => {
     if (err) {
       throw err;

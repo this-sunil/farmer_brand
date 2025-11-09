@@ -2,6 +2,7 @@ import pool from "../dbHelper/dbHelper.js";
 
 const productTable = async () => {
   const query = `
+  DROP table category;DROP table user_products;DROP table products;
   CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
@@ -11,9 +12,9 @@ const productTable = async () => {
     product_qty INTEGER DEFAULT 0,
     product_stock INTEGER DEFAULT -1,
     product_weight TEXT NOT NULL,
-    cid INT NOT NULL,
+    fid INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (cid) REFERENCES category(cid) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (fid) REFERENCES farmer(fid) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS users_product (
@@ -25,17 +26,14 @@ CREATE TABLE IF NOT EXISTS users_product (
     CONSTRAINT users_product_pid_fkey FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE
 );`;
 
-  const existCategory = `SELECT * FROM category`;
-  const { rows } = await pool.query(existCategory);
-
-  if (rows.length > 0) {
+  
     pool.query(query, (err) => {
       if (err) {
         console.log(`Error in Table=>${err.message}`);
       }
       console.log(`Product Table Successfully`);
     });
-  }
+  
 };
 
 productTable();
@@ -200,7 +198,7 @@ export const getAllProductController = async (req, res) => {
     const offset = (page - 1) * limit;
 
     
-    const countQuery = `SELECT COUNT(DISTINCT cid) AS total FROM category;`;
+    const countQuery = `SELECT COUNT(DISTINCT fid) AS total FROM farmer;`;
     const countResult = await pool.query(countQuery);
     const totalItem = Number(countResult.rows[0].total);
     const totalPages = Math.ceil(totalItem / limit);
@@ -225,8 +223,8 @@ export const getAllProductController = async (req, res) => {
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
-  GROUP BY f.cid, f.farmer_title
-  ORDER BY f.cid
+  GROUP BY f.fid, f.farmer_title
+  ORDER BY f.fid
   LIMIT $1 OFFSET $2;
 `;
 

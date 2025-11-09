@@ -6,7 +6,7 @@ import authRoute from "./src/routes/authRoute.js";
 import postRoute from "./src/routes/postRoute.js";
 import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
-import categoryRoute from "./src/routes/categoryRoute.js";
+import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 
 const app=express();
@@ -35,7 +35,7 @@ app.use("/api",authRoute);
 app.use("/api",postRoute);
 app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
-app.use("/api",categoryRoute);
+app.use("/api",farmerRoute);
 app.use("/api",productRoute);
 
 process.on('exit', (code) => {
