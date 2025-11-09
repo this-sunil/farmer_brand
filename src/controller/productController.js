@@ -2,7 +2,7 @@ import pool from "../dbHelper/dbHelper.js";
 
 const productTable = async () => {
   const query = `
-  DROP table category;DROP table user_products;DROP table products;
+  
   CREATE TABLE IF NOT EXISTS products (
     pid SERIAL PRIMARY KEY,
     product_title TEXT NOT NULL,
