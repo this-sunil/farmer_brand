@@ -24,7 +24,7 @@ export const registerFarmerController = async (req, res) => {
     });
   }
   try {
-    const hashPass = bcrypt.hash(pass, 10);
+    const hashPass = await bcrypt.hash(pass, 10);
     const query = `INSERT INTO farmer(name,pass,photo,phone,city,pin) VALUES($1,$2,$3,$4,$5,$6) RETURNING *`;
     const { rows } = await pool.query(query, [
       name,
@@ -72,7 +72,7 @@ export const loginFarmerController = async (req, res) => {
         msg: "No Farmer Exists !!!",
       });
     }
-    const isMatch = bcrypt.compare(pass, rows[0].pass);
+    const isMatch =await bcrypt.compare(pass, rows[0].pass);
     if (isMatch)
       return res.status(200).json({
         status: true,
