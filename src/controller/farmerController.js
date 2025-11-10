@@ -41,6 +41,7 @@ export const registerFarmerController = async (req, res) => {
         msg: "No Data Found !!!"
       });
     }
+    delete rows[0].pass;
     return res.status(200).json({
       status: true,
       msg: "Farmer Added Successfully !!!",
