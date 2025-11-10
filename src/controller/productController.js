@@ -204,7 +204,7 @@ export const getAllProductController = async (req, res) => {
 
     const query = `SELECT 
     f.fid,
-    f.farmer_title,
+    f.name,
     f.city,
     f.pin,
     JSON_AGG(
@@ -222,7 +222,7 @@ export const getAllProductController = async (req, res) => {
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
-  GROUP BY f.fid, f.farmer_title
+  GROUP BY f.fid, f.name
   ORDER BY f.fid
   LIMIT $1 OFFSET $2;
 `;
