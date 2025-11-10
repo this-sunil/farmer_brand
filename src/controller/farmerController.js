@@ -50,7 +50,7 @@ export const registerFarmerController = async (req, res) => {
     console.log(`Error =>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${e.message}`
+      msg: `Internal Server Error`
     });
   }
 };
@@ -84,7 +84,7 @@ export const loginFarmerController = async (req, res) => {
     console.log(`Internal Server Error =>${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${error.message}`,
+      msg: `Internal Server Error`,
     });
   }
 };
