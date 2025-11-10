@@ -2,7 +2,9 @@ import pool from "../dbHelper/dbHelper.js";
 import bcrypt from "bcrypt";
 
 const createFarmerTable = async () => {
-  const query = `CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,name TEXT,pass TEXT,photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
+  const query = `
+  DROP TABLE IF EXISTS farmer;
+  CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,name TEXT,pass TEXT,photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
   pool.query(query, (err) => {
     if (err) {
       console.log(`Error in farmer Table=>${err}`);
