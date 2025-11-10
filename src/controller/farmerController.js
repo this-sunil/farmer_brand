@@ -170,6 +170,7 @@ export const getAllFarmerController = async (req, res) => {
         msg: "No Data Found !!!",
       });
     }
+    delete rows[0].pass;
     const totalItem = rows.length;
     const totalPage = Math.ceil(totalItem / limit);
     const hasPrevPage = page > 1;
