@@ -1,10 +1,11 @@
 import pool from "../dbHelper/dbHelper.js";
 import bcrypt from "bcrypt";
+
 const createFarmerTable = async () => {
   const query = `CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,name TEXT,pass TEXT,photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
   pool.query(query, (err) => {
     if (err) {
-      throw err;
+      console.log(`Error in farmer Table=>${err}`);
     }
     console.log(`Farmer Created Successfully`);
   });
@@ -30,7 +31,7 @@ export const registerFarmerController = async (req, res) => {
       photo,
       phone,
       city,
-      pin,
+      pin
     ]);
     if (rows.length === 0) {
       return res.status(400).json({
@@ -40,14 +41,14 @@ export const registerFarmerController = async (req, res) => {
     }
     return res.status(200).json({
       status: true,
-      msg: "Farmer Added Successfully",
-      result: rows[0],
+      msg: "Farmer Added Successfully !!!",
+      result: rows[0]
     });
   } catch (e) {
     console.log(`Error =>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: "Internal Server Error"
     });
   }
 };
@@ -58,7 +59,7 @@ export const loginFarmerController = async (req, res) => {
     if (!phone || !pass) {
       return res.status(404).json({
         status: false,
-        msg: "Missing params",
+        msg: "Missing params"
       });
     }
     const query = `SELECT * FROM farmer WHERE phone=$1`;
