@@ -72,6 +72,7 @@ export const loginFarmerController = async (req, res) => {
         msg: "No Farmer Exists !!!",
       });
     }
+    delete rows[0].pass;
     const isMatch =await bcrypt.compare(pass, rows[0].pass);
     if (isMatch)
       return res.status(200).json({
