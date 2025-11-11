@@ -200,7 +200,7 @@ export const getAllProductController = async (req, res) => {
     const totalItem = Number(countResult.rows[0].total);
     const totalPages = Math.ceil(totalItem / limit);
     const query = `
-     SELECT 
+    SELECT 
     f.fid,
     f.name,
     f.city,
