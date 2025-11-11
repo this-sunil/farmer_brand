@@ -207,20 +207,22 @@ export const getAllProductController = async (req, res) => {
     f.city,
     f.pin,
     COALESCE(
-      JSON_AGG(
-        JSON_BUILD_OBJECT(
-          'pid', p.pid,
-          'product_title', p.product_title,
-          'product_desc', p.product_desc,
-          'product_photo', p.product_photo,
-          'product_qty', COALESCE(up.qty, 0),
-          'product_stock', p.product_stock,
-          'product_weight', p.product_weight
-        )
-        ORDER BY p.pid
-      ),
-      '[]'::json
-    ) AS products
+  JSON_AGG(
+    JSONB_STRIP_NULLS(
+      JSONB_BUILD_OBJECT(
+        'pid', p.pid,
+        'product_title', p.product_title,
+        'product_desc', p.product_desc,
+        'product_photo', p.product_photo,
+        'product_qty', COALESCE(up.qty, 0),
+        'product_stock', p.product_stock,
+        'product_weight', p.product_weight
+      )
+    )
+    ORDER BY p.pid
+  ),
+  '[]'::jsonb
+) AS products
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
