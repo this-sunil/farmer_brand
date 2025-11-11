@@ -208,8 +208,8 @@ export const getAllProductController = async (req, res) => {
     f.pin,
     COALESCE(
   JSON_AGG(
-    JSONB_STRIP_NULLS(
-      JSONB_BUILD_OBJECT(
+    
+      JSON_BUILD_OBJECT(
         'pid', p.pid,
         'product_title', p.product_title,
         'product_desc', p.product_desc,
@@ -221,7 +221,7 @@ export const getAllProductController = async (req, res) => {
     )
     ORDER BY p.pid
   ),
-  '[]'::jsonb
+  '[]'::json
 ) AS products
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
