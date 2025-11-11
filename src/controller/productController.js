@@ -195,8 +195,6 @@ export const getAllProductController = async (req, res) => {
     const page = Number(req.body.page) || 1;
     const limit = 10;
     const offset = (page - 1) * limit;
-
-    
     const countQuery = `SELECT COUNT(DISTINCT fid) AS total FROM farmer;`;
     const countResult = await pool.query(countQuery);
     const totalItem = Number(countResult.rows[0].total);
@@ -207,8 +205,8 @@ export const getAllProductController = async (req, res) => {
     f.name,
     f.city,
     f.pin,
-   COALESCE(
-  JSON_AGG(
+    COALESCE(
+    JSON_AGG(
     JSON_BUILD_OBJECT(
       'pid', p.pid,
       'product_title', p.product_title,
@@ -220,8 +218,8 @@ export const getAllProductController = async (req, res) => {
     )
     ORDER BY p.pid
   ),
-  '[]'::json
-) AS products
+ 
+) '[]'::json AS products
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
