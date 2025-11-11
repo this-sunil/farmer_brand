@@ -200,33 +200,35 @@ export const getAllProductController = async (req, res) => {
     const totalItem = Number(countResult.rows[0].total);
     const totalPages = Math.ceil(totalItem / limit);
 
-    const query = `SELECT 
+    const query = `
+  SELECT 
     f.fid,
     f.name,
     f.city,
     f.pin,
     COALESCE(
-    JSON_AGG(
-    JSON_BUILD_OBJECT(
-      'pid', p.pid,
-      'product_title', p.product_title,
-      'product_desc', p.product_desc,
-      'product_photo', p.product_photo,
-      'product_qty', COALESCE(up.qty, 0),
-      'product_stock', p.product_stock,
-      'product_weight', p.product_weight
-    )
-    ORDER BY p.pid
-  ),
- 
-) '[]'::json AS products
+      JSON_AGG(
+        JSON_BUILD_OBJECT(
+          'pid', p.pid,
+          'product_title', p.product_title,
+          'product_desc', p.product_desc,
+          'product_photo', p.product_photo,
+          'product_qty', COALESCE(up.qty, 0),
+          'product_stock', p.product_stock,
+          'product_weight', p.product_weight
+        )
+        ORDER BY p.pid
+      ),
+      '[]'::json
+    ) AS products
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
-  GROUP BY f.fid, f.name
+  GROUP BY f.fid, f.name, f.city, f.pin
   ORDER BY f.fid
   LIMIT $1 OFFSET $2;
 `;
+
 
     
     const { rows } = await pool.query(query, [limit, offset]);
