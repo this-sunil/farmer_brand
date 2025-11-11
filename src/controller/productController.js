@@ -40,6 +40,12 @@ productTable();
 export const addProductController = async (req, res) => {
   const { title, description, price, qty, stock, weight, fid } = req.body;
   try {
+    if(title || description || price || qty || stock || weight || fid ){
+      return res.status(404).json({
+        status:false,
+        msg:"Missing Params"
+      });
+    }
     const query = `INSERT INTO products(
     product_title,
     product_desc,
