@@ -25,12 +25,14 @@ CREATE TABLE IF NOT EXISTS users_product (
     CONSTRAINT users_product_pid_fkey FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE
 );`;
 
-  pool.query(query, (err) => {
-    if (err) {
-      console.log(`Error in Table=>${err.message}`);
-    }
-    console.log(`Product Table Successfully`);
-  });
+  
+    pool.query(query, (err) => {
+      if (err) {
+        console.log(`Error in Table=>${err.message}`);
+      }
+      console.log(`Product Table Successfully`);
+    });
+  
 };
 
 productTable();
@@ -56,7 +58,7 @@ export const addProductController = async (req, res) => {
       qty,
       stock,
       weight,
-      fid,
+      fid
     ]);
     if (rows.length === 0) {
       return res.status(404).json({
@@ -73,7 +75,7 @@ export const addProductController = async (req, res) => {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error`,
+      msg: `Internal Server Error`
     });
   }
 };
@@ -81,32 +83,32 @@ export const addProductController = async (req, res) => {
 export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
   try {
-    const existUser = `SELECT * FROM users WHERE id=$1`;
-    const result = await pool.query(existUser, [uid]);
-    if (result.rows.length === 0) {
-      return res.status(400).json({
-        status: false,
-        msg: "User doesn't exist",
-      });
+    const existUser=`SELECT * FROM users WHERE id=$1`;
+    const result=await pool.query(existUser,[uid]);
+    if(result.rows.length===0){
+        return res.status(400).json({
+          status:false,
+          msg:"User doesn't exist"
+        });
     }
     const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) RETURNING *`;
     const { rows } = await pool.query(query, [uid, pid, qty]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Data Found !!!",
+        msg: "No Data Found !!!"
       });
     }
     return res.status(200).json({
       status: true,
       msg: "Product qty Inserted !!!",
-      result: rows[0],
+      result: rows[0]
     });
   } catch (error) {
     console.log(`Something Went Wrong=>${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error`,
+      msg: `Internal Server Error`
     });
   }
 };
@@ -119,7 +121,7 @@ export const deleteProductController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Product found !!!",
+        msg: "No Product found !!!"
       });
     }
     return res.status(200).json({
@@ -131,7 +133,7 @@ export const deleteProductController = async (req, res) => {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: "Internal Server Error"
     });
   }
 };
@@ -171,19 +173,19 @@ export const updateProduct = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No data updated !!!",
+        msg: "No data updated !!!"
       });
     }
     return res.status(200).json({
       status: true,
       msg: "Update Product Successfully !!!",
-      result: rows[0],
+      result: rows[0]
     });
   } catch (e) {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error",
+      msg: "Internal Server Error"
     });
   }
 };
@@ -197,14 +199,15 @@ export const getAllProductController = async (req, res) => {
     const countResult = await pool.query(countQuery);
     const totalItem = Number(countResult.rows[0].total);
     const totalPages = Math.ceil(totalItem / limit);
-    const query = `SELECT 
+   const query = `
+  SELECT 
     f.fid,
     f.name,
     f.city,
     f.pin,
     COALESCE(
       JSON_AGG(
-        DISTINCT JSONB_BUILD_OBJECT(
+        JSONB_BUILD_OBJECT(
           'pid', p.pid,
           'product_title', p.product_title,
           'product_desc', p.product_desc,
@@ -214,7 +217,7 @@ export const getAllProductController = async (req, res) => {
           'product_weight', p.product_weight
         )
         ORDER BY p.pid
-      ),
+      ) FILTER (WHERE p.pid IS NOT NULL),
       '[]'::json
     ) AS products
   FROM farmer f
@@ -223,13 +226,13 @@ export const getAllProductController = async (req, res) => {
   GROUP BY f.fid, f.name, f.city, f.pin
   ORDER BY f.fid
   LIMIT $1 OFFSET $2;`;
-
+    
     const { rows } = await pool.query(query, [limit, offset]);
 
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
-        msg: "No Data Found",
+        msg: "No Data Found"
       });
     }
 
@@ -245,6 +248,7 @@ export const getAllProductController = async (req, res) => {
       nextPage,
       result: rows,
     });
+
   } catch (e) {
     console.error(`Something Went Wrong => ${e.message}`);
     return res.status(500).json({
@@ -254,27 +258,30 @@ export const getAllProductController = async (req, res) => {
   }
 };
 
-export const getCartController = async (req, res) => {
-  const uid = req.body.uid;
-  try {
-    const query = `SELECT * FROM products p LEFT JOIN user_products up ON p.pid=up.pid AND up.uid=$1 GROUP BY p.pid ORDER BY p.pid`;
-    const { rows } = await pool.query(query, [uid]);
-    if (rows.length === 0) {
+export const getCartController=async(req,res)=>{
+  const uid=req.body.uid;
+  try{
+    const query=`SELECT * FROM products p LEFT JOIN user_products up ON p.pid=up.pid AND up.uid=$1 GROUP BY p.pid ORDER BY p.pid`;
+    const { rows }=await pool.query(query,[uid]);
+    if(rows.length===0){
       return res.status(400).json({
-        status: false,
-        msg: "No Product Found !!!",
+        status:false,
+        msg:"No Product Found !!!"
       });
     }
     return res.status(200).json({
-      status: true,
-      msg: "Fetch Cart Successfully",
-      result: rows,
+      status:true,
+      msg:"Fetch Cart Successfully",
+      result:rows
     });
-  } catch (e) {
+  }
+  catch(e){
     console.log(`Error Message=>${e.message}`);
     return res.status(500).json({
-      status: false,
-      msg: "Internal Server Error",
+      status:false,
+      msg:"Internal Server Error"
     });
   }
 };
+
+
