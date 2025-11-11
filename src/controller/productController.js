@@ -220,7 +220,8 @@ export const getAllProductController = async (req, res) => {
           'product_photo', p.product_photo,
           'product_qty', COALESCE(up.qty, 0),
           'product_stock', p.product_stock,
-          'product_weight', p.product_weight
+          'product_weight', p.product_weight,
+          'product_price',p.product_price
         )
         ORDER BY RANDOM()
       ) FILTER (WHERE p.pid IS NOT NULL),
