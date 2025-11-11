@@ -218,7 +218,7 @@ export const getAllProductController = async (req, res) => {
         'product_stock', p.product_stock,
         'product_weight', p.product_weight
       )
-    )
+    ),
     ORDER BY p.pid,
   ),
   '[]'::json
