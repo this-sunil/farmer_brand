@@ -228,7 +228,7 @@ export const getAllProductController = async (req, res) => {
   LIMIT $1 OFFSET $2;`;  
     const { rows } = await pool.query(query, [limit, offset]);
 
-    if (rows.length === 0) {
+    if (rows.length === 0 || rows[0].product.length===0) {
       return res.status(400).json({
         status: false,
         msg: "No Data Found"
