@@ -217,8 +217,7 @@ export const getAllProductController = async (req, res) => {
           'product_weight', p.product_weight
         )
         ORDER BY p.pid
-      ) FILTER (WHERE p.pid IS NOT NULL),
-      '[]'::json
+      ) FILTER (WHERE p.pid IS NOT NULL)
     ) AS products
   FROM farmer f
   LEFT JOIN products p ON f.fid = p.fid
@@ -226,7 +225,7 @@ export const getAllProductController = async (req, res) => {
   GROUP BY f.fid, f.name, f.city, f.pin
   ORDER BY f.fid
   LIMIT $1 OFFSET $2;`;
-    
+
     const { rows } = await pool.query(query, [limit, offset]);
 
     if (rows.length === 0) {
