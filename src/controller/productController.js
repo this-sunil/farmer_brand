@@ -211,6 +211,7 @@ export const getAllProductController = async (req, res) => {
     f.name,
     f.city,
     f.pin,
+    f.photo,
     COALESCE(
       JSON_AGG(
         JSONB_BUILD_OBJECT(
