@@ -283,10 +283,36 @@ export const getCartController=async(req,res)=>{
     });
   }
   catch(e){
-    console.log(`Error Message=>${e.message}`);
+    console.log(`Error Cart Controller Message=>${e.message}`);
     return res.status(500).json({
       status:false,
       msg:"Internal Server Error"
+    });
+  }
+};
+
+export const getProductByIdController=async(req,res)=>{
+  try {
+    const id=req.body.id;
+    const query=`SELECT * from product WHERE fid=$1`;
+    const {rows}=await pool.query(query,[id]);
+    if(rows.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:'No Data Found !!!'
+      });
+    }
+    return res.status(200).json({
+      status:true,
+      msg:'Fetch Product Successfully !!!',
+      result:rows
+    });
+  } catch (error) {
+    console.log(`Error in product By Id=>${error.message}`);
+    
+    return res.status(500).json({
+      status:false,
+      msg:`Internal Server Error ${error.message}`
     });
   }
 };

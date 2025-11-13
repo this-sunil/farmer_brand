@@ -1,10 +1,11 @@
 import express from "express";
 import upload from "../middleware/upload.js";
-import { addProductController, addQtyController, deleteProductController, getAllProductController } from "../controller/productController.js";
+import { addProductController, addQtyController, deleteProductController, getAllProductController, getProductByIdController } from "../controller/productController.js";
 import productValidator from "../middleware/validator.js";
 const router=express.Router();
 router.post("/addProduct",productValidator,upload.single('photo'),addProductController);
 router.post("/addQty",upload.none(),addQtyController);
 router.post("/deleteProduct",upload.none(),deleteProductController);
 router.post("/getAllProducts",upload.none(),getAllProductController);
+router.post("/getProductById",upload.none(),getProductByIdController);
 export default router;
