@@ -294,7 +294,7 @@ export const getCartController=async(req,res)=>{
 export const getProductByIdController=async(req,res)=>{
   try {
     const id=req.body.id;
-    const query=`SELECT * from products WHERE fid=$1`;
+    const query=`SELECT * from products WHERE fid=$1 ORDER BY fid RANDOM()`;
     const {rows}=await pool.query(query,[id]);
     if(rows.length===0){
       return res.status(404).json({
