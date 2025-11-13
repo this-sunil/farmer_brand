@@ -144,7 +144,7 @@ export const deleteProductController = async (req, res) => {
   }
 };
 
-export const updateProduct = async (req, res) => {
+export const updateProductController = async (req, res) => {
   const { pid, title, description, price, qty, stock, weight } = req.body;
   try {
     const fields = [];
@@ -253,7 +253,7 @@ export const getAllProductController = async (req, res) => {
       totalPages,
       prevPage,
       nextPage,
-      result: rows,
+      result: rows
     });
 
   } catch (e) {
