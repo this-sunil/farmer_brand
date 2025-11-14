@@ -113,8 +113,6 @@ export const addQtyController = async (req, res) => {
     const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
     const checkResult = await pool.query(checkQuery, [uid, pid]);
 
-   
-
     if (checkResult.rows.length > 0) {
     
       const updateQuery = `
