@@ -122,7 +122,7 @@ export const addQtyController = async (req, res) => {
 export const deleteProductController = async (req, res) => {
   try {
     const pid = req.body.pid;
-    const query = `DELETE FROM product WHERE pid=$1`;
+    const query = `DELETE FROM products WHERE pid=$1`;
     const { rows } = await pool.query(query, [pid]);
     if (rows.length === 0) {
       return res.status(404).json({
