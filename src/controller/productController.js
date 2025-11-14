@@ -88,36 +88,74 @@ export const addProductController = async (req, res) => {
 
 export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
+
   try {
-    const existUser=`SELECT * FROM users WHERE id=$1`;
-    const result=await pool.query(existUser,[uid]);
-    if(result.rows.length===0){
-        return res.status(400).json({
-          status:false,
-          msg:"User doesn't exist"
-        });
-    }
-    const query = `INSERT INTO users_product(uid,pid,qty) VALUES($1,$2,$3) RETURNING *`;
-    const { rows } = await pool.query(query, [uid, pid, qty]);
-    if (rows.length === 0) {
-      return res.status(404).json({
+   
+    if (!uid || !pid || !qty) {
+      return res.status(400).json({
         status: false,
-        msg: "No Data Found !!!"
+        msg: "Missing Params"
       });
     }
-    return res.status(200).json({
-      status: true,
-      msg: "Product qty Inserted !!!",
-      result: rows[0]
-    });
+
+  
+    const userQuery = `SELECT * FROM users WHERE id = $1`;
+    const userResult = await pool.query(userQuery, [uid]);
+
+    if (userResult.rows.length === 0) {
+      return res.status(400).json({
+        status: false,
+        msg: "User doesn't exist"
+      });
+    }
+
+    
+    const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
+    const checkResult = await pool.query(checkQuery, [uid, pid]);
+
+   
+
+    if (checkResult.rows.length > 0) {
+    
+      const updateQuery = `
+        UPDATE users_product 
+        SET qty = qty + $3 
+        WHERE uid=$1 AND pid=$2 
+        RETURNING *
+      `;
+      const result = await pool.query(updateQuery, [uid, pid, qty]);
+
+      return res.status(200).json({
+        status: true,
+        msg: "Product qty updated!",
+        result: result.rows[0]
+      });
+
+    } else {
+      // Insert new row
+      const insertQuery = `
+        INSERT INTO users_product(uid, pid, qty) 
+        VALUES($1, $2, $3) 
+        RETURNING *
+      `;
+      const result = await pool.query(insertQuery, [uid, pid, qty]);
+
+      return res.status(200).json({
+        status: true,
+        msg: "Product qty inserted!",
+        result: result.rows[0]
+      });
+    }
+
   } catch (error) {
-    console.log(`Something Went Wrong=>${error.message}`);
+    console.log("Something Went Wrong =>", error.message);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error`
+      msg: "Internal Server Error",
     });
   }
 };
+
 
 export const deleteProductController = async (req, res) => {
   try {
