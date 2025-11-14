@@ -268,7 +268,7 @@ export const getAllProductController = async (req, res) => {
   LEFT JOIN products p ON f.fid = p.fid
   LEFT JOIN users_product up ON p.pid = up.pid
   GROUP BY f.fid, f.name, f.city, f.pin,p.pid
-  ORDER BY p.pid,f.fid
+  ORDER BY p.pid,f.fid,f.name
   LIMIT $1 OFFSET $2;`;  
     const { rows } = await pool.query(query, [limit, offset]);
 
