@@ -162,7 +162,7 @@ export const getAllFarmerController = async (req, res) => {
   const page = req.body.page || 1;
   try {
     const limit = 10;
-    const query = `SELECT * FROM Farmer ORDER BY RANDOM() LIMIT $1 OFFSET $2`;
+    const query = `SELECT * FROM Farmer ORDER BY fid LIMIT $1 OFFSET $2`;
     const offset = (page - 1) * limit;
     const { rows } = await pool.query(query, [limit, offset]);
     if (rows.length === 0) {
