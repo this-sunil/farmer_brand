@@ -117,7 +117,7 @@ export const addQtyController = async (req, res) => {
     
       const updateQuery = `
         UPDATE users_product 
-        SET qty = qty + $3 
+        SET qty = qty
         WHERE uid=$1 AND pid=$2 
         RETURNING *
       `;
