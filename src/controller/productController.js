@@ -25,14 +25,12 @@ CREATE TABLE IF NOT EXISTS users_product (
     CONSTRAINT users_product_pid_fkey FOREIGN KEY (pid) REFERENCES products(pid) ON DELETE CASCADE
 );`;
 
-  
-    pool.query(query, (err) => {
-      if (err) {
-        console.log(`Error in Table=>${err.message}`);
-      }
-      console.log(`Product Table Successfully`);
-    });
-  
+  pool.query(query, (err) => {
+    if (err) {
+      console.log(`Error in Table=>${err.message}`);
+    }
+    console.log(`Product Table Successfully`);
+  });
 };
 
 productTable();
@@ -40,10 +38,10 @@ productTable();
 export const addProductController = async (req, res) => {
   const { title, description, price, qty, stock, weight, fid } = req.body;
   try {
-    if(!title || !description || !price || !qty || !stock || !weight || !fid ){
+    if (!title || !description || !price || !qty || !stock || !weight || !fid) {
       return res.status(404).json({
-        status:false,
-        msg:"Missing Params"
+        status: false,
+        msg: "Missing Params",
       });
     }
     const query = `INSERT INTO products(
@@ -64,7 +62,7 @@ export const addProductController = async (req, res) => {
       qty,
       stock,
       weight,
-      fid
+      fid,
     ]);
     if (rows.length === 0) {
       return res.status(404).json({
@@ -81,7 +79,7 @@ export const addProductController = async (req, res) => {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error`
+      msg: `Internal Server Error`,
     });
   }
 };
@@ -90,31 +88,27 @@ export const addQtyController = async (req, res) => {
   const { uid, pid, qty } = req.body;
 
   try {
-   
     if (!uid || !pid || !qty) {
       return res.status(400).json({
         status: false,
-        msg: "Missing Params"
+        msg: "Missing Params",
       });
     }
 
-  
     const userQuery = `SELECT * FROM users WHERE id = $1`;
     const userResult = await pool.query(userQuery, [uid]);
 
     if (userResult.rows.length === 0) {
       return res.status(400).json({
         status: false,
-        msg: "User doesn't exist"
+        msg: "User doesn't exist",
       });
     }
 
-    
     const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
     const checkResult = await pool.query(checkQuery, [uid, pid]);
 
     if (checkResult.rows.length > 0) {
-    
       const updateQuery = `
         UPDATE users_product 
         SET qty = $3
@@ -126,11 +120,9 @@ export const addQtyController = async (req, res) => {
       return res.status(200).json({
         status: true,
         msg: "Product qty updated!",
-        result: result.rows[0]
+        result: result.rows[0],
       });
-
     } else {
-     
       const insertQuery = `
         INSERT INTO users_product(uid, pid, qty) 
         VALUES($1, $2, $3) 
@@ -141,10 +133,9 @@ export const addQtyController = async (req, res) => {
       return res.status(200).json({
         status: true,
         msg: "Product qty inserted!",
-        result: result.rows[0]
+        result: result.rows[0],
       });
     }
-
   } catch (error) {
     console.log("Something Went Wrong =>", error.message);
     return res.status(500).json({
@@ -154,7 +145,6 @@ export const addQtyController = async (req, res) => {
   }
 };
 
-
 export const deleteProductController = async (req, res) => {
   try {
     const pid = req.body.pid;
@@ -163,7 +153,7 @@ export const deleteProductController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Product found !!!"
+        msg: "No Product found !!!",
       });
     }
     return res.status(200).json({
@@ -175,7 +165,7 @@ export const deleteProductController = async (req, res) => {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error"
+      msg: "Internal Server Error",
     });
   }
 };
@@ -215,19 +205,19 @@ export const updateProductController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No data updated !!!"
+        msg: "No data updated !!!",
       });
     }
     return res.status(200).json({
       status: true,
       msg: "Update Product Successfully !!!",
-      result: rows[0]
+      result: rows[0],
     });
   } catch (e) {
     console.log(`Something Went Wrong=>${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: "Internal Server Error"
+      msg: "Internal Server Error",
     });
   }
 };
@@ -241,8 +231,8 @@ export const getAllProductController = async (req, res) => {
     const countResult = await pool.query(countQuery);
     const totalItem = Number(countResult.rows[0].total);
     const totalPages = Math.ceil(totalItem / limit);
-   const query = `
-  SELECT 
+    const query = `
+SELECT 
     f.fid,
     f.name,
     f.city,
@@ -258,24 +248,26 @@ export const getAllProductController = async (req, res) => {
           'product_qty', COALESCE(up.qty, 0),
           'product_stock', p.product_stock,
           'product_weight', p.product_weight,
-          'product_price',p.product_price
+          'product_price', p.product_price
         )
-        ORDER BY p.pid
+        ORDER BY p.pid  -- sort products inside JSON array
       ) FILTER (WHERE p.pid IS NOT NULL),
       '[]'::json
     ) AS products
-  FROM farmer f
-  LEFT JOIN products p ON f.fid = p.fid
-  LEFT JOIN users_product up ON p.pid = up.pid
-  GROUP BY f.fid, f.name, f.city, f.pin,p.pid
-  ORDER BY f.fid, f.name
-  LIMIT $1 OFFSET $2;`;  
+FROM farmer f
+LEFT JOIN products p ON f.fid = p.fid
+LEFT JOIN users_product up ON p.pid = up.pid
+GROUP BY f.fid, f.name, f.city, f.pin, f.photo
+ORDER BY f.fid, f.name
+LIMIT $1 OFFSET $2;
+`;
+
     const { rows } = await pool.query(query, [limit, offset]);
 
     if (rows.length === 0) {
       return res.status(400).json({
         status: false,
-        msg: "No Data Found"
+        msg: "No Data Found",
       });
     }
 
@@ -289,9 +281,8 @@ export const getAllProductController = async (req, res) => {
       totalPages,
       prevPage,
       nextPage,
-      result: rows
+      result: rows,
     });
-
   } catch (e) {
     console.error(`Something Went Wrong => ${e.message}`);
     return res.status(500).json({
@@ -301,56 +292,53 @@ export const getAllProductController = async (req, res) => {
   }
 };
 
-export const getCartController=async(req,res)=>{
-  const uid=req.body.uid;
-  try{
-    const query=`SELECT * FROM products p LEFT JOIN user_products up ON p.pid=up.pid AND up.uid=$1 GROUP BY p.pid ORDER BY p.pid`;
-    const { rows }=await pool.query(query,[uid]);
-    if(rows.length===0){
+export const getCartController = async (req, res) => {
+  const uid = req.body.uid;
+  try {
+    const query = `SELECT * FROM products p LEFT JOIN user_products up ON p.pid=up.pid AND up.uid=$1 GROUP BY p.pid ORDER BY p.pid`;
+    const { rows } = await pool.query(query, [uid]);
+    if (rows.length === 0) {
       return res.status(400).json({
-        status:false,
-        msg:"No Product Found !!!"
+        status: false,
+        msg: "No Product Found !!!",
       });
     }
     return res.status(200).json({
-      status:true,
-      msg:"Fetch Cart Successfully",
-      result:rows
+      status: true,
+      msg: "Fetch Cart Successfully",
+      result: rows,
     });
-  }
-  catch(e){
+  } catch (e) {
     console.log(`Error Cart Controller Message=>${e.message}`);
     return res.status(500).json({
-      status:false,
-      msg:"Internal Server Error"
+      status: false,
+      msg: "Internal Server Error",
     });
   }
 };
 
-export const getProductByIdController=async(req,res)=>{
+export const getProductByIdController = async (req, res) => {
   try {
-    const id=req.body.id;
-    const query=`SELECT * from products WHERE fid=$1 ORDER BY RANDOM()`;
-    const {rows}=await pool.query(query,[id]);
-    if(rows.length===0){
+    const id = req.body.id;
+    const query = `SELECT * from products WHERE fid=$1 ORDER BY RANDOM()`;
+    const { rows } = await pool.query(query, [id]);
+    if (rows.length === 0) {
       return res.status(404).json({
-        status:false,
-        msg:'No Data Found !!!'
+        status: false,
+        msg: "No Data Found !!!",
       });
     }
     return res.status(200).json({
-      status:true,
-      msg:'Fetch Product Successfully !!!',
-      result:rows
+      status: true,
+      msg: "Fetch Product Successfully !!!",
+      result: rows,
     });
   } catch (error) {
     console.log(`Error in product By Id=>${error.message}`);
-    
+
     return res.status(500).json({
-      status:false,
-      msg:`Internal Server Error ${error.message}`
+      status: false,
+      msg: `Internal Server Error ${error.message}`,
     });
   }
 };
-
-
