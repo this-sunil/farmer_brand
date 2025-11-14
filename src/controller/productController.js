@@ -130,7 +130,7 @@ export const addQtyController = async (req, res) => {
       });
 
     } else {
-      // Insert new row
+     
       const insertQuery = `
         INSERT INTO users_product(uid, pid, qty) 
         VALUES($1, $2, $3) 
