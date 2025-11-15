@@ -1,6 +1,6 @@
 import express from "express";
 import upload from "../middleware/upload.js";
-import { addProductController, addQtyController, deleteProductController, getAllProductController, getProductByIdController, updateProductController } from "../controller/productController.js";
+import { addProductController, addQtyController, deleteProductController, getAllProductController, cartController, getProductByIdController, updateProductController } from "../controller/productController.js";
 import productValidator from "../middleware/validator.js";
 const router=express.Router();
 router.post("/addProduct",productValidator,upload.single('photo'),addProductController);
@@ -9,4 +9,5 @@ router.post("/updateProduct",upload.single('photo'),updateProductController);
 router.post("/deleteProduct",upload.none(),deleteProductController);
 router.post("/getAllProducts",upload.none(),getAllProductController);
 router.post("/getProductById",upload.none(),getProductByIdController);
+router.post("/cart",upload.none(),cartController);
 export default router;

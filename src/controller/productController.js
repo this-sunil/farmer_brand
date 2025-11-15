@@ -342,3 +342,36 @@ export const getProductByIdController = async (req, res) => {
     });
   }
 };
+
+export const cartController=async (req,res)=> {
+  const uid=req.body.uid;
+  try {
+    const existUser=`SELECT * FROM users WHERE id=$1`;
+    const {result}=await pool.query(existUser,[uid]);
+    if(result.rows.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:"User doesn't exists !!!"
+      });
+    }
+    const query=`SELECT * from product p LEFT JOIN user_product up ON p.pid=up.pid AND up.uid=$1`;
+    const {rows}=await pool.query(query,[uid]);
+    if(rows.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:"No Items Found !!!"
+      });
+    }
+    return res.status(200).json({
+      status:true,
+      msg:"Fetch Product Successfully",
+      result:rows
+    });
+  } catch (err) {
+    console.log(`Error in cart Controller`);
+    return res.status(500).json({
+      status:false,
+      msg:`Internal Server Error ${err.message}`
+    });
+  }
+};
