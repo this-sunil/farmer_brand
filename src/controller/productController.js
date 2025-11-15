@@ -347,7 +347,7 @@ export const cartController=async (req,res)=> {
   const uid=req.body.uid;
   try {
     const existUser=`SELECT * FROM users WHERE id=$1`;
-    const {result}=await pool.query(existUser,[uid]);
+    const result=await pool.query(existUser,[uid]);
     if(result.rows.length===0){
       return res.status(404).json({
         status:false,
