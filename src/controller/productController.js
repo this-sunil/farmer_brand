@@ -354,7 +354,7 @@ export const cartController=async (req,res)=> {
         msg:"User doesn't exists !!!"
       });
     }
-    const query=`SELECT pid,product_title,product_desc,product_photo,product_price,product_qty,product_stock,product_weight from products p LEFT JOIN users_product up ON p.pid=up.pid AND up.uid=$1`;
+    const query=`SELECT p.pid,p.product_title,p.product_desc,p.product_photo,p.product_price,p.product_qty,p.product_stock,p.product_weight from products p LEFT JOIN users_product up ON p.pid=up.pid AND up.uid=$1`;
     const {rows}=await pool.query(query,[uid]);
     if(rows.length===0){
       return res.status(404).json({
