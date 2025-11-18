@@ -350,7 +350,7 @@ LEFT JOIN users_product up
    AND up.uid = $2
 WHERE p.fid = $1
 ORDER BY p.fid;`;
-    const { rows } = await pool.query(query, [uid, fid]);
+    const { rows } = await pool.query(query, [fid, uid]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
