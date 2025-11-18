@@ -269,8 +269,7 @@ GROUP BY f.fid, f.name, f.city, f.pin, f.photo
 ORDER BY f.fid, f.name
 LIMIT $2 OFFSET $3;
 `;
-
-    const { rows } = await pool.query(query, [limit, offset]);
+    const { rows } = await pool.query(query, [uid,limit, offset]);
 
     if (rows.length === 0) {
       return res.status(400).json({
@@ -289,7 +288,7 @@ LIMIT $2 OFFSET $3;
       totalPages,
       prevPage,
       nextPage,
-      result: rows,
+      result: rows
     });
   } catch (e) {
     console.error(`Something Went Wrong => ${e.message}`);
