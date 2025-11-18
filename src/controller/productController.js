@@ -326,7 +326,7 @@ export const getCartController = async (req, res) => {
 
 export const getProductByIdController = async (req, res) => {
   try {
-    const {fid,uid} = req.body;
+    const {uid,fid} = req.body;
     if(!uid || !fid){
       return res.status(404).json({
         status:false,
