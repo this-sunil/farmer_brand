@@ -68,7 +68,7 @@ export const loginController = async (req, res) => {
     console.log(`Login Controller Error=>${error.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error`
+      msg: `Internal Server Error ${error.message}`
     });
   }
 };
