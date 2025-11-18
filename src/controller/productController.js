@@ -326,9 +326,15 @@ export const getCartController = async (req, res) => {
 
 export const getProductByIdController = async (req, res) => {
   try {
-    const id = req.body.id;
-    const query = `SELECT * from products WHERE fid=$1 ORDER BY RANDOM()`;
-    const { rows } = await pool.query(query, [id]);
+    const {fid,uid} = req.body;
+    if(!uid || !fid){
+      return res.status(404).json({
+        status:false,
+        msg:"Missing required param"
+      });
+    }
+    const query = `SELECT * from products p LEFT JOIN users_product up ON p.fid=$1 AND up.uid=$2  ORDER BY fid`;
+    const { rows } = await pool.query(query, [uid,fid]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
