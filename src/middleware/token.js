@@ -14,7 +14,6 @@ export const verifyToken=async(req,res,next)=>{
         const decode=jwt.verify(token,process.env.SECRET_KEY,{algorithms:"HS256"});
         req.user=decode;
         next();
-
     } catch (error) {
         return res.status(500).json({
             status:false,
