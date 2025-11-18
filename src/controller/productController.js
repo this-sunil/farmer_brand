@@ -224,7 +224,15 @@ export const updateProductController = async (req, res) => {
 
 export const getAllProductController = async (req, res) => {
   try {
+    const uid=req.body.uid;
     const page = Number(req.body.page) || 1;
+    if(!uid || !page){
+      return res.status(404).json({
+        status:false,
+        msg:'Missing params'
+      });
+    }
+    
     const limit = 10;
     const offset = (page - 1) * limit;
     const countQuery = `SELECT COUNT(DISTINCT fid) AS total FROM farmer;`;
@@ -256,10 +264,10 @@ SELECT
     ) AS products
 FROM farmer f
 LEFT JOIN products p ON f.fid = p.fid
-LEFT JOIN users_product up ON p.pid = up.pid
+LEFT JOIN users_product up ON p.pid = up.pid AND up.uid=$1
 GROUP BY f.fid, f.name, f.city, f.pin, f.photo
 ORDER BY f.fid, f.name
-LIMIT $1 OFFSET $2;
+LIMIT $2 OFFSET $3;
 `;
 
     const { rows } = await pool.query(query, [limit, offset]);
