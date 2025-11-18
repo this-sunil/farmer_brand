@@ -224,15 +224,15 @@ export const updateProductController = async (req, res) => {
 
 export const getAllProductController = async (req, res) => {
   try {
-    const uid=req.body.uid;
+    const uid = req.body.uid;
     const page = Number(req.body.page) || 1;
-    if(!uid || !page){
+    if (!uid || !page) {
       return res.status(404).json({
-        status:false,
-        msg:'Missing params'
+        status: false,
+        msg: "Missing params",
       });
     }
-    
+
     const limit = 10;
     const offset = (page - 1) * limit;
     const countQuery = `SELECT COUNT(DISTINCT fid) AS total FROM farmer;`;
@@ -269,7 +269,7 @@ GROUP BY f.fid, f.name, f.city, f.pin, f.photo
 ORDER BY f.fid, f.name
 LIMIT $2 OFFSET $3;
 `;
-    const { rows } = await pool.query(query, [uid,limit, offset]);
+    const { rows } = await pool.query(query, [uid, limit, offset]);
 
     if (rows.length === 0) {
       return res.status(400).json({
@@ -288,7 +288,7 @@ LIMIT $2 OFFSET $3;
       totalPages,
       prevPage,
       nextPage,
-      result: rows
+      result: rows,
     });
   } catch (e) {
     console.error(`Something Went Wrong => ${e.message}`);
@@ -326,15 +326,31 @@ export const getCartController = async (req, res) => {
 
 export const getProductByIdController = async (req, res) => {
   try {
-    const {uid,fid} = req.body;
-    if(!uid || !fid){
+    const { uid, fid } = req.body;
+    if (!uid || !fid) {
       return res.status(404).json({
-        status:false,
-        msg:"Missing required param"
+        status: false,
+        msg: "Missing required param",
       });
     }
-    const query = `SELECT * from products p LEFT JOIN users_product up ON p.fid=$1 AND up.uid=$2 ORDER BY fid`;
-    const { rows } = await pool.query(query, [uid,fid]);
+
+    const query = `SELECT 
+    p.pid,
+    p.product_title,
+    p.product_desc,
+    p.product_photo,
+    p.product_price,     
+    p.product_qty,
+    p.product_stock,
+    p.product_weight,
+    COALESCE(up.qty, 0)
+FROM products p
+LEFT JOIN users_product up 
+    ON p.pid = up.pid 
+   AND up.uid = $2
+WHERE p.fid = $1
+ORDER BY p.fid;`;
+    const { rows } = await pool.query(query, [uid, fid]);
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
@@ -356,35 +372,35 @@ export const getProductByIdController = async (req, res) => {
   }
 };
 
-export const cartController=async (req,res)=> {
-  const uid=req.body.uid;
+export const cartController = async (req, res) => {
+  const uid = req.body.uid;
   try {
-    const existUser=`SELECT * FROM users WHERE id=$1`;
-    const result=await pool.query(existUser,[uid]);
-    if(result.rows.length===0){
+    const existUser = `SELECT * FROM users WHERE id=$1`;
+    const result = await pool.query(existUser, [uid]);
+    if (result.rows.length === 0) {
       return res.status(404).json({
-        status:false,
-        msg:"User doesn't exists !!!"
+        status: false,
+        msg: "User doesn't exists !!!",
       });
     }
-    const query=`SELECT p.pid,p.product_title,p.product_desc,p.product_photo,p.product_price,up.qty AS product_qty,p.product_stock,p.product_weight from products p LEFT JOIN users_product up ON p.pid=up.pid AND up.uid=$1`;
-    const {rows}=await pool.query(query,[uid]);
-    if(rows.length===0){
+    const query = `SELECT p.pid,p.product_title,p.product_desc,p.product_photo,p.product_price,up.qty AS product_qty,p.product_stock,p.product_weight from products p LEFT JOIN users_product up ON p.pid=up.pid AND up.uid=$1`;
+    const { rows } = await pool.query(query, [uid]);
+    if (rows.length === 0) {
       return res.status(404).json({
-        status:false,
-        msg:"No Items Found !!!"
+        status: false,
+        msg: "No Items Found !!!",
       });
     }
     return res.status(200).json({
-      status:true,
-      msg:"Fetch Product Successfully",
-      result:rows
+      status: true,
+      msg: "Fetch Product Successfully",
+      result: rows,
     });
   } catch (err) {
     console.log(`Error in cart Controller`);
     return res.status(500).json({
-      status:false,
-      msg:`Internal Server Error ${err.message}`
+      status: false,
+      msg: `Internal Server Error ${err.message}`,
     });
   }
 };
