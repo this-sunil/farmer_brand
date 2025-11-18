@@ -340,7 +340,7 @@ export const getProductByIdController = async (req, res) => {
     p.product_desc,
     p.product_photo,
     p.product_price,     
-    COALESCE(0,up.qty),
+    up.qty AS product_qty,
     p.product_stock,
     p.product_weight,
     
