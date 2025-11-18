@@ -342,7 +342,7 @@ export const getProductByIdController = async (req, res) => {
     p.product_price,     
     up.qty AS product_qty,
     p.product_stock,
-    p.product_weight,
+    p.product_weight
     
 FROM products p
 LEFT JOIN users_product up 
