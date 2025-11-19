@@ -59,7 +59,7 @@ async function sendNotification(token, title, body, data = {}) {
     throw error;
   }
 }
-app.post('/sendNotification', async (req, res) => {
+app.post('/api/sendNotification', async (req, res) => {
   const { token, title, body, data, photo } = req.body; // photo optional
 
   if (!token || !title || !body) {
