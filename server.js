@@ -44,45 +44,7 @@ app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
 app.use("/api",farmerRoute);
 app.use("/api",productRoute);
-async function sendNotification(token, title, body, data = {}) {
-  try {
-    const message = {
-      token: token,
-      notification: { title, body },
-      data: Object.fromEntries(
-        Object.entries(data || {}).map(([k, v]) => [k, String(v)])
-      )
-    };
-    const response = await admin.messaging().send(message);
 
-    return response;
-  } catch (error) {
-    throw error;
-  }
-}
-app.post('/api/sendNotification', async (req, res) => {
-  const { token, title, body, data, photo } = req.body; // photo optional
-
-  if (!token || !title || !body) {
-    return res.status(400).json({ error: 'token, title, and body are required!' });
-  }
-
-  try {
-   
-    await sendNotification(token, title, body, data || {});
-
-    await axios.post(`${process.env.BASE_URL}/api/addNotification`, {
-      title: title,
-      subtitle: body,
-      photo: photo || ''
-    });
-
-    res.status(200).json({ status: true, msg: 'Notification sent and logged!' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ status: false, msg: `Internal Server Error ${err.message}` });
-  }
-});
 process.on('exit', (code) => {
   console.log('Process exited with code:', code);
 });

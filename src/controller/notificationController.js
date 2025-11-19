@@ -102,3 +102,20 @@ export const deleteNotificationController=async (req,res) => {
     });
   }
 };
+
+export const sendNotification=async(token, title, body, data = {}) =>{
+  try {
+    const message = {
+      token: token,
+      notification: { title, body },
+      data: Object.fromEntries(
+        Object.entries(data || {}).map(([k, v]) => [k, String(v)])
+      )
+    };
+    const response = await admin.messaging().send(message);
+
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
