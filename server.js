@@ -9,6 +9,7 @@ import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import admin from "firebase-admin";
+
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -19,11 +20,10 @@ cors({
     origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
-const serviceAccount = "./config/serviceAccount.json";
-
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert("./config/serviceAccount.json")
 });
+
 
 
 
