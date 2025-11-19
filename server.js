@@ -8,8 +8,7 @@ import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
-import admin from "firebase-admin";
-
+import { initializeApp,applicationDefault } from "firebase-admin/app";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -20,11 +19,11 @@ cors({
     origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
-admin.initializeApp({
-  credential: admin.credential.cert("./config/serviceAccount.json")
+
+initializeApp({
+   credential: applicationDefault(),
+  projectId: 'farmer-brand',
 });
-
-
 
 
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
