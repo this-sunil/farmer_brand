@@ -19,7 +19,7 @@ cors({
     origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
-const serviceAccount = path.join(process.cwd(),"config/serviceAccount.json");
+const serviceAccount = "./config/serviceAccount.json";
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
