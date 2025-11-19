@@ -9,7 +9,7 @@ import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import { initializeApp } from "firebase-admin/app";
-import serviceAccount from "./config/serviceAccount.json" assert { type: "json" };
+import serviceAccount from "./config/serviceAccount.json";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
