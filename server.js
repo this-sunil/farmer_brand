@@ -8,7 +8,7 @@ import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
-
+import admin from "firebase-admin";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -19,6 +19,49 @@ cors({
     origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
+const serviceAccountPath = path.join(process.cwd(), '../config/serviceAccount.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccountPath)
+});
+async function sendNotification(token, title, body, data = {}) {
+  try {
+    const message = {
+      token: token,
+      notification: { title, body },
+      data: data
+    };
+    const response = await admin.messaging().send(message);
+
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+app.post('/sendNotification', async (req, res) => {
+  const { token, title, body, data, photo } = req.body; // photo optional
+
+  if (!token || !title || !body) {
+    return res.status(400).json({ error: 'token, title, and body are required!' });
+  }
+
+  try {
+   
+    await sendNotification(token, title, body, data || {});
+
+    await axios.post(`${process.env.BASE_URL}/api/addNotification`, {
+      title: title,
+      subtitle: body,
+      photo: photo || ''
+    });
+
+    res.status(200).json({ success: true, message: 'Notification sent and logged!' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.use('/bootstrap-css', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/css')));
