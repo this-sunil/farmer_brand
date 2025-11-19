@@ -8,3 +8,4 @@ node_modules/
 # For example, to ignore log files
 *.log
 
+config/serviceAccount.json
