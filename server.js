@@ -29,7 +29,9 @@ async function sendNotification(token, title, body, data = {}) {
     const message = {
       token: token,
       notification: { title, body },
-      data: data
+      data: Object.fromEntries(
+        Object.entries(data || {}).map(([k, v]) => [k, String(v)])
+      )
     };
     const response = await admin.messaging().send(message);
 
