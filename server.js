@@ -8,8 +8,8 @@ import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
-import { initializeApp,applicationDefault } from "firebase-admin/app";
-
+import { initializeApp } from "firebase-admin/app";
+import serviceAccount from "./config/serviceAccount.json" assert { type: "json" };
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -22,7 +22,7 @@ cors({
 });
 
 initializeApp({
-   credential: applicationDefault(),
+   credential: admin.credential.cert(serviceAccount),
    projectId: 'farmer-brand',
 });
 
