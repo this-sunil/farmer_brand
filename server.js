@@ -19,10 +19,10 @@ cors({
     origin: `https://farmer-brand.vercel.app/`,
     credentials:true
 });
-const serviceAccountPath = path.join(process.cwd(), '../config/serviceAccount.json');
+const serviceAccount = path.join(process.cwd(),"config/serviceAccount.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccountPath)
+  credential: admin.credential.cert(serviceAccount)
 });
 async function sendNotification(token, title, body, data = {}) {
   try {
