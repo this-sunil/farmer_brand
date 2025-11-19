@@ -9,6 +9,7 @@ import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import { initializeApp,applicationDefault } from "firebase-admin/app";
+
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -76,10 +77,10 @@ app.post('/api/sendNotification', async (req, res) => {
       photo: photo || ''
     });
 
-    res.status(200).json({ success: true, message: 'Notification sent and logged!' });
+    res.status(200).json({ status: true, msg: 'Notification sent and logged!' });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false, error: err.message });
+    res.status(500).json({ status: false, msg: `Internal Server Error ${err.message}` });
   }
 });
 process.on('exit', (code) => {
