@@ -1,13 +1,12 @@
-import fs from 'fs';
-import path from 'path';
 import admin from 'firebase-admin';
 
-const serviceAccountPath = path.resolve('./config/serviceAccount.json');
-const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
+if (!admin.apps.length) {
+  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
 
 export function getAdminMessaging() {
   return admin.messaging();
