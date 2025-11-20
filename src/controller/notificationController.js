@@ -104,7 +104,7 @@ export const deleteNotificationController=async (req,res) => {
   }
 };
 
-const sendNotification=async(token, title, body, data = {}) =>{
+export const sendNotification=async(token, title, body, data = {}) =>{
   try {
     const message = {
       token: token,
