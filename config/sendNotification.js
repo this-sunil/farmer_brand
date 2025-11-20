@@ -1,4 +1,4 @@
-import admin from "../config/firebase.js";
+import {adminMessaging} from "../config/firebase.js";
 
 export const sendNotification = async (token, title, body, data = {}) => {
   try {
@@ -10,7 +10,7 @@ export const sendNotification = async (token, title, body, data = {}) => {
       )
     };
 
-    const response = await admin.messaging().send(message);
+    const response = await adminMessaging.send(message);
     return response;
 
   } catch (error) {
