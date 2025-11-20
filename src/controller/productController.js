@@ -95,11 +95,8 @@ export const addQtyController = async (req, res) => {
       });
     }
 
-    // Check if user exists
-    const userResult = await pool.query(
-      `SELECT id FROM users WHERE id = $1`,
-      [uid]
-    );
+    const userQuery = `SELECT * FROM users WHERE id = $1`;
+    const userResult = await pool.query(userQuery, [uid]);
 
     if (userResult.rows.length === 0) {
       return res.status(400).json({
@@ -108,55 +105,45 @@ export const addQtyController = async (req, res) => {
       });
     }
 
-    const checkResult = await pool.query(
-      `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`,
-      [uid, pid]
-    );
-
-    let usersProductRow;
+    const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
+    const checkResult = await pool.query(checkQuery, [uid, pid]);
 
     if (checkResult.rows.length > 0) {
-      const updateResult = await pool.query(
-        `UPDATE users_product 
-         SET qty=$3
-         WHERE uid=$1 AND pid=$2
-         RETURNING *`,
-        [uid, pid, qty]
-      );
+      const updateQuery = `
+        UPDATE users_product 
+        SET qty = $3
+        WHERE uid=$1 AND pid=$2 
+        RETURNING *
+      `;
+      const result = await pool.query(updateQuery, [uid, pid, qty]);
 
-      usersProductRow = updateResult.rows[0];
-
+      return res.status(200).json({
+        status: true,
+        msg: "Product qty updated!",
+        result: result.rows[0],
+      });
     } else {
-      const insertResult = await pool.query(
-        `INSERT INTO users_product(uid, pid, qty)
-         VALUES ($1, $2, $3)
-         RETURNING *`,
-        [uid, pid, qty]
-      );
+      const insertQuery = `
+        INSERT INTO users_product(uid, pid, qty) 
+        VALUES($1, $2, $3) 
+        RETURNING *
+      `;
+      const result = await pool.query(insertQuery, [uid, pid, qty]);
 
-      usersProductRow = insertResult.rows[0];
+      return res.status(200).json({
+        status: true,
+        msg: "Product qty inserted!",
+        result: result.rows[0],
+      });
     }
-
-    const productResult = await pool.query(
-      `SELECT * FROM products WHERE pid = $1`,
-      [pid]
-    );
-
-    return res.status(200).json({
-      status: true,
-      msg: checkResult.rows.length > 0 ? "Product qty updated!" : "Product qty inserted!",
-      result: productResult.rows[0],
-    });
-
   } catch (error) {
     console.log("Something Went Wrong =>", error.message);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error: ${error.message}`,
+      msg: `Internal Server Error ${error.message}`,
     });
   }
 };
-
 
 export const deleteProductController = async (req, res) => {
   try {
