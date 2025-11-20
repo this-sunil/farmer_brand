@@ -10,7 +10,7 @@ export const sendNotification = async (token, title, body, data = {}) => {
       )
     };
 
-    const response = await adminMessaging.send(message);
+    const response = await adminMessaging().send(message);
     return response;
 
   } catch (error) {
