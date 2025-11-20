@@ -1,5 +1,5 @@
-# Ignore .env file
-.env
+
+
 
 # Ignore everything in node_modules folder
 node_modules/
@@ -9,3 +9,5 @@ node_modules/
 *.log
 
 config/serviceAccount.json
+
+.env
