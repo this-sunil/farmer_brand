@@ -1,5 +1,5 @@
 import pool from "../dbHelper/dbHelper.js";
-import axios from "axios";
+
 import { sendNotification } from "../../config/sendNotification.js";
 const createNotificationTable=async()=>{
   const query=`
@@ -121,11 +121,7 @@ export const sendNotificationController = async (req, res) => {
     await sendNotification(token, title, body, data || {});
 
     // Log notification in your backend/database
-    await axios.post(`${process.env.BASE_URL}/api/addNotification`, {
-      title: title,
-      subtitle: body,
-      photo: photo || '',
-    });
+    
 
     return res.status(200).json({
       status: true,
