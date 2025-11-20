@@ -41,9 +41,7 @@ app.use("/api",notificationRoute);
 app.use("/api",farmerRoute);
 app.use("/api",productRoute);
 
-process.on('exit', (code) => {
-  console.log('Process exited with code:', code);
-});
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started Running`);

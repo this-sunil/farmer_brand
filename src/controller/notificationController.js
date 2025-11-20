@@ -1,6 +1,6 @@
 import pool from "../dbHelper/dbHelper.js";
-import admin from "../../config/firebase.js";
 import axios from "axios";
+import { sendNotification } from "../../config/sendNotification.js";
 const createNotificationTable=async()=>{
   const query=`
   CREATE TABLE IF NOT EXISTS notification(
@@ -104,20 +104,8 @@ export const deleteNotificationController=async (req,res) => {
   }
 };
 
-export const sendNotification=async(token, title, body, data = {}) =>{
-  try {
-    const message = {
-      token: token,
-      notification: { title, body },
-      data: JSON.parse(data)
-    };
-    const response = await admin.messaging().send(message);
 
-    return response;
-  } catch (error) {
-    throw error;
-  }
-}
+
 
 export const sendNotificationController = async (req, res) => {
   const { token, title, body, data, photo } = req.body; // photo optional
