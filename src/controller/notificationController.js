@@ -116,11 +116,11 @@ export const sendNotificationController = async (req, res) => {
   }
 
   try {
-    const {messageId}=await sendNotification(token, title, body, data || {});
+    const result=await sendNotification(token, title, body, data || {});
     return res.status(200).json({
       status: true,
       msg: 'Notification sent and logged!',
-      messageId:messageId
+      messageId:result.messageId
     });
   } catch (err) {
     console.error('Notification Error:', err);
