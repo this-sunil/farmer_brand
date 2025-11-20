@@ -6,7 +6,6 @@ export const sendNotification=async(token, title, body, data = {}) =>{
       data: data
     };
     const response = await admin.messaging().send(message);
-
     return response;
   } catch (error) {
     throw error;
