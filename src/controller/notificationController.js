@@ -1,5 +1,6 @@
 import pool from "../dbHelper/dbHelper.js";
-import admin from "firebase-admin";
+import admin from "../../config/firebase.js";
+import axios from "axios";
 const createNotificationTable=async()=>{
   const query=`
   CREATE TABLE IF NOT EXISTS notification(
@@ -103,14 +104,12 @@ export const deleteNotificationController=async (req,res) => {
   }
 };
 
-export const sendNotification=async(token, title, body, data = {}) =>{
+const sendNotification=async(token, title, body, data = {}) =>{
   try {
     const message = {
       token: token,
       notification: { title, body },
-      data: Object.fromEntries(
-        Object.entries(data || {}).map(([k, v]) => [k, String(v)])
-      )
+      data: JSON.parse(data)
     };
     const response = await admin.messaging().send(message);
 
@@ -119,3 +118,38 @@ export const sendNotification=async(token, title, body, data = {}) =>{
     throw error;
   }
 }
+
+export const sendNotificationController = async (req, res) => {
+  const { token, title, body, data, photo } = req.body; // photo optional
+
+  // Validate required fields
+  if (!token || !title || !body) {
+    return res.status(400).json({
+      error: 'token, title, and body are required!',
+    });
+  }
+
+  try {
+    await sendNotification(token, title, body, data || {});
+
+    // Log notification in your backend/database
+    await axios.post(`${process.env.BASE_URL}/api/addNotification`, {
+      title: title,
+      subtitle: body,
+      photo: photo || '',
+    });
+
+    return res.status(200).json({
+      status: true,
+      msg: 'Notification sent and logged!',
+    });
+  } catch (err) {
+    console.error('Notification Error:', err);
+
+    return res.status(500).json({
+      status: false,
+      msg: `Internal Server Error: ${err.message}`,
+    });
+  }
+};
+
