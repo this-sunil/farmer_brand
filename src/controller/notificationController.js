@@ -109,8 +109,6 @@ export const deleteNotificationController=async (req,res) => {
 
 export const sendNotificationController = async (req, res) => {
   const { token, title, body, data, photo } = req.body; // photo optional
-
-  // Validate required fields
   if (!token || !title || !body) {
     return res.status(400).json({
       error: 'token, title, and body are required!',
@@ -119,10 +117,6 @@ export const sendNotificationController = async (req, res) => {
 
   try {
     await sendNotification(token, title, body, data || {});
-
-    // Log notification in your backend/database
-    
-
     return res.status(200).json({
       status: true,
       msg: 'Notification sent and logged!',
