@@ -1,6 +1,6 @@
 import { initializeApp, cert, getApps } from "firebase-admin/app";
 import { getMessaging } from "firebase-admin/messaging";
-import serviceAccount from "./serviceAccount.json" assert { type: "json" };
+import serviceAccount from "./serviceAccount.json";
 
 if (!getApps().length) {
   initializeApp({
