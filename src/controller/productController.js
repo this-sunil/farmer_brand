@@ -138,7 +138,7 @@ export const addQtyController = async (req, res) => {
     }
 
     const productResult = await pool.query(
-      `SELECT * FROM products WHERE id = $1`,
+      `SELECT * FROM products WHERE pid = $1`,
       [pid]
     );
 
