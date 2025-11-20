@@ -15,7 +15,7 @@ dotenv.config({debug:true,encoding:"utf-8",override:true});
 cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
-    origin: `https://farmer-brand.vercel.app/`,
+    origin: `*`,
     credentials:true
 });
 
@@ -31,7 +31,8 @@ app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
-// TODO: Routing banner
+
+// TODO: Routing
 
 app.use("/api",authRoute);
 app.use("/api",postRoute);
@@ -45,5 +46,5 @@ process.on('exit', (code) => {
 });
 
 app.listen(process.env.PORT,()=>{
-    console.log(`Server Started at https://farmer-brand.vercel.app/`);
+    console.log(`Server Started Running`);
 });
