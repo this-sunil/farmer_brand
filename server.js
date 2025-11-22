@@ -8,6 +8,7 @@ import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
+import paymentRoute from "./src/routes/paymentRoute.js"
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -40,6 +41,7 @@ app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
 app.use("/api",farmerRoute);
 app.use("/api",productRoute);
+app.use("/api",paymentRoute);
 
 
 
