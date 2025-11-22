@@ -2,6 +2,7 @@
   "name": "farmer",
   "version": "1.0.0",
   "main": "src/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0",
     "start": "node src/server.js"
