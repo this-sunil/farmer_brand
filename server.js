@@ -41,6 +41,7 @@ app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
 app.use("/api",farmerRoute);
 app.use("/api",productRoute);
+// payment route
 app.use("/api",paymentRoute);
 
 
