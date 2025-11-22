@@ -34,7 +34,7 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.16"
   },
-   "engines": {
+  "engines": {
     "node": "22.x"
   }
 }
