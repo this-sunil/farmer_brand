@@ -10,4 +10,4 @@ router.post("/create", createPayment);
 router.get("/status/:transactionId", checkPaymentStatus);
 router.post("/callback", phonePeCallback);
 
-module.exports = router;
+export default router;
