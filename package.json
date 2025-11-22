@@ -35,6 +35,6 @@
     "tailwindcss": "^4.1.16"
   },
    "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }
