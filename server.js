@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
+import fs from "fs";
 import cors from "cors";
 import authRoute from "./src/routes/authRoute.js";
 import postRoute from "./src/routes/postRoute.js";
@@ -12,7 +13,13 @@ import paymentRoute from "./src/routes/paymentRoute.js";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-dotenv.config({debug:true,encoding:"utf-8",override:true});
+const envPath = path.resolve(process.cwd(), ".env");
+
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath, debug: true, encoding: "utf-8", override: true });
+} else {
+  console.log(".env file not found — skipping dotenv");
+}
 cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
