@@ -12,9 +12,8 @@ import productRoute from "./src/routes/productRoute.js";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-if (process.env.NODE_ENV == "production") {
-  dotenv.config({ debug: true, encoding: "utf-8", override: true });
-}
+dotenv.config({ debug: true, encoding: "utf-8", override: true });
+
 cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
