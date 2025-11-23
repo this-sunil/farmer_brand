@@ -11,7 +11,7 @@ const phonePeBaseUrl = "https://api-preprod.phonepe.com/apis/hermes"; // sandbox
 export const createPayment = async (req, res) => {
   try {
     const { amount, userId, mobileNumber } = req.body;
-    const transactionId=Date.now();
+    const transactionId=`TXN${Date.now()}`;
     const payload = {
       merchantId,
       merchantTransactionId: transactionId,
