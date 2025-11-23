@@ -5,9 +5,10 @@ import {
   checkPaymentStatus,
   phonePeCallback
 } from "../controller/paymentController.js";
+import upload from '../middleware/upload.js';
 
-router.post("/create", createPayment);
-router.get("/status/:transactionId", checkPaymentStatus);
-router.post("/callback", phonePeCallback);
+router.post("/create", upload.none(),createPayment);
+router.get("/status/:transactionId",upload.none(), checkPaymentStatus);
+router.post("/callback",upload.none(), phonePeCallback);
 
 export default router;
