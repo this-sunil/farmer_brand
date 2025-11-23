@@ -12,7 +12,7 @@ import paymentRoute from "./src/routes/paymentRoute.js";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-dotenv.config({ debug: false, encoding: "utf-8", override: true });
+dotenv.config({ debug: false, encoding: "utf-8", override: true ,quiet:true});
 
 cors({
     methods:["GET","POST","PUT","DELETE"],
