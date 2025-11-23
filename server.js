@@ -12,7 +12,7 @@ import productRoute from "./src/routes/productRoute.js";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-dotenv.config({ debug: true, encoding: "utf-8", override: true });
+dotenv.config({ debug: false, encoding: "utf-8", override: true });
 
 cors({
     methods:["GET","POST","PUT","DELETE"],
@@ -44,8 +44,6 @@ app.use("/api",farmerRoute);
 app.use("/api",productRoute);
 
 //app.use("/api",paymentRoute);
-
-
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started Running`);
