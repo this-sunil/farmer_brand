@@ -11,7 +11,13 @@ const phonePeBaseUrl = "https://api-preprod.phonepe.com/apis/hermes"; // sandbox
 export const createPayment = async (req, res) => {
   try {
     const { amount, userId, mobileNumber } = req.body;
-    const transactionId=`TXN${Date.now()}`;
+
+    if (!amount || !userId || !mobileNumber) {
+      return res.status(400).json({ success: false, msg: "Missing fields" });
+    }
+
+    const transactionId = `TXN${Date.now()}`;
+
     const payload = {
       merchantId,
       merchantTransactionId: transactionId,
@@ -21,7 +27,7 @@ export const createPayment = async (req, res) => {
       redirectUrl: "https://your-domain.com/payment-done",
       callbackUrl: "https://your-domain.com/api/payment/callback",
       mobileNumber,
-      paymentInstrument: { type: "PAY_PAGE" }
+      paymentInstrument: { type: "PAY_PAGE" },
     };
 
     const payloadBase64 = Buffer.from(JSON.stringify(payload)).toString("base64");
@@ -44,14 +50,15 @@ export const createPayment = async (req, res) => {
       success: true,
       payloadBase64,
       xVerify,
-      phonepe: phonepeResponse.data
+      phonepe: phonepeResponse.data,
     });
 
   } catch (err) {
-    console.log(err);
+    console.error("PHONEPE ERROR:", err?.response?.data || err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
+
 
 
 // TODO:check payment status
