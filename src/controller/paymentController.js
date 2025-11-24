@@ -24,8 +24,8 @@ export const createPayment = async (req, res) => {
       merchantUserId: userId,
       amount: amount * 100,
       redirectMode: "REDIRECT",
-      redirectUrl: "https://your-domain.com/payment-done",
-      callbackUrl: "https://your-domain.com/api/payment/callback",
+      redirectUrl: "https://farmer-brand.vercel.app/",
+      callbackUrl: "https://farmer-brand.vercel.app/",
       mobileNumber,
       paymentInstrument: { type: "PAY_PAGE" },
     };
