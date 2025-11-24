@@ -2,8 +2,15 @@ import axios from "axios";
 import { generateXVerify } from "../../config/xVerify.js";
 
 // TODO: generate phone pe transaction 
-const merchantId = "PGTESTMERCHANT123";
-const saltKey = "a12b34c56d78e90f12a34b56c78d90e1";
+
+// Source - https://stackoverflow.com/a
+// Posted by deadcoder0904
+// Retrieved 2025-11-24, License - CC BY-SA 4.0
+
+
+
+const merchantId = "M23Q1F4U5GOWS";
+const saltKey = "MjMwMWQ1YTYtOTNhOC00YzRhLTg1ODItZDE2Mzk3OGJhZWJj";
 const saltIndex = "1";
 const phonePeBaseUrl = "https://api-preprod.phonepe.com/apis/hermes"; // sandbox
 

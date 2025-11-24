@@ -1,6 +1,7 @@
 import crypto from "crypto";
 
-const saltKey = "a12b34c56d78e90f12a34b56c78d90e1";
+
+const saltKey = "MjMwMWQ1YTYtOTNhOC00YzRhLTg1ODItZDE2Mzk3OGJhZWJj";
 const saltIndex = "1";
 
 export const generateXVerify = (payloadBase64, endpoint) => {
