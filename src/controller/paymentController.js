@@ -9,9 +9,9 @@ import { generateXVerify } from "../../config/xVerify.js";
 
 
 
-const merchantId = "M23Q1F4U5GOWS";
-const saltKey = "MjMwMWQ1YTYtOTNhOC00YzRhLTg1ODItZDE2Mzk3OGJhZWJj";
-const saltIndex = "1";
+const merchantId = process.env.PHONE_MERCHANT;
+const saltKey = process.env.PHONE_SALT_KEY;
+const saltIndex = process.env.PHONE_SALT_INDEX;
 const phonePeBaseUrl = "https://api-preprod.phonepe.com/apis/hermes"; // sandbox
 
 // TODO:create payment
@@ -39,7 +39,7 @@ export const createPayment = async (req, res) => {
 
     const payloadBase64 = Buffer.from(JSON.stringify(payload)).toString("base64");
 
-    const xVerify = generateXVerify(payloadBase64, "/pg/v1/pay");
+    const xVerify = generateXVerify(payloadBase64, "/pg/v1/pay",saltKey,saltIndex);
     console.log(`Verify=>${xVerify}`);
     
     const resp = await axios.post(
