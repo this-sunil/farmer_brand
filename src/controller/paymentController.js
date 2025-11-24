@@ -26,14 +26,14 @@ export const createPayment = async (req, res) => {
     const transactionId = `TXN${Date.now().toLocaleString()}`;
 
     const payload = {
-      merchantId,
+      merchantId:merchantId,
       merchantTransactionId: transactionId,
       merchantUserId: userId,
       amount: amount * 100,
       redirectMode: "REDIRECT",
       redirectUrl: "https://farmer-brand.vercel.app/",
       callbackUrl: "https://farmer-brand.vercel.app/",
-      mobileNumber,
+      mobileNumber:mobileNumber,
       paymentInstrument: { type: "PAY_PAGE" },
     };
 
