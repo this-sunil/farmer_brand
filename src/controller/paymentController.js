@@ -33,7 +33,8 @@ export const createPayment = async (req, res) => {
     const payloadBase64 = Buffer.from(JSON.stringify(payload)).toString("base64");
 
     const xVerify = generateXVerify(payloadBase64, "/pg/v1/pay");
-
+    console.log(`Verify=>${xVerify}`);
+    
     const resp = await axios.post(
       `${phonePeBaseUrl}/pg/v1/pay`,
       { request: payloadBase64 },
