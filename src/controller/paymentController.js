@@ -10,8 +10,6 @@ import { generateXVerify } from "../../config/xVerify.js";
 
 
 const merchantId = "M23Q1F4U5GOWS";
-const saltKey = "MjMwMWQ1YTYtOTNhOC00YzRhLTg1ODItZDE2Mzk3OGJhZWJj";
-const saltIndex = "1";
 const phonePeBaseUrl = "https://api-preprod.phonepe.com/apis/hermes"; // sandbox
 
 // TODO:create payment
