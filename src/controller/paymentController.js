@@ -34,7 +34,7 @@ export const createPayment = async (req, res) => {
 
     const xVerify = generateXVerify(payloadBase64, "/pg/v1/pay");
 
-    const phonepeResponse = await axios.post(
+    const resp = await axios.post(
       `${phonePeBaseUrl}/pg/v1/pay`,
       { request: payloadBase64 },
       {
@@ -45,13 +45,21 @@ export const createPayment = async (req, res) => {
         }
       }
     );
-
-    res.status(200).json({
+    if(resp.status==200){
+    return res.status(200).json({
       success: true,
       payloadBase64,
       xVerify,
-      phonepe: phonepeResponse.data,
+      phonepe: resp.data,
     });
+  }
+  else{
+    return res.status(404).json({
+      status:false,
+      msg:"Something Went Wrong"
+    });
+  }
+
 
   } catch (err) {
     console.error("PHONEPE ERROR:", err?.response?.data || err);
@@ -76,7 +84,10 @@ export const checkPaymentStatus = async (req, res) => {
       }
     });
 
-    res.json(resp.data);
+    res.status(200).json({
+      status:true,
+      result:resp.data
+    });
 
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
