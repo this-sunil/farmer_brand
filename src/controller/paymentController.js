@@ -16,7 +16,7 @@ export const createPayment = async (req, res) => {
       return res.status(400).json({ success: false, msg: "Missing fields" });
     }
 
-    const transactionId = `TXN${Date.now()}`;
+    const transactionId = `TXN${Date.now().toLocaleString()}`;
 
     const payload = {
       merchantId,
