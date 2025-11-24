@@ -1,5 +1,6 @@
 import axios from "axios";
 import { generateXVerify } from "../../config/xVerify.js";
+import { response } from "express";
 
 // TODO: generate phone pe transaction 
 
@@ -53,25 +54,20 @@ export const createPayment = async (req, res) => {
         }
       }
     );
-    if(resp.status==200){
+
     return res.status(200).json({
       success: true,
       payloadBase64,
       xVerify,
       phonepe: resp.data,
     });
-  }
-  else{
-    return res.status(404).json({
-      status:false,
-      msg:"Something Went Wrong"
-    });
-  }
+  
+ 
 
 
   } catch (err) {
     console.error("PHONEPE ERROR:", err?.response?.data || err);
-    res.status(500).json({ success: false, error: err.message });
+    return res.status(500).json(err?.response?.data);
   }
 };
 
