@@ -4,7 +4,7 @@ import express from "express";
 
 const app = express();
 
-// Use memory storage
+
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Cloudinary config
