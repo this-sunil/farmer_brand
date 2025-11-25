@@ -106,7 +106,10 @@ export const addQtyController = async (req, res) => {
         msg: "User doesn't exist",
       });
     }
-if(qty===0){
+    console.log(`Qty =>${qty}`);
+    
+   if(qty===0){
+    console.log(`Qty =>${qty}`);
      const query=`DELETE users_product FROM uid=$1 AND pid=$2`;
      const {rows}=await pool.query(query,[uid,pid]);
      if(rows.length>0){
