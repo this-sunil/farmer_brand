@@ -108,7 +108,7 @@ export const addQtyController = async (req, res) => {
     }
     console.log(`Qty =>${qty}`);
     
-   if(qty===0){
+   if(req.body.qty===0){
      console.log(`Qty =>${qty}`);
      const query=`DELETE FROM users_product WHERE uid=$1 AND pid=$2`;
      const {rows}=await pool.query(query,[uid,pid]);
@@ -119,6 +119,7 @@ export const addQtyController = async (req, res) => {
       });
      }
     }
+    else{
     const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
     const checkResult = await pool.query(checkQuery, [uid, pid]);
 
@@ -150,6 +151,7 @@ export const addQtyController = async (req, res) => {
         result: result.rows[0],
       });
     }
+  }
   } catch (error) {
     console.log("Something Went Wrong =>", error.message);
     return res.status(500).json({
