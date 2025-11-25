@@ -109,7 +109,7 @@ export const addQtyController = async (req, res) => {
     console.log(`Qty =>${req.body.qty === 0}`);
     const quantity=Number(qty);
    if(quantity === 0){
-     console.log(`Qty =>${quantity}`);
+     console.log(`Delete Qty =>${quantity}`);
      const query=`DELETE FROM users_product WHERE uid=$1 AND pid=$2`;
      const {rows}=await pool.query(query,[uid,pid]);
      if(rows.length>0){
