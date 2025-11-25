@@ -95,6 +95,17 @@ export const addQtyController = async (req, res) => {
       });
     }
 
+    if(qty==0){
+     const query=`DELETE products FROM pid=$1 AND uid=$2`;
+     const {rows}=await pool.query(query);
+     if(rows.length>0){
+      return res.status(200).json({
+        status:false,
+        msg:"Delete Product Successfully"
+      });
+     }
+    }
+
     const userQuery = `SELECT * FROM users WHERE id = $1`;
     const userResult = await pool.query(userQuery, [uid]);
 
@@ -375,6 +386,7 @@ ORDER BY p.fid;`;
 export const cartController = async (req, res) => {
   const uid = req.body.uid;
   try {
+
     const existUser = `SELECT * FROM users WHERE id=$1`;
     const result = await pool.query(existUser, [uid]);
     if (result.rows.length === 0) {
