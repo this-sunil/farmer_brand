@@ -36,9 +36,9 @@ CREATE TABLE IF NOT EXISTS users_product (
 productTable();
 
 export const addProductController = async (req, res) => {
-  const { title, description, price, qty, stock, weight, fid } = req.body;
+  const { title, description, price, stock, weight, fid } = req.body;
   try {
-    if (!title || !description || !price || !qty || !stock || !weight || !fid) {
+    if (!title || !description || !price || !stock || !weight || !fid) {
       return res.status(404).json({
         status: false,
         msg: "Missing Params",
@@ -49,17 +49,16 @@ export const addProductController = async (req, res) => {
     product_desc,
     product_photo,
     product_price,
-    product_qty,
     product_stock,
     product_weight,
-    fid) VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`;
+    fid) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
     const photo = req.file ? req.file.path : "";
     const { rows } = await pool.query(query, [
       title,
       description,
       photo,
       price,
-      qty,
+      
       stock,
       weight,
       fid,
