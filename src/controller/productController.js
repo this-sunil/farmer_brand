@@ -112,12 +112,17 @@ export const addQtyController = async (req, res) => {
      console.log(`Delete Qty =>${quantity}`);
      const query=`DELETE FROM users_product WHERE uid=$1 AND pid=$2 RETURNING *`;
      const {rows}=await pool.query(query,[uid,pid]);
-     if(rows.length>0){
+     if(rows.length===0){
+      return res.status(404).json({
+        status:false,
+        msg:"No Product Found !!!"
+      });
+     }
       return res.status(200).json({
         status:true,
         msg:"Delete Product Successfully"
       });
-     }
+     
     }
     else{
     const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
