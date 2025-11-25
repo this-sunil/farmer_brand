@@ -95,7 +95,7 @@ export const addQtyController = async (req, res) => {
       });
     }
 
-    if(qty==0){
+    if(qty===0){
      const query=`DELETE products FROM pid=$1 AND uid=$2`;
      const {rows}=await pool.query(query);
      if(rows.length>0){
