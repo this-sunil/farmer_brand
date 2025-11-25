@@ -58,7 +58,6 @@ export const addProductController = async (req, res) => {
       description,
       photo,
       price,
-      
       stock,
       weight,
       fid,
