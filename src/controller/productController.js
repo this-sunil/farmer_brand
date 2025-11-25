@@ -95,16 +95,7 @@ export const addQtyController = async (req, res) => {
       });
     }
 
-    if(qty===0){
-     const query=`DELETE users_product FROM uid=$1 AND pid=$2`;
-     const {rows}=await pool.query(query,[uid,pid]);
-     if(rows.length>0){
-      return res.status(200).json({
-        status:false,
-        msg:"Delete Product Successfully"
-      });
-     }
-    }
+    
 
     const userQuery = `SELECT * FROM users WHERE id = $1`;
     const userResult = await pool.query(userQuery, [uid]);
@@ -115,7 +106,16 @@ export const addQtyController = async (req, res) => {
         msg: "User doesn't exist",
       });
     }
-
+if(qty===0){
+     const query=`DELETE users_product FROM uid=$1 AND pid=$2`;
+     const {rows}=await pool.query(query,[uid,pid]);
+     if(rows.length>0){
+      return res.status(200).json({
+        status:false,
+        msg:"Delete Product Successfully"
+      });
+     }
+    }
     const checkQuery = `SELECT * FROM users_product WHERE uid=$1 AND pid=$2`;
     const checkResult = await pool.query(checkQuery, [uid, pid]);
 
