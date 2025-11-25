@@ -1,5 +1,5 @@
 import multer from "multer";
-import { CloudinaryStorage } from "multer-cloudinary";
+import { CloudinaryStorage } from "@fluidjs/multer-cloudinary";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
