@@ -9,14 +9,10 @@ cloudinary.config({
 });
 
 const storage = new multerCloudinary({
-  cloudinary: {
-    cloudinary: cloudinary,
-  },
-  params: {
-    folder: "uploads",
-    allowed_formats: ["jpg", "jpeg", "png"],
-    transformation: [{ width: 500, height: 500, crop: "limit" }],
-  },
+  cloudinary: cloudinary,
+  folder: "uploads",
+  allowed_formats: ["jpg", "jpeg", "png"],
+  transformation: [{ width: 500, height: 500, crop: "limit" }],
 });
 const upload = multer({ storage: storage });
 export default upload;
