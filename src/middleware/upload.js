@@ -1,5 +1,5 @@
 import multer from "multer";
-import multerCloudinary from "multer-cloudinary";
+import CloudinaryStorage from "multer-cloudinary";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
@@ -8,7 +8,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const storage = new multerCloudinary({
+const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: "uploads",                  
