@@ -8,8 +8,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const storage = new multerCloudinary({
-  cloudinary: cloudinary,
+const storage =  multerCloudinary({
+  cloudinary: {
+   cloudinary: cloudinary
+  },
   folder: "uploads",
   allowed_formats: ["jpg", "jpeg", "png"],
   transformation: [{ width: 500, height: 500, crop: "limit" }],
