@@ -8,7 +8,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const storage = multerCloudinary({
+const storage =new multerCloudinary({
   cloudinary: {
     cloudinary: cloudinary,
   },
