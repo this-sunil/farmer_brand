@@ -72,7 +72,7 @@ export const addProductController = async (req, res) => {
     }
     return res.status(200).json({
       status: true,
-      msg: "Product Inserted Successfully !!!",
+      msg: `Product Inserted Successfully !!! ${photo}`,
       result: rows[0],
     });
   } catch (e) {
@@ -169,7 +169,7 @@ export const addQtyController = async (req, res) => {
 export const deleteProductController = async (req, res) => {
   try {
     const pid = req.body.pid;
-    const query = `DELETE FROM products WHERE pid=$1`;
+    const query = `DELETE FROM products WHERE pid=$1 RETURNING *`;
     const { rows } = await pool.query(query, [pid]);
     if (rows.length === 0) {
       return res.status(404).json({
