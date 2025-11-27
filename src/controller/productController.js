@@ -53,6 +53,8 @@ export const addProductController = async (req, res) => {
     product_weight,
     fid) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
     const photo = req.file ? req.file.path : "";
+    console.log(`Uploaded Photo=>${photo}`);
+    
     const { rows } = await pool.query(query, [
       title,
       description,
