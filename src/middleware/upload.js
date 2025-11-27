@@ -1,5 +1,6 @@
-import multer from "multer";
-import { v2 as cloudinary } from "cloudinary";
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -7,8 +8,15 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Use memory storage
-const storage = multer.memoryStorage();
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "uploads",
+    allowedFormats: ["jpg", "jpeg", "png"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }],
+  },
+});
+
 const upload = multer({ storage });
 
-export default upload;
+module.exports = upload;
