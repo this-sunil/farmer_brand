@@ -72,7 +72,7 @@ export const addProductController = async (req, res) => {
     }
     return res.status(200).json({
       status: true,
-      msg: `Product Inserted Successfully !!! ${photo}`,
+      msg: `Product Inserted Successfully !!! ${req.file.path}`,
       result: rows[0],
     });
   } catch (e) {
