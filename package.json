@@ -2,7 +2,6 @@
   "name": "farmer",
   "version": "1.0.0",
   "main": "src/server.js",
-  "requires": "true",
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0",
     "start": "nodemon src/server.js"
