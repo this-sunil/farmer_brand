@@ -147,24 +147,20 @@ span::after { top: 8px; }
 /* Cards */
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
+  height: 100vh;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
 }
 
 .card {
   width: 18%;
-  min-width: 220px;
-  max-width: 300px;
   height: 250px;
   margin: 10px;
   border-radius: 10px;
@@ -177,7 +173,7 @@ span::after { top: 8px; }
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.3);
 }
 
 .card .card-img img {
@@ -185,6 +181,11 @@ span::after { top: 8px; }
   height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+}
+
+.card-body h4 {
+  text-align: center;
+  line-height: 0px;
 }
 
 /* Buttons */
@@ -238,7 +239,6 @@ span::after { top: 8px; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
   width: 20%;
-  min-width: 250px;
   transition: transform 0.2s;
 }
 
@@ -248,7 +248,7 @@ span::after { top: 8px; }
 
 .video-card iframe {
   width: 100%;
-  height: 250px;
+  height: 350px;
   border: none;
 }
 
@@ -256,49 +256,166 @@ span::after { top: 8px; }
 .video-card .card-title { font-size: 18px; margin-bottom: 10px; font-weight: bold; }
 .video-card .card-description { font-size: 14px; color: #555; }
 
-/* Responsive Media Queries */
-@media (max-width: 1100px) {
-  .card, .video-card {
-    width: 45%;
-    min-width: 200px;
-  }
+/* Experience Section */
+.experience-section {
+  width: 100%;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
-@media (max-width: 768px) {
-  .card, .video-card {
-    width: 90%;
-  }
-
-  .main-nav .nav-item {
-    justify-content: center;
-  }
-
-  .about-me .profile img {
-    width: 150px;
-    height: 150px;
-  }
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-@media (max-width: 480px) {
-  .headline-section {
-    font-size: 14px;
-    padding-left: 5px;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .video-card iframe {
-    height: 200px;
-  }
-
-  .about-me .about-title {
-    font-size: 1.6rem;
-  }
-
-  .about-me .about-description {
-    font-size: 0.95rem;
-  }
+.experience-card {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.experience-card h3 {
+  font-size: 24px;
+  color: #2a4d8f;
+  margin-bottom: 5px;
+}
+
+.company { font-size: 16px; color: #555; margin-bottom: 3px; }
+.duration { font-size: 14px; color: #888; margin-bottom: 15px; }
+
+.responsibilities { list-style: none; padding-left: 0; }
+.responsibilities li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #444;
+}
+.responsibilities li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2a4d8f;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Projects Section */
+.projects-section { width: 100%; padding: 20px; font-family: "Poppins", sans-serif; }
+.project-card {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.project-card h3 { font-size: 22px; margin-bottom: 12px; color: #2a4d8f; }
+.project-points { padding-left: 0; }
+.project-points li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Footer */
+.footer {
+  background: #6729b8;
+  padding: 30px 60px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin-top: 50px;
+}
+.footer-container {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Contact Form */
+.contact-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin-bottom: 30px;
+  text-align: left;
+}
+.form-group { margin: 10px; }
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2a4d8f;
+  box-shadow: 0 0 6px rgba(42, 77, 143, 0.3);
+}
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2a4d8f;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.submit-btn:hover { background: #183360; }
+
+/* Education Section */
+.education-section {
+  font-family: "Poppins", sans-serif;
+  width: 80%;
+  margin: auto;
+}
+h2 { text-align: center; margin-bottom: 20px; }
+.edu-card {
+  background: #ffffff;
+  border-left: 5px solid #4A90E2;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+}
+.edu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  border-left-color: #7B61FF;
+}
+.edu-card h3 { margin: 0; font-size: 1.2rem; font-weight: 600; }
+.edu-card .institute { margin: 3px 0; color: #555; }
+.edu-card .details { font-size: 0.9rem; color: #333; font-weight: 500; }
