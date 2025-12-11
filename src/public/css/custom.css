@@ -328,7 +328,7 @@ span::after { top: 8px; }
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 .project-card h3 { font-size: 22px; margin-bottom: 12px; color: #2a4d8f; }
-.project-points { padding-left: 0; }
+.project-points { padding: 10px; }
 .project-points li {
   position: relative;
   padding-left: 25px;
