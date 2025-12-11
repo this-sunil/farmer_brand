@@ -1,264 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunil Shedge - Resume</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunil Shedge - Resume</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Bitter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    body {
-      background: #eef1f5;
-      font-family: "Inter", sans-serif;
-    }
+    <style>
+      body {
+        font-family: "Bitter", serif;
+      }
+      ul li {
+        font-size: 14px;
+      }
+      .title {
+        color: #0d6efd;
+        font-size: 18px;
+      }
+      .summary {
+        font-size: 16px;
+        font-weight: 500;
+        text-align: justify;
+      }
+      h2,
+      h4,
+      h5 {
+        color: #0d6efd;
+        text-decoration: underline;
+        font-size: 16px;
+      }
+      .sidebar {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container my-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-5">
+          <!-- Header -->
+          <div class="mb-4">
+            <h1 class="fw-bold title">Sunil Shedge</h1>
+            <p class="mb-1 text-primary fw-bold">Senior Flutter Developer</p>
+            <div class="mb-4 d-flex flex-wrap align-items-center gap-3">
+              <span><i class="bi bi-geo-alt-fill"></i> Pune, Maharashtra</span>
+              <span><i class="bi bi-telephone-fill"></i> (+91) 8668796251</span>
+              <span
+                ><i class="bi bi-envelope-fill"></i>
+                <a href="mailto:swarajya888@gmail.com"
+                  >swarajya888@gmail.com</a
+                ></span
+              >
+              <span
+                ><i class="bi bi-linkedin"></i>
+                <a href="https://linkedin.com/in/sunilshedge" target="_blank"
+                  >LinkedIn</a
+                ></span
+              >
+              <span
+                ><i class="bi bi-globe2"></i>
+                <a href="https://portfolio-3261f.web.app/" target="_blank"
+                  >Portfolio</a
+                ></span
+              >
+            </div>
+          </div>
 
-    .resume-card {
-      background: #fff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
+          <!-- Main Row -->
+          <div class="row">
+            <!-- Left Column: Experience & Projects -->
+            <div class="col-lg-8">
+              <!-- Summary -->
+              <h2 class="fw-bold mb-3">Summary:-</h2>
+              <p class="summary">
+                <strong>Flutter Developer with 3+ years of experience building
+                high-performance Android and iOS applications. Skilled in
+                Flutter, Dart, Bloc, REST APIs, Firebase, Google Maps, RazorPay,
+                performance optimization, and app store deployment. Strong
+                problem-solver with a proven track record of improving
+                engagement, scalability, and application stability.</strong>
+              </p>
 
-    .section-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #0d6efd;
-      padding-bottom: 5px;
-      border-bottom: 2px solid #d9dde3;
-      margin-bottom: 18px;
-    }
+              <!-- Experience -->
+              <h4 class="fw-semibold border-bottom pb-2 mt-4">Experience:-</h4>
+              <div class="mt-3">
+                <h5 class="fw-bold">Senior Flutter Developer</h5>
+                <p class="fst-italic mb-1">
+                  Sunra Softtech Pvt. Ltd., Pune | July 2022 – April 2025
+                </p>
+                <p class="summary">Responsibility:-</p>
+                <ul>
+                  <li>
+                    <b>Integrated Google Mobile Ads SDK (AdMob)</b>, increasing
+                    app monetization by <b>35%</b> and improving
+                    <b>Banner, Interstitial, and Rewarded Ad</b> rendering
+                    performance by <b>30%</b>.
+                  </li>
 
-    .summary-text, ul li {
-      font-size: 15px;
-      line-height: 1.7;
-    }
+                  <li>
+                    Performed extensive <b>real-device and emulator testing</b>,
+                    reducing production errors by <b>45%</b>.
+                  </li>
 
-    .sidebar-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-    }
+                  <li>
+                    Integrated <b>Firebase, Google Maps, and RazorPay</b>,
+                    improving backend communication and overall app performance
+                    by <b>40%</b>.
+                  </li>
 
-    .skill-label {
-      font-size: 14px;
-      font-weight: 600;
-      margin-top: 8px;
-    }
+                  <li>
+                    Implemented the <b>Bloc state management architecture</b>,
+                    enhancing code scalability and maintainability by
+                    <b>50%</b>.
+                  </li>
 
-    .progress {
-      height: 10px;
-      border-radius: 20px;
-    }
+                  <li>
+                    Led <b>Play Store</b> and <b>App Store</b> deployments,
+                    reducing time-to-market by <b>60%</b> through optimized
+                    build and release pipelines.
+                  </li>
 
-    .project-thumb {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #f2f2f2;
-      border: 1px solid #e5e5e5;
-    }
+                  <li>
+                    Designed interactive <b>UI components and animations</b>,
+                    increasing user engagement by <b>30%</b>.
+                  </li>
 
-    .project-card {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-    }
-  </style>
-</head>
+                  <li>
+                    Collaborated with <b>backend</b> and <b>QA teams</b> to
+                    optimize <b>REST API</b> integration, improving
+                    responsiveness by <b>25%</b>.
+                  </li>
 
-<body>
+                  <li>
+                    Implemented <b>Easy Localization</b> in Dart, enabling
+                    multilingual support and improving international
+                    accessibility by <b>40%</b>.
+                  </li>
 
-<div class="container my-5">
-  <div class="resume-card">
+                  <li>
+                    Implemented <b>Firebase Cloud Messaging (FCM)</b> for push
+                    notifications, improving user re-engagement and delivery
+                    reliability.
+                  </li>
+                  <li>
+                    Integrated <b>OneSignal Notification Service</b>, enhancing
+                    cross-platform notification delivery and boosting user
+                    retention.
+                  </li>
 
-    <!-- Header -->
-    <div class="text-center mb-5">
-      <h1 class="fw-bold text-primary">Sunil Shedge</h1>
-      <p class="fs-5 fw-semibold text-secondary">Senior Flutter Developer</p>
+                  <li>
+                    Implemented
+                    <strong
+                      >WebView in Flutter to render dynamic HTML content</strong
+                    >, including lists, links, and interactive elements,
+                    enhancing app functionality and user experience.
+                  </li>
+                </ul>
+              </div>
 
-      <div class="d-flex flex-wrap justify-content-center gap-4 mt-3">
-        <span><i class="bi bi-geo-alt-fill text-primary"></i> Pune, Maharashtra</span>
-        <span><i class="bi bi-telephone-fill text-primary"></i> (+91) 8668796251</span>
-        <span><i class="bi bi-envelope-fill text-primary"></i> swarajya888@gmail.com</span>
-        <span><i class="bi bi-linkedin text-primary"></i> <a href="https://linkedin.com/in/sunilshedge" target="_blank">LinkedIn</a></span>
-        <span><i class="bi bi-globe text-primary"></i> <a href="https://portfolio-3261f.web.app/" target="_blank">Portfolio</a></span>
+              <div class="mt-3">
+                <h5 class="fw-bold">Junior Flutter Developer</h5>
+                <p class="fst-italic mb-1">
+                  Syscryption Technology Pvt. Ltd., Pune | Jan 2022 – Jul 2022
+                </p>
+                <p class="summary">Responsibility:-</p>
+                <ul>
+                  <li>
+                    <strong>Developed Flutter applications</strong> with REST
+                    API integration and CRUD functionalities, accelerating
+                    feature delivery by 20%.
+                  </li>
+                  <li>
+                    <strong>Integrated Google Maps and RazorPay</strong> for
+                    secure payments and location-based services.
+                  </li>
+                  <li>
+                    <strong>Resolved high-impact bugs</strong> and optimized
+                    performance, increasing app stability by 40%.
+                  </li>
+                  <li>
+                    <strong>Created reusable UI components</strong> and custom
+                    widgets, improving code consistency and reducing development
+                    effort.
+                  </li>
+                  <li>
+                    <strong>Implemented QR code scanning functionality</strong>
+                    for secure user authentication workflows.
+                  </li>
+                  <li>
+                    <strong>Applied GetX state management</strong> for routing,
+                    dependency injection, and improved app performance.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Projects -->
+              <h4 class="fw-semibold border-bottom pb-2 mt-4">Projects:-</h4>
+              <div class="mt-3">
+                <h6 class="fw-bold">CINEQUBE</h6>
+                <ul>
+                  <li>
+                    Integrated Firebase push notifications with Bloc for
+                    real-time updates, improving engagement by 25%.
+                  </li>
+                  <li>
+                    Developed video playback using PodPlayer with YouTube and
+                    Vimeo support.
+                  </li>
+                  <li>Implemented secure UPI payments via flutter_upi_pay.</li>
+                  <li>
+                    Added offline video storage with Sqflite, improving
+                    retention and convenience.
+                  </li>
+                  <li>
+                    Designed subscription plans (monthly, quarterly, yearly) to
+                    support monetization strategies.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-3">
+                <h6 class="fw-bold">GROW KNOWLEDGE</h6>
+                <ul>
+                  <li>
+                    Developed quiz app with dynamic REST API content and
+                    real-time updates.
+                  </li>
+                  <li>
+                    Integrated Firebase notifications for contests and
+                    promotions, increasing participation by 20%.
+                  </li>
+                  <li>
+                    Implemented Aadhaar and PAN KYC upload and verification for
+                    secure compliance.
+                  </li>
+                  <li>
+                    Supported free and paid user participation with robust
+                    validation and secure transactions.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-3">
+                <h6 class="fw-bold">JEEYO RIDE</h6>
+                <ul>
+                  <li>
+                    Integrated Google Maps with place auto-complete and
+                    real-time driver tracking.
+                  </li>
+                  <li>
+                    Implemented Firebase push notifications to improve
+                    engagement and app responsiveness.
+                  </li>
+                </ul>
+              </div>
+
+               <div class="container my-4">
+
+
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <object class="card-img-top" data="https://drive.google.com/file/d/1MBBppoKo0fahpY8StqzVVn0jSLRUz12a/preview" width="100%" height="250"></object>
+        <div class="card-body">
+          <h5 class="card-title">Card Title 1</h5>
+          <p class="card-text">Optional description for this file.</p>
+        </div>
       </div>
     </div>
 
-    <div class="row">
-
-      <!-- LEFT COLUMN -->
-      <div class="col-lg-8">
-
-        <!-- Summary -->
-        <div class="section-title">Summary</div>
-        <p class="summary-text">
-          <strong>Flutter Developer with 3+ years of experience building high-performance Android and iOS applications. Skilled in Flutter, Dart, Bloc, REST APIs, Firebase, Google Maps, RazorPay, performance optimization, and app store deployment. Strong problem-solver with a proven track record of improving engagement, scalability, and application stability.</strong>
-        </p>
-
-        <!-- Experience -->
-        <div class="section-title mt-4">Experience</div>
-
-        <!-- Senior Developer -->
-        <h5 class="fw-bold">Senior Flutter Developer</h5>
-        <p class="fst-italic">Sunra Softtech Pvt. Ltd., Pune | July 2022 – April 2025</p>
-        <p class="summary-text fw-bold">Responsibility:-</p>
-
-        <ul>
-          <li><b>Integrated Google Mobile Ads SDK (AdMob)</b>, increasing app monetization by <b>35%</b>.</li>
-          <li><b>Performed real-device testing</b>, reducing production errors by <b>45%</b>.</li>
-          <li><b>Integrated Firebase, Google Maps, RazorPay</b>, improving performance by <b>40%</b>.</li>
-          <li><b>Implemented Bloc architecture</b>, enhancing scalability by <b>50%</b>.</li>
-          <li><b>Play Store & App Store deployment</b>, reducing release time by <b>60%</b>.</li>
-          <li><b>Designed interactive UI & animations</b>, improving engagement by <b>30%</b>.</li>
-          <li><b>Optimized REST API</b> responsiveness by <b>25%</b>.</li>
-          <li>Implemented <b>Easy Localization</b> for multilingual support.</li>
-          <li>Integrated <b>FCM + OneSignal</b> notifications.</li>
-          <li>Implemented <b>Flutter WebView</b> for dynamic HTML rendering.</li>
-        </ul>
-
-        <!-- Junior Developer -->
-        <h5 class="fw-bold mt-4">Junior Flutter Developer</h5>
-        <p class="fst-italic">Syscryption Technology Pvt. Ltd., Pune | Jan 2022 – Jul 2022</p>
-        <p class="summary-text fw-bold">Responsibility:-</p>
-
-        <ul>
-          <li>Developed Flutter apps with REST API + CRUD.</li>
-          <li>Integrated Google Maps + RazorPay.</li>
-          <li>Fixed bugs improving stability by 40%.</li>
-          <li>Built reusable UI components.</li>
-          <li>Implemented QR scanning.</li>
-          <li>Applied GetX for routing & DI.</li>
-        </ul>
-
-        <!-- Projects -->
-        <div class="section-title mt-4">Projects</div>
-
-        <h6 class="fw-bold">CINEQUBE</h6>
-        <ul>
-          <li>Firebase notifications + Bloc.</li>
-          <li>PodPlayer video streaming.</li>
-          <li>Offline storage (Sqflite).</li>
-        </ul>
-
-        <h6 class="fw-bold">GROW KNOWLEDGE</h6>
-        <ul>
-          <li>Quiz using REST API.</li>
-          <li>KYC uploads + Firebase alerts.</li>
-        </ul>
-
-        <h6 class="fw-bold">JEEYO RIDE</h6>
-        <ul>
-          <li>Live driver tracking using Google Maps.</li>
-        </ul>
-
-        <!-- Project Preview -->
-        <div class="section-title mt-4">Project Preview</div>
-
-        <div class="row g-4">
-
-          <div class="col-md-4">
-            <div class="project-card">
-              <object class="project-thumb" data="https://drive.google.com/file/d/1MBBppoKo0fahpY8StqzVVn0jSLRUz12a/preview"></object>
-              <div class="text-center p-2 fw-semibold">Preview 1</div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="project-card">
-              <object class="project-thumb" data="https://drive.google.com/file/d/17L0ekahlujdHDj9nQyg6olmaL5PB60X6/preview"></object>
-              <div class="text-center p-2 fw-semibold">Preview 2</div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="project-card">
-              <object class="project-thumb" data="https://drive.google.com/file/d/1uxqCFu22-m8XZWmOetwURo3ahFOroE_6/preview"></object>
-              <div class="text-center p-2 fw-semibold">Preview 3</div>
-            </div>
-          </div>
-
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <object class="card-img-top" data="https://drive.google.com/file/d/17L0ekahlujdHDj9nQyg6olmaL5PB60X6/preview" width="100%" height="250"></object>
+        <div class="card-body">
+          <h5 class="card-title">Card Title 2</h5>
+          <p class="card-text">Optional description for this file.</p>
         </div>
-
-        <!-- Declaration -->
-        <div class="section-title mt-4">Declaration</div>
-        <p class="summary-text">
-          I hereby declare that all the information provided above is true.
-        </p>
-        <p class="fw-bold text-end">— Sunil Shedge</p>
-
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="col-lg-4">
-
-        <!-- TECHNICAL SKILLS -->
-        <div class="sidebar-card mb-4">
-          <h5 class="section-title">Technical Skills</h5>
-
-          <!-- Frontend -->
-          <h6 class="mt-3 text-primary fw-bold">Frontend</h6>
-
-          <p class="skill-label">HTML / CSS</p>
-          <div class="progress mb-2"><div class="progress-bar bg-warning" style="width:85%"></div></div>
-
-          <p class="skill-label">JavaScript</p>
-          <div class="progress mb-2"><div class="progress-bar bg-info" style="width:80%"></div></div>
-
-          <!-- Backend -->
-          <h6 class="mt-4 text-primary fw-bold">Backend</h6>
-
-          <p class="skill-label">Node.js & Express.js</p>
-          <div class="progress mb-2"><div class="progress-bar bg-success" style="width:75%"></div></div>
-
-          <!-- Tools -->
-          <h6 class="mt-4 text-primary fw-bold">Tools</h6>
-
-          <p class="skill-label">Android Studio</p>
-          <div class="progress mb-2"><div class="progress-bar bg-success" style="width:90%"></div></div>
-
-          <p class="skill-label">VS Code</p>
-          <div class="progress mb-2"><div class="progress-bar bg-info" style="width:85%"></div></div>
-
-          <p class="skill-label">Postman</p>
-          <div class="progress mb-2"><div class="progress-bar bg-warning" style="width:80%"></div></div>
-
-          <!-- Databases -->
-          <h6 class="mt-4 text-primary fw-bold">Databases</h6>
-
-          <p class="skill-label">PostgreSQL</p>
-          <div class="progress mb-2"><div class="progress-bar bg-success" style="width:80%"></div></div>
-
-          <p class="skill-label">Hive</p>
-          <div class="progress mb-2"><div class="progress-bar bg-warning" style="width:80%"></div></div>
-        </div>
-
-        <!-- Education -->
-        <div class="sidebar-card mb-4">
-          <h5 class="section-title">Education</h5>
-
-          <ul class="list-unstyled">
-            <li class="mb-2"><b>M.C.S.</b> – Sarhad College, Pune | 77% (2019–2021)</li>
-            <li class="mb-2"><b>B.C.S.</b> – Vishwakarma College, Pune | 2015–2018</li>
-            <li class="mb-2"><b>HSC (XII)</b> – Rahimatpur | 2015</li>
-            <li class="mb-2"><b>SSC (X)</b> – Rahimatpur | 75% (2013)</li>
-          </ul>
-        </div>
-
       </div>
     </div>
 
-  </div>
-</div>
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <object class="card-img-top" data="https://drive.google.com/file/d/1uxqCFu22-m8XZWmOetwURo3ahFOroE_6/preview" width="100%" height="250"></object>
+        <div class="card-body">
+          <h5 class="card-title">Card Title 3</h5>
+          <p class="card-text">Optional description for this file.</p>
+        </div>
+      </div>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  
+               
+               <!-- Declaration -->
+              <h4 class="fw-semibold border-bottom pb-1 mt-4">Declaration:-</h4>
+              <p class="summary">
+                I hereby declare that all the information provided above is true
+                and correct to the best of my knowledge. Thank You.
+              </p>
+              <div class="text-end">
+                <p class="fw-bold" style="font-size: 14px">Yours Faithfully,</p>
+                <p class="fw-bold" style="font-size: 14px">Sunil Shedge</p>
+              </div>
+            </div>
+            <!-- End Left Column -->
+
+            <!-- Right Column: Sidebar -->
+            <div class="col-lg-4">
+              <!-- Technical Skills Card -->
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h4 class="fw-semibold border-bottom pb-2 mb-3">
+                    Technical Skills
+                  </h4>
+
+                  <!-- Languages -->
+                  <h5 class="mt-2">Languages</h5>
+                  <h6>Dart</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-success" style="width: 90%">
+                      90%
+                    </div>
+                  </div>
+                  <h6>JavaScript</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-info" style="width: 80%">
+                      80%
+                    </div>
+                  </div>
+                  <h6>HTML & CSS</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" style="width: 85%">
+                      85%
+                    </div>
+                  </div>
+                  <h6>C</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" style="width: 70%">
+                      70%
+                    </div>
+                  </div>
+
+                  <!-- Frameworks -->
+                  <h5 class="mt-3">Frameworks & Libraries</h5>
+                  <h6>Flutter</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-success" style="width: 90%">
+                      90%
+                    </div>
+                  </div>
+                  <h6>Bootstrap</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-info" style="width: 85%">
+                      85%
+                    </div>
+                  </div>
+                  <h6>Node.js & Express.js</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" style="width: 75%">
+                      75%
+                    </div>
+                  </div>
+
+                  <!-- Tools -->
+                  <h5 class="mt-3">Tools</h5>
+                  <h6>Android Studio</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-success" style="width: 90%">
+                      90%
+                    </div>
+                  </div>
+                  <h6>VS Code</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-info" style="width: 85%">
+                      85%
+                    </div>
+                  </div>
+                  <h6>Postman</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" style="width: 80%">
+                      80%
+                    </div>
+                  </div>
+
+                  <!-- Databases -->
+                  <h5 class="mt-3">Databases</h5>
+                  <h6>PostgreSQL</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-success" style="width: 80%">
+                      80%
+                    </div>
+                  </div>
+
+                  <h6>Hive</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" style="width: 80%">
+                      80%
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Education Card -->
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h4 class="fw-semibold border-bottom pb-2 mb-3">Education</h4>
+                  <ul class="list-group list-group-flush ps-3">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-4 fw-bold">M.C.S.</div>
+                        <div class="col-8">
+                          Sarhad College of Arts, Commerce and Science, Pune |
+                          2019 – 2021 (77%)
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-4 fw-bold">B.C.S.</div>
+                        <div class="col-8">
+                          Vishwakarma College of Arts, Commerce and Science,
+                          Pune | 2015 – 2018
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-4 fw-bold">HSC (XII)</div>
+                        <div class="col-8">
+                          S.M.S. Mohite Patil Jr. College, Rahimatpur | 2015
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-4 fw-bold">SSC (X)</div>
+                        <div class="col-8">
+                          Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur |
+                          2013 (75%)
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Main Row -->
+        </div>
+       
+      </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
