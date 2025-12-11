@@ -17,6 +17,7 @@ dotenv.config({ debug: false, encoding: "utf-8", override: true ,quiet:true});
 cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
+    allowedHeaders:true,
     origin: `*`,
     credentials:true
 });
