@@ -228,7 +228,7 @@ span::after { top: 8px; }
 .video-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 350px;
   height: 350px;
   gap: 10px;
   justify-content: center;
