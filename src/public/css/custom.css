@@ -229,6 +229,7 @@ span::after { top: 8px; }
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: 400px;
   gap: 10px;
   justify-content: center;
 }
