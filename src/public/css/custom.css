@@ -419,3 +419,98 @@ h2 { text-align: center; margin-bottom: 20px; }
 .edu-card h3 { margin: 0; font-size: 1.2rem; font-weight: 600; }
 .edu-card .institute { margin: 3px 0; color: #555; }
 .edu-card .details { font-size: 0.9rem; color: #333; font-weight: 500; }
+/* Media Queries */
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .container, .row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card, .video-card {
+    width: 60%;
+    margin: 15px auto;
+  }
+
+  .about-me {
+    margin: 60px 20px;
+    text-align: center;
+  }
+
+  .button-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .education-section {
+    width: 90%;
+  }
+
+  .main-nav .nav-item {
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices (up to 767px) */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .headline-section {
+    font-size: 0.9rem;
+    padding-left: 5px;
+    height: 40px;
+  }
+
+  .about-me .profile img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-me .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-me .about-description {
+    font-size: 0.95rem;
+  }
+
+  .card, .video-card {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  .video-card iframe {
+    height: 200px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .main-nav .nav-item {
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .menu {
+    align-self: flex-end;
+  }
+
+  .button-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .education-section {
+    width: 95%;
+  }
+
+  .footer {
+    padding: 20px 30px;
+  }
+}
