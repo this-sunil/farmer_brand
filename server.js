@@ -25,6 +25,7 @@ cors({
 
 
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
+app.use("/public",express.static(path.join(process.cwd(),"src/public")));
 app.use('/bootstrap-css', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/css')));
 app.use('/bootstrap-js', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/js')));
 
