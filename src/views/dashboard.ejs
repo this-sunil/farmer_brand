@@ -28,6 +28,17 @@
       ul li {
         font-size: 14px;
       }
+      .project-preview-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
       .title {
         color: #0d6efd;
         font-size: 18px;
@@ -272,9 +283,61 @@
                 </ul>
               </div>
 
-               <object width="400" height="400" data="https://drive.google.com/file/d/1MBBppoKo0fahpY8StqzVVn0jSLRUz12a/preview"></object>
-               <object width="400" height="400" data="https://drive.google.com/file/d/17L0ekahlujdHDj9nQyg6olmaL5PB60X6/preview"></object>
-               <object width="400" height="400" data="https://drive.google.com/file/d/1uxqCFu22-m8XZWmOetwURo3ahFOroE_6/preview"></object>
+               <!-- PROJECT PREVIEW -->
+<div class="section-title mt-4">Project Preview</div>
+
+<div class="row g-4">
+
+  <!-- Card 1 -->
+  <div class="col-md-4">
+    <div class="card project-preview-card shadow-sm border-0">
+      <div class="ratio ratio-9x16">
+        <object 
+          data="https://drive.google.com/file/d/1MBBppoKo0fahpY8StqzVVn0jSLRUz12a/preview"
+          class="w-100 h-100 rounded"
+          style="object-fit: cover;">
+        </object>
+      </div>
+      <div class="card-body text-center">
+        <h6 class="fw-semibold">Preview 1</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="col-md-4">
+    <div class="card project-preview-card shadow-sm border-0">
+      <div class="ratio ratio-9x16">
+        <object 
+          data="https://drive.google.com/file/d/17L0ekahlujdHDj9nQyg6olmaL5PB60X6/preview"
+          class="w-100 h-100 rounded"
+          style="object-fit: cover;">
+        </object>
+      </div>
+      <div class="card-body text-center">
+        <h6 class="fw-semibold">Preview 2</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="col-md-4">
+    <div class="card project-preview-card shadow-sm border-0">
+      <div class="ratio ratio-9x16">
+        <object 
+          data="https://drive.google.com/file/d/1uxqCFu22-m8XZWmOetwURo3ahFOroE_6/preview"
+          class="w-100 h-100 rounded"
+          style="object-fit: cover;">
+        </object>
+      </div>
+      <div class="card-body text-center">
+        <h6 class="fw-semibold">Preview 3</h6>
+      </div>
+    </div>
+  </div>
+
+</div>
+
                
                <!-- Declaration -->
               <h4 class="fw-semibold border-bottom pb-1 mt-4">Declaration:-</h4>
