@@ -516,3 +516,15 @@ h2 { text-align: center; margin-bottom: 20px; }
     padding: 20px 30px;
   }
 }
+/* Hide elements initially */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+/* Show when scrolled into view */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
