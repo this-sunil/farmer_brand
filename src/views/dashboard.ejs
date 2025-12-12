@@ -11,348 +11,115 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="public/js/custom.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
   </head>
-  <body>
-    <nav class="main-nav">
-      <div class="nav-brand">
-        <!-- <div class="menu">
-        <span></span>
-        </div> -->
-        <h4 class="headline">#Portfolio</h4>
+ <body>
+  <div class="smooth-wrapper">
+    <div class="smooth-content">
+
+      <nav class="main-nav">
+        <div class="nav-brand">
+          <h4 class="headline">#Portfolio</h4>
         </div>
-      <ul class="nav-item">
-        <li class="nav-link"><a href="#about">About</a></li>
-        <li class="nav-link"><a href="#skills">Skill</a></li>
-        <li class="nav-link"><a href="#experience">Experience</a></li>
-        <li class="nav-link"><a href="#education">Education</a></li>
-        <li class="nav-link"><a href="#project">Project</a></li>
-        
-      </ul>
-    </nav>
-    
-   
-     <section class="about-me" id="about">
-  <div class="profile">
-    <img src="https://media.licdn.com/dms/image/v2/D5635AQG1RgXr9kc6qw/profile-framedphoto-shrink_400_400/B56ZsMccF9GsAc-/0/1765440340598?e=1766048400&v=beta&t=2cy75tauUwhR4_akPlXEIjlqGsDFON_IMjTBfORN3ek" alt="Profile Photo">
-  </div>
+        <ul class="nav-item">
+          <li class="nav-link"><a href="#about">About</a></li>
+          <li class="nav-link"><a href="#skills">Skill</a></li>
+          <li class="nav-link"><a href="#experience">Experience</a></li>
+          <li class="nav-link"><a href="#education">Education</a></li>
+          <li class="nav-link"><a href="#project">Project</a></li>
+        </ul>
+      </nav>
 
-  <h1 class="about-title">Sunil Shedge</h1>
-
-  <p class="about-description">
-    I'm a <strong>Flutter Developer</strong> with <strong>3+ years of experience</strong>
-    building responsive and high-performance mobile apps for Android & iOS.
-  </p>
-
-  <p class="about-description">
-    I focus on clean architecture, reusable widgets, smooth animations, and
-    delivering exceptional user experiences. Skilled in Flutter, Dart, Firebase, 
-    REST APIs, GetX, Provider, and modern UI/UX design principles.
-  </p>
-<div class="button-section">
-    <a href="https://github.com/this-sunil" target="_blank" class="btn github">
-        <i class="fab fa-github"></i> GitHub
-    </a>
-
-    <a href="https://www.linkedin.com/in/sunilshedge" target="_blank" class="btn linkedin">
-        <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-
-    <a href="tel:+918668796251" class="btn phone">
-        <i class="fas fa-phone"></i> Call Me
-    </a>
-</div>
-
-
-  
-</section>
-<section id="skills">
-      <h4 class="section-title">Technical Skills</h4>
-      <div class="row">
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png"
-              alt="Html"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">HTML</h4>
-          </div>
+      <!-- ABOUT SECTION -->
+      <section class="about-me" id="about">
+        <div class="profile">
+          <img src="https://media.licdn.com/dms/image/v2/D5635AQG1RgXr9kc6qw/profile-framedphoto-shrink_400_400/B56ZsMccF9GsAc-/0/1765440340598?e=1766048400&v=beta&t=2cy75tauUwhR4_akPlXEIjlqGsDFON_IMjTBfORN3ek" alt="Profile Photo">
         </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg"
-              alt="Css"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">CSS</h4>
-          </div>
+        <h1 class="about-title">Sunil Shedge</h1>
+        <p class="about-description">
+          I'm a <strong>Flutter Developer</strong> with <strong>3+ years of experience</strong>
+          building responsive and high-performance mobile apps for Android & iOS.
+        </p>
+        <p class="about-description">
+          I focus on clean architecture, reusable widgets, smooth animations, and
+          delivering exceptional user experiences. Skilled in Flutter, Dart, Firebase, 
+          REST APIs, GetX, Provider, and modern UI/UX design principles.
+        </p>
+        <div class="button-section">
+          <a href="https://github.com/this-sunil" target="_blank" class="btn github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/sunilshedge" target="_blank" class="btn linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="tel:+918668796251" class="btn phone">
+            <i class="fas fa-phone"></i> Call Me
+          </a>
         </div>
-         <div class="card">
-          <div class="card-img">
-            <img
-              src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png"
-              alt="Bootstrap"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Bootstrap</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg"
-              alt="Javascript"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Javascript</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://play-lh.googleusercontent.com/LpgnH_rHqhJzlJ-uWhfMj3w87cu6iWV5m1hr6eos1wmdlqRiF0RsNE1RBmgtsPvyyBI"
-              alt="Jquery"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Jquery</h4>
-          </div>
-        </div>
-        </div>
-       <div class="row">
-         <div class="card">
-          <div class="card-img">
-            <img
-              src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
-              alt="Node js"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Node Js</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png"
-              alt="Flutter"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Flutter</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
-              alt="Dart"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Dart</h4>
-          </div>
-        </div>
-      
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png"
-              alt="Postgresql"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Postgresql</h4>
-          </div>
-        </div>
-       </div>
-      </div>
-     </section>
-     <section id="tools">
-       <h4 class="section-title">Tools</h4>
-        <div class="row">
-          <div class="card">
-          <div class="card-img">
-            <img
-              src="https://images.seeklogo.com/logo-png/43/1/android-studio-logo-png_seeklogo-439009.png"
-              alt="Android Studio"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Android Studio</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://images.g2crowd.com/uploads/product/image/fd527e1fc777d9e31b2a28e8d3c959a4/postman.jpg"
-              alt="Postman"
-            />
-        </div>
-        <div class="card-body">
-            <h4 class="headline">Postman</h4>
-        </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="https://e7.pngegg.com/pngimages/195/304/png-clipart-visual-studio-code-logo-thumbnail-tech-companies-thumbnail.png"
-              alt="Visual Studio Code"
-            />
-          </div>
-          <div class="card-body">
-            <h4 class="headline">Visual Studio Code</h4>
-          </div>
-        </div>
-        </div>
-     </section>
+      </section>
 
-    
-     <section class="experience-section" id="experience">
-  <h2 class="section-title">Professional Experience</h2>
+      <!-- SKILLS, TOOLS, EXPERIENCE, EDUCATION, PROJECTS, PREVIEW -->
+      <!-- Keep all your existing sections here exactly as they are -->
 
-  <div class="experience-card">
-    <h3>Senior Flutter Developer</h3>
-    <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
-    <p class="duration">July 2022 – April 2025</p>
+    </div> <!-- smooth-content -->
+  </div> <!-- smooth-wrapper -->
 
-    <ul class="responsibilities">
-     <li><b>Integrated the Google Mobile Ads SDK (AdMob)</b>, increasing overall app monetization by <b>35%</b>. Implemented <b>Banner, Interstitial, and Rewarded Ads</b> while optimizing rendering performance by <b>30%</b>.</li>
+  <!-- GSAP Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-<li>Performed extensive <b>real-device and emulator testing</b>, reducing production-level errors by <b>45%</b>.</li>
+    const smoother = ScrollSmoother.create({
+      wrapper: ".smooth-wrapper",
+      content: ".smooth-content",
+      smooth: 1.2,
+      effects: true
+    });
 
-<li>Integrated <b>Firebase, Google Maps, and RazorPay</b>, improving backend communication and data handling efficiency by <b>40%</b>.</li>
+    // Animate sections and cards
+    gsap.utils.toArray("section, .card, .experience-card, .edu-card, .project-card, .video-card").forEach(elem => {
+      gsap.from(elem, {
+        scrollTrigger: {
+          trigger: elem,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2
+      });
+    });
 
-<li>Implemented <b>BLoC state management</b>, boosting app scalability and maintainability by <b>50%</b>.</li>
+    // Smooth anchor links
+    document.querySelectorAll(".nav-link a").forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = this.getAttribute("href");
+        smoother.scrollTo(target);
+      });
+    });
 
-<li>Led the complete <b>Play Store and App Store deployment</b> process, cutting time-to-market by <b>60%</b>.</li>
+    // Navbar highlight
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link a");
+    sections.forEach((section, index) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActiveNav(index),
+        onEnterBack: () => setActiveNav(index)
+      });
+    });
+    function setActiveNav(index) {
+      navLinks.forEach(link => link.classList.remove("active"));
+      navLinks[index].classList.add("active");
+    }
+  </script>
+</body>
 
-<li>Designed and developed <b>interactive UI components and animations</b>, enhancing user engagement by <b>30%</b>.</li>
-
-<li>Collaborated with backend and QA teams to refine <b>REST API integration</b>, improving responsiveness by <b>25%</b>.</li>
-
-    </ul>
-  </div>
-
-  <div class="experience-card">
-    <h3>Junior Flutter Developer</h3>
-    <p class="company">Syscryption Technology Pvt. Ltd., Pune</p>
-    <p class="duration">Jan 2022 – Jul 2022</p>
-
-    <ul class="responsibilities">
-      <li><b>Developed Flutter apps</b> with <b>REST API integration</b> and CRUD operations, accelerating feature delivery by <b>20%</b>.</li>
-
-<li>Integrated <b>Google Maps</b> and <b>RazorPay</b> for payments and location services.</li>
-
-<li>Resolved high-impact bugs and optimized performance, increasing app stability by <b>40%</b>.</li>
-
-<li>Created <b>reusable UI components</b> and custom widgets, improving code consistency.</li>
-
-<li>Implemented <b>QR code scanning functionality</b> for secure authentication workflows.</li>
-
-    </ul>
-  </div>
-</section>
-
-     
-     <section id="education" class="education-section">
-  <h2>🎓 Education</h2>
-
-  <div class="edu-card">
-    <h3>M.C.S.</h3>
-    <p class="institute">Sarhad College of Arts, Commerce and Science, Pune</p>
-    <p class="details">2019 – 2021 • 77%</p>
-  </div>
-
-  <div class="edu-card">
-    <h3>B.C.S.</h3>
-    <p class="institute">Vishwakarma College of Arts, Commerce and Science, Pune</p>
-    <p class="details">2015 – 2018</p>
-  </div>
-
-  <div class="edu-card">
-    <h3>HSC (XII)</h3>
-    <p class="institute">S.M.S. Mohite Patil Jr. College, Rahimatpur</p>
-    <p class="details">2015</p>
-  </div>
-
-  <div class="edu-card">
-    <h3>SSC (X)</h3>
-    <p class="institute">Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur</p>
-    <p class="details">2013 • 75%</p>
-  </div>
-     </section>
-
-     <section id="project" class="projects-section">
-  <h2 class="section-title">Projects</h2>
-
-  <!-- CINEQUBE -->
-  <div class="project-card">
-    <h3>CINEQUBE</h3>
-
-    <ul class="project-points">
-      <li>Integrated Firebase push notifications with Bloc for real-time updates, improving engagement by <strong>25%</strong>.</li>
-      <li>Developed video playback using PodPlayer with support for YouTube and Vimeo.</li>
-      <li>Implemented secure UPI payments using <strong>flutter_upi_pay</strong>.</li>
-      <li>Added offline video storage using Sqflite, enhancing user retention and convenience.</li>
-      <li>Designed subscription plans (monthly, quarterly, yearly) to boost monetization.</li>
-    </ul>
-  </div>
-
-  <!-- GROW KNOWLEDGE -->
-  <div class="project-card">
-    <h3>GROW KNOWLEDGE</h3>
-
-    <ul class="project-points">
-      <li>Developed quiz app with dynamic REST API content and real-time updates.</li>
-      <li>Integrated Firebase notifications for contests and promotions, increasing participation by <strong>20%</strong>.</li>
-      <li>Implemented Aadhaar & PAN KYC upload and verification for secure compliance.</li>
-      <li>Supported free and paid user participation with robust validation and secure transactions.</li>
-    </ul>
-  </div>
-
-  <!-- JEEYO RIDE -->
-  <div class="project-card">
-    <h3>JEEYO RIDE</h3>
-
-    <ul class="project-points">
-      <li>Integrated Google Maps with place auto-complete and real-time driver tracking.</li>
-      <li>Implemented Firebase push notifications to improve engagement and responsiveness.</li>
-    </ul>
-  </div>
-</section>
-<section id="preview">
-  <h4 class="section-title">Work Preview</h4>
-  <div class="video-container">
-  <div class="video-card">
-    <iframe src="https://drive.google.com/file/d/1uxqCFu22-m8XZWmOetwURo3ahFOroE_6/preview" allowfullscreen></iframe>
-    <div class="card-content">
-      <div class="card-title">Chatbot</div>
-      <div class="card-description">Chatgpt using gemini flutter</div>
-    </div>
-  </div>
-
-  <div class="video-card">
-    <iframe src="https://drive.google.com/file/d/17L0ekahlujdHDj9nQyg6olmaL5PB60X6/preview" allowfullscreen></iframe>
-    <div class="card-content">
-      <div class="card-title">Vehicle Repair Service</div>
-      <div class="card-description">I am using flutter</div>
-    </div>
-  </div>
-
-  <div class="video-card">
-    <iframe src="https://drive.google.com/file/d/1MBBppoKo0fahpY8StqzVVn0jSLRUz12a/preview" allowfullscreen></iframe>
-    <div class="card-content">
-      <div class="card-title">Farmer Application</div>
-      <div class="card-description">Flutter Rest Api using Nodejs</div>
-    </div>
-   </div>
-  </section>
-  </body>
 </html>
