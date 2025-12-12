@@ -4,19 +4,36 @@ $(document).ready(function(){
         $(".row").slideToggle();
     });
 });
-// Reveal on scroll
-function revealOnScroll() {
-    let elements = document.querySelectorAll('.reveal');
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+// Scroll Spy (Highlight navbar menu)
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-item .nav-link a");
 
-    elements.forEach((el) => {
-        let position = el.getBoundingClientRect().top;
-        let screenHeight = window.innerHeight;
+function activateMenu() {
+    let currentSection = "";
 
-        if (position < screenHeight - 120) {
-            el.classList.add('active');
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (pageYOffset >= sectionTop) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
         }
     });
 }
 
-window.addEventListener('scroll', revealOnScroll);
-window.onload = revealOnScroll;
+window.addEventListener("scroll", activateMenu);
+

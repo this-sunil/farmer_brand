@@ -528,3 +528,16 @@ h2 { text-align: center; margin-bottom: 20px; }
     opacity: 1;
     transform: translateY(0);
 }
+.nav-item .nav-link a.active {
+    color: #ff5e00;
+    font-weight: 700;
+    border-bottom: 2px solid #ff5e00;
+    padding-bottom: 4px;
+}
+
+.nav-item .nav-link a.active {
+    color: #ff5e00;
+    font-weight: 700;
+    border-bottom: 2px solid #ff5e00;
+    text-shadow: 0 0 8px rgba(255, 94, 0, 0.7);
+}
