@@ -190,7 +190,6 @@ span::after { top: 8px; }
   transition: transform 0.3s ease;
   display: grid;
   grid-template-columns: auto;
-  
   flex-direction: column;
 }
 
