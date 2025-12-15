@@ -372,7 +372,7 @@ span::after { top: 8px; }
 .project-points li {
   
   position: relative;
-  padding-left: 25px;
+  padding-left: 10px;
   margin-bottom: 10px;
   line-height: 1.5;
   color: #444;
