@@ -380,8 +380,8 @@ span::after { top: 8px; }
 .project-points > li::before{
  content: "★";
  position: absolute;
- top: 5px;
- left: 5px;
+ top: 0px;
+ left: 0px;
  color: rgb(51, 14, 215);
 }
 /* Footer */
