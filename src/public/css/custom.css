@@ -186,6 +186,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .row {
@@ -201,12 +202,13 @@ body {
   background: white;
   border-radius: 10px;
   box-shadow: 0 10px 20px #ddd;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .card img {
@@ -265,11 +267,12 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .video-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .video-card iframe {
@@ -294,12 +297,14 @@ body {
   margin-bottom: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-card:hover,
 .project-card:hover,
 .edu-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -334,7 +339,7 @@ body {
     width: 90%;
   }
 
-  .about-me img {
+  .about-me .profile img {
     width: 150px;
     height: 150px;
   }
