@@ -12,6 +12,7 @@ body {
 #top-skills{
   white-space: nowrap;
   overflow: hidden;
+  color: #3f37de;
   animation: 10s typing steps(40) ease-in-out;
 }
 @keyframes typing {
