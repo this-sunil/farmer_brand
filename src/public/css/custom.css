@@ -68,7 +68,7 @@ html{
 }
 
 .about-me .profile img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
 }
 
@@ -211,7 +211,7 @@ span::after { top: 8px; }
 }
 
 .card:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 .card .card-img img {
@@ -257,12 +257,12 @@ span::after { top: 8px; }
 .btn.phone { background-color: #0c5fdc; }
 
 .btn:hover {
-  transform: translateY(-3px) scale(1.5);
+  transform: translateY(-3px) scale(1.2);
   box-shadow: 0 8px 18px rgba(0,0,0,0.3);
 }
 
 .btn:active {
-  transform: translateY(0) scale(1.5);
+  transform: translateY(0) scale(1.2);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -342,7 +342,7 @@ span::after { top: 8px; }
   position: relative;
   padding-left: 25px;
   margin-bottom: 10px;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #444;
 }
 .responsibilities li::before {
@@ -376,7 +376,7 @@ span::after { top: 8px; }
   position: relative;
   padding-left: 20px;
   margin-bottom: 10px;
-  line-height: 1.5;
+  line-height: 1.2;
   list-style: none;
   color: #444;
 }
@@ -466,7 +466,7 @@ h2 { text-align: center; margin-bottom: 20px; }
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   border-left-color: #7B61FF;
 }
-.edu-card h3 { margin: 0; font-size: 1.5rem; font-weight: 600; }
+.edu-card h3 { margin: 0; font-size: 1.2rem; font-weight: 600; }
 .edu-card .institute { margin: 3px 0; color: #555; }
 .edu-card .details { font-size: 0.9rem; color: #333; font-weight: 500; }
 /* Media Queries */
