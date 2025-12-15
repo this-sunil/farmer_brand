@@ -11,14 +11,25 @@ html{
   font-family: 'Poppins', sans-serif;
 }
 
-.top-skills{
+.top-skills {
   white-space: nowrap;
   overflow: hidden;
   color: #3272d3;
-  margin: 0px;
-  padding: 0px;
-  animation: typing 2s steps(40) forwards;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  animation: typing 2s steps(40, end) forwards;
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 
 @keyframes typing {
   from{
