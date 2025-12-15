@@ -12,13 +12,13 @@ html{
 }
 
 .top-skills{
+  position: absolute;
   white-space: nowrap;
   overflow: hidden;
   color: #3272d3;
   margin: 0;
   padding: 0;
   width: 0;
-  position: fixed;
   animation: typing 2s steps(40, end) forwards;
 }
 
