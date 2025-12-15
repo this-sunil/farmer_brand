@@ -13,7 +13,7 @@ html{
 
 .top-skills{
   white-space: nowrap;
-  
+  overflow: hidden;
   color: #3272d3;
   margin: 0;
   padding: 0;
