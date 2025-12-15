@@ -13,7 +13,7 @@ body {
 #top-skills{
   white-space: nowrap;
   overflow: hidden;
-  color: #6a07e2;
+  color: #3272d3;
   animation: 10s typing steps(40) ease-in-out;
 }
 
