@@ -1,6 +1,6 @@
 import pool from "../dbHelper/dbHelper.js";
 const createFavTable=()=>{
-    const query=`CREATE TABLE fav_farmer(
+    const query=`CREATE TABLE IF NOT EXISTS fav_farmer(
     fav_id SERIAL PRIMARY KEY,
     uid INT NOT NULL,
     fid INT NOT NULL,
