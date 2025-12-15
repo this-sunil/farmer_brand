@@ -278,9 +278,10 @@ SELECT
           'product_qty', COALESCE(up.qty, 0),
           'product_stock', p.product_stock,
           'product_weight', p.product_weight,
-          'product_price', p.product_price
+          'product_price', p.product_price,
+          'favourite', EXISTS (SELECT 1 FROM fav_farmer ff WHERE ff.fav_id = $1 AND ff.pid = p.pid)
         )
-        ORDER BY p.pid  -- sort products inside JSON array
+        ORDER BY p.pid 
       ) FILTER (WHERE p.pid IS NOT NULL),
       '[]'::json
     ) AS products

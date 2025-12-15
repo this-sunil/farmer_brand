@@ -2,8 +2,7 @@ import pool from "../dbHelper/dbHelper.js";
 import bcrypt from "bcrypt";
 
 const createFarmerTable = async () => {
-  const query = `
-  CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,name TEXT,pass TEXT,photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
+  const query = `CREATE TABLE IF NOT EXISTS farmer(fid SERIAL PRIMARY KEY,name TEXT,pass TEXT,photo TEXT,phone TEXT,city TEXT,pin TEXT,created_at DATE DEFAULT CURRENT_DATE)`;
   pool.query(query, (err) => {
     if (err) {
       console.log(`Error in farmer Table=>${err}`);
@@ -168,7 +167,7 @@ export const getAllFarmerController = async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({
         status: false,
-        msg: "No Data Found !!!",
+        msg: "No Data Found !!!"
       });
     }
     delete rows[0].pass;
@@ -188,7 +187,7 @@ export const getAllFarmerController = async (req, res) => {
     console.log(`Error in ${e.message}`);
     return res.status(500).json({
       status: false,
-      msg: `Internal Server Error ${e.message}`,
+      msg: `Internal Server Error ${e.message}`
     });
   }
 };
