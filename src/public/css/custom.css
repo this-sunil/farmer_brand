@@ -188,7 +188,9 @@ span::after { top: 8px; }
   box-shadow: 1px 10px 20px #ddd;
   cursor: pointer;
   transition: transform 0.3s ease;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto;
+  
   flex-direction: column;
 }
 
