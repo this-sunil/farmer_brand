@@ -200,7 +200,6 @@ span::after { top: 8px; }
   height: 250px;
   margin: 10px;
   border-radius: 10px;
-  z-index: 1;
   background-color: white;
   box-shadow: 1px 10px 20px #ddd;
   cursor: pointer;
