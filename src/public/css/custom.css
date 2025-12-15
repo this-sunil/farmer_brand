@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
 }
-.top-skills{
+#top-skills{
   white-space: nowrap;
   overflow: hidden;
   animation: 5s typing steps(40) forwards;
