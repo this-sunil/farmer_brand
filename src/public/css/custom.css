@@ -15,7 +15,7 @@ html{
   white-space: nowrap;
   overflow: hidden;
   color: #3272d3;
-  animation: 10s typing steps(40) ease-in-out;
+  animation: 2s typing steps(40) ease-in-out;
 }
 
 @keyframes typing {
