@@ -67,7 +67,7 @@ html{
 }
 
 .about-me .profile img:hover {
-  transform: scale(.8);
+  transform: scale(1);
   box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
 }
 
@@ -209,7 +209,7 @@ span::after { top: 8px; }
 }
 
 .card:hover {
-  transform: scale(.8);
+  transform: scale(1);
 }
 
 .card .card-img img {
@@ -255,12 +255,12 @@ span::after { top: 8px; }
 .btn.phone { background-color: #0c5fdc; }
 
 .btn:hover {
-  transform: translateY(-3px) scale(.8);
+  transform: translateY(-3px) scale(1);
   box-shadow: 0 8px 18px rgba(0,0,0,0.3);
 }
 
 .btn:active {
-  transform: translateY(0) scale(.8);
+  transform: translateY(0) scale(1);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -524,7 +524,7 @@ h2 { text-align: center; margin-bottom: 20px; }
   }
 
   .about-me .about-title {
-    font-size: 1.8rem;
+    font-size: 11rem;
   }
 
   .about-me .about-description {
