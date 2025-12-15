@@ -31,10 +31,10 @@ html{
 
 @keyframes typing {
   from{
-    width: 80%;
+    width: 0;
   }
   to{
-    width: 100%;
+    width: 18ch;
   }
 }
 
