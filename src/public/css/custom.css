@@ -515,13 +515,11 @@ h2 { text-align: center; margin-bottom: 20px; }
     height: 150px;
   }
 
-  .about-me .about-title {
-    font-size: 16px;
+  .about-me .about-title,.about-description {
+    font-size: 20px;
   }
 
-  .about-me .about-description {
-    font-size: 16px;
-  }
+ 
 
   .card, .video-card {
     width: 90%;
