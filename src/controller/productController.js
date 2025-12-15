@@ -245,9 +245,11 @@ export const updateProductController = async (req, res) => {
 };
 
 export const getAllProductController = async (req, res) => {
+   const uid = req.body.uid;
+   const pages=req.body.page;
   try {
-    const uid = req.body.uid;
-    const page = Number(req.body.page) || 1;
+   
+    const page = Number(pages) || 1;
     if (!uid || !page) {
       return res.status(404).json({
         status: false,
@@ -279,7 +281,7 @@ SELECT
           'product_stock', p.product_stock,
           'product_weight', p.product_weight,
           'product_price', p.product_price,
-          'favourite', EXISTS (SELECT 1 FROM fav_farmer ff WHERE ff.fav_id = $1 AND ff.pid = p.pid)
+          'favourite', EXISTS (SELECT 1 FROM fav_farmer ff WHERE ff.uid = $1 AND ff.pid=p.pid)
         )
         ORDER BY p.pid 
       ) FILTER (WHERE p.pid IS NOT NULL),
