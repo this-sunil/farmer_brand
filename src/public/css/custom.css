@@ -69,7 +69,7 @@ html{
 }
 
 .about-me .about-description {
-  font-size: 1.05rem;
+  font-size: 16px;
   margin: 15px auto;
   max-width: 720px;
 }
@@ -455,9 +455,9 @@ h2 { text-align: center; margin-bottom: 20px; }
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   border-left-color: #7B61FF;
 }
-.edu-card h3 { margin: 0; font-size: 1.2rem; font-weight: 600; }
+.edu-card h3 { margin: 0; font-size: 16px; font-weight: 600; }
 .edu-card .institute { margin: 3px 0; color: #555; }
-.edu-card .details { font-size: 0.9rem; color: #333; font-weight: 500; }
+.edu-card .details { font-size: 12px; color: #333; font-weight: 500; }
 /* Media Queries */
 
 /* Tablets (768px - 1024px) */
@@ -505,7 +505,7 @@ h2 { text-align: center; margin-bottom: 20px; }
  
 
   .headline-section {
-    font-size: 0.9rem;
+    font-size: 12px;
     padding-left: 5px;
     height: 40px;
   }
@@ -516,11 +516,11 @@ h2 { text-align: center; margin-bottom: 20px; }
   }
 
   .about-me .about-title {
-    font-size: 11rem;
+    font-size: 16px;
   }
 
   .about-me .about-description {
-    font-size: 0.95rem;
+    font-size: 16px;
   }
 
   .card, .video-card {
