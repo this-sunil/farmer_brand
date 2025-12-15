@@ -12,7 +12,7 @@ body {
 .top-skills{
   white-space: nowrap;
   overflow: hidden;
-  animation: 2s typing steps(22) forwards;
+  animation: 5s typing steps(40) forwards;
 }
 @keyframes typing {
   from{
