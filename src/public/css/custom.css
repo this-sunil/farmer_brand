@@ -209,7 +209,6 @@ span::after { top: 8px; }
 
 .card-body h4 {
     text-align: center;
-    line-height: 0px;
     font-size: 20px;
     font-weight: bold;
     padding-bottom: 10px;
