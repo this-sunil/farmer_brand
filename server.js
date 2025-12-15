@@ -10,6 +10,7 @@ import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import paymentRoute from "./src/routes/paymentRoute.js";
 import favFarmerRoute from "./src/routes/favRoute.js";
+
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
