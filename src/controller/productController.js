@@ -365,10 +365,9 @@ export const getProductByIdController = async (req, res) => {
     p.product_desc,
     p.product_photo,
     p.product_price,     
-    up.qty AS product_qty,
+    COALESCE(up.qty AS product_qty,0),
     p.product_stock,
     p.product_weight
-    
 FROM products p
 LEFT JOIN users_product up 
     ON p.pid = up.pid 
