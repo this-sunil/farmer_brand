@@ -365,7 +365,7 @@ export const getProductByIdController = async (req, res) => {
     p.product_desc,
     p.product_photo,
     p.product_price,     
-    COALESCE(up.qty AS product_qty,0),
+    COALESCE(up.qty,0) AS product_qty,
     p.product_stock,
     p.product_weight
 FROM products p
