@@ -15,7 +15,7 @@ const createFavTable=()=>{
         if(err){
             throw err;
         }
-        console.log(`Favorite farmer created !!!`);
+        console.log(`Favorite Table created !!!`);
     });
 }
 
