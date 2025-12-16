@@ -137,17 +137,13 @@ export const deleteFarmerController = async (req, res) => {
       });
     }
     const query = `DELETE FROM Farmer WHERE fid=$1`;
-    const { rows } = await pool.query(query, [fid]);
-    if (rows.length === 0) {
-      return res.status(404).json({
-        status: false,
-        msg: "Failed to Delete",
-      });
-    }
+    await pool.query(query, [fid]);
+    
     return res.status(200).json({
       status: true,
-      msg: "Deleted Successfully",
+      msg: "Deleted Successfully"
     });
+
   } catch (e) {
     console.log(`Error =>${e.message}`);
     return res.status(500).json({
