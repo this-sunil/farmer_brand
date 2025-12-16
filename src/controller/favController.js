@@ -21,10 +21,10 @@ const createFavTable=()=>{
 
 createFavTable();
 export const addFavController=async(req,res)=>{
-    const {uid,fid}=req.body;
+    const {uid,fid,pid}=req.body;
     try {
-        const query=`INSERT INTO fav_farmer(uid,fid) VALUES($1,$2) RETURNING *`;
-        const {rows}=await pool.query(query,[uid,fid]);
+        const query=`INSERT INTO fav_farmer(uid,fid,pid) VALUES($1,$2,$3) RETURNING *`;
+        const {rows}=await pool.query(query,[uid,fid,pid]);
         return res.status(200).json({
             status:true,
             msg:"Favorite Inserted Successfully !!!",
