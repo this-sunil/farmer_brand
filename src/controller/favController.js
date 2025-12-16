@@ -1,10 +1,16 @@
 import pool from "../dbHelper/dbHelper.js";
 const createFavTable=()=>{
-    const query=`CREATE TABLE IF NOT EXISTS fav_farmer(
+    const query=`
+    DROP TABLE IF EXISTS fav_farmer;
+    CREATE TABLE IF NOT EXISTS fav_farmer(
     fav_id SERIAL PRIMARY KEY,
     uid INT NOT NULL,
+    pid INT NOT NULL,
     fid INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (uid) REFERENCES users(id),
+    FOREIGN KEY (pid) REFERENCES products(pid),
+    FOREIGN KEY (fid) REFERENCES farmer(fid)
     )`;
     pool.query(query,(err)=>{
         if(err){
