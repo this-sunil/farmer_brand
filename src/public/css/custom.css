@@ -270,7 +270,7 @@ span::after { top: 8px; }
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 33%;
+  width: 28%;
   transition: transform 0.2s;
 }
 
@@ -280,8 +280,7 @@ span::after { top: 8px; }
 
 .video-card video {
   width: 100%;
-  aspect-ratio: 9 / 16;
-  max-height: 350px;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border: none;
   position: relative;
