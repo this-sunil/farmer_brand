@@ -5,7 +5,7 @@ $(document).ready(function(){
     });
 
  
-  $('.video-card').each(function () {
+ $('.video-card').each(function () {
     const video = $(this).find('video')[0];
     const button = $(this).find('.play-button');
     const icon = button.find('i');
@@ -13,14 +13,18 @@ $(document).ready(function(){
     button.on('click', function () {
       if (video.paused) {
         video.play();
-        icon.removeClass('fa-play').addClass('fa-pause');
+        button.fadeOut();   // 🔥 hide play icon
       } else {
         video.pause();
-        icon.removeClass('fa-pause').addClass('fa-play');
+        button.fadeIn();    // 🔥 show play icon
       }
     });
-  });
 
-
+    // When video ends, show play icon again
+    video.addEventListener('ended', function () {
+      button.fadeIn();
+      icon.removeClass('fa-pause').addClass('fa-play');
+    });
+ });
 });
 
