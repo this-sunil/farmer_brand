@@ -298,8 +298,8 @@ span::after { top: 8px; }
 .play-button {
   position: absolute;
   top: 40%;
-  left: 40%;
-  transform: translate(-40%, -40%);
+  left: 50%;
+  transform: translate(-40%, -50%);
   width: 70px;
   height: 70px;
   border-radius: 50%;
