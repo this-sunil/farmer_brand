@@ -186,8 +186,8 @@ span::after { top: 8px; }
 }
 
 .card {
-  width: 25%;
-  height: 250px;
+  width: 80%;
+  height: 280px;
   margin: 10px;
   border-radius: 10px;
   background-color: white;
