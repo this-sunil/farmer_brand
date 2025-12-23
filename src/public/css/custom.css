@@ -280,7 +280,8 @@ span::after { top: 8px; }
 
 .video-card video {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 300px;
+  object-fit: cover;
   border: none;
 }
 
