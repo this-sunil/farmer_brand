@@ -178,7 +178,7 @@ span::after { top: 8px; }
   height: 100vh;
 }
 
-.row {
+.rows {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -497,7 +497,7 @@ h2 { text-align: center; margin-bottom: 20px; }
 
 /* Tablets (768px - 1024px) */
 @media screen and (max-width: 1024px) {
-  .container, .row {
+  .container, .rows {
     flex-direction: column;
     height: auto;
   }
