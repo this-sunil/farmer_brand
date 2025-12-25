@@ -170,7 +170,7 @@ html{
 span::before { top: -8px; }
 span::after { top: 8px; }
 
-/* Cards */
+/* cardss */
 .container {
   display: flex;
   justify-content: center;
@@ -185,7 +185,7 @@ span::after { top: 8px; }
   align-items: center;
 }
 
-.card {
+.cardss {
   width: 25%;
   height: 300px;
   margin: 10px;
@@ -199,18 +199,18 @@ span::after { top: 8px; }
   flex-direction: column;
 }
 
-.card:hover {
+.cardss:hover {
   transform: scale(1.2);
 }
 
-/* .card .card-img img {
+/* .cards .cards-img img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 } */
 
-.card-body h4 {
+.cardss-body h4 {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -265,7 +265,7 @@ span::after { top: 8px; }
   justify-content: center;
 }
 
-.video-card {
+.video-cards {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -274,11 +274,11 @@ span::after { top: 8px; }
   transition: transform 0.2s;
 }
 
-.video-card:hover {
+.video-cards:hover {
   transform: translateY(-5px);
 }
 
-.video-card video {
+.video-cards video {
   width: 100%;
   height: 300px;
   background-color: #333945;
@@ -286,11 +286,11 @@ span::after { top: 8px; }
   position: relative;
 }
 
-.video-card {
+.video-cards {
   position: relative;
 }
 
-.video-card video {
+.video-cards video {
   width: 100%;
   border-radius: 10px;
 }
@@ -319,9 +319,9 @@ span::after { top: 8px; }
 
 
 
-.video-card .card-content { padding: 15px; }
-.video-card .card-title { font-size: 18px; margin-bottom: 10px; font-weight: bold; }
-.video-card .card-description { font-size: 14px; color: #555; }
+.video-cards .cards-content { padding: 15px; }
+.video-cards .cards-title { font-size: 18px; margin-bottom: 10px; font-weight: bold; }
+.video-cards .cards-description { font-size: 14px; color: #555; }
 
 /* Experience Section */
 .experience-section {
@@ -338,7 +338,7 @@ span::after { top: 8px; }
   text-align: center;
 }
 
-.experience-card {
+.experience-cards {
   background: #ffffff;
   padding: 20px;
   margin-bottom: 10px;
@@ -347,12 +347,12 @@ span::after { top: 8px; }
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.experience-card:hover {
+.experience-cards:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.experience-card h3 {
+.experience-cards h3 {
   font-size: 24px;
   color: #2a4d8f;
   margin-bottom: 5px;
@@ -381,7 +381,7 @@ span::after { top: 8px; }
 
 /* Projects Section */
 .projects-section { width: 100%; padding: 20px; font-family: "Poppins", sans-serif; }
-.project-card {
+.project-cards {
   background: #ffffff;
   padding: 25px;
   margin-bottom: 25px;
@@ -389,11 +389,11 @@ span::after { top: 8px; }
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.project-card:hover {
+.project-cards:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
-.project-card h3 { font-size: 22px; margin-bottom: 12px; color: #2a4d8f; }
+.project-cards h3 { font-size: 22px; margin-bottom: 12px; color: #2a4d8f; }
 .project-points { padding: 10px; }
 .project-points li {
   
@@ -476,7 +476,7 @@ span::after { top: 8px; }
   margin: auto;
 }
 h2 { text-align: center; margin-bottom: 20px; }
-.edu-card {
+.edu-cards {
   background: #ffffff;
   border-left: 5px solid #4A90E2;
   padding: 15px 20px;
@@ -485,14 +485,14 @@ h2 { text-align: center; margin-bottom: 20px; }
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
 }
-.edu-card:hover {
+.edu-cards:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   border-left-color: #7B61FF;
 }
-.edu-card h3 { margin: 0; font-size: 16px; font-weight: 600; }
-.edu-card .institute { margin: 3px 0; color: #555; }
-.edu-card .details { font-size: 12px; color: #333; font-weight: 500; }
+.edu-cards h3 { margin: 0; font-size: 16px; font-weight: 600; }
+.edu-cards .institute { margin: 3px 0; color: #555; }
+.edu-cards .details { font-size: 12px; color: #333; font-weight: 500; }
 /* Media Queries */
 
 /* Tablets (768px - 1024px) */
@@ -501,11 +501,11 @@ h2 { text-align: center; margin-bottom: 20px; }
     flex-direction: column;
     height: auto;
   }
-  .card{
+  .cards{
     height: 300px;
   }
 
-  .card, .video-card {
+  .cards, .video-cards {
     width: 60%;
     margin: 15px auto;
   }
@@ -531,7 +531,7 @@ h2 { text-align: center; margin-bottom: 20px; }
 
 /* Mobile Devices (up to 767px) */
 @media screen and (max-width: 767px) {
-   .card{
+   .cards{
     height: 300px;
   }
   body {
@@ -556,12 +556,12 @@ h2 { text-align: center; margin-bottom: 20px; }
 
  
 
-  .card, .video-card {
+  .cards, .video-cards {
     width: 90%;
     margin: 15px auto;
   }
 
-  .video-card iframe {
+  .video-cards iframe {
    aspect-ratio: 12/9;
   }
 
