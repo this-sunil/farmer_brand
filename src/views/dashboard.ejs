@@ -299,7 +299,7 @@
     </ul>
   </div>
      </section>
-<section id="preview">
+<section id="preview gap-2">
   <h4 class="section-title">Work Preview</h4>
   <div class="video-container">
   <div class="video-cards">
@@ -412,12 +412,13 @@
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
  <script>
-  window.addEventListener("load", () => {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth"
-  });
-});
+  function autoScroll() {
+  window.scrollBy(0, 1);
+  requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+
   const scrollBtn = document.getElementById("scrollTopBtn");
   const scrollWrapper = document.querySelector(".scroll-top");
 
