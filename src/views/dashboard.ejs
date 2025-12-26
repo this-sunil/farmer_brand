@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
     
   </head>
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -404,9 +404,24 @@
    </div>
    </div>
   </section>
-  <div class="scroll-top"></div>
+  <div class="scroll-top">
+    <span class="fa fa-dropup">
+
+    </span>
+  </div>
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
-  </body>
+ <script>
+  const btn = document.getElementsByClassName("scrollTop");
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+ 
+</body>
 
 </html>
