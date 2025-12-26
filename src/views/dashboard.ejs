@@ -412,12 +412,15 @@
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
  <script>
- let scroll = setInterval(() => {
+let scroll = setInterval(() => {
   window.scrollBy(0, 1);
-}, 10);
 
-// stop later
-clearInterval(scroll);
+  // Check if reached bottom
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+    clearInterval(scroll); // stop scrolling
+  }
+}, 2);
+
 
 
   const scrollBtn = document.getElementById("scrollTopBtn");
