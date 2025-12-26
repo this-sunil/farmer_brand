@@ -229,24 +229,25 @@ span::after { top: 8px; }
 }
 
 .btns {
-  padding: 10px 50px;
-  border-radius: 10px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: inline-block;
-  outline: none;
-  background-color: transparent;
-  border: none;
-  text-align: center;
+      padding: 10px 50px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    outline: none;
+    border: none;
+    text-align: center;
+    background: transparent;
+    margin: 10px;
 }
 
-.btns.github { background-color: #ee7a05; }
-.btns.linkedin { background-color: #1198e0; }
-.btns.phone { background-color: #0c5fdc; }
+.btn > .btns.github { background-color: #ee7a05; }
+.btn > .btns.linkedin { background-color: #1198e0; }
+.btn > .btns.phone { background-color: #0c5fdc; }
 
 .btns:hover {
   transform: translateY(-3px) scale(1.2);
