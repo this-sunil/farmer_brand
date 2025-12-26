@@ -412,23 +412,19 @@
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
  <script>
-function autoScrollToBottom() {
-  let scroll = setInterval(() => {
-    window.scrollBy(0, 1);
+document.addEventListener("DOMContentLoaded", () => {
+  function autoScrollToBottom() {
+    let scroll = setInterval(() => {
+      window.scrollBy(0, 1);
 
-    // Stop when bottom reached
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-      clearInterval(scroll);
-    }
-  }, 2);
-}
-window.addEventListener("load", () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+        clearInterval(scroll);
+      }
+    }, 2);
+  }
+
   autoScrollToBottom();
 });
-
-
-
-
 
   const scrollBtn = document.getElementById("scrollTopBtn");
   const scrollWrapper = document.querySelector(".scroll-top");
