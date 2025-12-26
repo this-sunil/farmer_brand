@@ -239,6 +239,7 @@ span::after { top: 8px; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   display: inline-block;
   outline: none;
+  background-color: transparent;
   border: none;
   text-align: center;
 }
