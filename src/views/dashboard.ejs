@@ -420,17 +420,22 @@
  <script>
 document.addEventListener("DOMContentLoaded", () => {
   function autoScrollToBottom() {
-    let scroll = setInterval(() => {
-      window.scrollBy(0, 1);
+    const speed = 1; // pixels per frame
 
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-        clearInterval(scroll);
+    function scroll() {
+      window.scrollBy(0, speed);
+
+      if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
+        requestAnimationFrame(scroll);
       }
-    }, 1);
+    }
+
+    requestAnimationFrame(scroll);
   }
 
   autoScrollToBottom();
 });
+
 
   const scrollBtn = document.getElementById("scrollTopBtn");
   const scrollWrapper = document.querySelector(".scroll-top");
