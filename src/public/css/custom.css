@@ -15,7 +15,7 @@ html {
   box-shadow: 10px 10px 80px #ccc;
   overflow: hidden;
 }
-.navbar-toggler{
+.navbar-toggler .navbar-toggler:focus:active:hover{
   border: 1px solid #ccc;
 }
 
@@ -224,6 +224,7 @@ span::after {
 
 .cards {
   width: 25%;
+  padding: 10px;
   height: 300px;
   margin: 10px;
   border-radius: 10px;
@@ -242,7 +243,7 @@ span::after {
 
 .cards .cards-img img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
