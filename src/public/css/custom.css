@@ -8,8 +8,11 @@ html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
   font-family: 'Poppins', sans-serif;
+}
+#preview{
+  margin-top: 10px;
+  margin-bottom:10px;
 }
 
 .top-skills{
