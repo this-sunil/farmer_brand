@@ -223,19 +223,7 @@ span::after { top: 8px; }
 
 
 
-.btn.github { background-color: #ee7a05; }
-.btn.linkedin { background-color: #1198e0; }
-.btn.phone { background-color: #0c5fdc; }
 
-.btn:hover {
-  transform: translateY(-3px) scale(1.2);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-}
-
-.btn:active {
-  transform: translateY(0) scale(1.2);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
 
 /* Video Section */
 .video-container {
