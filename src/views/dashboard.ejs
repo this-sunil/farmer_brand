@@ -435,6 +435,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   autoScrollToBottom();
 });
+window.scrollTo({
+  top: document.body.scrollHeight,
+  behavior: "smooth"
+});
+
 
 
   const scrollBtn = document.getElementById("scrollTopBtn");
