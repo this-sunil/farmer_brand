@@ -1,13 +1,14 @@
 /* Global Styles */
 html{
   scroll-behavior: smooth;
+  cursor: pointer;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: pointer;
+  
   font-family: 'Poppins', sans-serif;
 }
 
