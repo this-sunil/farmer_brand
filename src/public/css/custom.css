@@ -37,11 +37,13 @@ html{
 }
 
 .scroll-top button {
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-
-  text-align: center;
+ display: flex;
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
