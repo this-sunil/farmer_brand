@@ -411,15 +411,21 @@
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
  <script>
-  const btn = document.getElementsByClassName("scroll-top");
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  const scrollWrapper = document.querySelector(".scroll-top");
 
-  btn.addEventListener("click", () => {
+  window.addEventListener("scroll", () => {
+    scrollWrapper.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  scrollBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
   });
 </script>
+
  
 </body>
 
