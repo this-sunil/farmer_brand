@@ -10,6 +10,11 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+.shadow-navbar{
+  z-index: 999;
+  box-shadow: 10px 10px 80px #ccc;
+  overflow: hidden;
+}
 
 
 .top-skills {
