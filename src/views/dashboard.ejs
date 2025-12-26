@@ -425,27 +425,27 @@
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  function autoScrollToBottom() {
-    const speed = 16; 
+// document.addEventListener("DOMContentLoaded", () => {
+//   function autoScrollToBottom() {
+//     const speed = 16; 
 
-    function scroll() {
-      window.scrollBy(0, speed);
+//     function scroll() {
+//       window.scrollBy(0, speed);
 
-      if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
-        requestAnimationFrame(scroll);
-      }
-    }
+//       if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
+//         requestAnimationFrame(scroll);
+//       }
+//     }
 
-    requestAnimationFrame(scroll);
-  }
+//     requestAnimationFrame(scroll);
+//   }
 
-  autoScrollToBottom();
-});
-window.scrollTo({
-  top: document.body.scrollHeight,
-  behavior: "smooth"
-});
+//   autoScrollToBottom();
+// });
+// window.scrollTo({
+//   top: document.body.scrollHeight,
+//   behavior: "smooth"
+// });
 
 
 
