@@ -160,7 +160,7 @@ html {
 }
 
 .menu span {
- 
+  position: relative;
   background-color: black;
   border-radius: 10px;
   width: 70%;
@@ -319,9 +319,12 @@ span::after {
   height: 300px;
   background-color: #333945;
   border: none;
-  
+  position: relative;
 }
 
+.video-cards {
+  position: relative;
+}
 
 .video-cards video {
   width: 100%;
@@ -409,7 +412,7 @@ span::after {
   text-align: justify;
 }
 .responsibilities li {
- 
+  position: relative;
   padding-left: 40px;
   margin-bottom: 10px;
   line-height: 1.2;
@@ -452,7 +455,7 @@ span::after {
   padding: 10px;
 }
 .project-points li {
-  
+  position: relative;
   padding-left: 20px;
   margin-bottom: 10px;
   line-height: 1.2;
