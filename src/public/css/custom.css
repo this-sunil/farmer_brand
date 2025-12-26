@@ -229,9 +229,9 @@ span::after { top: 8px; }
 }
 
 .btns {
-      padding: 10px 50px;
+    padding: 10px 50px;
     border-radius: 10px;
-    color: white;
+    /* color: white; */
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -241,13 +241,12 @@ span::after { top: 8px; }
     outline: none;
     border: none;
     text-align: center;
-    background: transparent;
     margin: 10px;
 }
 
-.btn > .btns.github { background-color: #ee7a05; }
-.btn > .btns.linkedin { background-color: #1198e0; }
-.btn > .btns.phone { background-color: #0c5fdc; }
+.btns > .btns.github { background-color: #ee7a05; }
+.btns > .btns.linkedin { background-color: #1198e0; }
+.btns > .btns.phone { background-color: #0c5fdc; }
 
 .btns:hover {
   transform: translateY(-3px) scale(1.2);
