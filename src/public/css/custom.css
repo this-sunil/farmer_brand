@@ -22,6 +22,14 @@ html{
   font-size: 16px;
   animation: typing 2s steps(40, end) forwards;
 }
+.scroll-top{
+  position: fixed;
+  bottom: 10px;
+  right:10px;
+  width: 60px;
+  height:60px;
+  background-color: #dd4f33;
+}
 
 @keyframes typing {
   from {
