@@ -36,17 +36,6 @@ html{
   background-color: #dd4f33;
 }
 
-.scroll-top button {
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  background-color: #0d6efd; /* Bootstrap primary */
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 .scroll-top button:hover {
   background-color: #0b5ed7;
 }
