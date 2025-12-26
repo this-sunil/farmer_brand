@@ -231,7 +231,7 @@ span::after { top: 8px; }
 .btns {
     padding: 10px 50px;
     border-radius: 10px;
-    /* color: white; */
+    color: white;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
