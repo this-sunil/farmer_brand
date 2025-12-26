@@ -412,12 +412,13 @@
 
   <script src="bootstrap-js/bootstrap.min.js"></script>
  <script>
-  function autoScroll() {
+ let scroll = setInterval(() => {
   window.scrollBy(0, 1);
-  requestAnimationFrame(autoScroll);
-}
+}, 10);
 
-autoScroll();
+// stop later
+clearInterval(scroll);
+
 
   const scrollBtn = document.getElementById("scrollTopBtn");
   const scrollWrapper = document.querySelector(".scroll-top");
