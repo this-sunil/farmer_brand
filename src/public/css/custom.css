@@ -10,10 +10,7 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-#preview {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 
 .top-skills {
   white-space: nowrap;
