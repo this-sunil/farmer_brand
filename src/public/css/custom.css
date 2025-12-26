@@ -36,6 +36,12 @@ html{
   background-color: #dd4f33;
 }
 
+.scroll-top button {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 
 
 
