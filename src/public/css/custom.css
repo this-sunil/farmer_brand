@@ -15,7 +15,7 @@ html {
   box-shadow: 10px 10px 80px #ccc;
   overflow: hidden;
 }
-.navbar-toggler .navbar-toggler-icon{
+.navbar-toggler{
   border: 1px solid #ccc;
 }
 
