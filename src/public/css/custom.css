@@ -219,27 +219,9 @@ span::after { top: 8px; }
 
 
 
-/* Buttons */
-.button-section {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
 
-.btn {
-  padding: 10px 50px;
-  border-radius: 10px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: inline-block;
-  text-align: center;
-}
+
+
 
 .btn.github { background-color: #ee7a05; }
 .btn.linkedin { background-color: #1198e0; }
@@ -515,10 +497,7 @@ h2 { text-align: center; margin-bottom: 20px; }
     text-align: center;
   }
 
-  .button-section {
-    flex-direction: column;
-    gap: 15px;
-  }
+  
 
   .education-section {
     width: 90%;
@@ -580,10 +559,7 @@ h2 { text-align: center; margin-bottom: 20px; }
     align-self: flex-end;
   }
 
-  .button-section {
-    flex-direction: column;
-    gap: 10px;
-  }
+ 
 
   .education-section {
     width: 95%;
