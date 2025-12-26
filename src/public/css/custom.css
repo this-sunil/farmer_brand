@@ -15,6 +15,10 @@ html {
   box-shadow: 10px 10px 80px #ccc;
   overflow: hidden;
 }
+.navbar-toggler .navbarbar-toggler-icon{
+  border: 1px solid #ccc;
+  
+}
 
 
 .top-skills {
