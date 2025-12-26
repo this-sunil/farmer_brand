@@ -244,9 +244,9 @@ span::after { top: 8px; }
     margin: 10px;
 }
 
-.btns  .btns-github { background-color: #ee7a05; }
-.btns  .btns-linkedin { background-color: #1198e0; }
-.btns  .btns-phone { background-color: #0c5fdc; }
+.btns .btns-github { background-color: #ee7a05; }
+.btns .btns-linkedin { background-color: #1198e0; }
+.btns .btns-phone { background-color: #0c5fdc; }
 
 .btns:hover {
   transform: translateY(-3px) scale(1.2);
