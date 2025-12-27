@@ -243,7 +243,7 @@ span::after {
 
 .cards .cards-img img {
   width: 100%;
-  height: 260px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
