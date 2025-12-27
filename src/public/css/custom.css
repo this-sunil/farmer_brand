@@ -289,6 +289,9 @@ span::after {
 .btns-phone {
   background-color: #0c5fdc;
 }
+.btns-resume{
+  background-color: rgba(59, 233, 59, 0.529);
+}
 
 .btns:hover {
   transform: translateY(-3px) scale(1.2);
