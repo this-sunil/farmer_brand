@@ -46,7 +46,7 @@ app.get("/",(req,res)=>{
 // app.use("/api",paymentRoute);
 // app.use("/api",favFarmerRoute);
 app.get("/download/resume", (req, res) => {
-  const filePath = path.join(process.cwd(), "public", "Sunil_Shedge_Resume.pdf");
+  const filePath = path.join(process.cwd(), "src/public", "Sunil_Shedge_Resume.pdf");
 
   res.download(filePath, "Sunil_Shedge_Resume.pdf", (err) => {
     if (err) {
