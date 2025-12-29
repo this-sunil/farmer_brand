@@ -14,7 +14,14 @@
     <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
     <!-- Add this script to the bottom of your <body> tag -->
     <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
-    
+    <script>
+    DisableDevtool({
+     ondevtoolopen: (type, next) => {
+      alert('Developer tools are open! This action is logged. Type: ' + type);
+      next();
+     }
+  });
+</script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar">
