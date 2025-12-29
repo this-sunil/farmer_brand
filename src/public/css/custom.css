@@ -5,10 +5,13 @@ html {
 }
 
 * {
-  margin: 10px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+body{
+  margin: 10px;
 }
 .shadow-navbar{
   z-index: 999;
