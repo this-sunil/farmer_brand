@@ -10,9 +10,7 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body{
-  margin: 10px;
-}
+
 .shadow-navbar{
   z-index: 999;
   box-shadow: 10px 10px 80px #ccc;
@@ -213,7 +211,7 @@ span::after {
 /* cards */
 .container {
   display: flex;
-  margin: 5px;
+  margin: 10px;
   justify-content: center;
   align-items: center;
   height: 100vh;
