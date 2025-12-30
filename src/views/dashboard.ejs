@@ -17,7 +17,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
-  Add this script to the bottom of your <body> tag
+  Add this script to the bottom of your
+
+<body> tag
   <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
   <script>
     DisableDevtool({
@@ -27,416 +29,465 @@
       }
     });
   </script>
-</head>
+  </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-white shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">#Portfolio</a>
-      <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link">Skill</a></li>
-          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-          <li class="nav-item"><a href="#preview" class="nav-link">Work Preview</a></li>
-          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-          <li class="nav-item"><a href="#project" class="nav-link">Project</a></li>
+  <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">#Portfolio</a>
+        <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skill</a></li>
+            <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+            <li class="nav-item"><a href="#preview" class="nav-link">Work Preview</a></li>
+            <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+            <li class="nav-item"><a href="#project" class="nav-link">Project</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="about-me" id="about">
+      <div class="profile">
+        <img src="https://avatars.githubusercontent.com/u/51407211?v=4" alt="Profile Photo">
+      </div>
+
+      <h1 class="about-title top-skills">Sunil Shedge</h1>
+
+      <p class="about-description">
+        I'm a <strong class="top-skills">Flutter Developer</strong> with <strong>3+ years of experience</strong>
+        building responsive and high-performance mobile apps for Android & iOS.
+      </p>
+
+      <p class="about-description">
+        I focus on clean architecture, reusable widgets, smooth animations, and
+        delivering exceptional user experiences. Skilled in Flutter, Dart, Firebase,
+        REST APIs, GetX, Provider, and modern UI/UX design principles.
+      </p>
+      <div class="container-fluid">
+        <div class="row text-center">
+
+          <div class="col-md-3">
+            <a href="https://github.com/this-sunil" target="_blank" rel="noopener noreferrer"
+              class="d-flex justify-content-center align-items-center gap-2 btns btns-github text-decoration-none">
+              <i class="fab fa-github-alt"></i>
+              <span class="card-title">GitHub</span>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="https://www.linkedin.com/in/sunilshedge" target="_blank" rel="noopener noreferrer"
+              class="d-flex justify-content-center align-items-center gap-2 btns btns-linkedin text-decoration-none">
+              <i class="fab fa-linkedin-in"></i>
+              <span class="card-title">LinkedIn</span>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="tel:+918668796251"
+              class="d-flex justify-content-center align-items-center gap-2 btns btns-phone text-decoration-none">
+              <i class="fas fa-phone"></i>
+              <span class="card-title">Contact</span>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="https://raw.githubusercontent.com/this-sunil/farmer_brand/896304d36061e978836922ff23ddc11b16fa55d6/src/public/Sunil_Shedge_Resume.pdf"
+              class="d-flex justify-content-center align-items-center gap-2 btns btns-resume text-decoration-none">
+              <i class="fas fa-download"></i>
+              <span class="card-title">Resume</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <h4 class="section-title">Technical Skills</h4>
+      <div class="rows">
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png" alt="Html" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">HTML</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg" alt="Css" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">CSS</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png" alt="Bootstrap" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Bootstrap</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg" alt="Javascript" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Javascript</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img
+              src="https://play-lh.googleusercontent.com/LpgnH_rHqhJzlJ-uWhfMj3w87cu6iWV5m1hr6eos1wmdlqRiF0RsNE1RBmgtsPvyyBI"
+              alt="Jquery" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Jquery</h4>
+          </div>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="cards">
+          <div class="cards-img">
+            <img
+              src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
+              alt="Node js" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Node Js</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png" alt="Express Js" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Express Js</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png" alt="Flutter" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Flutter</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
+              alt="Dart" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Dart</h4>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png" alt="Postgresql" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Postgresql</h4>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="tools">
+      <h4 class="section-title">Tools</h4>
+      <div class="rows">
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://images.seeklogo.com/logo-png/43/1/android-studio-logo-png_seeklogo-439009.png"
+              alt="Android Studio" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Android Studio</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://1000logos.net/wp-content/uploads/2024/05/Firebase-Logo.png" alt="Firebase Studio">
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Firebase</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img src="https://images.g2crowd.com/uploads/product/image/fd527e1fc777d9e31b2a28e8d3c959a4/postman.jpg"
+              alt="Postman" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Postman</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img
+              src="https://e7.pngegg.com/pngimages/195/304/png-clipart-visual-studio-code-logo-thumbnail-tech-companies-thumbnail.png"
+              alt="Visual Studio Code" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Visual Studio Code</h4>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="cards-img">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmujj5lkT-9g2msBcBfFE9f6cBfFYEN9B-mSlwazo-w&s=10"
+              alt="Github" />
+          </div>
+          <div class="cards-body">
+            <h4 class="headline">Github</h4>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="experience-section" id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="experience-cards">
+        <h3>Senior Flutter Developer</h3>
+        <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
+        <p class="duration">July 2022 – April 2025</p>
+
+        <ul class="list-group list-group-flush shadow-sm rounded bullets">
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Monetization & Ads</strong><br>
+            Integrated <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with
+            <span class="fw-semibold">Banner, Interstitial, and Rewarded Ads</span>, driving a
+            <span class="badge bg-success">+35% Monetization</span> and improving ad rendering performance by
+            <span class="fw-semibold">30%</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Testing & Stability</strong><br>
+            Performed extensive <span class="fw-semibold">real-device and emulator testing</span>, reducing
+            <span class="badge bg-success">−45% Production Errors</span>. Integrated
+            <span class="fw-semibold">Sentry</span> for real-time crash reporting and monitoring.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Backend & Integrations</strong><br>
+            Integrated <span class="fw-semibold">Firebase, Google Maps, Razorpay, and OneSignal</span>, enhancing
+            backend communication, push notifications,
+            and data handling efficiency by
+            <span class="badge bg-success">+40%</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">State Management</strong><br>
+            Implemented <span class="fw-semibold">BLoC, Provider, and GetX</span> architectures, improving application
+            <span class="badge bg-success">+50% Scalability & Maintainability</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">CI/CD, Deployment & Build Optimization</strong><br>
+            Built and maintained <span class="fw-semibold">CI/CD pipelines</span> using
+            <span class="fw-semibold">GitHub Actions</span> for automated builds and releases. Led
+            <span class="fw-semibold">Play Store & App Store deployments</span>, reducing
+            <span class="badge bg-success">−60% Time-to-Market</span>. Resolved complex
+            <span class="fw-semibold">Gradle</span> and
+            <span class="fw-semibold">JDK compatibility issues</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">UI/UX & Animations</strong><br>
+            Designed <span class="fw-semibold">interactive UI components, custom widgets, and animations</span>,
+            increasing
+            <span class="badge bg-success">+30% User Engagement</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Collaboration & APIs</strong><br>
+            Collaborated with <span class="fw-semibold">backend and QA teams</span> to refine
+            <span class="fw-semibold">REST API integrations</span>, improving application responsiveness by
+            <span class="badge bg-success">+25%</span>.
+          </li>
         </ul>
-      </div>
-    </div>
-  </nav>
-  <section class="about-me" id="about">
-    <div class="profile">
-      <img src="https://avatars.githubusercontent.com/u/51407211?v=4" alt="Profile Photo">
-    </div>
 
-    <h1 class="about-title top-skills">Sunil Shedge</h1>
-
-    <p class="about-description">
-      I'm a <strong class="top-skills">Flutter Developer</strong> with <strong>3+ years of experience</strong>
-      building responsive and high-performance mobile apps for Android & iOS.
-    </p>
-
-    <p class="about-description">
-      I focus on clean architecture, reusable widgets, smooth animations, and
-      delivering exceptional user experiences. Skilled in Flutter, Dart, Firebase,
-      REST APIs, GetX, Provider, and modern UI/UX design principles.
-    </p>
-    <div class="container-fluid">
-      <div class="row text-center">
-
-        <div class="col-md-3">
-          <a href="https://github.com/this-sunil" target="_blank" rel="noopener noreferrer"
-            class="d-flex justify-content-center align-items-center gap-2 btns btns-github text-decoration-none">
-            <i class="fab fa-github-alt"></i>
-            <span class="card-title">GitHub</span>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a href="https://www.linkedin.com/in/sunilshedge" target="_blank" rel="noopener noreferrer"
-            class="d-flex justify-content-center align-items-center gap-2 btns btns-linkedin text-decoration-none">
-            <i class="fab fa-linkedin-in"></i>
-            <span class="card-title">LinkedIn</span>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a href="tel:+918668796251"
-            class="d-flex justify-content-center align-items-center gap-2 btns btns-phone text-decoration-none">
-            <i class="fas fa-phone"></i>
-            <span class="card-title">Contact</span>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a href="https://raw.githubusercontent.com/this-sunil/farmer_brand/896304d36061e978836922ff23ddc11b16fa55d6/src/public/Sunil_Shedge_Resume.pdf"
-            class="d-flex justify-content-center align-items-center gap-2 btns btns-resume text-decoration-none">
-            <i class="fas fa-download"></i>
-            <span class="card-title">Resume</span>
-          </a>
-        </div>
 
       </div>
-    </div>
-  </section>
-  <section id="skills">
-    <h4 class="section-title">Technical Skills</h4>
-    <div class="rows">
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png" alt="Html" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">HTML</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg" alt="Css" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">CSS</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png" alt="Bootstrap" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Bootstrap</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg" alt="Javascript" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Javascript</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://play-lh.googleusercontent.com/LpgnH_rHqhJzlJ-uWhfMj3w87cu6iWV5m1hr6eos1wmdlqRiF0RsNE1RBmgtsPvyyBI"
-            alt="Jquery" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Jquery</h4>
-        </div>
-      </div>
-    </div>
-    <div class="rows">
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
-            alt="Node js" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Node Js</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png" alt="Express Js" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Express Js</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png" alt="Flutter" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Flutter</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
-            alt="Dart" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Dart</h4>
-        </div>
-      </div>
 
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png" alt="Postgresql" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Postgresql</h4>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-  <section id="tools">
-    <h4 class="section-title">Tools</h4>
-    <div class="rows">
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://images.seeklogo.com/logo-png/43/1/android-studio-logo-png_seeklogo-439009.png"
-            alt="Android Studio" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Android Studio</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://1000logos.net/wp-content/uploads/2024/05/Firebase-Logo.png"
-            alt="Firebase Studio">
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Firebase</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://images.g2crowd.com/uploads/product/image/fd527e1fc777d9e31b2a28e8d3c959a4/postman.jpg"
-            alt="Postman" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Postman</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://e7.pngegg.com/pngimages/195/304/png-clipart-visual-studio-code-logo-thumbnail-tech-companies-thumbnail.png"
-            alt="Visual Studio Code" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Visual Studio Code</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmujj5lkT-9g2msBcBfFE9f6cBfFYEN9B-mSlwazo-w&s=10"
-            alt="Github" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Github</h4>
-        </div>
+      <div class="experience-cards">
+        <h3>Junior Flutter Developer</h3>
+        <p class="company">Syscryption Technology Pvt. Ltd., Pune</p>
+        <p class="duration">Jan 2022 – Jul 2022</p>
 
-      </div>
-    </div>
-  </section>
+        <ul class="list-group list-group-flush shadow-sm rounded bullets">
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Flutter Development</strong><br>
+            Developed <span class="fw-semibold">Flutter applications</span> with
+            <span class="fw-semibold">REST API integration</span> and complete
+            <span class="fw-semibold">CRUD operations</span>, accelerating feature delivery by
+            <span class="fw-semibold text-success">20 percent</span>.
+          </li>
 
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Maps and Payments</strong><br>
+            Integrated <span class="fw-semibold">Google Maps</span> for location-based services and
+            <span class="fw-semibold">Razorpay</span> for secure and reliable payment processing.
+          </li>
 
-  <section class="experience-section" id="experience">
-    <h2 class="section-title">Professional Experience</h2>
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Bug Fixing and Performance Optimization</strong><br>
+            Identified and resolved <span class="fw-semibold">high-impact bugs</span> while optimizing application
+            performance,
+            improving overall <span class="fw-semibold text-success">app stability by 40 percent</span>.
+          </li>
 
-    <div class="experience-cards">
-      <h3>Senior Flutter Developer</h3>
-      <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
-      <p class="duration">July 2022 – April 2025</p>
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Reusable UI Components</strong><br>
+            Designed and implemented <span class="fw-semibold">reusable UI components</span> and
+            <span class="fw-semibold">custom widgets</span>, ensuring consistent design patterns and improved
+            maintainability.
+          </li>
 
-      <ul class="list-group list-group-flush shadow-sm rounded bullets">
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Monetization & Ads</strong><br>
-    Integrated <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with 
-    <span class="fw-semibold">Banner, Interstitial, and Rewarded Ads</span>, driving a 
-    <span class="badge bg-success">+35% Monetization</span> and improving ad rendering performance by 
-    <span class="fw-semibold">30%</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Testing & Stability</strong><br>
-    Performed extensive <span class="fw-semibold">real-device and emulator testing</span>, reducing 
-    <span class="badge bg-success">−45% Production Errors</span>. Integrated 
-    <span class="fw-semibold">Sentry</span> for real-time crash reporting and monitoring.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Backend & Integrations</strong><br>
-    Integrated <span class="fw-semibold">Firebase, Google Maps, Razorpay, and OneSignal</span>, enhancing backend communication, push notifications, 
-    and data handling efficiency by 
-    <span class="badge bg-success">+40%</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">State Management</strong><br>
-    Implemented <span class="fw-semibold">BLoC, Provider, and GetX</span> architectures, improving application 
-    <span class="badge bg-success">+50% Scalability & Maintainability</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">CI/CD, Deployment & Build Optimization</strong><br>
-    Built and maintained <span class="fw-semibold">CI/CD pipelines</span> using 
-    <span class="fw-semibold">GitHub Actions</span> for automated builds and releases. Led 
-    <span class="fw-semibold">Play Store & App Store deployments</span>, reducing 
-    <span class="badge bg-success">−60% Time-to-Market</span>. Resolved complex 
-    <span class="fw-semibold">Gradle</span> and 
-    <span class="fw-semibold">JDK compatibility issues</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">UI/UX & Animations</strong><br>
-    Designed <span class="fw-semibold">interactive UI components, custom widgets, and animations</span>, increasing 
-    <span class="badge bg-success">+30% User Engagement</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Collaboration & APIs</strong><br>
-    Collaborated with <span class="fw-semibold">backend and QA teams</span> to refine 
-    <span class="fw-semibold">REST API integrations</span>, improving application responsiveness by 
-    <span class="badge bg-success">+25%</span>.
-  </li>
-</ul>
-
-
-    </div>
-
-    <div class="experience-cards">
-      <h3>Junior Flutter Developer</h3>
-      <p class="company">Syscryption Technology Pvt. Ltd., Pune</p>
-      <p class="duration">Jan 2022 – Jul 2022</p>
-
-      <ul class="list-group list-group-flush shadow-sm rounded bullets">
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Flutter Development</strong><br>
-    Developed <span class="fw-semibold">Flutter applications</span> with 
-    <span class="fw-semibold">REST API integration</span> and complete 
-    <span class="fw-semibold">CRUD operations</span>, accelerating feature delivery by 
-    <span class="fw-semibold text-success">20 percent</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Maps and Payments</strong><br>
-    Integrated <span class="fw-semibold">Google Maps</span> for location-based services and 
-    <span class="fw-semibold">Razorpay</span> for secure and reliable payment processing.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Bug Fixing and Performance Optimization</strong><br>
-    Identified and resolved <span class="fw-semibold">high-impact bugs</span> while optimizing application performance, 
-    improving overall <span class="fw-semibold text-success">app stability by 40 percent</span>.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Reusable UI Components</strong><br>
-    Designed and implemented <span class="fw-semibold">reusable UI components</span> and 
-    <span class="fw-semibold">custom widgets</span>, ensuring consistent design patterns and improved maintainability.
-  </li>
-
-  <li class="list-group-item py-3">
-    <strong class="text-primary">Security and Authentication</strong><br>
-    Implemented <span class="fw-semibold">QR code scanning functionality</span> to support 
-    <span class="fw-semibold">secure authentication workflows</span>.
-  </li>
-</ul>
-
-
-    </div>
-  </section>
-
-
-
-  <section id="education" class="education-section">
-    <h2>🎓 Education</h2>
-
-    <div class="edu-cards">
-      <h3>M.C.S.</h3>
-      <p class="institute">Sarhad College of Arts, Commerce and Science, Pune</p>
-      <p class="details">2019 – 2021 • 77%</p>
-    </div>
-
-    <div class="edu-cards">
-      <h3>B.C.S.</h3>
-      <p class="institute">Vishwakarma College of Arts, Commerce and Science, Pune</p>
-      <p class="details">2015 – 2018</p>
-    </div>
-
-    <div class="edu-cards">
-      <h3>HSC (XII)</h3>
-      <p class="institute">S.M.S. Mohite Patil Jr. College, Rahimatpur</p>
-      <p class="details">2015</p>
-    </div>
-
-    <div class="edu-cards">
-      <h3>SSC (X)</h3>
-      <p class="institute">Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur</p>
-      <p class="details">2013 • 75%</p>
-    </div>
-  </section>
-
-<section id="project" class="projects-section py-3">
-  <div class="container">
-
-    <h2 class="section-title text-center mb-4">Projects</h2>
-
-    <!-- CINEQUBE -->
-    <div class="cards mb-2 shadow-sm">
-      <div class="cards-body p-3">
-        <h3 class="cards-title">CINEQUBE</h3>
-        <ul class="list-group list-group-flush mt-2">
-          <li class="list-group-item p-1">Integrated Firebase push notifications with Bloc for real-time updates, improving engagement by <strong>25%</strong>.</li>
-          <li class="list-group-item p-1">Developed video playback using PodPlayer with support for YouTube and Vimeo.</li>
-          <li class="list-group-item p-1">Implemented secure UPI payments using <strong>flutter_upi_pay</strong>.</li>
-          <li class="list-group-item p-1">Added offline video storage using Sqflite, enhancing user retention and convenience.</li>
-          <li class="list-group-item p-1">Designed subscription plans (monthly, quarterly, yearly) to boost monetization.</li>
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Security and Authentication</strong><br>
+            Implemented <span class="fw-semibold">QR code scanning functionality</span> to support
+            <span class="fw-semibold">secure authentication workflows</span>.
+          </li>
         </ul>
-      </div>
-    </div>
 
-    <!-- GROW KNOWLEDGE -->
-    <div class="cards mb-2 shadow-sm">
-      <div class="cards-body p-3">
-        <h3 class="cards-title">GROW KNOWLEDGE</h3>
-        <ul class="list-group list-group-flush mt-2">
-          <li class="list-group-item p-1">Developed quiz app with dynamic REST API content and real-time updates.</li>
-          <li class="list-group-item p-1">Integrated Firebase notifications for contests and promotions, increasing participation by <strong>20%</strong>.</li>
-          <li class="list-group-item p-1">Implemented Aadhaar & PAN KYC upload and verification for secure compliance.</li>
-          <li class="list-group-item p-1">Supported free and paid user participation with robust validation and secure transactions.</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- JEEYO RIDE -->
-    <div class="cards mb-2 shadow-sm">
-      <div class="cards-body p-3">
-        <h3 class="cards-title">JEEYO RIDE</h3>
-        <ul class="list-group list-group-flush mt-2">
-          <li class="list-group-item p-1">Integrated Google Maps with place auto-complete and real-time driver tracking.</li>
-          <li class="list-group-item p-1">Implemented Firebase push notifications to improve engagement and responsiveness.</li>
-        </ul>
-        <div class="mt-2">
-          <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt&hl=hi" class="btn btn-primary btn-sm">Google Play Store</a>
-        </div>
       </div>
-    </div>
+    </section>
 
+
+
+    <section id="education" class="education-section">
+      <h2>🎓 Education</h2>
+
+      <div class="edu-cards">
+        <h3>M.C.S.</h3>
+        <p class="institute">Sarhad College of Arts, Commerce and Science, Pune</p>
+        <p class="details">2019 – 2021 • 77%</p>
+      </div>
+
+      <div class="edu-cards">
+        <h3>B.C.S.</h3>
+        <p class="institute">Vishwakarma College of Arts, Commerce and Science, Pune</p>
+        <p class="details">2015 – 2018</p>
+      </div>
+
+      <div class="edu-cards">
+        <h3>HSC (XII)</h3>
+        <p class="institute">S.M.S. Mohite Patil Jr. College, Rahimatpur</p>
+        <p class="details">2015</p>
+      </div>
+
+      <div class="edu-cards">
+        <h3>SSC (X)</h3>
+        <p class="institute">Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur</p>
+        <p class="details">2013 • 75%</p>
+      </div>
+    </section>
+
+    <section id="project" class="projects-section">
+  <h2 class="section-title">Projects</h2>
+
+  <!-- CINEQUBE -->
+  <div class="project-cards">
+    <h3>CINEQUBE</h3>
+    <ul class="project-points" style="
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+    ">
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Integrated Firebase push notifications with Bloc for real-time updates, improving engagement by <strong>25%</strong>.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Developed video playback using PodPlayer with support for YouTube and Vimeo.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Implemented secure UPI payments using <strong>flutter_upi_pay</strong>.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Added offline video storage using Sqflite, enhancing user retention and convenience.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Designed subscription plans (monthly, quarterly, yearly) to boost monetization.
+      </li>
+    </ul>
+  </div>
+
+  <!-- GROW KNOWLEDGE -->
+  <div class="project-cards">
+    <h3>GROW KNOWLEDGE</h3>
+    <ul class="project-points" style="
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+    ">
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Developed quiz app with dynamic REST API content and real-time updates.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Integrated Firebase notifications for contests and promotions, increasing participation by <strong>20%</strong>.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Implemented Aadhaar & PAN KYC upload and verification for secure compliance.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Supported free and paid user participation with robust validation and secure transactions.
+      </li>
+    </ul>
+  </div>
+
+  <!-- JEEYO RIDE -->
+  <div class="project-cards">
+    <h3>JEEYO RIDE</h3>
+    <ul class="project-points" style="
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+    ">
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Integrated Google Maps with place auto-complete and real-time driver tracking.
+      </li>
+      <li style="position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; transition: transform 0.2s;">
+        <span style="position: absolute; left: 0; top: 0; color: #0d6efd; font-weight: bold;">✔</span>
+        Implemented Firebase push notifications to improve engagement and responsiveness.
+      </li>
+    </ul>
+    <div class="text-decoration-underline decoration-blue-600">
+      <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt&hl=hi" class="link-primary">Google Play Store</a>
+    </div>
   </div>
 </section>
 
@@ -446,119 +497,124 @@
 
 
 
-  <section id="preview">
-    <div class="container-fluid">
-      <h4 class="section-title">Work Preview</h4>
-      <div class="video-container z-n1">
-        <div class="video-cards">
-          <video
-            src="https://cdn.jumpshare.com/preview/LJOClthMAWCPlUIVE8MUrvigG4rFdLeA9EbYw9xieOb2nz_jhQ_4OQm5fWvTd0KW7uiZha1C9XkT1sXuo9q10605ScNdWDuwHRV7ZVqLqRv5m3lt5JfTTS17__gwPkUXhLTKCILEEpaYl21l45xRYG6yjbN-I2pg_cnoHs_AmgI.mp4"
-            controls></video>
-          <!-- <button class="play-button">
-      <i class="fa fa-play"></i>
-    </button> -->
-          <div class="cards-content">
-            <div class="cards-title">Chatbot</div>
-            <div class="cards-description">An AI-powered chatbot application built using Flutter and integrated with
-              Google Gemini / ChatGPT APIs. The app supports real-time conversations, user-friendly UI, prompt-based
-              responses, and smooth state management. Designed for fast performance and scalable AI interaction across
-              mobile platforms.</div>
-          </div>
-        </div>
 
-        <div class="video-cards">
-          <video src="https://ik.imagekit.io/wtvwfegms/vehicle.mp4" controls></video>
-          <!-- <button class="play-button">
+    <section id="preview">
+      <div class="container-fluid">
+        <h4 class="section-title">Work Preview</h4>
+        <div class="video-container z-n1">
+          <div class="video-cards">
+            <video
+              src="https://cdn.jumpshare.com/preview/LJOClthMAWCPlUIVE8MUrvigG4rFdLeA9EbYw9xieOb2nz_jhQ_4OQm5fWvTd0KW7uiZha1C9XkT1sXuo9q10605ScNdWDuwHRV7ZVqLqRv5m3lt5JfTTS17__gwPkUXhLTKCILEEpaYl21l45xRYG6yjbN-I2pg_cnoHs_AmgI.mp4"
+              controls></video>
+            <!-- <button class="play-button">
       <i class="fa fa-play"></i>
     </button> -->
-          <div class="cards-content">
-            <div class="cards-title">Vehicle Repair Service</div>
-            <div class="cards-description">A complete vehicle repair service management application developed with
-              Flutter. It allows users to book repair services, track service status, view mechanic details, and manage
-              vehicle history. The app focuses on intuitive navigation, clean UI, and seamless user experience for both
-              customers and service providers.</div>
+            <div class="cards-content">
+              <div class="cards-title">Chatbot</div>
+              <div class="cards-description">An AI-powered chatbot application built using Flutter and integrated with
+                Google Gemini / ChatGPT APIs. The app supports real-time conversations, user-friendly UI, prompt-based
+                responses, and smooth state management. Designed for fast performance and scalable AI interaction across
+                mobile platforms.</div>
+            </div>
           </div>
-        </div>
-        <div class="video-cards">
-          <video
-            src="https://cdn.jumpshare.com/preview/YlfbnjIJeET6AeXiiROVh5A2ZzA7lpy0-FsiZznpHWIOU5oqnvhH_YXO_50EZZXW9B5g881F4WdfNYskD6xb1jNOiYrVOzynf2mYYEahDz3RcxxVt9LiOa_GKhtHyMJBhLTKCILEEpaYl21l45xRYG6yjbN-I2pg_cnoHs_AmgI.mp4"
-            controls></video>
-          <!-- <button class="play-button">
-      <i class="fa fa-play"></i>
-    </button> -->
-          <div class="cards-content">
-            <div class="cards-title">Sense Wheel</div>
-            <div class="cards-description">An OTT-based streaming application designed for video content consumption.
-              Features include user authentication, categorized content browsing, video playback, watch history, and
-              responsive UI. Built to deliver smooth streaming performance and an engaging multimedia experience.</div>
-          </div>
-        </div>
 
-        <div class="video-cards">
-          <video
-            src="https://cdn.jumpshare.com/preview/YlfbnjIJeET6AeXiiROVh5A2ZzA7lpy0-FsiZznpHWIOU5oqnvhH_YXO_50EZZXW9B5g881F4WdfNYskD6xb1jNOiYrVOzynf2mYYEahDz3RcxxVt9LiOa_GKhtHyMJBhLTKCILEEpaYl21l45xRYG6yjbN-I2pg_cnoHs_AmgI.mp4"
-            controls></video>
-          <!-- <button class="play-button">
+          <div class="video-cards">
+            <video src="https://ik.imagekit.io/wtvwfegms/vehicle.mp4" controls></video>
+            <!-- <button class="play-button">
       <i class="fa fa-play"></i>
     </button> -->
-          <div class="cards-content">
-            <div class="cards-title">Farmer Application</div>
-            <div class="cards-description">A smart agriculture-focused mobile application built with Flutter, using REST
-              APIs powered by Node.js. It provides farmers with access to crop information, weather updates, market
-              prices, and farm management tools. The backend ensures secure data handling and real-time updates.</div>
+            <div class="cards-content">
+              <div class="cards-title">Vehicle Repair Service</div>
+              <div class="cards-description">A complete vehicle repair service management application developed with
+                Flutter. It allows users to book repair services, track service status, view mechanic details, and
+                manage
+                vehicle history. The app focuses on intuitive navigation, clean UI, and seamless user experience for
+                both
+                customers and service providers.</div>
+            </div>
+          </div>
+          <div class="video-cards">
+            <video
+              src="https://cdn.jumpshare.com/preview/YlfbnjIJeET6AeXiiROVh5A2ZzA7lpy0-FsiZznpHWIOU5oqnvhH_YXO_50EZZXW9B5g881F4WdfNYskD6xb1jNOiYrVOzynf2mYYEahDz3RcxxVt9LiOa_GKhtHyMJBhLTKCILEEpaYl21l45xRYG6yjbN-I2pg_cnoHs_AmgI.mp4"
+              controls></video>
+            <!-- <button class="play-button">
+      <i class="fa fa-play"></i>
+    </button> -->
+            <div class="cards-content">
+              <div class="cards-title">Sense Wheel</div>
+              <div class="cards-description">An OTT-based streaming application designed for video content consumption.
+                Features include user authentication, categorized content browsing, video playback, watch history, and
+                responsive UI. Built to deliver smooth streaming performance and an engaging multimedia experience.
+              </div>
+            </div>
+          </div>
+
+          <div class="video-cards">
+            <video
+              src="https://cdn.jumpshare.com/preview/YlfbnjIJeET6AeXiiROVh5A2ZzA7lpy0-FsiZznpHWIOU5oqnvhH_YXO_50EZZXW9B5g881F4WdfNYskD6xb1jNOiYrVOzynf2mYYEahDz3RcxxVt9LiOa_GKhtHyMJBhLTKCILEEpaYl21l45xRYG6yjbN-I2pg_cnoHs_AmgI.mp4"
+              controls></video>
+            <!-- <button class="play-button">
+      <i class="fa fa-play"></i>
+    </button> -->
+            <div class="cards-content">
+              <div class="cards-title">Farmer Application</div>
+              <div class="cards-description">A smart agriculture-focused mobile application built with Flutter, using
+                REST
+                APIs powered by Node.js. It provides farmers with access to crop information, weather updates, market
+                prices, and farm management tools. The backend ensures secure data handling and real-time updates.</div>
+            </div>
           </div>
         </div>
       </div>
+      <br>
+    </section>
+
+    <div class="scroll-top">
+      <button id="scrollTopBtn" class="fa fa-angle-up"></button>
     </div>
-    <br>
-  </section>
 
-  <div class="scroll-top">
-    <button id="scrollTopBtn" class="fa fa-angle-up"></button>
-  </div>
+    <script src="bootstrap-js/bootstrap.min.js"></script>
+    <script>
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   function autoScrollToBottom() {
+      //     const speed = 16; 
 
-  <script src="bootstrap-js/bootstrap.min.js"></script>
-  <script>
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   function autoScrollToBottom() {
-    //     const speed = 16; 
+      //     function scroll() {
+      //       window.scrollBy(0, speed);
 
-    //     function scroll() {
-    //       window.scrollBy(0, speed);
+      //       if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
+      //         requestAnimationFrame(scroll);
+      //       }
+      //     }
 
-    //       if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
-    //         requestAnimationFrame(scroll);
-    //       }
-    //     }
+      //     requestAnimationFrame(scroll);
+      //   }
 
-    //     requestAnimationFrame(scroll);
-    //   }
-
-    //   autoScrollToBottom();
-    // });
-    // window.scrollTo({
-    //   top: document.body.scrollHeight,
-    //   behavior: "smooth"
-    // });
+      //   autoScrollToBottom();
+      // });
+      // window.scrollTo({
+      //   top: document.body.scrollHeight,
+      //   behavior: "smooth"
+      // });
 
 
 
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    const scrollWrapper = document.querySelector(".scroll-top");
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      const scrollWrapper = document.querySelector(".scroll-top");
 
-    window.addEventListener("scroll", () => {
-      scrollWrapper.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+      window.addEventListener("scroll", () => {
+        scrollWrapper.style.display = window.scrollY > 300 ? "block" : "none";
       });
-    });
-  </script>
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    </script>
 
 
-</body>
+  </body>
 
 </html>
