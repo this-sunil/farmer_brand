@@ -3,9 +3,11 @@ html {
   scroll-behavior: smooth;
   cursor: pointer;
 }
-.bullets{
+
+.bullets {
   list-style: decimal;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +15,15 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-.shadow-navbar{
+.shadow-navbar {
   z-index: 999;
   box-shadow: 10px 10px 80px #ccc;
   overflow: hidden;
 }
-.navbar-toggler .navbar-toggler:focus:active:hover{
+
+.navbar-toggler .navbar-toggler:focus:active:hover {
   border: 1px solid #ccc;
 }
-
 
 .top-skills {
   white-space: nowrap;
@@ -63,6 +65,7 @@ html {
   from {
     width: 0%;
   }
+
   to {
     width: 100%;
   }
@@ -206,6 +209,7 @@ html {
 span::before {
   top: -8px;
 }
+
 span::after {
   top: 8px;
 }
@@ -286,13 +290,16 @@ span::after {
 .btns-github {
   background-color: #ee7a05;
 }
+
 .btns-linkedin {
   background-color: #1198e0;
 }
+
 .btns-phone {
   background-color: #0c5fdc;
 }
-.btns-resume{
+
+.btns-resume {
   background-color: #0bc4ed;
 }
 
@@ -365,11 +372,13 @@ span::after {
 .video-cards .cards-content {
   padding: 15px;
 }
+
 .video-cards .cards-title {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: bold;
 }
+
 .video-cards .cards-description {
   font-size: 14px;
   color: #555;
@@ -417,6 +426,7 @@ span::after {
   color: #555;
   margin-bottom: 3px;
 }
+
 .duration {
   font-size: 14px;
   color: #888;
@@ -427,6 +437,7 @@ span::after {
   list-style: none;
   text-align: justify;
 }
+
 .responsibilities li {
   position: relative;
   padding-left: 40px;
@@ -434,6 +445,7 @@ span::after {
   line-height: 1.2;
   color: #444;
 }
+
 .responsibilities li::before {
   content: "★";
   position: absolute;
@@ -450,6 +462,7 @@ span::after {
   padding: 20px;
   font-family: "Poppins", sans-serif;
 }
+
 .project-cards {
   background: #ffffff;
   padding: 25px;
@@ -458,10 +471,12 @@ span::after {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .project-cards:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
+
 .project-cards h3 {
   font-size: 22px;
   margin-bottom: 12px;
@@ -476,11 +491,13 @@ span::after {
   font-family: "Poppins", sans-serif;
   margin-top: 50px;
 }
+
 .footer-container {
   width: 70%;
   margin: 0 auto;
   text-align: center;
 }
+
 .footer-title {
   font-size: 28px;
   font-weight: 600;
@@ -496,9 +513,11 @@ span::after {
   margin-bottom: 30px;
   text-align: left;
 }
+
 .form-group {
   margin: 10px;
 }
+
 .contact-form input,
 .contact-form textarea {
   width: 90%;
@@ -509,11 +528,13 @@ span::after {
   outline: none;
   transition: 0.3s;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #2a4d8f;
   box-shadow: 0 0 6px rgba(42, 77, 143, 0.3);
 }
+
 .submit-btn {
   width: 100%;
   padding: 12px;
@@ -526,6 +547,7 @@ span::after {
   margin-top: 10px;
   transition: 0.3s;
 }
+
 .submit-btn:hover {
   background: #183360;
 }
@@ -536,10 +558,12 @@ span::after {
   width: 80%;
   margin: auto;
 }
+
 h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+
 .edu-cards {
   background: #ffffff;
   border-left: 5px solid #4a90e2;
@@ -550,26 +574,31 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease,
     border-left-color 0.3s ease;
 }
+
 .edu-cards:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   border-left-color: #7b61ff;
 }
+
 .edu-cards h3 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
 }
+
 .edu-cards .institute {
   margin: 3px 0;
   color: #555;
 }
+
 .edu-cards .details {
   font-size: 12px;
   color: #333;
   font-weight: 500;
 }
-.circle{
+
+.circle {
   position: relative;
   display: flex;
   justify-content: center;
@@ -579,16 +608,17 @@ h2 {
   border-radius: 50%;
   flex-direction: column;
 }
-.circle::before{
+
+.circle::before {
   content: "";
   position: absolute;
   inset: 5px;
   border-radius: 50%;
   background: #222;
-  opacity: .75;
+  opacity: 0.75;
 }
 
-.circle::after{
+.circle::after {
   content: "";
   position: absolute;
   width: 120px;
@@ -596,22 +626,20 @@ h2 {
   background-color: #333;
   border-radius: 50%;
   border: 15px solid #4d4c51;
-  box-shadow: 
-  inset 0 5px 10px rgba(0, 0, 0, 0.25),
-  0 10px 10px rgba(0, 0, 0, 0.75),
-  0 -2px 2px rgba(255, 255, 255, 0.5),
-  inset 0 4px 2px rgba(0, 0, 0, 0.25),
-  inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.75), 0 -2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 4px 2px rgba(0, 0, 0, 0.25),
+    inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
 
 .circle .number {
   position: relative;
   bottom: 5px;
   right: 5px;
-  transform: translate(10%,10%);
+  transform: translate(10%, 10%);
   z-index: 10;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   color: black;
   border-radius: 50%;
   display: flex;
@@ -620,26 +648,24 @@ h2 {
   width: 50px;
   height: 50px;
   background-color: white;
-   box-shadow: 
-  inset 0 5px 10px rgba(0, 0, 0, 0.25),
-  0 10px 10px rgba(0, 0, 0, 0.75),
-  0 -2px 2px rgba(255, 255, 255, 0.5),
-  inset 0 4px 2px rgba(0, 0, 0, 0.25),
-  inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.75), 0 -2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 4px 2px rgba(0, 0, 0, 0.25),
+    inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
 
 .circle .number span {
   font-size: 14px;
- 
 }
-.cards-image{
+
+.cards-image {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
   justify-items: center;
-
 }
+
 .circle .circle-img {
   position: absolute;
   top: 50%;
@@ -654,14 +680,13 @@ h2 {
   padding: 6px;
 }
 
-
-
 @media screen and (max-width: 1024px) {
   .container,
   .rows {
     flex-direction: column;
     height: auto;
   }
+
   .cards {
     height: 300px;
   }
@@ -691,6 +716,7 @@ h2 {
   .cards {
     height: 300px;
   }
+
   body {
     font-size: 14px;
   }
