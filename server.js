@@ -38,14 +38,14 @@ app.get("/",(req,res)=>{
 
 // TODO: Routing
 
-app.use("/api",authRoute);
-app.use("/api",postRoute);
-app.use("/api",bannerRoute);
-app.use("/api",notificationRoute);
-app.use("/api",farmerRoute);
-app.use("/api",productRoute);
-app.use("/api",paymentRoute);
-app.use("/api",favFarmerRoute);
+// app.use("/api",authRoute);
+// app.use("/api",postRoute);
+// app.use("/api",bannerRoute);
+// app.use("/api",notificationRoute);
+// app.use("/api",farmerRoute);
+// app.use("/api",productRoute);
+// app.use("/api",paymentRoute);
+// app.use("/api",favFarmerRoute);
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started Running`);
