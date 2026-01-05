@@ -18,7 +18,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
   <link rel="stylesheet" href="public/css/animate.css">
-  <!-- <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script> -->
+  <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
   let circles = document.querySelectorAll(".circle");
@@ -55,12 +55,12 @@
   });
 });
 
-    // DisableDevtool({
-    //   ondevtoolopen: (type, next) => {
-    //     alert('Developer tools are open! This action is logged. Type: ' + type);
-    //     next();
-    //   }
-    // });
+    DisableDevtool({
+      ondevtoolopen: (type, next) => {
+        alert('Developer tools are open! This action is logged. Type: ' + type);
+        next();
+      }
+    });
   </script>
   
 </head>
@@ -520,7 +520,7 @@
 
       </div>
     </div>
-    <!-- <div class="project-cards shadow-lg mb-4">
+    <div class="project-cards shadow-lg mb-4">
       <div class="card-body">
         <div class="card-title text-primary">
           <h4>Doctor Appointment App</h4>
@@ -535,7 +535,7 @@
           <li class="mb-2">✔ Followed MVC architecture and best backend practices</li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
   </section>
 
@@ -650,7 +650,7 @@
               prices, and farm management tools. The backend ensures secure data handling and real-time updates.</div>
           </div>
         </div>
-        <div class="video-cards">
+        <!-- <div class="video-cards">
           <video src=""></video>
           <div class="cards-content">
             <div class="cards-title">Doctor Appointment App</div>
@@ -662,7 +662,7 @@
               <span class="badge bg-warning text-dark p-2 rounded-2 m-1">bcrypt</span>
               <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
             </div>
-            <div class="card-description">
+            <div class="cards-description">
               Developed a backend REST API for a Doctor Appointment application using Node.js and Express.js.
               Implemented JWT-based authentication and bcrypt for secure user login and password encryption. Integrated
               the backend with a PostgreSQL database to manage users, doctors, appointments, and schedules. Enabled CORS
@@ -670,7 +670,7 @@
               management.
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <br>
