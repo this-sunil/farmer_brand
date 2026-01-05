@@ -20,41 +20,6 @@
   <link rel="stylesheet" href="public/css/animate.css">
   <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  let circles = document.querySelectorAll(".circle");
-
-  circles.forEach((progress) => {
-    let degree = 0;
-    let targetDegree = parseInt(progress.getAttribute("data-degree"));
-    let color = progress.getAttribute("data-color");
-
-    // .number is sibling, not inside .circle
-    let number = progress.parentElement.querySelector(".number");
-
-    let interval = setInterval(() => {
-      degree++;
-
-      if (degree > targetDegree) {
-        clearInterval(interval);
-        return;
-      }
-
-      let angle = (degree / 100) * 360;
-
-      progress.style.background = `
-        conic-gradient(
-          ${color} ${angle}deg,
-          #222 ${angle}deg
-        )
-      `;
-
-      number.innerHTML = degree + "<span>%</span>";
-     
-
-    }, 30);
-  });
-});
-
     DisableDevtool({
       ondevtoolopen: (type, next) => {
         alert('Developer tools are open! This action is logged. Type: ' + type);
@@ -62,7 +27,7 @@
       }
     });
   </script>
-  
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
@@ -140,135 +105,145 @@
       </div>
     </div>
   </section>
-<section id="skills">
-  <h4 class="section-title">Technical Skills</h4>
+  <section id="skills">
+    <h4 class="section-title">Technical Skills</h4>
 
-  <!-- Frontend Skills -->
-  <div class="rows">
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="70" data-color="#E44D26">
-          <div class="number">70%</div>
-          <img src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png" alt="HTML" class="circle-img">
+    <!-- Frontend Skills -->
+    <div class="rows">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#E44D26">
+            <div class="number">70%</div>
+            <img src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png" alt="HTML"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">HTML</h4>
         </div>
       </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">HTML</h4>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="80" data-color="#2965F1">
+            <div class="number">80%</div>
+            <img src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg" alt="CSS" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">CSS</h4>
+        </div>
+      </div>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="80" data-color="#7B2FF7">
+            <div class="number">80%</div>
+            <img src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png" alt="Bootstrap" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Bootstrap</h4>
+        </div>
+      </div>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="75" data-color="#F7DF1E">
+            <div class="number">75%</div>
+            <img src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg" alt="JavaScript"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">JavaScript</h4>
+        </div>
+      </div>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#0868AC">
+            <div class="number">70%</div>
+            <img
+              src="https://play-lh.googleusercontent.com/LpgnH_rHqhJzlJ-uWhfMj3w87cu6iWV5m1hr6eos1wmdlqRiF0RsNE1RBmgtsPvyyBI"
+              alt="jQuery" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">jQuery</h4>
+        </div>
       </div>
     </div>
 
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="80" data-color="#2965F1">
-          <div class="number">80%</div>
-          <img src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg" alt="CSS" class="circle-img">
+    <!-- Backend / Frameworks -->
+    <div class="rows">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="65" data-color="orange">
+            <div class="number">65%</div>
+            <img
+              src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
+              alt="Node JS" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Node JS</h4>
         </div>
       </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">CSS</h4>
-      </div>
-    </div>
 
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="80" data-color="#7B2FF7">
-          <div class="number">80%</div>
-          <img src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png" alt="Bootstrap" class="circle-img">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="60" data-color="green">
+            <div class="number">60%</div>
+            <img src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png" alt="Express JS"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Express JS</h4>
         </div>
       </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">Bootstrap</h4>
-      </div>
-    </div>
 
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="75" data-color="#F7DF1E">
-          <div class="number">75%</div>
-          <img src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg" alt="JavaScript" class="circle-img">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="80" data-color="#42A5F5">
+            <div class="number">80%</div>
+            <img src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png" alt="Flutter"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Flutter</h4>
         </div>
       </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">JavaScript</h4>
-      </div>
-    </div>
 
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="70" data-color="#0868AC">
-          <div class="number">70%</div>
-          <img src="https://play-lh.googleusercontent.com/LpgnH_rHqhJzlJ-uWhfMj3w87cu6iWV5m1hr6eos1wmdlqRiF0RsNE1RBmgtsPvyyBI" alt="jQuery" class="circle-img">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="65" data-color="#00B4AB">
+            <div class="number">65%</div>
+            <img src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
+              alt="Dart" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Dart</h4>
         </div>
       </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">jQuery</h4>
-      </div>
-    </div>
-  </div>
 
-  <!-- Backend / Frameworks -->
-  <div class="rows">
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="65" data-color="orange">
-          <div class="number">65%</div>
-          <img src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png" alt="Node JS" class="circle-img">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#336791">
+            <div class="number">70%</div>
+            <img src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png" alt="PostgreSQL"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">PostgreSQL</h4>
         </div>
       </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">Node JS</h4>
-      </div>
     </div>
-
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="60" data-color="green">
-          <div class="number">60%</div>
-          <img src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png" alt="Express JS" class="circle-img">
-        </div>
-      </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">Express JS</h4>
-      </div>
-    </div>
-
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="80" data-color="#42A5F5">
-          <div class="number">80%</div>
-          <img src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png" alt="Flutter" class="circle-img">
-        </div>
-      </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">Flutter</h4>
-      </div>
-    </div>
-
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="65" data-color="#00B4AB">
-          <div class="number">65%</div>
-          <img src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png" alt="Dart" class="circle-img">
-        </div>
-      </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">Dart</h4>
-      </div>
-    </div>
-
-    <div class="cards" style="background-color: #333945;">
-      <div class="cards-image">
-        <div class="circle" data-degree="70" data-color="#336791">
-          <div class="number">70%</div>
-          <img src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png" alt="PostgreSQL" class="circle-img">
-        </div>
-      </div>
-      <div class="cards-body">
-        <h4 class="headline text-white">PostgreSQL</h4>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -562,13 +537,14 @@
           <div class="cards-content">
             <div class="cards-title">Chatbot</div>
             <div class="card-subtitle mb-2 w-100">
-              
+
               <span class="badge bg-info text-dark p-2 rounded-2 m-1">Flutter</span>
               <span class="badge bg-warning text-dark p-2 rounded-2 m-1">Dart</span>
               <span class="badge bg-dark p-2 rounded-2 m-1">Gemini API</span>
             </div>
-            
-            <div class="card-description w-100 mb-2">An AI-powered chatbot application built using Flutter and integrated
+
+            <div class="card-description w-100 mb-2">An AI-powered chatbot application built using Flutter and
+              integrated
               with
               Google Gemini / ChatGPT APIs. The app supports real-time conversations, user-friendly UI, prompt-based
               responses, and smooth state management. Designed for fast performance and scalable AI interaction across
@@ -719,8 +695,44 @@
         behavior: "smooth"
       });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let circles = document.querySelectorAll(".circle");
+
+      circles.forEach((progress) => {
+        let degree = 0;
+        let targetDegree = parseInt(progress.getAttribute("data-degree"));
+        let color = progress.getAttribute("data-color");
+
+        // .number is sibling, not inside .circle
+        let number = progress.parentElement.querySelector(".number");
+
+        let interval = setInterval(() => {
+          degree++;
+
+          if (degree > targetDegree) {
+            clearInterval(interval);
+            return;
+          }
+
+          let angle = (degree / 100) * 360;
+
+          progress.style.background = `
+        conic-gradient(
+          ${color} ${angle}deg,
+          #222 ${angle}deg
+        )
+      `;
+
+          number.innerHTML = degree + "<span>%</span>";
+
+
+        }, 30);
+      });
+    });
   </script>
 
-  
+
 </body>
+
 </html>
