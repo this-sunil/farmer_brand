@@ -380,7 +380,7 @@ span::after {
 }
 
 .video-cards .cards-description {
-  font-size: 14px;
+  font-size: 10px;
   color: #555;
   text-align: justify;
 }
@@ -634,9 +634,8 @@ h2 {
 
 .circle .number {
   position: relative;
-  bottom: 5px;
-  right: 5px;
-  transform: translate(10%, 10%);
+  bottom: -70px;
+  right: -70px;
   z-index: 10;
   font-size: 16px;
   font-weight: 600;
