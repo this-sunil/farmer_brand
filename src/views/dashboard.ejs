@@ -696,40 +696,48 @@
       });
     });
 
+   
     document.addEventListener("DOMContentLoaded", () => {
-      let circles = document.querySelectorAll(".circle");
+  const circles = document.querySelectorAll(".circle");
+  const skillsSection = document.getElementById("skills");
+  let animated = false; // prevent multiple animations
 
-      circles.forEach((progress) => {
-        let degree = 0;
-        let targetDegree = parseInt(progress.getAttribute("data-degree"));
-        let color = progress.getAttribute("data-color");
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
 
-        // .number is sibling, not inside .circle
-        let number = progress.parentElement.querySelector(".number");
+  function animateCircles() {
+    if (animated) return;
+    if (!isInViewport(skillsSection)) return;
 
-        let interval = setInterval(() => {
-          degree++;
+    circles.forEach(circle => {
+      let degree = 0;
+      const targetDegree = parseInt(circle.getAttribute("data-degree"));
+      const color = circle.getAttribute("data-color");
+      const number = circle.querySelector(".number");
 
-          if (degree > targetDegree) {
-            clearInterval(interval);
-            return;
-          }
-
-          let angle = (degree / 100) * 360;
-
-          progress.style.background = `
-        conic-gradient(
-          ${color} ${angle}deg,
-          #222 ${angle}deg
-        )
-      `;
-
-          number.innerHTML = degree + "<span>%</span>";
-
-
-        }, 30);
-      });
+      const interval = setInterval(() => {
+        degree++;
+        if (degree > targetDegree) {
+          clearInterval(interval);
+          return;
+        }
+        circle.style.background = `conic-gradient(${color} ${degree}%, #222 ${degree}%)`;
+        if (number) number.innerHTML = `${degree}<span>%</span>`;
+      }, 20); // smaller number = faster animation
     });
+
+    animated = true; // prevent re-animation
+  }
+
+  // listen for scroll
+  window.addEventListener("scroll", animateCircles);
+
+  // also check on page load in case section is already visible
+  animateCircles();
+});
+
   </script>
 
 
