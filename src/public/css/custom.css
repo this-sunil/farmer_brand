@@ -380,7 +380,8 @@ span::after {
 }
 
 .video-cards .cards-description {
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 500;
   color: #555;
   text-align: justify;
 }
