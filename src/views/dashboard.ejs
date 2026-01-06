@@ -29,7 +29,6 @@
   </script>
 
 </head>
-
 <body data-bs-spy="scroll" data-bs-target="#navbar" tabindex="0">
   <nav
     class="navbar navbar-expand-lg navbar-light bg-white shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar">
@@ -231,6 +230,8 @@
         </div>
       </div>
 
+
+
       <div class="cards" style="background-color: #333945;">
         <div class="cards-image">
           <div class="circle" data-degree="70" data-color="#336791">
@@ -244,63 +245,67 @@
         </div>
       </div>
     </div>
-  </section>
-
-
-
-
-  <section id="tools">
-    <h4 class="section-title">Tools</h4>
     <div class="rows">
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://images.seeklogo.com/logo-png/43/1/android-studio-logo-png_seeklogo-439009.png"
-            alt="Android Studio" />
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="orange">
+            <div class="number">70%</div>
+            <img src="https://raw.githubusercontent.com/github/explore/master/topics/firebase/firebase.png"
+              alt="Firebase" class="circle-img">
+          </div>
         </div>
         <div class="cards-body">
-          <h4 class="headline">Android Studio</h4>
+          <h4 class="headline text-white">Firebase</h4>
         </div>
       </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://1000logos.net/wp-content/uploads/2024/05/Firebase-Logo.png" alt="Firebase Studio">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="60" data-color="pink">
+            <div class="number">60%</div>
+            <img src="https://raw.githubusercontent.com/github/explore/master/topics/mongodb/mongodb.png"
+              alt="MongoDB" class="circle-img">
+          </div>
         </div>
         <div class="cards-body">
-          <h4 class="headline">Firebase</h4>
+          <h4 class="headline text-white">MongoDB</h4>
         </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img src="https://images.g2crowd.com/uploads/product/image/fd527e1fc777d9e31b2a28e8d3c959a4/postman.jpg"
-            alt="Postman" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Postman</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://e7.pngegg.com/pngimages/195/304/png-clipart-visual-studio-code-logo-thumbnail-tech-companies-thumbnail.png"
-            alt="Visual Studio Code" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Visual Studio Code</h4>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="cards-img">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmujj5lkT-9g2msBcBfFE9f6cBfFYEN9B-mSlwazo-w&s=10"
-            alt="Github" />
-        </div>
-        <div class="cards-body">
-          <h4 class="headline">Github</h4>
-        </div>
-
       </div>
     </div>
   </section>
+
+
+
+
+<section id="tools">
+  <h4 class="section-title text-center">Tools</h4>
+  <div class="container">
+    <div class="rows">
+      
+      <div class="circle-rounded">
+        <img src="https://raw.githubusercontent.com/github/explore/master/topics/android-studio/android-studio.png" alt="Android Studio">
+        <h2>Android Studio</h2>
+      </div>
+      
+      <div class="circle-rounded">
+        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
+        <h2>Postman</h2>
+      </div>
+
+      <div class="circle-rounded">
+        <img src="https://raw.githubusercontent.com/github/explore/master/topics/visual-studio-code/visual-studio-code.png" alt="VS Code">
+        <h2>Visual Studio Code</h2>
+      </div>
+
+      <div class="circle-rounded">
+        <img src="https://raw.githubusercontent.com/github/explore/master/topics/github/github.png" alt="GitHub">
+        <h2>GitHub</h2>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 
   <section class="experience-section" id="experience">
@@ -649,7 +654,7 @@
             </div>
           </div>
         </div> -->
-        
+
       </div>
     </div>
     <br>
@@ -699,47 +704,47 @@
       });
     });
 
-   
+
     document.addEventListener("DOMContentLoaded", () => {
-  const circles = document.querySelectorAll(".circle");
-  const skillsSection = document.getElementById("skills");
-  let animated = false; // prevent multiple animations
+      const circles = document.querySelectorAll(".circle");
+      const skillsSection = document.getElementById("skills");
+      let animated = false; // prevent multiple animations
 
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom >= 0;
-  }
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+      }
 
-  function animateCircles() {
-    if (animated) return;
-    if (!isInViewport(skillsSection)) return;
+      function animateCircles() {
+        if (animated) return;
+        if (!isInViewport(skillsSection)) return;
 
-    circles.forEach(circle => {
-      let degree = 0;
-      const targetDegree = parseInt(circle.getAttribute("data-degree"));
-      const color = circle.getAttribute("data-color");
-      const number = circle.querySelector(".number");
+        circles.forEach(circle => {
+          let degree = 0;
+          const targetDegree = parseInt(circle.getAttribute("data-degree"));
+          const color = circle.getAttribute("data-color");
+          const number = circle.querySelector(".number");
 
-      const interval = setInterval(() => {
-        degree++;
-        if (degree > targetDegree) {
-          clearInterval(interval);
-          return;
-        }
-        circle.style.background = `conic-gradient(${color} ${degree}%, #222 ${degree}%)`;
-        if (number) number.innerHTML = `${degree}<span>%</span>`;
-      }, 20); // smaller number = faster animation
+          const interval = setInterval(() => {
+            degree++;
+            if (degree > targetDegree) {
+              clearInterval(interval);
+              return;
+            }
+            circle.style.background = `conic-gradient(${color} ${degree}%, #222 ${degree}%)`;
+            if (number) number.innerHTML = `${degree}<span>%</span>`;
+          }, 20); // smaller number = faster animation
+        });
+
+        animated = true; // prevent re-animation
+      }
+
+      // listen for scroll
+      window.addEventListener("scroll", animateCircles);
+
+      // also check on page load in case section is already visible
+      animateCircles();
     });
-
-    animated = true; // prevent re-animation
-  }
-
-  // listen for scroll
-  window.addEventListener("scroll", animateCircles);
-
-  // also check on page load in case section is already visible
-  animateCircles();
-});
 
   </script>
 
