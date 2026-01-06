@@ -722,7 +722,8 @@ h2 {
   cursor: pointer;
   padding: 30px;
   transition: transform .3s ease-in;
-  box-shadow: 5px 5px 30px #ccc;
+  z-index: 2;
+  box-shadow: 5px 5px 30px #ccc,10px 10px 20px #ddd;
 }
 
 
