@@ -725,6 +725,31 @@ h2 {
   z-index: 2;
   box-shadow: 5px 5px 30px #ccc,10px 10px 20px #ddd;
 }
+#menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+#menu .navbar-nav {
+  gap: 0;
+}
+
+#menu .nav-item {
+  margin: 0;
+}
+
+#menu .nav-link {
+  padding: 6px 12px;
+}
+
+#menu .nav-link {
+  transition: all 5s ease-in-out forwards;
+}
+
+#menu .nav-link.active {
+  background-color: #f5f6f8;   /* Bootstrap primary */
+  color: #0b0b0b !important;
+}
 
 
 .circle-rounded img:hover {
