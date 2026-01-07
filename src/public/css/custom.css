@@ -721,6 +721,7 @@ h2 {
   object-fit: cover;
   cursor: pointer;
   padding: 30px;
+  
   transition: transform .3s ease-in;
   z-index: 2;
   box-shadow: 5px 5px 30px #ccc,10px 10px 20px #ddd;
@@ -750,14 +751,32 @@ h2 {
   background-color: #f5f6f8;   /* Bootstrap primary */
   color: #0b0b0b !important;
 }
+.circle-rounded img:nth-child(4):hover{
+   filter: invert(0%) sepia(100%) saturate(500%) hue-rotate(0deg);
+}
+
+.circle-rounded img:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  border-radius: 40px;
+  object-fit: cover;
+  cursor: pointer;
+  padding: 30px;
+  color: #4b04f0;
+  transition: all 0.3s ease-in; /* only animate what changes */
+  z-index: 2;
+  box-shadow: 5px 5px 30px #ccc, 10px 10px 20px #ddd;
+}
 
 
-.circle-rounded img:hover {
+.circle-rounded img:hover{
   transform: scale(1.2);
   z-index: 5;
-  background: #333945;
   cursor: pointer;
+  background-color: #333945;
 }
+
 
 
 @media screen and (max-width: 1024px) {
