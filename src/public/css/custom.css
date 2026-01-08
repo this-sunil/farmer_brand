@@ -28,8 +28,8 @@ body{
   border: 1px solid #ccc;
 }
 .navbar-toggler,.navbar-toggler-icon{
-  color: white;
-  border: 1px solid #ccc;
+  background: white;
+
 }
 
 .top-skills {
