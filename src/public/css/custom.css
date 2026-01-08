@@ -27,6 +27,7 @@ body{
 .navbar-toggler .navbar-toggler:focus:active:hover {
   border: 1px solid #ccc;
 }
+
 .navbar-toggler,.navbar-toggler-icon{
   background: white;
 }
