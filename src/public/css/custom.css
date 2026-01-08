@@ -27,6 +27,10 @@ body{
 .navbar-toggler .navbar-toggler:focus:active:hover {
   border: 1px solid #ccc;
 }
+.navbar-toggler,.navbar-toggler-icon{
+  color: white;
+  border: 1px solid #ccc;
+}
 
 .top-skills {
   white-space: nowrap;
