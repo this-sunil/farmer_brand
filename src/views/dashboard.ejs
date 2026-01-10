@@ -26,7 +26,35 @@
       }
     });
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  const animatedElements = document.querySelectorAll(".animated");
+
+  animatedElements.forEach(el => {
+    el.style.visibility = "hidden";
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+
+        el.style.visibility = "visible";
+
+        // Restart animation
+        el.classList.remove("animated");
+        void el.offsetWidth;
+        el.classList.add("animated");
+
+        observer.unobserve(el); // animate once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animatedElements.forEach(el => observer.observe(el));
+});
+</script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="100" tabindex="0">
   <nav
