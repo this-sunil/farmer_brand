@@ -24,13 +24,22 @@ body{
   overflow: hidden;
 }
 
-.navbar-toggler .navbar-toggler:focus:active:hover {
+.navbar-toggler:hover,
+.navbar-toggler:focus,
+.navbar-toggler:active {
   border: 1px solid #ccc;
 }
 
-.navbar-toggler,.navbar-toggler-icon{
-  background: white;
+.navbar-toggler:focus:active:hover {
+  border: 1px solid #ccc;
 }
+.navbar-toggler:focus {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+
+
 
 .top-skills {
   white-space: nowrap;
