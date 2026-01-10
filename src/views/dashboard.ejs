@@ -1,947 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>#Portfolio</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://avatars.githubusercontent.com/u/51407211?v=4"
-    />
-    <meta property="og:title" content="Farmer Brand" />
-    <meta
-      property="og:image"
-      content="https://farmer-brand.vercel.app/preview.png"
-    />
-    <meta property="og:type" content="website" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>#Portfolio</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/51407211?v=4">
+  <meta property="og:title" content="Farmer Brand">
+  <meta property="og:image" content="https://farmer-brand.vercel.app/preview.png">
+  <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="public/css/custom.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bitter&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css" />
-    <link rel="stylesheet" href="public/css/animate.css" />
-    <script
-      disable-devtool-auto
-      src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
-    ></script>
-    <script>
-      DisableDevtool({
-        ondevtoolopen: (type, next) => {
-          alert(
-            "Developer tools are open! This action is logged. Type: " + type
-          );
-          next();
-        },
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const animatedElements = document.querySelectorAll(".animated");
+  <link rel="stylesheet" href="public/css/custom.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/animate.css">
+  <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+  <script>
+    DisableDevtool({
+      ondevtoolopen: (type, next) => {
+        alert('Developer tools are open! This action is logged. Type: ' + type);
+        next();
+      }
+    });
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-        animatedElements.forEach((el) => {
-          el.style.visibility = "hidden";
-        });
+  const animatedElements = document.querySelectorAll(".animated");
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const el = entry.target;
+  animatedElements.forEach(el => {
+    el.style.visibility = "hidden";
+  });
 
-                el.style.visibility = "visible";
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
 
-                // Restart animation
-                el.classList.remove("animated");
-                void el.offsetWidth;
-                el.classList.add("animated");
+        el.style.visibility = "visible";
 
-                observer.unobserve(el); // animate once
-              }
-            });
-          },
-          { threshold: 0.2 }
-        );
+        // Restart animation
+        el.classList.remove("animated");
+        void el.offsetWidth;
+        el.classList.add("animated");
 
-        animatedElements.forEach((el) => observer.observe(el));
-      });
-    </script>
-  </head>
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#menu"
-    data-bs-offset="100"
-    tabindex="0"
-  >
-    <nav
-      class="navbar navbar-expand-lg navbar-dark shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar"
-      style="background-color: rgba(88, 35, 173, 0.964)"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">#Portfolio</a>
-        <button
-          class="navbar-toggler"
-          data-bs-target="#menu"
-          data-bs-toggle="collapse"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="menu">
-          <ul class="navbar-nav ms-auto gap">
-            <li class="nav-item">
-              <a href="#about" class="nav-link text-white px-3 py-2 rounded"
-                >About</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#skills" class="nav-link text-white px-3 py-2 rounded"
-                >Skill</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                href="#experience"
-                class="nav-link text-white px-3 py-2 rounded"
-                >Experience</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#preview" class="nav-link text-white px-3 py-2 rounded"
-                >Work Preview</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#education" class="nav-link text-white px-3 py-2 rounded"
-                >Education</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#project" class="nav-link text-white px-3 py-2 rounded"
-                >Project</a
-              >
-            </li>
-          </ul>
+        observer.unobserve(el); // animate once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animatedElements.forEach(el => observer.observe(el));
+});
+</script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="100" tabindex="0">
+  <nav
+    class="navbar navbar-expand-lg navbar-dark shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar" style="background-color: rgba(88, 35, 173, 0.964);">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">#Portfolio</a>
+      <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="menu">
+  <ul class="navbar-nav ms-auto gap">
+    <li class="nav-item">
+      <a href="#about" class="nav-link text-white px-3 py-2 rounded">About</a>
+    </li>
+    <li class="nav-item">
+      <a href="#skills" class="nav-link text-white px-3 py-2 rounded">Skill</a>
+    </li>
+    <li class="nav-item">
+      <a href="#experience" class="nav-link text-white px-3 py-2 rounded">Experience</a>
+    </li>
+    <li class="nav-item">
+      <a href="#preview" class="nav-link text-white px-3 py-2 rounded">Work Preview</a>
+    </li>
+    <li class="nav-item">
+      <a href="#education" class="nav-link text-white px-3 py-2 rounded">Education</a>
+    </li>
+    <li class="nav-item">
+      <a href="#project" class="nav-link text-white px-3 py-2 rounded">Project</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </nav>
+  <section class="about-me" id="about">
+    <div class="profile">
+      <img src="https://avatars.githubusercontent.com/u/51407211?v=4" alt="Profile Photo">
+    </div>
+
+    <h1 class="about-title animated fadeIn bounceIn text-primary">Sunil Shedge</h1>
+
+    <p class="about-description animated fadeIn jello">
+      I'm a <strong class="top-skills"> Senior Flutter Developer</strong> with <strong>3+ years of experience</strong>
+      building responsive and high-performance mobile apps for Android & iOS.
+    </p>
+
+    <p class="about-description animated fadeIn jello">
+      I focus on clean architecture, reusable widgets, smooth animations, and
+      delivering exceptional user experiences. Skilled in <strong>Flutter, Dart,Nodejs,Postgresql, Firebase,
+      REST APIs, GetX, Provider,Bloc State Management,Push Notification,Payment Gateway</strong> and modern UI/UX design principles.
+    </p>
+
+    <div class="container-fluid">
+      <div class="row text-center">
+
+        <div class="col-md-3">
+          <a href="https://github.com/this-sunil" target="_blank" rel="noopener noreferrer"
+            class="d-flex justify-content-center align-items-center gap-2 btns btns-github text-decoration-none">
+            <i class="fab fa-github-alt"></i>
+            <span class="card-title">GitHub</span>
+          </a>
         </div>
+
+        <div class="col-md-3">
+          <a href="https://www.linkedin.com/in/sunilshedge" target="_blank" rel="noopener noreferrer"
+            class="d-flex justify-content-center align-items-center gap-2 btns btns-linkedin text-decoration-none">
+            <i class="fab fa-linkedin-in"></i>
+            <span class="card-title">LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="tel:+918668796251"
+            class="d-flex justify-content-center align-items-center gap-2 btns btns-phone text-decoration-none">
+            <i class="fas fa-phone"></i>
+            <span class="card-title">Contact</span>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="https://raw.githubusercontent.com/this-sunil/farmer_brand/896304d36061e978836922ff23ddc11b16fa55d6/src/public/Sunil_Shedge_Resume.pdf"
+            class="d-flex justify-content-center align-items-center gap-2 btns btns-resume text-decoration-none">
+            <i class="fas fa-download"></i>
+            <span class="card-title">Resume</span>
+          </a>
+        </div>
+
       </div>
-    </nav>
-    <section class="about-me" id="about">
-      <div class="profile">
-        <img
-          src="https://avatars.githubusercontent.com/u/51407211?v=4"
-          alt="Profile Photo"
-        />
-      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <h4 class="section-title">Technical Skills</h4>
 
-      <h1 class="about-title animated fadeIn bounceIn text-primary">
-        Sunil Shedge
-      </h1>
-
-      <p class="about-description animated fadeIn jello">
-        I'm a <strong class="top-skills"> Senior Flutter Developer</strong> with
-        <strong>3+ years of experience</strong>
-        building responsive and high-performance mobile apps for Android & iOS.
-      </p>
-
-      <p class="about-description animated fadeIn jello">
-        I focus on clean architecture, reusable widgets, smooth animations, and
-        delivering exceptional user experiences. Skilled in
-        <strong
-          >Flutter, Dart,Nodejs,Postgresql, Firebase, REST APIs, GetX,
-          Provider,Bloc State Management,Push Notification,Payment
-          Gateway</strong
-        >
-        and modern UI/UX design principles.
-      </p>
-
-      <div class="container-fluid">
-        <div class="row text-center">
-          <div class="col-md-3">
-            <a
-              href="https://github.com/this-sunil"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-github text-decoration-none"
-            >
-              <i class="fab fa-github-alt"></i>
-              <span class="card-title">GitHub</span>
-            </a>
-          </div>
-
-          <div class="col-md-3">
-            <a
-              href="https://www.linkedin.com/in/sunilshedge"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-linkedin text-decoration-none"
-            >
-              <i class="fab fa-linkedin-in"></i>
-              <span class="card-title">LinkedIn</span>
-            </a>
-          </div>
-
-          <div class="col-md-3">
-            <a
-              href="tel:+918668796251"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-phone text-decoration-none"
-            >
-              <i class="fas fa-phone"></i>
-              <span class="card-title">Contact</span>
-            </a>
-          </div>
-
-          <div class="col-md-3">
-            <a
-              href="https://raw.githubusercontent.com/this-sunil/farmer_brand/896304d36061e978836922ff23ddc11b16fa55d6/src/public/Sunil_Shedge_Resume.pdf"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-resume text-decoration-none"
-            >
-              <i class="fas fa-download"></i>
-              <span class="card-title">Resume</span>
-            </a>
+    <!-- Frontend Skills -->
+    <div class="rows">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#E44D26">
+            <div class="number">70%</div>
+            <img src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png" alt="HTML"
+              class="circle-img">
           </div>
         </div>
-      </div>
-    </section>
-    <section id="skills">
-      <h4 class="section-title">Technical Skills</h4>
-
-      <!-- Frontend Skills -->
-      <div class="rows">
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#E44D26">
-              <div class="number">70%</div>
-              <img
-                src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png"
-                alt="HTML"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">HTML</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#2965F1">
-              <div class="number">70%</div>
-              <img
-                src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg"
-                alt="CSS"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">CSS</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#7B2FF7">
-              <div class="number">70%</div>
-              <img
-                src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png"
-                alt="Bootstrap"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Bootstrap</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="75" data-color="#F7DF1E">
-              <div class="number">75%</div>
-              <img
-                src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg"
-                alt="JavaScript"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">JavaScript</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#0868AC">
-              <div class="number">70%</div>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIoRzMF9XwkEZwEkVw_pJgrmpUgoATbGwcg&s"
-                alt="jQuery"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">jQuery</h4>
-          </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">HTML</h4>
         </div>
       </div>
 
-      <!-- Backend / Frameworks -->
-      <div class="rows">
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="65" data-color="orange">
-              <div class="number">65%</div>
-              <img
-                src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
-                alt="Node JS"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Node JS</h4>
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#2965F1">
+            <div class="number">70%</div>
+            <img src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg" alt="CSS" class="circle-img">
           </div>
         </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="60" data-color="green">
-              <div class="number">60%</div>
-              <img
-                src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png"
-                alt="Express JS"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Express JS</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="80" data-color="#42A5F5">
-              <div class="number">80%</div>
-              <img
-                src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png"
-                alt="Flutter"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Flutter</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#00B4AB">
-              <div class="number">70%</div>
-              <img
-                src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
-                alt="Dart"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Dart</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#336791">
-              <div class="number">70%</div>
-              <img
-                src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png"
-                alt="PostgreSQL"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">PostgreSQL</h4>
-          </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">CSS</h4>
         </div>
       </div>
-      <div class="rows">
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="orange">
-              <div class="number">70%</div>
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/firebase/firebase.png"
-                alt="Firebase"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Firebase</h4>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#7B2FF7">
+            <div class="number">70%</div>
+            <img src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png" alt="Bootstrap" class="circle-img">
           </div>
         </div>
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="60" data-color="violet">
-              <div class="number">60%</div>
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/c/c.png"
-                alt="C"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">C</h4>
-          </div>
-        </div>
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="60" data-color="pink">
-              <div class="number">60%</div>
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/mongodb/mongodb.png"
-                alt="MongoDB"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">MongoDB</h4>
-          </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Bootstrap</h4>
         </div>
       </div>
-    </section>
 
-    <section id="tools">
-      <h4 class="section-title text-center">Tools</h4>
-      <div class="container">
-        <div class="rows">
-          <div class="circle-rounded">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="75" data-color="#F7DF1E">
+            <div class="number">75%</div>
+            <img src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg" alt="JavaScript"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">JavaScript</h4>
+        </div>
+      </div>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#0868AC">
+            <div class="number">70%</div>
             <img
-              src="https://raw.githubusercontent.com/github/explore/master/topics/android-studio/android-studio.png"
-              alt="Android Studio"
-            />
-            <h2>Android Studio</h2>
-          </div>
-
-          <div class="circle-rounded">
-            <img
-              src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
-              alt="Postman"
-            />
-            <h2>Postman</h2>
-          </div>
-
-          <div class="circle-rounded">
-            <img
-              src="https://raw.githubusercontent.com/github/explore/master/topics/visual-studio-code/visual-studio-code.png"
-              alt="VS Code"
-            />
-            <h2>Visual Studio Code</h2>
-          </div>
-
-          <div class="circle-rounded">
-            <img
-              src="https://e7.pngegg.com/pngimages/251/961/png-clipart-github-software-developer-microsoft-corporation-business-project-github-logo-grass.png"
-              alt="GitHub"
-            />
-            <h2>GitHub</h2>
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIoRzMF9XwkEZwEkVw_pJgrmpUgoATbGwcg&s"
+              alt="jQuery" class="circle-img">
           </div>
         </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">jQuery</h4>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="experience-section" id="experience">
-      <h2 class="section-title">Professional Experience</h2>
+    <!-- Backend / Frameworks -->
+    <div class="rows">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="65" data-color="orange">
+            <div class="number">65%</div>
+            <img
+              src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
+              alt="Node JS" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Node JS</h4>
+        </div>
+      </div>
 
-      <div class="experience-cards">
-        <h3>Senior Flutter Developer</h3>
-        <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
-        <p class="duration">July 2022 – April 2025</p>
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="60" data-color="green">
+            <div class="number">60%</div>
+            <img src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png" alt="Express JS"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Express JS</h4>
+        </div>
+      </div>
 
-        <ul class="list-group list-group-flush shadow-sm rounded bullets">
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Monetization & Ads</strong><br />
-            Integrated
-            <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with
-            <span class="fw-semibold"
-              >Banner, Interstitial, and Rewarded Ads</span
-            >, driving a
-            <span class="badge bg-success">+35% Monetization</span> and
-            improving ad rendering performance by
-            <span class="fw-semibold">30%</span>.
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="80" data-color="#42A5F5">
+            <div class="number">80%</div>
+            <img src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png" alt="Flutter"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Flutter</h4>
+        </div>
+      </div>
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#00B4AB">
+            <div class="number">70%</div>
+            <img src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
+              alt="Dart" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Dart</h4>
+        </div>
+      </div>
+
+
+
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="#336791">
+            <div class="number">70%</div>
+            <img src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png" alt="PostgreSQL"
+              class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">PostgreSQL</h4>
+        </div>
+      </div>
+    </div>
+    <div class="rows">
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="70" data-color="orange">
+            <div class="number">70%</div>
+            <img src="https://raw.githubusercontent.com/github/explore/master/topics/firebase/firebase.png"
+              alt="Firebase" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">Firebase</h4>
+        </div>
+      </div>
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="60" data-color="violet">
+            <div class="number">60%</div>
+            <img src="https://raw.githubusercontent.com/github/explore/master/topics/c/c.png"
+              alt="C" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">C</h4>
+        </div>
+      </div>
+      <div class="cards" style="background-color: #333945;">
+        <div class="cards-image">
+          <div class="circle" data-degree="60" data-color="pink">
+            <div class="number">60%</div>
+            <img src="https://raw.githubusercontent.com/github/explore/master/topics/mongodb/mongodb.png"
+              alt="MongoDB" class="circle-img">
+          </div>
+        </div>
+        <div class="cards-body">
+          <h4 class="headline text-white">MongoDB</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+<section id="tools">
+  <h4 class="section-title text-center">Tools</h4>
+  <div class="container">
+    <div class="rows">
+      
+      <div class="circle-rounded">
+        <img src="https://raw.githubusercontent.com/github/explore/master/topics/android-studio/android-studio.png" alt="Android Studio">
+        <h2>Android Studio</h2>
+      </div>
+      
+      <div class="circle-rounded">
+        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
+        <h2>Postman</h2>
+      </div>
+
+      <div class="circle-rounded">
+        <img src="https://raw.githubusercontent.com/github/explore/master/topics/visual-studio-code/visual-studio-code.png" alt="VS Code">
+        <h2>Visual Studio Code</h2>
+      </div>
+
+      <div class="circle-rounded">
+        <img src="https://e7.pngegg.com/pngimages/251/961/png-clipart-github-software-developer-microsoft-corporation-business-project-github-logo-grass.png" alt="GitHub">
+        <h2>GitHub</h2>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <section class="experience-section" id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="experience-cards">
+      <h3>Senior Flutter Developer</h3>
+      <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
+      <p class="duration">July 2022 – April 2025</p>
+
+      <ul class="list-group list-group-flush shadow-sm rounded bullets">
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Monetization & Ads</strong><br>
+          Integrated <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with
+          <span class="fw-semibold">Banner, Interstitial, and Rewarded Ads</span>, driving a
+          <span class="badge bg-success">+35% Monetization</span> and improving ad rendering performance by
+          <span class="fw-semibold">30%</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Testing & Stability</strong><br>
+          Performed extensive <span class="fw-semibold">real-device and emulator testing</span>, reducing
+          <span class="badge bg-success">−45% Production Errors</span>. Integrated
+          <span class="fw-semibold">Sentry</span> for real-time crash reporting and monitoring.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Backend & Integrations</strong><br>
+          Integrated <span class="fw-semibold">Firebase, Google Maps, Razorpay, and OneSignal</span>, enhancing
+          backend communication, push notifications,
+          and data handling efficiency by
+          <span class="badge bg-success">+40%</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">State Management</strong><br>
+          Implemented <span class="fw-semibold">BLoC, Provider, and GetX</span> architectures, improving application
+          <span class="badge bg-success">+50% Scalability & Maintainability</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">CI/CD, Deployment & Build Optimization</strong><br>
+          Built and maintained <span class="fw-semibold">CI/CD pipelines</span> using
+          <span class="fw-semibold">GitHub Actions</span> for automated builds and releases. Led
+          <span class="fw-semibold">Play Store & App Store deployments</span>, reducing
+          <span class="badge bg-success">−60% Time-to-Market</span>. Resolved complex
+          <span class="fw-semibold">Gradle</span> and
+          <span class="fw-semibold">JDK compatibility issues</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">UI/UX & Animations</strong><br>
+          Designed <span class="fw-semibold">interactive UI components, custom widgets, and animations</span>,
+          increasing
+          <span class="badge bg-success">+30% User Engagement</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Collaboration & APIs</strong><br>
+          Collaborated with <span class="fw-semibold">backend and QA teams</span> to refine
+          <span class="fw-semibold">REST API integrations</span>, improving application responsiveness by
+          <span class="badge bg-success">+25%</span>.
+        </li>
+      </ul>
+
+
+    </div>
+
+    <div class="experience-cards">
+      <h3>Junior Flutter Developer</h3>
+      <p class="company">Syscryption Technology Pvt. Ltd., Pune</p>
+      <p class="duration">Jan 2022 – Jul 2022</p>
+
+      <ul class="list-group list-group-flush shadow-sm rounded bullets">
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Flutter Development</strong><br>
+          Developed <span class="fw-semibold">Flutter applications</span> with
+          <span class="fw-semibold">REST API integration</span> and complete
+          <span class="fw-semibold">CRUD operations</span>, accelerating feature delivery by
+          <span class="fw-semibold text-success">20 percent</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Maps and Payments</strong><br>
+          Integrated <span class="fw-semibold">Google Maps</span> for location-based services and
+          <span class="fw-semibold">Razorpay</span> for secure and reliable payment processing.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Bug Fixing and Performance Optimization</strong><br>
+          Identified and resolved <span class="fw-semibold">high-impact bugs</span> while optimizing application
+          performance,
+          improving overall <span class="fw-semibold text-success">app stability by 40 percent</span>.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Reusable UI Components</strong><br>
+          Designed and implemented <span class="fw-semibold">reusable UI components</span> and
+          <span class="fw-semibold">custom widgets</span>, ensuring consistent design patterns and improved
+          maintainability.
+        </li>
+
+        <li class="list-group-item py-3">
+          <strong class="text-primary">Security and Authentication</strong><br>
+          Implemented <span class="fw-semibold">QR code scanning functionality</span> to support
+          <span class="fw-semibold">secure authentication workflows</span>.
+        </li>
+      </ul>
+
+
+    </div>
+  </section>
+
+
+
+  <section id="education" class="education-section">
+    <h2>🎓 Education</h2>
+
+    <div class="edu-cards">
+      <h3>M.C.S.</h3>
+      <p class="institute">Sarhad College of Arts, Commerce and Science, Pune</p>
+      <p class="details">2019 – 2021 • 77%</p>
+    </div>
+
+    <div class="edu-cards">
+      <h3>B.C.S.</h3>
+      <p class="institute">Vishwakarma College of Arts, Commerce and Science, Pune</p>
+      <p class="details">2015 – 2018</p>
+    </div>
+
+    <div class="edu-cards">
+      <h3>HSC (XII)</h3>
+      <p class="institute">S.M.S. Mohite Patil Jr. College, Rahimatpur</p>
+      <p class="details">2015</p>
+    </div>
+
+    <div class="edu-cards">
+      <h3>SSC (X)</h3>
+      <p class="institute">Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur</p>
+      <p class="details">2013 • 75%</p>
+    </div>
+  </section>
+
+  <section id="project" class="projects-section py-5" style="background-color: #f8f9fa;">
+
+    <h2 class="section-title text-center mb-5">Projects</h2>
+
+    <!-- CINEQUBE -->
+    <div class="project-cards mb-4 shadow-lg">
+
+      <div class="card-body">
+        <h3 class="card-title mb-3 text-primary">CINEQUBE</h3>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2">✔ Integrated Firebase push notifications with Bloc for real-time updates, improving
+            engagement by <strong>25%</strong>.</li>
+          <li class="mb-2">✔ Developed video playback using PodPlayer with support for YouTube and Vimeo.</li>
+          <li class="mb-2">✔ Implemented secure UPI payments using <strong>flutter_upi_pay</strong>.</li>
+          <li class="mb-2">✔ Added offline video storage using Sqflite, enhancing user retention and convenience.</li>
+          <li class="mb-2">✔ Designed subscription plans (monthly, quarterly, yearly) to boost monetization.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- GROW KNOWLEDGE -->
+    <div class="project-cards mb-4 shadow-lg">
+
+      <div class="card-body">
+        <h3 class="card-title mb-3 text-primary">GROW KNOWLEDGE</h3>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2">✔ Developed quiz app with dynamic REST API content and real-time updates.</li>
+          <li class="mb-2">✔ Integrated Firebase notifications for contests and promotions, increasing participation by
+            <strong>20%</strong>.
           </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Testing & Stability</strong><br />
-            Performed extensive
-            <span class="fw-semibold">real-device and emulator testing</span>,
-            reducing
-            <span class="badge bg-success">−45% Production Errors</span>.
-            Integrated <span class="fw-semibold">Sentry</span> for real-time
-            crash reporting and monitoring.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Backend & Integrations</strong><br />
-            Integrated
-            <span class="fw-semibold"
-              >Firebase, Google Maps, Razorpay, and OneSignal</span
-            >, enhancing backend communication, push notifications, and data
-            handling efficiency by <span class="badge bg-success">+40%</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">State Management</strong><br />
-            Implemented
-            <span class="fw-semibold">BLoC, Provider, and GetX</span>
-            architectures, improving application
-            <span class="badge bg-success"
-              >+50% Scalability & Maintainability</span
-            >.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary"
-              >CI/CD, Deployment & Build Optimization</strong
-            ><br />
-            Built and maintained
-            <span class="fw-semibold">CI/CD pipelines</span> using
-            <span class="fw-semibold">GitHub Actions</span> for automated builds
-            and releases. Led
-            <span class="fw-semibold">Play Store & App Store deployments</span>,
-            reducing <span class="badge bg-success">−60% Time-to-Market</span>.
-            Resolved complex <span class="fw-semibold">Gradle</span> and
-            <span class="fw-semibold">JDK compatibility issues</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">UI/UX & Animations</strong><br />
-            Designed
-            <span class="fw-semibold"
-              >interactive UI components, custom widgets, and animations</span
-            >, increasing
-            <span class="badge bg-success">+30% User Engagement</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Collaboration & APIs</strong><br />
-            Collaborated with
-            <span class="fw-semibold">backend and QA teams</span> to refine
-            <span class="fw-semibold">REST API integrations</span>, improving
-            application responsiveness by
-            <span class="badge bg-success">+25%</span>.
+          <li class="mb-2">✔ Implemented Aadhaar & PAN KYC upload and verification for secure compliance.</li>
+          <li class="mb-2">✔ Supported free and paid user participation with robust validation and secure transactions.
           </li>
         </ul>
       </div>
 
-      <div class="experience-cards">
-        <h3>Junior Flutter Developer</h3>
-        <p class="company">Syscryption Technology Pvt. Ltd., Pune</p>
-        <p class="duration">Jan 2022 – Jul 2022</p>
+    </div>
 
-        <ul class="list-group list-group-flush shadow-sm rounded bullets">
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Flutter Development</strong><br />
-            Developed <span class="fw-semibold">Flutter applications</span> with
-            <span class="fw-semibold">REST API integration</span> and complete
-            <span class="fw-semibold">CRUD operations</span>, accelerating
-            feature delivery by
-            <span class="fw-semibold text-success">20 percent</span>.
-          </li>
+    <!-- JEEYO RIDE -->
+    <div class="project-cards shadow-lg mb-4">
+      <div class="card-body">
+        <h3 class="card-title mb-3 text-primary">JEEYO RIDE</h3>
+        <ul class="list-unstyled mb-2">
+          <li class="mb-2">✔ Integrated Google Maps with place auto-complete and real-time driver tracking.</li>
+          <li class="mb-2">✔ Implemented Firebase push notifications to improve engagement and responsiveness.</li>
+        </ul>
+        <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt&hl=hi"
+          class="btn btn-primary btn-sm">Google Play Store</a>
 
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Maps and Payments</strong><br />
-            Integrated <span class="fw-semibold">Google Maps</span> for
-            location-based services and
-            <span class="fw-semibold">Razorpay</span> for secure and reliable
-            payment processing.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary"
-              >Bug Fixing and Performance Optimization</strong
-            ><br />
-            Identified and resolved
-            <span class="fw-semibold">high-impact bugs</span> while optimizing
-            application performance, improving overall
-            <span class="fw-semibold text-success"
-              >app stability by 40 percent</span
-            >.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Reusable UI Components</strong><br />
-            Designed and implemented
-            <span class="fw-semibold">reusable UI components</span> and
-            <span class="fw-semibold">custom widgets</span>, ensuring consistent
-            design patterns and improved maintainability.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-primary">Security and Authentication</strong
-            ><br />
-            Implemented
-            <span class="fw-semibold">QR code scanning functionality</span> to
-            support
-            <span class="fw-semibold">secure authentication workflows</span>.
-          </li>
+      </div>
+    </div>
+    <div class="project-cards shadow-lg mb-4">
+      <div class="card-body">
+        <div class="card-title text-primary">
+          <h4>Doctor Appointment App</h4>
+          <div class="card-subtitle text-secondary">Nodejs Rest Api</div>
+        </div>
+        <ul class="list-unstyled">
+          <li class="mb-2">✔ Developed a scalable Doctor Appointment application using Node.js and Express.js</li>
+          <li class="mb-2">✔ Implemented JWT-based authentication for secure user access.</li>
+          <li class="mb-2">✔ Used bcrypt for password hashing and security</li>
+          <li class="mb-2">✔ Built RESTful APIs with CORS support</li>
+          <li class="mb-2">✔ Integrated PostgreSQL database for data storage and management</li>
+          <li class="mb-2">✔ Followed MVC architecture and best backend practices</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <section id="education" class="education-section">
-      <h2>🎓 Education</h2>
+  </section>
 
-      <div class="edu-cards">
-        <h3>M.C.S.</h3>
-        <p class="institute">
-          Sarhad College of Arts, Commerce and Science, Pune
-        </p>
-        <p class="details">2019 – 2021 • 77%</p>
-      </div>
 
-      <div class="edu-cards">
-        <h3>B.C.S.</h3>
-        <p class="institute">
-          Vishwakarma College of Arts, Commerce and Science, Pune
-        </p>
-        <p class="details">2015 – 2018</p>
-      </div>
 
-      <div class="edu-cards">
-        <h3>HSC (XII)</h3>
-        <p class="institute">S.M.S. Mohite Patil Jr. College, Rahimatpur</p>
-        <p class="details">2015</p>
-      </div>
 
-      <div class="edu-cards">
-        <h3>SSC (X)</h3>
-        <p class="institute">
-          Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur
-        </p>
-        <p class="details">2013 • 75%</p>
-      </div>
-    </section>
 
-    <section
-      id="project"
-      class="projects-section py-5"
-      style="background-color: #f8f9fa"
-    >
-      <h2 class="section-title text-center mb-5">Projects</h2>
 
-      <!-- CINEQUBE -->
-      <div class="project-cards mb-4 shadow-lg">
-        <div class="card-body">
-          <h3 class="card-title mb-3 text-primary">CINEQUBE</h3>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2">
-              ✔ Integrated Firebase push notifications with Bloc for real-time
-              updates, improving engagement by <strong>25%</strong>.
-            </li>
-            <li class="mb-2">
-              ✔ Developed video playback using PodPlayer with support for
-              YouTube and Vimeo.
-            </li>
-            <li class="mb-2">
-              ✔ Implemented secure UPI payments using
-              <strong>flutter_upi_pay</strong>.
-            </li>
-            <li class="mb-2">
-              ✔ Added offline video storage using Sqflite, enhancing user
-              retention and convenience.
-            </li>
-            <li class="mb-2">
-              ✔ Designed subscription plans (monthly, quarterly, yearly) to
-              boost monetization.
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- GROW KNOWLEDGE -->
-      <div class="project-cards mb-4 shadow-lg">
-        <div class="card-body">
-          <h3 class="card-title mb-3 text-primary">GROW KNOWLEDGE</h3>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2">
-              ✔ Developed quiz app with dynamic REST API content and real-time
-              updates.
-            </li>
-            <li class="mb-2">
-              ✔ Integrated Firebase notifications for contests and promotions,
-              increasing participation by <strong>20%</strong>.
-            </li>
-            <li class="mb-2">
-              ✔ Implemented Aadhaar & PAN KYC upload and verification for secure
-              compliance.
-            </li>
-            <li class="mb-2">
-              ✔ Supported free and paid user participation with robust
-              validation and secure transactions.
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- JEEYO RIDE -->
-      <div class="project-cards shadow-lg mb-4">
-        <div class="card-body">
-          <h3 class="card-title mb-3 text-primary">JEEYO RIDE</h3>
-          <ul class="list-unstyled mb-2">
-            <li class="mb-2">
-              ✔ Integrated Google Maps with place auto-complete and real-time
-              driver tracking.
-            </li>
-            <li class="mb-2">
-              ✔ Implemented Firebase push notifications to improve engagement
-              and responsiveness.
-            </li>
-          </ul>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt&hl=hi"
-            class="btn btn-primary btn-sm"
-            >Google Play Store</a
-          >
-        </div>
-      </div>
-      <div class="project-cards shadow-lg mb-4">
-        <div class="card-body">
-          <div class="card-title text-primary">
-            <h4>Doctor Appointment App</h4>
-            <div class="card-subtitle text-secondary">Nodejs Rest Api</div>
-          </div>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              ✔ Developed a scalable Doctor Appointment application using
-              Node.js and Express.js
-            </li>
-            <li class="mb-2">
-              ✔ Implemented JWT-based authentication for secure user access.
-            </li>
-            <li class="mb-2">
-              ✔ Used bcrypt for password hashing and security
-            </li>
-            <li class="mb-2">✔ Built RESTful APIs with CORS support</li>
-            <li class="mb-2">
-              ✔ Integrated PostgreSQL database for data storage and management
-            </li>
-            <li class="mb-2">
-              ✔ Followed MVC architecture and best backend practices
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <section id="preview">
-      <div class="container-fluid">
-        <h4 class="section-title">Work Preview</h4>
-        <div class="video-container z-n1">
-          <div class="video-cards">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/UY0vvIER8DI"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-            <div class="cards-content">
-              <div class="cards-title">Chatbot</div>
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">Gemini API</span>
-              </div>
 
-              <div class="cards-description w-100 mb-2">
-                Here’s a **LinkedIn-optimized version**—concise, professional,
-                and engaging 🚀 --- 🔐 **Built a Secure Appointment Booking
-                System using Flutter & Node.js** Implemented **JWT-based
-                authentication** with **bcrypt password encryption** to ensure
-                secure user login and data protection. Developed a **RESTful
-                API** using **Node.js and Express.js**, integrated with
-                **PostgreSQL** for reliable user and appointment management.
-                Enabled **CORS** for seamless frontend-backend communication and
-                designed scalable endpoints to support smooth appointment
-                booking and management across mobile platforms. **Tech Stack:**
-                Flutter (Dart) | Node.js | Express.js | PostgreSQL | JWT | REST
-                API #Flutter #NodeJS #ExpressJS #JWT #PostgreSQL
-                #MobileDevelopment #WebDevelopment #FullStackDeveloper
-                #SoftwareEngineering
-              </div>
+
+  <section id="preview">
+    <div class="container-fluid">
+      <h4 class="section-title">Work Preview</h4>
+      <div class="video-container z-n1">
+        <div class="video-cards">
+          <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/UY0vvIER8DI" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+<div class="cards-content">
+            <div class="cards-title">Chatbot</div>
+            <div class="card-subtitle mb-2 w-100">
+
+              <span class="badge bg-info text-dark p-2 rounded-2 m-1">Flutter</span>
+              <span class="badge bg-warning text-dark p-2 rounded-2 m-1">Dart</span>
+              <span class="badge bg-dark p-2 rounded-2 m-1">Gemini API</span>
             </div>
+
+            <div class="cards-description w-100 mb-2">* Security & Integration: **CORS**
+
+**Key Features:**
+
+* Secure user registration and login
+* Encrypted password storage
+* Token-based authentication
+* Scalable REST API design
+* Seamless Flutter integration
+
+#Flutter #Dart #NodeJS #ExpressJS #JWT #PostgreSQL #RESTAPI #MobileDevelopment #WebDevelopment #BackendDevelopment #FullStack</div>
           </div>
-          <div class="video-cards">
-            <video
-              src="https://ik.imagekit.io/wtvwfegms/chatboat.mp4/ik-video.mp4"
-              controls
-            ></video>
-            <!-- <button class="play-button">
+
+        </div>
+        <div class="video-cards">
+          <video src="https://ik.imagekit.io/wtvwfegms/chatboat.mp4/ik-video.mp4" controls>
+          </video>
+          <!-- <button class="play-button">
       <i class="fa fa-play"></i>
     </button> -->
-            <div class="cards-content">
-              <div class="cards-title">Chatbot</div>
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">Gemini API</span>
-              </div>
+          <div class="cards-content">
+            <div class="cards-title">Chatbot</div>
+            <div class="card-subtitle mb-2 w-100">
 
-              <div class="cards-description w-100 mb-2">
-                An AI-powered chatbot application built using Flutter and
-                integrated with Google Gemini / ChatGPT APIs. The app supports
-                real-time conversations, user-friendly UI, prompt-based
-                responses, and smooth state management. Designed for fast
-                performance and scalable AI interaction across mobile platforms.
-              </div>
+              <span class="badge bg-info text-dark p-2 rounded-2 m-1">Flutter</span>
+              <span class="badge bg-warning text-dark p-2 rounded-2 m-1">Dart</span>
+              <span class="badge bg-dark p-2 rounded-2 m-1">Gemini API</span>
             </div>
-          </div>
 
-          <div class="video-cards">
-            <video
-              src="https://ik.imagekit.io/wtvwfegms/vehicle.mp4"
-              controls
-            ></video>
-            <!-- <button class="play-button">
+            <div class="cards-description w-100 mb-2">An AI-powered chatbot application built using Flutter and
+              integrated
+              with
+              Google Gemini / ChatGPT APIs. The app supports real-time conversations, user-friendly UI, prompt-based
+              responses, and smooth state management. Designed for fast performance and scalable AI interaction across
+              mobile platforms.</div>
+          </div>
+        </div>
+
+
+        <div class="video-cards">
+          <video src="https://ik.imagekit.io/wtvwfegms/vehicle.mp4" controls></video>
+          <!-- <button class="play-button">
       <i class="fa fa-play"></i>
     </button> -->
-            <div class="cards-content">
-              <div class="cards-title">Vehicle Repair Service</div>
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
-                <span class="badge bg-secondary p-2 rounded-2 m-1"
-                  >Express.js</span
-                >
-                <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
-              </div>
-              <div class="cards-description w-100 mb-2">
-                A complete vehicle repair service management application
-                developed with Flutter. It allows users to book repair services,
-                track service status, view mechanic details, and manage vehicle
-                history. The app focuses on intuitive navigation, clean UI, and
-                seamless user experience for both customers and service
-                providers.
-              </div>
+          <div class="cards-content">
+            <div class="cards-title">Vehicle Repair Service</div>
+            <div class="card-subtitle mb-2 w-100">
+              <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
+              <span class="badge bg-secondary p-2 rounded-2 m-1">Express.js</span>
+              <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
+              <span class="badge bg-info text-dark p-2 rounded-2 m-1">Flutter</span>
+              <span class="badge bg-warning text-dark p-2 rounded-2 m-1">Dart</span>
+              <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
             </div>
+            <div class="cards-description w-100 mb-2">A complete vehicle repair service management application developed
+              with
+              Flutter. It allows users to book repair services, track service status, view mechanic details, and
+              manage
+              vehicle history. The app focuses on intuitive navigation, clean UI, and seamless user experience for
+              both
+              customers and service providers.</div>
           </div>
-          <div class="video-cards">
-            <video
-              src="https://ik.imagekit.io/wtvwfegms/sense-wheel.mp4?updatedAt=1766758405039"
-              controls
-            ></video>
-            <!-- <button class="play-button">
+        </div>
+        <div class="video-cards">
+          <video
+            src="https://ik.imagekit.io/wtvwfegms/sense-wheel.mp4?updatedAt=1766758405039"
+            controls>
+          </video>
+          <!-- <button class="play-button">
             <i class="fa fa-play"></i>
           </button> -->
-            <div class="cards-content">
-              <div class="cards-title">Sense Wheel</div>
-              <div class="card-subtitle w-100 mb-2">
-                <span class="badge bg-primary p-2 rounded-2 m-1">Flutter</span>
-                <span class="badge bg-secondary p-2 rounded-2 m-1">Dart</span>
-                <span class="badge bg-success p-2 rounded-2 m-1">Firebase</span>
-                <span class="badge bg-dark p-2 rounded-2 m-1"
-                  >Push Notification</span
-                >
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Sqflite</span
-                >
-                <span class="badge bg-body text-dark p-2 rounded-2 m-1"
-                  >Payment Gateway</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Easy Localization</span
-                >
+          <div class="cards-content">
+            <div class="cards-title">Sense Wheel</div>
+            <div class="card-subtitle w-100 mb-2">
+              <span class="badge bg-primary p-2 rounded-2 m-1">Flutter</span>
+              <span class="badge bg-secondary p-2 rounded-2 m-1">Dart</span>
+              <span class="badge bg-success p-2 rounded-2 m-1">Firebase</span>
+              <span class="badge bg-dark p-2 rounded-2 m-1">Push Notification</span>
+              <span class="badge bg-info text-dark p-2 rounded-2 m-1">Sqflite</span>
+              <span class="badge bg-body text-dark p-2 rounded-2 m-1">Payment Gateway</span>
+              <span class="badge bg-warning text-dark p-2 rounded-2 m-1">Easy Localization</span>
 
-                <span class="badge bg-primary p-2 rounded-2 m-1"
-                  >Bloc State management</span
-                >
-              </div>
-              <div class="cards-description">
-                An OTT-based streaming application designed for video content
-                consumption. Features include user authentication, categorized
-                content browsing, video playback, watch history, and responsive
-                UI. Built to deliver smooth streaming performance and an
-                engaging multimedia experience.
-              </div>
+              <span class="badge bg-primary p-2 rounded-2 m-1">Bloc State management</span>
+            </div>
+            <div class="cards-description">An OTT-based streaming application designed for video content consumption.
+              Features include user authentication, categorized content browsing, video playback, watch history, and
+              responsive UI. Built to deliver smooth streaming performance and an engaging multimedia experience.
             </div>
           </div>
+        </div>
 
-          <div class="video-cards">
-            <video
-              src="https://ik.imagekit.io/wtvwfegms/farmer.mp4/ik-video.mp4?updatedAt=1766488092492"
-              controls
-            ></video>
-            <!-- <button class="play-button">
+        <div class="video-cards">
+          <video src="https://ik.imagekit.io/wtvwfegms/farmer.mp4/ik-video.mp4?updatedAt=1766488092492" controls></video>
+          <!-- <button class="play-button">
            <i class="fa fa-play"></i>
           </button> -->
-            <div class="cards-content">
-              <div class="cards-title">Farmer Application</div>
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
-                <span class="badge bg-secondary p-2 rounded-2 m-1"
-                  >Express.js</span
-                >
-                <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
-              </div>
-
-              <div class="cards-description">
-                An agriculture-focused e-commerce mobile application designed to
-                support farmers by providing easy access to essential farming
-                products and services. The application enables farmers to browse
-                and purchase seeds, fertilizers, pesticides, tools, and
-                equipment through a user-friendly mobile interface.
-              </div>
+          <div class="cards-content">
+            <div class="cards-title">Farmer Application</div>
+            <div class="card-subtitle mb-2 w-100">
+              <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
+              <span class="badge bg-secondary p-2 rounded-2 m-1">Express.js</span>
+              <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
+              <span class="badge bg-info text-dark p-2 rounded-2 m-1">Flutter</span>
+              <span class="badge bg-warning text-dark p-2 rounded-2 m-1">Dart</span>
+              <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
             </div>
-          </div>
 
-          <!-- <div class="video-cards">
+            <div class="cards-description">
+              An agriculture-focused e-commerce mobile application designed to support farmers by providing easy access to essential farming products and services. The application enables farmers to browse and purchase seeds, fertilizers, pesticides, tools, and equipment through a user-friendly mobile interface.
+             </div>
+          </div>
+        </div>
+
+        <!-- <div class="video-cards">
           <video src=""></video>
           <div class="cards-content">
             <div class="cards-title">Doctor Appointment App</div>
@@ -962,95 +739,101 @@
             </div>
           </div>
         </div> -->
-        </div>
+
       </div>
-      <br />
-    </section>
-
-    <div class="scroll-top">
-      <button id="scrollTopBtn" class="fa fa-angle-up"></button>
     </div>
+    <br>
+  </section>
 
-    <script src="bootstrap-js/bootstrap.min.js"></script>
-    <script>
-      // document.addEventListener("DOMContentLoaded", () => {
-      //   function autoScrollToBottom() {
-      //     const speed = 16;
+  <div class="scroll-top">
+    <button id="scrollTopBtn" class="fa fa-angle-up"></button>
+  </div>
 
-      //     function scroll() {
-      //       window.scrollBy(0, speed);
+  <script src="bootstrap-js/bootstrap.min.js"></script>
+  <script>
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   function autoScrollToBottom() {
+    //     const speed = 16; 
 
-      //       if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
-      //         requestAnimationFrame(scroll);
-      //       }
-      //     }
+    //     function scroll() {
+    //       window.scrollBy(0, speed);
 
-      //     requestAnimationFrame(scroll);
-      //   }
+    //       if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
+    //         requestAnimationFrame(scroll);
+    //       }
+    //     }
 
-      //   autoScrollToBottom();
-      // });
-      // window.scrollTo({
-      //   top: document.body.scrollHeight,
-      //   behavior: "smooth"
-      // });
+    //     requestAnimationFrame(scroll);
+    //   }
 
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      const scrollWrapper = document.querySelector(".scroll-top");
+    //   autoScrollToBottom();
+    // });
+    // window.scrollTo({
+    //   top: document.body.scrollHeight,
+    //   behavior: "smooth"
+    // });
 
-      window.addEventListener("scroll", () => {
-        scrollWrapper.style.display = window.scrollY > 300 ? "block" : "none";
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    const scrollWrapper = document.querySelector(".scroll-top");
+
+    window.addEventListener("scroll", () => {
+      scrollWrapper.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
       });
+    });
 
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const circles = document.querySelectorAll(".circle");
+      const skillsSection = document.getElementById("skills");
+      let animated = false; // prevent multiple animations
+
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+      }
+
+      function animateCircles() {
+        if (animated) return;
+        if (!isInViewport(skillsSection)) return;
+
+        circles.forEach(circle => {
+          let degree = 0;
+          const targetDegree = parseInt(circle.getAttribute("data-degree"));
+          const color = circle.getAttribute("data-color");
+          const number = circle.querySelector(".number");
+
+          const interval = setInterval(() => {
+            degree++;
+            if (degree > targetDegree) {
+              clearInterval(interval);
+              return;
+            }
+            circle.style.background = `conic-gradient(${color} ${degree}%, #222 ${degree}%)`;
+            if (number) number.innerHTML = `${degree}<span>%</span>`;
+          }, 20); // smaller number = faster animation
         });
-      });
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const circles = document.querySelectorAll(".circle");
-        const skillsSection = document.getElementById("skills");
-        let animated = false; // prevent multiple animations
+        animated = true; // prevent re-animation
+      }
 
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top < window.innerHeight && rect.bottom >= 0;
-        }
+      // listen for scroll
+      window.addEventListener("scroll", animateCircles);
 
-        function animateCircles() {
-          if (animated) return;
-          if (!isInViewport(skillsSection)) return;
+      // also check on page load in case section is already visible
+      animateCircles();
+    });
 
-          circles.forEach((circle) => {
-            let degree = 0;
-            const targetDegree = parseInt(circle.getAttribute("data-degree"));
-            const color = circle.getAttribute("data-color");
-            const number = circle.querySelector(".number");
+  </script>
 
-            const interval = setInterval(() => {
-              degree++;
-              if (degree > targetDegree) {
-                clearInterval(interval);
-                return;
-              }
-              circle.style.background = `conic-gradient(${color} ${degree}%, #222 ${degree}%)`;
-              if (number) number.innerHTML = `${degree}<span>%</span>`;
-            }, 20); // smaller number = faster animation
-          });
+  <script>
+    
+  </script>
+</body>
 
-          animated = true; // prevent re-animation
-        }
-
-        // listen for scroll
-        window.addEventListener("scroll", animateCircles);
-
-        // also check on page load in case section is already visible
-        animateCircles();
-      });
-    </script>
-
-    <script></script>
-  </body>
 </html>
