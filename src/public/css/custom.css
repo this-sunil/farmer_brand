@@ -24,16 +24,16 @@ body{
   overflow: hidden;
 }
 
-.navbar-toggler:hover,
-.navbar-toggler:focus,
-.navbar-toggler:active {
+.navbar-toggler,.navbar-toggler-icon:hover,
+.navbar-toggler,.navbar-toggler-icon:focus,
+.navbar-toggler,.navbar-toggler-icon:active {
   border: 1px solid #ccc;
 }
 
-.navbar-toggler:focus:active:hover {
+.navbar-toggler,.navbar-toggler-icon:focus:active:hover {
   border: 1px solid #ccc;
 }
-.navbar-toggler:focus {
+.navbar-toggler,.navbar-toggler-icon:focus {
   box-shadow: none;
   border: 1px solid #ccc;
 }
