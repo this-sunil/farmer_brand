@@ -44,7 +44,7 @@
       DisableDevtool({
         ondevtoolopen: (type, next) => {
           alert(
-            "Developer tools are open! This action is logged. Type: " + type,
+            "Developer tools are open! This action is logged. Type: " + type
           );
           next();
         },
@@ -75,7 +75,7 @@
               }
             });
           },
-          { threshold: 0.2 },
+          { threshold: 0.2 }
         );
 
         animatedElements.forEach((el) => observer.observe(el));
@@ -480,110 +480,78 @@
         <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
         <p class="duration">July 2022 – April 2025</p>
 
-        <h4>Roles & Responsibilities – Flutter Developer (3+ Years)</h4>
-        <ul style="line-height: 1.6; font-family: Arial, sans-serif">
-          <li>
-            Designed and developed
-            <strong class="text-primary"
-              >scalable, high-performance Flutter applications</strong
-            >
-            using <strong class="text-primary">clean architecture</strong> and
-            <strong class="text-primary">feature-based modular structure</strong
-            >.
-          </li>
-          <li>
-            Implemented
-            <strong class="text-primary">advanced state management</strong>
-            using <strong class="text-primary">Riverpod / Bloc</strong>,
-            ensuring clear separation of
-            <strong class="text-primary">UI</strong> and
-            <strong class="text-primary">business logic</strong>.
-          </li>
-          <li>
-            Built and maintained
-            <strong class="text-primary">REST API integrations</strong> using
-            <strong class="text-primary">Dio/HTTP</strong>, including
-            <strong class="text-primary">interceptors</strong>,
-            <strong class="text-primary">error handling</strong>,
-            <strong class="text-primary">retry logic</strong>, and
-            <strong class="text-primary">API versioning</strong>.
-          </li>
-          <li>
-            Optimized
-            <strong class="text-primary">application performance</strong> by
-            reducing unnecessary widget rebuilds, using
-            <strong class="text-primary">const constructors</strong>,
-            <strong class="text-primary">RepaintBoundary</strong>, and
-            <strong class="text-primary">Flutter DevTools profiling</strong>.
-          </li>
-          <li>
-            Developed
-            <strong class="text-primary">offline-first functionality</strong>
-            using local storage solutions and synchronization strategies.
-          </li>
-          <li>
-            Implemented
-            <strong class="text-primary"
-              >secure authentication and authorization</strong
-            >
-            mechanisms, including <strong class="text-primary">JWT</strong>,
-            <strong class="text-primary">secure storage</strong>, and
-            <strong class="text-primary">role-based access</strong>.
-          </li>
-          <li>
+        <ul class="list-group list-group-flush shadow-sm rounded bullets">
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Monetization & Ads</strong><br />
             Integrated
-            <strong class="text-primary">Firebase services</strong> such as
-            <strong class="text-primary">Authentication</strong>,
-            <strong class="text-primary">Firestore</strong>,
-            <strong class="text-primary">Cloud Messaging</strong>,
-            <strong class="text-primary">Crashlytics</strong>, and
-            <strong class="text-primary">Analytics</strong> for production
-            monitoring.
+            <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with
+            <span class="fw-semibold"
+              >Banner, Interstitial, and Rewarded Ads</span
+            >, driving a
+            <span class="badge bg-success">+35% Monetization</span> and
+            improving ad rendering performance by
+            <span class="fw-semibold">30%</span>.
           </li>
-          <li>
-            Ensured
-            <strong class="text-primary">application stability</strong> by
-            implementing
-            <strong class="text-primary">global exception handling</strong>,
-            <strong class="text-primary">logging</strong>, and
-            <strong class="text-primary">crash reporting</strong> (Sentry /
-            Firebase Crashlytics).
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Testing & Stability</strong><br />
+            Performed extensive
+            <span class="fw-semibold">real-device and emulator testing</span>,
+            reducing
+            <span class="badge bg-success">−45% Production Errors</span>.
+            Integrated <span class="fw-semibold">Sentry</span> for real-time
+            crash reporting and monitoring.
           </li>
-          <li>
-            Wrote
-            <strong class="text-primary"
-              >unit, widget, and integration tests</strong
-            >, improving code quality and achieving meaningful test coverage.
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Backend & Integrations</strong><br />
+            Integrated
+            <span class="fw-semibold"
+              >Firebase, Google Maps, Razorpay, and OneSignal</span
+            >, enhancing backend communication, push notifications, and data
+            handling efficiency by <span class="badge bg-success">+40%</span>.
           </li>
-          <li>
-            Collaborated with backend teams to define API contracts and
-            integrate Flutter apps with
-            <strong class="text-primary">Node.js backends</strong>.
-          </li>
-          <li>
-            Managed <strong class="text-primary">app releases</strong> for
-            Google Play Store and Apple App Store, including build
-            configurations, versioning, and environment setups.
-          </li>
-          <li>
-            Participated in <strong class="text-primary">code reviews</strong>,
-            <strong class="text-primary">architecture discussions</strong>, and
-            <strong class="text-primary"
-              >performance optimization initiatives</strong
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">State Management</strong><br />
+            Implemented
+            <span class="fw-semibold">BLoC, Provider, and GetX</span>
+            architectures, improving application
+            <span class="badge bg-success"
+              >+50% Scalability & Maintainability</span
             >.
           </li>
-          <li>
-            Mentored junior developers and contributed to improving
-            <strong class="text-primary">coding standards</strong> and
-            <strong class="text-primary">best practices</strong> within the
-            team.
-          </li>
-          <li>
-            Worked closely with UI/UX designers to deliver
+
+          <li class="list-group-item py-3">
             <strong class="text-primary"
-              >pixel-perfect, responsive, and adaptive UI</strong
-            >
-            across devices.
+              >CI/CD, Deployment & Build Optimization</strong
+            ><br />
+            Built and maintained
+            <span class="fw-semibold">CI/CD pipelines</span> using
+            <span class="fw-semibold">GitHub Actions</span> for automated builds
+            and releases. Led
+            <span class="fw-semibold">Play Store & App Store deployments</span>,
+            reducing <span class="badge bg-success">−60% Time-to-Market</span>.
+            Resolved complex <span class="fw-semibold">Gradle</span> and
+            <span class="fw-semibold">JDK compatibility issues</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">UI/UX & Animations</strong><br />
+            Designed
+            <span class="fw-semibold"
+              >interactive UI components, custom widgets, and animations</span
+            >, increasing
+            <span class="badge bg-success">+30% User Engagement</span>.
+          </li>
+
+          <li class="list-group-item py-3">
+            <strong class="text-primary">Collaboration & APIs</strong><br />
+            Collaborated with
+            <span class="fw-semibold">backend and QA teams</span> to refine
+            <span class="fw-semibold">REST API integrations</span>, improving
+            application responsiveness by
+            <span class="badge bg-success">+25%</span>.
           </li>
         </ul>
       </div>
@@ -799,14 +767,7 @@
               src="https://www.youtube.com/embed/UY0vvIER8DI"
               title="Flutter + Node.js + JWT Authentication Video"
               frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-              "
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               style="object-fit: cover; background-position: center"
             >
@@ -828,21 +789,25 @@
                 >
               </div>
               <div class="cards-description w-100 mb-2">
-                Implemented <strong>JWT-based authentication</strong> with
-                <strong>bcrypt password encryption</strong> to ensure secure
-                user login and protect sensitive data. Developed a
-                <strong>RESTful API</strong> using <strong>Node.js</strong> and
-                <strong>Express.js</strong>, integrated with
-                <strong>PostgreSQL</strong> for efficient user and appointment
-                management. Enabled <strong>CORS</strong> for seamless
-                frontend-backend communication and designed scalable endpoints
-                to support smooth appointment booking and management across
-                mobile platforms.
+               
+                  Implemented <strong>JWT-based authentication</strong> with
+                  <strong>bcrypt password encryption</strong> to ensure secure
+                  user login and protect sensitive data. Developed a
+                  <strong>RESTful API</strong> using
+                  <strong>Node.js</strong> and <strong>Express.js</strong>,
+                  integrated with <strong>PostgreSQL</strong> for efficient user
+                  and appointment management. Enabled <strong>CORS</strong> for
+                  seamless frontend-backend communication and designed scalable
+                  endpoints to support smooth appointment booking and management
+                  across mobile platforms.
+                
+
+                
               </div>
               <p>
-                <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
-                Express.js | PostgreSQL | JWT | REST API
-              </p>
+                  <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
+                  Express.js | PostgreSQL | JWT | REST API
+                </p>
             </div>
           </div>
 
@@ -913,9 +878,9 @@
                 providers.
               </div>
               <p>
-                <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
-                Express.js | PostgreSQL | JWT | REST API
-              </p>
+                  <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
+                  Express.js | PostgreSQL | JWT | REST API
+                </p>
             </div>
           </div>
           <div class="video-cards">
