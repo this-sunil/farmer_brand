@@ -32,10 +32,10 @@ app.use('/bootstrap-js', express.static(path.join(process.cwd(),'/node_modules/b
 
 app.set("view engine","ejs");
 app.set("views",path.join(process.cwd(),"/src/views"));
-app.get("/resume",(req,res)=>{
+app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
-app.get('/', (req, res) => {
+app.get('/resume', (req, res) => {
   return res.render('Resume');
 });
 
