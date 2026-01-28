@@ -35,6 +35,9 @@ app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
+app.get("/resume",(req,res)=>{
+    return res.render("resume");
+});
 
 // TODO: Routing
 

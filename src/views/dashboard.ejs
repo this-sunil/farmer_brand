@@ -44,7 +44,7 @@
       DisableDevtool({
         ondevtoolopen: (type, next) => {
           alert(
-            "Developer tools are open! This action is logged. Type: " + type
+            "Developer tools are open! This action is logged. Type: " + type,
           );
           next();
         },
@@ -75,7 +75,7 @@
               }
             });
           },
-          { threshold: 0.2 }
+          { threshold: 0.2 },
         );
 
         animatedElements.forEach((el) => observer.observe(el));
@@ -757,254 +757,317 @@
     </section>
 
     <section id="preview">
+      <!-- Bootstrap Icons -->
+
       <div class="container-fluid">
         <h4 class="section-title">Work Preview</h4>
+
         <div class="video-container z-n1">
+          <!-- ================= AUTH APP ================= -->
           <div class="video-cards">
             <iframe
               width="100%"
               height="300"
               src="https://www.youtube.com/embed/UY0vvIER8DI"
-              title="Flutter + Node.js + JWT Authentication Video"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
-              style="object-fit: cover; background-position: center"
-            >
-            </iframe>
+            ></iframe>
+
             <div class="cards-content">
               <div class="cards-title">
                 Flutter + Node.js + JWT Authentication
               </div>
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">Node.js</span>
-                <span class="badge bg-success text-dark p-2 rounded-2 m-1"
-                  >JWT</span
-                >
-              </div>
-              <div class="cards-description w-100 mb-2">
-               
-                  Implemented <strong>JWT-based authentication</strong> with
-                  <strong>bcrypt password encryption</strong> to ensure secure
-                  user login and protect sensitive data. Developed a
-                  <strong>RESTful API</strong> using
-                  <strong>Node.js</strong> and <strong>Express.js</strong>,
-                  integrated with <strong>PostgreSQL</strong> for efficient user
-                  and appointment management. Enabled <strong>CORS</strong> for
-                  seamless frontend-backend communication and designed scalable
-                  endpoints to support smooth appointment booking and management
-                  across mobile platforms.
-                
 
-                
-              </div>
-              <p>
-                  <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
-                  Express.js | PostgreSQL | JWT | REST API
-                </p>
-            </div>
-          </div>
-           <div class="video-cards">
-            <iframe width="100%" height="300" src="https://www.youtube.com/embed/Xpr6yul40XU?si=JfskrP_vWIqMJWlL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <div class="cards-content">
-              <div class="cards-title">
-                Turn By Turn Navigation
-              </div>
               <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-info p-2 rounded-2 m-1">Geolocator</span>
-                <span class="badge bg-dark p-2 rounded-2 m-1">Google Maps</span>
+                <span class="badge bg-info text-dark m-1">Flutter</span>
+                <span class="badge bg-warning text-dark m-1">Dart</span>
+                <span class="badge bg-dark m-1">Node.js</span>
+                <span class="badge bg-success text-dark m-1">JWT</span>
               </div>
-              <div class="cards-description w-100 mb-2">
-               The turn-by-turn navigation module in Flutter integrates Google Maps SDK and Directions API to provide real-time routing and navigation. It supports dynamic polyline updates, live GPS tracking, camera animation, and maneuver-based navigation instructions, ensuring accurate and responsive navigation throughout the journey.
+
+              <div class="cards-description">
+                <span class="badge bg-primary mb-2">
+                  <i class="bi bi-stars"></i> Key Highlights
+                </span>
+                <ul class="mt-2">
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >JWT-based authentication
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >bcrypt password encryption
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >RESTful API with Express.js
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >PostgreSQL database integration
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >CORS-enabled API communication
+                  </li>
+                </ul>
               </div>
-            
             </div>
           </div>
-          
+
+          <!-- ================= TURN BY TURN ================= -->
           <div class="video-cards">
-            <video
-              src="https://ik.imagekit.io/wtvwfegms/chatboat.mp4/ik-video.mp4"
-              controls
+            <iframe
               width="100%"
-              height="315"
-            ></video>
+              height="300"
+              src="https://www.youtube.com/embed/Xpr6yul40XU"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+
+            <div class="cards-content">
+              <div class="cards-title">Turn By Turn Navigation</div>
+
+              <div class="card-subtitle mb-2 w-100">
+                <span class="badge bg-info text-dark m-1">Flutter</span>
+                <span class="badge bg-warning text-dark m-1">Dart</span>
+                <span class="badge bg-info m-1">Geolocator</span>
+                <span class="badge bg-dark m-1">Google Maps</span>
+              </div>
+
+              <div class="cards-description">
+                <span class="badge bg-primary mb-2">
+                  <i class="bi bi-stars"></i> Key Highlights
+                </span>
+                <ul class="mt-2">
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Google Maps & Directions API
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Real-time GPS tracking
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Dynamic polyline rerouting
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Smooth camera animation
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Maneuver-based navigation
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= AI CHATBOT ================= -->
+          <div class="video-cards">
+            <iframe width="100%" height="300" src="https://www.youtube.com/embed/PVwa6DaeKsg?si=zwivCwug0CRqtPfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
             <div class="cards-content">
               <div class="cards-title">
                 AI Chatbot with Flutter & Gemini API
               </div>
+
               <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">Gemini API</span>
+                <span class="badge bg-info text-dark m-1">Flutter</span>
+                <span class="badge bg-warning text-dark m-1">Dart</span>
+                <span class="badge bg-dark m-1">Gemini API</span>
               </div>
-              <div class="cards-description w-100 mb-2">
-                An AI-powered chatbot application built using Flutter and
-                integrated with **Google Gemini / ChatGPT APIs**. Features
-                include real-time conversations, prompt-based responses,
-                user-friendly UI, and smooth state management. Designed for fast
-                performance and scalable AI interaction across mobile platforms.
+
+              <div class="cards-description">
+                <span class="badge bg-primary mb-2">
+                  <i class="bi bi-stars"></i> Key Highlights
+                </span>
+                <ul class="mt-2">
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >AI-powered real-time chat
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Prompt-based responses
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Fast and responsive UI
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Scalable AI integration
+                  </li>
+                </ul>
               </div>
-              <p>
-                <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
-                Express.js | PostgreSQL | JWT | REST API
-              </p>
             </div>
           </div>
 
+          <!-- ================= VEHICLE SERVICE ================= -->
           <div class="video-cards">
             <video
               src="https://ik.imagekit.io/wtvwfegms/vehicle.mp4"
               controls
             ></video>
-            <!-- <button class="play-button">
-      <i class="fa fa-play"></i>
-    </button> -->
+
             <div class="cards-content">
               <div class="cards-title">Vehicle Repair Service</div>
+
               <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
-                <span class="badge bg-secondary p-2 rounded-2 m-1"
-                  >Express.js</span
-                >
-                <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
+                <span class="badge bg-primary m-1">Node.js</span>
+                <span class="badge bg-secondary m-1">Express.js</span>
+                <span class="badge bg-success m-1">REST API</span>
+                <span class="badge bg-info text-dark m-1">Flutter</span>
+                <span class="badge bg-warning text-dark m-1">Dart</span>
+                <span class="badge bg-dark m-1">PostgreSQL</span>
               </div>
-              <div class="cards-description w-100 mb-2">
-                A complete vehicle repair service management application
-                developed with Flutter. It allows users to book repair services,
-                track service status, view mechanic details, and manage vehicle
-                history. The app focuses on intuitive navigation, clean UI, and
-                seamless user experience for both customers and service
-                providers.
+
+              <div class="cards-description">
+                <span class="badge bg-primary mb-2">
+                  <i class="bi bi-stars"></i> Key Highlights
+                </span>
+                <ul class="mt-2">
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Service booking & tracking
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Mechanic assignment system
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Vehicle service history
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Scalable backend APIs
+                  </li>
+                </ul>
               </div>
-              <p>
-                  <strong>Tech Stack:</strong> Flutter | Dart | Node.js |
-                  Express.js | PostgreSQL | JWT | REST API
-                </p>
             </div>
           </div>
-          
+
+          <!-- ================= SENSE WHEEL ================= -->
           <div class="video-cards">
             <video
               src="https://ik.imagekit.io/wtvwfegms/sense-wheel.mp4?updatedAt=1766758405039"
               controls
             ></video>
-            <!-- <button class="play-button">
-            <i class="fa fa-play"></i>
-          </button> -->
             <div class="cards-content">
-              <div class="cards-title">Sense Wheel</div>
-              <div class="card-subtitle w-100 mb-2">
-                <span class="badge bg-primary p-2 rounded-2 m-1">Flutter</span>
-                <span class="badge bg-secondary p-2 rounded-2 m-1">Dart</span>
-                <span class="badge bg-success p-2 rounded-2 m-1">Firebase</span>
-                <span class="badge bg-dark p-2 rounded-2 m-1"
-                  >Push Notification</span
-                >
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Sqflite</span
-                >
-                <span class="badge bg-body text-dark p-2 rounded-2 m-1"
-                  >Payment Gateway</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Easy Localization</span
-                >
+              <div class="cards-title">Sense Wheel (OTT Platform)</div>
 
-                <span class="badge bg-primary p-2 rounded-2 m-1"
-                  >Bloc State management</span
-                >
+              <div class="card-subtitle mb-2 w-100">
+                <span class="badge bg-primary m-1">Flutter</span>
+                <span class="badge bg-secondary m-1">Dart</span>
+                <span class="badge bg-success m-1">Firebase</span>
+                <span class="badge bg-dark m-1">Push Notification</span>
+                <span class="badge bg-info text-dark m-1">Sqflite</span>
+                <span class="badge bg-warning text-dark m-1">Bloc</span>
               </div>
+
               <div class="cards-description">
-                An OTT-based streaming application designed for video content
-                consumption. Features include user authentication, categorized
-                content browsing, video playback, watch history, and responsive
-                UI. Built to deliver smooth streaming performance and an
-                engaging multimedia experience.
+                <span class="badge bg-primary mb-2">
+                  <i class="bi bi-stars"></i> Key Highlights
+                </span>
+                <ul class="mt-2">
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >OTT video streaming platform
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Smooth video playback
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Push notifications
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Offline local storage
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
 
+          <!-- ================= FARMER APP ================= -->
           <div class="video-cards">
             <video
-              src="https://ik.imagekit.io/wtvwfegms/farmer.mp4/ik-video.mp4?updatedAt=1766488092492"
+              src="https://ik.imagekit.io/wtvwfegms/farmer.mp4"
               controls
             ></video>
-            <!-- <button class="play-button">
-           <i class="fa fa-play"></i>
-          </button> -->
+
             <div class="cards-content">
               <div class="cards-title">Farmer Application</div>
+
               <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
-                <span class="badge bg-secondary p-2 rounded-2 m-1"
-                  >Express.js</span
-                >
-                <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
-                <span class="badge bg-info text-dark p-2 rounded-2 m-1"
-                  >Flutter</span
-                >
-                <span class="badge bg-warning text-dark p-2 rounded-2 m-1"
-                  >Dart</span
-                >
-                <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
+                <span class="badge bg-primary m-1">Node.js</span>
+                <span class="badge bg-secondary m-1">Express.js</span>
+                <span class="badge bg-success m-1">REST API</span>
+                <span class="badge bg-info text-dark m-1">Flutter</span>
+                <span class="badge bg-warning text-dark m-1">Dart</span>
+                <span class="badge bg-dark m-1">PostgreSQL</span>
               </div>
 
               <div class="cards-description">
-                An agriculture-focused e-commerce mobile application designed to
-                support farmers by providing easy access to essential farming
-                products and services. The application enables farmers to browse
-                and purchase seeds, fertilizers, pesticides, tools, and
-                equipment through a user-friendly mobile interface.
+                <span class="badge bg-primary mb-2">
+                  <i class="bi bi-stars"></i> Key Highlights
+                </span>
+                <ul class="mt-2">
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Agriculture e-commerce platform
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Product browsing & ordering
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Farmer-friendly UI
+                  </li>
+                  <li>
+                    <span class="badge bg-success me-2"
+                      ><i class="bi bi-check-circle"></i></span
+                    >Secure backend APIs
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-
-          <!-- <div class="video-cards">
-          <video src=""></video>
-          <div class="cards-content">
-            <div class="cards-title">Doctor Appointment App</div>
-            <div class="card-subtitle mb-2 w-100">
-              <span class="badge bg-primary p-2 rounded-2 m-1">Node.js</span>
-              <span class="badge bg-secondary p-2 rounded-2 m-1">Express.js</span>
-              <span class="badge bg-success p-2 rounded-2 m-1">REST API</span>
-              <span class="badge bg-info text-dark p-2 rounded-2 m-1">JWT</span>
-              <span class="badge bg-warning text-dark p-2 rounded-2 m-1">bcrypt</span>
-              <span class="badge bg-dark p-2 rounded-2 m-1">PostgreSQL</span>
-            </div>
-            <div class="cards-description">
-              Developed a backend REST API for a Doctor Appointment application using Node.js and Express.js.
-              Implemented JWT-based authentication and bcrypt for secure user login and password encryption. Integrated
-              the backend with a PostgreSQL database to manage users, doctors, appointments, and schedules. Enabled CORS
-              for frontend integration and followed RESTful API standards to support seamless appointment booking and
-              management.
-            </div>
-          </div>
-        </div> -->
         </div>
       </div>
+
       <br />
     </section>
 
