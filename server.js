@@ -36,7 +36,7 @@ app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
 app.get('/resume', (req, res) => {
-  res.sendFile(path.join(process.cwd(), 'src/public', 'resume.html'));
+  res.render('resume');
 });
 
 // TODO: Routing
