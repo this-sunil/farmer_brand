@@ -36,7 +36,7 @@ app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
 app.get('/resume', (req, res) => {
-  res.render('resume');
+  return res.render('resume');
 });
 
 // TODO: Routing
