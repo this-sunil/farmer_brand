@@ -35,8 +35,8 @@ app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
     return res.render("dashboard");
 });
-app.get("/resume",(req,res)=>{
-    return res.render("resume");
+app.get('/resume', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'resume.html'));
 });
 
 // TODO: Routing
