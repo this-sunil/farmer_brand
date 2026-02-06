@@ -49,6 +49,15 @@
           next();
         },
       });
+
+      let scrollInterval = setInterval(() => {
+    window.scrollBy(0, 2);
+}, 20);
+
+$(document).on("click", function () {
+    clearInterval(scrollInterval);
+});
+
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
