@@ -5,6 +5,9 @@ html {
 }
 body{
   background-color: #ccc;
+  background:url("https://media.istockphoto.com/id/524804954/video/death-valley-milky-way-time-lapse-4k.mp4?s=mp4-640x640-is&k=20&c=clPOpi8tQPfl2p4ob1o2cBaeG6O5LciEk8JHLmZwmL8=");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bullets {
