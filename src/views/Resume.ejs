@@ -50,6 +50,29 @@
         border-radius: 5px;
       }
     </style>
+    <script
+      disable-devtool-auto
+      src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
+    ></script>
+    <script>
+      DisableDevtool({
+        ondevtoolopen: (type, next) => {
+          alert(
+            "Developer tools are open! This action is logged. Type: " + type,
+          );
+          next();
+        },
+      });
+
+      let scrollInterval = setInterval(() => {
+        window.scrollBy(0, 2);
+      }, 10);
+
+      $(document).on("click", function () {
+        clearInterval(scrollInterval);
+      });
+    </script>
+    <script>
   </head>
   <body class="bg-light">
     <div class="container my-5">
