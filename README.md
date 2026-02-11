@@ -3,7 +3,7 @@
 ![Flutter](https://img.shields.io/badge/Flutter-Mobile%20App-blue?logo=flutter)
 ![Node.js](https://img.shields.io/badge/Node.js-Backend-green?logo=node.js)
 ![Express](https://img.shields.io/badge/Express.js-API-black?logo=express)
-![MongoDB](https://img.shields.io/badge/Database-MongoDB-green?logo=mongodb)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white)
 ![JWT](https://img.shields.io/badge/Auth-JWT-orange)
 ![Vercel](https://img.shields.io/badge/Web-Hosted%20on%20Vercel-black?logo=vercel)
 ![License](https://img.shields.io/badge/License-MIT-blue)
