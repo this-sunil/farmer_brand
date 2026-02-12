@@ -41,19 +41,19 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css" />
     <link rel="stylesheet" href="public/css/animate.css" />
-    <!-- <script
+    <script
       disable-devtool-auto
       src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
-    ></script> -->
+    ></script>
     <script>
-      // DisableDevtool({
-      //   ondevtoolopen: (type, next) => {
-      //     alert(
-      //       "Developer tools are open! This action is logged. Type: " + type,
-      //     );
-      //     next();
-      //   },
-      // });
+       DisableDevtool({
+         ondevtoolopen: (type, next) => {
+           alert(
+             "Developer tools are open! This action is logged. Type: " + type,
+           );
+           next();
+         },
+       });
 
       let scrollInterval = setInterval(() => {
         window.scrollBy(0, 2);
@@ -1165,7 +1165,7 @@
         wallet system, UPI payments, contests, and secure KYC verification.
       </p>
       <a
-        href="https://github.com/this-sunil/grow_knowledge"
+        href=""
         class="btn btn-primary btn-sm"
       >
         Source Code Github
