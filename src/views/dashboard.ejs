@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +25,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
@@ -57,8 +62,7 @@
       $(document).on("click", function () {
         clearInterval(scrollInterval);
       });
-    </script>
-    <script>
+
       document.addEventListener("DOMContentLoaded", () => {
         const animatedElements = document.querySelectorAll(".animated");
 
@@ -88,10 +92,6 @@
 
         animatedElements.forEach((el) => observer.observe(el));
       });
-    </script>
-
-    <script>
-      // Get the current visit count from localStorage
       let visits = localStorage.getItem("portfolioVisits") || 0;
 
       // Increment the count
@@ -105,6 +105,35 @@
         const counter = document.getElementById("visitCount");
         if (counter) counter.innerText = `${visits} Views`;
       });
+
+      $(document).ready(function () {
+        function setThemeIcon() {
+          if ($("body").hasClass("dark-theme")) {
+            $("#themeToggle i").removeClass("fa-moon").addClass("fa-sun");
+          } else {
+            $("#themeToggle i").removeClass("fa-sun").addClass("fa-moon");
+          }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem("theme") === "dark") {
+          $("body").addClass("dark-theme");
+        }
+
+        setThemeIcon();
+
+        $("#themeToggle").click(function () {
+          $("body").toggleClass("dark-theme");
+
+          if ($("body").hasClass("dark-theme")) {
+            localStorage.setItem("theme", "dark");
+          } else {
+            localStorage.setItem("theme", "light");
+          }
+
+          setThemeIcon();
+        });
+      });
     </script>
   </head>
   <body
@@ -112,10 +141,12 @@
     data-bs-target="#menu"
     data-bs-offset="100"
     tabindex="0"
+    class="dark-theme"
   >
     <nav
       class="navbar navbar-expand-lg navbar-dark shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar"
       style="background-color: #5c2ea6"
+      data-theme="dark"
     >
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">#Portfolio</a>
@@ -161,6 +192,13 @@
                 >Work Preview</a
               >
             </li>
+            
+            
+            <div class="px-3 gx-3">
+              <button id="themeToggle" class="theme-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+            </div>
           </ul>
         </div>
       </div>
@@ -462,48 +500,39 @@
         </ul>
       </div>
       <div class="container-fluid">
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
+          <div class="cards border-0 shadow-lg rounded-4 p-4 text-center">
+            <div class="mb-3">
+              <span class="badge bg-success px-3 py-2 rounded-pill">
+                6 Month Internship Completed
+              </span>
+            </div>
 
-      
-        <div class="card border-0 shadow-lg rounded-4 p-4 text-center">
+            <h4 class="fw-bold text-success mb-2">
+              Flutter Developer Internship
+            </h4>
 
-          <div class="mb-3">
-            <span class="badge bg-success px-3 py-2 rounded-pill">
-              6 Month Internship Completed
-            </span>
+            <p class="mb-3">
+              Successfully completed a 6-month internship program gaining
+              hands-on experience in Flutter development, REST API integration,
+              and backend collaboration.
+            </p>
+
+            <p class="fw-semibold">Duration: Dec 2020 – June 2021</p>
+
+            <div class="mt-4">
+              <a
+                href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
+                target="_blank"
+                class="btn btn-primary px-4 rounded-pill shadow"
+              >
+                Download Certificate
+              </a>
+            </div>
           </div>
-
-          <h4 class="fw-bold text-primary mb-2">
-            Flutter Developer Internship
-          </h4>
-
-          <p class="text-muted mb-3">
-            Successfully completed a 6-month internship program gaining 
-            hands-on experience in Flutter development, REST API integration, 
-            and backend collaboration.
-          </p>
-
-          <p class="fw-semibold text-dark">
-            Duration: Dec 2020 – June 2021
-          </p>
-
-          <div class="mt-4">
-            <a 
-              href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
-              target="_blank"
-              class="btn btn-primary px-4 rounded-pill shadow">
-              Download Certificate
-            </a>
-          </div>
-
         </div>
-      
-
-    </div>
-  </div>
+      </div>
     </section>
-   
-
 
     <section id="skills">
       <h4 class="section-title">Technical Skills</h4>
@@ -763,7 +792,7 @@
     <section
       id="project"
       class="projects-section py-5"
-      style="background-color: #f8f9fa"
+      
     >
       <h2 class="section-title text-center mb-5">Projects</h2>
 
@@ -1275,7 +1304,7 @@
                 <span class="badge bg-primary mb-2">
                   <i class="bi bi-stars"></i> Key Highlights
                 </span>
-                <ul class="mt-2">
+                <ul class="mt-2 list-unstyled">
                   <li>
                     <span class="badge bg-success me-2"
                       ><i class="bi bi-check-circle"></i></span
@@ -1330,7 +1359,7 @@
                 <span class="badge bg-primary mb-2">
                   <i class="bi bi-stars"></i> Key Highlights
                 </span>
-                <ul class="mt-2">
+                <ul class="mt-2 list-unstyled">
                   <li>
                     <span class="badge bg-success me-2"
                       ><i class="bi bi-check-circle"></i></span
@@ -1446,7 +1475,7 @@
                 <span class="badge bg-primary mb-2">
                   <i class="bi bi-stars"></i> Key Highlights
                 </span>
-                <ul class="mt-2">
+                <ul class="mt-2 list-unstyled">
                   <li>
                     <span class="badge bg-success me-2"
                       ><i class="bi bi-check-circle"></i></span
@@ -1494,7 +1523,7 @@
                 <span class="badge bg-primary mb-2">
                   <i class="bi bi-stars"></i> Key Highlights
                 </span>
-                <ul class="mt-2">
+                <ul class="mt-2 list-unstyled">
                   <li>
                     <span class="badge bg-success me-2"
                       ><i class="bi bi-check-circle"></i></span
@@ -1557,7 +1586,7 @@
                 <span class="badge bg-primary mb-2">
                   <i class="bi bi-stars"></i> Key Highlights
                 </span>
-                <ul class="mt-2">
+                <ul class="mt-2 list-unstyled">
                   <li>
                     <span class="badge bg-success me-2"
                       ><i class="bi bi-check-circle"></i></span
@@ -1584,7 +1613,7 @@
           </div>
         </div>
       </div>
-
+      <br>
       <div class="text-center g-2">
         <button id="visitCount" class="btn btn-primary"></button>
       </div>

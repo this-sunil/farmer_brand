@@ -3,8 +3,166 @@ html {
   scroll-behavior: smooth;
   cursor: pointer;
 }
-body{
-  background-color: #ccc;
+:root {
+  --bg-color: #f4f4f4;
+  --card-color: #ffffff;
+  --text-color: #333333;
+  --nav-bg: #5c2ea6;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --accent-color: #2a4d8f;
+}
+.main-nav,
+.navbar {
+  background-color: var(--nav-bg);
+  transition: 0.3s ease;
+}
+
+.navbar a,
+.nav-link,
+.navbar-brand {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Colors */
+  --bg-color: #121212;
+  --card-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --nav-bg: #1e1e1e;
+  --shadow-color: #000000;
+  --accent-color: #4a90e2;
+}
+
+/* ================================= */
+/* DARK THEME OVERRIDES */
+/* ================================= */
+
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Navbar */
+body.dark-theme .main-nav {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark-theme .main-nav .nav-link a {
+  color: #ffffff;
+}
+
+/* About */
+body.dark-theme .about-me {
+  color: #ffffff;
+}
+
+/* Sections */
+body.dark-theme .headline-section {
+  background-color: #222;
+  color: #ffffff;
+}
+/* =============================== */
+/* DARK MODE - LIST GROUP FIX */
+/* =============================== */
+
+body.dark-theme .list-group {
+  --bs-list-group-bg: #1e1e1e;
+  --bs-list-group-border-color: #333;
+}
+
+body.dark-theme .list-group-item {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+/* Active item */
+body.dark-theme .list-group-item.active {
+  background-color: #4da3ff !important;
+  border-color: #4da3ff !important;
+  color: #ffffff !important;
+}
+
+/* Hover effect */
+body.dark-theme .list-group-item:hover {
+  background-color: #2a2a2a;
+}
+
+/* Cards */
+body.dark-theme .cards,
+body.dark-theme .video-cards,
+body.dark-theme .experience-cards,
+body.dark-theme .project-cards,
+body.dark-theme .edu-cards,
+body.dark-theme .contact-form {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Titles */
+body.dark-theme .project-cards h3,
+body.dark-theme .experience-cards h3,
+body.dark-theme .section-title {
+  color: #4da3ff;
+}
+
+/* Video Description */
+body.dark-theme .video-cards .cards-description,
+body.dark-theme .company,
+body.dark-theme .duration,
+body.dark-theme .responsibilities li,
+body.dark-theme .edu-cards .institute,
+body.dark-theme .edu-cards .details {
+  color: #cccccc;
+}
+
+
+
+/* Buttons keep original colors */
+body.dark-theme .btns {
+  color: #ffffff;
+}
+
+/* Footer */
+body.dark-theme .footer {
+  background: #1a1a1a;
+}
+
+/* Form Inputs */
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+  background: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark-theme .contact-form input:focus,
+body.dark-theme .contact-form textarea:focus {
+  border-color: #4da3ff;
+  box-shadow: 0 0 6px rgba(77, 163, 255, 0.4);
+}
+
+/* Glass Card */
+body.dark-theme .glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+body.dark-theme .glass-card ul li {
+  color: #ffffff;
+}
+
+/* Tool Circle */
+body.dark-theme .tool-circle {
+  background: #1e1e1e;
+}
+
+/* Scroll Top */
+body.dark-theme .scroll-top {
+  background-color: #4da3ff;
 }
 
 .bullets {
@@ -16,6 +174,24 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.theme-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background: var(--card-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.theme-btn:hover {
+  transform: scale(1.1);
 }
 
 .shadow-navbar {
@@ -31,11 +207,10 @@ body{
   box-shadow: none;
 }
 
-
 .top-skills {
   white-space: nowrap;
   overflow: hidden;
-  color: #3272d3;
+  color: #6507ea;
   margin: 0;
   padding: 0;
   width: 0;
@@ -100,7 +275,9 @@ body{
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #6c63ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about-me .profile img:hover {
@@ -259,14 +436,13 @@ span::after {
   width: 100%;
   height: 250px;
   object-fit: cover;
-
 }
 
 .tool-circle {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--card-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,7 +453,6 @@ span::after {
   max-height: 70%;
   object-fit: contain;
 }
-
 
 .cards-body h4 {
   text-align: center;
@@ -431,7 +606,9 @@ span::after {
   margin-bottom: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .experience-cards:hover {
@@ -489,12 +666,14 @@ span::after {
 }
 
 .project-cards {
-  background: #ffffff;
+  background: var(--bg-color);
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .project-cards:hover {
@@ -590,13 +769,15 @@ h2 {
 }
 
 .edu-cards {
-  background: #ffffff;
+  background: var(--card-color);
   border-left: 5px solid #4a90e2;
   padding: 15px 20px;
   margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
     border-left-color 0.3s ease;
 }
 
@@ -651,8 +832,10 @@ h2 {
   background-color: #333;
   border-radius: 50%;
   border: 15px solid #4d4c51;
-  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.75), 0 -2px 2px rgba(255, 255, 255, 0.5),
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.75),
+    0 -2px 2px rgba(255, 255, 255, 0.5),
     inset 0 4px 2px rgba(0, 0, 0, 0.25),
     inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
@@ -672,8 +855,10 @@ h2 {
   width: 50px;
   height: 50px;
   background-color: white;
-  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.75), 0 -2px 2px rgba(255, 255, 255, 0.5),
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.75),
+    0 -2px 2px rgba(255, 255, 255, 0.5),
     inset 0 4px 2px rgba(0, 0, 0, 0.25),
     inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
@@ -699,12 +884,10 @@ h2 {
   height: 120px;
   object-fit: cover;
   z-index: 4;
-  background: #fff;
+  background: var(--card-color);
   border-radius: 50%;
   padding: 6px;
 }
-
-
 
 .circle-rounded {
   display: flex;
@@ -724,10 +907,12 @@ h2 {
   object-fit: cover;
   cursor: pointer;
   padding: 30px;
-  
-  transition: transform .3s ease-in;
+
+  transition: transform 0.3s ease-in;
   z-index: 2;
-  box-shadow: 5px 5px 30px #ccc,10px 10px 20px #ddd;
+  box-shadow:
+    5px 5px 30px #ccc,
+    10px 10px 20px #ddd;
 }
 #menu ul {
   padding: 0;
@@ -751,11 +936,11 @@ h2 {
 }
 
 #menu .nav-link.active {
-  background-color: #f5f6f8;   /* Bootstrap primary */
+  background-color: #f5f6f8; /* Bootstrap primary */
   color: #0b0b0b !important;
 }
-.circle-rounded img:nth-child(4):hover{
-   filter: invert(0%) sepia(100%) saturate(500%) hue-rotate(0deg);
+.circle-rounded img:nth-child(4):hover {
+  filter: invert(0%) sepia(100%) saturate(500%) hue-rotate(0deg);
 }
 
 .circle-rounded img:nth-child(4) {
@@ -769,21 +954,19 @@ h2 {
   color: #4b04f0;
   transition: all 0.3s ease-in; /* only animate what changes */
   z-index: 2;
-  box-shadow: 5px 5px 30px #ccc, 10px 10px 20px #ddd;
+  box-shadow:
+    5px 5px 30px #ccc,
+    10px 10px 20px #ddd;
 }
 
-
-.circle-rounded img:hover{
+.circle-rounded img:hover {
   transform: scale(1.2);
   z-index: 5;
   cursor: pointer;
   background-color: #333945;
 }
 
-
-
 @media screen and (max-width: 1024px) {
-
   .container,
   .rows {
     flex-direction: column;
@@ -828,7 +1011,7 @@ h2 {
 
 .glass-card:hover {
   transform: scale(1px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -838,7 +1021,7 @@ h2 {
 
 .glass-card ul li {
   margin-bottom: 8px;
-  
+
   color: #000;
 }
 
