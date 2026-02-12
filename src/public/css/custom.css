@@ -15,12 +15,14 @@ html {
 .navbar {
   background-color: var(--nav-bg);
   transition: 0.3s ease;
+
 }
 
 .navbar a,
 .nav-link,
 .navbar-brand {
   color: var(--text-color) !important;
+  cursor: pointer;
 }
 
 [data-theme="dark"] {
@@ -196,7 +198,6 @@ body.dark-theme .scroll-top {
 
 .shadow-navbar {
   z-index: 999;
-  box-shadow: 10px 10px 80px #ccc;
   overflow: hidden;
 }
 
@@ -210,12 +211,25 @@ body.dark-theme .scroll-top {
 .top-skills {
   white-space: nowrap;
   overflow: hidden;
-  color: #6507ea;
+  color: #6a3aad;
   margin: 0;
   padding: 0;
   width: 0;
-  font-size: 16px;
-  animation: typing 2s steps(40, end) forwards;
+  font-size: 20px;
+  
+}
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid black;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 .scroll-top {
@@ -243,15 +257,6 @@ body.dark-theme .scroll-top {
   transform: translate(-50%, -50%);
 }
 
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
 
 /* Headline */
 .headline {
@@ -286,7 +291,7 @@ body.dark-theme .scroll-top {
 }
 
 .about-me .about-title {
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 700;
   margin: 25px 0 20px;
 }
@@ -909,10 +914,8 @@ h2 {
   padding: 30px;
 
   transition: transform 0.3s ease-in;
-  z-index: 2;
-  box-shadow:
-    5px 5px 30px #ccc,
-    10px 10px 20px #ddd;
+  z-index: 999;
+  
 }
 #menu ul {
   padding: 0;
@@ -1007,6 +1010,7 @@ h2 {
   transition: all 0.4s ease;
   cursor: pointer;
   margin: 10px;
+  height: 400px;
 }
 
 .glass-card:hover {
