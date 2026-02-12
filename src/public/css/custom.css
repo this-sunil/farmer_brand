@@ -175,7 +175,7 @@ body.dark-theme .scroll-top {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Bitter", sans-serif;
 }
 
 .theme-btn {
@@ -222,15 +222,28 @@ body.dark-theme .scroll-top {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid black;
-  width: 0;
-  animation: typing 3s steps(20, end) forwards;
+  border-right: 3px solid black;
+  width: 0px;
+  vertical-align: bottom;
+
+  animation: 
+    typing 3s infinite,
+    blink 0.8s step-end infinite;
 }
+
+/* Adjust steps = number of characters (including spaces) */
+/* "Senior Flutter Developer" = 24 characters */
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 50% }
 }
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
 
 .scroll-top {
   position: fixed;
