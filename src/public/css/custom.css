@@ -814,6 +814,33 @@ h2 {
   }
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  z-index: 999;
+  border: 1px solid #ccc;
+  color: #ccc;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.glass-card:hover {
+  transform: scale(1px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-card ul {
+  padding-left: 18px;
+}
+
+.glass-card ul li {
+  margin-bottom: 8px;
+  
+  color: #000;
+}
+
 /* Mobile Devices (up to 767px) */
 @media screen and (max-width: 767px) {
   .cards {
