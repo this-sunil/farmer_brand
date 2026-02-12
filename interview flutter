@@ -1,0 +1,18 @@
+🚀 Flutter Interview Series — Day 1
+
+📌 Q1: What is Flutter?
+Flutter is Google’s open-source UI toolkit for building cross-platform apps (Android, iOS, Web, Desktop) from a single codebase using Dart. It provides its own rendering engine for consistent UI across platforms.
+
+📌 Q2: What is Dart and why Flutter uses it?
+Dart is a client-optimized language. Flutter uses it for Ahead-of-Time (AOT) compilation (fast production apps) and Just-in-Time (JIT) compilation (fast development with Hot Reload).
+
+📌 Q3: What are Widgets in Flutter?
+Widgets are the basic building blocks of UI. Everything in Flutter is a widget — text, buttons, layout containers, etc.
+
+📌 Q4: Difference between StatelessWidget and StatefulWidget
+
+StatelessWidget → UI is immutable
+StatefulWidget → UI changes dynamically with setState() or state management.
+
+📌 Q5: What is Hot Reload?
+Updates the running app instantly without losing the current state, speeding up UI development.
