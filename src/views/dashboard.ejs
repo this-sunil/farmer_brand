@@ -46,14 +46,14 @@
       src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
     ></script>
     <script>
-       DisableDevtool({
-         ondevtoolopen: (type, next) => {
-           alert(
-             "Developer tools are open! This action is logged. Type: " + type,
-           );
-           next();
-         },
-       });
+      DisableDevtool({
+        ondevtoolopen: (type, next) => {
+          alert(
+            "Developer tools are open! This action is logged. Type: " + type,
+          );
+          next();
+        },
+      });
 
       let scrollInterval = setInterval(() => {
         window.scrollBy(0, 2);
@@ -217,11 +217,13 @@
 
       <p class="about-description fs-3">
         I'm
-        <strong class="typing-text text-primary">Senior Flutter Developer</strong>
+        <strong class="typing-text text-primary"
+          >Senior Flutter Developer</strong
+        >
       </p>
 
       <p class="about-description">
-         <strong>4+ years of experience</strong>
+        <strong>4+ years of experience</strong>
         building responsive and high-performance mobile apps.
       </p>
 
@@ -789,6 +791,24 @@
             <h2>GitHub</h2>
           </div>
         </div>
+        <div class="rows">
+          <div class="circle-rounded">
+            <img
+              src="https://www.vectorlogo.zone/logos/slack/slack-icon.svg"
+              alt="Slack"
+            />
+            <h2>Slack</h2>
+          </div>
+
+          <!-- Microsoft Teams -->
+          <div class="circle-rounded">
+            <img
+              src="https://www.vectorlogo.zone/logos/microsoft_teams/microsoft_teams-icon.svg"
+              alt="Microsoft Teams"
+            />
+            <h2>Microsoft Teams</h2>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1152,109 +1172,101 @@
         </div>
       </div>
 
-     <div class="project-cards shadow-lg mb-4">
-  <div class="card-body">
-    <!-- App Header -->
-    <div class="text-center text-white mb-5">
-      <h2 class="fw-bold display-6 text-primary">
-        🚀 Grow Knowledge
-      </h2>
-      <p class="text-dark opacity-75">
-        A scalable quiz & contest platform built with Node.js, Express.js,
-        PostgreSQL, and Flutter using Bloc state management, featuring
-        wallet system, UPI payments, contests, and secure KYC verification.
-      </p>
-      <a
-        href=""
-        class="btn btn-primary btn-sm"
-      >
-        Source Code Github
-      </a>
-    </div>
+      <div class="project-cards shadow-lg mb-4">
+        <div class="card-body">
+          <!-- App Header -->
+          <div class="text-center text-white mb-5">
+            <h2 class="fw-bold display-6 text-primary">🚀 Grow Knowledge</h2>
+            <p class="text-dark opacity-75">
+              A scalable quiz & contest platform built with Node.js, Express.js,
+              PostgreSQL, and Flutter using Bloc state management, featuring
+              wallet system, UPI payments, contests, and secure KYC
+              verification.
+            </p>
+            <a href="" class="btn btn-primary btn-sm"> Source Code Github </a>
+          </div>
 
-    <div class="row g-2">
+          <div class="row g-2">
+            <!-- Referral & Contest System -->
+            <div class="col-md-6 col-lg-4">
+              <div class="glass-card p-4">
+                <h5 class="cards-title mb-3 text-primary fw-semibold">
+                  🎯 Contest & Referral System
+                </h5>
+                <hr class="border-primary opacity-50" />
+                <ul class="list-unstyled">
+                  <li class="cards-title mb-2">
+                    ✅ Implemented Refer & Earn reward system
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ Join Contest with scheduled quiz slot timing
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ Multiple Contest Categories management
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ Real-time Top Winner Ranking with prize distribution
+                  </li>
+                  <li class="cards-title">
+                    ✅ Winner History tracking for users
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-      <!-- Referral & Contest System -->
-      <div class="col-md-6 col-lg-4">
-        <div class="glass-card p-4">
-          <h5 class="cards-title mb-3 text-primary fw-semibold">
-            🎯 Contest & Referral System
-          </h5>
-          <hr class="border-primary opacity-50" />
-          <ul class="list-unstyled">
-            <li class="cards-title mb-2">
-              ✅ Implemented Refer & Earn reward system
-            </li>
-            <li class="cards-title mb-2">
-              ✅ Join Contest with scheduled quiz slot timing
-            </li>
-            <li class="cards-title mb-2">
-              ✅ Multiple Contest Categories management
-            </li>
-            <li class="cards-title mb-2">
-              ✅ Real-time Top Winner Ranking with prize distribution
-            </li>
-            <li class="cards-title">
-              ✅ Winner History tracking for users
-            </li>
-          </ul>
+            <!-- Wallet & Payment System -->
+            <div class="col-md-6 col-lg-4">
+              <div class="glass-card p-4">
+                <h5 class="cards-title mb-3 text-primary fw-semibold">
+                  💰 Wallet & Payment Integration
+                </h5>
+                <hr class="border-primary opacity-50" />
+                <ul class="list-unstyled">
+                  <li class="cards-title mb-2">
+                    ✅ Add Money & Withdraw Wallet System
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ UPI Payment Gateway Integration
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ Secure transaction handling & balance validation
+                  </li>
+                  <li class="cards-title">
+                    ✅ Automated prize credit to winner wallet
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Security & App Management -->
+            <div class="col-md-6 col-lg-4">
+              <div class="glass-card p-4">
+                <h5 class="cards-title mb-3 text-primary fw-semibold">
+                  🔐 Security & App Management
+                </h5>
+                <hr class="border-primary opacity-50" />
+                <ul class="list-unstyled">
+                  <li class="cards-title mb-2">
+                    ✅ KYC Verification (Aadhar / PAN Card)
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ JWT Authentication & Secure APIs
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ Bloc State Management for scalable Flutter architecture
+                  </li>
+                  <li class="cards-title mb-2">
+                    ✅ Update User Profile functionality
+                  </li>
+                  <li class="cards-title">
+                    ✅ Push Notification integration for contest updates
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Wallet & Payment System -->
-      <div class="col-md-6 col-lg-4">
-        <div class="glass-card p-4">
-          <h5 class="cards-title mb-3 text-primary fw-semibold">
-            💰 Wallet & Payment Integration
-          </h5>
-          <hr class="border-primary opacity-50" />
-          <ul class="list-unstyled">
-            <li class="cards-title mb-2">
-              ✅ Add Money & Withdraw Wallet System
-            </li>
-            <li class="cards-title mb-2">
-              ✅ UPI Payment Gateway Integration
-            </li>
-            <li class="cards-title mb-2">
-              ✅ Secure transaction handling & balance validation
-            </li>
-            <li class="cards-title">
-              ✅ Automated prize credit to winner wallet
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Security & App Management -->
-      <div class="col-md-6 col-lg-4">
-        <div class="glass-card p-4">
-          <h5 class="cards-title mb-3 text-primary fw-semibold">
-            🔐 Security & App Management
-          </h5>
-          <hr class="border-primary opacity-50" />
-          <ul class="list-unstyled">
-            <li class="cards-title mb-2">
-              ✅ KYC Verification (Aadhar / PAN Card)
-            </li>
-            <li class="cards-title mb-2">
-              ✅ JWT Authentication & Secure APIs
-            </li>
-            <li class="cards-title mb-2">
-              ✅ Bloc State Management for scalable Flutter architecture
-            </li>
-            <li class="cards-title mb-2">
-              ✅ Update User Profile functionality
-            </li>
-            <li class="cards-title">
-              ✅ Push Notification integration for contest updates
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
     </section>
 
     <section id="education" class="education-section">
