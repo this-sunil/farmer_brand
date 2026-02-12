@@ -89,6 +89,23 @@
         animatedElements.forEach((el) => observer.observe(el));
       });
     </script>
+
+   <script>
+  // Get the current visit count from localStorage
+  let visits = localStorage.getItem('portfolioVisits') || 0;
+
+  // Increment the count
+  visits = parseInt(visits) + 1;
+
+  // Store it back
+  localStorage.setItem('portfolioVisits', visits);
+
+  // Show the count on page
+  document.addEventListener('DOMContentLoaded', () => {
+    const counter = document.getElementById('visitCount');
+    if (counter) counter.innerText = `${visits} Views`;
+  });
+</script>
   </head>
   <body
     data-bs-spy="scroll"
@@ -225,6 +242,7 @@
           </div>
         </div>
       </div>
+      
     </section>
 
     <section class="experience-section" id="experience">
@@ -1442,6 +1460,12 @@
       </div>
 
       <br />
+      <div class="container">
+        <div class="row">
+          <button id="visitCount" class="btn btn-primary">
+      </button>
+        </div>
+      </div>
     </section>
 
     <div class="scroll-top">
