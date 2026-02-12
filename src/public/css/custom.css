@@ -823,6 +823,7 @@ h2 {
   color: #ccc;
   transition: all 0.4s ease;
   cursor: pointer;
+  margin: 10px;
 }
 
 .glass-card:hover {
