@@ -11,12 +11,7 @@ html {
   --shadow-color: rgba(0, 0, 0, 0.08);
   --accent-color: #2a4d8f;
 }
-.main-nav,
-.navbar {
-  background-color: var(--nav-bg);
-  transition: 0.3s ease;
 
-}
 
 .navbar a,
 .nav-link,
@@ -107,7 +102,7 @@ body.dark-theme .contact-form {
 body.dark-theme .project-cards h3,
 body.dark-theme .experience-cards h3,
 body.dark-theme .section-title {
-  color: #4da3ff;
+  color: #5d05ea;
 }
 
 /* Video Description */
@@ -164,7 +159,7 @@ body.dark-theme .tool-circle {
 
 /* Scroll Top */
 body.dark-theme .scroll-top {
-  background-color: #4da3ff;
+  background-color: #8206ee;
 }
 
 .bullets {
@@ -176,6 +171,12 @@ body.dark-theme .scroll-top {
   padding: 0;
   box-sizing: border-box;
   font-family: "Bitter", sans-serif;
+}
+
+[data-theme="dark"] .navbar.bg-dark {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .theme-btn {
