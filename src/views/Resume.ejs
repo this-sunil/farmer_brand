@@ -3,193 +3,257 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunil Shedge - Resume</title>
+  <title>Sunil Shedge | Senior Flutter Developer</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
   <style>
     :root {
-      --primary-color: #1a2a6c;
-      --accent-color: #00d2ff;
-      --text-main: #2d3436;
-      --text-muted: #636e72;
+      --slate-900: #0f172a;
+      --slate-600: #475569;
+      --gold-accent: #bda06d; /* Premium Gold Accents */
+      --bg-soft: #f8fafc;
     }
+
     body { 
-      background-color: #f0f2f5; 
-      color: var(--text-main); 
-      font-family: 'Inter', -apple-system, sans-serif;
-      -webkit-print-color-adjust: exact;
+      background-color: #e2e8f0; 
+      font-family: 'Inter', sans-serif; 
+      color: var(--slate-900);
+      padding: 50px 0;
     }
-    .resume-container {
-      max-width: 950px;
-      margin: 40px auto;
+
+    .premium-resume {
       background: white;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-      border-radius: 8px;
+      max-width: 1000px;
+      margin: 0 auto;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+      position: relative;
       overflow: hidden;
-      border-top: 6px solid var(--primary-color);
     }
-    .left-col { background: #fcfcfd; border-right: 1px solid #edf2f7; padding: 40px 30px; }
-    .right-col { padding: 40px; }
+
+    /* Top Premium Bar */
+    .header-dark {
+      background: var(--slate-900);
+      color: white;
+      padding: 60px;
+      position: relative;
+    }
+
+    .name-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .accent-line {
+      width: 60px;
+      height: 4px;
+      background: var(--gold-accent);
+      margin: 20px 0;
+    }
+
+    .contact-bar {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    /* Body Sections */
+    .content-body { padding: 60px; }
     
-    h1 { font-weight: 800; letter-spacing: -1px; color: var(--primary-color); }
-    .section-header {
+    .section-label {
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      color: var(--primary-color);
-      border-bottom: 2px solid #edf2f7;
-      margin-bottom: 15px;
-      padding-bottom: 5px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: var(--gold-accent);
+      margin-bottom: 30px;
+      display: block;
     }
-    .skill-tag {
-      display: inline-block;
-      background: #f1f3f5;
-      color: #495057;
-      padding: 4px 10px;
-      border-radius: 5px;
+
+    /* Timeline Design */
+    .timeline {
+      border-left: 1px solid #e2e8f0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .timeline-item { position: relative; margin-bottom: 45px; }
+    
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -35.5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold-accent);
+      border: 2px solid white;
+    }
+
+    .role-title { font-weight: 700; font-size: 1.25rem; margin-bottom: 2px; }
+    .company-name { color: var(--gold-accent); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; }
+    .date-pill { font-size: 0.8rem; font-weight: 600; color: var(--slate-600); }
+
+    /* Skill Matrix */
+    .pill {
+      background: var(--bg-soft);
+      border: 1px solid #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 100px;
       font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 6px;
-      margin-right: 4px;
+      display: inline-block;
+      margin: 0 5px 10px 0;
       transition: all 0.3s ease;
     }
-    .skill-tag:hover { background: var(--primary-color); color: white; }
-    .exp-item { position: relative; padding-bottom: 25px; }
-    .exp-title { font-weight: 700; color: #1e293b; font-size: 1.05rem; }
-    .exp-meta { font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-bottom: 8px; }
-    
-    .contact-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; transition: 0.2s; }
-    .contact-link:hover { color: var(--primary-color); }
-    
+    .pill:hover { border-color: var(--gold-accent); color: var(--gold-accent); }
+
+    .project-card {
+      border: 1px solid #e2e8f0;
+      padding: 25px;
+      transition: 0.3s;
+      height: 100%;
+    }
+    .project-card:hover { border-color: var(--gold-accent); background: #fffcf8; }
+
     @media print {
-      body { background: white; margin: 0; }
-      .resume-container { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+      body { padding: 0; background: white; }
+      .premium-resume { box-shadow: none; max-width: 100%; }
       .no-print { display: none; }
+      .header-dark { background: #0f172a !important; -webkit-print-color-adjust: exact; }
     }
   </style>
 </head>
 <body>
 
-<div class="no-print text-center py-3">
-  <button class="btn btn-dark shadow-sm" onclick="window.print()">
-    <i class="bi bi-file-earmark-pdf"></i> Save as Professional PDF
+<div class="container no-print text-center mb-4">
+  <button class="btn btn-outline-dark px-4 rounded-pill fw-bold" onclick="window.print()">
+    <i class="bi bi-download me-2"></i> Export Premium Portfolio
   </button>
 </div>
 
-<div class="resume-container">
-  <div class="row g-0">
-    <div class="col-md-4 left-col">
-      <div class="text-center mb-4">
-        <h2 class="h4 fw-bold mb-1">Sunil Shedge</h2>
-        <p class="text-primary fw-semibold small">Senior Flutter Developer</p>
+<div class="premium-resume">
+  <header class="header-dark">
+    <div class="row align-items-end">
+      <div class="col-md-8">
+        <h1 class="name-title">Sunil Shedge</h1>
+        <div class="accent-line"></div>
+        <p class="lead fw-light opacity-75 mb-0">Senior Flutter Developer & Full-Stack Architect</p>
       </div>
-
-      <div class="mb-5">
-        <h6 class="section-header">Contact</h6>
-        <div class="d-flex align-items-center mb-3">
-          <i class="bi bi-envelope me-3 text-muted"></i>
-          <a href="mailto:swarajya888@gmail.com" class="contact-link">swarajya888@gmail.com</a>
-        </div>
-        <div class="d-flex align-items-center mb-3">
-          <i class="bi bi-phone me-3 text-muted"></i>
-          <span class="small">+91 8668796251</span>
-        </div>
-        <div class="d-flex align-items-center mb-3">
-          <i class="bi bi-linkedin me-3 text-muted"></i>
-          <a href="https://linkedin.com/in/sunilshedge" class="contact-link">sunilshedge</a>
-        </div>
-        <div class="d-flex align-items-center mb-3">
-          <i class="bi bi-github me-3 text-muted"></i>
-          <a href="https://github.com/this-sunil" class="contact-link">this-sunil</a>
-        </div>
-      </div>
-
-      <div class="mb-5">
-        <h6 class="section-header">Expertise</h6>
-        <p class="small fw-bold text-muted mb-2">Frameworks & Languages</p>
-        <span class="skill-tag">Flutter</span> <span class="skill-tag">Dart</span>
-        <span class="skill-tag">Node.js</span> <span class="skill-tag">Express.js</span>
-        
-        <p class="small fw-bold text-muted mt-3 mb-2">State Management</p>
-        <span class="skill-tag">BLoC</span> <span class="skill-tag">GetX</span>
-        <span class="skill-tag">Riverpod</span> <span class="skill-tag">Provider</span>
-
-        <p class="small fw-bold text-muted mt-3 mb-2">Database & Cloud</p>
-        <span class="skill-tag">PostgreSQL</span> <span class="skill-tag">Firebase</span>
-        <span class="skill-tag">REST APIs</span> <span class="skill-tag">JWT</span>
-      </div>
-
-      <div>
-        <h6 class="section-header">Education</h6>
-        <div class="mb-3">
-          <p class="fw-bold mb-0 small">M.C.S (Computer Science)</p>
-          <p class="text-muted extra-small" style="font-size: 0.75rem;">Sarhad College, Pune | 2021</p>
-        </div>
-        <div>
-          <p class="fw-bold mb-0 small">B.C.S (Computer Science)</p>
-          <p class="text-muted extra-small" style="font-size: 0.75rem;">Vishwakarma College, Pune</p>
+      <div class="col-md-4 text-md-end">
+        <div class="contact-bar d-flex flex-column gap-2">
+          <span><i class="bi bi-geo-alt me-2"></i> PUNE, INDIA</span>
+          <span><i class="bi bi-envelope me-2"></i> SWARAJYA888@GMAIL.COM</span>
+          <span><i class="bi bi-linkedin me-2"></i> LINKEDIN.COM/IN/SUNILSHEDGE</span>
         </div>
       </div>
     </div>
+  </header>
 
-    <div class="col-md-8 right-col">
-      <section class="mb-5">
-        <h6 class="section-header">Professional Profile</h6>
-        <p class="text-muted mb-0" style="line-height: 1.6;">
-          Senior Flutter Developer with **4+ years** of success in delivering enterprise-grade mobile applications. Specialized in 
-          high-performance architecture, complex API integrations, and scalable full-stack solutions. Dedicated to clean code, 
-          optimized UI/UX, and driving business growth through technical excellence.
-        </p>
-      </section>
+  <div class="content-body">
+    <div class="row g-5">
+      
+      <div class="col-md-4">
+        <section class="mb-5">
+          <span class="section-label">Summary</span>
+          <p class="small text-muted lh-lg">
+            A specialized Mobile Architect with **4+ years** of technical leadership. Expert in building low-latency Flutter applications with a focus on **Monetization Architecture** and **Scalable Backend Integration**.
+          </p>
+        </section>
 
-      <section class="mb-5">
-        <h6 class="section-header">Experience</h6>
+        <section class="mb-5">
+          <span class="section-label">Core Tech Stack</span>
+          <div class="mb-4">
+            <h6 class="small fw-bold mb-3">FLUTTER ECOSYSTEM</h6>
+            <span class="pill">Dart</span> <span class="pill">BLoC</span>
+            <span class="pill">Riverpod</span> <span class="pill">GetX</span>
+            <span class="pill">Firebase</span> <span class="pill">Maps SDK</span>
+          </div>
+          <div class="mb-4">
+            <h6 class="small fw-bold mb-3">BACKEND ARCHITECTURE</h6>
+            <span class="pill">Node.js</span> <span class="pill">PostgreSQL</span>
+            <span class="pill">Express</span> <span class="pill">JWT/RBAC</span>
+          </div>
+        </section>
+
+        <section>
+          <span class="section-label">Academic Background</span>
+          <div class="mb-3">
+            <p class="fw-bold mb-0">M.C.S. (Computer Science)</p>
+            <p class="small text-muted">Sarhad College, Pune | 77%</p>
+          </div>
+          <div>
+            <p class="fw-bold mb-0">B.C.S. (Computer Science)</p>
+            <p class="small text-muted">Vishwakarma College, Pune</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-md-8">
+        <span class="section-label">Professional Trajectory</span>
         
-        <div class="exp-item">
-          <div class="d-flex justify-content-between align-items-start">
-            <h5 class="exp-title">Senior Flutter Developer</h5>
-            <span class="text-muted small fw-bold">07/2022 — 04/2025</span>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <h3 class="role-title">Full Stack Developer</h3>
+              <span class="date-pill">2025 — PRESENT</span>
+            </div>
+            <p class="company-name">Independent Consultant</p>
+            <ul class="small text-muted lh-lg">
+              <li>Engineered high-concurrency <strong>Node.js/PostgreSQL</strong> backends for Flutter clients.</li>
+              <li>Reduced client infrastructure costs by 20% through database query optimization.</li>
+            </ul>
           </div>
-          <p class="exp-meta">Sunra Softtech Pvt. Ltd, Pune</p>
-          <ul class="text-muted small ps-3">
-            <li>Architected and migrated apps to <strong>BLoC state management</strong>, improving code scalability by 50%.</li>
-            <li>Optimized <strong>Google AdMob</strong> implementation, resulting in a 35% increase in monthly revenue.</li>
-            <li>Reduced production crash rates by 45% through advanced unit testing and CI/CD optimization.</li>
-            <li>Led the deployment of 10+ applications to Play Store and App Store environments.</li>
-          </ul>
+
+          <div class="timeline-item">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <h3 class="role-title">Senior Flutter Developer</h3>
+              <span class="date-pill">2022 — 2025</span>
+            </div>
+            <p class="company-name">Sunra Softtech Pvt. Ltd.</p>
+            <ul class="small text-muted lh-lg">
+              <li>Architected a 35% growth in revenue by optimizing <strong>AdMob Ad-Sequencing</strong>.</li>
+              <li>Spearheaded transition to <strong>BLoC Architecture</strong>, cutting development debt by 50%.</li>
+              <li>Launched 10+ high-traffic apps on Play Store with a 99% crash-free rate.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <h3 class="role-title">Junior Flutter Developer</h3>
+              <span class="date-pill">2022 — 2022</span>
+            </div>
+            <p class="company-name">Syscryption Technology</p>
+            <ul class="small text-muted lh-lg">
+              <li>Optimized ride-sharing logic in <strong>Jeeyo Ride</strong>, improving battery performance by 30%.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="exp-item">
-          <div class="d-flex justify-content-between align-items-start">
-            <h5 class="exp-title">Junior Flutter Developer</h5>
-            <span class="text-muted small fw-bold">01/2022 — 07/2022</span>
-          </div>
-          <p class="exp-meta">Syscryption Technology, Pune</p>
-          <ul class="text-muted small ps-3">
-            <li>Developed core features for ride-hailing and e-commerce apps using <strong>GetX</strong>.</li>
-            <li>Integrated complex payment gateways (RazorPay) and real-time mapping services.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h6 class="section-header">Featured Projects</h6>
+        <span class="section-label mt-5">Signature Projects</span>
         <div class="row g-3">
           <div class="col-6">
-            <div class="p-3 border-start border-4 border-primary bg-light">
-              <h6 class="mb-1 fw-bold">Sense Wheel (OTT)</h6>
-              <p class="extra-small text-muted mb-0" style="font-size: 0.8rem;">Full offline storage system with Sqflite and secure UPI gateway.</p>
+            <div class="project-card">
+              <h6 class="fw-bold mb-2">Sense Wheel (OTT)</h6>
+              <p class="extra-small text-muted mb-0" style="font-size: 0.75rem;">Enterprise video delivery with multi-gate payment integration and offline sync.</p>
             </div>
           </div>
           <div class="col-6">
-            <div class="p-3 border-start border-4 border-accent bg-light" style="border-color: var(--accent-color) !important;">
-              <h6 class="mb-1 fw-bold">Jeeyo Ride</h6>
-              <p class="extra-small text-muted mb-0" style="font-size: 0.8rem;">Real-time tracking system with 30% improved battery efficiency.</p>
+            <div class="project-card">
+              <h6 class="fw-bold mb-2">Grow Knowledge</h6>
+              <p class="extra-small text-muted mb-0" style="font-size: 0.75rem;">Real-time quiz engine with Aadhaar/PAN KYC verification modules.</p>
             </div>
           </div>
         </div>
-      </section>
+
+      </div>
     </div>
   </div>
 </div>
