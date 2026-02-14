@@ -1,232 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunil Shedge | Senior Software Engineer</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
-  <style>
-    :root {
-      --brand-dark: #0a0a0a;
-      --brand-accent: #c5a059; /* Metallic Bronze */
-      --brand-muted: #6b7280;
-      --brand-bg: #f9fafb;
-    }
-
-    body { 
-      background-color: #d1d5db; 
-      font-family: 'Inter', sans-serif; 
-      color: var(--brand-dark); 
-      padding: 60px 0;
-    }
-
-    .master-container {
-      background: white;
-      max-width: 1100px;
-      margin: 0 auto;
-      box-shadow: 0 50px 100px -20px rgba(0,0,0,0.2);
-      border-radius: 4px;
-    }
-
-    /* Side Branding */
-    .brand-sidebar {
-      background: var(--brand-dark);
-      color: white;
-      padding: 60px 40px;
-      height: 100%;
-    }
-
-    .initial-logo {
-      width: 50px;
-      height: 50px;
-      border: 1px solid var(--brand-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
-      color: var(--brand-accent);
-      margin-bottom: 40px;
-    }
-
-    .main-content { padding: 80px 60px; }
-
-    /* Typography */
-    .name-heading {
-      font-family: 'DM Serif Display', serif;
-      font-size: 4rem;
-      line-height: 0.9;
-      margin-bottom: 10px;
-    }
-
-    .job-subtitle {
-      font-weight: 300;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--brand-accent);
-      font-size: 0.9rem;
-      margin-bottom: 60px;
-    }
-
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 15px;
-      margin-bottom: 30px;
-    }
-
-    /* Skill Grid */
-    .skill-category { font-size: 0.75rem; font-weight: 700; color: var(--brand-accent); letter-spacing: 1px; margin-bottom: 10px; }
-    .skill-item { font-weight: 500; font-size: 0.95rem; margin-bottom: 8px; }
-
-    /* Experience Card */
-    .exp-row { margin-bottom: 40px; position: relative; }
-    .exp-year { font-weight: 700; font-size: 0.85rem; color: var(--brand-accent); }
-    .exp-company { font-weight: 700; font-size: 1.1rem; margin-top: 5px; }
-    .exp-role { font-style: italic; color: var(--brand-muted); font-size: 0.9rem; margin-bottom: 10px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunil Shedge | Senior Flutter Developer Portfolio</title>
     
-    .stat-badge {
-      background: #fdfaf3;
-      border-left: 3px solid var(--brand-accent);
-      padding: 10px 15px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 15px;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
-    @media print {
-      body { padding: 0; background: white; }
-      .master-container { box-shadow: none; max-width: 100%; border-radius: 0; }
-      .no-print { display: none; }
-      .brand-sidebar { background: #0a0a0a !important; -webkit-print-color-adjust: exact; }
-    }
-  </style>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #c5a059;
+            --bg-light: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        body { 
+            background-color: #cbd5e1; 
+            font-family: 'Inter', sans-serif; 
+            color: var(--primary);
+            padding: 40px 0;
+        }
+
+        .resume-paper {
+            background: white;
+            max-width: 1100px;
+            margin: 0 auto;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Top Header */
+        .premium-header {
+            background: var(--primary);
+            color: white;
+            padding: 60px;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        .name-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .contact-pill {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .contact-pill:hover { background: var(--accent); color: var(--primary); }
+
+        /* Sidebar Look */
+        .sidebar-premium {
+            background: #fcfcfd;
+            border-right: 1px solid #f1f5f9;
+            padding: 40px;
+        }
+
+        .section-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: block;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        /* Progress Bars Premium */
+        .skill-label { font-size: 0.8rem; font-weight: 600; margin-bottom: 5px; display: block; }
+        .progress { height: 6px; background-color: #e2e8f0; border-radius: 10px; margin-bottom: 15px; overflow: visible; }
+        .progress-bar { background-color: var(--accent); border-radius: 10px; position: relative; }
+        .progress-bar::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Content Area */
+        .main-content { padding: 40px 60px; }
+        .summary-box { 
+            font-size: 1.05rem; 
+            line-height: 1.8; 
+            color: var(--text-muted); 
+            border-left: 4px solid #f1f5f9;
+            padding-left: 25px;
+            margin-bottom: 40px;
+        }
+
+        .experience-node { position: relative; padding-bottom: 40px; padding-left: 20px; border-left: 1px solid #e2e8f0; }
+        .experience-node::before {
+            content: "";
+            position: absolute;
+            left: -5.5px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .job-title { font-weight: 700; font-size: 1.2rem; margin-bottom: 0; }
+        .company-meta { color: var(--accent); font-weight: 600; font-size: 0.85rem; margin-bottom: 15px; }
+
+        .project-card {
+            border: 1px solid #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .project-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        .btn-premium {
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .resume-paper { box-shadow: none; max-width: 100%; border-radius: 0; }
+            .no-print { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="no-print text-center mb-5">
-  <button class="btn btn-dark btn-lg shadow px-5" onclick="window.print()">
-    <i class="bi bi-award me-2"></i> DOWNLOAD EXECUTIVE PDF
-  </button>
+<div class="no-print text-center mb-4">
+    <button class="btn btn-dark btn-lg shadow-lg px-5" onclick="window.print()">
+        <i class="bi bi-file-earmark-pdf"></i> Download Premium Resume
+    </button>
 </div>
 
-<div class="master-container">
-  <div class="row g-0">
-    
-    <div class="col-md-4 brand-sidebar d-flex flex-column">
-      <div class="initial-logo">SS</div>
-      
-      <div class="mt-auto mb-5">
-        <h6 class="skill-category text-white-50">LOCATION</h6>
-        <p class="small mb-4">Pune, Maharashtra, India</p>
-
-        <h6 class="skill-category text-white-50">CONTACT</h6>
-        <p class="small mb-1">swarajya888@gmail.com</p>
-        <p class="small mb-4">+91 8668796251</p>
-
-        <h6 class="skill-category text-white-50">SOCIAL</h6>
-        <p class="small mb-1"><a href="#" class="text-white text-decoration-none">LinkedIn / sunilshedge</a></p>
-        <p class="small mb-4"><a href="#" class="text-white text-decoration-none">GitHub / this-sunil</a></p>
-      </div>
-
-      <div>
-        <h6 class="skill-category text-white-50">EDUCATION</h6>
-        <div class="mb-3">
-          <p class="small fw-bold mb-0">Masters in CS</p>
-          <p class="extra-small opacity-50" style="font-size: 0.75rem;">Sarhad College, Pune (77%)</p>
-        </div>
-        <div>
-          <p class="small fw-bold mb-0">Bachelors in CS</p>
-          <p class="extra-small opacity-50" style="font-size: 0.75rem;">Vishwakarma College, Pune</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-8 main-content">
-      <header>
-        <h1 class="name-heading">Sunil<br>Shedge</h1>
-        <p class="job-subtitle">Senior Flutter Developer • Full-Stack Engineer</p>
-      </header>
-
-      <section class="mb-5">
-        <h2 class="section-title">The Profile</h2>
-        <p class="lead-sm text-muted lh-lg">
-          High-impact **Senior Developer** with 4+ years of experience specializing in high-performance mobile architectures. Expert at bridging the gap between pixel-perfect UI and scalable backend systems. Proven success in increasing application revenue by **35%** and engineering codebases that reduce technical debt by **50%**.
-        </p>
-      </section>
-
-      <section class="mb-5">
-        <h2 class="section-title">Technical Expertise</h2>
-        <div class="row">
-          <div class="col-6">
-            <h6 class="skill-category">CORE STACK</h6>
-            <p class="skill-item">Flutter & Dart Specialist</p>
-            <p class="skill-item">Node.js / Express.js</p>
-            <p class="skill-item">PostgreSQL & MongoDB</p>
-          </div>
-          <div class="col-6">
-            <h6 class="skill-category">SYSTEMS</h6>
-            <p class="skill-item">BLoC / Riverpod / GetX</p>
-            <p class="skill-item">Firebase Cloud Ecosystem</p>
-            <p class="skill-item">DevOps & CI/CD Pipelines</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="section-title">Career Milestones</h2>
-        
-        <div class="exp-row">
-          <span class="exp-year">2022 — 2025</span>
-          <h4 class="exp-company">Sunra Softtech Pvt. Ltd.</h4>
-          <p class="exp-role">Senior Flutter Developer</p>
-          <ul class="small text-muted ps-3">
-            <li>Architected the **Ad-Monetization Engine** via AdMob, increasing monthly yield by 35%.</li>
-            <li>Optimized REST API layer, reducing latency by 25% for high-traffic mobile users.</li>
-            <li>Led cross-functional teams to deploy 10+ scalable apps on both Global Stores.</li>
-          </ul>
-          <div class="stat-badge">
-            <i class="bi bi-lightning-fill me-2"></i> Key Result: Cut production crash rates by 45% using automated testing.
-          </div>
-        </div>
-
-        <div class="exp-row">
-          <span class="exp-year">2022 — 2022</span>
-          <h4 class="exp-company">Syscryption Technology</h4>
-          <p class="exp-role">Junior Flutter Developer</p>
-          <ul class="small text-muted ps-3">
-            <li>Engineered core modules for **Jeeyo Ride**, optimizing location tracking algorithms.</li>
-            <li>Integrated secure payment gateways (RazorPay) for seamless high-volume transactions.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="mt-5">
-        <h2 class="section-title">Signature Projects</h2>
-        <div class="row g-4">
-          <div class="col-6">
-            <div class="p-4 border">
-              <h6 class="fw-bold mb-1">Sense Wheel (OTT)</h6>
-              <p class="small text-muted mb-0">Built an offline-first video engine with encrypted local storage.</p>
+<div class="resume-paper">
+    <header class="premium-header">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="name-title">Sunil Shedge</h1>
+                <p class="h5 fw-light text-white-50 mb-4">Senior Flutter Developer</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="mailto:swarajya888@gmail.com" class="contact-pill"><i class="bi bi-envelope-fill me-1"></i> swarajya888@gmail.com</a>
+                    <a href="tel:+918668796251" class="contact-pill"><i class="bi bi-telephone-fill me-1"></i> +91 8668796251</a>
+                    <a href="https://farmer-brand.vercel.app/" class="contact-pill"><i class="bi bi-globe me-1"></i> Portfolio</a>
+                    <a href="https://linkedin.com/in/sunilshedge" class="contact-pill"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+                    <a href="https://github.com/this-sunil" class="contact-pill"><i class="bi bi-github me-1"></i> GitHub</a>
+                </div>
             </div>
-          </div>
-          <div class="col-6">
-            <div class="p-4 border">
-              <h6 class="fw-bold mb-1">Grow Knowledge</h6>
-              <p class="small text-muted mb-0">Real-time gaming platform with Aadhaar-based KYC integration.</p>
+            <div class="col-lg-5 text-lg-end d-none d-lg-block">
+                <p class="small text-white-50 mb-0">Based in</p>
+                <p class="h6 fw-bold text-white">Pune, Maharashtra</p>
             </div>
-          </div>
         </div>
-      </section>
+    </header>
 
+    <div class="row g-0">
+        <div class="col-lg-4 sidebar-premium">
+            <section class="mb-5">
+                <span class="section-label">Technical Mastery</span>
+                
+                <div class="mb-4">
+                    <h6 class="small fw-bold mb-3">FLUTTER & DART</h6>
+                    <span class="skill-label">Flutter <span class="float-end text-muted">90%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                    <span class="skill-label">Dart <span class="float-end text-muted">90%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                    <span class="skill-label">Firebase Integration <span class="float-end text-muted">85%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                    <span class="skill-label">State Management <span class="float-end text-muted">85%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                </div>
+
+                <div class="mb-4">
+                    <h6 class="small fw-bold mb-3">BACKEND (NODE.JS)</h6>
+                    <span class="skill-label">Node.js <span class="float-end text-muted">85%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                    <span class="skill-label">Express.js <span class="float-end text-muted">80%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+                    <span class="skill-label">PostgreSQL <span class="float-end text-muted">85%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                </div>
+
+                <div class="mb-4">
+                    <h6 class="small fw-bold mb-3">WEB & TOOLS</h6>
+                    <span class="skill-label">HTML5/CSS3 <span class="float-end text-muted">90%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                    <span class="skill-label">Bootstrap <span class="float-end text-muted">85%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                    <span class="skill-label">Git / Postman <span class="float-end text-muted">85%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <span class="section-label">Education</span>
+                <div class="mb-4">
+                    <h6 class="fw-bold mb-1">M.C.S (Master of CS)</h6>
+                    <p class="small text-muted mb-0">Sarhad College, Pune</p>
+                    <p class="small fw-bold text-accent">2019 – 2021 | 77%</p>
+                </div>
+                <div class="mb-4">
+                    <h6 class="fw-bold mb-1">B.C.S (Bachelor of CS)</h6>
+                    <p class="small text-muted mb-0">Vishwakarma College, Pune</p>
+                    <p class="small fw-bold text-accent">2015 – 2018</p>
+                </div>
+                <div class="mb-4">
+                    <h6 class="fw-bold mb-1">HSC (XII)</h6>
+                    <p class="small text-muted mb-0">S.M.S. Mohite Patil Jr. College</p>
+                    <p class="small fw-bold text-accent">2015</p>
+                </div>
+                <div class="mb-4">
+                    <h6 class="fw-bold mb-1">SSC (X)</h6>
+                    <p class="small text-muted mb-0">Dr. V.G. Kakasaheb Vidyalaya</p>
+                    <p class="small fw-bold text-accent">2013 | 75%</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-8 main-content">
+            <section class="mb-5">
+                <span class="section-label">Professional Summary</span>
+                <p class="summary-box">
+                    Senior Flutter Developer with 4+ years of experience building scalable, high-performance Android and iOS applications. Strong expertise in Flutter, Dart, Bloc, GETX, Riverpod, REST APIs, Firebase, Google Maps, and payment gateways. Proven track record of improving app performance, monetization, stability, and user engagement.
+                </p>
+            </section>
+
+            <section class="mb-5">
+                <span class="section-label">Work Experience</span>
+
+                <div class="experience-node">
+                    <h3 class="job-title">Full Stack Developer</h3>
+                    <p class="company-meta">Self-Employed | April 2025 – Present</p>
+                    <ul class="small text-muted lh-lg">
+                        <li><strong>Full Stack Development:</strong> Designing Flutter apps with Node.js, Express, and PostgreSQL backends.</li>
+                        <li><strong>Backend Architecture:</strong> Building secure RESTful APIs with JWT and RBAC.</li>
+                        <li><strong>System Design:</strong> Designing optimized PostgreSQL schemas and indexed queries.</li>
+                        <li><strong>Monetization:</strong> Implementing Google AdMob, Firebase, and payment gateways.</li>
+                        <li><strong>DevOps:</strong> Managing Play Store/App Store deployments and CI/CD pipelines.</li>
+                        <li><strong>UI/UX:</strong> Creating responsive designs and optimizing app performance.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-node">
+                    <h3 class="job-title">Senior Flutter Developer</h3>
+                    <p class="company-meta">Sunra Softtech Pvt. Ltd., Pune | July 2022 – April 2025</p>
+                    <ul class="small text-muted lh-lg">
+                        <li><strong>AdMob Integration:</strong> Increased monetization by 35% and improved rendering performance by 30%.</li>
+                        <li><strong>Quality Assurance:</strong> Reduced production errors by 45% through extensive real-device testing.</li>
+                        <li><strong>Performance:</strong> Integrated Firebase, Google Maps, and RazorPay, boosting app speed by 40%.</li>
+                        <li><strong>Architecture:</strong> Implemented Bloc state management, enhancing scalability by 50%.</li>
+                        <li><strong>Globalization:</strong> Enabled multilingual support via Google ML Kit, improving accessibility by 40%.</li>
+                        <li><strong>Engagement:</strong> Implemented FCM and OneSignal for high-reliability push notifications.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-node">
+                    <h3 class="job-title">Junior Flutter Developer</h3>
+                    <p class="company-meta">Syscryption Technology Pvt. Ltd., Pune | Jan 2022 – Jul 2022</p>
+                    <ul class="small text-muted lh-lg">
+                        <li><strong>Development:</strong> Built Flutter apps with REST API integration, accelerating delivery by 20%.</li>
+                        <li><strong>Stability:</strong> Resolved high-impact bugs, increasing overall app stability by 40%.</li>
+                        <li><strong>Components:</strong> Created reusable UI widgets and implemented GetX for routing and DI.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <span class="section-label">Credentials</span>
+                <div class="p-4 border rounded d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-bold mb-1">Internship Certificate</h6>
+                        <p class="small text-muted mb-0">Verified professional training in Flutter Development.</p>
+                    </div>
+                    <a href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf" target="_blank" class="btn btn-primary">View PDF</a>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <span class="section-label">Signature Projects</span>
+                
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="fw-bold">Sense Wheel (OTT Platform)</h5>
+                        <a href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" class="btn-premium">Store Link</a>
+                    </div>
+                    <ul class="small text-muted">
+                        <li>Video playback with PodPlayer (YouTube/Vimeo support).</li>
+                        <li>Offline video storage with Sqflite and secure UPI payments.</li>
+                        <li>Subscription engine and real-time Bloc notifications.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h5 class="fw-bold">GROW KNOWLEDGE (Quiz App)</h5>
+                    <ul class="small text-muted">
+                        <li>Dynamic REST API content with Aadhaar/PAN KYC verification.</li>
+                        <li>Firebase notification integration increasing user participation by 20%.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="fw-bold">JEEYO RIDE (Cab Booking)</h5>
+                        <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" class="btn-premium">Store Link</a>
+                    </div>
+                    <ul class="small text-muted">
+                        <li>Google Maps integration with real-time driver tracking.</li>
+                        <li>Auto-complete places and high-engagement FCM push notifications.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mt-5 pt-5 border-top">
+                <div class="row">
+                    <div class="col-8">
+                        <span class="section-label">Declaration</span>
+                        <p class="small italic text-muted">I hereby declare that all the information provided above is true and correct to the best of my knowledge. Thank You.</p>
+                    </div>
+                    <div class="col-4 text-end">
+                        <p class="small fw-bold mb-0">Sunil Shedge</p>
+                        <p class="small text-muted">Senior Developer</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-  </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
