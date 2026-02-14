@@ -80,6 +80,49 @@
         padding: 60px 50px;
         position: relative;
       }
+      .backend-card {
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 30px;
+        border-radius: 12px;
+        font-family: "Inter", sans-serif;
+        border-left: 5px solid #c5a059;
+        max-width: 700px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      .header-title {
+        color: #c5a059;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+      .feature-item {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+        transition: 0.3s;
+      }
+      .feature-item:hover {
+        transform: translateX(10px);
+        color: #c5a059;
+      }
+      .code-tag {
+        background: rgba(197, 160, 89, 0.15);
+        color: #c5a059;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9rem;
+      }
 
       .name-title {
         font-family: "DM Serif Display", serif;
@@ -508,9 +551,18 @@
                     polyline</strong
                   >, resulting in 40% performance gains.
                 </li>
-                <li><strong>State Management Mastery:</strong> Pioneered <strong>BLoC</strong> adoption across core modules, utilizing <strong>Mixins</strong> for reusable logic, which improved codebase maintainability by 60%.</li>
-    
-    <li><strong>Modern Routing:</strong> Implemented <strong>GoRouter</strong> for declarative navigation, enabling robust deep-linking and state-driven route guards.</li>
+                <li>
+                  <strong>State Management Mastery:</strong> Pioneered
+                  <strong>BLoC</strong> adoption across core modules, utilizing
+                  <strong>Mixins</strong> for reusable logic, which improved
+                  codebase maintainability by 60%.
+                </li>
+
+                <li>
+                  <strong>Modern Routing:</strong> Implemented
+                  <strong>GoRouter</strong> for declarative navigation, enabling
+                  robust deep-linking and state-driven route guards.
+                </li>
                 <li>
                   <strong>Secure Fintech Integration:</strong> Architected
                   robust payment modules using
@@ -585,18 +637,45 @@
 
             <div class="project-item">
               <h6 class="fw-bold mb-2">Vehicle Repair Service</h6>
-              <p class="small text-muted">
-                🚀🔐 Building a Secure Backend with Node.js & PostgreSQL Just
-                worked on building a secure and scalable backend using Node.js,
-                PostgreSQL, and the pg package, and it’s simpler than it looks!
-                Key takeaways: ✅ Create PostgreSQL tables using SQL for
-                structured data storage ✅ Use connection pooling for better
-                performance ✅ Build clean controllers for database operations
-                ✅ Implement Multer storage for handling file uploads ✅ Secure
-                APIs with JWT authentication ✅ Protect routes using middleware
-                ✅ Manage secrets safely with environment variables ✅ Handle
-                async operations properly with async/await
-              </p>
+              <div class="backend-card">
+                <div class="header-title">
+                  🚀 🔐 Building a Secure Backend with Node.js & PostgreSQL
+                </div>
+                <ul class="feature-list">
+                  <li class="feature-item">
+                    ✅ Create <span class="code-tag">PostgreSQL</span> tables
+                    using SQL for structured data storage
+                  </li>
+                  <li class="feature-item">
+                    ✅ Use <strong>Connection Pooling</strong> for
+                    high-performance database scaling
+                  </li>
+                  <li class="feature-item">
+                    ✅ Build clean <span class="code-tag">Controllers</span> for
+                    optimized database operations
+                  </li>
+                  <li class="feature-item">
+                    ✅ Implement <span class="code-tag">Multer</span> storage
+                    for robust file upload handling
+                  </li>
+                  <li class="feature-item">
+                    ✅ Secure APIs with <span class="code-tag">JWT</span> (JSON
+                    Web Token) authentication
+                  </li>
+                  <li class="feature-item">
+                    ✅ Protect routes using custom
+                    <span class="code-tag">Middleware</span> layers
+                  </li>
+                  <li class="feature-item">
+                    ✅ Manage secrets safely using
+                    <span class="code-tag">.env</span> environment variables
+                  </li>
+                  <li class="feature-item">
+                    ✅ Handle async operations properly with
+                    <strong>async/await</strong>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             <div class="project-item">
