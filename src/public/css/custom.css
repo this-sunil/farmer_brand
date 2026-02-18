@@ -935,7 +935,7 @@ h2 {
   padding: 30px;
 
   transition: transform 0.3s ease-in;
-  z-index: 999;
+  z-index: 1;
   
 }
 #menu ul {
