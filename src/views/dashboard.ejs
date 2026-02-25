@@ -38,13 +38,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css" />
     <link rel="stylesheet" href="public/css/animate.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- <script
+    <script
       disable-devtool-auto
       src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
     ></script>
@@ -58,13 +55,13 @@
         },
       });
 
-      /*let scrollInterval = setInterval(() => {
+      let scrollInterval = setInterval(() => {
         window.scrollBy(0, 2);
       }, 10);
 
       $(document).on("click", function () {
         clearInterval(scrollInterval);
-      });*/
+      });
 
       document.addEventListener("DOMContentLoaded", () => {
         const animatedElements = document.querySelectorAll(".animated");
@@ -137,7 +134,9 @@
           setThemeIcon();
         });
       });
-    </script> -->
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body
     data-bs-spy="scroll"
@@ -1811,7 +1810,7 @@
       });
     </script>
 
-     <script>
+      <script>
     document.addEventListener("DOMContentLoaded", function () {
 
       gsap.registerPlugin(ScrollTrigger);
@@ -1844,5 +1843,6 @@
 
     });
   </script>
+    <script></script>
   </body>
 </html>
