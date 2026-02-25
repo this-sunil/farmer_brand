@@ -3,19 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunil Shedge - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <meta property="og:title" content="My Resume" />
+    <meta
+      property="og:image"
+      content="https://farmer-brand.vercel.app/preview.png"
+    />
+    <meta property="og:type" content="website" />
+    <title>Sunil Shedge</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://avatars.githubusercontent.com/u/51407211?v=4"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <script
+      disable-devtool-auto
+      src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
+    ></script>
+    <script>
+      DisableDevtool({
+        ondevtoolopen: (type, next) => {
+          alert(
+            "Developer tools are open! This action is logged. Type: " + type,
+          );
+          next();
+        },
+      });
+    </script>
     <style>
       :root {
-        --primary-dark: #333945;
-        --accent-teal: #1DA6B8;
-        --accent-purple: #5b3fa5;
+        --primary-dark: #333945; /* Deep Midnight */
+        --accent-gold: #5b3fa5; /* Refined Gold */
         --bg-body: #f1f5f9;
+        --name-title:#1DA6B8;
         --text-main: #1e293b;
         --text-muted: #64748b;
         --sidebar-bg: #f8fafc;
+        --bold-clr: #451aa2;
+      }
+      strong {
+        color: var(--bold-clr);
       }
       body {
         background-color: var(--bg-body);
@@ -23,6 +63,7 @@
         color: var(--text-main);
         padding: 40px 0;
       }
+
       .resume-card {
         background: white;
         max-width: 1100px;
@@ -30,36 +71,46 @@
         box-shadow: 0 40px 100px rgba(15, 23, 42, 0.15);
         border-radius: 8px;
         overflow: hidden;
-        border-top: 10px solid var(--accent-teal);
+        border-top: 8px solid var(--name-title);
       }
+
+      /* Header Section */
       .header-section {
         background: var(--primary-dark);
         color: white;
-        padding: 50px;
+        padding: 60px 50px;
+        position: relative;
       }
+
       .name-title {
         font-family: "DM Serif Display", serif;
-        font-size: 3.5rem;
+        font-size: 4rem;
         line-height: 1;
         margin-bottom: 5px;
-        color: var(--accent-teal);
+        letter-spacing: -1px;
+        color:var(--name-title);
       }
+
       .sub-title {
-        color: #e2e8f0;
+        color: var(--bg-body);
         letter-spacing: 4px;
         text-transform: uppercase;
-        font-weight: 700;
-        font-size: 0.9rem;
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-bottom: 30px;
         display: block;
-        margin-bottom: 25px;
       }
-      .contact-grid {
+
+      /* Contact Grid - Single Row Fix */
+      .contact-grid-single-row {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        padding-top: 20px;
+        margin-top: 25px;
+        padding-top: 25px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
+
       .contact-item {
         color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
@@ -67,59 +118,149 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        transition: 0.3s ease;
       }
-      .contact-item i { color: var(--accent-teal); font-size: 1.1rem; }
 
-      .sidebar { background: var(--sidebar-bg); border-right: 1px solid #e2e8f0; padding: 40px; }
-      .main-body { padding: 40px 50px; }
+      .contact-item i {
+        color: var(--name-title);
+        font-size: 20px;
+      }
+      .contact-item:hover {
+        color: white;
+        transform: translateY(-1px);
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: var(--sidebar-bg);
+        border-right: 1px solid #e2e8f0;
+        padding: 50px 40px;
+      }
 
       .section-label {
         font-weight: 800;
         text-transform: uppercase;
-        font-size: 1rem;
-        letter-spacing: 1px;
+        font-size: 18px;
+        letter-spacing: 2px;
         color: var(--primary-dark);
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         display: block;
-        border-left: 4px solid var(--accent-purple);
+        border-left: 4px solid var(--accent-gold);
         padding-left: 15px;
       }
 
-      .skill-group { margin-bottom: 20px; }
-      .skill-name { font-size: 0.75rem; font-weight: 700; margin-bottom: 5px; display: block; }
-      .progress { height: 6px; background-color: #e2e8f0; margin-bottom: 12px; }
-      .progress-bar { background: var(--accent-purple); }
-
-      .exp-item { margin-bottom: 35px; }
-      .exp-title { font-weight: 800; font-size: 1.25rem; color: var(--primary-dark); margin-bottom: 2px; }
-      .exp-meta { color: var(--accent-purple); font-weight: 700; font-size: 0.85rem; margin-bottom: 10px; }
-      
-      .responsibility-list { padding-left: 18px; }
-      .responsibility-list li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.5; }
-      .responsibility-list strong { color: var(--primary-dark); font-weight: 600; }
-
-      .project-card {
-        border: 1px solid #e2e8f0;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        transition: 0.3s;
+      .skill-name {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 6px;
+        display: block;
       }
-      .project-card:hover { border-color: var(--accent-teal); background: #fafafa; }
-      .btn-link {
+      .progress {
+        height: 5px;
+        background-color: #e2e8f0;
+        border-radius: 10px;
+        margin-bottom: 18px;
+      }
+      .progress-bar {
+        background: var(--accent-gold);
+        border-radius: 10px;
+      }
+
+      /* Content Area */
+      .main-body {
+        padding: 50px 60px;
+      }
+
+      .summary-text {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin-bottom: 45px;
+        padding-left: 20px;
+        border-left: 1px solid #e2e8f0;
+      }
+
+      .exp-title {
+        font-weight: 800;
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+      }
+      .exp-meta {
+        color: var(--accent-gold);
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+      }
+
+      .responsibility-list li {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+
+      .project-item {
+        border: 1px solid #f1f5f9;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+        background: #fff;
+      }
+
+      .project-item:hover {
+        border-color: var(--accent-gold);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transform: translateY(-3px);
+      }
+
+      .btn-premium {
         background: var(--primary-dark);
         color: white;
-        padding: 5px 12px;
-        font-size: 0.7rem;
+        padding: 8px 18px;
+        font-size: 0.75rem;
         font-weight: 700;
-        border-radius: 4px;
+        border-radius: 6px;
         text-decoration: none;
+        transition: 0.3s;
+        border: 1px solid var(--primary-dark);
+      }
+
+      .btn-premium:hover {
+        background: var(--accent-gold);
+        border-color: var(--accent-gold);
+        color: white;
+      }
+
+      .edu-item b {
+        color: var(--primary-dark);
       }
 
       @media print {
-        body { padding: 0; background: white; }
-        .resume-card { box-shadow: none; max-width: 100%; border-radius: 0; }
-        .header-section { background: #333945 !important; -webkit-print-color-adjust: exact; }
+        body {
+          padding: 0;
+          background: white;
+        }
+        .resume-card {
+          box-shadow: none;
+          max-width: 100%;
+          border-radius: 0;
+          border-top: none;
+        }
+        .no-print {
+          display: none;
+        }
+        .header-section {
+          background: #0f172a !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .progress-bar {
+          background: #c5a059 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
       }
     </style>
   </head>
@@ -128,12 +269,38 @@
       <div class="header-section">
         <h1 class="name-title">Sunil Shedge</h1>
         <span class="sub-title">Senior Flutter Developer</span>
-        <div class="contact-grid">
-          <a href="mailto:swarajya888@gmail.com" class="contact-item"><i class="bi bi-envelope-at"></i> swarajya888@gmail.com</a>
-          <a href="tel:+918668796251" class="contact-item"><i class="bi bi-telephone"></i> +91 8668796251</a>
-          <a href="https://linkedin.com/in/sunilshedge" target="_blank" class="contact-item"><i class="bi bi-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/this-sunil" target="_blank" class="contact-item"><i class="bi bi-github"></i> GitHub</a>
-          <span class="contact-item"><i class="bi bi-geo-alt"></i> Pune, MH</span>
+
+        <div class="contact-grid-single-row">
+          <a href="mailto:swarajya888@gmail.com" class="contact-item">
+            <i class="bi bi-envelope-at"></i> swarajya888@gmail.com
+          </a>
+          <a href="tel:+918668796251" class="contact-item">
+            <i class="bi bi-telephone"></i> +91 8668796251
+          </a>
+          <a
+            href="https://farmer-brand.vercel.app/"
+            target="_blank"
+            class="contact-item"
+          >
+            <i class="bi bi-globe2"></i> Portfolio
+          </a>
+          <a
+            href="https://linkedin.com/in/sunilshedge"
+            target="_blank"
+            class="contact-item"
+          >
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="https://github.com/this-sunil"
+            target="_blank"
+            class="contact-item"
+          >
+            <i class="bi bi-github"></i> GitHub
+          </a>
+          <span class="contact-item">
+            <i class="bi bi-geo-alt"></i> Pune, MH
+          </span>
         </div>
       </div>
 
@@ -141,31 +308,120 @@
         <div class="col-lg-4 sidebar">
           <section class="mb-5">
             <span class="section-label">Technical Skills</span>
-            <div class="skill-group">
-              <h6 class="small fw-bold text-muted">FLUTTER & DART</h6>
-              <span class="skill-name">Flutter Ecosystem (3.41.0) <span class="float-end">85%</span></span>
-              <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
-              <span class="skill-name">State (Bloc/Riverpod/GetX) <span class="float-end">85%</span></span>
-              <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+
+            <h6
+              class="small fw-bold mt-4 mb-3"
+              style="color: var(--accent-gold)"
+            >
+              FLUTTER ECOSYSTEM (version - 3.41.0)
+            </h6>
+            <span class="skill-name"
+              >Flutter <span class="float-end text-muted">80%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 80%"></div>
             </div>
-            <div class="skill-group">
-              <h6 class="small fw-bold text-muted">BACKEND</h6>
-              <span class="skill-name">Node.js / Express <span class="float-end">65%</span></span>
-              <div class="progress"><div class="progress-bar" style="width: 65%"></div></div>
-              <span class="skill-name">PostgreSQL / SQL <span class="float-end">70%</span></span>
-              <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+
+            <span class="skill-name"
+              >Dart Language <span class="float-end text-muted">70%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+
+            <span class="skill-name"
+              >Firebase Cloud
+              <span class="float-end text-muted">70%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+
+            <span class="skill-name"
+              >RESTful APIs <span class="float-end text-muted">85%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+
+            <span class="skill-name"
+              >Bloc / Provider / Riverpod / GetX
+              <span class="float-end text-muted">85%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+
+            <h6
+              class="small fw-bold mt-4 mb-3"
+              style="color: var(--accent-gold)"
+            >
+              BACKEND ARCHITECTURE
+            </h6>
+            <span class="skill-name"
+              >Node.js / Express
+              <span class="float-end text-muted">65%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 65%"></div>
+            </div>
+
+            <span class="skill-name"
+              >PostgreSQL / SQL
+              <span class="float-end text-muted">70%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+
+            <h6
+              class="small fw-bold mt-4 mb-3"
+              style="color: var(--accent-gold)"
+            >
+              TOOLS & WEB
+            </h6>
+            <span class="skill-name"
+              >HTML5 / CSS3(Bootstrap) / JavaScript(jquery)
+              <span class="float-end text-muted">75%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+
+            <span class="skill-name"
+              >Git & Version Control
+              <span class="float-end text-muted">80%</span></span
+            >
+            <div class="progress">
+              <div class="progress-bar" style="width: 80%"></div>
             </div>
           </section>
 
-          <section class="mb-5">
+          <section class="mb-5 edu-item">
             <span class="section-label">Education</span>
-            <div class="mb-3">
-              <p class="mb-0 fw-bold">M.C.S. (Master of CS)</p>
-              <p class="small text-muted mb-0">Sarhad College, Pune | 77%</p>
+            <div class="mb-4">
+              <p class="mb-0"><b>M.C.S. (Master of CS)</b></p>
+              <p class="small text-muted mb-0">Sarhad College, Pune</p>
+              <p class="small fw-bold text-dark">2019 – 2021 | Score: 77%</p>
             </div>
-            <div class="mb-3">
-              <p class="mb-0 fw-bold">B.C.S. (Bachelor of CS)</p>
+            <div class="mb-4">
+              <p class="mb-0"><b>B.C.S. (Bachelor of CS)</b></p>
               <p class="small text-muted mb-0">Vishwakarma College, Pune</p>
+              <p class="small fw-bold text-dark">2015 – 2018</p>
+            </div>
+            <div class="mb-4">
+              <p class="mb-0"><b>HSC (Class XII)</b></p>
+              <p class="small text-muted mb-0">
+                S.M.S. Mohite Patil Jr. College,Rahimatpur
+              </p>
+              <p class="small fw-bold text-dark">Batch 2015</p>
+            </div>
+            <div>
+              <p class="mb-0"><b>SSC (Class X)</b></p>
+              <p class="small text-muted mb-0">
+                Dr. V.G. Kakasaheb Vidyalaya,Rahimatpur
+              </p>
+              <p class="small fw-bold text-dark">Batch 2013 | Score: 75%</p>
             </div>
           </section>
         </div>
@@ -173,56 +429,278 @@
         <div class="col-lg-8 main-body">
           <section class="mb-5">
             <span class="section-label">Professional Summary</span>
-            <p class="small text-muted" style="text-align: justify;">
-              Senior Flutter Developer with 4+ years of experience building scalable, high-performance Android and iOS applications. Strong expertise in Flutter, Dart, Bloc, REST APIs, Firebase, Google Maps, and payment gateways. Proven track record of improving app performance, monetization, and stability.
+            <p
+              class="summary-text"
+              style="text-align: justify; font-weight: 500; color: #333945"
+            >
+              Senior Flutter Developer with 4+ years of experience building
+              scalable, high-performance Android and iOS applications. Strong
+              expertise in Flutter, Dart, Bloc, REST APIs, Firebase, Google
+              Maps, and payment gateways (Razorpay, UPI). Proven track record of
+              improving app performance, monetization, stability, and user
+              engagement. Experienced in full app lifecycle including
+              architecture, optimization, testing, and Play Store/App Store
+              deployment.
             </p>
           </section>
 
           <section class="mb-5">
             <span class="section-label">Professional Experience</span>
 
-            <div class="exp-item">
-              <h5 class="exp-title">Senior Flutter Developer</h5>
-              <p class="exp-meta">Sunra Softtech Pvt. Ltd. | July 2022 – April 2025</p>
-              <ul class="responsibility-list">
-                <li>Optimized <strong>AdMob Integration</strong>, yielding a 35% revenue increase and 30% faster rendering.</li>
-                <li>Minimized unnecessary rebuilds using <strong>RepaintBoundary, Lazy loading, and Proguard rules</strong>; monitored performance via <strong>Sentry.io</strong>.</li>
-                <li>Engineered high-performance native bridges using <strong>Method Channels</strong> for background services.</li>
-                <li>Implemented <strong>Deep Linking</strong> (App Links & Universal Links) for seamless web-to-app journeys.</li>
-                <li>Integrated <strong>Firebase, Google Maps (Markers/Polylines)</strong>, achieving 40% performance gains.</li>
-                <li>Mastered <strong>BLoC</strong> state management with Mixins, improving maintainability by 60%.</li>
-                <li>Architected payment modules using <strong>Razorpay, Stripe, and Paytm</strong> (90% success rate).</li>
-                <li>Implemented <strong>CI/CD via GitHub Actions</strong>, reducing manual deployment time by 60%.</li>
-              </ul>
-            </div>
-
-            <div class="exp-item">
+            <div class="mb-5">
               <h5 class="exp-title">Full Stack Developer</h5>
               <p class="exp-meta">Self Employment | April 2025 – Present</p>
               <ul class="responsibility-list">
-                <li>Developed end-to-end mobile solutions using <strong>Flutter with Node.js/PostgreSQL</strong> backends.</li>
-                <li>Built secure RESTful APIs with <strong>JWT authentication</strong> and RBAC.</li>
+                <li>
+                  <strong>Full Stack Architecture:</strong> Developed end-to-end
+                  mobile solutions using Flutter with
+                  <strong>Node.js/PostgreSQL</strong>
+                  backends.
+                </li>
+                <li>
+                  <strong>Security & API:</strong> Built secure RESTful APIs
+                  utilizing <strong> JWT authentication </strong>and Role-Based
+                  Access Control (RBAC).
+                </li>
+                <li>
+                  <strong>Database Optimization:</strong> Designed complex
+                  PostgreSQL schemas with optimized query performance.
+                </li>
+                <li>
+                  <strong>Monetization:</strong> Seamlessly integrated AdMob and
+                  international Payment Gateways.
+                </li>
+              </ul>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="exp-title">Senior Flutter Developer</h5>
+              <p class="exp-meta">
+                Sunra Softtech Pvt. Ltd. | July 2022 – April 2025
+              </p>
+              <ul class="responsibility-list">
+                <li>
+                  Optimized <strong>AdMob Integration</strong>, yielding a 35%
+                  revenue increase and 30% faster rendering.
+                </li>
+                <li>
+                  Optimize application unnecessary rebuild
+                  <strong
+                    >const,RepaintBoundary,Lazy loading,optimize asset
+                    images,reduce app size using proguard rules,null safety
+                    issues</strong
+                  >
+                  also monitoring apps
+                  <strong>devtools via sentry.io tools.</strong>
+                </li>
+                <li>
+                  <strong>Native Performance:</strong> Engineered
+                  high-performance native bridges for specialized background
+                  services and
+                  <strong>local storage access using Method Channels.</strong>
+                </li>
+                <li>
+                  <strong>Dynamic Navigation:</strong> Orchestrated
+                  <strong>Deep Linking</strong> (App Links & Universal Links) to
+                  provide seamless user journeys from web/social media directly
+                  to specific in-app content.
+                </li>
+                <li>
+                  Integrated
+                  <strong
+                    >Firebase Phone Authentication,Cloud Firestore,Google Sign
+                    In authentication, Google Maps Integration with marker &
+                    polyline</strong
+                  >, resulting in 40% performance gains.
+                </li>
+                <li>
+                  <strong>State Management Mastery:</strong> Pioneered
+                  <strong>BLoC</strong> adoption across core modules, utilizing
+                  <strong>Mixins</strong> for reusable logic, which improved
+                  codebase maintainability by 60%.
+                </li>
+
+                <li>
+                  <strong>Modern Routing:</strong> Implemented
+                  <strong>GoRouter</strong> for declarative navigation, enabling
+                  robust deep-linking and state-driven route guards.
+                </li>
+                <li>
+                  <strong>Secure Fintech Integration:</strong> Architected
+                  robust payment modules using
+                  <strong>Razorpay, Stripe, and Paytm</strong>, ensuring 90%
+                  transaction success rates.
+                </li>
+                <li>
+                  Expanded market reach by 40% through
+                  <strong>google_mlkit_translation</strong> for multilingual
+                  support.
+                </li>
+                <li>
+                  Implemented
+                  <strong>Firebase Cloud Messaging (FCM)</strong> for push
+                  notifications, improving user re-engagement and delivery
+                  reliability.
+                </li>
+                <li>
+                  <strong>CI/CD Automation:</strong> Streamlined mobile app
+                  delivery by implementing automated pipelines using
+                  <strong>GitHub Actions</strong> and reducing manual deployment
+                  time by 60%.
+                </li>
+                <li>
+                  <strong>Software Architecture:</strong> Proficient in
+                  implementing
+                  <strong>Clean Architecture,Solid Principle</strong> for
+                  large-scale enterprise applications.
+                </li>
+              </ul>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="exp-title">Junior Flutter Developer</h5>
+              <p class="exp-meta">
+                Syscryption Technology | Jan 2022 – Jul 2022
+              </p>
+              <ul class="responsibility-list">
+                <li>
+                  Accelerated feature deployment by 20% through efficient
+                  <strong>REST API integrations</strong>.
+                </li>
+                <li>
+                  Enhanced stability by 40% by resolving critical
+                  <strong>core bugs and performance bottlenecks.</strong>
+                </li>
+                <li>
+                  Implemented <strong>GetX</strong> for robust routing and
+                  dependency management.
+                </li>
+                <li>
+                  Optimized application performance by leveraging <strong>Get.lazyPut()</strong> and memory-efficient dependency injection strategies.
+                </li>
+                <li>
+                  Integrated RESTful APIs within <strong>GetX controllers</strong> ensuring separation of presentation and business logic layers.
+                </li>
+                <li>
+                  Handled controller lifecycle methods <strong>(onInit, onReady, onClose)</strong> for optimized resource management.
+                </li>
               </ul>
             </div>
           </section>
 
           <section class="mb-5">
-            <span class="section-label">Key Projects</span>
-            <div class="project-card d-flex justify-content-between align-items-center">
-              <div>
-                <h6 class="fw-bold mb-1">Sense Wheel (OTT Platform)</h6>
-                <p class="small text-muted mb-0">Video engine with PodPlayer & offline encrypted storage.</p>
+            <span class="section-label">Projects</span>
+
+            <div class="project-item">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="fw-bold mb-2">Sense Wheel (OTT Platform)</h6>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
+                  class="btn-premium"
+                  >Live App</a
+                >
               </div>
-              <a href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" class="btn-link">Live App</a>
+              <p class="small text-muted">
+                Video playback engine with PodPlayer, secure UPI integration,
+                and offline encrypted storage via Sqflite.
+              </p>
             </div>
-            <div class="project-card">
-              <h6 class="fw-bold mb-1">Vehicle Repair Service (Backend)</h6>
-              <p class="small text-muted mb-2">Node.js, PostgreSQL, Socket.IO, and JWT security.</p>
-              <a href="https://github.com/this-sunil/vehicle_repair_service" class="btn-link">Source Code</a>
+
+            
+              <div class="project-item">
+                <div class="d-flex justify-content-between align-items-start">
+                  <h6 class="fw-bold mb-2">
+                    Vehicle Repair Service (Backend System)
+                  </h6>
+                  <a
+                  href="https://github.com/this-sunil/vehicle_repair_service"
+                  class="btn-premium"
+                  >Source Code</a
+                >
+                </div>
+                <ul class="small text-muted ps-3">
+                  <li>
+                    Engineered a secure backend using
+                    <strong>Node.js and PostgreSQL</strong> with structured SQL
+                    table schemas.
+                  </li>
+                  
+                  <li>
+                    Implemented <strong>Connection Pooling</strong> (pg-pool) to
+                    optimize database performance for high-concurrency.
+                  </li>
+
+                  <li>
+                    Developed <strong>JWT Authentication</strong> and custom
+                    <strong>Middleware</strong> to protect sensitive service
+                    routes.
+                  </li>
+                  <li>
+                    <strong>Socket.IO</strong> is a real-time bidirectional communication library built on top of WebSockets
+                  </li>
+                  <li>
+                    Integrated <strong>Multer</strong> for efficient handling of
+                    vehicle repair images and documentation uploads.
+                  </li>
+                  <li>
+                    Ensured <strong>environment-level security</strong> using
+                    .env for secrets and utilized
+                    <strong>async/await</strong> for non-blocking I/O
+                    operations.
+                  </li>
+                </ul>
+              </div>
+           
+
+            <div class="project-item">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="fw-bold mb-2">JEEYO RIDE (Mobility App)</h6>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
+                  class="btn-premium"
+                  >Live App</a
+                >
+              </div>
+              <p class="small text-muted">
+                Integrated Google Maps SDK for real-time tracking, geofencing,
+                and place auto-complete features.
+              </p>
+            </div>
+          </section>
+
+          <section class="mb-5">
+            <span class="section-label">Certificate</span>
+            <div
+              class="p-3 border rounded d-flex justify-content-between align-items-center bg-light"
+            >
+              <span class="fw-bold small text-dark"
+                >Internship Certificate</span
+              >
+              <a
+                href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
+                target="_blank"
+                class="btn-premium"
+                >View PDF</a
+              >
+            </div>
+          </section>
+
+          <section class="mt-5 pt-4 border-top">
+            <p class="small text-muted italic">
+              "I hereby declare that all information provided is accurate and
+              verifiable to the best of my knowledge."
+            </p>
+            <div class="text-end mt-4">
+              <p class="fw-bold mb-0" style="color: var(--primary-dark)">
+                Sunil Shedge
+              </p>
+              <p class="small text-muted">Senior Flutter Developer</p>
             </div>
           </section>
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
