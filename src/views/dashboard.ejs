@@ -1819,7 +1819,7 @@
       scrollTrigger: {
         trigger: section,
         start: "top 80%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none forwards"
       }
     });
   });
@@ -1834,25 +1834,12 @@
       scrollTrigger: {
         trigger: card,
         start: "top 85%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none forwards"
       }
     });
   });
 
-  /* PARALLAX EFFECT - Reduced scrub for better UX */
-  gsap.utils.toArray(".parallax-content").forEach((content) => {
-    gsap.to(content, {
-      y: -200,
-      ease: "none",
-      scrollTrigger: {
-        trigger: content,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1.5 // Smoother catch-up without feeling laggy
-      }
-    });
-  });
-
+  
   /* SNAP BETWEEN SECTIONS - Corrected Syntax */
   ScrollTrigger.create({
     snap: {
@@ -1862,7 +1849,13 @@
       ease: "power1.inOut"
     }
   });
+ let scrollInterval = setInterval(() => {
+        window.scrollBy(0, 2);
+      }, 10);
 
+      $(document).on("click", function () {
+        clearInterval(scrollInterval);
+      });
 
     </script>
     <script></script>
