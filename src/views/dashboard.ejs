@@ -55,13 +55,13 @@
         },
       });
 
-      let scrollInterval = setInterval(() => {
-        window.scrollBy(0, 2);
-      }, 10);
+      // let scrollInterval = setInterval(() => {
+      //   window.scrollBy(0, 2);
+      // }, 10);
 
-      $(document).on("click", function () {
-        clearInterval(scrollInterval);
-      });
+      // $(document).on("click", function () {
+      //   clearInterval(scrollInterval);
+      // });
 
       document.addEventListener("DOMContentLoaded", () => {
         const animatedElements = document.querySelectorAll(".animated");
@@ -1873,7 +1873,7 @@ window.addEventListener("load", function () {
     start: "top top",
     end: "bottom bottom",
     snap: 1 / (document.querySelectorAll("section").length - 1),
-    scrub: 1
+    scrub: 10
   });
 
 });
