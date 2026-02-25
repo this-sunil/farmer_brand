@@ -1811,13 +1811,11 @@
     </script>
 
      <script>
-window.addEventListener("DomContentLoaded", function () {
+      window.addEventListener("DOMContentLoaded", function () { // Fixed casing
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* =============================
-     SECTION FADE IN
-  ============================== */
+  /* SECTION FADE IN */
   gsap.utils.toArray("section").forEach((section) => {
     gsap.from(section, {
       opacity: 0,
@@ -1832,9 +1830,7 @@ window.addEventListener("DomContentLoaded", function () {
     });
   });
 
-  /* =============================
-     CARD ANIMATION
-  ============================== */
+  /* CARD ANIMATION */
   gsap.utils.toArray(".card-body").forEach((card) => {
     gsap.from(card, {
       opacity: 0,
@@ -1849,9 +1845,7 @@ window.addEventListener("DomContentLoaded", function () {
     });
   });
 
-  /* =============================
-     PARALLAX EFFECT (Smooth Duration Feel ~10)
-  ============================== */
+  /* PARALLAX EFFECT - Reduced scrub for better UX */
   gsap.utils.toArray(".parallax-content").forEach((content) => {
     gsap.to(content, {
       y: -200,
@@ -1860,24 +1854,23 @@ window.addEventListener("DomContentLoaded", function () {
         trigger: content,
         start: "top bottom",
         end: "bottom top",
-        scrub: 10
+        scrub: 1.5 // Smoother catch-up without feeling laggy
       }
     });
   });
 
-  /* =============================
-     SNAP BETWEEN SECTIONS
-  ============================== */
+  /* SNAP BETWEEN SECTIONS - Corrected Syntax */
   ScrollTrigger.create({
-    trigger: document.body,
-    start: "top top",
-    end: "bottom bottom",
-    snap: 1 / (document.querySelectorAll("section").length - 1),
-    scrub: 10
+    snap: {
+      snapTo: 1 / (document.querySelectorAll("section").length - 1),
+      duration: { min: 0.2, max: 0.8 }, // How long the snap takes
+      delay: 0.1, // Wait after user stops scrolling to snap
+      ease: "power1.inOut"
+    }
   });
 
 });
-</script>
+    </script>
     <script></script>
   </body>
 </html>
