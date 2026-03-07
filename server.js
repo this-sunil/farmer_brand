@@ -39,6 +39,8 @@ app.get('/resume', (req, res) => {
   return res.render('Resume');
 });
 
+
+
 // TODO: Routing
 
 // app.use("/api",authRoute);
