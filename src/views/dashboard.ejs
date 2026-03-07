@@ -1825,37 +1825,15 @@
   });
 
   /* CARD ANIMATION */
-  gsap.utils.toArray(".card-body").forEach((card) => {
-    gsap.from(card, {
-      opacity: 0,
-      y: 2,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-        toggleActions: "play none none forwards"
-      }
-    });
-  });
-
-  
-  /* SNAP BETWEEN SECTIONS - Corrected Syntax */
-  ScrollTrigger.create({
-    snap: {
-      snapTo: 1 / (document.querySelectorAll("section").length - 1),
-      duration: { min: 0.2, max: 0.8 }, // How long the snap takes
-      delay: 0.1, // Wait after user stops scrolling to snap
-      ease: "power1.inOut"
-    }
-  });
+ 
+      
  let scrollInterval = setInterval(() => {
-        window.scrollBy(0, 2);
-      }, 10);
+  window.scrollBy(0, 2);
+}, 16); // ~60fps
 
-      $(document).on("click", function () {
-        clearInterval(scrollInterval);
-      });
+$(document).on("click", function () {
+  clearInterval(scrollInterval);
+});
 
     </script>
     <script></script>
