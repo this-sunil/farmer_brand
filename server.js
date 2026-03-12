@@ -9,7 +9,6 @@ import bannerRoute from "./src/routes/bannerRoute.js"
 import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
-import paymentRoute from "./src/routes/paymentRoute.js";
 import favFarmerRoute from "./src/routes/favRoute.js";
 
 const app=express();
@@ -65,7 +64,7 @@ app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
 app.use("/api",farmerRoute);
 app.use("/api",productRoute);
-app.use("/api",paymentRoute);
+
 app.use("/api",favFarmerRoute);
 
 app.listen(process.env.PORT,()=>{

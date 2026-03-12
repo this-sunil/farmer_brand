@@ -1,6 +1,5 @@
 import pool from "../dbHelper/dbHelper.js";
 
-import { sendNotification } from "../../config/sendNotification.js";
 const createNotificationTable=async()=>{
   const query=`
   CREATE TABLE IF NOT EXISTS notification(
@@ -107,28 +106,5 @@ export const deleteNotificationController=async (req,res) => {
 
 
 
-export const sendNotificationController = async (req, res) => {
-  const { token, title, body, data, photo } = req.body; // photo optional
-  if (!token || !title || !body) {
-    return res.status(400).json({
-      error: 'token, title, and body are required!',
-    });
-  }
 
-  try {
-    const result=await sendNotification(token, title, body, data || {});
-    return res.status(200).json({
-      status: true,
-      msg: 'Notification sent and logged!',
-      messageId:result.messageId
-    });
-  } catch (err) {
-    console.error('Notification Error:', err);
-
-    return res.status(500).json({
-      status: false,
-      msg: `Internal Server Error: ${err.message}`,
-    });
-  }
-};
 
