@@ -25,6 +25,17 @@ cors({
     credentials:true
 });
 
+const limiter=rateLimit({
+ windowMs:15*60*1000,
+ limit:100,
+ standardHeaders: 'draft-8',
+ legacyHeaders:false,
+ ipv6Subnet: 56,
+ message:"Too many request,Please try again later."
+});
+
+app.use(limiter);
+
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.use("/public",express.static(path.join(process.cwd(),"src/public")));
 app.use('/bootstrap-css', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/css')));
