@@ -16,13 +16,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 dotenv.config({ debug: false, encoding: "utf-8", override: true ,quiet:true});
 
-cors({
+app.use(cors({
     methods:["GET","POST","PUT","DELETE"],
     optionsSuccessStatus:200,
     allowedHeaders:true,
     origin: `*`,
     credentials:true
-});
+}));
 
 const limiter=rateLimit({
  windowMs:1*60*1000,
@@ -38,7 +38,7 @@ const limiter=rateLimit({
  }
 });
 
-app.use(limiter);
+
 
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.use("/public",express.static(path.join(process.cwd(),"src/public")));
@@ -55,7 +55,7 @@ app.get('/resume', (req, res) => {
 });
 
 
-
+app.use(limiter);
 // TODO: Routing
 
 app.use("/api",authRoute);
