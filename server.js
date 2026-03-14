@@ -24,19 +24,7 @@ app.use(cors({
     credentials:true
 }));
 
-const limiter=rateLimit({
- windowMs:1*60*1000,
- limit:5,
- standardHeaders: 'draft-8',
- legacyHeaders:false,
- ipv6Subnet: 56,
- handler:(req,res,next,options)=>{
-    return res.status(429).json({
-        status:false,
-        msg:"Too may request please try again later"
-    });
- }
-});
+
 
 
 
@@ -55,7 +43,7 @@ app.get('/resume', (req, res) => {
 });
 
 
-app.use(limiter);
+
 // TODO: Routing
 
 app.use("/api",authRoute);
