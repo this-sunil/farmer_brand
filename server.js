@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
-
+import rateLimit from 'express-rate-limit';
 import authRoute from "./src/routes/authRoute.js";
 import postRoute from "./src/routes/postRoute.js";
 import bannerRoute from "./src/routes/bannerRoute.js"
@@ -24,7 +24,19 @@ app.use(cors({
     credentials:true
 }));
 
-
+const limiter=rateLimit({
+ windowMs:1*60*1000,
+ limit:5,
+ standardHeaders: 'draft-8',
+ legacyHeaders:false,
+ ipv6Subnet: 56,
+ handler:(req,res,next,options)=>{
+    return res.status(429).json({
+        status:false,
+        msg:"Too may request please try again later"
+    });
+ }
+});
 
 
 
@@ -43,7 +55,7 @@ app.get('/resume', (req, res) => {
 });
 
 
-
+app.use(limiter);
 // TODO: Routing
 
 app.use("/api",authRoute);
