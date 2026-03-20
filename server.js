@@ -53,7 +53,9 @@ app.get("/",(req,res)=>{
 app.get('/resume', (req, res) => {
   return res.render('Resume');
 });
-
+app.get('/portfolio', (req, res) => {
+  return res.render('portfolio');
+});
 
 app.use(limiter);
 // TODO: Routing
