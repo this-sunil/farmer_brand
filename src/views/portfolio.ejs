@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunil Shedge | Senior Flutter & Full-Stack Engineer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #06b6d4;
+            --accent-soft: rgba(6, 182, 212, 0.1);
+            --border: #e2e8f0;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --white: #ffffff;
+            --sidebar-width: 400px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- LAYOUT STRUCTURE --- */
+        .page-container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1600px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+        }
+
+        /* --- STICKY SIDEBAR (LEFT) --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background: #fafafa;
+            border-right: 1px solid var(--border);
+            padding: 60px 45px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .profile-area { text-align: center; margin-bottom: 40px; }
+        
+        .avatar-box {
+            width: 100px; height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 24px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+        }
+
+        .name-title { font-weight: 800; font-size: 1.8rem; color: var(--primary); letter-spacing: -1px; margin-bottom: 5px; }
+        .sub-role { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; }
+
+        /* FIXED CONTACT PANEL IN SIDEBAR */
+        .contact-panel {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 20px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-card i { font-size: 1.1rem; color: var(--accent); }
+        .contact-card:hover {
+            transform: translateX(8px);
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            color: var(--accent);
+        }
+
+        /* --- MAIN CONTENT (RIGHT) --- */
+        .content-area {
+            flex: 1;
+            padding: 80px 80px;
+            background: var(--white);
+        }
+
+        /* SECTION STYLING */
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: var(--accent);
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        /* EXPERIENCE BLOCKS */
+        .timeline-item {
+            margin-bottom: 60px;
+            padding-left: 30px;
+            border-left: 2px solid var(--border);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px; height: 16px;
+            background: var(--white);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .job-name { font-weight: 800; font-size: 1.6rem; color: var(--primary); }
+        .job-period { font-weight: 700; font-size: 0.85rem; color: var(--accent); background: var(--accent-soft); padding: 5px 15px; border-radius: 20px; }
+        .company-tag { font-weight: 700; color: #6366f1; font-size: 1.1rem; display: block; margin-bottom: 20px; }
+
+        .duty-list { list-style: none; padding-left: 0; }
+        .duty-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        .duty-list li::before {
+            content: "\F633";
+            font-family: "bootstrap-icons";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* PROJECTS GRID */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+            transform: translateY(-5px);
+        }
+
+        .p-icon { font-size: 2rem; color: var(--accent); margin-bottom: 20px; display: block; }
+        .p-name { font-weight: 800; font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; }
+        .p-desc { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 25px; }
+
+        .tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+        .tech-tag {
+            background: var(--bg-slate);
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+        }
+
+        .btn-prime {
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-prime:hover { background: var(--accent); color: white; transform: scale(1.05); }
+
+        /* SKILL PROGRESS BARS */
+        .skill-section { margin-top: 30px; }
+        .skill-unit { margin-bottom: 20px; }
+        .skill-label { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.75rem; color: var(--primary); margin-bottom: 8px; }
+        .bar-bg { height: 8px; background: var(--border); border-radius: 10px; overflow: hidden; }
+        .bar-fill { height: 100%; background: var(--primary); border-radius: 10px; transition: 1s ease-in-out; }
+
+        /* EDUCATION MODULE */
+        .edu-module { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px; }
+        .edu-card { margin-bottom: 20px; }
+        .edu-title { font-weight: 800; font-size: 0.85rem; color: var(--primary); display: block; }
+        .edu-info { font-size: 0.75rem; color: var(--text-muted); display: block; margin: 2px 0; }
+        .edu-date { font-weight: 700; font-size: 0.75rem; color: var(--accent); }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 1100px) {
+            .page-container { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; padding: 50px 25px; border-right: none; border-bottom: 1px solid var(--border); }
+            .content-area { padding: 50px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <aside class="sidebar">
+            <div class="profile-area">
+                <div class="avatar-box">SS</div>
+                <h1 class="name-title">Sunil Shedge</h1>
+                <p class="sub-role">Senior Flutter Developer</p>
+            </div>
+
+            <div class="contact-panel">
+                <a href="mailto:swarajya888@gmail.com" class="contact-card">
+                    <i class="bi bi-envelope-heart-fill"></i> swarajya888@gmail.com
+                </a>
+                <a href="tel:+918668796251" class="contact-card">
+                    <i class="bi bi-phone-vibrate-fill"></i> +91 8668796251
+                </a>
+                <a href="https://linkedin.com/in/sunilshedge" target="_blank" class="contact-card">
+                    <i class="bi bi-linkedin"></i> LinkedIn Profile
+                </a>
+                <a href="https://github.com/this-sunil" target="_blank" class="contact-card">
+                    <i class="bi bi-github"></i> GitHub Repositories
+                </a>
+                <div class="contact-card">
+                    <i class="bi bi-geo-alt-fill"></i> Pune, MH, India
+                </div>
+            </div>
+
+            <div class="skill-section">
+                <span class="section-label">Mastery</span>
+                <div class="skill-unit">
+                    <div class="skill-label">Flutter & Dart <span>95%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-unit">
+                    <div class="skill-label">BLoC Architecture <span>90%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-unit">
+                    <div class="skill-label">Node.js Backend <span>80%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 80%"></div></div>
+                </div>
+                <div class="skill-unit">
+                    <div class="skill-label">CI/CD & DevOps <span>85%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 85%"></div></div>
+                </div>
+            </div>
+
+            <div class="edu-module">
+                <span class="section-label">Academic</span>
+                <div class="edu-card">
+                    <span class="edu-title">M.C.S. (Computer Science)</span>
+                    <span class="edu-info">Sarhad College, Pune</span>
+                    <span class="edu-date">2019 – 2021 | 77% Aggregate</span>
+                </div>
+                <div class="edu-card">
+                    <span class="edu-title">B.C.S. (Computer Science)</span>
+                    <span class="edu-info">Vishwakarma College, Pune</span>
+                    <span class="edu-date">2015 – 2018</span>
+                </div>
+                <div class="edu-card">
+                    <span class="edu-title">HSC (Class XII)</span>
+                    <span class="edu-info">S.M.S. Mohite Patil Jr. College</span>
+                    <span class="edu-date">Batch 2015</span>
+                </div>
+                <div class="edu-card">
+                    <span class="edu-title">SSC (Class X)</span>
+                    <span class="edu-info">Dr. V.G. Kakasaheb Vidyalaya</span>
+                    <span class="edu-date">75% | Batch 2013</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <section id="about" class="mb-5">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Senior Mobile Engineer</h2>
+                <p style="font-size: 1.2rem; line-height: 1.9; color: var(--primary); font-weight: 500; text-align: justify;">
+                    Senior Flutter Developer with <strong>4+ years of expertise</strong> in building and scaling enterprise-level mobile ecosystems. 
+                    I specialize in <strong>Clean Architecture</strong>, modular design patterns, and high-performance state management. 
+                    With over <strong>15 successful launches</strong> on the Play Store and App Store, I bring a deep understanding of 
+                    rendering optimization (RepaintBoundary), native platform bridging (Method Channels), and automated CI/CD pipelines (Shorebird & GitHub Actions).
+                </p>
+            </section>
+
+            <section id="work" class="mb-5">
+                <span class="section-label">Career</span>
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <h3 class="job-name">Full Stack Developer</h3>
+                        <span class="job-period">April 2025 – Present</span>
+                    </div>
+                    <span class="company-tag">Self Employment | Full-Cycle Development</span>
+                    <ul class="duty-list">
+                        <li><strong>Architectural Design:</strong> Developed end-to-end mobile and web architectures using Flutter with <strong>Node.js and PostgreSQL</strong> backends.</li>
+                        <li><strong>Security Protocols:</strong> Built secure RESTful APIs utilizing <strong>JWT authentication</strong> and robust Role-Based Access Control (RBAC).</li>
+                        <li><strong>Native Level Optimization:</strong> Proactively resolved deep-level <strong>Xcode build failures</strong> and identified/fixed critical <strong>ANR (App Not Responding)</strong> issues.</li>
+                        <li><strong>OTA Management:</strong> Configured <strong>Shorebird</strong> for instant Over-The-Air hotfixes, drastically reducing deployment friction.</li>
+                        <li><strong>Financial Integration:</strong> Seamlessly integrated global and domestic payment systems including <strong>Stripe, PhonePe, and Razorpay</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <h3 class="job-name">Senior Flutter Developer</h3>
+                        <span class="job-period">July 2022 – April 2025</span>
+                    </div>
+                    <span class="company-tag">Sunra Softtech Pvt. Ltd. | Pune, MH</span>
+                    <ul class="duty-list">
+                        <li><strong>Rendering Excellence:</strong> Optimized heavy UI rebuilds using <strong>RepaintBoundary</strong> and lazy-loading lists, maintaining a consistent 60fps.</li>
+                        <li><strong>Native Integration:</strong> Authored custom <strong>Method Channels</strong> to bridge Flutter with native background services and biometric hardware.</li>
+                        <li><strong>Routing & Deep Linking:</strong> Implemented <strong>GoRouter</strong> for nested navigation and Universal Deep Linking for marketing funnel optimization.</li>
+                        <li><strong>Scaling State:</strong> Led the engineering team in adopting <strong>BLoC with Mixins</strong>, improving maintainability by 60%.</li>
+                        <li><strong>Automated Delivery:</strong> Designed and maintained <strong>GitHub Actions</strong> CI/CD workflows for multi-flavor application distributions.</li>
+                        <li><strong>Error Resilience:</strong> Integrated <strong>Sentry.io</strong> for real-time production health monitoring and crash analytics.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="border:none;">
+                    <div class="job-header">
+                        <h3 class="job-name">Junior Flutter Developer</h3>
+                        <span class="job-period">January 2022 – July 2022</span>
+                    </div>
+                    <span class="company-tag">Syscryption Technology</span>
+                    <ul class="duty-list">
+                        <li>Accelerated feature development cycles by 20% through efficient <strong>REST API</strong> logic and Dio-based networking layers.</li>
+                        <li>Improved stability by 40% by resolving core legacy bugs and implementing <strong>GetX</strong> for lightweight dependency injection.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects" class="mb-5">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Major Production Projects</h2>
+                
+                <div class="project-grid">
+                    
+                    <div class="project-card">
+                        <i class="bi bi-map-fill p-icon"></i>
+                        <h4 class="p-name">Jeeyo Ride (Cab Booking Platform)</h4>
+                        <div class="tag-wrap">
+                            <span class="tech-tag">Google Maps SDK</span>
+                            <span class="tech-tag">Socket.IO</span>
+                            <span class="tech-tag">Geofencing</span>
+                            <span class="tech-tag">BLoC</span>
+                        </div>
+                        <p class="p-desc">
+                            A high-concurrency cab booking solution. Developed real-time driver-passenger tracking using <strong>WebSockets</strong> and optimized route-finding algorithms with Google Directions. 
+                            Built a sophisticated geofencing engine to alert drivers of nearby ride requests and integrated real-time fare calculation logic.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <i class="bi bi-play-circle-fill p-icon"></i>
+                        <h4 class="p-name">Sense Wheel (OTT Platform)</h4>
+                        <div class="tag-wrap">
+                            <span class="tech-tag">PodPlayer</span>
+                            <span class="tech-pill">DRM Support</span>
+                            <span class="tech-tag">Sqflite Cache</span>
+                            <span class="tech-tag">Clean Arch</span>
+                        </div>
+                        <p class="p-desc">
+                            A regional streaming platform. Engineered a custom playback engine using <strong>PodPlayer</strong> with multi-bitrate support. 
+                            Implemented a secure offline encrypted storage module using <strong>Sqflite</strong> for DRM-protected downloads.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" target="_blank" class="btn-prime">
+                            <i class="bi bi-google-play"></i> View Play Store
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <i class="bi bi-server p-icon"></i>
+                        <h4 class="p-name">Vehicle Repair Marketplace Backend</h4>
+                        <div class="tag-wrap">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">Cloudinary</span>
+                        </div>
+                        <p class="p-desc">
+                            Built a high-performance backend managing 120+ endpoints. Implemented complex SQL relationships using <strong>Prisma</strong> and handled multi-tenant media uploads 
+                            using <strong>Multer and Cloudinary</strong>.
+                        </p>
+                        <a href="https://github.com/this-sunil/vehicle-repair-service" target="_blank" class="btn-prime">
+                            <i class="bi bi-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <footer style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); text-align: right;">
+                <h4 class="name-title" style="font-size: 1.2rem;">Sunil Shedge</h4>
+                <p class="sub-role" style="font-size: 0.65rem;">Senior Flutter Engineer | 2026</p>
+                <p class="small text-muted mt-3">"Expertise in Crafting High-Performance Mobile Experiences."</p>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>
