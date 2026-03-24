@@ -19,6 +19,7 @@
             --text-main: #334155;
             --text-heading: #0f172a;
             --white: #ffffff;
+            --bg-slate: #f8fafc;
             --sidebar-width: 400px;
         }
 
@@ -111,6 +112,37 @@
             flex: 1;
             padding: 80px 80px;
             background: var(--white);
+        }
+
+        .impact-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 50px;
+        }
+
+        .impact-card {
+            background: linear-gradient(180deg, #f8fbff, #f1f5f9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 16px;
+            text-align: center;
+        }
+
+        .impact-value {
+            font-size: 1.6rem;
+            line-height: 1;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .impact-label {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: #64748b;
+            font-weight: 700;
         }
 
         /* SECTION STYLING */
@@ -245,6 +277,33 @@
 
         .btn-prime:hover { background: var(--accent); color: white; transform: scale(1.05); }
 
+        .summary-actions {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-ghost {
+            padding: 12px 25px;
+            border: 1px solid var(--border);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            background: #fff;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
         /* SKILL PROGRESS BARS */
         .skill-section { margin-top: 30px; }
         .skill-unit { margin-bottom: 20px; }
@@ -264,6 +323,11 @@
             .page-container { flex-direction: column; }
             .sidebar { width: 100%; height: auto; position: relative; padding: 50px 25px; border-right: none; border-bottom: 1px solid var(--border); }
             .content-area { padding: 50px 25px; }
+            .impact-strip { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .impact-strip { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -341,6 +405,24 @@
         </aside>
 
         <main class="content-area">
+            <section class="impact-strip">
+                <div class="impact-card">
+                    <div class="impact-value">15+</div>
+                    <div class="impact-label">Apps Delivered</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-value">4+ Years</div>
+                    <div class="impact-label">Production Experience</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-value">35%</div>
+                    <div class="impact-label">Ad Revenue Uplift</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-value">60%</div>
+                    <div class="impact-label">Faster Delivery via CI/CD</div>
+                </div>
+            </section>
             
             <section id="about" class="mb-5">
                 <span class="section-label">About Me</span>
@@ -351,6 +433,14 @@
                     With over <strong>15 successful launches</strong> on the Play Store and App Store, I bring a deep understanding of 
                     rendering optimization (RepaintBoundary), native platform bridging (Method Channels), and automated CI/CD pipelines (Shorebird & GitHub Actions).
                 </p>
+                <div class="summary-actions">
+                    <a href="mailto:swarajya888@gmail.com" class="btn-prime">
+                        <i class="bi bi-send-fill"></i> Hire Me
+                    </a>
+                    <a href="https://farmer-brand.vercel.app/" target="_blank" class="btn-ghost">
+                        <i class="bi bi-window-fullscreen"></i> Portfolio Website
+                    </a>
+                </div>
             </section>
 
             <section id="work" class="mb-5">
@@ -420,6 +510,9 @@
                             A high-concurrency cab booking solution. Developed real-time driver-passenger tracking using <strong>WebSockets</strong> and optimized route-finding algorithms with Google Directions. 
                             Built a sophisticated geofencing engine to alert drivers of nearby ride requests and integrated real-time fare calculation logic.
                         </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" target="_blank" class="btn-prime">
+                            <i class="bi bi-google-play"></i> View Play Store
+                        </a>
                     </div>
 
                     <div class="project-card">
@@ -427,7 +520,7 @@
                         <h4 class="p-name">Sense Wheel (OTT Platform)</h4>
                         <div class="tag-wrap">
                             <span class="tech-tag">PodPlayer</span>
-                            <span class="tech-pill">DRM Support</span>
+                            <span class="tech-tag">DRM Support</span>
                             <span class="tech-tag">Sqflite Cache</span>
                             <span class="tech-tag">Clean Arch</span>
                         </div>
