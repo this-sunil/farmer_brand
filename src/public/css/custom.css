@@ -1194,7 +1194,72 @@ body.dark-theme .project-filters .btn.active {
     border-radius: 14px;
   }
 }
+/* Custom Bento Project Container */
+.bento-project-card {
+    background: var(--card-bg);
+    backdrop-filter: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 40px;
+    transition: 0.4s ease;
+}
 
+.bento-project-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.1);
+}
+
+/* Feature Grid inside Project */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.glass-feature {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+}
+
+.glass-feature h5 {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.glass-feature ul {
+    list-style: none;
+    padding: 0;
+}
+
+.glass-feature li {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.glass-feature li::before {
+    content: '→';
+    color: var(--accent);
+}
+
+/* Premium Buttons */
+.btn-premium {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-top: 10px;
+}
 /* Mobile Devices (up to 767px) */
 @media screen and (max-width: 767px) {
   .cards {
@@ -1212,6 +1277,7 @@ body.dark-theme .project-filters .btn.active {
     typing 3s infinite,
     blink 0.8s step-end infinite;
 }
+
 @keyframes typing {
   from { width: 0 }
   to { width: 70% }
