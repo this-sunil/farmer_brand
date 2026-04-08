@@ -1277,8 +1277,7 @@ body.dark-theme .project-filters .btn.active {
     --bg-black: #050505;          /* Absolute Black */
     --glass-border: rgba(255, 255, 255, 0.05); /* Ultra Thin Border */
     --accent-cyan: #22d3ee;       /* Flutter-Style Cyan */
-    --text-main: #ffffff;
-    --text-muted: #a1a1aa;
+  
 }
 
 /* --- SECTION WRAPPER --- */
