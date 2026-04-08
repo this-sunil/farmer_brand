@@ -1338,8 +1338,9 @@ body.dark-theme .project-filters .btn.active {
 .leading-icon {
     width: 80px;
     height: 80px;
+    padding: 10px;
     background: linear-gradient(135deg, var(--accent-cyan), #0891b2);
-    border-radius: 22px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
