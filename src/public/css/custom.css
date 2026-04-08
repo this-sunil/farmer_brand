@@ -1136,12 +1136,7 @@ h2 {
   font-weight: 700;
 }
 
-body.dark-theme .projects-section {
-  background:
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 45%),
-    radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.2), transparent 45%),
-    #111827;
-}
+
 
 body.dark-theme .projects-section .section-title {
   color: #e2e8f0;
@@ -1194,72 +1189,7 @@ body.dark-theme .project-filters .btn.active {
     border-radius: 14px;
   }
 }
-/* Custom Bento Project Container */
-.bento-project-card {
-    background: var(--card-bg);
-    backdrop-filter: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 40px;
-    padding: 40px;
-    transition: 0.4s ease;
-}
 
-.bento-project-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 40px rgba(34, 211, 238, 0.1);
-}
-
-/* Feature Grid inside Project */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-}
-
-.glass-feature {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 25px;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-}
-
-.glass-feature h5 {
-    color: var(--accent);
-    font-weight: 800;
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-.glass-feature ul {
-    list-style: none;
-    padding: 0;
-}
-
-.glass-feature li {
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.glass-feature li::before {
-    content: '→';
-    color: var(--accent);
-}
-
-/* Premium Buttons */
-.btn-premium {
-    display: inline-block;
-    padding: 10px 24px;
-    background: var(--accent);
-    color: var(--bg);
-    border-radius: 12px;
-    font-weight: 800;
-    text-decoration: none;
-    margin-top: 10px;
-}
 /* Mobile Devices (up to 767px) */
 @media screen and (max-width: 767px) {
   .cards {
@@ -1338,4 +1268,179 @@ body.dark-theme .project-filters .btn.active {
   .footer {
     padding: 20px 30px;
   }
+}
+
+
+
+/* --- ULTIMATE BLACK GLASSMORPHISM (PIXEL PERFECT) --- */
+:root {
+    --bg-black: #050505;          /* Absolute Black */
+    --glass-border: rgba(255, 255, 255, 0.05); /* Ultra Thin Border */
+    --accent-cyan: #22d3ee;       /* Flutter-Style Cyan */
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+}
+
+/* --- SECTION WRAPPER --- */
+.projects-section {
+    width: 100%;
+    
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* --- THE MASTER BLACK GLASS TILE --- */
+.list-tile-project {
+    width: calc(100% - 80px); 
+    margin: 20px auto; /* auto se card center me rahega aur overflow nahi hoga */
+    padding: 40px;
+    border-radius: 40px;
+    position: relative;
+    
+    /* Padding width ke andar rahe isliye box-sizing important hai */
+    box-sizing: border-box; 
+
+    /* GLASS ENGINE */
+    background: var(--glass-card);
+    backdrop-filter: blur(35px) saturate(160%);
+    -webkit-backdrop-filter: blur(35px) saturate(160%);
+    
+    /* SHARP BORDER & DEPTH */
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+    
+    display: flex;
+    flex-direction: column;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden; /* Safety for internal elements */
+}
+
+/* Hover: Premium Flutter Selection Animation */
+.list-tile-project:hover {
+    transform: translateX(5px) scale(1.005);
+    background: rgba(25, 25, 25, 0.9);
+    border-color: var(--accent-cyan);
+    box-shadow: -15px 0 40px rgba(34, 211, 238, 0.1), 0 50px 120px rgba(0, 0, 0, 0.8);
+}
+
+/* --- HEADER ROW (ListTile Pattern) --- */
+.tile-top-row {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 35px;
+}
+
+.leading-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-cyan), #0891b2);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #000;
+    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.2);
+    flex-shrink: 0;
+}
+
+.title-section h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.title-section p {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 8px;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* --- TRAILING ACTION BUTTON --- */
+.btn-install {
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--accent-cyan) !important;
+    border: 1.5px solid var(--accent-cyan);
+    border-radius: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.btn-install:hover {
+    background: var(--accent-cyan);
+    color: #000 !important;
+    box-shadow: 0 0 30px var(--accent-cyan);
+    transform: translateY(-3px);
+}
+
+/* --- HORIZONTAL FEATURE GRID (Bento-style) --- */
+.tile-body-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-col h5 {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.feature-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-col li {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Flutter Arrow Indicator */
+.feature-col li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-weight: 900;
+    font-size: 1.1rem;
+    top: -2px;
+}
+
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 991px) {
+    .tile-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .trailing-action { width: 100%; }
+    .btn-install { display: block; text-align: center; }
+    .list-tile-project { padding: 30px; }
+    .title-section h2 { font-size: 1.8rem; }
 }
