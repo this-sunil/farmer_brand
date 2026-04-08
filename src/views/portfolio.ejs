@@ -3,564 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunil Shedge | Senior Flutter & Full-Stack Engineer</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Sunil Shedge | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #06b6d4;
-            --accent-soft: rgba(6, 182, 212, 0.1);
-            --border: #e2e8f0;
-            --text-main: #334155;
-            --text-heading: #0f172a;
-            --white: #ffffff;
-            --bg-slate: #f8fafc;
-            --sidebar-width: 400px;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.4);
+            --accent: #22d3ee;
+            --accent-glow: rgba(34, 211, 238, 0.3);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: blur(16px);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f1f5f9;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.05), transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(30, 41, 59, 0.3), transparent 40%);
+            background-attachment: fixed;
             color: var(--text-main);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            padding: 40px 20px;
+            line-height: 1.5;
         }
 
-        /* --- LAYOUT STRUCTURE --- */
-        .page-container {
-            display: flex;
-            min-height: 100vh;
-            max-width: 1600px;
+        .bento-wrapper {
+            max-width: 1200px;
             margin: 0 auto;
-            background: var(--white);
-            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+                "profile hero hero hero"
+                "profile stats stats social"
+                "experience experience projects projects"
+                "experience experience projects projects";
         }
 
-        /* --- STICKY SIDEBAR (LEFT) --- */
-        .sidebar {
-            width: var(--sidebar-width);
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            background: #fafafa;
-            border-right: 1px solid var(--border);
-            padding: 60px 45px;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
+        /* Base Card Styling */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: var(--glass);
+            -webkit-backdrop-filter: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 32px;
+            transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .profile-area { text-align: center; margin-bottom: 40px; }
-        
-        .avatar-box {
-            width: 100px; height: 100px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 24px;
-            margin: 0 auto 20px;
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            background: rgba(30, 41, 59, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+        }
+
+        /* Area Assignments */
+        .profile { grid-area: profile; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .hero { grid-area: hero; display: flex; flex-direction: column; justify-content: center; }
+        .stats { grid-area: stats; display: flex; justify-content: space-around; align-items: center; }
+        .social { grid-area: social; display: flex; flex-direction: column; gap: 12px; }
+        .experience { grid-area: experience; }
+        .projects { grid-area: projects; }
+
+        /* Profile Elements */
+        .avatar {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, var(--accent), #0891b2);
+            border-radius: 28px;
+            margin-bottom: 24px;
+            display: grid;
+            place-items: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--bg);
+            box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2);
+        }
+
+        /* Text Styling */
+        h1 { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 15px; letter-spacing: -1px; }
+        h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: 24px; font-weight: 700; }
+        h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        p { color: var(--text-dim); font-size: 1rem; }
+
+        .stat-item { text-align: center; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); font-weight: 800; }
+        .stat-item p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+
+        /* List Styling */
+        ul { list-style: none; margin-top: 15px; }
+        li { margin-bottom: 10px; color: var(--text-dim); display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        li::before { content: "\F285"; font-family: "bootstrap-icons"; color: var(--accent); font-size: 0.8rem; }
+
+        /* Tech Tags */
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .tag { 
+            background: rgba(255,255,255,0.05); 
+            padding: 4px 12px; 
+            border-radius: 100px; 
+            font-size: 0.75rem; 
+            border: 1px solid var(--border);
+            color: var(--accent);
+        }
+
+        /* Buttons & Links */
+        .social-link {
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255,255,255,0.03);
+            padding: 14px;
+            border-radius: 18px;
+            text-align: center;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 800;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
-        }
-
-        .name-title { font-weight: 800; font-size: 1.8rem; color: var(--primary); letter-spacing: -1px; margin-bottom: 5px; }
-        .sub-role { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; }
-
-        /* FIXED CONTACT PANEL IN SIDEBAR */
-        .contact-panel {
-            margin: 30px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 14px 20px;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            text-decoration: none;
-            color: var(--primary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .contact-card i { font-size: 1.1rem; color: var(--accent); }
-        .contact-card:hover {
-            transform: translateX(8px);
-            border-color: var(--accent);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            color: var(--accent);
-        }
-
-        /* --- MAIN CONTENT (RIGHT) --- */
-        .content-area {
-            flex: 1;
-            padding: 80px 80px;
-            background: var(--white);
-        }
-
-        .impact-strip {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            margin-bottom: 50px;
-        }
-
-        .impact-card {
-            background: linear-gradient(180deg, #f8fbff, #f1f5f9);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 18px 16px;
-            text-align: center;
-        }
-
-        .impact-value {
-            font-size: 1.6rem;
-            line-height: 1;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .impact-label {
-            font-size: 0.74rem;
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-            color: #64748b;
-            font-weight: 700;
-        }
-
-        /* SECTION STYLING */
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .section-title {
-            font-weight: 800;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 5px;
-            background: var(--accent);
-            margin-top: 15px;
-            border-radius: 10px;
-        }
-
-        /* EXPERIENCE BLOCKS */
-        .timeline-item {
-            margin-bottom: 60px;
-            padding-left: 30px;
-            border-left: 2px solid var(--border);
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -9px;
-            top: 0;
-            width: 16px; height: 16px;
-            background: var(--white);
-            border: 3px solid var(--accent);
-            border-radius: 50%;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-
-        .job-name { font-weight: 800; font-size: 1.6rem; color: var(--primary); }
-        .job-period { font-weight: 700; font-size: 0.85rem; color: var(--accent); background: var(--accent-soft); padding: 5px 15px; border-radius: 20px; }
-        .company-tag { font-weight: 700; color: #6366f1; font-size: 1.1rem; display: block; margin-bottom: 20px; }
-
-        .duty-list { list-style: none; padding-left: 0; }
-        .duty-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            font-size: 1rem;
-            color: var(--text-main);
-            text-align: justify;
-        }
-
-        .duty-list li::before {
-            content: "\F633";
-            font-family: "bootstrap-icons";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* PROJECTS GRID */
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .project-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 24px;
-            transition: 0.4s;
-        }
-
-        .project-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
-            transform: translateY(-5px);
-        }
-
-        .p-icon { font-size: 2rem; color: var(--accent); margin-bottom: 20px; display: block; }
-        .p-name { font-weight: 800; font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; }
-        .p-desc { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 25px; }
-
-        .tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
-        .tech-tag {
-            background: var(--bg-slate);
-            color: var(--primary);
-            font-size: 0.7rem;
-            font-weight: 800;
-            padding: 6px 14px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            border: 1px solid var(--border);
-        }
-
-        .btn-prime {
-            padding: 12px 25px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: 0.3s;
-        }
-
-        .btn-prime:hover { background: var(--accent); color: white; transform: scale(1.05); }
-
-        .summary-actions {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn-ghost {
-            padding: 12px 25px;
-            border: 1px solid var(--border);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
             gap: 10px;
             transition: 0.3s;
-            background: #fff;
         }
 
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+        .social-link:hover { background: var(--accent); color: var(--bg); font-weight: 700; border-color: var(--accent); }
+
+        /* Project Card Mini */
+        .project-item {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid transparent;
+            transition: 0.3s;
         }
+        .project-item:hover { border-color: rgba(34, 211, 238, 0.3); background: rgba(0,0,0,0.3); }
 
-        /* SKILL PROGRESS BARS */
-        .skill-section { margin-top: 30px; }
-        .skill-unit { margin-bottom: 20px; }
-        .skill-label { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.75rem; color: var(--primary); margin-bottom: 8px; }
-        .bar-bg { height: 8px; background: var(--border); border-radius: 10px; overflow: hidden; }
-        .bar-fill { height: 100%; background: var(--primary); border-radius: 10px; transition: 1s ease-in-out; }
-
-        /* EDUCATION MODULE */
-        .edu-module { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px; }
-        .edu-card { margin-bottom: 20px; }
-        .edu-title { font-weight: 800; font-size: 0.85rem; color: var(--primary); display: block; }
-        .edu-info { font-size: 0.75rem; color: var(--text-muted); display: block; margin: 2px 0; }
-        .edu-date { font-weight: 700; font-size: 0.75rem; color: var(--accent); }
-
-        /* MOBILE OPTIMIZATION */
-        @media (max-width: 1100px) {
-            .page-container { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; position: relative; padding: 50px 25px; border-right: none; border-bottom: 1px solid var(--border); }
-            .content-area { padding: 50px 25px; }
-            .impact-strip { grid-template-columns: repeat(2, 1fr); }
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .bento-wrapper { grid-template-columns: repeat(2, 1fr); 
+                grid-template-areas: 
+                    "hero hero"
+                    "profile stats"
+                    "social stats"
+                    "experience experience"
+                    "projects projects";
+            }
+            h1 { font-size: 2.8rem; }
         }
 
         @media (max-width: 640px) {
-            .impact-strip { grid-template-columns: 1fr; }
+            .bento-wrapper { grid-template-columns: 1fr;
+                grid-template-areas: "profile" "hero" "stats" "social" "experience" "projects";
+            }
+            .stats { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-container">
-        <aside class="sidebar">
-            <div class="profile-area">
-                <div class="avatar-box">SS</div>
-                <h1 class="name-title">Sunil Shedge</h1>
-                <p class="sub-role">Senior Flutter Developer</p>
-            </div>
-
-            <div class="contact-panel">
-                <a href="mailto:swarajya888@gmail.com" class="contact-card">
-                    <i class="bi bi-envelope-heart-fill"></i> swarajya888@gmail.com
-                </a>
-                <a href="tel:+918668796251" class="contact-card">
-                    <i class="bi bi-phone-vibrate-fill"></i> +91 8668796251
-                </a>
-                <a href="https://linkedin.com/in/sunilshedge" target="_blank" class="contact-card">
-                    <i class="bi bi-linkedin"></i> LinkedIn Profile
-                </a>
-                <a href="https://github.com/this-sunil" target="_blank" class="contact-card">
-                    <i class="bi bi-github"></i> GitHub Repositories
-                </a>
-                <div class="contact-card">
-                    <i class="bi bi-geo-alt-fill"></i> Pune, MH, India
-                </div>
-            </div>
-
-            <div class="skill-section">
-                <span class="section-label">Mastery</span>
-                <div class="skill-unit">
-                    <div class="skill-label">Flutter & Dart <span>95%</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
-                </div>
-                <div class="skill-unit">
-                    <div class="skill-label">BLoC Architecture <span>90%</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
-                </div>
-                <div class="skill-unit">
-                    <div class="skill-label">Node.js Backend <span>80%</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 80%"></div></div>
-                </div>
-                <div class="skill-unit">
-                    <div class="skill-label">CI/CD & DevOps <span>85%</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 85%"></div></div>
-                </div>
-            </div>
-
-            <div class="edu-module">
-                <span class="section-label">Academic</span>
-                <div class="edu-card">
-                    <span class="edu-title">M.C.S. (Computer Science)</span>
-                    <span class="edu-info">Sarhad College, Pune</span>
-                    <span class="edu-date">2019 – 2021 | 77% Aggregate</span>
-                </div>
-                <div class="edu-card">
-                    <span class="edu-title">B.C.S. (Computer Science)</span>
-                    <span class="edu-info">Vishwakarma College, Pune</span>
-                    <span class="edu-date">2015 – 2018</span>
-                </div>
-                <div class="edu-card">
-                    <span class="edu-title">HSC (Class XII)</span>
-                    <span class="edu-info">S.M.S. Mohite Patil Jr. College</span>
-                    <span class="edu-date">Batch 2015</span>
-                </div>
-                <div class="edu-card">
-                    <span class="edu-title">SSC (Class X)</span>
-                    <span class="edu-info">Dr. V.G. Kakasaheb Vidyalaya</span>
-                    <span class="edu-date">75% | Batch 2013</span>
-                </div>
-            </div>
-        </aside>
-
-        <main class="content-area">
-            <section class="impact-strip">
-                <div class="impact-card">
-                    <div class="impact-value">15+</div>
-                    <div class="impact-label">Apps Delivered</div>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-value">4+ Years</div>
-                    <div class="impact-label">Production Experience</div>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-value">35%</div>
-                    <div class="impact-label">Ad Revenue Uplift</div>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-value">60%</div>
-                    <div class="impact-label">Faster Delivery via CI/CD</div>
-                </div>
-            </section>
-            
-            <section id="about" class="mb-5">
-                <span class="section-label">About Me</span>
-                <h2 class="section-title">Senior Mobile Engineer</h2>
-                <p style="font-size: 1.2rem; line-height: 1.9; color: var(--primary); font-weight: 500; text-align: justify;">
-                    Senior Flutter Developer with <strong>4+ years of expertise</strong> in building and scaling enterprise-level mobile ecosystems. 
-                    I specialize in <strong>Clean Architecture</strong>, modular design patterns, and high-performance state management. 
-                    With over <strong>15 successful launches</strong> on the Play Store and App Store, I bring a deep understanding of 
-                    rendering optimization (RepaintBoundary), native platform bridging (Method Channels), and automated CI/CD pipelines (Shorebird & GitHub Actions).
-                </p>
-                <div class="summary-actions">
-                    <a href="mailto:swarajya888@gmail.com" class="btn-prime">
-                        <i class="bi bi-send-fill"></i> Hire Me
-                    </a>
-                    <a href="https://farmer-brand.vercel.app/" target="_blank" class="btn-ghost">
-                        <i class="bi bi-window-fullscreen"></i> Portfolio Website
-                    </a>
-                </div>
-            </section>
-
-            <section id="work" class="mb-5">
-                <span class="section-label">Career</span>
-                <h2 class="section-title">Professional Experience</h2>
-
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <h3 class="job-name">Full Stack Developer</h3>
-                        <span class="job-period">April 2025 – Present</span>
-                    </div>
-                    <span class="company-tag">Self Employment | Full-Cycle Development</span>
-                    <ul class="duty-list">
-                        <li><strong>Architectural Design:</strong> Developed end-to-end mobile and web architectures using Flutter with <strong>Node.js and PostgreSQL</strong> backends.</li>
-                        <li><strong>Security Protocols:</strong> Built secure RESTful APIs utilizing <strong>JWT authentication</strong> and robust Role-Based Access Control (RBAC).</li>
-                        <li><strong>Native Level Optimization:</strong> Proactively resolved deep-level <strong>Xcode build failures</strong> and identified/fixed critical <strong>ANR (App Not Responding)</strong> issues.</li>
-                        <li><strong>OTA Management:</strong> Configured <strong>Shorebird</strong> for instant Over-The-Air hotfixes, drastically reducing deployment friction.</li>
-                        <li><strong>Financial Integration:</strong> Seamlessly integrated global and domestic payment systems including <strong>Stripe, PhonePe, and Razorpay</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="job-header">
-                        <h3 class="job-name">Senior Flutter Developer</h3>
-                        <span class="job-period">July 2022 – April 2025</span>
-                    </div>
-                    <span class="company-tag">Sunra Softtech Pvt. Ltd. | Pune, MH</span>
-                    <ul class="duty-list">
-                        <li><strong>Rendering Excellence:</strong> Optimized heavy UI rebuilds using <strong>RepaintBoundary</strong> and lazy-loading lists, maintaining a consistent 60fps.</li>
-                        <li><strong>Native Integration:</strong> Authored custom <strong>Method Channels</strong> to bridge Flutter with native background services and biometric hardware.</li>
-                        <li><strong>Routing & Deep Linking:</strong> Implemented <strong>GoRouter</strong> for nested navigation and Universal Deep Linking for marketing funnel optimization.</li>
-                        <li><strong>Scaling State:</strong> Led the engineering team in adopting <strong>BLoC with Mixins</strong>, improving maintainability by 60%.</li>
-                        <li><strong>Automated Delivery:</strong> Designed and maintained <strong>GitHub Actions</strong> CI/CD workflows for multi-flavor application distributions.</li>
-                        <li><strong>Error Resilience:</strong> Integrated <strong>Sentry.io</strong> for real-time production health monitoring and crash analytics.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item" style="border:none;">
-                    <div class="job-header">
-                        <h3 class="job-name">Junior Flutter Developer</h3>
-                        <span class="job-period">January 2022 – July 2022</span>
-                    </div>
-                    <span class="company-tag">Syscryption Technology</span>
-                    <ul class="duty-list">
-                        <li>Accelerated feature development cycles by 20% through efficient <strong>REST API</strong> logic and Dio-based networking layers.</li>
-                        <li>Improved stability by 40% by resolving core legacy bugs and implementing <strong>GetX</strong> for lightweight dependency injection.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="projects" class="mb-5">
-                <span class="section-label">Portfolio</span>
-                <h2 class="section-title">Major Production Projects</h2>
-                
-                <div class="project-grid">
-                    
-                    <div class="project-card">
-                        <i class="bi bi-map-fill p-icon"></i>
-                        <h4 class="p-name">Jeeyo Ride (Cab Booking Platform)</h4>
-                        <div class="tag-wrap">
-                            <span class="tech-tag">Google Maps SDK</span>
-                            <span class="tech-tag">Socket.IO</span>
-                            <span class="tech-tag">Geofencing</span>
-                            <span class="tech-tag">BLoC</span>
-                        </div>
-                        <p class="p-desc">
-                            A high-concurrency cab booking solution. Developed real-time driver-passenger tracking using <strong>WebSockets</strong> and optimized route-finding algorithms with Google Directions. 
-                            Built a sophisticated geofencing engine to alert drivers of nearby ride requests and integrated real-time fare calculation logic.
-                        </p>
-                        <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" target="_blank" class="btn-prime">
-                            <i class="bi bi-google-play"></i> View Play Store
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <i class="bi bi-play-circle-fill p-icon"></i>
-                        <h4 class="p-name">Sense Wheel (OTT Platform)</h4>
-                        <div class="tag-wrap">
-                            <span class="tech-tag">PodPlayer</span>
-                            <span class="tech-tag">DRM Support</span>
-                            <span class="tech-tag">Sqflite Cache</span>
-                            <span class="tech-tag">Clean Arch</span>
-                        </div>
-                        <p class="p-desc">
-                            A regional streaming platform. Engineered a custom playback engine using <strong>PodPlayer</strong> with multi-bitrate support. 
-                            Implemented a secure offline encrypted storage module using <strong>Sqflite</strong> for DRM-protected downloads.
-                        </p>
-                        <a href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" target="_blank" class="btn-prime">
-                            <i class="bi bi-google-play"></i> View Play Store
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <i class="bi bi-server p-icon"></i>
-                        <h4 class="p-name">Vehicle Repair Marketplace Backend</h4>
-                        <div class="tag-wrap">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Prisma</span>
-                            <span class="tech-tag">Cloudinary</span>
-                        </div>
-                        <p class="p-desc">
-                            Built a high-performance backend managing 120+ endpoints. Implemented complex SQL relationships using <strong>Prisma</strong> and handled multi-tenant media uploads 
-                            using <strong>Multer and Cloudinary</strong>.
-                        </p>
-                        <a href="https://github.com/this-sunil/vehicle-repair-service" target="_blank" class="btn-prime">
-                            <i class="bi bi-github"></i> Source Code
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <footer style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); text-align: right;">
-                <h4 class="name-title" style="font-size: 1.2rem;">Sunil Shedge</h4>
-                <p class="sub-role" style="font-size: 0.65rem;">Senior Flutter Engineer | 2026</p>
-                <p class="small text-muted mt-3">"Expertise in Crafting High-Performance Mobile Experiences."</p>
-            </footer>
-
-        </main>
+<div class="bento-wrapper">
+    <div class="card profile">
+        <div class="avatar">SS</div>
+        <h3 style="font-size: 1.6rem; margin-bottom: 4px;">Sunil Shedge</h3>
+        <p style="margin-bottom: 12px; color: var(--accent); font-weight: 600;">Senior Flutter Engineer</p>
+        <p style="font-size: 0.85rem;"><i class="bi bi-geo-alt"></i> Pune, India</p>
+        
+        <div class="tech-stack">
+            <span class="tag">BLoC</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Clean Arch</span>
+        </div>
     </div>
+
+    <div class="card hero">
+        <h1>Building <span style="color: var(--accent);">Premium</span> Mobile Experiences.</h1>
+        <p style="max-width: 600px; font-size: 1.1rem;">Architecting high-performance cross-platform applications with a focus on scalable code and fluid UI/UX.</p>
+    </div>
+
+    <div class="card stats">
+        <div class="stat-item"><h3>4+</h3><p>Years XP</p></div>
+        <div class="stat-item"><h3>15+</h3><p>Apps Live</p></div>
+        <div class="stat-item"><h3>60</h3><p>FPS Fluid</p></div>
+    </div>
+
+    <div class="card social">
+        <a href="#" class="social-link"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a href="#" class="social-link"><i class="bi bi-github"></i> GitHub</a>
+        <a href="mailto:swarajya888@gmail.com" class="social-link" style="background: var(--accent); color: var(--bg); margin-top: 10px; font-weight: 800;">HIRE ME</a>
+    </div>
+
+    <div class="card experience">
+        <h2>Professional Journey</h2>
+        <div style="margin-bottom: 30px; position: relative; padding-left: 20px; border-left: 2px solid var(--border);">
+            <h4 style="color: white;">Full Stack Freelancer</h4>
+            <small style="color: var(--accent); font-weight: 600;">2025 — Present</small>
+            <ul>
+                <li>Leading "Kharcha" - A premium finance app with Bento UI.</li>
+                <li>Full-stack systems using Node.js & PostgreSQL.</li>
+            </ul>
+        </div>
+        <div style="position: relative; padding-left: 20px; border-left: 2px solid var(--border);">
+            <h4 style="color: white;">Senior Flutter Developer</h4>
+            <small style="color: var(--text-dim);">Sunra Softtech | 2022 — 2025</small>
+            <ul>
+                <li>Developed Sense Wheel OTT with offline encryption.</li>
+                <li>Optimized legacy architectures for high-traffic apps.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card projects">
+        <h2>Selected Works</h2>
+        <div class="project-item">
+            <h4 style="color: white;">Jeeyo Ride</h4>
+            <p style="font-size: 0.9rem;">Real-time cab booking engine utilizing Socket.io for live tracking and seamless driver-user handshake.</p>
+        </div>
+        <div class="project-item">
+            <h4 style="color: white;">Sense Wheel</h4>
+            <p style="font-size: 0.9rem;">High-end OTT platform featuring PodPlayer integration and secure, encrypted offline storage protocols.</p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
