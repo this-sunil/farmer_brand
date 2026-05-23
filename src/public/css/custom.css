@@ -944,11 +944,12 @@ h2 {
     inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
 
-/* .circle  {
+.circle .number  {
   position: relative;
   bottom: -70px;
   right: -70px;
   z-index: 10;
+  display: none;
   font-size: 16px;
   font-weight: 600;
   color: black;
@@ -965,9 +966,11 @@ h2 {
     0 -2px 2px rgba(255, 255, 255, 0.5),
     inset 0 4px 2px rgba(0, 0, 0, 0.25),
     inset 0 -2px 2px rgba(255, 255, 255, 0.5);
-} */
+}
 
-
+.circle .number span {
+  font-size: 14px;
+}
 
 .cards-image {
   display: flex;
