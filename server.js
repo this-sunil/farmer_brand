@@ -38,16 +38,14 @@ const limiter=rateLimit({
     });
  }
 });
+
 app.use(xss());
-
-
-
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.use("/public",express.static(path.join(process.cwd(),"src/public")));
 app.use('/bootstrap-css', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/css')));
 app.use('/bootstrap-js', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/js')));
-
 app.set("view engine","ejs");
+
 app.set("views",path.join(process.cwd(),"/src/views"));
 app.get("/",(req,res)=>{
     return res.render("dashboard");
@@ -68,7 +66,6 @@ app.use("/api",bannerRoute);
 app.use("/api",notificationRoute);
 app.use("/api",farmerRoute);
 app.use("/api",productRoute);
-
 app.use("/api",favFarmerRoute);
 
 app.listen(process.env.PORT,()=>{
