@@ -10,6 +10,7 @@ import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import favFarmerRoute from "./src/routes/favRoute.js";
+import { xss } from "express-xss-sanitizer";
 
 const app=express();
 app.use(express.json());
@@ -37,6 +38,7 @@ const limiter=rateLimit({
     });
  }
 });
+app.use(xss());
 
 
 
