@@ -10,7 +10,6 @@ import notificationRoute from "./src/routes/notificationRoute.js";
 import farmerRoute from "./src/routes/farmerRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import favFarmerRoute from "./src/routes/favRoute.js";
-import { xss } from "express-xss-sanitizer";
 
 const app=express();
 app.use(express.json());
@@ -39,7 +38,7 @@ const limiter=rateLimit({
  }
 });
 
-app.use(xss());
+
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
 app.use("/public",express.static(path.join(process.cwd(),"src/public")));
 app.use('/bootstrap-css', express.static(path.join(process.cwd(),'/node_modules/bootstrap/dist/css')));
