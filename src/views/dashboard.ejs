@@ -143,10 +143,6 @@
       * {
         box-sizing: border-box;
       }
-      .responsibility-list > li > strong{
-        font-size: 16px;
-        color: rgb(103, 45, 203);
-      }
 
       body {
         margin: 0;
@@ -316,7 +312,7 @@
         border: 1px dashed #d6e1ee;
       }
 
-      .experience-cards {
+      .exp-block {
         margin-bottom: 30px;
         padding: 18px 18px 12px;
         border: 1px solid #edf1f7;
@@ -324,7 +320,7 @@
         background: #fff;
       }
 
-      .company {
+      .exp-title {
         margin-bottom: 5px;
         font-size: 1.08rem;
         font-weight: 800;
@@ -609,7 +605,7 @@
         </div>
       </div>
     </section>
-    <!-- <section class="experience-section" id="experience">
+    <section class="experience-section" id="experience">
       <h2 class="section-title">Professional Experience</h2>
 
       <div class="experience-cards">
@@ -859,183 +855,7 @@
           </div>
         </div>
       </div>
-    </section> -->
-    <section class="experience-section" id="experience">
-       <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-cards">
-              <h5 class="company text-info">Full Stack Developer</h5>
-              <p class="exp-meta">Self Employment | April 2025 – Present</p>
-              <ul class="responsibility-list">
-                <li>
-                  <strong>Full Stack Architecture:</strong> Developed end-to-end
-                  mobile solutions using Flutter with
-                  <strong>Node.js/PostgreSQL</strong> backends.
-                </li>
-                <li>
-                  <strong>Security & API:</strong> Built secure RESTful APIs
-                  utilizing <strong>JWT authentication</strong> and Role-Based
-                  Access Control (RBAC); implemented
-                  <strong>.env-based environment configuration</strong> to
-                  securely manage sensitive credentials and API keys.
-                </li>
-                <li>
-                  <strong>Crash Reporting & Stability:</strong> Resolved
-                  <strong>iOS build and crash issues in Xcode</strong> by
-                  troubleshooting CocoaPods dependency conflicts and Runner
-                  configuration errors; identified and fixed
-                  <strong>ANR issues</strong> to improve overall app stability
-                  and performance.
-                </li>
-                <li>
-                  <strong>Migrated iOS dependencies</strong> from
-                  <strong>CocoaPods to Swift Package Manager (SPM)</strong>,
-                  resolving <strong>dependency conflicts</strong> and improving
-                  <strong>build stability in Xcode</strong>.
-                </li>
-                <li>
-                  <strong>OTA Updates:</strong> Delivered over-the-air (OTA)
-                  updates using <strong>Shorebird</strong>, enabling hotfix
-                  deployments without requiring users to download a new version.
-                </li>
-                <li>
-                  <strong>Database Optimization:</strong> Designed complex
-                  PostgreSQL schemas with optimized query performance.
-                </li>
-                <li>
-                  <strong>Monetization:</strong> Seamlessly integrated AdMob and
-                  international payment gateways.
-                </li>
-              </ul>
-            </div>
-
-            <div class="experience-cards">
-              <h5 class="company text-info">Senior Flutter Developer</h5>
-              <p class="exp-meta">
-                Sunra Softtech Pvt. Ltd. | July 2022 – April 2025
-              </p>
-              <ul class="responsibility-list">
-                <li>
-                  Optimized <strong>AdMob Integration</strong>, yielding revenue
-                  growth and faster rendering.
-                </li>
-                <li>
-                  Optimized unnecessary rebuilds using
-                  <strong>
-                    const, RepaintBoundary, lazy loading, asset optimization,
-                    app size reduction via ProGuard rules, and null safety
-                    improvements </strong
-                  >.
-                </li>
-                <li>
-                  <strong>Native Performance:</strong> Engineered
-                  high-performance native bridges for specialized background
-                  services and
-                  <strong>local storage access using Method Channels</strong>.
-                </li>
-                <li>
-                  <strong>Dynamic Navigation:</strong> Implemented
-                  <strong>Deep Linking (App Links & Universal Links)</strong>
-                  for seamless user journeys into specific in-app content.
-                </li>
-                <li>
-                  Integrated
-                  <strong>
-                    Firebase Phone Authentication, Cloud Firestore, Google
-                    Sign-In, and Google Maps marker/polyline features </strong
-                  >.
-                </li>
-                <li>
-                  <strong>State Management Mastery:</strong> Led
-                  <strong>BLoC</strong> adoption across core modules and used
-                  <strong>Mixins</strong> for reusable logic.
-                </li>
-                <li>
-                  <strong>Modern Routing:</strong> Implemented
-                  <strong>GoRouter</strong> for declarative navigation.
-                </li>
-                <li>
-                  <strong>Secure Fintech Integration:</strong> Built payment
-                  modules with
-                  <strong>
-                    Razorpay, Stripe, Paytm, and UPI (Method Channel) </strong
-                  >.
-                </li>
-                <li>
-                  Expanded market reach by multilingual support using
-                  <strong>google_mlkit_translation</strong>.
-                </li>
-                <li>
-                  Implemented
-                  <strong>Firebase Cloud Messaging (FCM)</strong> for push
-                  notifications and better re-engagement.
-                </li>
-                <li>
-                  <strong>CI/CD Automation:</strong> Streamlined release process
-                  using <strong>GitHub Actions</strong>.
-                </li>
-                <li>
-                  <strong>Software Architecture:</strong> Proficient with
-                  <strong>Clean Architecture and SOLID principles</strong> for
-                  enterprise-scale apps.
-                </li>
-              </ul>
-            </div>
-
-            <div class="experience-cards">
-              <h5 class="company text-info">Junior Flutter Developer</h5>
-              <p class="exp-meta ">
-                Syscryption Technology | Jan 2022 – Jul 2022
-              </p>
-              <ul class="responsibility-list">
-                <li>
-                  <strong>Accelerated feature development</strong> by
-                  integrating RESTful APIs and improving data flow across
-                  modules.
-                </li>
-
-                <li>
-                  <strong>Enhanced application stability</strong> by identifying
-                  and resolving critical bugs and performance bottlenecks.
-                </li>
-
-                <li>
-                  <strong>Implemented GetX architecture</strong> for routing,
-                  state management, and dependency injection in scalable
-                  applications.
-                </li>
-
-                <li>
-                  <strong>Optimized performance</strong> using Get.lazyPut() and
-                  efficient dependency injection to reduce memory usage.
-                </li>
-
-                <li>
-                  <strong>Structured REST API integration</strong> inside GetX
-                  controllers ensuring clear separation of UI and business logic
-                  layers.
-                </li>
-
-                <li>
-                  <strong>Managed controller lifecycle methods</strong> (onInit,
-                  onReady, onClose) for better resource handling and performance
-                  optimization.
-                </li>
-
-                <li>
-                  <strong>Developed barcode scanning feature</strong> to capture
-                  product details in real-time using device camera.
-                </li>
-
-                <li>
-                  <strong
-                    >Integrated Liberty Paint product lookup system</strong
-                  >
-                  enabling quick search and retrieval of product information via
-                  scanned barcode.
-                </li>
-              </ul>
-            </div>
-          </section>
+    </section>
 
     <section id="skills">
       <h4 class="section-title">Technical Skills</h4>
@@ -1722,16 +1542,15 @@
 
     
 
-    <section id="projects" class="py-5 mx-4">
-   <h4 class="text-center"><strong>My Projects</strong></h4>
+    <section id="projects" class="py-5">
+   <h4 class="text-center "><strong>My Projects</strong></h4>
 
-    <div class="row g-4">
+  <div class="row g-4">
 
     <!-- Sense Wheel -->
     <div class="col-lg-6 col-md-6">
       <article class="project-card h-100">
         <div class="d-flex justify-content-between align-items-start mb-3">
-          
           <h5 class="project-title mb-0">Sense Wheel (OTT Platform)</h5>
           <span class="project-chip">Flutter</span>
         </div>
@@ -1895,13 +1714,15 @@
     <div class="col-lg-6 col-md-6">
       <article class="project-card h-100">
         <div class="d-flex justify-content-between align-items-start mb-3">
-          <h5 class="project-title mb-0">Health Care</h5>
+          <h5 class="project-title mb-0">Green Life</h5>
           <span class="project-chip">Flutter</span>
         </div>
 
         <p class="project-desc">
-         Health care also focuses on promoting healthy lifestyles, preventing diseases through vaccination and regular checkups, and ensuring access to essential medical services.
-
+          Eco-friendly lifestyle application that encourages sustainable living
+          by promoting tree plantation, waste management, recycling,
+          environmental awareness, and community participation through an
+          intuitive mobile interface.
         </p>
 
         <div class="d-flex flex-wrap gap-2">
@@ -1922,7 +1743,7 @@
       </article>
     </div>
 
-    </div>
+  </div>
 </section>
 
      <!-- <section id="projects" class="py-5">
