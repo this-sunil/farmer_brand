@@ -163,7 +163,96 @@
         padding: 40px 0;
       }
 
-      
+        .experience-section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      margin-bottom: 3rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary-accent);
+      border-radius: 2px;
+    }
+
+    /* Card Styling */
+    .experience-cards {
+      background: #ffffff;
+      border-radius: 1rem !important;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid #f1f3f5;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 2rem;
+      border-left: 5px solid var(--primary-accent); /* Timeline accent */
+    }
+
+    .experience-cards:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    /* List Group Custom Styling */
+    .custom-list-group {
+      border-radius: 0.75rem !important;
+      overflow: hidden;
+      border: 1px solid #e9ecef;
+    }
+
+    .custom-list-group .list-group-item {
+      background-color: #fcfcfd;
+      border: none;
+      border-bottom: 1px solid #e9ecef;
+      transition: background-color 0.2s ease;
+    }
+
+    .custom-list-group .list-group-item:last-child {
+      border-bottom: none;
+    }
+
+    .custom-list-group .list-group-item:hover {
+      background-color: #f8f9fa;
+    }
+
+    /* Icon Wrapper */
+    .icon-wrapper {
+      width: 28px;
+      height: 28px;
+      background: rgba(13, 110, 253, 0.1);
+      color: var(--primary-accent);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* Date Badge Styling */
+    .date-badge {
+      background-color: #e9ecef;
+      color: #495057;
+      font-weight: 600;
+    }
+
+    /* Custom Badges inside text */
+    .metric-badge {
+      font-weight: 600;
+      padding: 0.35em 0.65em;
+      border-radius: 0.375rem;
+    }
 
       .resume-card {
         max-width: 1140px;
@@ -605,257 +694,220 @@
         </div>
       </div>
     </section>
-    <section class="experience-section" id="experience">
-      <h2 class="section-title">Professional Experience</h2>
-
-      <div class="experience-cards">
-        <h3>Full Stack Developer</h3>
-        <p class="company">
-          Self-Employed -
-          <a
-            href="https://github.com/this-sunil/vehicle-repair-service"
-            class="btn btn-primary btn-sm"
-          >
-            Source Code Github
-          </a>
-        </p>
-        <p class="duration">April 2025 – Present</p>
-        <span class="text-info fw-bold">Responsibility:-</span>
-
-        <ul class="list-group list-group-flush shadow-sm rounded bullets">
-          <li class="list-group-item py-3">
-            <strong class="text-info">Full Stack Development</strong><br />
-            Designing and developing
-            <span class="fw-semibold">Flutter mobile applications</span> with
-            scalable backend systems using
-            <span class="fw-semibold">Node.js, Express.js, and PostgreSQL</span
-            >, ensuring production-ready architecture and clean code practices.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Backend Architecture</strong><br />
-            Building secure
-            <span class="fw-semibold">RESTful APIs</span> with
-            <span class="fw-semibold"
-              >JWT authentication and role-based access control</span
-            >, improving application security and modularity.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">System Design & Database</strong><br />
-            Designing optimized
-            <span class="fw-semibold">PostgreSQL schemas</span> with foreign key
-            relationships, indexed queries, and transaction-safe workflows to
-            prevent data conflicts.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">App Monetization & Integrations</strong
-            ><br />
-            Implementing
-            <span class="fw-semibold"
-              >Google AdMob, Payment Gateway Integrations, Firebase Services,
-              and Third-party APIs</span
-            >, enhancing revenue models and backend efficiency.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Deployment & DevOps</strong><br />
-            Managing
-            <span class="fw-semibold">Play Store & App Store deployments</span>,
-            configuring build environments, and optimizing
-            <span class="fw-semibold">CI/CD pipelines</span> for faster release
-            cycles.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info"
-              >UI/UX & Performance Optimization</strong
-            ><br />
-            Creating
-            <span class="fw-semibold">responsive, modern UI designs</span> and
-            optimizing performance, resulting in smoother user experience and
-            improved app stability.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Client Collaboration</strong><br />
-            Handling end-to-end project lifecycle including
-            <span class="fw-semibold"
-              >requirement gathering, development, testing, and deployment</span
-            >, ensuring timely delivery and scalable solutions.
-          </li>
-        </ul>
+     <section class="experience-section" id="experience">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-5">
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="text-muted">My professional journey and the impact I've made along the way.</p>
       </div>
 
-      <div class="experience-cards">
-        <h3>Senior Flutter Developer</h3>
-        <p class="company">Sunra Softtech Pvt. Ltd., Pune</p>
-        <p class="duration">July 2022 – April 2025</p>
-        <span class="text-info fw-bold">Responsibility:-</span>
-        <ul class="list-group list-group-flush shadow-sm rounded bullets">
-          <li class="list-group-item py-3">
-            <strong class="text-info">Monetization & Ads</strong><br />
-            Integrated
-            <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with
-            <span class="fw-semibold"
-              >Banner, Interstitial, and Rewarded Ads</span
-            >, driving a
-            <span class="badge bg-success">+35% Monetization</span> and
-            improving ad rendering performance by
-            <span class="fw-semibold">30%</span>.
-          </li>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
 
-          <li class="list-group-item py-3">
-            <strong class="text-info">Testing & Stability</strong><br />
-            Performed extensive
-            <span class="fw-semibold">real-device and emulator testing</span>,
-            reducing
-            <span class="badge bg-success">−45% Production Errors</span>.
-            Integrated <span class="fw-semibold">Sentry</span> for real-time
-            crash reporting and monitoring.
-          </li>
+          <!-- Experience 1: Full Stack Developer -->
+          <article class="experience-cards">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-4">
+                <div class="mb-3 mb-md-0">
+                  <h3 class="h4 mb-2 fw-bold">
+                    <i class="fa-solid fa-layer-group text-primary me-2"></i>Full Stack Developer
+                  </h3>
+                  <p class="company mb-0 d-flex flex-wrap align-items-center gap-2 text-muted">
+                    <i class="fa-solid fa-briefcase"></i> Self-Employed
+                    <a href="https://github.com/this-sunil/vehicle-repair-service" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                      <i class="fa-brands fa-github me-1"></i> Source Code
+                    </a>
+                  </p>
+                </div>
+                <span class="badge date-badge fs-6 fw-medium px-3 py-2">
+                  <i class="fa-regular fa-calendar me-1"></i>
+                  <time datetime="2025-04">April 2025</time> – Present
+                </span>
+              </div>
 
-          <li class="list-group-item py-3">
-            <strong class="text-info">Backend & Integrations</strong><br />
-            Integrated
-            <span class="fw-semibold"
-              >Firebase, Google Maps, Razorpay, and OneSignal</span
-            >, enhancing backend communication, push notifications, and data
-            handling efficiency by <span class="badge bg-success">+40%</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">State Management</strong><br />
-            Implemented
-            <span class="fw-semibold">BLoC, Provider, and GetX</span>
-            architectures, improving application
-            <span class="badge bg-success"
-              >+50% Scalability & Maintainability</span
-            >.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info"
-              >CI/CD, Deployment & Build Optimization</strong
-            ><br />
-            Built and maintained
-            <span class="fw-semibold">CI/CD pipelines</span> using
-            <span class="fw-semibold">GitHub Actions</span> for automated builds
-            and releases. Led
-            <span class="fw-semibold">Play Store & App Store deployments</span>,
-            reducing <span class="badge bg-success">−60% Time-to-Market</span>.
-            Resolved complex <span class="fw-semibold">Gradle</span> and
-            <span class="fw-semibold">JDK compatibility issues</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">UI/UX & Animations</strong><br />
-            Designed
-            <span class="fw-semibold"
-              >interactive UI components, custom widgets, and animations</span
-            >, increasing
-            <span class="badge bg-success">+30% User Engagement</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Collaboration & APIs</strong><br />
-            Collaborated with
-            <span class="fw-semibold">backend and QA teams</span> to refine
-            <span class="fw-semibold">REST API integrations</span>, improving
-            application responsiveness by
-            <span class="badge bg-success">+25%</span>.
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-cards">
-        <h3>Junior Flutter Developer</h3>
-        <p class="company">Syscryption Technology Pvt. Ltd., Pune</p>
-        <p class="duration">Jan 2022 – Jul 2022</p>
-        <span class="text-info fw-bold">Responsibility:-</span>
-        <ul class="list-group list-group-flush shadow-sm rounded bullets">
-          <li class="list-group-item py-3">
-            <strong class="text-info">Flutter Development</strong><br />
-            Developed <span class="fw-semibold">Flutter applications</span> with
-            <span class="fw-semibold">REST API integration</span> and complete
-            <span class="fw-semibold">CRUD operations</span>, accelerating
-            feature delivery by
-            <span class="fw-semibold text-success">20 percent</span>.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Maps and Payments</strong><br />
-            Integrated <span class="fw-semibold">Google Maps</span> for
-            location-based services and
-            <span class="fw-semibold">Razorpay</span> for secure and reliable
-            payment processing.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info"
-              >Bug Fixing and Performance Optimization</strong
-            ><br />
-            Identified and resolved
-            <span class="fw-semibold">high-impact bugs</span> while optimizing
-            application performance, improving overall
-            <span class="fw-semibold text-success"
-              >app stability by 40 percent</span
-            >.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Reusable UI Components</strong><br />
-            Designed and implemented
-            <span class="fw-semibold">reusable UI components</span> and
-            <span class="fw-semibold">custom widgets</span>, ensuring consistent
-            design patterns and improved maintainability.
-          </li>
-
-          <li class="list-group-item py-3">
-            <strong class="text-info">Security and Authentication</strong
-            ><br />
-            Implemented
-            <span class="fw-semibold">QR code scanning functionality</span> to
-            support
-            <span class="fw-semibold">secure authentication workflows</span>.
-          </li>
-        </ul>
-      </div>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="cards border-0 shadow-lg rounded-4 p-4 text-center">
-            <div class="mb-3">
-              <span class="badge bg-success px-3 py-2 rounded-pill">
-                6 Month Internship Completed
-              </span>
+              <h6 class="text-uppercase text-muted fw-bold mb-3 tracking-wide">Key Responsibilities</h6>
+              <ul class="list-group list-group-flush custom-list-group">
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-code"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Full Stack Development</span>
+                    Designing and developing <span class="fw-semibold">Flutter mobile applications</span> with scalable backend systems using <span class="fw-semibold">Node.js, Express.js, and PostgreSQL</span>, ensuring production-ready architecture and clean code practices.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-shield-halved"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Backend Architecture</span>
+                    Building secure <span class="fw-semibold">RESTful APIs</span> with <span class="fw-semibold">JWT authentication and role-based access control</span>, improving application security and modularity.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-database"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">System Design & Database</span>
+                    Designing optimized <span class="fw-semibold">PostgreSQL schemas</span> with foreign key relationships, indexed queries, and transaction-safe workflows to prevent data conflicts.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-money-bill-trend-up"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">App Monetization & Integrations</span>
+                    Implementing <span class="fw-semibold">Google AdMob, Payment Gateway Integrations, Firebase Services, and Third-party APIs</span>, enhancing revenue models and backend efficiency.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-rocket"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Deployment & DevOps</span>
+                    Managing <span class="fw-semibold">Play Store & App Store deployments</span>, configuring build environments, and optimizing <span class="fw-semibold">CI/CD pipelines</span> for faster release cycles.
+                  </div>
+                </li>
+              </ul>
             </div>
+          </article>
 
-            <h4 class="fw-bold text-success mb-2">
-              Flutter Developer Internship
-            </h4>
+          <!-- Experience 2: Senior Flutter Developer -->
+          <article class="experience-cards">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-4">
+                <div class="mb-3 mb-md-0">
+                  <h3 class="h4 mb-2 fw-bold">
+                    <i class="fa-solid fa-mobile-screen text-primary me-2"></i>Senior Flutter Developer
+                  </h3>
+                  <p class="company mb-0 text-muted d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-building"></i> Sunra Softtech Pvt. Ltd., Pune
+                  </p>
+                </div>
+                <span class="badge date-badge fs-6 fw-medium px-3 py-2">
+                  <i class="fa-regular fa-calendar me-1"></i>
+                  <time datetime="2022-07">July 2022</time> – <time datetime="2025-04">April 2025</time>
+                </span>
+              </div>
 
-            <p class="mb-3">
-              Successfully completed a 6-month internship program gaining
-              hands-on experience in Flutter development, REST API integration,
-              and backend collaboration.
-            </p>
+              <h6 class="text-uppercase text-muted fw-bold mb-3 tracking-wide">Key Responsibilities</h6>
+              <ul class="list-group list-group-flush custom-list-group">
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-rectangle-ad"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Monetization & Ads</span>
+                    Integrated <span class="fw-semibold">Google Mobile Ads (AdMob)</span> with <span class="fw-semibold">Banner, Interstitial, and Rewarded Ads</span>, driving a <span class="badge bg-success metric-badge">+35% Monetization</span> and improving ad rendering performance by <span class="fw-semibold">30%</span>.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-bug-slash"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Testing & Stability</span>
+                    Performed extensive <span class="fw-semibold">real-device and emulator testing</span>, reducing <span class="badge bg-success metric-badge">−45% Production Errors</span>. Integrated <span class="fw-semibold">Sentry</span> for real-time crash reporting and monitoring.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-plug-circle-bolt"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Backend & Integrations</span>
+                    Integrated <span class="fw-semibold">Firebase, Google Maps, Razorpay, and OneSignal</span>, enhancing backend communication, push notifications, and data handling efficiency by <span class="badge bg-success metric-badge">+40%</span>.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-diagram-project"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">State Management</span>
+                    Implemented <span class="fw-semibold">BLoC, Provider, and GetX</span> architectures, improving application <span class="badge bg-success metric-badge">+50% Scalability & Maintainability</span>.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-gears"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">CI/CD, Deployment & Build Optimization</span>
+                    Built and maintained <span class="fw-semibold">CI/CD pipelines</span> using <span class="fw-semibold">GitHub Actions</span> for automated builds and releases. Led <span class="fw-semibold">Play Store & App Store deployments</span>, reducing <span class="badge bg-success metric-badge">−60% Time-to-Market</span>. Resolved complex <span class="fw-semibold">Gradle</span> and <span class="fw-semibold">JDK compatibility issues</span>.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </article>
 
-            <p class="fw-semibold">Duration: Dec 2020 – June 2021</p>
+          <!-- Experience 3: Junior Flutter Developer -->
+          <article class="experience-cards">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-4">
+                <div class="mb-3 mb-md-0">
+                  <h3 class="h4 mb-2 fw-bold">
+                    <i class="fa-solid fa-seedling text-primary me-2"></i>Junior Flutter Developer
+                  </h3>
+                  <p class="company mb-0 text-muted d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-building"></i> Syscryption Technology Pvt. Ltd., Pune
+                  </p>
+                </div>
+                <span class="badge date-badge fs-6 fw-medium px-3 py-2">
+                  <i class="fa-regular fa-calendar me-1"></i>
+                  <time datetime="2022-01">Jan 2022</time> – <time datetime="2022-07">Jul 2022</time>
+                </span>
+              </div>
 
-            <div class="mt-4">
-              <a
-                href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
-                target="_blank"
-                class="btn btn-primary px-4 rounded-pill shadow"
-              >
-                Download Certificate
-              </a>
+              <h6 class="text-uppercase text-muted fw-bold mb-3 tracking-wide">Key Responsibilities</h6>
+              <ul class="list-group list-group-flush custom-list-group">
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-code"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Flutter Development</span>
+                    Developed <span class="fw-semibold">Flutter applications</span> with <span class="fw-semibold">REST API integration</span> and complete <span class="fw-semibold">CRUD operations</span>, accelerating feature delivery by <span class="fw-semibold text-success">20 percent</span>.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-map-location-dot"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Maps and Payments</span>
+                    Integrated <span class="fw-semibold">Google Maps</span> for location-based services and <span class="fw-semibold">Razorpay</span> for secure and reliable payment processing.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-wrench"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Bug Fixing and Performance Optimization</span>
+                    Identified and resolved <span class="fw-semibold">high-impact bugs</span> while optimizing application performance, improving overall <span class="fw-semibold text-success">app stability by 40 percent</span>.
+                  </div>
+                </li>
+                <li class="list-group-item py-3 px-3 d-flex gap-3">
+                  <span class="icon-wrapper mt-1"><i class="fa-solid fa-cubes"></i></span>
+                  <div>
+                    <span class="d-block fw-bold mb-1">Reusable UI Components</span>
+                    Designed and implemented <span class="fw-semibold">reusable UI components</span> and <span class="fw-semibold">custom widgets</span>, ensuring consistent design patterns and improved maintainability.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Internship Section -->
+          <div class="row justify-content-center mt-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 text-center col-lg-8 bg-white">
+              <div class="mb-3">
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-4 py-2 rounded-pill fs-6">
+                  <i class="fa-solid fa-circle-check me-1"></i> 6 Month Internship Completed
+                </span>
+              </div>
+              <h4 class="fw-bold mb-3">
+                <i class="fa-solid fa-graduation-cap text-success me-2"></i>Flutter Developer Internship
+              </h4>
+              <p class="text-muted mb-4 px-md-5">
+                Successfully completed a 6-month internship program gaining hands-on experience in Flutter development, REST API integration, and backend collaboration.
+              </p>
+              <p class="fw-bold mb-4">
+                <i class="fa-regular fa-clock me-2"></i>Duration: Dec 2020 – June 2021
+              </p>
+              <div>
+                <a href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg px-5 rounded-pill shadow-sm">
+                  <i class="fa-solid fa-download me-2"></i>Download Certificate
+                </a>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section id="skills">
       <h4 class="section-title">Technical Skills</h4>

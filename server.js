@@ -55,6 +55,9 @@ app.get('/resume', (req, res) => {
 app.get('/portfolio', (req, res) => {
   return res.render('portfolio');
 });
+app.get('/port', (req, res) => {
+  return res.render('port');
+});
 
 app.use(limiter);
 // TODO: Routing
