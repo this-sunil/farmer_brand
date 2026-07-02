@@ -1542,14 +1542,18 @@
   <div class="container">
     <h2 class="text-center mb-4"><strong>My Projects</strong></h2>
 
-    <!-- Changed g-4 to g-3 for tighter vertical and horizontal spacing -->
     <div class="row g-3">
 
+      <!-- ================= TOP FEATURED PROJECTS (2 Column Layout) ================= -->
+      
       <!-- Sense Wheel -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="project-card h-100 d-flex flex-column p-3 border rounded shadow-sm bg-white">
+      <div class="col-12 col-md-6">
+        <article class="project-card h-100 d-flex flex-column p-4 border border-primary rounded shadow-sm bg-white position-relative">
           <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="project-title mb-0 fw-bold">Sense Wheel (OTT Platform)</h5>
+            <div>
+              <span class="badge bg-primary mb-1 text-uppercase tracking-wider" style="font-size: 0.7rem;">Featured</span>
+              <h4 class="project-title mb-0 fw-bold text-dark">Sense Wheel (OTT Platform)</h4>
+            </div>
             <span class="badge bg-secondary px-2 py-1">Flutter</span>
           </div>
 
@@ -1573,7 +1577,7 @@
               href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-primary w-100 btn-sm"
+              class="btn btn-primary w-100 btn-sm py-2 fw-semibold"
             >
               <i class="bi bi-google-play me-2"></i>Live App
             </a>
@@ -1582,10 +1586,13 @@
       </div>
 
       <!-- Jeeyo Ride -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="project-card h-100 d-flex flex-column p-3 border rounded shadow-sm bg-white">
+      <div class="col-12 col-md-6">
+        <article class="project-card h-100 d-flex flex-column p-4 border border-primary rounded shadow-sm bg-white">
           <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="project-title mb-0 fw-bold">JEEYO RIDE</h5>
+            <div>
+              <span class="badge bg-primary mb-1 text-uppercase tracking-wider" style="font-size: 0.7rem;">Featured</span>
+              <h4 class="project-title mb-0 fw-bold text-dark">JEEYO RIDE</h4>
+            </div>
             <span class="badge bg-secondary px-2 py-1">Flutter</span>
           </div>
 
@@ -1609,7 +1616,7 @@
               href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-primary w-100 btn-sm"
+              class="btn btn-primary w-100 btn-sm py-2 fw-semibold"
             >
               <i class="bi bi-google-play me-2"></i>Live App
             </a>
@@ -1617,8 +1624,11 @@
         </article>
       </div>
 
+
+      <!-- ================= OTHER PROJECTS (3 Column Grid Layout) ================= -->
+
       <!-- Gaming -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-3">
         <article class="project-card h-100 d-flex flex-column p-3 border rounded shadow-sm bg-white">
           <div class="d-flex justify-content-between align-items-start mb-2">
             <h5 class="project-title mb-0 fw-bold">Sanjeevani Gaming</h5>
@@ -1644,16 +1654,16 @@
               href="https://sanjivani999.in/download"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-primary w-100 btn-sm"
+              class="btn btn-outline-primary w-100 btn-sm"
             >
-              <i class="bi bi-download me-2"></i>Download App
+              <i class="bi bi-cloud-arrow-down me-2"></i>Download App
             </a>
           </div>
         </article>
       </div>
 
       <!-- Vehicle Repair App -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-3">
         <article class="project-card h-100 d-flex flex-column p-3 border rounded shadow-sm bg-white">
           <div class="d-flex justify-content-between align-items-start mb-2">
             <h5 class="project-title mb-0 fw-bold">Vehicle Repair Service</h5>
@@ -1671,7 +1681,6 @@
             <span class="badge bg-dark">Firebase</span>
             <span class="badge bg-dark">Google Maps</span>
             <span class="badge bg-dark">REST API</span>
-            <span class="badge bg-dark">Responsive UI</span>
           </div>
 
           <div>
@@ -1688,7 +1697,7 @@
       </div>
 
       <!-- Backend -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-3">
         <article class="project-card h-100 d-flex flex-column p-3 border rounded shadow-sm bg-white">
           <div class="d-flex justify-content-between align-items-start mb-2">
             <h5 class="project-title mb-0 fw-bold">Vehicle Repair Backend</h5>
@@ -1696,18 +1705,15 @@
           </div>
 
           <p class="project-desc text-muted small flex-grow-1 mb-3">
-            Developed a scalable backend using Node.js, Express.js, PostgreSQL,
-            JWT authentication, Socket.IO, Multer, and REST APIs for secure,
-            real-time communication and data management.
+            Scalable backend built with Node.js, Express.js, PostgreSQL, JWT,
+            Socket.IO, and Multer for secure, real-time vehicle breakdown operations.
           </p>
 
           <div class="d-flex flex-wrap gap-1 mb-3">
             <span class="badge bg-dark">Node.js</span>
-            <span class="badge bg-dark">Express.js</span>
+            <span class="badge bg-dark">Express</span>
             <span class="badge bg-dark">PostgreSQL</span>
             <span class="badge bg-dark">Socket.IO</span>
-            <span class="badge bg-dark">JWT</span>
-            <span class="badge bg-dark">Multer</span>
           </div>
 
           <div>
@@ -1717,14 +1723,14 @@
               rel="noopener noreferrer"
               class="btn btn-outline-dark w-100 btn-sm"
             >
-              <i class="bi bi-github me-2"></i>Source Code
+              <i class="bi bi-terminal me-2"></i>Source Code
             </a>
           </div>
         </article>
       </div>
 
       <!-- Green Life -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-3">
         <article class="project-card h-100 d-flex flex-column p-3 border rounded shadow-sm bg-white">
           <div class="d-flex justify-content-between align-items-start mb-2">
             <h5 class="project-title mb-0 fw-bold">Green Life</h5>
@@ -1732,10 +1738,8 @@
           </div>
 
           <p class="project-desc text-muted small flex-grow-1 mb-3">
-            Eco-friendly lifestyle application that encourages sustainable living
-            by promoting tree plantation, waste management, recycling,
-            environmental awareness, and community participation through an
-            intuitive mobile interface.
+            Eco-friendly lifestyle application encouraging sustainable living by promoting
+            tree plantation, recycling awareness, and community participation features.
           </p>
 
           <div class="d-flex flex-wrap gap-1 mb-3">
@@ -1743,7 +1747,6 @@
             <span class="badge bg-dark">Firebase</span>
             <span class="badge bg-dark">REST API</span>
             <span class="badge bg-dark">Google Maps</span>
-            <span class="badge bg-dark">Responsive UI</span>
           </div>
 
           <div>
