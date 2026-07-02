@@ -62,13 +62,13 @@ app.get('/port', (req, res) => {
 app.use(limiter);
 // TODO: Routing
 
-// app.use("/api",authRoute);
-// app.use("/api",postRoute);
-// app.use("/api",bannerRoute);
-// app.use("/api",notificationRoute);
-// app.use("/api",farmerRoute);
-// app.use("/api",productRoute);
-// app.use("/api",favFarmerRoute);
+app.use("/api",authRoute);
+app.use("/api",postRoute);
+app.use("/api",bannerRoute);
+app.use("/api",notificationRoute);
+app.use("/api",farmerRoute);
+app.use("/api",productRoute);
+app.use("/api",favFarmerRoute);
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Started Running`);
