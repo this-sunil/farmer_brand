@@ -517,88 +517,101 @@
       </div>
     </nav>
 
-    <section class="about-me" id="about">
-      <div class="profile">
-        <img
-          src="https://avatars.githubusercontent.com/u/51407211?v=4"
-          alt="Profile Photo"
-        />
-      </div>
+    <section class="about-me py-5" id="about">
+  <div class="container text-center">
 
-      <h1 class="about-title animated fadeIn bounceIn text-info">
-        Sunil Shedge
-      </h1>
+    <!-- Profile Photo -->
+    <div class="profile mb-4">
+      <img
+        src="https://avatars.githubusercontent.com/u/51407211?v=4"
+        alt="Profile Photo"
+        class="rounded-circle shadow-lg border border-4 border-info-subtle"
+        width="140"
+        height="140"
+      />
+    </div>
 
-      <p class="about-description fs-3">
-        I'm
-        <strong class="typing-text text-info">Senior Flutter Developer</strong>
-      </p>
+    <!-- Name -->
+    <h1 class="display-4 fw-bold text-info animated fadeIn bounceIn mb-2">
+      Sunil Shedge
+    </h1>
 
-      <p class="about-description">
-        <strong>4+ years of experience</strong>
-        building responsive and high-performance mobile apps.
-      </p>
+    <!-- Role -->
+    <p class="fs-3 mb-2">
+      I'm
+      <span class="badge rounded-pill text-bg-info fs-5 px-3 py-2 typing-text">
+        Senior Flutter Developer
+      </span>
+    </p>
 
-      <p class="about-description animated fadeIn jello text-justify">
-        I focus on clean architecture, reusable widgets, smooth animations, and
-        delivering exceptional user experiences. Skilled in
-        <strong class="text-info text-justify"
-          >Flutter, Dart,Nodejs,Postgresql, Firebase, REST APIs, GetX,
-          Provider,Bloc State Management,Push Notification,Payment
-          Gateway</strong>
-        and modern UI/UX design principles.
-      </p>
+    <!-- Experience -->
+    <p class="lead fw-semibold mb-3">
+      <span class="text-info">4+ years of experience</span>
+      building responsive and high-performance mobile apps.
+    </p>
 
-      <div class="container-fluid">
-        <div class="row text-center">
-          
-          <div class="col-md-3">
-            <a
-              href="https://github.com/this-sunil"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-github text-decoration-none"
-            >
-              <i class="fab fa-github-alt"></i>
-              <span class="card-title">GitHub</span>
-            </a>
-          </div>
+    <!-- Description -->
+    <p class="text-justify mx-auto animated fadeIn jello" style="max-width: 720px;">
+      I focus on clean architecture, reusable widgets, smooth animations, and
+      delivering exceptional user experiences.
+    </p>
 
-          <div class="col-md-3">
-            <a
-              href="https://www.linkedin.com/in/sunilshedge"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-linkedin text-decoration-none"
-            >
-              <i class="fab fa-linkedin-in"></i>
-              <span class="card-title">LinkedIn</span>
-            </a>
-          </div>
+    <!-- Skills as pill badges instead of one text blob -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Flutter</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Dart</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Node.js</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">PostgreSQL</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Firebase</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">REST APIs</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">GetX</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Provider</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">BLoC</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Push Notifications</span>
+      <span class="badge rounded-pill text-bg-light border border-info text-info px-3 py-2">Payment Gateway</span>
+    </div>
 
-          <div class="col-md-3">
-            <a
-              href="tel:+918668796251"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-phone text-decoration-none"
-            >
-              <i class="fas fa-phone"></i>
-              <span class="card-title">Contact</span>
-            </a>
-          </div>
+    <!-- Action buttons -->
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      
+        href="https://github.com/this-sunil"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-dark rounded-pill px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
+      >
+        <i class="fab fa-github-alt"></i>
+        <span>GitHub</span>
+      </a>
 
-          <div class="col-md-3">
-            <a
-              href="https://farmer-brand.vercel.app/resume"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-resume text-decoration-none"
-            >
-              <i class="fas fa-download"></i>
-              <span class="card-title">Resume</span>
-            </a>
-          </div>
+      
+        href="https://www.linkedin.com/in/sunilshedge"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary rounded-pill px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
+      >
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
 
-        </div>
-      </div>
-    </section>
+      
+        href="tel:+918668796251"
+        class="btn btn-success rounded-pill px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
+      >
+        <i class="fas fa-phone"></i>
+        <span>Contact</span>
+      </a>
+
+      
+        href="https://farmer-brand.vercel.app/resume"
+        class="btn btn-info rounded-pill px-4 py-2 d-flex align-items-center gap-2 shadow-sm text-white"
+      >
+        <i class="fas fa-download"></i>
+        <span>Resume</span>
+      </a>
+    </div>
+
+  </div>
+</section>
     <section class="experience-section" id="experience">
       <h2 class="section-title">Professional Experience</h2>
 
