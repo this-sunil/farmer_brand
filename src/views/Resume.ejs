@@ -9,7 +9,7 @@
       content="https://farmer-brand.vercel.app/preview.png"
     />
     <meta property="og:type" content="website" />
-    <title>Sunil Shedge</title>
+    <title>Sunil Shedge - Resume</title>
 
     <link
       rel="icon"
@@ -60,7 +60,7 @@
             transparent 40%
           ),
           var(--bg-body);
-        font-family: "Inter", sans-serif;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         color: var(--text-main);
         padding: 40px 0;
       }
@@ -103,7 +103,7 @@
       }
 
       .name-title {
-        font-family: "DM Serif Display", serif;
+        font-family: "DM Serif Display", Georgia, serif;
         font-size: clamp(2.2rem, 6vw, 4rem);
         line-height: 1.05;
         margin: 0 0 8px;
@@ -185,24 +185,9 @@
         background: linear-gradient(90deg, var(--accent), var(--accent-2));
       }
 
-      .skill-name {
-        display: block;
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: #1e293b;
-        margin-bottom: 6px;
-      }
-
-      .progress {
-        height: 7px;
-        border-radius: 999px;
-        background: #e2e8f0;
-        margin-bottom: 14px;
-      }
-
-      .progress-bar {
-        border-radius: 999px;
-        background: linear-gradient(90deg, #5b3fa5, #1da6b8);
+      .skills-list {
+        list-style-type: none;
+        padding-left: 0;
       }
 
       .summary-text {
@@ -347,6 +332,7 @@
           max-width: 100%;
           border-radius: 0;
           box-shadow: none;
+          border: none;
         }
 
         .btn-premium {
@@ -357,63 +343,64 @@
   </head>
 
   <body>
-    <div class="resume-card">
-      <div class="header-section">
+    <article class="resume-card">
+      <header class="header-section">
         <h1 class="name-title">Sunil Shedge</h1>
         <span class="sub-title">Senior Flutter Developer</span>
 
-        <div class="contact-grid-single-row">
+        <address class="contact-grid-single-row mb-0 font-normal">
           <a href="mailto:swarajya888@gmail.com" class="contact-item">
-            <i class="bi bi-envelope-at"></i> swarajya888@gmail.com
+            <i class="bi bi-envelope-at" aria-hidden="true"></i> swarajya888@gmail.com
           </a>
           <a href="tel:+918668796251" class="contact-item">
-            <i class="bi bi-telephone"></i> +91 8668796251
+            <i class="bi bi-telephone" aria-hidden="true"></i> +91 8668796251
           </a>
           <a
             href="https://farmer-brand.vercel.app/"
             target="_blank"
             class="contact-item"
+            rel="noopener noreferrer"
           >
-            <i class="bi bi-globe2"></i> Portfolio
+            <i class="bi bi-globe2" aria-hidden="true"></i> Portfolio
           </a>
           <a
             href="https://linkedin.com/in/sunilshedge"
             target="_blank"
             class="contact-item"
+            rel="noopener noreferrer"
           >
-            <i class="bi bi-linkedin"></i> LinkedIn
+            <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
           </a>
           <a
             href="https://github.com/this-sunil"
             target="_blank"
             class="contact-item"
+            rel="noopener noreferrer"
           >
-            <i class="bi bi-github"></i> GitHub
+            <i class="bi bi-github" aria-hidden="true"></i> GitHub
           </a>
           <span class="contact-item">
-            <i class="bi bi-geo-alt"></i> Pune, MH
+            <i class="bi bi-geo-alt" aria-hidden="true"></i> Pune, MH
           </span>
-        </div>
-      </div>
+        </address>
+      </header>
 
       <div class="row g-0">
         <aside class="col-lg-4 sidebar">
-          <section class="section">
-            <h3 class="section-label">Technical Skills</h3>
+          <section class="mb-4">
+            <h2 class="section-label h6">Technical Skills</h2>
 
             <ul class="skills-list">
               <li class="mb-3">
-                <strong>Mobile:</strong> Flutter, Dart, Android, iOS,Web
+                <strong>Mobile:</strong> Flutter, Dart, Android, iOS, Web
               </li>
 
               <li class="mb-3">
-                <strong>State Management:</strong> Bloc, Riverpod, Provider,
-                GetX
+                <strong>State Management:</strong> Bloc, Riverpod, Provider, GetX
               </li>
 
               <li class="mb-3">
-                <strong>Backend:</strong> Node.js, Express.js, PostgreSQL,JWT
-                Authentication
+                <strong>Backend:</strong> Node.js, Express.js, PostgreSQL, JWT Authentication
               </li>
 
               <li class="mb-3">
@@ -421,29 +408,25 @@
               </li>
 
               <li class="mb-3">
-                <strong>Architecture:</strong> MVVM, Clean Architecture, SOLID
-                Principle
+                <strong>Architecture:</strong> MVVM, Clean Architecture, SOLID Principle
               </li>
 
               <li class="mb-3">
-                <strong>Integrations:</strong> REST APIs, Razorpay, Stripe,
-                UPI,Paytm integration,PayUmoney
+                <strong>Integrations:</strong> REST APIs, Razorpay, Stripe, UPI, Paytm integration, PayUmoney
               </li>
 
               <li class="mb-3">
-                <strong>Tools:</strong> Git, GitHub Copilot,ChatGPT,Gemini
-                Cursor,Postman,Android Studio,Vs Code, Shorebird,Sentry.io
+                <strong>Tools:</strong> Git, GitHub Copilot, ChatGPT, Gemini Cursor, Postman, Android Studio, VS Code, Shorebird, Sentry.io
               </li>
 
               <li class="mb-3">
-                <strong>Services:</strong> Firebase Auth, FCM, Google Maps,One
-                Signal
+                <strong>Services:</strong> Firebase Auth, FCM, Google Maps, One Signal
               </li>
             </ul>
           </section>
 
-          <section class="mb-2">
-            <span class="section-label">Education</span>
+          <section class="mb-4">
+            <h2 class="section-label h6">Education</h2>
             <div class="mb-3">
               <p class="mb-0 fw-semibold">M.C.S. (Master of CS)</p>
               <p class="small text-muted mb-0">Sarhad College, Pune</p>
@@ -469,9 +452,9 @@
               <p class="small mb-0">Batch 2013 | Score: 75%</p>
             </div>
           </section>
-          <br />
-          <section class="mb-5">
-            <span class="section-label">Certificate</span>
+
+          <section class="mb-4">
+            <h2 class="section-label h6">Certificate</h2>
             <div
               class="certificate-box d-flex justify-content-between align-items-center flex-wrap gap-2"
             >
@@ -481,9 +464,10 @@
               <a
                 href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-premium"
               >
-                <i class="bi bi-file-earmark-pdf"></i> View PDF
+                <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> View PDF
               </a>
             </div>
           </section>
@@ -491,7 +475,7 @@
 
         <main class="col-lg-8 main-body">
           <section class="mb-5">
-            <span class="section-label">Professional Summary</span>
+            <h2 class="section-label h6">Professional Summary</h2>
             <p class="summary-text text-justify">
               Senior Flutter Developer with 4+ years of experience building
               scalable and high-performance Android and iOS applications.
@@ -505,10 +489,10 @@
           </section>
 
           <section class="mb-5">
-            <span class="section-label">Professional Experience</span>
+            <h2 class="section-label h6">Professional Experience</h2>
 
-            <div class="exp-block">
-              <h5 class="exp-title">Full Stack Developer</h5>
+            <article class="exp-block">
+              <h3 class="exp-title h5">Full Stack Developer</h3>
               <p class="exp-meta">Self Employment | April 2025 – Present</p>
               <ul class="responsibility-list">
                 <li>
@@ -551,10 +535,10 @@
                   international payment gateways.
                 </li>
               </ul>
-            </div>
+            </article>
 
-            <div class="exp-block">
-              <h5 class="exp-title">Senior Flutter Developer</h5>
+            <article class="exp-block">
+              <h3 class="exp-title h5">Senior Flutter Developer</h3>
               <p class="exp-meta">
                 Sunra Softtech Pvt. Ltd. | July 2022 – April 2025
               </p>
@@ -624,10 +608,10 @@
                   enterprise-scale apps.
                 </li>
               </ul>
-            </div>
+            </article>
 
-            <div class="exp-block">
-              <h5 class="exp-title">Junior Flutter Developer</h5>
+            <article class="exp-block">
+              <h3 class="exp-title h5">Junior Flutter Developer</h3>
               <p class="exp-meta">
                 Syscryption Technology | Jan 2022 – Jul 2022
               </p>
@@ -679,11 +663,11 @@
                   scanned barcode.
                 </li>
               </ul>
-            </div>
+            </article>
           </section>
 
           <section class="mb-5 project-card h-auto mx-0">
-            <span class="section-label">Projects</span>
+            <h2 class="section-label h6">Projects</h2>
 
             <div class="row g-4">
               <!-- Sense Wheel -->
@@ -692,9 +676,9 @@
                   <div
                     class="d-flex justify-content-between align-items-start mb-2"
                   >
-                    <h6 class="project-title mb-0">
+                    <h3 class="project-title h6 mb-0">
                       Sense Wheel (OTT Platform)
-                    </h6>
+                    </h3>
                     <span class="project-chip">Flutter</span>
                   </div>
 
@@ -718,8 +702,9 @@
                     href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
                     class="btn-premium mt-3 d-inline-block"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i class="bi bi-google-play"></i> Live App
+                    <i class="bi bi-google-play" aria-hidden="true"></i> Live App
                   </a>
                 </article>
               </div>
@@ -730,9 +715,9 @@
                   <div
                     class="d-flex justify-content-between align-items-start mb-2"
                   >
-                    <h6 class="project-title mb-0">
+                    <h3 class="project-title h6 mb-0">
                       JEEYO RIDE (Mobility App)
-                    </h6>
+                    </h3>
                     <span class="project-chip">Flutter</span>
                   </div>
 
@@ -756,8 +741,9 @@
                     href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
                     class="btn-premium mt-3 d-inline-block"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i class="bi bi-google-play"></i> Live App
+                    <i class="bi bi-google-play" aria-hidden="true"></i> Live App
                   </a>
                 </article>
               </div>
@@ -768,7 +754,7 @@
                   <div
                     class="d-flex justify-content-between align-items-start mb-2"
                   >
-                    <h6 class="project-title mb-0">Sanjeevani Gaming App</h6>
+                    <h3 class="project-title h6 mb-0">Sanjeevani Gaming App</h3>
                     <span class="project-chip">Flutter</span>
                   </div>
 
@@ -790,8 +776,9 @@
                     href="https://sanjivani999.in/download"
                     class="btn-premium mt-3 d-inline-block"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i class="bi bi-google-play"></i> Live App
+                    <i class="bi bi-google-play" aria-hidden="true"></i> Live App
                   </a>
                 </article>
               </div>
@@ -802,9 +789,9 @@
                   <div
                     class="d-flex justify-content-between align-items-start mb-2"
                   >
-                    <h6 class="project-title mb-0">
+                    <h3 class="project-title h6 mb-0">
                       Vehicle Repair Service App
-                    </h6>
+                    </h3>
                     <span class="project-chip">Flutter</span>
                   </div>
 
@@ -827,22 +814,22 @@
                     href="https://github.com/this-sunil/vehiclerepairservice.git"
                     class="btn-premium mt-3 d-inline-block"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i class="bi bi-github"></i> View Source
+                    <i class="bi bi-github" aria-hidden="true"></i> View Source
                   </a>
                 </article>
               </div>
 
               <!-- Backend System -->
-           
-                <div class="col-6">
-                <article class="project-card">
+              <div class="col-md-6">
+                <article class="project-card h-100">
                   <div
                     class="d-flex justify-content-between align-items-start mb-2"
                   >
-                    <h6 class="project-title mb-0">
+                    <h3 class="project-title h6 mb-0">
                       Vehicle Repair Service (Backend System)
-                    </h6>
+                    </h3>
                     <span class="project-chip">Node.js + PostgreSQL</span>
                   </div>
 
@@ -864,25 +851,27 @@
                     href="https://github.com/this-sunil/vehicle-repair-service"
                     class="btn-premium mt-3 d-inline-block"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i class="bi bi-github"></i> Source Code
+                    <i class="bi bi-github" aria-hidden="true"></i> Source Code
                   </a>
                 </article>
-                </div>
+              </div>
 
-                <div class="col-6">
-                <article class="project-card">
+              <!-- Health Care -->
+              <div class="col-md-6">
+                <article class="project-card h-100">
                   <div
                     class="d-flex justify-content-between align-items-start mb-2"
                   >
-                    <h6 class="project-title mb-0">
+                    <h3 class="project-title h6 mb-0">
                       Health Care
-                    </h6>
+                    </h3>
                     <span class="project-chip">Flutter</span>
                   </div>
 
                   <p class="project-desc">
-                    Health care also focuses on promoting healthy lifestyles, preventing diseases through vaccination and regular checkups, and ensuring access to essential medical services.
+                    Health care application focusing on promoting healthy lifestyles, disease prevention through tracking, and providing user-friendly access to essential medical services.
                   </p>
 
                   <div class="d-flex gap-2 flex-wrap">
@@ -898,16 +887,17 @@
                     href="https://github.com/this-sunil/greenlife"
                     class="btn-premium mt-3 d-inline-block"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i class="bi bi-github"></i> Source Code
+                    <i class="bi bi-github" aria-hidden="true"></i> Source Code
                   </a>
                 </article>
-                </div>
+              </div>
 
             </div>
           </section>
 
-          <section class="footer-note">
+          <footer class="footer-note">
             <p class="small text-muted mb-2">
               "I hereby declare that all information provided is accurate and
               verifiable to the best of my knowledge."
@@ -916,10 +906,10 @@
               <p class="fw-bold mb-0">Sunil Shedge</p>
               <p class="small text-muted mb-0">Senior Flutter Developer</p>
             </div>
-          </section>
+          </footer>
         </main>
       </div>
-    </div>
+    </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
