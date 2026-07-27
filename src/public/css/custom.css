@@ -1398,8 +1398,8 @@ body.dark-theme .project-filters .btn.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 140px; /* Fixed width to ensure 4 cards fit 720px container (4 * 140px + 3 * 24px gap = 632px) */
-  padding: 1.25rem 1rem;
+  width: 250px; /* Fixed width to ensure 4 cards fit 720px container (4 * 140px + 3 * 24px gap = 632px) */
+  padding: 2rem 1rem;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
