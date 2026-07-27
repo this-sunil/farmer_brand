@@ -71,7 +71,7 @@ app.use("/api",productRoute);
 app.use("/api",favFarmerRoute);
 
 app.listen(process.env.PORT,()=>{
-    console.log(`Server Started Running`);
+    console.log(`Server Started Running http://localhost:${process.env.PORT}`);
 });
 
 
