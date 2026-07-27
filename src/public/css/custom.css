@@ -1395,10 +1395,13 @@ body.dark-theme .project-filters .btn.active {
 
 /* Tool Card */
 .tool-card {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px; /* Fixed width to ensure 4 cards fit 720px container (4 * 140px + 3 * 24px gap = 632px) */
+  width: 250px; 
+  height: 200px;
+  /* Fixed width to ensure 4 cards fit 720px container (4 * 140px + 3 * 24px gap = 632px) */
   padding: 2rem 1rem;
   border-radius: 16px;
   background: #ffffff;
