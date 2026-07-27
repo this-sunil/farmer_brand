@@ -1383,28 +1383,14 @@ body.dark-theme .project-filters .btn.active {
     letter-spacing: 2px;
     white-space: nowrap;
 }
-/* Section Container */
-.tools-section {
-  padding: 3rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 2.5rem;
-  letter-spacing: -0.02em;
-}
-
-/* Responsive Grid */
+/* Responsive Grid: 4 items per row on desktop */
 .tools-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  max-width: 720px; /* Constrains width so exactly 4 cards fit per row */
+  margin: 0 auto;
 }
 
 /* Tool Card */
@@ -1412,7 +1398,7 @@ body.dark-theme .project-filters .btn.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 140px;
+  width: 140px; /* Fixed width to ensure 4 cards fit 720px container (4 * 140px + 3 * 24px gap = 632px) */
   padding: 1.25rem 1rem;
   border-radius: 16px;
   background: #ffffff;
@@ -1455,6 +1441,20 @@ body.dark-theme .project-filters .btn.active {
   margin: 0;
   text-align: center;
   line-height: 1.25;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* On smaller mobile screens, fall back to 2 columns */
+@media (max-width: 600px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .btn-install:hover {
