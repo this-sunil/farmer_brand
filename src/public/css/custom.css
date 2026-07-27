@@ -184,9 +184,7 @@ body.dark-theme .scroll-top {
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-body{
-background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-}
+
 
 .theme-btn {
   width: 45px;
