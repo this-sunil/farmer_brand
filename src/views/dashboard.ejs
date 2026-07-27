@@ -121,9 +121,9 @@
           $("body").toggleClass("dark-theme");
 
           if ($("body").hasClass("dark-theme")) {
-            //localStorage.setItem("theme", "dark");
+            localStorage.setItem("theme", "dark");
           } else {
-            //localStorage.setItem("theme", "light");
+            localStorage.setItem("theme", "light");
           }
 
           setThemeIcon();
@@ -501,11 +501,11 @@
               >
             </li>
 
-            <!-- <div class="px-3 gx-3">
+            <div class="px-3 gx-3">
               <button id="themeToggle" class="theme-btn">
                 <i class="fas fa-moon"></i>
               </button>
-            </div> -->
+            </div>
           </ul>
         </div>
       </div>
