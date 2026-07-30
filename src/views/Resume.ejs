@@ -1,879 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="My Resume" />
-    <meta
-      property="og:image"
-      content="https://farmer-brand.vercel.app/preview.png"
-    />
-    <meta property="og:type" content="website" />
-    <title>Sunil Shedge - Resume</title>
-
-    <link
-      rel="icon"
-      href="https://avatars.githubusercontent.com/u/51407211?s=400&u=751977b12a298feec34e25b58e74f25994c12922&v=4"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
-    />
-
-    <style>
-      :root {
-        --primary-dark: #1f2937;
-        --accent: #5b3fa5;
-        --accent-2: #1da6b8;
-        --bg-body: #eef2f7;
-        --text-main: #0f172a;
-        --text-muted: #64748b;
-        --sidebar-bg: #f8fafc;
-        --card-bg: #ffffff;
-        --border-soft: #e2e8f0;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        background:
-          radial-gradient(
-            circle at top right,
-            rgba(29, 166, 184, 0.1),
-            transparent 35%
-          ),
-          radial-gradient(
-            circle at top left,
-            rgba(91, 63, 165, 0.12),
-            transparent 40%
-          ),
-          var(--bg-body);
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        color: var(--text-main);
-        padding: 40px 0;
-      }
-
-      strong {
-        color: #3f2a8a;
-      }
-
-      .resume-card {
-        max-width: 1140px;
-        margin: 0 auto;
-        background: var(--card-bg);
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: 0 25px 80px rgba(2, 6, 23, 0.14);
-        border: 1px solid #e7ecf5;
-      }
-
-      .header-section {
-        padding: 56px 48px 36px;
-        color: #fff;
-        background: linear-gradient(130deg, #111827, #1f2937 45%, #334155);
-        position: relative;
-      }
-
-      .header-section::after {
-        content: "";
-        position: absolute;
-        right: -60px;
-        top: -70px;
-        width: 240px;
-        height: 240px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(29, 166, 184, 0.35),
-          transparent 65%
-        );
-        pointer-events: none;
-      }
-
-      .name-title {
-        font-family: "DM Serif Display", Georgia, serif;
-        font-size: clamp(2.2rem, 6vw, 4rem);
-        line-height: 1.05;
-        margin: 0 0 8px;
-        letter-spacing: -0.6px;
-        color: #7de1ee;
-      }
-
-      .sub-title {
-        display: inline-block;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-size: 0.78rem;
-        color: #dbeafe;
-        margin-bottom: 26px;
-      }
-
-      .contact-grid-single-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-      }
-
-      .contact-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 0.82rem;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.92);
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: 0.2s ease;
-      }
-
-      .contact-item i {
-        color: #7de1ee;
-        font-size: 15px;
-      }
-
-      .contact-item:hover {
-        color: #fff;
-        transform: translateY(-1px);
-        background: rgba(255, 255, 255, 0.15);
-      }
-
-      .sidebar {
-        background: linear-gradient(180deg, #f8fafc, #f3f7fc);
-        border-right: 1px solid var(--border-soft);
-        padding: 42px 28px;
-      }
-
-      .main-body {
-        padding: 42px 36px 46px;
-      }
-
-      .section-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: #111827;
-        margin-bottom: 18px;
-        position: relative;
-      }
-
-      .section-label::before {
-        content: "";
-        width: 26px;
-        height: 3px;
-        border-radius: 2px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      }
-
-      .skills-list {
-        list-style-type: none;
-        padding-left: 0;
-      }
-
-      .summary-text {
-        font-size: 0.98rem;
-        line-height: 1.8;
-        color: #334155;
-        margin: 0;
-        padding: 14px 18px;
-        border-radius: 10px;
-        background: #f8fafc;
-        border: 1px dashed #d6e1ee;
-      }
-
-      .exp-block {
-        margin-bottom: 30px;
-        padding: 18px 18px 12px;
-        border: 1px solid #edf1f7;
-        border-radius: 12px;
-        background: #fff;
-      }
-
-      .exp-title {
-        margin-bottom: 5px;
-        font-size: 1.08rem;
-        font-weight: 800;
-        color: #0f172a;
-      }
-
-      .exp-meta {
-        font-size: 0.84rem;
-        font-weight: 700;
-        color: var(--accent);
-        margin-bottom: 10px;
-      }
-
-      .responsibility-list {
-        padding-left: 16px;
-        margin-bottom: 0;
-      }
-
-      .responsibility-list li {
-        color: #475569;
-        font-size: 0.92rem;
-        margin-bottom: 8px;
-        line-height: 1.55;
-      }
-
-      .project-card {
-        background: #fff;
-        border: 1px solid #e8eef6;
-        border-radius: 14px;
-        padding: 18px;
-        transition: 0.25s ease;
-        box-shadow: none !important;
-        height: 100%;
-      }
-
-      .project-card:hover {
-        transform: translateY(-3px);
-        border-color: #cfd9e8;
-        box-shadow: none !important;
-      }
-
-      .project-title {
-        font-size: 1rem;
-        font-weight: 800;
-        color: #0f172a;
-        margin-bottom: 6px;
-      }
-
-      .project-desc {
-        font-size: 0.87rem;
-        color: #64748b;
-        margin-bottom: 12px;
-      }
-
-      .project-chip {
-        font-size: 0.72rem;
-        background: #eef2ff;
-        color: #4338ca;
-        border: 1px solid #dbe2ff;
-        border-radius: 999px;
-        padding: 3px 9px;
-      }
-
-      .btn-premium {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: linear-gradient(120deg, #1f2937, #374151);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 0.74rem;
-        font-weight: 700;
-        text-decoration: none;
-        padding: 8px 13px;
-        transition: 0.2s ease;
-      }
-
-      .btn-premium:hover {
-        color: #fff;
-        transform: translateY(-1px);
-        background: linear-gradient(120deg, #5b3fa5, #3f2f8d);
-      }
-
-      .certificate-box {
-        border: 1px solid #e8eef6;
-        border-radius: 12px;
-        background: #f8fafc;
-        padding: 14px 16px;
-      }
-
-      .footer-note {
-        margin-top: 12px;
-        padding-top: 16px;
-        border-top: 1px dashed #dce4ee;
-      }
-
-      @media (max-width: 991px) {
-        .sidebar {
-          border-right: none;
-          border-bottom: 1px solid var(--border-soft);
-        }
-
-        .main-body {
-          padding: 30px 22px 36px;
-        }
-
-        .header-section {
-          padding: 44px 24px 28px;
-        }
-      }
-
-      @media print {
-        body {
-          padding: 0;
-          background: #fff;
-        }
-
-        .resume-card {
-          max-width: 100%;
-          border-radius: 0;
-          box-shadow: none;
-          border: none;
-        }
-
-        .btn-premium {
-          display: none !important;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <article class="resume-card">
-      <header class="header-section">
-        <h1 class="name-title">Sunil Shedge</h1>
-        <span class="sub-title">Senior Flutter Developer</span>
-
-        <address class="contact-grid-single-row mb-0 font-normal">
-          <a href="mailto:swarajya888@gmail.com" class="contact-item">
-            <i class="bi bi-envelope-at" aria-hidden="true"></i> swarajya888@gmail.com
-          </a>
-          <a href="tel:+918668796251" class="contact-item">
-            <i class="bi bi-telephone" aria-hidden="true"></i> +91 8668796251
-          </a>
-          <a
-            href="https://farmer-brand.vercel.app/"
-            target="_blank"
-            class="contact-item"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-globe2" aria-hidden="true"></i> Portfolio
-          </a>
-          <a
-            href="https://linkedin.com/in/sunilshedge"
-            target="_blank"
-            class="contact-item"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
-          </a>
-          <a
-            href="https://github.com/this-sunil"
-            target="_blank"
-            class="contact-item"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-github" aria-hidden="true"></i> GitHub
-          </a>
-          <span class="contact-item">
-            <i class="bi bi-geo-alt" aria-hidden="true"></i> Pune, MH
-          </span>
-        </address>
-      </header>
-
-      <div class="row g-0">
-        <aside class="col-lg-4 sidebar">
-          <section class="mb-4">
-            <h2 class="section-label h6">Technical Skills</h2>
-
-            <ul class="skills-list">
-              <li class="mb-3">
-                <strong>Mobile:</strong> Flutter, Dart, Android, iOS, Web
-              </li>
-
-              <li class="mb-3">
-                <strong>State Management:</strong> Bloc, Riverpod, Provider, GetX
-              </li>
-
-              <li class="mb-3">
-                <strong>Backend:</strong> Node.js, Express.js, PostgreSQL, JWT Authentication
-              </li>
-
-              <li class="mb-3">
-                <strong>Database:</strong> Firebase, SQLite, Hive
-              </li>
-
-              <li class="mb-3">
-                <strong>Architecture:</strong> MVVM, Clean Architecture, SOLID Principle
-              </li>
-
-              <li class="mb-3">
-                <strong>Integrations:</strong> REST APIs, Razorpay, Stripe, UPI, Paytm integration, PayUmoney
-              </li>
-
-              <li class="mb-3">
-                <strong>Tools:</strong> Git, GitHub Copilot, ChatGPT, Gemini Cursor, Postman, Android Studio, VS Code, Shorebird, Sentry.io, Fastlane, Codemagic
-              </li>
-
-              <li class="mb-3">
-                <strong>Services:</strong> Firebase Auth, FCM, Crashlytics, Google Maps, One Signal
-              </li>
-            </ul>
-          </section>
-
-          <section class="mb-4">
-            <h2 class="section-label h6">Education</h2>
-            <div class="mb-3">
-              <p class="mb-0 fw-semibold">M.C.S. (Master of CS)</p>
-              <p class="small text-muted mb-0">Sarhad College, Pune</p>
-              <p class="small mb-0">2019 – 2021 | Score: 77%</p>
-            </div>
-            <div class="mb-3">
-              <p class="mb-0 fw-semibold">B.C.S. (Bachelor of CS)</p>
-              <p class="small text-muted mb-0">Vishwakarma College, Pune</p>
-              <p class="small mb-0">2015 – 2018</p>
-            </div>
-            <div class="mb-3">
-              <p class="mb-0 fw-semibold">HSC (Class XII)</p>
-              <p class="small text-muted mb-0">
-                S.M.S. Mohite Patil Jr. College, Rahimatpur
-              </p>
-              <p class="small mb-0">Batch 2015</p>
-            </div>
-            <div>
-              <p class="mb-0 fw-semibold">SSC (Class X)</p>
-              <p class="small text-muted mb-0">
-                Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
-              </p>
-              <p class="small mb-0">Batch 2013 | Score: 75%</p>
-            </div>
-          </section>
-
-          <section class="mb-4">
-            <h2 class="section-label h6">Certificate</h2>
-            <div
-              class="certificate-box d-flex justify-content-between align-items-center flex-wrap gap-2"
-            >
-              <span class="fw-bold small text-dark"
-                >Internship Certificate</span
-              >
-              <a
-                href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-premium"
-              >
-                <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> View PDF
-              </a>
-            </div>
-          </section>
-        </aside>
-
-        <main class="col-lg-8 main-body">
-          <section class="mb-5">
-            <h2 class="section-label h6">Professional Summary</h2>
-            <p class="summary-text text-justify">
-              Senior Flutter Developer with 4+ years of experience building
-              scalable and high-performance Android and iOS applications.
-              Developed 15+ mobile apps with live deployments on both Play Store
-              and App Store. Strong expertise in Flutter, Dart, BLoC
-              architecture, REST APIs, Firebase, Google Maps integration, and
-              payment gateways such as Razorpay and UPI. Proven ability to
-              deliver stable, optimized applications with a focus on
-              performance, monetization, and user engagement.
-            </p>
-          </section>
-
-          <section class="mb-5">
-            <h2 class="section-label h6">Professional Experience</h2>
-
-            <article class="exp-block">
-              <h3 class="exp-title h5">Full Stack Developer</h3>
-              <p class="exp-meta">Self Employment | April 2025 – Present</p>
-              <ul class="responsibility-list">
-                <li>
-                  <strong>Full Stack Architecture:</strong> Developed end-to-end
-                  mobile solutions using Flutter with
-                  <strong>Node.js/PostgreSQL</strong> backends.
-                </li>
-                <li>
-                  <strong>Security & API:</strong> Built secure RESTful APIs
-                  utilizing <strong>JWT authentication</strong> and Role-Based
-                  Access Control (RBAC); implemented
-                  <strong>.env-based environment configuration</strong> to
-                  securely manage sensitive credentials and API keys.
-                </li>
-                <li>
-                  <strong>Crash Reporting & Stability:</strong> Resolved
-                  <strong>iOS build and crash issues in Xcode</strong> by
-                  troubleshooting CocoaPods dependency conflicts and Runner
-                  configuration errors; identified and fixed
-                  <strong>ANR issues</strong> to improve overall app stability
-                  and performance.
-                </li>
-                <li>
-                  <strong>Migrated iOS dependencies</strong> from
-                  <strong>CocoaPods to Swift Package Manager (SPM)</strong>,
-                  resolving <strong>dependency conflicts</strong> and improving
-                  <strong>build stability in Xcode</strong>.
-                </li>
-                <li>
-                  <strong>OTA Updates:</strong> Delivered over-the-air (OTA)
-                  updates using <strong>Shorebird</strong>, enabling hotfix
-                  deployments without requiring users to download a new version.
-                </li>
-                <li>
-                  <strong>Database Optimization:</strong> Designed complex
-                  PostgreSQL schemas with optimized query performance.
-                </li>
-                <li>
-                  <strong>Monetization:</strong> Seamlessly integrated AdMob and
-                  international payment gateways.
-                </li>
-              </ul>
-            </article>
-
-            <article class="exp-block">
-              <h3 class="exp-title h5">Senior Flutter Developer</h3>
-              <p class="exp-meta">
-                Sunra Softtech Pvt. Ltd. | July 2022 – April 2025
-              </p>
-              <ul class="responsibility-list">
-                <li>
-                  <strong>Multi-Platform Architecture & Optimization:</strong> Architected a multi-platform Flutter app (Android, iOS, Web) serving 1,000+ users, reducing load time by <strong>35%</strong> through performance optimization.
-                </li>
-                <li>
-                  <strong>Clean Architecture & BLoC:</strong> Implemented Clean Architecture and BLoC state management across core modules while utilizing Mixins for reusable logic, cutting bug resolution time by <strong>50%</strong>.
-                </li>
-                <li>
-                  <strong>Automated CI/CD Pipelines:</strong> Built automated build and release pipelines using <strong>CodeMagic, Fastlane, and GitHub Actions</strong>, reducing release cycles from 5 days to 1 day.
-                </li>
-                <li>
-                  <strong>Performance & Rendering:</strong> Optimized app performance and eliminated unnecessary rebuilds using <strong>const, RepaintBoundary, lazy loading, asset optimization, app size reduction via ProGuard rules, and Null Safety best practices</strong>.
-                </li>
-                <li>
-                  <strong>Dynamic Navigation:</strong> Implemented <strong>GoRouter</strong> for scalable, declarative routing and configured <strong>Deep Linking (Android App Links & iOS Universal Links)</strong> for seamless user journeys.
-                </li>
-                <li>
-                  <strong>Firebase Services:</strong> Integrated <strong>Firebase Phone Authentication, Cloud Firestore, Firebase Crashlytics, Google Sign-In, and Google Maps (Markers & Polylines)</strong>.
-                </li>
-                <li>
-                  <strong>Fintech & Payment Integration:</strong> Engineered secure payment solutions integrating <strong>Razorpay, Stripe, Paytm, and native UPI</strong> via Method Channels.
-                </li>
-                <li>
-                  <strong>Multilingual & Engagement:</strong> Expanded global market reach with multilingual support via <strong>Google ML Kit Translation</strong> and integrated <strong>Firebase Cloud Messaging (FCM)</strong> for real-time push notifications.
-                </li>
-                <li>
-                  <strong>Core Stack Managed:</strong> BLoC · GoRouter · Firebase (Auth / FCM / Crashlytics) · Razorpay / Stripe / UPI · Google ML Kit · Deep Linking · Method Channels · SOLID Principles.
-                </li>
-              </ul>
-            </article>
-
-            <article class="exp-block">
-              <h3 class="exp-title h5">Junior Flutter Developer</h3>
-              <p class="exp-meta">
-                Syscryption Technology | Jan 2022 – Jul 2022
-              </p>
-              <ul class="responsibility-list">
-                <li>
-                  <strong>Accelerated feature development</strong> by
-                  integrating RESTful APIs and improving data flow across
-                  modules.
-                </li>
-
-                <li>
-                  <strong>Enhanced application stability</strong> by identifying
-                  and resolving critical bugs and performance bottlenecks.
-                </li>
-
-                <li>
-                  <strong>Implemented GetX architecture</strong> for routing,
-                  state management, and dependency injection in scalable
-                  applications.
-                </li>
-
-                <li>
-                  <strong>Optimized performance</strong> using Get.lazyPut() and
-                  efficient dependency injection to reduce memory usage.
-                </li>
-
-                <li>
-                  <strong>Structured REST API integration</strong> inside GetX
-                  controllers ensuring clear separation of UI and business logic
-                  layers.
-                </li>
-
-                <li>
-                  <strong>Managed controller lifecycle methods</strong> (onInit,
-                  onReady, onClose) for better resource handling and performance
-                  optimization.
-                </li>
-
-                <li>
-                  <strong>Developed barcode scanning feature</strong> to capture
-                  product details in real-time using device camera.
-                </li>
-
-                <li>
-                  <strong
-                    >Integrated Liberty Paint product lookup system</strong
-                  >
-                  enabling quick search and retrieval of product information via
-                  scanned barcode.
-                </li>
-              </ul>
-            </article>
-          </section>
-
-          <section class="mb-5 project-card h-auto mx-0">
-            <h2 class="section-label h6">Projects</h2>
-
-            <div class="row g-4">
-              <!-- Sense Wheel -->
-              <div class="col-md-6">
-                <article class="project-card h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-2"
-                  >
-                    <h3 class="project-title h6 mb-0">
-                      Sense Wheel (OTT Platform)
-                    </h3>
-                    <span class="project-chip">Flutter</span>
-                  </div>
-
-                  <p class="project-desc">
-                    A Flutter-based OTT streaming platform with video content
-                    management, user authentication, subscription plans,
-                    seamless media streaming, offline encrypted storage, and a
-                    responsive cross-platform experience.
-                  </p>
-
-                  <div class="d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark">Flutter</span>
-                    <span class="badge bg-dark">Firebase</span>
-                    <span class="badge bg-dark">Video Streaming</span>
-                    <span class="badge bg-dark">REST API</span>
-                    <span class="badge bg-dark">Payment Integration</span>
-                    <span class="badge bg-dark">Responsive UI</span>
-                  </div>
-
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
-                    class="btn-premium mt-3 d-inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-google-play" aria-hidden="true"></i> Live App
-                  </a>
-                </article>
-              </div>
-
-              <!-- JEEYO RIDE -->
-              <div class="col-md-6">
-                <article class="project-card h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-2"
-                  >
-                    <h3 class="project-title h6 mb-0">
-                      JEEYO RIDE (Mobility App)
-                    </h3>
-                    <span class="project-chip">Flutter</span>
-                  </div>
-
-                  <p class="project-desc">
-                    A Flutter-based mobility application featuring real-time
-                    ride tracking, geofencing, route polyline navigation, live
-                    location updates, and Google Places auto-complete
-                    integration.
-                  </p>
-
-                  <div class="d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark">Flutter</span>
-                    <span class="badge bg-dark">Google Maps</span>
-                    <span class="badge bg-dark">Realtime Tracking</span>
-                    <span class="badge bg-dark">Geofencing</span>
-                    <span class="badge bg-dark">REST API</span>
-                    <span class="badge bg-dark">Firebase</span>
-                  </div>
-
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
-                    class="btn-premium mt-3 d-inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-google-play" aria-hidden="true"></i> Live App
-                  </a>
-                </article>
-              </div>
-
-              <!-- Sanjeevani Gaming -->
-              <div class="col-md-6">
-                <article class="project-card h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-2"
-                  >
-                    <h3 class="project-title h6 mb-0">Sanjeevani Gaming App</h3>
-                    <span class="project-chip">Flutter</span>
-                  </div>
-
-                  <p class="project-desc">
-                    A Flutter-based online gaming and betting application with
-                    secure wallet management, real-time updates, payment
-                    integration, and smooth gameplay experience.
-                  </p>
-
-                  <div class="d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark">Flutter</span>
-                    <span class="badge bg-dark">Firebase</span>
-                    <span class="badge bg-dark">REST API</span>
-                    <span class="badge bg-dark">Payment Gateway</span>
-                    <span class="badge bg-dark">Push Notification</span>
-                  </div>
-
-                  <a
-                    href="https://sanjivani999.in/download"
-                    class="btn-premium mt-3 d-inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-google-play" aria-hidden="true"></i> Live App
-                  </a>
-                </article>
-              </div>
-
-              <!-- Vehicle Repair App -->
-              <div class="col-md-6">
-                <article class="project-card h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-2"
-                  >
-                    <h3 class="project-title h6 mb-0">
-                      Vehicle Repair Service App
-                    </h3>
-                    <span class="project-chip">Flutter</span>
-                  </div>
-
-                  <p class="project-desc">
-                    A Flutter-based vehicle repair service application that
-                    enables users to book repair services, track vehicle status,
-                    manage service history, and connect with nearby mechanics.
-                  </p>
-
-                  <div class="d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark">Flutter</span>
-                    <span class="badge bg-dark">Dart</span>
-                    <span class="badge bg-dark">Firebase</span>
-                    <span class="badge bg-dark">REST API</span>
-                    <span class="badge bg-dark">Google Maps</span>
-                    <span class="badge bg-dark">Responsive UI</span>
-                  </div>
-
-                  <a
-                    href="https://github.com/this-sunil/vehiclerepairservice.git"
-                    class="btn-premium mt-3 d-inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-github" aria-hidden="true"></i> View Source
-                  </a>
-                </article>
-              </div>
-
-              <!-- Backend System -->
-              <div class="col-md-6">
-                <article class="project-card h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-2"
-                  >
-                    <h3 class="project-title h6 mb-0">
-                      Vehicle Repair Service (Backend System)
-                    </h3>
-                    <span class="project-chip">Node.js + PostgreSQL</span>
-                  </div>
-
-                  <p class="project-desc">
-                    Secure backend architecture with JWT authentication,
-                    middleware protection, PostgreSQL connection pooling,
-                    Socket.IO real-time support, and Multer file uploads.
-                  </p>
-
-                  <div class="d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark">Node.js</span>
-                    <span class="badge bg-dark">Express.js</span>
-                    <span class="badge bg-dark">PostgreSQL</span>
-                    <span class="badge bg-dark">Socket.IO</span>
-                    <span class="badge bg-dark">JWT Auth</span>
-                  </div>
-
-                  <a
-                    href="https://github.com/this-sunil/vehicle-repair-service"
-                    class="btn-premium mt-3 d-inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-github" aria-hidden="true"></i> Source Code
-                  </a>
-                </article>
-              </div>
-
-              <!-- Health Care -->
-              <div class="col-md-6">
-                <article class="project-card h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-2"
-                  >
-                    <h3 class="project-title h6 mb-0">
-                      Health Care
-                    </h3>
-                    <span class="project-chip">Flutter</span>
-                  </div>
-
-                  <p class="project-desc">
-                    Health care application focusing on promoting healthy lifestyles, disease prevention through tracking, and providing user-friendly access to essential medical services.
-                  </p>
-
-                  <div class="d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark">Flutter</span>
-                    <span class="badge bg-dark">Dart</span>
-                    <span class="badge bg-dark">Firebase</span>
-                    <span class="badge bg-dark">REST API</span>
-                    <span class="badge bg-dark">Google Maps</span>
-                    <span class="badge bg-dark">Responsive UI</span>
-                  </div>
-
-                  <a
-                    href="https://github.com/this-sunil/greenlife"
-                    class="btn-premium mt-3 d-inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-github" aria-hidden="true"></i> Source Code
-                  </a>
-                </article>
-              </div>
-
-            </div>
-          </section>
-
-          <footer class="footer-note">
-            <p class="small text-muted mb-2">
-              "I hereby declare that all information provided is accurate and
-              verifiable to the best of my knowledge."
-            </p>
-            <div class="text-end">
-              <p class="fw-bold mb-0">Sunil Shedge</p>
-              <p class="small text-muted mb-0">Senior Flutter Developer</p>
-            </div>
-          </footer>
-        </main>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sunil Shedge - Resume</title>
+<link rel="icon" href="https://avatars.githubusercontent.com/u/51407211?v=4" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+<style>
+  :root{
+    --ink:#0b1220;
+    --muted:#5b6472;
+    --gold:#c9922f;
+    --teal:#0f766e;
+    --paper:#ffffff;
+    --bg:#f4f1ea;
+    --line:#e7e2d6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:"Inter",sans-serif;
+    color:var(--ink);
+    padding:44px 0;
+  }
+  h1,h2,h3,.brand{font-family:"Sora",sans-serif;}
+  .resume{
+    max-width:980px;
+    margin:0 auto;
+    background:var(--paper);
+    border-radius:6px;
+    box-shadow:0 30px 70px rgba(11,18,32,.15);
+    overflow:hidden;
+  }
+  /* Top identity bar */
+  .id-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:50px 56px 28px;
+    border-bottom:4px solid var(--gold);
+  }
+  .id-name{
+    font-size:2.5rem;
+    font-weight:800;
+    margin:0;
+    letter-spacing:-.5px;
+  }
+  .id-role{
+    font-size:.95rem;
+    font-weight:600;
+    color:var(--teal);
+    text-transform:uppercase;
+    letter-spacing:2.5px;
+    margin-top:6px;
+  }
+  .id-contacts{
+    text-align:right;
+    font-size:.85rem;
+    color:var(--muted);
+    line-height:1.9;
+  }
+  .id-contacts a{color:var(--muted); text-decoration:none;}
+  .id-contacts a:hover{color:var(--teal);}
+  .id-contacts i{width:16px; color:var(--gold); margin-right:6px;}
+
+  /* Skill strip */
+  .skill-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:22px 56px;
+    background:#faf8f3;
+    border-bottom:1px solid var(--line);
+  }
+  .skill-strip-wrap{
+    padding:22px 56px 26px;
+    background:#faf8f3;
+    border-bottom:1px solid var(--line);
+  }
+  .skill-strip-head{
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:0 0 16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .skill-strip-head::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+  .skill-cat{
+    margin-bottom:10px;
+    font-size:.88rem;
+    line-height:1.6;
+    color:#2b3340;
+  }
+  .skill-cat:last-child{margin-bottom:0;}
+  .skill-cat-label{
+    font-weight:700;
+    color:var(--ink);
+  }
+
+  .content{padding:44px 56px 50px;}
+
+  h2.head{
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  h2.head::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  .summary{
+    font-size:1rem;
+    line-height:1.85;
+    color:#2b3340;
+    margin:0 0 40px;
+  }
+
+  /* Timeline */
+  .timeline{
+    position:relative;
+    margin-bottom:44px;
+    padding-left:28px;
+    border-left:2px solid var(--line);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:32px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-34px;
+    top:4px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--gold);
+    border:3px solid #fff;
+    box-shadow:0 0 0 2px var(--gold);
+  }
+  .tl-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:2px;
+  }
+  .tl-title{font-size:1.05rem; font-weight:700; color:var(--ink);}
+  .tl-company{font-size:.88rem; font-weight:600; color:var(--teal);}
+  .tl-dates{
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    white-space:nowrap;
+  }
+  .tl-list{
+    margin:10px 0 0;
+    padding-left:18px;
+  }
+  .tl-list li{
+    font-size:.9rem;
+    line-height:1.6;
+    color:#3d4653;
+    margin-bottom:6px;
+  }
+  .tl-list li strong{color:var(--ink);}
+
+  /* Projects */
+  .proj-card{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:18px 20px;
+    height:100%;
+    background:#fff;
+  }
+  .proj-title{
+    font-size:.95rem;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+  .proj-tag{
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:8px;
+    display:block;
+  }
+  .proj-desc{
+    font-size:.85rem;
+    color:var(--muted);
+    line-height:1.6;
+    margin-bottom:12px;
+  }
+  .proj-link{
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--teal);
+    text-decoration:none;
+  }
+  .proj-link:hover{color:var(--gold);}
+
+  /* Education / Certs */
+  .edu-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:4px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .edu-row:last-child{border-bottom:none;}
+  .edu-degree{font-size:.92rem; font-weight:700; color:var(--ink);}
+  .edu-school{font-size:.82rem; color:var(--muted);}
+  .edu-year{font-size:.8rem; font-weight:600; color:var(--muted); white-space:nowrap;}
+
+  .declare{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:.8rem;
+    color:var(--muted);
+    text-align:center;
+    font-style:italic;
+  }
+
+  @media (max-width:768px){
+    .id-bar{padding:36px 24px 20px;}
+    .id-contacts{text-align:left;}
+    .skill-strip-wrap{padding:18px 24px 22px;}
+    .content{padding:32px 24px 40px;}
+  }
+  @media print{
+    body{background:#fff; padding:0;}
+    .resume{box-shadow:none; max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="resume">
+
+  <div class="id-bar">
+    <div>
+      <h1 class="id-name">Sunil Shedge</h1>
+      <div class="id-role">Senior Flutter Developer</div>
+    </div>
+    <div class="id-contacts">
+      <div><i class="bi bi-envelope"></i><a href="mailto:swarajya888@gmail.com">swarajya888@gmail.com</a></div>
+      <div><i class="bi bi-telephone"></i><a href="tel:+918668796251">+91 8668796251</a></div>
+      <div><i class="bi bi-geo-alt"></i>Pune, Maharashtra, India</div>
+      <div>
+        <i class="bi bi-globe2"></i><a href="https://farmer-brand.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a> &nbsp;·&nbsp;
+        <a href="https://linkedin.com/in/sunilshedge" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;·&nbsp;
+        <a href="https://github.com/this-sunil" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-    </article>
+    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <div class="content pb-0">
+    <h2 class="head">Summary</h2>
+    <p class="summary mb-0">
+      Senior Flutter Developer with 4+ years of experience building scalable, high-performance
+      Android and iOS applications. Developed 15+ mobile apps with live deployments on Play Store
+      and App Store. Strong expertise in Flutter, Dart, BLoC architecture, REST APIs, Firebase,
+      Google Maps, and payment gateways such as Razorpay and UPI — delivering stable, optimized
+      apps focused on performance, monetization, and user engagement.
+    </p>
+  </div>
+
+  <div class="skill-strip-wrap">
+    <h2 class="skill-strip-head">Tech Stack</h2>
+    <div class="skill-cat"><span class="skill-cat-label">Mobile:</span> Flutter, Dart, Android, iOS, Web</div>
+    <div class="skill-cat"><span class="skill-cat-label">State Management:</span> BLoC, Riverpod, Provider, GetX</div>
+    <div class="skill-cat"><span class="skill-cat-label">Backend & Database:</span> Node.js, Express.js, PostgreSQL, JWT Authentication, Firebase, Cloud Firestore, Supabase, SQLite, Hive, Method Channel</div>
+    <div class="skill-cat"><span class="skill-cat-label">Architecture:</span> MVVM, Clean Architecture, SOLID Principles</div>
+    <div class="skill-cat"><span class="skill-cat-label">Integrations:</span> REST APIs, Razorpay, Stripe, UPI, Paytm integration, PayUmoney, Google Ads</div>
+    <div class="skill-cat"><span class="skill-cat-label">Tools:</span> Git, GitHub Copilot, ChatGPT, Gemini Cursor, AI-Powered Chatbot Development, Postman, Android Studio, VS Code, Shorebird, Sentry.io, Fastlane, Codemagic, GitHub Actions</div>
+    <div class="skill-cat"><span class="skill-cat-label">Services:</span> Firebase Auth, FCM, Crashlytics, Google Maps, Google ML Kit, OneSignal, GoRouter</div>
+  </div>
+
+  <div class="content">
+
+    <h2 class="head">Experience</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-row">
+          <span class="tl-title">Full Stack Developer</span>
+          <span class="tl-dates">Apr 2025 – Present</span>
+        </div>
+        <div class="tl-company">Self Employment</div>
+        <ul class="tl-list">
+          <li><strong>Full Stack Architecture:</strong> Developed end-to-end mobile solutions using Flutter with <strong>Node.js/PostgreSQL</strong> backends.</li>
+          <li><strong>Security & API:</strong> Built secure RESTful APIs utilizing <strong>JWT authentication</strong> and Role-Based Access Control (RBAC); implemented <strong>.env-based environment configuration</strong> to securely manage sensitive credentials and API keys.</li>
+          <li><strong>Crash Reporting & Stability:</strong> Resolved <strong>iOS build and crash issues in Xcode</strong> by troubleshooting CocoaPods dependency conflicts and Runner configuration errors; identified and fixed <strong>ANR issues</strong> to improve overall app stability and performance.</li>
+          <li>Migrated iOS dependencies from <strong>CocoaPods to Swift Package Manager (SPM)</strong>, resolving <strong>dependency conflicts</strong> and improving <strong>build stability in Xcode</strong>.</li>
+          <li><strong>OTA Updates:</strong> Delivered over-the-air (OTA) updates using <strong>Shorebird</strong>, enabling hotfix deployments without requiring users to download a new version.</li>
+          <li><strong>Database Optimization:</strong> Designed complex PostgreSQL schemas with optimized query performance.</li>
+          <li><strong>Monetization:</strong> Seamlessly integrated AdMob and international payment gateways.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-row">
+          <span class="tl-title">Senior Flutter Developer</span>
+          <span class="tl-dates">Jul 2022 – Apr 2025</span>
+        </div>
+        <div class="tl-company">Sunra Softtech Pvt. Ltd.</div>
+        <ul class="tl-list">
+          <li><strong>Multi-Platform Architecture & Optimization:</strong> Architected a multi-platform Flutter app (Android, iOS, Web) serving 1,000+ users, reducing load time by <strong>35%</strong> through performance optimization.</li>
+          <li><strong>Clean Architecture & BLoC:</strong> Implemented Clean Architecture and BLoC state management across core modules while utilizing Mixins for reusable logic, cutting bug resolution time by <strong>50%</strong>.</li>
+          <li><strong>Automated CI/CD Pipelines:</strong> Built automated build and release pipelines using <strong>CodeMagic, Fastlane, and GitHub Actions</strong>, reducing release cycles from 5 days to 1 day.</li>
+          <li><strong>Performance & Rendering:</strong> Optimized app performance and eliminated unnecessary rebuilds using <strong>const, RepaintBoundary, lazy loading, asset optimization, app size reduction via ProGuard rules, and Null Safety best practices</strong>.</li>
+          <li><strong>Dynamic Navigation:</strong> Implemented <strong>GoRouter</strong> for scalable, declarative routing and configured <strong>Deep Linking (Android App Links & iOS Universal Links)</strong> for seamless user journeys.</li>
+          <li><strong>Firebase Services:</strong> Integrated <strong>Firebase Phone Authentication, Cloud Firestore, Firebase Crashlytics, Google Sign-In, and Google Maps (Markers & Polylines)</strong>.</li>
+          <li><strong>Fintech & Payment Integration:</strong> Engineered secure payment solutions integrating <strong>Razorpay, Stripe, Paytm, and native UPI</strong> via Method Channels.</li>
+          <li><strong>Multilingual & Engagement:</strong> Expanded global market reach with multilingual support via <strong>Google ML Kit Translation</strong> and integrated <strong>Firebase Cloud Messaging (FCM)</strong> for real-time push notifications.</li>
+          <li><strong>Core Stack Managed:</strong> BLoC · GoRouter · Firebase (Auth / FCM / Crashlytics) · Razorpay / Stripe / UPI · Google ML Kit · Deep Linking · Method Channels · SOLID Principles.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-row">
+          <span class="tl-title">Junior Flutter Developer</span>
+          <span class="tl-dates">Jan 2022 – Jul 2022</span>
+        </div>
+        <div class="tl-company">Syscryption Technology</div>
+        <ul class="tl-list">
+          <li><strong>Accelerated feature development</strong> by integrating RESTful APIs and improving data flow across modules.</li>
+          <li><strong>Enhanced application stability</strong> by identifying and resolving critical bugs and performance bottlenecks.</li>
+          <li><strong>Implemented GetX architecture</strong> for routing, state management, and dependency injection in scalable applications.</li>
+          <li><strong>Optimized performance</strong> using Get.lazyPut() and efficient dependency injection to reduce memory usage.</li>
+          <li><strong>Structured REST API integration</strong> inside GetX controllers ensuring clear separation of UI and business logic layers.</li>
+          <li><strong>Managed controller lifecycle methods</strong> (onInit, onReady, onClose) for better resource handling and performance optimization.</li>
+          <li><strong>Developed barcode scanning feature</strong> to capture product details in real-time using device camera.</li>
+          <li><strong>Integrated third-party libraries</strong> to accelerate feature delivery and extend core app functionality.</li>
+          <li><strong>Applied GetX state management</strong> across app modules for reactive UI updates and efficient state handling.</li>
+          <li><strong>Implemented Google Maps integration</strong> for location-based features and map-driven user interactions.</li>
+          <li><strong>Converted Figma designs into responsive UI/UX</strong>, translating design mockups into pixel-accurate, adaptive Flutter layouts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="head">Projects</h2>
+    <div class="row g-3 mb-5">
+      <div class="col-md-6">
+        <div class="proj-card">
+          <span class="proj-tag">Flutter · OTT Platform</span>
+          <div class="proj-title">Sense Wheel</div>
+          <p class="proj-desc">A Flutter-based OTT streaming platform with video content management, user authentication, subscription plans, seamless media streaming, offline encrypted storage, and a responsive cross-platform experience.<br><em>Tech: Flutter, Firebase, Video Streaming, REST API, Payment Integration, Responsive UI</em></p>
+          <a class="proj-link" href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" target="_blank" rel="noopener noreferrer">View on Play Store →</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="proj-card">
+          <span class="proj-tag">Flutter · Mobility</span>
+          <div class="proj-title">JEEYO RIDE</div>
+          <p class="proj-desc">A Flutter-based mobility application featuring real-time ride tracking, geofencing, route polyline navigation, live location updates, and Google Places auto-complete integration.<br><em>Tech: Flutter, Google Maps, Realtime Tracking, Geofencing, REST API, Firebase</em></p>
+          <a class="proj-link" href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" target="_blank" rel="noopener noreferrer">View on Play Store →</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="proj-card">
+          <span class="proj-tag">Flutter · Gaming</span>
+          <div class="proj-title">Sanjeevani Gaming App</div>
+          <p class="proj-desc">A Flutter-based online gaming and betting application with secure wallet management, real-time updates, payment integration, and smooth gameplay experience.<br><em>Tech: Flutter, Firebase, REST API, Payment Gateway, Push Notification</em></p>
+          <a class="proj-link" href="https://sanjivani999.in/download" target="_blank" rel="noopener noreferrer">View Live App →</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="proj-card">
+          <span class="proj-tag">Flutter · Services</span>
+          <div class="proj-title">Vehicle Repair Service App</div>
+          <p class="proj-desc">A Flutter-based vehicle repair service application that enables users to book repair services, track vehicle status, manage service history, and connect with nearby mechanics.<br><em>Tech: Flutter, Dart, Firebase, REST API, Google Maps, Responsive UI</em></p>
+          <a class="proj-link" href="https://github.com/this-sunil/vehiclerepairservice.git" target="_blank" rel="noopener noreferrer">View Source →</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="proj-card">
+          <span class="proj-tag">Node.js · PostgreSQL</span>
+          <div class="proj-title">Vehicle Repair Service (Backend System)</div>
+          <p class="proj-desc">Secure backend architecture with JWT authentication, middleware protection, PostgreSQL connection pooling, Socket.IO real-time support, and Multer file uploads.<br><em>Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT Auth</em></p>
+          <a class="proj-link" href="https://github.com/this-sunil/vehicle-repair-service" target="_blank" rel="noopener noreferrer">View Source →</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="proj-card">
+          <span class="proj-tag">Flutter · Healthcare</span>
+          <div class="proj-title">Health Care</div>
+          <p class="proj-desc">Health care application focusing on promoting healthy lifestyles, disease prevention through tracking, and providing user-friendly access to essential medical services.<br><em>Tech: Flutter, Dart, Firebase, REST API, Google Maps, Responsive UI</em></p>
+          <a class="proj-link" href="https://github.com/this-sunil/greenlife" target="_blank" rel="noopener noreferrer">View Source →</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="head">Education</h2>
+    <div class="mb-5">
+      <div class="edu-row">
+        <div><div class="edu-degree">M.C.S. — Master of Computer Science</div><div class="edu-school">Sarhad College, Pune</div></div>
+        <div class="edu-year">2019 – 2021 · 77%</div>
+      </div>
+      <div class="edu-row">
+        <div><div class="edu-degree">B.C.S. — Bachelor of Computer Science</div><div class="edu-school">Vishwakarma College, Pune</div></div>
+        <div class="edu-year">2015 – 2018</div>
+      </div>
+      <div class="edu-row">
+        <div><div class="edu-degree">HSC — Class XII</div><div class="edu-school">S.M.S. Mohite Patil Jr. College, Rahimatpur</div></div>
+        <div class="edu-year">Batch 2015</div>
+      </div>
+      <div class="edu-row">
+        <div><div class="edu-degree">SSC — Class X</div><div class="edu-school">Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur</div></div>
+        <div class="edu-year">Batch 2013 · 75%</div>
+      </div>
+    </div>
+
+    <h2 class="head">Certification</h2>
+    <div class="edu-row">
+      <div><div class="edu-degree">Internship Certificate</div></div>
+      <a class="proj-link" href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a>
+    </div>
+
+    <p class="declare">"I hereby declare that all information provided is accurate and verifiable to the best of my knowledge." — Sunil Shedge</p>
+
+  </div>
+</div>
+</body>
 </html>
