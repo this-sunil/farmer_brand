@@ -1,924 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Sunil Shedge | Senior Flutter Developer</title>
+    <title>Sunil Shedge | Senior Flutter Developer</title>
 
-  <link
-    rel="icon"
-    href="https://avatars.githubusercontent.com/u/51407211?v=4"
-  />
+    <link
+      rel="icon"
+      href="https://avatars.githubusercontent.com/u/51407211?v=4"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-  <style>
-    :root {
-      --primary: #0d9488;
-      --primary-dark: #0f766e;
-      --primary-soft: #ecfdf5;
+    <style>
+      :root {
+        --primary: #0d9488;
+        --primary-dark: #0f766e;
+        --primary-soft: #ecfdf5;
 
-      --accent: #f59e0b;
-      --accent-soft: #fffbeb;
+        --accent: #f59e0b;
+        --accent-soft: #fffbeb;
 
-      --dark: #101828;
-      --text: #344054;
-      --muted: #667085;
+        --dark: #101828;
+        --text: #344054;
+        --muted: #667085;
 
-      --border: #e4e7ec;
-      --light: #f8fafc;
-      --paper: #ffffff;
-      --page: #eef2f6;
+        --border: #e4e7ec;
+        --light: #f8fafc;
+        --paper: #ffffff;
+        --page: #eef2f6;
 
-      --radius: 14px;
-    }
+        --radius: 14px;
+      }
 
-    * {
-      box-sizing: border-box;
-    }
+      * {
+        box-sizing: border-box;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      margin: 0;
-      background:
-        radial-gradient(
-          circle at top left,
-          rgba(13, 148, 136, 0.07),
-          transparent 30%
-        ),
-        var(--page);
-      color: var(--text);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.6;
-      padding: 40px 0;
-    }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(13, 148, 136, 0.07),
+            transparent 30%
+          ),
+          var(--page);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.6;
+        padding: 40px 0;
+      }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    .brand {
-      font-family: "Manrope", sans-serif;
-    }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .brand {
+        font-family: "Manrope", sans-serif;
+      }
 
-    a {
-      text-decoration: none;
-    }
+      a {
+        text-decoration: none;
+      }
 
-    /* =========================
+      /* =========================
        RESUME SHEET
     ========================== */
 
-    .resume {
-      max-width: 1120px;
-      margin: auto;
-      background: var(--paper);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow:
-        0 25px 80px rgba(16, 24, 40, 0.12),
-        0 5px 20px rgba(16, 24, 40, 0.05);
-    }
+      .resume {
+        max-width: 1120px;
+        margin: auto;
+        background: var(--paper);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow:
+          0 25px 80px rgba(16, 24, 40, 0.12),
+          0 5px 20px rgba(16, 24, 40, 0.05);
+      }
 
-    /* =========================
+      /* =========================
        HEADER
     ========================== */
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 48px 52px 42px;
-      background:
-        linear-gradient(
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 48px 52px 42px;
+        background: linear-gradient(
           135deg,
           #0b1220 0%,
           #111827 60%,
           #0f766e 140%
         );
-      color: white;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      right: -120px;
-      top: -180px;
-      background: rgba(20, 184, 166, 0.15);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      left: -150px;
-      bottom: -170px;
-      background: rgba(245, 158, 11, 0.08);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #d1fae5;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .availability-dot {
-      width: 7px;
-      height: 7px;
-      background: #34d399;
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.12);
-    }
-
-    .name {
-      margin: 0;
-      font-size: clamp(2.3rem, 5vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -2px;
-      line-height: 1;
-    }
-
-    .role {
-      margin-top: 13px;
-      color: #5eead4;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 2.8px;
-      text-transform: uppercase;
-    }
-
-    .hero-description {
-      max-width: 650px;
-      margin-top: 18px;
-      color: #cbd5e1;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .contact-grid {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      color: #e2e8f0;
-      background: rgba(255, 255, 255, 0.065);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 9px;
-      font-size: 12px;
-      transition: 0.2s ease;
-    }
-
-    .contact-item:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .contact-item i {
-      color: #5eead4;
-      font-size: 14px;
-    }
-
-    /* =========================
-       METRICS
-    ========================== */
-
-    .metrics {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
-      padding: 22px 52px;
-    }
-
-    .metric {
-      position: relative;
-      padding: 4px 20px;
-      border-right: 1px solid var(--border);
-    }
-
-    .metric:last-child {
-      border-right: 0;
-    }
-
-    .metric-number {
-      color: var(--dark);
-      font-family: "Manrope", sans-serif;
-      font-size: 24px;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-
-    .metric-number span {
-      color: var(--primary);
-    }
-
-    .metric-label {
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-    }
-
-    /* =========================
-       MAIN
-    ========================== */
-
-    .main {
-      padding: 42px 52px 55px;
-    }
-
-    .section {
-      margin-bottom: 42px;
-    }
-
-    .section:last-child {
-      margin-bottom: 0;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .section-icon {
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 34px;
-      border-radius: 9px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      font-size: 16px;
-    }
-
-    .section-title {
-      margin: 0;
-      color: var(--dark);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-    }
-
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* =========================
-       SUMMARY
-    ========================== */
-
-    .summary-box {
-      padding: 22px 24px;
-      border: 1px solid #d1fae5;
-      border-left: 4px solid var(--primary);
-      border-radius: 12px;
-      background:
-        linear-gradient(
-          135deg,
-          #f0fdfa,
-          #ffffff
-        );
-    }
-
-    .summary-box p {
-      margin: 0;
-      color: #344054;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .summary-box strong {
-      color: var(--dark);
-    }
-
-    .highlight {
-      color: var(--primary-dark);
-      font-weight: 800;
-    }
-
-    /* =========================
-       SKILLS
-    ========================== */
-
-    .skills-panel {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .skill-row {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 20px;
-      padding: 15px 18px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-row:last-child {
-      border-bottom: 0;
-    }
-
-    .skill-label {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      color: var(--dark);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .skill-label i {
-      color: var(--primary);
-      margin-top: 2px;
-    }
-
-    .skill-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .skill-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 9px;
-      border-radius: 6px;
-      background: #f8fafc;
-      border: 1px solid #e4e7ec;
-      color: #475467;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .skill-badge.primary {
-      color: var(--primary-dark);
-      background: var(--primary-soft);
-      border-color: #ccfbf1;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================== */
-
-    .experience {
-      position: relative;
-    }
-
-    .experience::before {
-      content: "";
-      position: absolute;
-      left: 13px;
-      top: 8px;
-      bottom: 8px;
-      width: 2px;
-      background: #e2e8f0;
-    }
-
-    .experience-item {
-      position: relative;
-      padding-left: 44px;
-      margin-bottom: 32px;
-    }
-
-    .experience-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .experience-dot {
-      position: absolute;
-      left: 5px;
-      top: 4px;
-      width: 18px;
-      height: 18px;
-      background: white;
-      border: 4px solid var(--primary);
-      border-radius: 50%;
-      z-index: 2;
-    }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 4px;
-    }
-
-    .job-title {
-      margin: 0;
-      color: var(--dark);
-      font-size: 16px;
-      font-weight: 800;
-    }
-
-    .company {
-      margin-top: 4px;
-      color: var(--primary-dark);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .date {
-      white-space: nowrap;
-      padding: 5px 9px;
-      border-radius: 6px;
-      background: var(--accent-soft);
-      color: #a16207;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-    }
-
-    .job-list {
-      margin: 14px 0 0;
-      padding-left: 17px;
-    }
-
-    .job-list li {
-      padding-left: 3px;
-      margin-bottom: 8px;
-      color: #475467;
-      font-size: 12.5px;
-      line-height: 1.7;
-    }
-
-    .job-list li::marker {
-      color: var(--primary);
-    }
-
-    .job-list strong {
-      color: var(--dark);
-      font-weight: 700;
-    }
-
-    /* =========================
-       PROJECTS
-    ========================== */
-
-    .project-card {
-      position: relative;
-      height: 100%;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: white;
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      border-color: #99f6e4;
-      box-shadow: 0 12px 30px rgba(15, 118, 110, 0.08);
-    }
-
-    .project-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .project-icon {
-      width: 38px;
-      height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      font-size: 17px;
-    }
-
-    .project-tag {
-      display: inline-block;
-      color: #a16207;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .project-title {
-      margin: 3px 0 0;
-      color: var(--dark);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .project-description {
-      margin: 0 0 13px;
-      color: var(--muted);
-      font-size: 11.5px;
-      line-height: 1.7;
-    }
-
-    .project-description em {
-      color: #475467;
-      font-style: normal;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--primary-dark);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .project-link:hover {
-      color: #a16207;
-    }
-
-    /* =========================
-       EDUCATION
-    ========================== */
-
-    .education-list {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .education-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 15px 18px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .education-item:last-child {
-      border-bottom: 0;
-    }
-
-    .degree {
-      color: var(--dark);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .school {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .edu-year {
-      white-space: nowrap;
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    /* =========================
-       CERTIFICATION
-    ========================== */
-
-    .certificate {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 17px 19px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: linear-gradient(135deg, #fff, #f8fafc);
-    }
-
-    .certificate-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .certificate-icon {
-      width: 40px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: #b45309;
-      font-size: 18px;
-    }
-
-    .certificate-title {
-      color: var(--dark);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .certificate-subtitle {
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    .declaration {
-      margin-top: 40px;
-      padding: 20px 10px 0;
-      border-top: 1px solid var(--border);
-      color: #98a2b3;
-      font-size: 10px;
-      font-style: italic;
-      text-align: center;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-
-    @media (max-width: 991.98px) {
-      body {
-        padding: 20px 0;
+        color: white;
       }
 
-      .resume {
-        margin: 0 14px;
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        right: -120px;
+        top: -180px;
+        background: rgba(20, 184, 166, 0.15);
       }
 
-      .hero,
-      .metrics,
-      .main {
-        padding-left: 30px;
-        padding-right: 30px;
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        left: -150px;
+        bottom: -170px;
+        background: rgba(245, 158, 11, 0.08);
       }
 
-      .metric {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-        padding: 12px 10px;
+      .hero-content {
+        position: relative;
+        z-index: 2;
       }
 
-      .metric:last-child {
-        border-bottom: 0;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      body {
-        padding: 0;
-        background: white;
-      }
-
-      .resume {
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
+      .availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: #d1fae5;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 18px;
       }
 
-      .hero {
-        padding: 36px 22px 30px;
+      .availability-dot {
+        width: 7px;
+        height: 7px;
+        background: #34d399;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.12);
       }
 
       .name {
-        font-size: 2.5rem;
+        margin: 0;
+        font-size: clamp(2.3rem, 5vw, 4rem);
+        font-weight: 800;
+        letter-spacing: -2px;
+        line-height: 1;
       }
 
       .role {
-        font-size: 11px;
-        letter-spacing: 2px;
+        margin-top: 13px;
+        color: #5eead4;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+      }
+
+      .hero-description {
+        max-width: 650px;
+        margin-top: 18px;
+        color: #cbd5e1;
+        font-size: 14px;
+        line-height: 1.8;
       }
 
       .contact-grid {
-        flex-direction: column;
-        align-items: stretch;
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
       .contact-item {
-        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        color: #e2e8f0;
+        background: rgba(255, 255, 255, 0.065);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 9px;
+        font-size: 12px;
+        transition: 0.2s ease;
       }
 
-      .metrics,
+      .contact-item:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .contact-item i {
+        color: #5eead4;
+        font-size: 14px;
+      }
+
+      /* =========================
+       METRICS
+    ========================== */
+
+      .metrics {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 22px 52px;
+      }
+
+      .metric {
+        position: relative;
+        padding: 4px 20px;
+        border-right: 1px solid var(--border);
+      }
+
+      .metric:last-child {
+        border-right: 0;
+      }
+
+      .metric-number {
+        color: var(--dark);
+        font-family: "Manrope", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .metric-number span {
+        color: var(--primary);
+      }
+
+      .metric-label {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+      }
+
+      /* =========================
+       MAIN
+    ========================== */
+
       .main {
-        padding-left: 22px;
-        padding-right: 22px;
+        padding: 42px 52px 55px;
+      }
+
+      .section {
+        margin-bottom: 42px;
+      }
+
+      .section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .section-icon {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 34px;
+        border-radius: 9px;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        font-size: 16px;
+      }
+
+      .section-title {
+        margin: 0;
+        color: var(--dark);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+      }
+
+      .section-line {
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* =========================
+       SUMMARY
+    ========================== */
+
+      .summary-box {
+        padding: 22px 24px;
+        border: 1px solid #d1fae5;
+        border-left: 4px solid var(--primary);
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f0fdfa, #ffffff);
+      }
+
+      .summary-box p {
+        margin: 0;
+        color: #344054;
+        font-size: 14px;
+        line-height: 1.9;
+      }
+
+      .summary-box strong {
+        color: var(--dark);
+      }
+
+      .highlight {
+        color: var(--primary-dark);
+        font-weight: 800;
+      }
+
+      /* =========================
+       SKILLS
+    ========================== */
+
+      .skills-panel {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
       }
 
       .skill-row {
-        grid-template-columns: 1fr;
-        gap: 9px;
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        gap: 20px;
+        padding: 15px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .skill-row:last-child {
+        border-bottom: 0;
+      }
+
+      .skill-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: var(--dark);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .skill-label i {
+        color: var(--primary);
+        margin-top: 2px;
+      }
+
+      .skill-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .skill-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 9px;
+        border-radius: 6px;
+        background: #f8fafc;
+        border: 1px solid #e4e7ec;
+        color: #475467;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .skill-badge.primary {
+        color: var(--primary-dark);
+        background: var(--primary-soft);
+        border-color: #ccfbf1;
+      }
+
+      /* =========================
+       EXPERIENCE
+    ========================== */
+
+      .experience {
+        position: relative;
+      }
+
+      .experience::before {
+        content: "";
+        position: absolute;
+        left: 13px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: #e2e8f0;
+      }
+
+      .experience-item {
+        position: relative;
+        padding-left: 44px;
+        margin-bottom: 32px;
+      }
+
+      .experience-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .experience-dot {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border: 4px solid var(--primary);
+        border-radius: 50%;
+        z-index: 2;
       }
 
       .experience-header {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 4px;
+      }
+
+      .job-title {
+        margin: 0;
+        color: var(--dark);
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .company {
+        margin-top: 4px;
+        color: var(--primary-dark);
+        font-size: 12px;
+        font-weight: 700;
       }
 
       .date {
-        align-self: flex-start;
+        white-space: nowrap;
+        padding: 5px 9px;
+        border-radius: 6px;
+        background: var(--accent-soft);
+        color: #a16207;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
       }
 
-      .education-item,
-      .certificate {
-        align-items: flex-start;
-        flex-direction: column;
+      .job-list {
+        margin: 14px 0 0;
+        padding-left: 17px;
       }
-    }
 
-    /* =========================
-       PRINT
+      .job-list li {
+        padding-left: 3px;
+        margin-bottom: 8px;
+        color: #475467;
+        font-size: 12.5px;
+        line-height: 1.7;
+      }
+
+      .job-list li::marker {
+        color: var(--primary);
+      }
+
+      .job-list strong {
+        color: var(--dark);
+        font-weight: 700;
+      }
+
+      /* =========================
+       PROJECTS
     ========================== */
 
-    @media print {
-      @page {
-        size: A4;
-        margin: 8mm;
-      }
-
-      body {
-        padding: 0;
-        background: white !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .resume {
-        max-width: 100%;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-      }
-
-      .hero {
-        break-inside: avoid;
-      }
-
-      .section,
-      .project-card,
-      .experience-item,
-      .education-item {
-        break-inside: avoid;
+      .project-card {
+        position: relative;
+        height: 100%;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: white;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
       }
 
       .project-card:hover {
-        transform: none;
-        box-shadow: none;
+        transform: translateY(-3px);
+        border-color: #99f6e4;
+        box-shadow: 0 12px 30px rgba(15, 118, 110, 0.08);
       }
 
-      a {
-        color: inherit;
+      .project-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
       }
-    }
-  </style>
-</head>
 
-<body>
+      .project-icon {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        font-size: 17px;
+      }
 
-<div class="resume">
+      .project-tag {
+        display: inline-block;
+        color: #a16207;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
 
-  <!-- =====================================================
+      .project-title {
+        margin: 3px 0 0;
+        color: var(--dark);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .project-description {
+        margin: 0 0 13px;
+        color: var(--muted);
+        font-size: 11.5px;
+        line-height: 1.7;
+      }
+
+      .project-description em {
+        color: #475467;
+        font-style: normal;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--primary-dark);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .project-link:hover {
+        color: #a16207;
+      }
+
+      /* =========================
+       EDUCATION
+    ========================== */
+
+      .education-list {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .education-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .education-item:last-child {
+        border-bottom: 0;
+      }
+
+      .degree {
+        color: var(--dark);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .school {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .edu-year {
+        white-space: nowrap;
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      /* =========================
+       CERTIFICATION
+    ========================== */
+
+      .certificate {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 17px 19px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: linear-gradient(135deg, #fff, #f8fafc);
+      }
+
+      .certificate-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .certificate-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: var(--accent-soft);
+        color: #b45309;
+        font-size: 18px;
+      }
+
+      .certificate-title {
+        color: var(--dark);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .certificate-subtitle {
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      /* =========================
+       FOOTER
+    ========================== */
+
+      .declaration {
+        margin-top: 40px;
+        padding: 20px 10px 0;
+        border-top: 1px solid var(--border);
+        color: #98a2b3;
+        font-size: 10px;
+        font-style: italic;
+        text-align: center;
+      }
+
+      /* =========================
+       RESPONSIVE
+    ========================== */
+
+      @media (max-width: 991.98px) {
+        body {
+          padding: 20px 0;
+        }
+
+        .resume {
+          margin: 0 14px;
+        }
+
+        .hero,
+        .metrics,
+        .main {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .metric {
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+          padding: 12px 10px;
+        }
+
+        .metric:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        body {
+          padding: 0;
+          background: white;
+        }
+
+        .resume {
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .hero {
+          padding: 36px 22px 30px;
+        }
+
+        .name {
+          font-size: 2.5rem;
+        }
+
+        .role {
+          font-size: 11px;
+          letter-spacing: 2px;
+        }
+
+        .contact-grid {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .contact-item {
+          width: 100%;
+        }
+
+        .metrics,
+        .main {
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+
+        .skill-row {
+          grid-template-columns: 1fr;
+          gap: 9px;
+        }
+
+        .experience-header {
+          flex-direction: column;
+        }
+
+        .date {
+          align-self: flex-start;
+        }
+
+        .education-item,
+        .certificate {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      /* =========================
+       PRINT
+    ========================== */
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 8mm;
+        }
+
+        body {
+          padding: 0;
+          background: white !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .resume {
+          max-width: 100%;
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .hero {
+          break-inside: avoid;
+        }
+
+        .section,
+        .project-card,
+        .experience-item,
+        .education-item {
+          break-inside: avoid;
+        }
+
+        .project-card:hover {
+          transform: none;
+          box-shadow: none;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="resume">
+      <!-- =====================================================
        HEADER
   ====================================================== -->
 
-  <header class="hero">
-    <div class="hero-content">
+      <header class="hero">
+        <div class="hero-content">
+          <div class="availability">
+            <span class="availability-dot"></span>
+            Senior Flutter Developer
+          </div>
 
-      <div class="availability">
-        <span class="availability-dot"></span>
-        Senior Flutter Developer
-      </div>
+          <h1 class="name">Sunil Shedge</h1>
 
-      <h1 class="name">Sunil Shedge</h1>
+          <div class="role">
+            Senior Flutter Developer · Full Stack Developer
+          </div>
 
-      <div class="role">
-        Senior Flutter Developer · Full Stack Developer
-      </div>
+          <p class="hero-description">
+            Building scalable, high-performance Android, iOS and Web
+            applications with Flutter, Dart, modern architecture, backend
+            systems, APIs, payments and cloud services.
+          </p>
 
-      <p class="hero-description">
-        Building scalable, high-performance Android, iOS and Web
-        applications with Flutter, Dart, modern architecture,
-        backend systems, APIs, payments and cloud services.
-      </p>
+          <div class="contact-grid">
+            <a class="contact-item" href="mailto:swarajya888@gmail.com">
+              <i class="bi bi-envelope-fill"></i>
+              swarajya888@gmail.com
+            </a>
 
-      <div class="contact-grid">
+            <a class="contact-item" href="tel:+918668796251">
+              <i class="bi bi-telephone-fill"></i>
+              +91 8668796251
+            </a>
 
-        <a
-          class="contact-item"
-          href="mailto:swarajya888@gmail.com"
-        >
-          <i class="bi bi-envelope-fill"></i>
-          swarajya888@gmail.com
-        </a>
+            <span class="contact-item">
+              <i class="bi bi-geo-alt-fill"></i>
+              Pune, Maharashtra, India
+            </span>
 
-        <a
-          class="contact-item"
-          href="tel:+918668796251"
-        >
-          <i class="bi bi-telephone-fill"></i>
-          +91 8668796251
-        </a>
+            <a
+              class="contact-item"
+              href="https://farmer-brand.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-globe2"></i>
+              Portfolio
+            </a>
 
-        <span class="contact-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          Pune, Maharashtra, India
-        </span>
+            <a
+              class="contact-item"
+              href="https://linkedin.com/in/sunilshedge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-linkedin"></i>
+              LinkedIn
+            </a>
 
-        <a
-          class="contact-item"
-          href="https://farmer-brand.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-globe2"></i>
-          Portfolio
-        </a>
+            <a
+              class="contact-item"
+              href="https://github.com/this-sunil"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-github"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </header>
 
-        <a
-          class="contact-item"
-          href="https://linkedin.com/in/sunilshedge"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-linkedin"></i>
-          LinkedIn
-        </a>
-
-        <a
-          class="contact-item"
-          href="https://github.com/this-sunil"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-github"></i>
-          GitHub
-        </a>
-
-      </div>
-    </div>
-  </header>
-
-
-  <!-- =====================================================
+      <!-- =====================================================
        KEY METRICS
   ====================================================== -->
 
-  <!-- <section class="metrics">
+      <!-- <section class="metrics">
     <div class="row g-0 text-center">
 
       <div class="col-6 col-md">
@@ -978,1052 +960,814 @@
     </div>
   </section> -->
 
-
-  <!-- =====================================================
+      <!-- =====================================================
        MAIN CONTENT
   ====================================================== -->
 
-  <main class="main">
-
-    <!-- ================= SUMMARY ================= -->
-
-    <section class="section">
-
-      <div class="section-heading">
-        <div class="section-icon">
-          <i class="bi bi-person-badge"></i>
-        </div>
-
-        <h2 class="section-title">Professional Summary</h2>
-
-        <div class="section-line"></div>
-      </div>
-
-      <div class="summary-box">
-
-        <p>
-          Senior Flutter Developer with
-          <span class="highlight">4+ years</span>
-          of experience building scalable, high-performance
-          Android and iOS applications. Developed
-          <span class="highlight">15+ mobile apps</span>
-          with live deployments on Play Store and App Store.
-          Strong expertise in
-          <strong>Flutter, Dart, BLoC architecture, REST APIs, Firebase, Google Maps</strong>,
-          and payment gateways such as
-          <strong>Razorpay and UPI</strong> — delivering stable,
-          optimized apps focused on performance, monetization,
-          and user engagement.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= TECH STACK ================= -->
-
-    <section class="section">
-
-      <div class="section-heading">
-        <div class="section-icon">
-          <i class="bi bi-code-slash"></i>
-        </div>
-
-        <h2 class="section-title">Technical Skills</h2>
-
-        <div class="section-line"></div>
-      </div>
-
-
-      <div class="skills-panel">
-
-        <!-- Mobile -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-phone"></i>
-            Mobile
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge primary">Flutter</span>
-            <span class="skill-badge primary">Dart</span>
-            <span class="skill-badge">Android</span>
-            <span class="skill-badge">iOS</span>
-            <span class="skill-badge">Web</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- State Management -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-diagram-3"></i>
-            State Management
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge primary">BLoC</span>
-            <span class="skill-badge">Riverpod</span>
-            <span class="skill-badge">Provider</span>
-            <span class="skill-badge">GetX</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- Backend -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-database"></i>
-            Backend & Database
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge primary">Node.js</span>
-            <span class="skill-badge">Express.js</span>
-            <span class="skill-badge">PostgreSQL</span>
-            <span class="skill-badge">JWT Authentication</span>
-            <span class="skill-badge">Firebase</span>
-            <span class="skill-badge">Cloud Firestore</span>
-            <span class="skill-badge">Supabase</span>
-            <span class="skill-badge">SQLite</span>
-            <span class="skill-badge">Hive</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- Architecture -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-layers"></i>
-            Architecture
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge primary">MVVM</span>
-            <span class="skill-badge primary">Clean Architecture</span>
-            <span class="skill-badge">SOLID Principles</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- Integrations -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-plug"></i>
-            Integrations
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge primary">REST APIs</span>
-            <span class="skill-badge">Razorpay</span>
-            <span class="skill-badge">Stripe</span>
-            <span class="skill-badge">UPI payment Method Channel</span>
-            <span class="skill-badge">Paytm integration</span>
-            <span class="skill-badge">PayUmoney</span>
-            <span class="skill-badge">Google Ads</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- Tools -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-tools"></i>
-            Tools
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge">Git</span>
-            <span class="skill-badge">GitHub Copilot</span>
-            <span class="skill-badge">ChatGPT</span>
-            <span class="skill-badge">Gemini</span>
-            <span class="skill-badge">Cursor</span>
-            <span class="skill-badge">AI-Powered Chatbot Development</span>
-            <span class="skill-badge">Postman</span>
-            <span class="skill-badge">Android Studio</span>
-            <span class="skill-badge">VS Code</span>
-            <span class="skill-badge">Shorebird</span>
-            <span class="skill-badge">Sentry.io</span>
-            <span class="skill-badge">Fastlane</span>
-            <span class="skill-badge">Codemagic</span>
-            <span class="skill-badge">GitHub Actions</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- Services -->
-
-        <div class="skill-row">
-
-          <div class="skill-label">
-            <i class="bi bi-cloud-check"></i>
-            Services
-          </div>
-
-          <div class="skill-content">
-
-            <span class="skill-badge">Firebase Auth</span>
-            <span class="skill-badge">FCM</span>
-            <span class="skill-badge">Crashlytics</span>
-            <span class="skill-badge">Google Maps</span>
-            <span class="skill-badge">Google ML Kit</span>
-            <span class="skill-badge">OneSignal</span>
-            <span class="skill-badge primary">GoRouter</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= EXPERIENCE ================= -->
-
-    <section class="section">
-
-      <div class="section-heading">
-        <div class="section-icon">
-          <i class="bi bi-briefcase"></i>
-        </div>
-
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="section-line"></div>
-      </div>
-
-
-      <div class="experience">
-
-
-        <!-- JOB 1 -->
-
-        <article class="experience-item">
-
-          <span class="experience-dot"></span>
-
-          <div class="experience-header">
-
-            <div>
-
-              <h3 class="job-title">
-                Full Stack Developer
-              </h3>
-
-              <div class="company">
-                Self Employment
-              </div>
-
+      <main class="main">
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="section">
+          <div class="section-heading">
+            <div class="section-icon">
+              <i class="bi bi-person-badge"></i>
             </div>
 
-            <span class="date">
-              Apr 2025 – Present
-            </span>
+            <h2 class="section-title">Professional Summary</h2>
 
+            <div class="section-line"></div>
           </div>
 
-
-          <ul class="job-list">
-
-            <li>
-              <strong>Full Stack Architecture:</strong>
-              Developed end-to-end mobile solutions using Flutter
-              with <strong>Node.js/PostgreSQL</strong> backends.
-            </li>
-
-            <li>
-              <strong>Security & API:</strong>
-              Built secure RESTful APIs utilizing
-              <strong>JWT authentication</strong> and
-              Role-Based Access Control (RBAC); implemented
-              <strong>.env-based environment configuration</strong>
-              to securely manage sensitive credentials and API keys.
-            </li>
-
-            <li>
-              <strong>Crash Reporting & Stability:</strong>
-              Resolved <strong>iOS build and crash issues in Xcode</strong>
-              by troubleshooting CocoaPods dependency conflicts and
-              Runner configuration errors; identified and fixed
-              <strong>ANR issues</strong> to improve overall app stability
-              and performance.
-            </li>
-
-            <li>
-              Migrated iOS dependencies from
-              <strong>CocoaPods to Swift Package Manager (SPM)</strong>,
-              resolving <strong>dependency conflicts</strong> and improving
-              <strong>build stability in Xcode</strong>.
-            </li>
-
-            <li>
-              <strong>OTA Updates:</strong>
-              Delivered over-the-air (OTA) updates using
-              <strong>Shorebird</strong>, enabling hotfix deployments
-              without requiring users to download a new version.
-            </li>
-
-            <li>
-              <strong>Database Optimization:</strong>
-              Designed complex PostgreSQL schemas with optimized
-              query performance.
-            </li>
-
-            <li>
-              <strong>Monetization:</strong>
-              Seamlessly integrated AdMob and international payment gateways.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <!-- JOB 2 -->
-
-        <article class="experience-item">
-
-          <span class="experience-dot"></span>
-
-          <div class="experience-header">
-
-            <div>
-
-              <h3 class="job-title">
-                Senior Flutter Developer
-              </h3>
-
-              <div class="company">
-                Sunra Softtech Pvt. Ltd.
-              </div>
-
-            </div>
-
-            <span class="date">
-              Jul 2022 – Apr 2025
-            </span>
-
-          </div>
-
-
-          <ul class="job-list">
-
-            <li>
-              <strong>Multi-Platform Architecture & Optimization:</strong>
-              Architected a multi-platform Flutter app
-              (Android, iOS, Web) serving
-              <strong>1,000+ users</strong>, reducing load time by
-              <strong>35%</strong> through performance optimization.
-            </li>
-
-            <li>
-              <strong>Clean Architecture & BLoC:</strong>
-              Implemented Clean Architecture and BLoC state management
-              across core modules while utilizing Mixins for reusable
-              logic, cutting bug resolution time by
-              <strong>50%</strong>.
-            </li>
-
-            <li>
-              <strong>Automated CI/CD Pipelines:</strong>
-              Built automated build and release pipelines using
-              <strong>CodeMagic, Fastlane, and GitHub Actions</strong>,
-              reducing release cycles from
-              <strong>5 days to 1 day</strong>.
-            </li>
-
-            <li>
-              <strong>Performance & Rendering:</strong>
-              Optimized app performance and eliminated unnecessary
-              rebuilds using
-              <strong>
-                const, RepaintBoundary, lazy loading, asset optimization,
-                app size reduction via ProGuard rules, and Null Safety
-                best practices
-              </strong>.
-            </li>
-
-            <li>
-              <strong>Dynamic Navigation:</strong>
-              Implemented <strong>GoRouter</strong> for scalable,
-              declarative routing and configured
-              <strong>
-                Deep Linking (Android App Links & iOS Universal Links)
-              </strong>
-              for seamless user journeys.
-            </li>
-
-            <li>
-              <strong>Firebase Services:</strong>
-              Integrated
-              <strong>
-                Firebase Phone Authentication, Cloud Firestore,
-                Firebase Crashlytics, Google Sign-In, and Google Maps
-                (Markers & Polylines)
-              </strong>.
-            </li>
-
-            <li>
-              <strong>Fintech & Payment Integration:</strong>
-              Engineered secure payment solutions integrating
-              <strong>Razorpay, Stripe, Paytm, and native UPI</strong>
-              via Method Channels.
-            </li>
-
-            <li>
-              <strong>Multilingual & Engagement:</strong>
-              Expanded global market reach with multilingual support via
-              <strong>Google ML Kit Translation</strong> and integrated
-              <strong>Firebase Cloud Messaging (FCM)</strong>
-              for real-time push notifications.
-            </li>
-
-            <li>
-              <strong>Core Stack Managed:</strong>
-              BLoC · GoRouter · Firebase (Auth / FCM / Crashlytics) ·
-              Razorpay / Stripe / UPI · Google ML Kit · Deep Linking ·
-              Method Channels · SOLID Principles.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <!-- JOB 3 -->
-
-        <article class="experience-item">
-
-          <span class="experience-dot"></span>
-
-          <div class="experience-header">
-
-            <div>
-
-              <h3 class="job-title">
-                Junior Flutter Developer
-              </h3>
-
-              <div class="company">
-                Syscryption Technology
-              </div>
-
-            </div>
-
-            <span class="date">
-              Jan 2022 – Jul 2022
-            </span>
-
-          </div>
-
-
-          <ul class="job-list">
-
-            <li>
-              <strong>Accelerated feature development</strong>
-              by integrating RESTful APIs and improving data flow
-              across modules.
-            </li>
-
-            <li>
-              <strong>Enhanced application stability</strong>
-              by identifying and resolving critical bugs and
-              performance bottlenecks.
-            </li>
-
-            <li>
-              <strong>Implemented GetX architecture</strong>
-              for routing, state management, and dependency injection
-              in scalable applications.
-            </li>
-
-            <li>
-              <strong>Optimized performance</strong>
-              using Get.lazyPut() and efficient dependency injection
-              to reduce memory usage.
-            </li>
-
-            <li>
-              <strong>Structured REST API integration</strong>
-              inside GetX controllers ensuring clear separation of
-              UI and business logic layers.
-            </li>
-
-            <li>
-              <strong>Managed controller lifecycle methods</strong>
-              (onInit, onReady, onClose) for better resource handling
-              and performance optimization.
-            </li>
-
-            <li>
-              <strong>Developed barcode scanning feature</strong>
-              to capture product details in real-time using device camera.
-            </li>
-
-            <li>
-              <strong>Integrated third-party libraries</strong>
-              to accelerate feature delivery and extend core app
-              functionality.
-            </li>
-
-            <li>
-              <strong>Applied GetX state management</strong>
-              across app modules for reactive UI updates and efficient
-              state handling.
-            </li>
-
-            <li>
-              <strong>Implemented Google Maps integration</strong>
-              for location-based features and map-driven user interactions.
-            </li>
-
-            <li>
-              <strong>Converted Figma designs into responsive UI/UX</strong>,
-              translating design mockups into pixel-accurate, adaptive
-              Flutter layouts.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section class="section">
-
-      <div class="section-heading">
-        <div class="section-icon">
-          <i class="bi bi-grid-1x2"></i>
-        </div>
-
-        <h2 class="section-title">Selected Projects</h2>
-
-        <div class="section-line"></div>
-      </div>
-
-
-      <div class="row g-3">
-
-
-        <!-- PROJECT 1 -->
-
-        <div class="col-md-6">
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <div>
-                <span class="project-tag">
-                  Flutter · OTT Platform
-                </span>
-
-                <h3 class="project-title">
-                  Sense Wheel
-                </h3>
-              </div>
-
-              <div class="project-icon">
-                <i class="bi bi-play-btn"></i>
-              </div>
-
-            </div>
-
-            <p class="project-description">
-              A Flutter-based OTT streaming platform with video
-              content management, user authentication, subscription
-              plans, seamless media streaming, offline encrypted storage,
-              and a responsive cross-platform experience.
-              <br />
-              <em>
-                Tech: Flutter, Firebase, Video Streaming, REST API,
-                Payment Integration, Responsive UI
-              </em>
+          <div class="summary-box">
+            <p>
+              Senior Flutter Developer with
+              <span class="highlight">4+ years</span>
+              of experience building scalable, high-performance Android and iOS
+              applications. Developed
+              <span class="highlight">15+ mobile apps</span>
+              with live deployments on Play Store and App Store. Strong
+              expertise in
+              <strong
+                >Flutter, Dart, BLoC architecture, REST APIs, Firebase, Google
+                Maps</strong
+              >, and payment gateways such as
+              <strong>Razorpay and UPI</strong> — delivering stable, optimized
+              apps focused on performance, monetization, and user engagement.
             </p>
+          </div>
+        </section>
 
-            <a
-              class="project-link"
-              href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on Play Store
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
+        <!-- ================= TECH STACK ================= -->
 
-          </article>
-
-        </div>
-
-
-        <!-- PROJECT 2 -->
-
-        <div class="col-md-6">
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <div>
-                <span class="project-tag">
-                  Flutter · Mobility
-                </span>
-
-                <h3 class="project-title">
-                  JEEYO RIDE
-                </h3>
-              </div>
-
-              <div class="project-icon">
-                <i class="bi bi-car-front"></i>
-              </div>
-
+        <section class="section">
+          <div class="section-heading">
+            <div class="section-icon">
+              <i class="bi bi-code-slash"></i>
             </div>
 
-            <p class="project-description">
-              A Flutter-based mobility application featuring
-              real-time ride tracking, geofencing, route polyline
-              navigation, live location updates, and Google Places
-              auto-complete integration.
-              <br />
-              <em>
-                Tech: Flutter, Google Maps, Realtime Tracking,
-                Geofencing, REST API, Firebase
-              </em>
-            </p>
+            <h2 class="section-title">Technical Skills</h2>
 
-            <a
-              class="project-link"
-              href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on Play Store
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
+            <div class="section-line"></div>
+          </div>
 
-          </article>
+          <div class="skills-panel">
+            <!-- Mobile -->
 
-        </div>
-
-
-        <!-- PROJECT 3 -->
-
-        <div class="col-md-6">
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <div>
-                <span class="project-tag">
-                  Flutter · Gaming
-                </span>
-
-                <h3 class="project-title">
-                  Sanjeevani Gaming App
-                </h3>
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-phone"></i>
+                Mobile
               </div>
 
-              <div class="project-icon">
-                <i class="bi bi-controller"></i>
+              <div class="skill-content">
+                <span class="skill-badge primary">Flutter</span>
+                <span class="skill-badge primary">Dart</span>
+                <span class="skill-badge">Android</span>
+                <span class="skill-badge">iOS</span>
+                <span class="skill-badge">Web</span>
               </div>
-
             </div>
 
-            <p class="project-description">
-              A Flutter-based online gaming and betting application
-              with secure wallet management, real-time updates,
-              payment integration, and smooth gameplay experience.
-              <br />
-              <em>
-                Tech: Flutter, Firebase, REST API, Payment Gateway,
-                Push Notification
-              </em>
-            </p>
+            <!-- State Management -->
 
-            <a
-              class="project-link"
-              href="https://sanjivani999.in/download"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Live App
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-
-          </article>
-
-        </div>
-
-
-        <!-- PROJECT 4 -->
-
-        <div class="col-md-6">
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <div>
-                <span class="project-tag">
-                  Flutter · Services
-                </span>
-
-                <h3 class="project-title">
-                  Vehicle Repair Service App
-                </h3>
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-diagram-3"></i>
+                State Management
               </div>
 
-              <div class="project-icon">
+              <div class="skill-content">
+                <span class="skill-badge primary">BLoC</span>
+                <span class="skill-badge">Riverpod</span>
+                <span class="skill-badge">Provider</span>
+                <span class="skill-badge">GetX</span>
+              </div>
+            </div>
+
+            <!-- Backend -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-database"></i>
+                Backend & Database
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">JWT Authentication</span>
+                <span class="skill-badge">Firebase</span>
+                <span class="skill-badge">Cloud Firestore</span>
+                <span class="skill-badge">Supabase</span>
+                <span class="skill-badge">SQLite</span>
+                <span class="skill-badge">Hive</span>
+              </div>
+            </div>
+
+            <!-- Architecture -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-layers"></i>
+                Architecture
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary">MVVM</span>
+                <span class="skill-badge primary">Clean Architecture</span>
+                <span class="skill-badge">SOLID Principles</span>
+              </div>
+            </div>
+
+            <!-- Integrations -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-plug"></i>
+                Integrations
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary">REST APIs</span>
+                <span class="skill-badge">Razorpay</span>
+                <span class="skill-badge">Stripe</span>
+                <span class="skill-badge">UPI payment Method Channel</span>
+                <span class="skill-badge">Paytm integration</span>
+                <span class="skill-badge">PayUmoney</span>
+                <span class="skill-badge">Google Ads</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+
+            <div class="skill-row">
+              <div class="skill-label">
                 <i class="bi bi-tools"></i>
+                Tools
               </div>
 
+              <div class="skill-content">
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub Copilot</span>
+                <span class="skill-badge">ChatGPT</span>
+                <span class="skill-badge">Gemini</span>
+                <span class="skill-badge">Cursor</span>
+                <span class="skill-badge">AI-Powered Chatbot Development</span>
+                <span class="skill-badge">Postman</span>
+                <span class="skill-badge">Android Studio</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Shorebird</span>
+                <span class="skill-badge">Sentry.io</span>
+                <span class="skill-badge">Fastlane</span>
+                <span class="skill-badge">Codemagic</span>
+                <span class="skill-badge">GitHub Actions</span>
+              </div>
             </div>
 
-            <p class="project-description">
-              A Flutter-based vehicle repair service application
-              that enables users to book repair services, track
-              vehicle status, manage service history, and connect
-              with nearby mechanics.
-              <br />
-              <em>
-                Tech: Flutter, Dart, Firebase, REST API, Google Maps,
-                Responsive UI
-              </em>
-            </p>
+            <!-- Services -->
 
-            <a
-              class="project-link"
-              href="https://github.com/this-sunil/vehiclerepairservice.git"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Source
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-cloud-check"></i>
+                Services
+              </div>
 
-          </article>
+              <div class="skill-content">
+                <span class="skill-badge">Firebase Auth</span>
+                <span class="skill-badge">FCM</span>
+                <span class="skill-badge">Crashlytics</span>
+                <span class="skill-badge">Google Maps</span>
+                <span class="skill-badge">Google ML Kit</span>
+                <span class="skill-badge">OneSignal</span>
+                <span class="skill-badge primary">GoRouter</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        </div>
+        <!-- ================= EXPERIENCE ================= -->
 
+        <section class="section">
+          <div class="section-heading">
+            <div class="section-icon">
+              <i class="bi bi-briefcase"></i>
+            </div>
 
-        <!-- PROJECT 5 -->
+            <h2 class="section-title">Professional Experience</h2>
 
-        <div class="col-md-6">
+            <div class="section-line"></div>
+          </div>
 
-          <article class="project-card">
+          <div class="experience">
+            <!-- JOB 1 -->
 
-            <div class="project-top">
+            <article class="experience-item">
+              <span class="experience-dot"></span>
+
+              <div class="experience-header">
+                <div>
+                  <h3 class="job-title">Full Stack Developer</h3>
+
+                  <div class="company">Self Employment</div>
+                </div>
+
+                <span class="date"> Apr 2025 – Present </span>
+              </div>
+
+              <ul class="job-list">
+                <li>
+                  <strong>Full Stack Architecture:</strong>
+                  Developed end-to-end mobile solutions using Flutter with
+                  <strong>Node.js/PostgreSQL</strong> backends.
+                </li>
+
+                <li>
+                  <strong>Security & API:</strong>
+                  Built secure RESTful APIs utilizing
+                  <strong>JWT authentication</strong> and Role-Based Access
+                  Control (RBAC); implemented
+                  <strong>.env-based environment configuration</strong>
+                  to securely manage sensitive credentials and API keys.
+                </li>
+
+                <li>
+                  <strong>Crash Reporting & Stability:</strong>
+                  Resolved <strong>iOS build and crash issues in Xcode</strong>
+                  by troubleshooting CocoaPods dependency conflicts and Runner
+                  configuration errors; identified and fixed
+                  <strong>ANR issues</strong> to improve overall app stability
+                  and performance.
+                </li>
+
+                <li>
+                  Migrated iOS dependencies from
+                  <strong>CocoaPods to Swift Package Manager (SPM)</strong>,
+                  resolving <strong>dependency conflicts</strong> and improving
+                  <strong>build stability in Xcode</strong>.
+                </li>
+
+                <li>
+                  <strong>OTA Updates:</strong>
+                  Delivered over-the-air (OTA) updates using
+                  <strong>Shorebird</strong>, enabling hotfix deployments
+                  without requiring users to download a new version.
+                </li>
+
+                <li>
+                  <strong>Database Optimization:</strong>
+                  Designed complex PostgreSQL schemas with optimized query
+                  performance.
+                </li>
+
+                <li>
+                  <strong>Monetization:</strong>
+                  Seamlessly integrated AdMob and international payment
+                  gateways.
+                </li>
+              </ul>
+            </article>
+
+            <!-- JOB 2 -->
+
+            <article class="experience-item">
+              <span class="experience-dot"></span>
+
+              <div class="experience-header">
+                <div>
+                  <h3 class="job-title">Senior Flutter Developer</h3>
+
+                  <div class="company">Sunra Softtech Pvt. Ltd.</div>
+                </div>
+
+                <span class="date"> Jul 2022 – Apr 2025 </span>
+              </div>
+
+              <ul class="job-list">
+                <li>
+                  <strong>Multi-Platform Architecture & Optimization:</strong>
+                  Architected a multi-platform Flutter app (Android, iOS, Web)
+                  serving
+                  <strong>1,000+ users</strong>, reducing load time by
+                  <strong>35%</strong> through performance optimization.
+                </li>
+
+                <li>
+                  <strong>Clean Architecture & BLoC:</strong>
+                  Implemented Clean Architecture and BLoC state management
+                  across core modules while utilizing Mixins for reusable logic,
+                  cutting bug resolution time by
+                  <strong>50%</strong>.
+                </li>
+
+                <li>
+                  <strong>Automated CI/CD Pipelines:</strong>
+                  Built automated build and release pipelines using
+                  <strong>CodeMagic, Fastlane, and GitHub Actions</strong>,
+                  reducing release cycles from <strong>5 days to 1 day</strong>.
+                </li>
+
+                <li>
+                  <strong>Performance & Rendering:</strong>
+                  Optimized app performance and eliminated unnecessary rebuilds
+                  using
+                  <strong>
+                    const, RepaintBoundary, lazy loading, asset optimization,
+                    app size reduction via ProGuard rules, and Null Safety best
+                    practices </strong
+                  >.
+                </li>
+
+                <li>
+                  <strong>Dynamic Navigation:</strong>
+                  Implemented <strong>GoRouter</strong> for scalable,
+                  declarative routing and configured
+                  <strong>
+                    Deep Linking (Android App Links & iOS Universal Links)
+                  </strong>
+                  for seamless user journeys.
+                </li>
+
+                <li>
+                  <strong>Firebase Services:</strong>
+                  Integrated
+                  <strong>
+                    Firebase Phone Authentication, Cloud Firestore, Firebase
+                    Crashlytics, Google Sign-In, and Google Maps (Markers &
+                    Polylines) </strong
+                  >.
+                </li>
+
+                <li>
+                  <strong>Fintech & Payment Integration:</strong>
+                  Engineered secure payment solutions integrating
+                  <strong>Razorpay, Stripe, Paytm, and native UPI</strong>
+                  via Method Channels.
+                </li>
+
+                <li>
+                  <strong>Multilingual & Engagement:</strong>
+                  Expanded global market reach with multilingual support via
+                  <strong>Google ML Kit Translation</strong> and integrated
+                  <strong>Firebase Cloud Messaging (FCM)</strong>
+                  for real-time push notifications.
+                </li>
+
+                <li>
+                  <strong>Core Stack Managed:</strong>
+                  BLoC · GoRouter · Firebase (Auth / FCM / Crashlytics) ·
+                  Razorpay / Stripe / UPI · Google ML Kit · Deep Linking ·
+                  Method Channels · SOLID Principles.
+                </li>
+              </ul>
+            </article>
+
+            <!-- JOB 3 -->
+
+            <article class="experience-item">
+              <span class="experience-dot"></span>
+
+              <div class="experience-header">
+                <div>
+                  <h3 class="job-title">Junior Flutter Developer</h3>
+
+                  <div class="company">Syscryption Technology</div>
+                </div>
+
+                <span class="date"> Jan 2022 – Jul 2022 </span>
+              </div>
+
+              <ul class="job-list">
+                <li>
+                  <strong>Accelerated feature development</strong>
+                  by integrating RESTful APIs and improving data flow across
+                  modules.
+                </li>
+
+                <li>
+                  <strong>Enhanced application stability</strong>
+                  by identifying and resolving critical bugs and performance
+                  bottlenecks.
+                </li>
+
+                <li>
+                  <strong>Implemented GetX architecture</strong>
+                  for routing, state management, and dependency injection in
+                  scalable applications.
+                </li>
+
+                <li>
+                  <strong>Optimized performance</strong>
+                  using Get.lazyPut() and efficient dependency injection to
+                  reduce memory usage.
+                </li>
+
+                <li>
+                  <strong>Structured REST API integration</strong>
+                  inside GetX controllers ensuring clear separation of UI and
+                  business logic layers.
+                </li>
+
+                <li>
+                  <strong>Managed controller lifecycle methods</strong>
+                  (onInit, onReady, onClose) for better resource handling and
+                  performance optimization.
+                </li>
+
+                <li>
+                  <strong>Developed barcode scanning feature</strong>
+                  to capture product details in real-time using device camera.
+                </li>
+
+                <li>
+                  <strong>Integrated third-party libraries</strong>
+                  to accelerate feature delivery and extend core app
+                  functionality.
+                </li>
+
+                <li>
+                  <strong>Applied GetX state management</strong>
+                  across app modules for reactive UI updates and efficient state
+                  handling.
+                </li>
+
+                <li>
+                  <strong>Implemented Google Maps integration</strong>
+                  for location-based features and map-driven user interactions.
+                </li>
+
+                <li>
+                  <strong>Converted Figma designs into responsive UI/UX</strong
+                  >, translating design mockups into pixel-accurate, adaptive
+                  Flutter layouts.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section class="section">
+          <div class="section-heading">
+            <div class="section-icon">
+              <i class="bi bi-grid-1x2"></i>
+            </div>
+
+            <h2 class="section-title">Selected Projects</h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div class="row g-3">
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <div>
+                    <span class="project-tag"> Flutter · OTT Platform </span>
+
+                    <h3 class="project-title">Sense Wheel</h3>
+                  </div>
+
+                  <div class="project-icon">
+                    <i class="bi bi-play-btn"></i>
+                  </div>
+                </div>
+
+                <p class="project-description">
+                  A Flutter-based OTT streaming platform with video content
+                  management, user authentication, subscription plans, seamless
+                  media streaming, offline encrypted storage, and a responsive
+                  cross-platform experience.
+                  <br />
+                  <em>
+                    Tech: Flutter, Firebase, Video Streaming, REST API, Payment
+                    Integration, Responsive UI
+                  </em>
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on Play Store
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <div>
+                    <span class="project-tag"> Flutter · Mobility </span>
+
+                    <h3 class="project-title">JEEYO RIDE</h3>
+                  </div>
+
+                  <div class="project-icon">
+                    <i class="bi bi-car-front"></i>
+                  </div>
+                </div>
+
+                <p class="project-description">
+                  A Flutter-based mobility application featuring real-time ride
+                  tracking, geofencing, route polyline navigation, live location
+                  updates, and Google Places auto-complete integration.
+                  <br />
+                  <em>
+                    Tech: Flutter, Google Maps, Realtime Tracking, Geofencing,
+                    REST API, Firebase
+                  </em>
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on Play Store
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <div>
+                    <span class="project-tag"> Flutter · Gaming </span>
+
+                    <h3 class="project-title">Sanjeevani Gaming App</h3>
+                  </div>
+
+                  <div class="project-icon">
+                    <i class="bi bi-controller"></i>
+                  </div>
+                </div>
+
+                <p class="project-description">
+                  A Flutter-based online gaming and betting application with
+                  secure wallet management, real-time updates, payment
+                  integration, and smooth gameplay experience.
+                  <br />
+                  <em>
+                    Tech: Flutter, Firebase, REST API, Payment Gateway, Push
+                    Notification
+                  </em>
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://sanjivani999.in/download"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Live App
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="col-md-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <div>
+                    <span class="project-tag"> Flutter · Services </span>
+
+                    <h3 class="project-title">Vehicle Repair Service App</h3>
+                  </div>
+
+                  <div class="project-icon">
+                    <i class="bi bi-tools"></i>
+                  </div>
+                </div>
+
+                <p class="project-description">
+                  A Flutter-based vehicle repair service application that
+                  enables users to book repair services, track vehicle status,
+                  manage service history, and connect with nearby mechanics.
+                  <br />
+                  <em>
+                    Tech: Flutter, Dart, Firebase, REST API, Google Maps,
+                    Responsive UI
+                  </em>
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://github.com/this-sunil/vehiclerepairservice.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Source
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- PROJECT 5 -->
+
+            <div class="col-md-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <div>
+                    <span class="project-tag"> Node.js · PostgreSQL </span>
+
+                    <h3 class="project-title">
+                      Vehicle Repair Service (Backend System)
+                    </h3>
+                  </div>
+
+                  <div class="project-icon">
+                    <i class="bi bi-server"></i>
+                  </div>
+                </div>
+
+                <p class="project-description">
+                  Secure backend architecture with JWT authentication,
+                  middleware protection, PostgreSQL connection pooling,
+                  Socket.IO real-time support, and Multer file uploads.
+                  <br />
+                  <em>
+                    Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT Auth
+                  </em>
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://github.com/this-sunil/vehicle-repair-service"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Source
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- PROJECT 6 -->
+
+            <div class="col-md-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <div>
+                    <span class="project-tag"> Flutter · Healthcare </span>
+
+                    <h3 class="project-title">Health Care</h3>
+                  </div>
+
+                  <div class="project-icon">
+                    <i class="bi bi-heart-pulse"></i>
+                  </div>
+                </div>
+
+                <p class="project-description">
+                  Health care application focusing on promoting healthy
+                  lifestyles, disease prevention through tracking, and providing
+                  user-friendly access to essential medical services.
+                  <br />
+                  <em>
+                    Tech: Flutter, Dart, Firebase, REST API, Google Maps,
+                    Responsive UI
+                  </em>
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://github.com/this-sunil/greenlife"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Source
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section class="section">
+          <div class="section-heading">
+            <div class="section-icon">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+
+            <h2 class="section-title">Education</h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div class="education-list">
+            <div class="education-item">
+              <div>
+                <div class="degree">M.C.S. — Master of Computer Science</div>
+
+                <div class="school">Sarhad College, Pune</div>
+              </div>
+
+              <div class="edu-year">2019 – 2021 · 77%</div>
+            </div>
+
+            <div class="education-item">
+              <div>
+                <div class="degree">B.C.S. — Bachelor of Computer Science</div>
+
+                <div class="school">Vishwakarma College, Pune</div>
+              </div>
+
+              <div class="edu-year">2015 – 2018</div>
+            </div>
+
+            <div class="education-item">
+              <div>
+                <div class="degree">HSC — Class XII</div>
+
+                <div class="school">
+                  S.M.S. Mohite Patil Jr. College, Rahimatpur
+                </div>
+              </div>
+
+              <div class="edu-year">Batch 2015</div>
+            </div>
+
+            <div class="education-item">
+              <div>
+                <div class="degree">SSC — Class X</div>
+
+                <div class="school">
+                  Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
+                </div>
+              </div>
+
+              <div class="edu-year">Batch 2013 · 75%</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= CERTIFICATION ================= -->
+
+        <section class="section">
+          <div class="section-heading">
+            <div class="section-icon">
+              <i class="bi bi-patch-check"></i>
+            </div>
+
+            <h2 class="section-title">Certification</h2>
+
+            <div class="section-line"></div>
+          </div>
+
+          <div class="certificate">
+            <div class="certificate-left">
+              <div class="certificate-icon">
+                <i class="bi bi-file-earmark-pdf"></i>
+              </div>
 
               <div>
-                <span class="project-tag">
-                  Node.js · PostgreSQL
-                </span>
+                <div class="certificate-title">Internship Certificate</div>
 
-                <h3 class="project-title">
-                  Vehicle Repair Service (Backend System)
-                </h3>
+                <div class="certificate-subtitle">
+                  Certificate verification document
+                </div>
               </div>
-
-              <div class="project-icon">
-                <i class="bi bi-server"></i>
-              </div>
-
             </div>
-
-            <p class="project-description">
-              Secure backend architecture with JWT authentication,
-              middleware protection, PostgreSQL connection pooling,
-              Socket.IO real-time support, and Multer file uploads.
-              <br />
-              <em>
-                Tech: Node.js, Express.js, PostgreSQL, Socket.IO,
-                JWT Auth
-              </em>
-            </p>
 
             <a
               class="project-link"
-              href="https://github.com/this-sunil/vehicle-repair-service"
+              href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Source
+              View PDF
               <i class="bi bi-arrow-up-right"></i>
             </a>
+          </div>
+        </section>
 
-          </article>
+        <!-- ================= DECLARATION ================= -->
 
+        <div class="declaration">
+          "I hereby declare that all information provided is accurate and
+          verifiable to the best of my knowledge." — Sunil Shedge
         </div>
-
-
-        <!-- PROJECT 6 -->
-
-        <div class="col-md-6">
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <div>
-                <span class="project-tag">
-                  Flutter · Healthcare
-                </span>
-
-                <h3 class="project-title">
-                  Health Care
-                </h3>
-              </div>
-
-              <div class="project-icon">
-                <i class="bi bi-heart-pulse"></i>
-              </div>
-
-            </div>
-
-            <p class="project-description">
-              Health care application focusing on promoting healthy
-              lifestyles, disease prevention through tracking, and
-              providing user-friendly access to essential medical
-              services.
-              <br />
-              <em>
-                Tech: Flutter, Dart, Firebase, REST API, Google Maps,
-                Responsive UI
-              </em>
-            </p>
-
-            <a
-              class="project-link"
-              href="https://github.com/this-sunil/greenlife"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Source
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section class="section">
-
-      <div class="section-heading">
-
-        <div class="section-icon">
-          <i class="bi bi-mortarboard"></i>
-        </div>
-
-        <h2 class="section-title">
-          Education
-        </h2>
-
-        <div class="section-line"></div>
-
-      </div>
-
-
-      <div class="education-list">
-
-        <div class="education-item">
-
-          <div>
-            <div class="degree">
-              M.C.S. — Master of Computer Science
-            </div>
-
-            <div class="school">
-              Sarhad College, Pune
-            </div>
-          </div>
-
-          <div class="edu-year">
-            2019 – 2021 · 77%
-          </div>
-
-        </div>
-
-
-        <div class="education-item">
-
-          <div>
-            <div class="degree">
-              B.C.S. — Bachelor of Computer Science
-            </div>
-
-            <div class="school">
-              Vishwakarma College, Pune
-            </div>
-          </div>
-
-          <div class="edu-year">
-            2015 – 2018
-          </div>
-
-        </div>
-
-
-        <div class="education-item">
-
-          <div>
-            <div class="degree">
-              HSC — Class XII
-            </div>
-
-            <div class="school">
-              S.M.S. Mohite Patil Jr. College, Rahimatpur
-            </div>
-          </div>
-
-          <div class="edu-year">
-            Batch 2015
-          </div>
-
-        </div>
-
-
-        <div class="education-item">
-
-          <div>
-            <div class="degree">
-              SSC — Class X
-            </div>
-
-            <div class="school">
-              Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
-            </div>
-          </div>
-
-          <div class="edu-year">
-            Batch 2013 · 75%
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CERTIFICATION ================= -->
-
-    <section class="section">
-
-      <div class="section-heading">
-
-        <div class="section-icon">
-          <i class="bi bi-patch-check"></i>
-        </div>
-
-        <h2 class="section-title">
-          Certification
-        </h2>
-
-        <div class="section-line"></div>
-
-      </div>
-
-
-      <div class="certificate">
-
-        <div class="certificate-left">
-
-          <div class="certificate-icon">
-            <i class="bi bi-file-earmark-pdf"></i>
-          </div>
-
-          <div>
-
-            <div class="certificate-title">
-              Internship Certificate
-            </div>
-
-            <div class="certificate-subtitle">
-              Certificate verification document
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <a
-          class="project-link"
-          href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View PDF
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= DECLARATION ================= -->
-
-    <div class="declaration">
-      "I hereby declare that all information provided is accurate
-      and verifiable to the best of my knowledge." — Sunil Shedge
+      </main>
     </div>
 
-  </main>
-
-</div>
-
-
-<!-- Bootstrap JS -->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
