@@ -14,6 +14,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
@@ -49,7 +50,7 @@
         --paper: #ffffff;
         --page: #eef2f6;
 
-        --radius: 14px;
+        --radius: 12px;
       }
 
       * {
@@ -62,6 +63,7 @@
 
       body {
         margin: 0;
+        padding: 40px 0;
         background:
           radial-gradient(
             circle at top left,
@@ -72,15 +74,13 @@
         color: var(--text);
         font-family: "DM Sans", sans-serif;
         line-height: 1.6;
-        padding: 40px 0;
       }
 
       h1,
       h2,
       h3,
       h4,
-      h5,
-      .brand {
+      h5 {
         font-family: "Manrope", sans-serif;
       }
 
@@ -89,8 +89,8 @@
       }
 
       /* =========================
-       RESUME SHEET
-    ========================== */
+         RESUME
+      ========================== */
 
       .resume {
         max-width: 1120px;
@@ -104,20 +104,20 @@
       }
 
       /* =========================
-       HEADER
-    ========================== */
+         HEADER
+      ========================== */
 
       .hero {
         position: relative;
         overflow: hidden;
-        padding: 48px 52px 42px;
+        padding: 46px 52px 40px;
         background: linear-gradient(
           135deg,
           #0b1220 0%,
           #111827 60%,
           #0f766e 140%
         );
-        color: white;
+        color: #fff;
       }
 
       .hero::before {
@@ -125,9 +125,9 @@
         position: absolute;
         width: 340px;
         height: 340px;
-        border-radius: 50%;
         right: -120px;
         top: -180px;
+        border-radius: 50%;
         background: rgba(20, 184, 166, 0.15);
       }
 
@@ -136,9 +136,9 @@
         position: absolute;
         width: 240px;
         height: 240px;
-        border-radius: 50%;
         left: -150px;
         bottom: -170px;
+        border-radius: 50%;
         background: rgba(245, 158, 11, 0.08);
       }
 
@@ -151,26 +151,27 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        margin-bottom: 17px;
         padding: 6px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.09);
-        border: 1px solid rgba(255, 255, 255, 0.14);
         color: #d1fae5;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
-        margin-bottom: 18px;
       }
 
       .availability-dot {
         width: 7px;
         height: 7px;
-        background: #34d399;
         border-radius: 50%;
+        background: #34d399;
         box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.12);
       }
 
       .name {
         margin: 0;
+        color: #fff;
         font-size: clamp(2.3rem, 5vw, 4rem);
         font-weight: 800;
         letter-spacing: -2px;
@@ -180,63 +181,63 @@
       .role {
         margin-top: 13px;
         color: #5eead4;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 800;
-        letter-spacing: 2.8px;
+        letter-spacing: 2.5px;
         text-transform: uppercase;
       }
 
       .hero-description {
-        max-width: 650px;
+        max-width: 760px;
         margin-top: 18px;
+        margin-bottom: 0;
         color: #cbd5e1;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.8;
       }
 
       .contact-grid {
-        margin-top: 30px;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 9px;
+        margin-top: 27px;
       }
 
       .contact-item {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 9px 12px;
-        color: #e2e8f0;
-        background: rgba(255, 255, 255, 0.065);
+        padding: 8px 11px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 9px;
-        font-size: 12px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.065);
+        color: #e2e8f0;
+        font-size: 11px;
         transition: 0.2s ease;
       }
 
       .contact-item:hover {
-        color: white;
         background: rgba(255, 255, 255, 0.12);
+        color: #fff;
       }
 
       .contact-item i {
         color: #5eead4;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       /* =========================
-       METRICS
-    ========================== */
+         METRICS
+      ========================== */
 
       .metrics {
-        background: #fff;
+        padding: 20px 52px;
         border-bottom: 1px solid var(--border);
-        padding: 22px 52px;
+        background: #fff;
       }
 
       .metric {
-        position: relative;
-        padding: 4px 20px;
+        padding: 3px 18px;
         border-right: 1px solid var(--border);
       }
 
@@ -247,9 +248,8 @@
       .metric-number {
         color: var(--dark);
         font-family: "Manrope", sans-serif;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 800;
-        line-height: 1.1;
       }
 
       .metric-number span {
@@ -257,24 +257,24 @@
       }
 
       .metric-label {
-        margin-top: 5px;
+        margin-top: 3px;
         color: var(--muted);
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
+        font-size: 9px;
+        font-weight: 700;
         letter-spacing: 0.7px;
+        text-transform: uppercase;
       }
 
       /* =========================
-       MAIN
-    ========================== */
+         MAIN
+      ========================== */
 
       .main {
-        padding: 42px 52px 55px;
+        padding: 40px 52px 50px;
       }
 
       .section {
-        margin-bottom: 42px;
+        margin-bottom: 38px;
       }
 
       .section:last-child {
@@ -284,29 +284,29 @@
       .section-heading {
         display: flex;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 20px;
+        gap: 11px;
+        margin-bottom: 18px;
       }
 
       .section-icon {
-        width: 34px;
-        height: 34px;
+        width: 33px;
+        height: 33px;
         display: inline-flex;
+        flex: 0 0 33px;
         align-items: center;
         justify-content: center;
-        flex: 0 0 34px;
-        border-radius: 9px;
+        border-radius: 8px;
         background: var(--primary-soft);
         color: var(--primary-dark);
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .section-title {
         margin: 0;
         color: var(--dark);
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 800;
-        letter-spacing: 1.8px;
+        letter-spacing: 1.7px;
         text-transform: uppercase;
       }
 
@@ -317,22 +317,22 @@
       }
 
       /* =========================
-       SUMMARY
-    ========================== */
+         SUMMARY
+      ========================== */
 
       .summary-box {
-        padding: 22px 24px;
+        padding: 20px 22px;
         border: 1px solid #d1fae5;
         border-left: 4px solid var(--primary);
-        border-radius: 12px;
-        background: linear-gradient(135deg, #f0fdfa, #ffffff);
+        border-radius: 11px;
+        background: linear-gradient(135deg, #f0fdfa, #fff);
       }
 
       .summary-box p {
         margin: 0;
         color: #344054;
-        font-size: 14px;
-        line-height: 1.9;
+        font-size: 13px;
+        line-height: 1.85;
       }
 
       .summary-box strong {
@@ -345,20 +345,20 @@
       }
 
       /* =========================
-       SKILLS
-    ========================== */
+         SKILLS
+      ========================== */
 
       .skills-panel {
+        overflow: hidden;
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        overflow: hidden;
       }
 
       .skill-row {
         display: grid;
         grid-template-columns: 190px 1fr;
         gap: 20px;
-        padding: 15px 18px;
+        padding: 14px 17px;
         border-bottom: 1px solid var(--border);
       }
 
@@ -371,42 +371,42 @@
         align-items: flex-start;
         gap: 8px;
         color: var(--dark);
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 800;
       }
 
       .skill-label i {
-        color: var(--primary);
         margin-top: 2px;
+        color: var(--primary);
       }
 
       .skill-content {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 5px;
       }
 
       .skill-badge {
         display: inline-flex;
         align-items: center;
-        padding: 5px 9px;
+        padding: 4px 8px;
+        border: 1px solid #e4e7ec;
         border-radius: 6px;
         background: #f8fafc;
-        border: 1px solid #e4e7ec;
         color: #475467;
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 600;
       }
 
       .skill-badge.primary {
-        color: var(--primary-dark);
-        background: var(--primary-soft);
         border-color: #ccfbf1;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
       }
 
       /* =========================
-       EXPERIENCE
-    ========================== */
+         EXPERIENCE
+      ========================== */
 
       .experience {
         position: relative;
@@ -415,9 +415,9 @@
       .experience::before {
         content: "";
         position: absolute;
-        left: 13px;
         top: 8px;
         bottom: 8px;
+        left: 13px;
         width: 2px;
         background: #e2e8f0;
       }
@@ -425,7 +425,7 @@
       .experience-item {
         position: relative;
         padding-left: 44px;
-        margin-bottom: 32px;
+        margin-bottom: 31px;
       }
 
       .experience-item:last-child {
@@ -434,20 +434,20 @@
 
       .experience-dot {
         position: absolute;
-        left: 5px;
+        z-index: 2;
         top: 4px;
+        left: 5px;
         width: 18px;
         height: 18px;
-        background: white;
         border: 4px solid var(--primary);
         border-radius: 50%;
-        z-index: 2;
+        background: #fff;
       }
 
       .experience-header {
         display: flex;
-        justify-content: space-between;
         align-items: flex-start;
+        justify-content: space-between;
         gap: 15px;
         margin-bottom: 4px;
       }
@@ -455,14 +455,14 @@
       .job-title {
         margin: 0;
         color: var(--dark);
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 800;
       }
 
       .company {
-        margin-top: 4px;
+        margin-top: 3px;
         color: var(--primary-dark);
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
       }
 
@@ -472,23 +472,23 @@
         border-radius: 6px;
         background: var(--accent-soft);
         color: #a16207;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 800;
         letter-spacing: 0.4px;
         text-transform: uppercase;
       }
 
       .job-list {
-        margin: 14px 0 0;
+        margin: 13px 0 0;
         padding-left: 17px;
       }
 
       .job-list li {
         padding-left: 3px;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
         color: #475467;
-        font-size: 12.5px;
-        line-height: 1.7;
+        font-size: 11.7px;
+        line-height: 1.65;
       }
 
       .job-list li::marker {
@@ -500,17 +500,25 @@
         font-weight: 700;
       }
 
+      .job-list code {
+        padding: 1px 4px;
+        border-radius: 4px;
+        background: #f1f5f9;
+        color: #334155;
+        font-size: 10px;
+      }
+
       /* =========================
-       PROJECTS
-    ========================== */
+         PROJECTS
+      ========================== */
 
       .project-card {
         position: relative;
         height: 100%;
-        padding: 20px;
+        padding: 18px;
         border: 1px solid var(--border);
-        border-radius: 12px;
-        background: white;
+        border-radius: 11px;
+        background: #fff;
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease,
@@ -528,25 +536,25 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 12px;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
 
       .project-icon {
-        width: 38px;
-        height: 38px;
+        width: 37px;
+        height: 37px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
+        border-radius: 9px;
         background: var(--primary-soft);
         color: var(--primary-dark);
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .project-tag {
-        display: inline-block;
+        display: block;
         color: #a16207;
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 800;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -555,15 +563,15 @@
       .project-title {
         margin: 3px 0 0;
         color: var(--dark);
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 800;
       }
 
       .project-description {
-        margin: 0 0 13px;
+        margin: 0 0 11px;
         color: var(--muted);
-        font-size: 11.5px;
-        line-height: 1.7;
+        font-size: 10.8px;
+        line-height: 1.65;
       }
 
       .project-description em {
@@ -574,9 +582,9 @@
       .project-link {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 5px;
         color: var(--primary-dark);
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 800;
       }
 
@@ -585,21 +593,21 @@
       }
 
       /* =========================
-       EDUCATION
-    ========================== */
+         EDUCATION
+      ========================== */
 
       .education-list {
-        border: 1px solid var(--border);
-        border-radius: 12px;
         overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 11px;
       }
 
       .education-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         gap: 20px;
-        padding: 15px 18px;
+        padding: 14px 17px;
         border-bottom: 1px solid var(--border);
       }
 
@@ -609,84 +617,70 @@
 
       .degree {
         color: var(--dark);
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 800;
       }
 
       .school {
         margin-top: 3px;
         color: var(--muted);
-        font-size: 11px;
+        font-size: 10px;
       }
 
       .edu-year {
         white-space: nowrap;
         color: var(--muted);
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 700;
       }
 
       /* =========================
-       CERTIFICATION
-    ========================== */
+         CREDENTIAL
+      ========================== */
 
       .certificate {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 15px;
-        padding: 17px 19px;
+        padding: 15px 17px;
         border: 1px solid var(--border);
-        border-radius: 12px;
+        border-radius: 11px;
         background: linear-gradient(135deg, #fff, #f8fafc);
       }
 
       .certificate-left {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 11px;
       }
 
       .certificate-icon {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
+        border-radius: 9px;
         background: var(--accent-soft);
         color: #b45309;
-        font-size: 18px;
+        font-size: 17px;
       }
 
       .certificate-title {
         color: var(--dark);
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 800;
       }
 
       .certificate-subtitle {
         color: var(--muted);
-        font-size: 10px;
+        font-size: 9px;
       }
 
       /* =========================
-       FOOTER
-    ========================== */
-
-      .declaration {
-        margin-top: 40px;
-        padding: 20px 10px 0;
-        border-top: 1px solid var(--border);
-        color: #98a2b3;
-        font-size: 10px;
-        font-style: italic;
-        text-align: center;
-      }
-
-      /* =========================
-       RESPONSIVE
-    ========================== */
+         RESPONSIVE
+      ========================== */
 
       @media (max-width: 991.98px) {
         body {
@@ -707,7 +701,7 @@
         .metric {
           border-right: 0;
           border-bottom: 1px solid var(--border);
-          padding: 12px 10px;
+          padding: 10px;
         }
 
         .metric:last-child {
@@ -718,7 +712,7 @@
       @media (max-width: 767.98px) {
         body {
           padding: 0;
-          background: white;
+          background: #fff;
         }
 
         .resume {
@@ -728,7 +722,7 @@
         }
 
         .hero {
-          padding: 36px 22px 30px;
+          padding: 35px 22px 29px;
         }
 
         .name {
@@ -736,8 +730,8 @@
         }
 
         .role {
-          font-size: 11px;
-          letter-spacing: 2px;
+          font-size: 10px;
+          letter-spacing: 1.8px;
         }
 
         .contact-grid {
@@ -751,13 +745,13 @@
 
         .metrics,
         .main {
-          padding-left: 22px;
           padding-right: 22px;
+          padding-left: 22px;
         }
 
         .skill-row {
           grid-template-columns: 1fr;
-          gap: 9px;
+          gap: 8px;
         }
 
         .experience-header {
@@ -776,24 +770,31 @@
       }
 
       /* =========================
-       PRINT
-    ========================== */
+         PRINT / A4
+      ========================== */
 
       @media print {
         @page {
           size: A4;
-          margin: 8mm;
+          margin: 7mm;
+        }
+
+        html,
+        body {
+          width: 210mm;
+          min-height: 297mm;
         }
 
         body {
           padding: 0;
-          background: white !important;
+          background: #fff !important;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
 
         .resume {
-          max-width: 100%;
+          width: 100%;
+          max-width: none;
           margin: 0;
           border-radius: 0;
           box-shadow: none;
@@ -803,10 +804,17 @@
           break-inside: avoid;
         }
 
-        .section,
-        .project-card,
+        .section {
+          break-inside: auto;
+        }
+
+        .section-heading,
+        .summary-box,
+        .skills-panel,
         .experience-item,
-        .education-item {
+        .project-card,
+        .education-item,
+        .certificate {
           break-inside: avoid;
         }
 
@@ -818,6 +826,11 @@
         a {
           color: inherit;
         }
+
+        .project-link,
+        .contact-item {
+          text-decoration: none;
+        }
       }
     </style>
   </head>
@@ -825,26 +838,26 @@
   <body>
     <div class="resume">
       <!-- =====================================================
-       HEADER
-  ====================================================== -->
+           HEADER
+      ====================================================== -->
 
       <header class="hero">
         <div class="hero-content">
           <div class="availability">
             <span class="availability-dot"></span>
-            Senior Flutter Developer
+            Available for Senior Flutter Opportunities
           </div>
 
           <h1 class="name">Sunil Shedge</h1>
 
           <div class="role">
-            Senior Flutter Developer · Full Stack Developer
+            Senior Flutter Developer · Mobile Application Engineer
           </div>
 
           <p class="hero-description">
-            Building scalable, high-performance Android, iOS and Web
-            applications with Flutter, Dart, modern architecture, backend
-            systems, APIs, payments and cloud services.
+            Building scalable, secure, and high-performance Android and iOS
+            applications using Flutter, Dart, modern architecture, backend
+            systems, APIs, payment integrations, cloud services, and CI/CD.
           </p>
 
           <div class="contact-grid">
@@ -897,72 +910,70 @@
       </header>
 
       <!-- =====================================================
-       KEY METRICS
-  ====================================================== -->
+           KEY METRICS
+      ====================================================== -->
 
-      <!-- <section class="metrics">
-    <div class="row g-0 text-center">
-
-      <div class="col-6 col-md">
-        <div class="metric">
-          <div class="metric-number">
-            <span>4+</span>
+      <section class="metrics">
+        <div class="row g-0 text-center">
+          <div class="col-6 col-md">
+            <div class="metric">
+              <div class="metric-number">
+                <span>4+</span>
+              </div>
+              <div class="metric-label">Years Experience</div>
+            </div>
           </div>
-          <div class="metric-label">Years Experience</div>
-        </div>
-      </div>
 
-      <div class="col-6 col-md">
-        <div class="metric">
-          <div class="metric-number">
-            <span>15+</span>
+          <div class="col-6 col-md">
+            <div class="metric">
+              <div class="metric-number">
+                <span>15+</span>
+              </div>
+              <div class="metric-label">Production Apps</div>
+            </div>
           </div>
-          <div class="metric-label">Mobile Apps</div>
-        </div>
-      </div>
 
-      <div class="col-6 col-md">
-        <div class="metric">
-          <div class="metric-number">
-            <span>1,000+</span>
+          <div class="col-6 col-md">
+            <div class="metric">
+              <div class="metric-number">
+                <span>1,000+</span>
+              </div>
+              <div class="metric-label">Users Served</div>
+            </div>
           </div>
-          <div class="metric-label">Users Served</div>
-        </div>
-      </div>
 
-      <div class="col-6 col-md">
-        <div class="metric">
-          <div class="metric-number">
-            <span>35%</span>
+          <div class="col-6 col-md">
+            <div class="metric">
+              <div class="metric-number">
+                <span>35%</span>
+              </div>
+              <div class="metric-label">Load Time Reduced</div>
+            </div>
           </div>
-          <div class="metric-label">Load Time Reduced</div>
-        </div>
-      </div>
 
-      <div class="col-6 col-md">
-        <div class="metric">
-          <div class="metric-number">
-            <span>50%</span>
+          <div class="col-6 col-md">
+            <div class="metric">
+              <div class="metric-number">
+                <span>50%</span>
+              </div>
+              <div class="metric-label">Faster Bug Resolution</div>
+            </div>
           </div>
-          <div class="metric-label">Bug Resolution Faster</div>
-        </div>
-      </div>
 
-      <div class="col-6 col-md">
-        <div class="metric">
-          <div class="metric-number">
-            <span>5 → 1</span>
+          <div class="col-6 col-md">
+            <div class="metric">
+              <div class="metric-number">
+                <span>5 → 1</span>
+              </div>
+              <div class="metric-label">Release Cycle</div>
+            </div>
           </div>
-          <div class="metric-label">Days Release Cycle</div>
         </div>
-      </div>
-
-    </div>
-  </section> -->
+      </section>
 
       <!-- =====================================================
-       MAIN CONTENT
-  ====================================================== -->
+           MAIN CONTENT
+      ====================================================== -->
 
       <main class="main">
         <!-- ================= SUMMARY ================= -->
@@ -982,21 +993,22 @@
             <p>
               Senior Flutter Developer with
               <span class="highlight">4+ years</span>
-              of experience building scalable, secure, and high-performance
-              Android and iOS applications. Successfully developed and deployed
+              of hands-on experience designing, developing, and deploying
+              scalable Android and iOS applications. Successfully delivered
               <span class="highlight">15+ production apps</span>
-              on the Google Play Store and Apple App Store. Strong expertise in
-              <strong
-                >Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps</strong
-              >, <strong>Razorpay, UPI, biometric authentication</strong>, and
-              <strong>WebView-based solutions</strong>, with a focus on clean
-              architecture, performance optimization, security, and reliable
-              production delivery.
+              with live deployments on the Google Play Store and Apple App
+              Store. Strong expertise in
+              <strong>
+                Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps, Razorpay,
+                Stripe, UPI, biometric authentication, WebView, and CI/CD </strong
+              >, with a strong focus on clean architecture, performance
+              optimization, application security, and reliable production
+              delivery.
             </p>
           </div>
         </section>
 
-        <!-- ================= TECH STACK ================= -->
+        <!-- ================= TECHNICAL SKILLS ================= -->
 
         <section class="section">
           <div class="section-heading">
@@ -1015,7 +1027,7 @@
             <div class="skill-row">
               <div class="skill-label">
                 <i class="bi bi-phone"></i>
-                Mobile
+                Mobile Development
               </div>
 
               <div class="skill-content">
@@ -1023,44 +1035,9 @@
                 <span class="skill-badge primary">Dart</span>
                 <span class="skill-badge">Android</span>
                 <span class="skill-badge">iOS</span>
-                <span class="skill-badge">Web</span>
-              </div>
-            </div>
-
-            <!-- State Management -->
-
-            <div class="skill-row">
-              <div class="skill-label">
-                <i class="bi bi-diagram-3"></i>
-                State Management
-              </div>
-
-              <div class="skill-content">
-                <span class="skill-badge primary">BLoC</span>
-                <span class="skill-badge">Riverpod</span>
-                <span class="skill-badge">Provider</span>
-                <span class="skill-badge">GetX</span>
-              </div>
-            </div>
-
-            <!-- Backend -->
-
-            <div class="skill-row">
-              <div class="skill-label">
-                <i class="bi bi-database"></i>
-                Backend & Database
-              </div>
-
-              <div class="skill-content">
-                <span class="skill-badge primary">Node.js</span>
-                <span class="skill-badge">Express.js</span>
-                <span class="skill-badge">PostgreSQL</span>
-                <span class="skill-badge">JWT Authentication</span>
-                <span class="skill-badge">Firebase</span>
-                <span class="skill-badge">Cloud Firestore</span>
-                <span class="skill-badge">Supabase</span>
-                <span class="skill-badge">SQLite</span>
-                <span class="skill-badge">Hive</span>
+                <span class="skill-badge">Flutter Web</span>
+                <span class="skill-badge">Responsive UI</span>
+                <span class="skill-badge">WebView</span>
               </div>
             </div>
 
@@ -1073,9 +1050,155 @@
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary">MVVM</span>
-                <span class="skill-badge primary">Clean Architecture</span>
-                <span class="skill-badge">SOLID Principles</span>
+                <span class="skill-badge primary"> Clean Architecture </span>
+
+                <span class="skill-badge primary"> BLoC </span>
+
+                <span class="skill-badge"> MVVM </span>
+
+                <span class="skill-badge"> SOLID Principles </span>
+
+                <span class="skill-badge"> Repository Pattern </span>
+
+                <span class="skill-badge"> Dependency Injection </span>
+              </div>
+            </div>
+
+            <!-- State Management -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-diagram-3"></i>
+                State Management
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary"> BLoC </span>
+
+                <span class="skill-badge"> GetX </span>
+
+                <span class="skill-badge"> Provider </span>
+
+                <span class="skill-badge"> Riverpod </span>
+              </div>
+            </div>
+
+            <!-- Backend -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-server"></i>
+                Backend & Database
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary"> Node.js </span>
+
+                <span class="skill-badge"> Express.js </span>
+
+                <span class="skill-badge"> PostgreSQL </span>
+
+                <span class="skill-badge"> Firebase </span>
+
+                <span class="skill-badge"> Cloud Firestore </span>
+
+                <span class="skill-badge"> Supabase </span>
+
+                <span class="skill-badge"> SQLite </span>
+
+                <span class="skill-badge"> Hive </span>
+              </div>
+            </div>
+
+            <!-- API -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-cloud-arrow-down"></i>
+                APIs & Authentication
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary"> REST APIs </span>
+
+                <span class="skill-badge"> JWT Authentication </span>
+
+                <span class="skill-badge"> OAuth </span>
+
+                <span class="skill-badge"> Firebase Authentication </span>
+
+                <span class="skill-badge"> Role-Based Access Control </span>
+              </div>
+            </div>
+
+            <!-- Payments -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-credit-card"></i>
+                Payments
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary"> Razorpay </span>
+
+                <span class="skill-badge primary"> Stripe </span>
+
+                <span class="skill-badge"> UPI Integration </span>
+
+                <span class="skill-badge"> Paytm </span>
+
+                <span class="skill-badge"> Flutter Method Channels </span>
+              </div>
+            </div>
+
+            <!-- Firebase -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-fire"></i>
+                Firebase & Cloud
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge"> Firebase Auth </span>
+
+                <span class="skill-badge"> Cloud Firestore </span>
+
+                <span class="skill-badge"> FCM </span>
+
+                <span class="skill-badge"> Crashlytics </span>
+
+                <span class="skill-badge"> Google Sign-In </span>
+
+                <span class="skill-badge"> OneSignal </span>
+              </div>
+            </div>
+
+            <!-- Security -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-shield-lock"></i>
+                Security
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary">
+                  Biometric Authentication
+                </span>
+
+                <span class="skill-badge"> Fingerprint Authentication </span>
+
+                <span class="skill-badge"> local_auth </span>
+
+                <span class="skill-badge"> MPIN Authentication </span>
+
+                <span class="skill-badge"> Secure Storage </span>
+
+                <span class="skill-badge"> Screenshot Prevention </span>
+
+                <span class="skill-badge"> Screen Recording Prevention </span>
               </div>
             </div>
 
@@ -1088,13 +1211,44 @@
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary">REST APIs</span>
-                <span class="skill-badge">Razorpay</span>
-                <span class="skill-badge">Stripe</span>
-                <span class="skill-badge">UPI payment Method Channel</span>
-                <span class="skill-badge">Paytm integration</span>
-                <span class="skill-badge">PayUmoney</span>
-                <span class="skill-badge">Google Ads</span>
+                <span class="skill-badge primary"> Google Maps </span>
+
+                <span class="skill-badge"> Google ML Kit </span>
+
+                <span class="skill-badge"> Deep Linking </span>
+
+                <span class="skill-badge"> Android App Links </span>
+
+                <span class="skill-badge"> iOS Universal Links </span>
+
+                <span class="skill-badge"> Barcode Scanning </span>
+
+                <span class="skill-badge"> Google Ads </span>
+              </div>
+            </div>
+
+            <!-- CI/CD -->
+
+            <div class="skill-row">
+              <div class="skill-label">
+                <i class="bi bi-git"></i>
+                DevOps & CI/CD
+              </div>
+
+              <div class="skill-content">
+                <span class="skill-badge primary"> Codemagic </span>
+
+                <span class="skill-badge"> Fastlane </span>
+
+                <span class="skill-badge"> GitHub Actions </span>
+
+                <span class="skill-badge"> Shorebird </span>
+
+                <span class="skill-badge"> Sentry </span>
+
+                <span class="skill-badge"> Git </span>
+
+                <span class="skill-badge"> GitHub </span>
               </div>
             </div>
 
@@ -1103,43 +1257,25 @@
             <div class="skill-row">
               <div class="skill-label">
                 <i class="bi bi-tools"></i>
-                Tools
+                Development Tools
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge">Git</span>
-                <span class="skill-badge">GitHub Copilot</span>
-                <span class="skill-badge">ChatGPT</span>
-                <span class="skill-badge">Gemini</span>
-                <span class="skill-badge">Cursor</span>
-                <span class="skill-badge">AI-Powered Chatbot Development</span>
-                <span class="skill-badge">Postman</span>
-                <span class="skill-badge">Android Studio</span>
-                <span class="skill-badge">VS Code</span>
-                <span class="skill-badge">Shorebird</span>
-                <span class="skill-badge">Sentry.io</span>
-                <span class="skill-badge">Fastlane</span>
-                <span class="skill-badge">Codemagic</span>
-                <span class="skill-badge">GitHub Actions</span>
-              </div>
-            </div>
+                <span class="skill-badge"> Android Studio </span>
 
-            <!-- Services -->
+                <span class="skill-badge"> VS Code </span>
 
-            <div class="skill-row">
-              <div class="skill-label">
-                <i class="bi bi-cloud-check"></i>
-                Services
-              </div>
+                <span class="skill-badge"> Xcode </span>
 
-              <div class="skill-content">
-                <span class="skill-badge">Firebase Auth</span>
-                <span class="skill-badge">FCM</span>
-                <span class="skill-badge">Crashlytics</span>
-                <span class="skill-badge">Google Maps</span>
-                <span class="skill-badge">Google ML Kit</span>
-                <span class="skill-badge">OneSignal</span>
-                <span class="skill-badge primary">GoRouter</span>
+                <span class="skill-badge"> Postman </span>
+
+                <span class="skill-badge"> GitHub Copilot </span>
+
+                <span class="skill-badge"> Cursor </span>
+
+                <span class="skill-badge"> ChatGPT </span>
+
+                <span class="skill-badge"> Gemini </span>
               </div>
             </div>
           </div>
@@ -1166,7 +1302,7 @@
 
               <div class="experience-header">
                 <div>
-                  <h3 class="job-title">Full Stack Developer</h3>
+                  <h3 class="job-title">Independent Full Stack Developer</h3>
 
                   <div class="company">Self Employment</div>
                 </div>
@@ -1176,53 +1312,53 @@
 
               <ul class="job-list">
                 <li>
-                  <strong>Full Stack Architecture:</strong>
-                  Developed end-to-end mobile solutions using Flutter with
-                  <strong>Node.js/PostgreSQL</strong> backends.
+                  Developed end-to-end
+                  <strong>Flutter mobile applications</strong>
+                  backed by
+                  <strong>Node.js, Express.js, and PostgreSQL</strong>, covering
+                  API development, authentication, database design, and
+                  production deployment.
                 </li>
 
                 <li>
-                  <strong>Security & API:</strong>
-                  Built secure RESTful APIs utilizing
-                  <strong>JWT authentication</strong> and Role-Based Access
-                  Control (RBAC); implemented
-                  <strong>.env-based environment configuration</strong>
-                  to securely manage sensitive credentials and API keys.
+                  Built secure REST APIs using
+                  <strong
+                    >JWT authentication and Role-Based Access Control</strong
+                  >, with environment-based configuration for protecting API
+                  keys and sensitive credentials.
                 </li>
 
                 <li>
-                  <strong>Crash Reporting & Stability:</strong>
-                  Resolved <strong>iOS build and crash issues in Xcode</strong>
-                  by troubleshooting CocoaPods dependency conflicts and Runner
-                  configuration errors; identified and fixed
-                  <strong>ANR issues</strong> to improve overall app stability
-                  and performance.
+                  Diagnosed and resolved
+                  <strong
+                    >iOS build failures, CocoaPods dependency conflicts, Xcode
+                    configuration issues, and ANR problems</strong
+                  >, improving application stability and release reliability.
                 </li>
 
                 <li>
                   Migrated iOS dependencies from
-                  <strong>CocoaPods to Swift Package Manager (SPM)</strong>,
-                  resolving <strong>dependency conflicts</strong> and improving
-                  <strong>build stability in Xcode</strong>.
+                  <strong>CocoaPods to Swift Package Manager</strong>
+                  to improve dependency management and Xcode build stability.
                 </li>
 
                 <li>
-                  <strong>OTA Updates:</strong>
-                  Delivered over-the-air (OTA) updates using
-                  <strong>Shorebird</strong>, enabling hotfix deployments
-                  without requiring users to download a new version.
+                  Implemented
+                  <strong>Shorebird OTA updates</strong>
+                  for Flutter applications, enabling rapid production hotfixes
+                  without requiring full application releases.
                 </li>
 
                 <li>
-                  <strong>Database Optimization:</strong>
-                  Designed complex PostgreSQL schemas with optimized query
-                  performance.
+                  Designed and optimized
+                  <strong>PostgreSQL database schemas and queries</strong>
+                  for scalable backend applications.
                 </li>
 
                 <li>
-                  <strong>Monetization:</strong>
-                  Seamlessly integrated AdMob and international payment
-                  gateways.
+                  Integrated
+                  <strong>Google AdMob and payment gateways</strong>
+                  to support application monetization and transaction workflows.
                 </li>
               </ul>
             </article>
@@ -1244,92 +1380,90 @@
 
               <ul class="job-list">
                 <li>
-                  <strong>Multi-Platform Architecture & Optimization:</strong>
-                  Architected a multi-platform Flutter app (Android, iOS, Web)
-                  serving
-                  <strong>1,000+ users</strong>, reducing load time by
-                  <strong>35%</strong> through performance optimization.
+                  Architected and maintained a
+                  <strong>multi-platform Flutter application</strong>
+                  for Android, iOS, and Web serving
+                  <strong>1,000+ users</strong>, reducing application load time
+                  by
+                  <strong>35%</strong>
+                  through performance optimization.
                 </li>
 
                 <li>
-                  <strong>Clean Architecture & BLoC:</strong>
-                  Implemented Clean Architecture and BLoC state management
-                  across core modules while utilizing Mixins for reusable logic,
-                  cutting bug resolution time by
+                  Implemented
+                  <strong>Clean Architecture and BLoC state management</strong>
+                  across core modules, improving maintainability and reducing
+                  bug resolution time by
                   <strong>50%</strong>.
                 </li>
 
                 <li>
-                  <strong>Automated CI/CD Pipelines:</strong>
-                  Built automated build and release pipelines using
-                  <strong>CodeMagic, Fastlane, and GitHub Actions</strong>,
-                  reducing release cycles from <strong>5 days to 1 day</strong>.
+                  Built automated
+                  <strong>CI/CD pipelines</strong>
+                  using
+                  <strong>Codemagic, Fastlane, and GitHub Actions</strong>,
+                  reducing the release cycle from
+                  <strong>5 days to 1 day</strong>.
                 </li>
 
                 <li>
-                  <strong>Performance & Rendering:</strong>
-                  Optimized app performance and eliminated unnecessary rebuilds
-                  using
+                  Optimized Flutter rendering and application performance using
                   <strong>
-                    const, RepaintBoundary, lazy loading, asset optimization,
-                    app size reduction via ProGuard rules, and Null Safety best
-                    practices </strong
+                    const widgets, RepaintBoundary, lazy loading, asset
+                    optimization, ProGuard rules, and null safety </strong
                   >.
                 </li>
 
                 <li>
-                  <strong>Dynamic Navigation:</strong>
-                  Implemented <strong>GoRouter</strong> for scalable,
-                  declarative routing and configured
-                  <strong>
-                    Deep Linking (Android App Links & iOS Universal Links)
-                  </strong>
-                  for seamless user journeys.
+                  Implemented scalable navigation using
+                  <strong>GoRouter</strong>
+                  with
+                  <strong> Android App Links and iOS Universal Links </strong>
+                  for deep linking and seamless user journeys.
                 </li>
 
                 <li>
-                  <strong>Firebase Services:</strong>
                   Integrated
                   <strong>
-                    Firebase Phone Authentication, Cloud Firestore, Firebase
-                    Crashlytics, Google Sign-In, and Google Maps (Markers &
-                    Polylines) </strong
+                    Firebase Authentication, Cloud Firestore, FCM, Crashlytics,
+                    Google Sign-In, and Google Maps
+                  </strong>
+                  for authentication, real-time data, notifications, crash
+                  monitoring, and location-based features.
+                </li>
+
+                <li>
+                  Engineered secure payment integrations using
+                  <strong>
+                    Razorpay, Stripe, Paytm, and UPI through Flutter Method
+                    Channels </strong
                   >.
                 </li>
 
                 <li>
-                  <strong>Fintech & Payment Integration:</strong>
-                  Engineered secure payment solutions integrating
-                  <strong>Razorpay, Stripe, Paytm, and native UPI</strong>
-                  via Method Channels.
+                  Implemented
+                  <strong>
+                    fingerprint and biometric authentication, MPIN
+                    authentication, secure local storage, and
+                    screenshot/screen-recording prevention
+                  </strong>
+                  for security-sensitive application flows.
                 </li>
 
                 <li>
-                  <strong>Multilingual & Engagement:</strong>
-                  Expanded global market reach with multilingual support via
-                  <strong>Google ML Kit Translation</strong> and integrated
-                  <strong>Firebase Cloud Messaging (FCM)</strong>
+                  Integrated
+                  <strong>Google ML Kit Translation</strong>
+                  for multilingual application experiences and
+                  <strong>Firebase Cloud Messaging</strong>
                   for real-time push notifications.
                 </li>
 
                 <li>
-                  <strong>Core Stack Managed:</strong>
-                  BLoC · GoRouter · Firebase (Auth / FCM / Crashlytics) ·
-                  Razorpay / Stripe / UPI · Google ML Kit · Deep Linking ·
-                  Method Channels · SOLID Principles.
-                </li>
-                <li>
-                  <strong>Security & Authentication:</strong>
-                  Fingerprint / Biometric Authentication ·
-                  <code>local_auth</code> · MPIN Authentication · Secure App
-                  Storage · Screen Recording / Screenshot Prevention
-                </li>
-                <li>
-                  <strong>Website to Mobile App:</strong>
-                  Converted websites into Android / iOS mobile applications
-                  using Flutter WebView · Responsive Web Experience · Native App
-                  Integration · Deep Linking · JavaScript / WebView
-                  Communication
+                  Converted responsive websites into
+                  <strong>
+                    Android and iOS applications using Flutter WebView </strong
+                  >, including deep linking, JavaScript communication, and
+                  native platform integration.
                 </li>
               </ul>
             </article>
@@ -1351,73 +1485,63 @@
 
               <ul class="job-list">
                 <li>
-                  Accelerated feature development by integrating
-                  <strong>RESTful APIs</strong> and establishing efficient data
-                  flow across application modules.
+                  Developed and integrated
+                  <strong>RESTful APIs</strong>
+                  and established efficient data flow between UI, business
+                  logic, and backend services.
                 </li>
 
                 <li>
-                  Improved
-                  <strong>application stability and performance</strong> by
-                  identifying and resolving critical bugs, memory issues, and
-                  performance bottlenecks.
-                </li>
-
-                <li>
-                  Implemented <strong>GetX architecture</strong> for state
-                  management, routing, and dependency injection to build
-                  scalable and maintainable Flutter applications.
+                  Implemented
+                  <strong>GetX architecture</strong>
+                  for state management, routing, and dependency injection across
+                  scalable Flutter applications.
                 </li>
 
                 <li>
                   Optimized dependency management using
-                  <strong><code>Get.lazyPut()</code></strong> and efficient
-                  controller lifecycle handling to minimize unnecessary memory
-                  usage.
+                  <strong><code>Get.lazyPut()</code></strong>
+                  and managed
+                  <strong>
+                    <code>onInit()</code>, <code>onReady()</code>, and
+                    <code>onClose()</code>
+                  </strong>
+                  controller lifecycle methods for efficient resource handling.
                 </li>
 
                 <li>
-                  Structured <strong>REST API integration</strong> within GetX
-                  controllers, maintaining a clear separation between UI,
-                  business logic, and data layers.
-                </li>
-
-                <li>
-                  Managed
-                  <strong
-                    ><code>onInit()</code>, <code>onReady()</code>, and
-                    <code>onClose()</code></strong
-                  >
-                  lifecycle methods for efficient resource initialization,
-                  cleanup, and application performance.
-                </li>
-
-                <li>
-                  Developed <strong>real-time barcode scanning</strong> using
-                  device camera capabilities to capture and process product
-                  information efficiently.
+                  Developed
+                  <strong>real-time barcode scanning</strong>
+                  using device camera capabilities to capture and process
+                  product information.
                 </li>
 
                 <li>
                   Integrated
-                  <strong>third-party Flutter packages and SDKs</strong> to
-                  accelerate feature delivery and extend application
-                  functionality.
+                  <strong>Google Maps</strong>
+                  for location-based services, interactive maps, and map-driven
+                  application features.
                 </li>
 
                 <li>
-                  Implemented <strong>Google Maps integration</strong> for
-                  location-based services, interactive maps, and map-driven user
-                  experiences.
+                  Integrated
+                  <strong>third-party Flutter packages and SDKs</strong>
+                  to accelerate feature delivery and extend application
+                  functionality.
                 </li>
 
                 <li>
                   Converted
                   <strong
-                    >Figma designs into pixel-accurate responsive Flutter
-                    UI</strong
-                  >, ensuring consistent layouts across different screen sizes
-                  and devices.
+                    >Figma designs into responsive Flutter interfaces</strong
+                  >
+                  with pixel-accurate layouts across different screen sizes.
+                </li>
+
+                <li>
+                  Identified and resolved
+                  <strong>application bugs and performance bottlenecks</strong>
+                  to improve overall application stability.
                 </li>
               </ul>
             </article>
@@ -1455,13 +1579,15 @@
                 </div>
 
                 <p class="project-description">
-                  A Flutter-based OTT streaming platform with video content
-                  management, user authentication, subscription plans, seamless
-                  media streaming, offline encrypted storage, and a responsive
-                  cross-platform experience.
+                  Flutter-based OTT streaming platform featuring user
+                  authentication, subscription management, media streaming,
+                  offline encrypted storage, and cross-platform responsive
+                  experiences.
+
                   <br />
+
                   <em>
-                    Tech: Flutter, Firebase, Video Streaming, REST API, Payment
+                    Tech: Flutter, Firebase, REST API, Video Streaming, Payment
                     Integration, Responsive UI
                   </em>
                 </p>
@@ -1495,13 +1621,15 @@
                 </div>
 
                 <p class="project-description">
-                  A Flutter-based mobility application featuring real-time ride
-                  tracking, geofencing, route polyline navigation, live location
-                  updates, and Google Places auto-complete integration.
+                  Mobility application featuring real-time ride tracking,
+                  geofencing, route polylines, live location updates, and Google
+                  Places autocomplete.
+
                   <br />
+
                   <em>
-                    Tech: Flutter, Google Maps, Realtime Tracking, Geofencing,
-                    REST API, Firebase
+                    Tech: Flutter, Google Maps, Geofencing, REST API, Firebase,
+                    Real-Time Tracking
                   </em>
                 </p>
 
@@ -1534,13 +1662,15 @@
                 </div>
 
                 <p class="project-description">
-                  A Flutter-based online gaming and betting application with
-                  secure wallet management, real-time updates, payment
-                  integration, and smooth gameplay experience.
+                  Flutter-based gaming application featuring wallet management,
+                  real-time updates, payment integration, notifications, and
+                  user account workflows.
+
                   <br />
+
                   <em>
                     Tech: Flutter, Firebase, REST API, Payment Gateway, Push
-                    Notification
+                    Notifications
                   </em>
                 </p>
 
@@ -1573,10 +1703,12 @@
                 </div>
 
                 <p class="project-description">
-                  A Flutter-based vehicle repair service application that
-                  enables users to book repair services, track vehicle status,
-                  manage service history, and connect with nearby mechanics.
+                  Vehicle repair service application enabling service booking,
+                  vehicle status tracking, service history management, and
+                  connection with nearby mechanics.
+
                   <br />
+
                   <em>
                     Tech: Flutter, Dart, Firebase, REST API, Google Maps,
                     Responsive UI
@@ -1604,7 +1736,7 @@
                     <span class="project-tag"> Node.js · PostgreSQL </span>
 
                     <h3 class="project-title">
-                      Vehicle Repair Service (Backend System)
+                      Vehicle Repair Service Backend
                     </h3>
                   </div>
 
@@ -1614,12 +1746,15 @@
                 </div>
 
                 <p class="project-description">
-                  Secure backend architecture with JWT authentication,
-                  middleware protection, PostgreSQL connection pooling,
-                  Socket.IO real-time support, and Multer file uploads.
+                  Secure backend system featuring JWT authentication, middleware
+                  protection, PostgreSQL connection pooling, Socket.IO real-time
+                  communication, and file uploads.
+
                   <br />
+
                   <em>
-                    Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT Auth
+                    Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT
+                    Authentication, Multer
                   </em>
                 </p>
 
@@ -1652,10 +1787,12 @@
                 </div>
 
                 <p class="project-description">
-                  Health care application focusing on promoting healthy
-                  lifestyles, disease prevention through tracking, and providing
-                  user-friendly access to essential medical services.
+                  Healthcare application focused on healthy lifestyle
+                  management, disease prevention, tracking features, and access
+                  to essential healthcare services.
+
                   <br />
+
                   <em>
                     Tech: Flutter, Dart, Firebase, REST API, Google Maps,
                     Responsive UI
@@ -1719,7 +1856,7 @@
                 </div>
               </div>
 
-              <div class="edu-year">Batch 2015</div>
+              <div class="edu-year">2015</div>
             </div>
 
             <div class="education-item">
@@ -1731,12 +1868,12 @@
                 </div>
               </div>
 
-              <div class="edu-year">Batch 2013 · 75%</div>
+              <div class="edu-year">2013 · 75%</div>
             </div>
           </div>
         </section>
 
-        <!-- ================= CERTIFICATION ================= -->
+        <!-- ================= ADDITIONAL CREDENTIAL ================= -->
 
         <section class="section">
           <div class="section-heading">
@@ -1744,7 +1881,7 @@
               <i class="bi bi-patch-check"></i>
             </div>
 
-            <h2 class="section-title">Certification</h2>
+            <h2 class="section-title">Additional Credential</h2>
 
             <div class="section-line"></div>
           </div>
@@ -1775,17 +1912,11 @@
             </a>
           </div>
         </section>
-
-        <!-- ================= DECLARATION ================= -->
-
-        <div class="declaration">
-          "I hereby declare that all information provided is accurate and
-          verifiable to the best of my knowledge." — Sunil Shedge
-        </div>
       </main>
     </div>
 
     <!-- Bootstrap JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
