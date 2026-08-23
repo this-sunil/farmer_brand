@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sunil Shedge — Senior Flutter Developer with 4+ years of experience building production Android, iOS, and Web applications."
+    />
+    <meta name="theme-color" content="#0d9488" />
+    <meta name="color-scheme" content="light" />
 
     <title>Sunil Shedge | Senior Flutter Developer</title>
 
@@ -88,6 +94,13 @@
         text-decoration: none;
       }
 
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
       /* =========================
          RESUME
       ========================== */
@@ -167,6 +180,7 @@
         border-radius: 50%;
         background: #34d399;
         box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.12);
+        flex: 0 0 auto;
       }
 
       .name {
@@ -213,56 +227,21 @@
         background: rgba(255, 255, 255, 0.065);
         color: #e2e8f0;
         font-size: 11px;
-        transition: 0.2s ease;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease;
       }
 
       .contact-item:hover {
         background: rgba(255, 255, 255, 0.12);
         color: #fff;
+        border-color: rgba(255, 255, 255, 0.22);
       }
 
       .contact-item i {
         color: #5eead4;
         font-size: 13px;
-      }
-
-      /* =========================
-         METRICS
-      ========================== */
-
-      .metrics {
-        padding: 20px 52px;
-        border-bottom: 1px solid var(--border);
-        background: #fff;
-      }
-
-      .metric {
-        padding: 3px 18px;
-        border-right: 1px solid var(--border);
-      }
-
-      .metric:last-child {
-        border-right: 0;
-      }
-
-      .metric-number {
-        color: var(--dark);
-        font-family: "Manrope", sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-      }
-
-      .metric-number span {
-        color: var(--primary);
-      }
-
-      .metric-label {
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.7px;
-        text-transform: uppercase;
       }
 
       /* =========================
@@ -360,6 +339,11 @@
         gap: 20px;
         padding: 14px 17px;
         border-bottom: 1px solid var(--border);
+        transition: background 0.15s ease;
+      }
+
+      .skill-row:hover {
+        background: #fafcff;
       }
 
       .skill-row:last-child {
@@ -384,6 +368,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
+        align-content: flex-start;
       }
 
       .skill-badge {
@@ -471,7 +456,7 @@
         padding: 5px 9px;
         border-radius: 6px;
         background: var(--accent-soft);
-        color: #a16207;
+        color: #92650a;
         font-size: 9px;
         font-weight: 800;
         letter-spacing: 0.4px;
@@ -549,11 +534,12 @@
         background: var(--primary-soft);
         color: var(--primary-dark);
         font-size: 16px;
+        flex: 0 0 auto;
       }
 
       .project-tag {
         display: block;
-        color: #a16207;
+        color: #92650a;
         font-size: 8px;
         font-weight: 800;
         letter-spacing: 1px;
@@ -589,7 +575,7 @@
       }
 
       .project-link:hover {
-        color: #a16207;
+        color: #92650a;
       }
 
       /* =========================
@@ -663,8 +649,9 @@
         justify-content: center;
         border-radius: 9px;
         background: var(--accent-soft);
-        color: #b45309;
+        color: #92650a;
         font-size: 17px;
+        flex: 0 0 auto;
       }
 
       .certificate-title {
@@ -676,6 +663,19 @@
       .certificate-subtitle {
         color: var(--muted);
         font-size: 9px;
+      }
+
+      /* =========================
+         FOOTER
+      ========================== */
+
+      .resume-footer {
+        padding: 18px 52px;
+        border-top: 1px solid var(--border);
+        background: var(--light);
+        color: var(--muted);
+        font-size: 10px;
+        text-align: center;
       }
 
       /* =========================
@@ -692,20 +692,10 @@
         }
 
         .hero,
-        .metrics,
-        .main {
+        .main,
+        .resume-footer {
           padding-left: 30px;
           padding-right: 30px;
-        }
-
-        .metric {
-          border-right: 0;
-          border-bottom: 1px solid var(--border);
-          padding: 10px;
-        }
-
-        .metric:last-child {
-          border-bottom: 0;
         }
       }
 
@@ -743,8 +733,8 @@
           width: 100%;
         }
 
-        .metrics,
-        .main {
+        .main,
+        .resume-footer {
           padding-right: 22px;
           padding-left: 22px;
         }
@@ -766,6 +756,26 @@
         .certificate {
           align-items: flex-start;
           flex-direction: column;
+        }
+      }
+
+      /* =========================
+         REDUCED MOTION
+      ========================== */
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .project-card,
+        .contact-item,
+        .skill-row {
+          transition: none;
+        }
+
+        .project-card:hover {
+          transform: none;
         }
       }
 
@@ -844,14 +854,14 @@
       <header class="hero">
         <div class="hero-content">
           <div class="availability">
-            <span class="availability-dot"></span>
+            <span class="availability-dot" aria-hidden="true"></span>
             Available for Senior Flutter Opportunities
           </div>
 
           <h1 class="name">Sunil Shedge</h1>
 
           <div class="role">
-            Senior Flutter Developer · Mobile Application Engineer
+            Senior Flutter Developer &middot; Mobile Application Engineer
           </div>
 
           <p class="hero-description">
@@ -862,17 +872,17 @@
 
           <div class="contact-grid">
             <a class="contact-item" href="mailto:swarajya888@gmail.com">
-              <i class="bi bi-envelope-fill"></i>
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
               swarajya888@gmail.com
             </a>
 
             <a class="contact-item" href="tel:+918668796251">
-              <i class="bi bi-telephone-fill"></i>
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
               +91 8668796251
             </a>
 
             <span class="contact-item">
-              <i class="bi bi-geo-alt-fill"></i>
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
               Pune, Maharashtra, India
             </span>
 
@@ -882,7 +892,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bi bi-globe2"></i>
+              <i class="bi bi-globe2" aria-hidden="true"></i>
               Portfolio
             </a>
 
@@ -892,7 +902,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bi bi-linkedin"></i>
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
               LinkedIn
             </a>
 
@@ -902,74 +912,12 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github" aria-hidden="true"></i>
               GitHub
             </a>
           </div>
         </div>
       </header>
-
-      <!-- =====================================================
-           KEY METRICS
-      ====================================================== -->
-
-      <section class="metrics">
-        <div class="row g-0 text-center">
-          <div class="col-6 col-md">
-            <div class="metric">
-              <div class="metric-number">
-                <span>4+</span>
-              </div>
-              <div class="metric-label">Years Experience</div>
-            </div>
-          </div>
-
-          <div class="col-6 col-md">
-            <div class="metric">
-              <div class="metric-number">
-                <span>15+</span>
-              </div>
-              <div class="metric-label">Production Apps</div>
-            </div>
-          </div>
-
-          <div class="col-6 col-md">
-            <div class="metric">
-              <div class="metric-number">
-                <span>1,000+</span>
-              </div>
-              <div class="metric-label">Users Served</div>
-            </div>
-          </div>
-
-          <div class="col-6 col-md">
-            <div class="metric">
-              <div class="metric-number">
-                <span>35%</span>
-              </div>
-              <div class="metric-label">Load Time Reduced</div>
-            </div>
-          </div>
-
-          <div class="col-6 col-md">
-            <div class="metric">
-              <div class="metric-number">
-                <span>50%</span>
-              </div>
-              <div class="metric-label">Faster Bug Resolution</div>
-            </div>
-          </div>
-
-          <div class="col-6 col-md">
-            <div class="metric">
-              <div class="metric-number">
-                <span>5 → 1</span>
-              </div>
-              <div class="metric-label">Release Cycle</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- =====================================================
            MAIN CONTENT
@@ -978,13 +926,15 @@
       <main class="main">
         <!-- ================= SUMMARY ================= -->
 
-        <section class="section">
+        <section class="section" aria-labelledby="summary-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-person-badge"></i>
+              <i class="bi bi-person-badge" aria-hidden="true"></i>
             </div>
 
-            <h2 class="section-title">Professional Summary</h2>
+            <h2 class="section-title" id="summary-heading">
+              Professional Summary
+            </h2>
 
             <div class="section-line"></div>
           </div>
@@ -998,9 +948,10 @@
               <span class="highlight">15+ production apps</span>
               with live deployments on the Google Play Store and Apple App
               Store. Strong expertise in
-              <strong>
-                Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps, Razorpay,
-                Stripe, UPI, biometric authentication, WebView, and CI/CD </strong
+              <strong
+                >Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps,
+                Razorpay, Stripe, UPI, biometric authentication, WebView, and
+                CI/CD</strong
               >, with a strong focus on clean architecture, performance
               optimization, application security, and reliable production
               delivery.
@@ -1010,13 +961,13 @@
 
         <!-- ================= TECHNICAL SKILLS ================= -->
 
-        <section class="section">
+        <section class="section" aria-labelledby="skills-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-code-slash"></i>
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
             </div>
 
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" id="skills-heading">Technical Skills</h2>
 
             <div class="section-line"></div>
           </div>
@@ -1026,7 +977,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-phone"></i>
+                <i class="bi bi-phone" aria-hidden="true"></i>
                 Mobile Development
               </div>
 
@@ -1045,22 +996,17 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-layers"></i>
+                <i class="bi bi-layers" aria-hidden="true"></i>
                 Architecture
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> Clean Architecture </span>
-
-                <span class="skill-badge primary"> BLoC </span>
-
-                <span class="skill-badge"> MVVM </span>
-
-                <span class="skill-badge"> SOLID Principles </span>
-
-                <span class="skill-badge"> Repository Pattern </span>
-
-                <span class="skill-badge"> Dependency Injection </span>
+                <span class="skill-badge primary">Clean Architecture</span>
+                <span class="skill-badge primary">BLoC</span>
+                <span class="skill-badge">MVVM</span>
+                <span class="skill-badge">SOLID Principles</span>
+                <span class="skill-badge">Repository Pattern</span>
+                <span class="skill-badge">Dependency Injection</span>
               </div>
             </div>
 
@@ -1068,18 +1014,15 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-diagram-3"></i>
+                <i class="bi bi-diagram-3" aria-hidden="true"></i>
                 State Management
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> BLoC </span>
-
-                <span class="skill-badge"> GetX </span>
-
-                <span class="skill-badge"> Provider </span>
-
-                <span class="skill-badge"> Riverpod </span>
+                <span class="skill-badge primary">BLoC</span>
+                <span class="skill-badge">GetX</span>
+                <span class="skill-badge">Provider</span>
+                <span class="skill-badge">Riverpod</span>
               </div>
             </div>
 
@@ -1087,26 +1030,19 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-server"></i>
-                Backend & Database
+                <i class="bi bi-server" aria-hidden="true"></i>
+                Backend &amp; Database
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> Node.js </span>
-
-                <span class="skill-badge"> Express.js </span>
-
-                <span class="skill-badge"> PostgreSQL </span>
-
-                <span class="skill-badge"> Firebase </span>
-
-                <span class="skill-badge"> Cloud Firestore </span>
-
-                <span class="skill-badge"> Supabase </span>
-
-                <span class="skill-badge"> SQLite </span>
-
-                <span class="skill-badge"> Hive </span>
+                <span class="skill-badge primary">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">Firebase</span>
+                <span class="skill-badge">Cloud Firestore</span>
+                <span class="skill-badge">Supabase</span>
+                <span class="skill-badge">SQLite</span>
+                <span class="skill-badge">Hive</span>
               </div>
             </div>
 
@@ -1114,20 +1050,16 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-cloud-arrow-down"></i>
-                APIs & Authentication
+                <i class="bi bi-cloud-arrow-down" aria-hidden="true"></i>
+                APIs &amp; Authentication
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> REST APIs </span>
-
-                <span class="skill-badge"> JWT Authentication </span>
-
-                <span class="skill-badge"> OAuth </span>
-
-                <span class="skill-badge"> Firebase Authentication </span>
-
-                <span class="skill-badge"> Role-Based Access Control </span>
+                <span class="skill-badge primary">REST APIs</span>
+                <span class="skill-badge">JWT Authentication</span>
+                <span class="skill-badge">OAuth</span>
+                <span class="skill-badge">Firebase Authentication</span>
+                <span class="skill-badge">Role-Based Access Control</span>
               </div>
             </div>
 
@@ -1135,20 +1067,16 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-credit-card"></i>
+                <i class="bi bi-credit-card" aria-hidden="true"></i>
                 Payments
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> Razorpay </span>
-
-                <span class="skill-badge primary"> Stripe </span>
-
-                <span class="skill-badge"> UPI Integration </span>
-
-                <span class="skill-badge"> Paytm </span>
-
-                <span class="skill-badge"> Flutter Method Channels </span>
+                <span class="skill-badge primary">Razorpay</span>
+                <span class="skill-badge primary">Stripe</span>
+                <span class="skill-badge">UPI Integration</span>
+                <span class="skill-badge">Paytm</span>
+                <span class="skill-badge">Flutter Method Channels</span>
               </div>
             </div>
 
@@ -1156,22 +1084,17 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-fire"></i>
-                Firebase & Cloud
+                <i class="bi bi-fire" aria-hidden="true"></i>
+                Firebase &amp; Cloud
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge"> Firebase Auth </span>
-
-                <span class="skill-badge"> Cloud Firestore </span>
-
-                <span class="skill-badge"> FCM </span>
-
-                <span class="skill-badge"> Crashlytics </span>
-
-                <span class="skill-badge"> Google Sign-In </span>
-
-                <span class="skill-badge"> OneSignal </span>
+                <span class="skill-badge">Firebase Auth</span>
+                <span class="skill-badge">Cloud Firestore</span>
+                <span class="skill-badge">FCM</span>
+                <span class="skill-badge">Crashlytics</span>
+                <span class="skill-badge">Google Sign-In</span>
+                <span class="skill-badge">OneSignal</span>
               </div>
             </div>
 
@@ -1179,26 +1102,20 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-shield-lock"></i>
+                <i class="bi bi-shield-lock" aria-hidden="true"></i>
                 Security
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary">
-                  Biometric Authentication
-                </span>
-
-                <span class="skill-badge"> Fingerprint Authentication </span>
-
-                <span class="skill-badge"> local_auth </span>
-
-                <span class="skill-badge"> MPIN Authentication </span>
-
-                <span class="skill-badge"> Secure Storage </span>
-
-                <span class="skill-badge"> Screenshot Prevention </span>
-
-                <span class="skill-badge"> Screen Recording Prevention </span>
+                <span class="skill-badge primary"
+                  >Biometric Authentication</span
+                >
+                <span class="skill-badge">Fingerprint Authentication</span>
+                <span class="skill-badge">local_auth</span>
+                <span class="skill-badge">MPIN Authentication</span>
+                <span class="skill-badge">Secure Storage</span>
+                <span class="skill-badge">Screenshot Prevention</span>
+                <span class="skill-badge">Screen Recording Prevention</span>
               </div>
             </div>
 
@@ -1206,24 +1123,18 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-plug"></i>
+                <i class="bi bi-plug" aria-hidden="true"></i>
                 Integrations
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> Google Maps </span>
-
-                <span class="skill-badge"> Google ML Kit </span>
-
-                <span class="skill-badge"> Deep Linking </span>
-
-                <span class="skill-badge"> Android App Links </span>
-
-                <span class="skill-badge"> iOS Universal Links </span>
-
-                <span class="skill-badge"> Barcode Scanning </span>
-
-                <span class="skill-badge"> Google Ads </span>
+                <span class="skill-badge primary">Google Maps</span>
+                <span class="skill-badge">Google ML Kit</span>
+                <span class="skill-badge">Deep Linking</span>
+                <span class="skill-badge">Android App Links</span>
+                <span class="skill-badge">iOS Universal Links</span>
+                <span class="skill-badge">Barcode Scanning</span>
+                <span class="skill-badge">Google Ads</span>
               </div>
             </div>
 
@@ -1231,24 +1142,18 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-git"></i>
-                DevOps & CI/CD
+                <i class="bi bi-git" aria-hidden="true"></i>
+                DevOps &amp; CI/CD
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"> Codemagic </span>
-
-                <span class="skill-badge"> Fastlane </span>
-
-                <span class="skill-badge"> GitHub Actions </span>
-
-                <span class="skill-badge"> Shorebird </span>
-
-                <span class="skill-badge"> Sentry </span>
-
-                <span class="skill-badge"> Git </span>
-
-                <span class="skill-badge"> GitHub </span>
+                <span class="skill-badge primary">Codemagic</span>
+                <span class="skill-badge">Fastlane</span>
+                <span class="skill-badge">GitHub Actions</span>
+                <span class="skill-badge">Shorebird</span>
+                <span class="skill-badge">Sentry</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub</span>
               </div>
             </div>
 
@@ -1256,26 +1161,19 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-tools"></i>
+                <i class="bi bi-tools" aria-hidden="true"></i>
                 Development Tools
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge"> Android Studio </span>
-
-                <span class="skill-badge"> VS Code </span>
-
-                <span class="skill-badge"> Xcode </span>
-
-                <span class="skill-badge"> Postman </span>
-
-                <span class="skill-badge"> GitHub Copilot </span>
-
-                <span class="skill-badge"> Cursor </span>
-
-                <span class="skill-badge"> ChatGPT </span>
-
-                <span class="skill-badge"> Gemini </span>
+                <span class="skill-badge">Android Studio</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Xcode</span>
+                <span class="skill-badge">Postman</span>
+                <span class="skill-badge">GitHub Copilot</span>
+                <span class="skill-badge">Cursor</span>
+                <span class="skill-badge">ChatGPT</span>
+                <span class="skill-badge">Gemini</span>
               </div>
             </div>
           </div>
@@ -1283,13 +1181,15 @@
 
         <!-- ================= EXPERIENCE ================= -->
 
-        <section class="section">
+        <section class="section" aria-labelledby="experience-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-briefcase"></i>
+              <i class="bi bi-briefcase" aria-hidden="true"></i>
             </div>
 
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title" id="experience-heading">
+              Professional Experience
+            </h2>
 
             <div class="section-line"></div>
           </div>
@@ -1298,16 +1198,15 @@
             <!-- JOB 1 -->
 
             <article class="experience-item">
-              <span class="experience-dot"></span>
+              <span class="experience-dot" aria-hidden="true"></span>
 
               <div class="experience-header">
                 <div>
                   <h3 class="job-title">Independent Full Stack Developer</h3>
-
                   <div class="company">Self Employment</div>
                 </div>
 
-                <span class="date"> Apr 2025 – Present </span>
+                <span class="date">Apr 2025 &ndash; Present</span>
               </div>
 
               <ul class="job-list">
@@ -1366,16 +1265,15 @@
             <!-- JOB 2 -->
 
             <article class="experience-item">
-              <span class="experience-dot"></span>
+              <span class="experience-dot" aria-hidden="true"></span>
 
               <div class="experience-header">
                 <div>
                   <h3 class="job-title">Senior Flutter Developer</h3>
-
                   <div class="company">Sunra Softtech Pvt. Ltd.</div>
                 </div>
 
-                <span class="date"> Jul 2022 – Apr 2025 </span>
+                <span class="date">Jul 2022 &ndash; Apr 2025</span>
               </div>
 
               <ul class="job-list">
@@ -1408,9 +1306,9 @@
 
                 <li>
                   Optimized Flutter rendering and application performance using
-                  <strong>
-                    const widgets, RepaintBoundary, lazy loading, asset
-                    optimization, ProGuard rules, and null safety </strong
+                  <strong
+                    >const widgets, RepaintBoundary, lazy loading, asset
+                    optimization, ProGuard rules, and null safety</strong
                   >.
                 </li>
 
@@ -1418,35 +1316,35 @@
                   Implemented scalable navigation using
                   <strong>GoRouter</strong>
                   with
-                  <strong> Android App Links and iOS Universal Links </strong>
+                  <strong>Android App Links and iOS Universal Links</strong>
                   for deep linking and seamless user journeys.
                 </li>
 
                 <li>
                   Integrated
-                  <strong>
-                    Firebase Authentication, Cloud Firestore, FCM, Crashlytics,
-                    Google Sign-In, and Google Maps
-                  </strong>
+                  <strong
+                    >Firebase Authentication, Cloud Firestore, FCM, Crashlytics,
+                    Google Sign-In, and Google Maps</strong
+                  >
                   for authentication, real-time data, notifications, crash
                   monitoring, and location-based features.
                 </li>
 
                 <li>
                   Engineered secure payment integrations using
-                  <strong>
-                    Razorpay, Stripe, Paytm, and UPI through Flutter Method
-                    Channels </strong
+                  <strong
+                    >Razorpay, Stripe, Paytm, and UPI through Flutter Method
+                    Channels</strong
                   >.
                 </li>
 
                 <li>
                   Implemented
-                  <strong>
-                    fingerprint and biometric authentication, MPIN
+                  <strong
+                    >fingerprint and biometric authentication, MPIN
                     authentication, secure local storage, and
-                    screenshot/screen-recording prevention
-                  </strong>
+                    screenshot/screen-recording prevention</strong
+                  >
                   for security-sensitive application flows.
                 </li>
 
@@ -1460,8 +1358,8 @@
 
                 <li>
                   Converted responsive websites into
-                  <strong>
-                    Android and iOS applications using Flutter WebView </strong
+                  <strong
+                    >Android and iOS applications using Flutter WebView</strong
                   >, including deep linking, JavaScript communication, and
                   native platform integration.
                 </li>
@@ -1471,16 +1369,15 @@
             <!-- JOB 3 -->
 
             <article class="experience-item">
-              <span class="experience-dot"></span>
+              <span class="experience-dot" aria-hidden="true"></span>
 
               <div class="experience-header">
                 <div>
                   <h3 class="job-title">Junior Flutter Developer</h3>
-
                   <div class="company">Syscryption Technology</div>
                 </div>
 
-                <span class="date"> Jan 2022 – Jul 2022 </span>
+                <span class="date">Jan 2022 &ndash; Jul 2022</span>
               </div>
 
               <ul class="job-list">
@@ -1502,10 +1399,10 @@
                   Optimized dependency management using
                   <strong><code>Get.lazyPut()</code></strong>
                   and managed
-                  <strong>
-                    <code>onInit()</code>, <code>onReady()</code>, and
-                    <code>onClose()</code>
-                  </strong>
+                  <strong
+                    ><code>onInit()</code>, <code>onReady()</code>, and
+                    <code>onClose()</code></strong
+                  >
                   controller lifecycle methods for efficient resource handling.
                 </li>
 
@@ -1550,13 +1447,15 @@
 
         <!-- ================= PROJECTS ================= -->
 
-        <section class="section">
+        <section class="section" aria-labelledby="projects-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-grid-1x2"></i>
+              <i class="bi bi-grid-1x2" aria-hidden="true"></i>
             </div>
 
-            <h2 class="section-title">Selected Projects</h2>
+            <h2 class="section-title" id="projects-heading">
+              Selected Projects
+            </h2>
 
             <div class="section-line"></div>
           </div>
@@ -1568,13 +1467,14 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"> Flutter · OTT Platform </span>
-
+                    <span class="project-tag"
+                      >Flutter &middot; OTT Platform</span
+                    >
                     <h3 class="project-title">Sense Wheel</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-play-btn"></i>
+                    <i class="bi bi-play-btn" aria-hidden="true"></i>
                   </div>
                 </div>
 
@@ -1583,13 +1483,11 @@
                   authentication, subscription management, media streaming,
                   offline encrypted storage, and cross-platform responsive
                   experiences.
-
                   <br />
-
-                  <em>
-                    Tech: Flutter, Firebase, REST API, Video Streaming, Payment
-                    Integration, Responsive UI
-                  </em>
+                  <em
+                    >Tech: Flutter, Firebase, REST API, Video Streaming, Payment
+                    Integration, Responsive UI</em
+                  >
                 </p>
 
                 <a
@@ -1599,7 +1497,7 @@
                   rel="noopener noreferrer"
                 >
                   View on Play Store
-                  <i class="bi bi-arrow-up-right"></i>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
               </article>
             </div>
@@ -1610,13 +1508,12 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"> Flutter · Mobility </span>
-
+                    <span class="project-tag">Flutter &middot; Mobility</span>
                     <h3 class="project-title">JEEYO RIDE</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-car-front"></i>
+                    <i class="bi bi-car-front" aria-hidden="true"></i>
                   </div>
                 </div>
 
@@ -1624,13 +1521,11 @@
                   Mobility application featuring real-time ride tracking,
                   geofencing, route polylines, live location updates, and Google
                   Places autocomplete.
-
                   <br />
-
-                  <em>
-                    Tech: Flutter, Google Maps, Geofencing, REST API, Firebase,
-                    Real-Time Tracking
-                  </em>
+                  <em
+                    >Tech: Flutter, Google Maps, Geofencing, REST API, Firebase,
+                    Real-Time Tracking</em
+                  >
                 </p>
 
                 <a
@@ -1640,7 +1535,7 @@
                   rel="noopener noreferrer"
                 >
                   View on Play Store
-                  <i class="bi bi-arrow-up-right"></i>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
               </article>
             </div>
@@ -1651,13 +1546,12 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"> Flutter · Gaming </span>
-
+                    <span class="project-tag">Flutter &middot; Gaming</span>
                     <h3 class="project-title">Sanjeevani Gaming App</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-controller"></i>
+                    <i class="bi bi-controller" aria-hidden="true"></i>
                   </div>
                 </div>
 
@@ -1665,13 +1559,11 @@
                   Flutter-based gaming application featuring wallet management,
                   real-time updates, payment integration, notifications, and
                   user account workflows.
-
                   <br />
-
-                  <em>
-                    Tech: Flutter, Firebase, REST API, Payment Gateway, Push
-                    Notifications
-                  </em>
+                  <em
+                    >Tech: Flutter, Firebase, REST API, Payment Gateway, Push
+                    Notifications</em
+                  >
                 </p>
 
                 <a
@@ -1681,7 +1573,7 @@
                   rel="noopener noreferrer"
                 >
                   View Live App
-                  <i class="bi bi-arrow-up-right"></i>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
               </article>
             </div>
@@ -1692,13 +1584,12 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"> Flutter · Services </span>
-
+                    <span class="project-tag">Flutter &middot; Services</span>
                     <h3 class="project-title">Vehicle Repair Service App</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-tools"></i>
+                    <i class="bi bi-tools" aria-hidden="true"></i>
                   </div>
                 </div>
 
@@ -1706,13 +1597,11 @@
                   Vehicle repair service application enabling service booking,
                   vehicle status tracking, service history management, and
                   connection with nearby mechanics.
-
                   <br />
-
-                  <em>
-                    Tech: Flutter, Dart, Firebase, REST API, Google Maps,
-                    Responsive UI
-                  </em>
+                  <em
+                    >Tech: Flutter, Dart, Firebase, REST API, Google Maps,
+                    Responsive UI</em
+                  >
                 </p>
 
                 <a
@@ -1722,7 +1611,7 @@
                   rel="noopener noreferrer"
                 >
                   View Source
-                  <i class="bi bi-arrow-up-right"></i>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
               </article>
             </div>
@@ -1733,15 +1622,14 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"> Node.js · PostgreSQL </span>
-
+                    <span class="project-tag">Node.js &middot; PostgreSQL</span>
                     <h3 class="project-title">
                       Vehicle Repair Service Backend
                     </h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-server"></i>
+                    <i class="bi bi-server" aria-hidden="true"></i>
                   </div>
                 </div>
 
@@ -1749,13 +1637,11 @@
                   Secure backend system featuring JWT authentication, middleware
                   protection, PostgreSQL connection pooling, Socket.IO real-time
                   communication, and file uploads.
-
                   <br />
-
-                  <em>
-                    Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT
-                    Authentication, Multer
-                  </em>
+                  <em
+                    >Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT
+                    Authentication, Multer</em
+                  >
                 </p>
 
                 <a
@@ -1765,7 +1651,7 @@
                   rel="noopener noreferrer"
                 >
                   View Source
-                  <i class="bi bi-arrow-up-right"></i>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
               </article>
             </div>
@@ -1776,13 +1662,12 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"> Flutter · Healthcare </span>
-
+                    <span class="project-tag">Flutter &middot; Healthcare</span>
                     <h3 class="project-title">Health Care</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-heart-pulse"></i>
+                    <i class="bi bi-heart-pulse" aria-hidden="true"></i>
                   </div>
                 </div>
 
@@ -1790,13 +1675,11 @@
                   Healthcare application focused on healthy lifestyle
                   management, disease prevention, tracking features, and access
                   to essential healthcare services.
-
                   <br />
-
-                  <em>
-                    Tech: Flutter, Dart, Firebase, REST API, Google Maps,
-                    Responsive UI
-                  </em>
+                  <em
+                    >Tech: Flutter, Dart, Firebase, REST API, Google Maps,
+                    Responsive UI</em
+                  >
                 </p>
 
                 <a
@@ -1806,7 +1689,7 @@
                   rel="noopener noreferrer"
                 >
                   View Source
-                  <i class="bi bi-arrow-up-right"></i>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
               </article>
             </div>
@@ -1815,13 +1698,13 @@
 
         <!-- ================= EDUCATION ================= -->
 
-        <section class="section">
+        <section class="section" aria-labelledby="education-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-mortarboard"></i>
+              <i class="bi bi-mortarboard" aria-hidden="true"></i>
             </div>
 
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title" id="education-heading">Education</h2>
 
             <div class="section-line"></div>
           </div>
@@ -1829,59 +1712,57 @@
           <div class="education-list">
             <div class="education-item">
               <div>
-                <div class="degree">M.C.S. — Master of Computer Science</div>
-
+                <div class="degree">
+                  M.C.S. &mdash; Master of Computer Science
+                </div>
                 <div class="school">Sarhad College, Pune</div>
               </div>
-
-              <div class="edu-year">2019 – 2021 · 77%</div>
+              <div class="edu-year">2019 &ndash; 2021 &middot; 77%</div>
             </div>
 
             <div class="education-item">
               <div>
-                <div class="degree">B.C.S. — Bachelor of Computer Science</div>
-
+                <div class="degree">
+                  B.C.S. &mdash; Bachelor of Computer Science
+                </div>
                 <div class="school">Vishwakarma College, Pune</div>
               </div>
-
-              <div class="edu-year">2015 – 2018</div>
+              <div class="edu-year">2015 &ndash; 2018</div>
             </div>
 
             <div class="education-item">
               <div>
-                <div class="degree">HSC — Class XII</div>
-
+                <div class="degree">HSC &mdash; Class XII</div>
                 <div class="school">
                   S.M.S. Mohite Patil Jr. College, Rahimatpur
                 </div>
               </div>
-
               <div class="edu-year">2015</div>
             </div>
 
             <div class="education-item">
               <div>
-                <div class="degree">SSC — Class X</div>
-
+                <div class="degree">SSC &mdash; Class X</div>
                 <div class="school">
                   Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
                 </div>
               </div>
-
-              <div class="edu-year">2013 · 75%</div>
+              <div class="edu-year">2013 &middot; 75%</div>
             </div>
           </div>
         </section>
 
         <!-- ================= ADDITIONAL CREDENTIAL ================= -->
 
-        <section class="section">
+        <section class="section" aria-labelledby="credential-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-patch-check"></i>
+              <i class="bi bi-patch-check" aria-hidden="true"></i>
             </div>
 
-            <h2 class="section-title">Additional Credential</h2>
+            <h2 class="section-title" id="credential-heading">
+              Additional Credential
+            </h2>
 
             <div class="section-line"></div>
           </div>
@@ -1889,12 +1770,11 @@
           <div class="certificate">
             <div class="certificate-left">
               <div class="certificate-icon">
-                <i class="bi bi-file-earmark-pdf"></i>
+                <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
               </div>
 
               <div>
                 <div class="certificate-title">Internship Certificate</div>
-
                 <div class="certificate-subtitle">
                   Certificate verification document
                 </div>
@@ -1908,15 +1788,16 @@
               rel="noopener noreferrer"
             >
               View PDF
-              <i class="bi bi-arrow-up-right"></i>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
             </a>
           </div>
         </section>
       </main>
+
+      <footer class="resume-footer">
+        Last updated August 2026 &middot; Available for full-time Senior Flutter
+        roles in Pune &amp; Mumbai
+      </footer>
     </div>
-
-    <!-- Bootstrap JS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
