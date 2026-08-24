@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
-      content="Sunil Shedge — Senior Flutter Developer with 4+ years of experience building production Android, iOS, and Web applications."
+      content="Sunil Shedge — Senior Flutter Developer with 4+ years of experience building production Android, iOS, Web and backend applications."
     />
-    <meta name="theme-color" content="#0d9488" />
+    <meta name="theme-color" content="#0b1220" />
     <meta name="color-scheme" content="light" />
 
     <title>Sunil Shedge | Senior Flutter Developer</title>
@@ -17,7 +18,7 @@
       href="https://avatars.githubusercontent.com/u/51407211?v=4"
     />
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -40,23 +41,36 @@
 
     <style>
       :root {
-        --primary: #0d9488;
-        --primary-dark: #0f766e;
-        --primary-soft: #ecfdf5;
-
-        --accent: #f59e0b;
-        --accent-soft: #fffbeb;
-
-        --dark: #101828;
+        --ink: #101828;
+        --ink-2: #1d2939;
         --text: #344054;
         --muted: #667085;
 
-        --border: #e4e7ec;
-        --light: #f8fafc;
-        --paper: #ffffff;
-        --page: #eef2f6;
+        --teal: #0d9488;
+        --teal-dark: #0f766e;
+        --teal-light: #ccfbf1;
+        --teal-soft: #f0fdfa;
 
-        --radius: 12px;
+        --gold: #f59e0b;
+        --gold-dark: #a16207;
+        --gold-soft: #fffbeb;
+
+        --blue: #2563eb;
+        --blue-soft: #eff6ff;
+
+        --border: #e4e7ec;
+        --border-dark: #d0d5dd;
+
+        --paper: #ffffff;
+        --page: #edf1f5;
+        --surface: #f8fafc;
+
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+
+        --shadow:
+          0 30px 80px rgba(16, 24, 40, 0.1), 0 8px 24px rgba(16, 24, 40, 0.05);
       }
 
       * {
@@ -68,19 +82,39 @@
       }
 
       body {
-        margin-left: 12%;
-        margin-right: 12%;
-        padding: 40px 0;
+        margin: 0;
+        padding: 44px 20px;
         background:
           radial-gradient(
-            circle at top left,
-            rgba(13, 148, 136, 0.07),
-            transparent 30%
+            circle at 5% 0%,
+            rgba(13, 148, 136, 0.1),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 95% 10%,
+            rgba(37, 99, 235, 0.06),
+            transparent 22%
           ),
           var(--page);
         color: var(--text);
         font-family: "DM Sans", sans-serif;
         line-height: 1.6;
+      }
+
+      ::selection {
+        background: var(--teal-light);
+        color: var(--teal-dark);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid rgba(13, 148, 136, 0.35);
+        outline-offset: 4px;
       }
 
       h1,
@@ -91,69 +125,66 @@
         font-family: "Manrope", sans-serif;
       }
 
-      a {
-        text-decoration: none;
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid var(--primary);
-        outline-offset: 3px;
-        border-radius: 4px;
-      }
-
-      /* =========================
-         RESUME
-      ========================== */
+      /* =========================================================
+       PAGE
+    ========================================================= */
 
       .resume {
-        max-width: 1120px;
-        margin: auto;
-        background: var(--paper);
-        border-radius: 18px;
+        width: min(1180px, 100%);
+        margin: 0 auto;
         overflow: hidden;
-        box-shadow:
-          0 25px 80px rgba(16, 24, 40, 0.12),
-          0 5px 20px rgba(16, 24, 40, 0.05);
+        background: var(--paper);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
       }
 
-      /* =========================
-         HEADER
-      ========================== */
+      /* =========================================================
+       HERO
+    ========================================================= */
 
       .hero {
         position: relative;
         overflow: hidden;
-        padding: 46px 52px 40px;
-        background: linear-gradient(
-          135deg,
-          #0b1220 0%,
-          #111827 60%,
-          #0f766e 140%
-        );
+        padding: 58px 64px 52px;
         color: #fff;
+        background:
+          radial-gradient(
+            circle at 90% 15%,
+            rgba(20, 184, 166, 0.22),
+            transparent 27%
+          ),
+          radial-gradient(
+            circle at 12% 110%,
+            rgba(245, 158, 11, 0.1),
+            transparent 30%
+          ),
+          linear-gradient(135deg, #080d18 0%, #101827 54%, #0f172a 100%);
       }
 
       .hero::before {
         content: "";
         position: absolute;
-        width: 340px;
-        height: 340px;
-        right: -120px;
-        top: -180px;
+        width: 420px;
+        height: 420px;
+        right: -190px;
+        top: -260px;
+        border: 1px solid rgba(94, 234, 212, 0.15);
         border-radius: 50%;
-        background: rgba(20, 184, 166, 0.15);
+        box-shadow:
+          0 0 0 55px rgba(94, 234, 212, 0.025),
+          0 0 0 110px rgba(94, 234, 212, 0.018);
       }
 
       .hero::after {
         content: "";
         position: absolute;
-        width: 240px;
-        height: 240px;
-        left: -150px;
-        bottom: -170px;
+        left: -130px;
+        bottom: -210px;
+        width: 330px;
+        height: 330px;
         border-radius: 50%;
-        background: rgba(245, 158, 11, 0.08);
+        background: rgba(245, 158, 11, 0.045);
       }
 
       .hero-content {
@@ -161,83 +192,102 @@
         z-index: 2;
       }
 
+      .topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 28px;
+      }
+
       .availability {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 17px;
-        padding: 6px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        gap: 9px;
+        width: fit-content;
+        padding: 7px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.09);
+        background: rgba(255, 255, 255, 0.06);
         color: #d1fae5;
-        font-size: 11px;
-        font-weight: 700;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
       }
 
       .availability-dot {
         width: 7px;
         height: 7px;
+        flex: 0 0 7px;
         border-radius: 50%;
         background: #34d399;
-        box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.12);
-        flex: 0 0 auto;
+        box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.11);
+      }
+
+      .hero-label {
+        color: #94a3b8;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.7px;
+        text-transform: uppercase;
       }
 
       .name {
+        max-width: 900px;
         margin: 0;
         color: #fff;
-        font-size: clamp(2.3rem, 5vw, 4rem);
+        font-size: clamp(3rem, 7vw, 5.8rem);
         font-weight: 800;
-        letter-spacing: -2px;
-        line-height: 1;
+        letter-spacing: -4px;
+        line-height: 0.96;
       }
 
       .role {
-        margin-top: 13px;
+        margin-top: 19px;
         color: #5eead4;
         font-size: 13px;
         font-weight: 800;
-        letter-spacing: 2.5px;
+        letter-spacing: 2.8px;
         text-transform: uppercase;
       }
 
       .hero-description {
-        max-width: 760px;
-        margin-top: 18px;
-        margin-bottom: 0;
+        max-width: 850px;
+        margin: 22px 0 0;
         color: #cbd5e1;
         font-size: 13px;
-        line-height: 1.8;
+        line-height: 1.9;
       }
 
+      /* =========================================================
+       CONTACTS
+    ========================================================= */
+
       .contact-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 9px;
-        margin-top: 27px;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        justify-content: start;
+        gap: 8px;
+        margin-top: 29px;
       }
 
       .contact-item {
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        min-height: 36px;
         padding: 8px 11px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.065);
-        color: #e2e8f0;
-        font-size: 11px;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        border-radius: 9px;
+        background: rgba(255, 255, 255, 0.055);
+        color: #dbe4ee;
+        font-size: 10px;
+        font-weight: 600;
         transition:
+          transform 0.2s ease,
           background 0.2s ease,
-          color 0.2s ease,
           border-color 0.2s ease;
-      }
-
-      .contact-item:hover {
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.22);
       }
 
       .contact-item i {
@@ -245,16 +295,23 @@
         font-size: 13px;
       }
 
-      /* =========================
-         MAIN
-      ========================== */
+      .contact-item:hover {
+        transform: translateY(-2px);
+        border-color: rgba(94, 234, 212, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      /* =========================================================
+       MAIN
+    ========================================================= */
 
       .main {
-        padding: 40px 52px 50px;
+        padding: 48px 64px 58px;
       }
 
       .section {
-        margin-bottom: 38px;
+        margin-bottom: 45px;
       }
 
       .section:last-child {
@@ -264,135 +321,204 @@
       .section-heading {
         display: flex;
         align-items: center;
-        gap: 11px;
-        margin-bottom: 18px;
+        gap: 12px;
+        margin-bottom: 19px;
       }
 
       .section-icon {
-        width: 33px;
-        height: 33px;
         display: inline-flex;
-        flex: 0 0 33px;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
-        background: var(--primary-soft);
-        color: var(--primary-dark);
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        border: 1px solid #ccfbf1;
+        border-radius: 10px;
+        background: var(--teal-soft);
+        color: var(--teal-dark);
         font-size: 15px;
       }
 
       .section-title {
         margin: 0;
-        color: var(--dark);
-        font-size: 13px;
+        color: var(--ink);
+        font-size: 12px;
         font-weight: 800;
-        letter-spacing: 1.7px;
+        letter-spacing: 1.8px;
         text-transform: uppercase;
       }
 
       .section-line {
         flex: 1;
         height: 1px;
-        background: var(--border);
+        margin-left: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--border-dark),
+          rgba(208, 213, 221, 0)
+        );
       }
 
-      /* =========================
-         SUMMARY
-      ========================== */
+      /* =========================================================
+       SUMMARY
+    ========================================================= */
 
       .summary-box {
-        padding: 20px 22px;
+        position: relative;
+        overflow: hidden;
+        padding: 23px 25px 23px 27px;
         border: 1px solid #d1fae5;
-        border-left: 4px solid var(--primary);
-        border-radius: 11px;
-        background: linear-gradient(135deg, #f0fdfa, #fff);
+        border-radius: var(--radius-md);
+        background:
+          radial-gradient(
+            circle at 100% 0%,
+            rgba(13, 148, 136, 0.07),
+            transparent 30%
+          ),
+          linear-gradient(135deg, #f0fdfa, #ffffff);
+      }
+
+      .summary-box::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--teal), #14b8a6);
       }
 
       .summary-box p {
         margin: 0;
         color: #344054;
-        font-size: 13px;
-        line-height: 1.85;
+        font-size: 12.5px;
+        line-height: 1.9;
       }
 
       .summary-box strong {
-        color: var(--dark);
+        color: var(--ink);
       }
 
       .highlight {
-        color: var(--primary-dark);
+        color: var(--teal-dark);
         font-weight: 800;
       }
 
-      /* =========================
-         SKILLS
-      ========================== */
+      /* =========================================================
+       STATS
+    ========================================================= */
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 11px;
+        margin-top: 12px;
+      }
+
+      .stat {
+        padding: 17px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: #fff;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .stat:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(16, 24, 40, 0.06);
+      }
+
+      .stat-number {
+        color: var(--ink);
+        font-family: "Manrope", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .stat-label {
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+
+      /* =========================================================
+       SKILLS
+    ========================================================= */
 
       .skills-panel {
         overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: var(--radius);
+        border-radius: var(--radius-md);
       }
 
       .skill-row {
         display: grid;
-        grid-template-columns: 190px 1fr;
-        gap: 20px;
-        padding: 14px 17px;
+        grid-template-columns: 205px 1fr;
+        gap: 22px;
+        padding: 15px 18px;
         border-bottom: 1px solid var(--border);
-        transition: background 0.15s ease;
-      }
-
-      .skill-row:hover {
-        background: #fafcff;
+        transition: background 0.2s ease;
       }
 
       .skill-row:last-child {
         border-bottom: 0;
       }
 
+      .skill-row:hover {
+        background: #fafcff;
+      }
+
       .skill-label {
         display: flex;
         align-items: flex-start;
-        gap: 8px;
-        color: var(--dark);
-        font-size: 11px;
+        gap: 9px;
+        color: var(--ink);
+        font-size: 10.5px;
         font-weight: 800;
       }
 
       .skill-label i {
         margin-top: 2px;
-        color: var(--primary);
+        color: var(--teal);
+        font-size: 13px;
       }
 
       .skill-content {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
         align-content: flex-start;
+        gap: 6px;
       }
 
       .skill-badge {
         display: inline-flex;
         align-items: center;
+        min-height: 24px;
         padding: 4px 8px;
         border: 1px solid #e4e7ec;
         border-radius: 6px;
         background: #f8fafc;
         color: #475467;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 600;
       }
 
       .skill-badge.primary {
-        border-color: #ccfbf1;
-        background: var(--primary-soft);
-        color: var(--primary-dark);
+        border-color: #99f6e4;
+        background: var(--teal-soft);
+        color: var(--teal-dark);
+        font-weight: 800;
       }
 
-      /* =========================
-         EXPERIENCE
-      ========================== */
+      /* =========================================================
+       EXPERIENCE
+    ========================================================= */
 
       .experience {
         position: relative;
@@ -401,17 +527,17 @@
       .experience::before {
         content: "";
         position: absolute;
-        top: 8px;
+        top: 7px;
         bottom: 8px;
-        left: 13px;
-        width: 2px;
-        background: #e2e8f0;
+        left: 14px;
+        width: 1px;
+        background: linear-gradient(180deg, #99f6e4, #e2e8f0 80%);
       }
 
       .experience-item {
         position: relative;
-        padding-left: 44px;
-        margin-bottom: 31px;
+        padding-left: 48px;
+        margin-bottom: 37px;
       }
 
       .experience-item:last-child {
@@ -421,282 +547,338 @@
       .experience-dot {
         position: absolute;
         z-index: 2;
-        top: 4px;
+        top: 3px;
         left: 5px;
-        width: 18px;
-        height: 18px;
-        border: 4px solid var(--primary);
+        width: 19px;
+        height: 19px;
+        border: 5px solid #fff;
         border-radius: 50%;
-        background: #fff;
+        background: var(--teal);
+        box-shadow:
+          0 0 0 1px #99f6e4,
+          0 0 0 5px #f0fdfa;
       }
 
       .experience-header {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 15px;
-        margin-bottom: 4px;
+        gap: 20px;
+        margin-bottom: 5px;
       }
 
       .job-title {
         margin: 0;
-        color: var(--dark);
+        color: var(--ink);
         font-size: 15px;
         font-weight: 800;
+        letter-spacing: -0.2px;
       }
 
       .company {
-        margin-top: 3px;
-        color: var(--primary-dark);
-        font-size: 11px;
-        font-weight: 700;
+        margin-top: 4px;
+        color: var(--teal-dark);
+        font-size: 10.5px;
+        font-weight: 800;
       }
 
       .date {
         white-space: nowrap;
-        padding: 5px 9px;
-        border-radius: 6px;
-        background: var(--accent-soft);
-        color: #92650a;
-        font-size: 9px;
+        padding: 6px 10px;
+        border: 1px solid #fde68a;
+        border-radius: 7px;
+        background: var(--gold-soft);
+        color: var(--gold-dark);
+        font-size: 8.5px;
         font-weight: 800;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
       }
 
       .job-list {
-        margin: 13px 0 0;
-        padding-left: 17px;
+        margin: 14px 0 0;
+        padding-left: 18px;
       }
 
       .job-list li {
         padding-left: 3px;
         margin-bottom: 7px;
         color: #475467;
-        font-size: 11.7px;
-        line-height: 1.65;
+        font-size: 11.2px;
+        line-height: 1.7;
+      }
+
+      .job-list li:last-child {
+        margin-bottom: 0;
       }
 
       .job-list li::marker {
-        color: var(--primary);
+        color: var(--teal);
       }
 
       .job-list strong {
-        color: var(--dark);
+        color: var(--ink);
         font-weight: 700;
       }
 
       .job-list code {
         padding: 1px 4px;
+        border: 1px solid #e2e8f0;
         border-radius: 4px;
-        background: #f1f5f9;
+        background: #f8fafc;
         color: #334155;
-        font-size: 10px;
+        font-size: 9px;
       }
 
-      /* =========================
-         PROJECTS
-      ========================== */
+      /* =========================================================
+       PROJECTS
+    ========================================================= */
 
       .project-card {
         position: relative;
         height: 100%;
-        padding: 18px;
+        padding: 19px;
+        overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: 11px;
+        border-radius: var(--radius-md);
         background: #fff;
         transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease;
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          border-color 0.22s ease;
+      }
+
+      .project-card::after {
+        content: "";
+        position: absolute;
+        right: -40px;
+        bottom: -55px;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: rgba(13, 148, 136, 0.035);
+        pointer-events: none;
       }
 
       .project-card:hover {
-        transform: translateY(-3px);
+        transform: translateY(-4px);
         border-color: #99f6e4;
-        box-shadow: 0 12px 30px rgba(15, 118, 110, 0.08);
+        box-shadow:
+          0 18px 40px rgba(15, 118, 110, 0.09),
+          0 4px 12px rgba(16, 24, 40, 0.04);
       }
 
       .project-top {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 10px;
+        gap: 14px;
+        margin-bottom: 12px;
       }
 
       .project-icon {
-        width: 37px;
-        height: 37px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 9px;
-        background: var(--primary-soft);
-        color: var(--primary-dark);
-        font-size: 16px;
-        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+        border: 1px solid #ccfbf1;
+        border-radius: 10px;
+        background: var(--teal-soft);
+        color: var(--teal-dark);
+        font-size: 17px;
       }
 
       .project-tag {
         display: block;
-        color: #92650a;
+        color: var(--gold-dark);
         font-size: 8px;
         font-weight: 800;
-        letter-spacing: 1px;
+        letter-spacing: 1.1px;
         text-transform: uppercase;
       }
 
       .project-title {
-        margin: 3px 0 0;
-        color: var(--dark);
+        margin: 4px 0 0;
+        color: var(--ink);
         font-size: 13px;
         font-weight: 800;
+        line-height: 1.35;
       }
 
       .project-description {
-        margin: 0 0 11px;
+        margin: 0 0 14px;
         color: var(--muted);
-        font-size: 10.8px;
-        line-height: 1.65;
+        font-size: 10.3px;
+        line-height: 1.7;
       }
 
       .project-description em {
         color: #475467;
         font-style: normal;
+        font-weight: 600;
       }
 
       .project-link {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        color: var(--primary-dark);
-        font-size: 10px;
+        gap: 6px;
+        color: var(--teal-dark);
+        font-size: 9.5px;
         font-weight: 800;
+        transition: color 0.2s ease;
+      }
+
+      .project-link i {
+        transition: transform 0.2s ease;
       }
 
       .project-link:hover {
-        color: #92650a;
+        color: var(--gold-dark);
       }
 
-      /* =========================
-         EDUCATION
-      ========================== */
+      .project-link:hover i {
+        transform: translate(2px, -2px);
+      }
+
+      /* =========================================================
+       EDUCATION
+    ========================================================= */
 
       .education-list {
         overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: 11px;
+        border-radius: var(--radius-md);
       }
 
       .education-item {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 20px;
-        padding: 14px 17px;
+        gap: 25px;
+        padding: 16px 18px;
         border-bottom: 1px solid var(--border);
+        transition: background 0.2s ease;
       }
 
       .education-item:last-child {
         border-bottom: 0;
       }
 
+      .education-item:hover {
+        background: #fafcff;
+      }
+
       .degree {
-        color: var(--dark);
-        font-size: 11px;
+        color: var(--ink);
+        font-size: 10.5px;
         font-weight: 800;
       }
 
       .school {
         margin-top: 3px;
         color: var(--muted);
-        font-size: 10px;
+        font-size: 9.5px;
       }
 
       .edu-year {
         white-space: nowrap;
         color: var(--muted);
-        font-size: 9px;
-        font-weight: 700;
+        font-size: 8.5px;
+        font-weight: 800;
       }
 
-      /* =========================
-         CREDENTIAL
-      ========================== */
+      /* =========================================================
+       CERTIFICATE
+    ========================================================= */
 
       .certificate {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 15px;
-        padding: 15px 17px;
+        gap: 20px;
+        padding: 17px 18px;
         border: 1px solid var(--border);
-        border-radius: 11px;
-        background: linear-gradient(135deg, #fff, #f8fafc);
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, #ffffff, #f8fafc);
       }
 
       .certificate-left {
         display: flex;
         align-items: center;
-        gap: 11px;
+        gap: 12px;
       }
 
       .certificate-icon {
-        width: 38px;
-        height: 38px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 9px;
-        background: var(--accent-soft);
-        color: #92650a;
+        width: 41px;
+        height: 41px;
+        flex: 0 0 41px;
+        border: 1px solid #fde68a;
+        border-radius: 10px;
+        background: var(--gold-soft);
+        color: var(--gold-dark);
         font-size: 17px;
-        flex: 0 0 auto;
       }
 
       .certificate-title {
-        color: var(--dark);
-        font-size: 11px;
+        color: var(--ink);
+        font-size: 10.5px;
         font-weight: 800;
       }
 
       .certificate-subtitle {
+        margin-top: 2px;
         color: var(--muted);
-        font-size: 9px;
+        font-size: 8.5px;
       }
 
-      /* =========================
-         FOOTER
-      ========================== */
+      /* =========================================================
+       FOOTER
+    ========================================================= */
 
       .resume-footer {
-        padding: 18px 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 64px;
         border-top: 1px solid var(--border);
-        background: var(--light);
+        background: #f8fafc;
         color: var(--muted);
-        font-size: 10px;
-        text-align: center;
+        font-size: 8.5px;
       }
 
-      /* =========================
-         RESPONSIVE
-      ========================== */
+      .footer-name {
+        color: var(--ink);
+        font-weight: 800;
+      }
 
-      @media (max-width: 991.98px) {
+      /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+      @media (max-width: 1100px) {
         body {
-          padding: 20px 0;
-        }
-
-        .resume {
-          margin: 0 14px;
+          padding: 25px 14px;
         }
 
         .hero,
-        .main,
+        .main {
+          padding-left: 42px;
+          padding-right: 42px;
+        }
+
         .resume-footer {
-          padding-left: 30px;
-          padding-right: 30px;
+          padding-left: 42px;
+          padding-right: 42px;
+        }
+
+        .contact-grid {
+          grid-template-columns: repeat(3, auto);
         }
       }
 
@@ -707,46 +889,68 @@
         }
 
         .resume {
-          margin: 0;
+          border: 0;
           border-radius: 0;
           box-shadow: none;
         }
 
         .hero {
-          padding: 35px 22px 29px;
+          padding: 38px 22px 32px;
+        }
+
+        .topline {
+          align-items: flex-start;
+        }
+
+        .hero-label {
+          display: none;
         }
 
         .name {
-          font-size: 2.5rem;
+          font-size: 3rem;
+          letter-spacing: -2.5px;
         }
 
         .role {
           font-size: 10px;
           letter-spacing: 1.8px;
+          line-height: 1.7;
+        }
+
+        .hero-description {
+          font-size: 11.5px;
+          line-height: 1.8;
         }
 
         .contact-grid {
-          flex-direction: column;
-          align-items: stretch;
+          grid-template-columns: 1fr;
+          gap: 7px;
         }
 
         .contact-item {
           width: 100%;
         }
 
-        .main,
-        .resume-footer {
-          padding-right: 22px;
-          padding-left: 22px;
+        .main {
+          padding: 35px 22px 42px;
+        }
+
+        .section {
+          margin-bottom: 37px;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .skill-row {
           grid-template-columns: 1fr;
-          gap: 8px;
+          gap: 9px;
         }
 
         .experience-header {
           flex-direction: column;
+          gap: 9px;
         }
 
         .date {
@@ -757,37 +961,40 @@
         .certificate {
           align-items: flex-start;
           flex-direction: column;
+          gap: 10px;
+        }
+
+        .resume-footer {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 17px 22px;
         }
       }
 
-      /* =========================
-         REDUCED MOTION
-      ========================== */
+      /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
 
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
 
-        .project-card,
-        .contact-item,
-        .skill-row {
-          transition: none;
-        }
-
-        .project-card:hover {
-          transform: none;
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
         }
       }
 
-      /* =========================
-         PRINT / A4
-      ========================== */
+      /* =========================================================
+       PRINT / A4
+    ========================================================= */
 
       @media print {
         @page {
           size: A4;
-          margin: 7mm;
+          margin: 6mm;
         }
 
         html,
@@ -807,20 +1014,28 @@
           width: 100%;
           max-width: none;
           margin: 0;
+          border: 0;
           border-radius: 0;
           box-shadow: none;
         }
 
         .hero {
+          padding: 38px 46px 34px;
           break-inside: avoid;
+        }
+
+        .main {
+          padding: 32px 46px 40px;
         }
 
         .section {
           break-inside: auto;
+          margin-bottom: 30px;
         }
 
         .section-heading,
         .summary-box,
+        .stats,
         .skills-panel,
         .experience-item,
         .project-card,
@@ -829,18 +1044,19 @@
           break-inside: avoid;
         }
 
-        .project-card:hover {
+        .project-card:hover,
+        .contact-item:hover,
+        .stat:hover {
           transform: none;
           box-shadow: none;
         }
 
-        a {
-          color: inherit;
+        .resume-footer {
+          padding: 14px 46px;
         }
 
-        .project-link,
-        .contact-item {
-          text-decoration: none;
+        a {
+          color: inherit !important;
         }
       }
     </style>
@@ -849,20 +1065,24 @@
   <body>
     <div class="resume">
       <!-- =====================================================
-           HEADER
-      ====================================================== -->
+         HERO
+    ====================================================== -->
 
       <header class="hero">
         <div class="hero-content">
-          <div class="availability">
-            <span class="availability-dot" aria-hidden="true"></span>
-            Available for Senior Flutter Opportunities
+          <div class="topline">
+            <div class="availability">
+              <span class="availability-dot"></span>
+              Available for Senior Flutter Opportunities
+            </div>
+
+            <div class="hero-label">Mobile · Backend · Cloud · CI/CD</div>
           </div>
 
           <h1 class="name">Sunil Shedge</h1>
 
           <div class="role">
-            Senior Flutter Developer &middot; Mobile Application Engineer
+            Senior Flutter Developer · Mobile Application Engineer
           </div>
 
           <p class="hero-description">
@@ -873,17 +1093,17 @@
 
           <div class="contact-grid">
             <a class="contact-item" href="mailto:swarajya888@gmail.com">
-              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              <i class="bi bi-envelope-fill"></i>
               swarajya888@gmail.com
             </a>
 
             <a class="contact-item" href="tel:+918668796251">
-              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              <i class="bi bi-telephone-fill"></i>
               +91 8668796251
             </a>
 
             <span class="contact-item">
-              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              <i class="bi bi-geo-alt-fill"></i>
               Pune, Maharashtra, India
             </span>
 
@@ -893,7 +1113,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bi bi-globe2" aria-hidden="true"></i>
+              <i class="bi bi-globe2"></i>
               Portfolio
             </a>
 
@@ -903,7 +1123,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bi bi-linkedin" aria-hidden="true"></i>
+              <i class="bi bi-linkedin"></i>
               LinkedIn
             </a>
 
@@ -913,7 +1133,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bi bi-github" aria-hidden="true"></i>
+              <i class="bi bi-github"></i>
               GitHub
             </a>
           </div>
@@ -921,8 +1141,8 @@
       </header>
 
       <!-- =====================================================
-           MAIN CONTENT
-      ====================================================== -->
+         MAIN
+    ====================================================== -->
 
       <main class="main">
         <!-- ================= SUMMARY ================= -->
@@ -930,7 +1150,7 @@
         <section class="section" aria-labelledby="summary-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-person-badge" aria-hidden="true"></i>
+              <i class="bi bi-person-badge"></i>
             </div>
 
             <h2 class="section-title" id="summary-heading">
@@ -949,14 +1169,35 @@
               <span class="highlight">15+ production apps</span>
               with live deployments on the Google Play Store and Apple App
               Store. Strong expertise in
-              <strong
-                >Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps,
-                Razorpay, Stripe, UPI, biometric authentication, WebView, and
-                CI/CD</strong
+              <strong>
+                Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps, Razorpay,
+                Stripe, UPI, biometric authentication, WebView, and CI/CD </strong
               >, with a strong focus on clean architecture, performance
               optimization, application security, and reliable production
               delivery.
             </p>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">4+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Production Apps</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-number">35%</div>
+              <div class="stat-label">Load-Time Improvement</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-number">50%</div>
+              <div class="stat-label">Bug Resolution Improvement</div>
+            </div>
           </div>
         </section>
 
@@ -965,7 +1206,7 @@
         <section class="section" aria-labelledby="skills-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-code-slash" aria-hidden="true"></i>
+              <i class="bi bi-code-slash"></i>
             </div>
 
             <h2 class="section-title" id="skills-heading">Technical Skills</h2>
@@ -978,7 +1219,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-phone" aria-hidden="true"></i>
+                <i class="bi bi-phone"></i>
                 Mobile Development
               </div>
 
@@ -997,7 +1238,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-layers" aria-hidden="true"></i>
+                <i class="bi bi-layers"></i>
                 Architecture
               </div>
 
@@ -1015,7 +1256,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-diagram-3" aria-hidden="true"></i>
+                <i class="bi bi-diagram-3"></i>
                 State Management
               </div>
 
@@ -1031,7 +1272,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-server" aria-hidden="true"></i>
+                <i class="bi bi-server"></i>
                 Backend &amp; Database
               </div>
 
@@ -1047,11 +1288,11 @@
               </div>
             </div>
 
-            <!-- API -->
+            <!-- APIs -->
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-cloud-arrow-down" aria-hidden="true"></i>
+                <i class="bi bi-cloud-arrow-down"></i>
                 APIs &amp; Authentication
               </div>
 
@@ -1068,7 +1309,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-credit-card" aria-hidden="true"></i>
+                <i class="bi bi-credit-card"></i>
                 Payments
               </div>
 
@@ -1085,7 +1326,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-fire" aria-hidden="true"></i>
+                <i class="bi bi-fire"></i>
                 Firebase &amp; Cloud
               </div>
 
@@ -1103,14 +1344,14 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-shield-lock" aria-hidden="true"></i>
+                <i class="bi bi-shield-lock"></i>
                 Security
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary"
-                  >Biometric Authentication</span
-                >
+                <span class="skill-badge primary">
+                  Biometric Authentication
+                </span>
                 <span class="skill-badge">Fingerprint Authentication</span>
                 <span class="skill-badge">local_auth</span>
                 <span class="skill-badge">MPIN Authentication</span>
@@ -1124,7 +1365,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-plug" aria-hidden="true"></i>
+                <i class="bi bi-plug"></i>
                 Integrations
               </div>
 
@@ -1143,7 +1384,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-git" aria-hidden="true"></i>
+                <i class="bi bi-git"></i>
                 DevOps &amp; CI/CD
               </div>
 
@@ -1162,7 +1403,7 @@
 
             <div class="skill-row">
               <div class="skill-label">
-                <i class="bi bi-tools" aria-hidden="true"></i>
+                <i class="bi bi-tools"></i>
                 Development Tools
               </div>
 
@@ -1185,7 +1426,7 @@
         <section class="section" aria-labelledby="experience-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-briefcase" aria-hidden="true"></i>
+              <i class="bi bi-briefcase"></i>
             </div>
 
             <h2 class="section-title" id="experience-heading">
@@ -1199,15 +1440,16 @@
             <!-- JOB 1 -->
 
             <article class="experience-item">
-              <span class="experience-dot" aria-hidden="true"></span>
+              <span class="experience-dot"></span>
 
               <div class="experience-header">
                 <div>
                   <h3 class="job-title">Full Stack Developer</h3>
+
                   <div class="company">Self Employment</div>
                 </div>
 
-                <span class="date">Apr 2025 &ndash; Present</span>
+                <span class="date"> Apr 2025 – Present </span>
               </div>
 
               <ul class="job-list">
@@ -1215,30 +1457,30 @@
                   Developed end-to-end
                   <strong>Flutter mobile applications</strong>
                   backed by
-                  <strong>Node.js, Express.js, and PostgreSQL</strong>, covering
-                  API development, authentication, database design, and
+                  <strong> Node.js, Express.js, and PostgreSQL </strong>,
+                  covering API development, authentication, database design, and
                   production deployment.
                 </li>
 
                 <li>
                   Built secure REST APIs using
-                  <strong
-                    >JWT authentication and Role-Based Access Control</strong
+                  <strong>
+                    JWT authentication and Role-Based Access Control </strong
                   >, with environment-based configuration for protecting API
                   keys and sensitive credentials.
                 </li>
 
                 <li>
                   Diagnosed and resolved
-                  <strong
-                    >iOS build failures, CocoaPods dependency conflicts, Xcode
-                    configuration issues, and ANR problems</strong
+                  <strong>
+                    iOS build failures, CocoaPods dependency conflicts, Xcode
+                    configuration issues, and ANR problems </strong
                   >, improving application stability and release reliability.
                 </li>
 
                 <li>
                   Migrated iOS dependencies from
-                  <strong>CocoaPods to Swift Package Manager</strong>
+                  <strong> CocoaPods to Swift Package Manager </strong>
                   to improve dependency management and Xcode build stability.
                 </li>
 
@@ -1251,13 +1493,13 @@
 
                 <li>
                   Designed and optimized
-                  <strong>PostgreSQL database schemas and queries</strong>
+                  <strong> PostgreSQL database schemas and queries </strong>
                   for scalable backend applications.
                 </li>
 
                 <li>
                   Integrated
-                  <strong>Google AdMob and payment gateways</strong>
+                  <strong> Google AdMob and payment gateways </strong>
                   to support application monetization and transaction workflows.
                 </li>
               </ul>
@@ -1266,21 +1508,22 @@
             <!-- JOB 2 -->
 
             <article class="experience-item">
-              <span class="experience-dot" aria-hidden="true"></span>
+              <span class="experience-dot"></span>
 
               <div class="experience-header">
                 <div>
                   <h3 class="job-title">Senior Flutter Developer</h3>
+
                   <div class="company">Sunra Softtech Pvt. Ltd.</div>
                 </div>
 
-                <span class="date">Jul 2022 &ndash; Apr 2025</span>
+                <span class="date"> Jul 2022 – Apr 2025 </span>
               </div>
 
               <ul class="job-list">
                 <li>
                   Architected and maintained a
-                  <strong>multi-platform Flutter application</strong>
+                  <strong> multi-platform Flutter application </strong>
                   for Android, iOS, and Web serving
                   <strong>1,000+ users</strong>, reducing application load time
                   by
@@ -1290,7 +1533,9 @@
 
                 <li>
                   Implemented
-                  <strong>Clean Architecture and BLoC state management</strong>
+                  <strong>
+                    Clean Architecture and BLoC state management
+                  </strong>
                   across core modules, improving maintainability and reducing
                   bug resolution time by
                   <strong>50%</strong>.
@@ -1300,16 +1545,16 @@
                   Built automated
                   <strong>CI/CD pipelines</strong>
                   using
-                  <strong>Codemagic, Fastlane, and GitHub Actions</strong>,
+                  <strong> Codemagic, Fastlane, and GitHub Actions </strong>,
                   reducing the release cycle from
                   <strong>5 days to 1 day</strong>.
                 </li>
 
                 <li>
                   Optimized Flutter rendering and application performance using
-                  <strong
-                    >const widgets, RepaintBoundary, lazy loading, asset
-                    optimization, ProGuard rules, and null safety</strong
+                  <strong>
+                    const widgets, RepaintBoundary, lazy loading, asset
+                    optimization, ProGuard rules, and null safety </strong
                   >.
                 </li>
 
@@ -1317,35 +1562,35 @@
                   Implemented scalable navigation using
                   <strong>GoRouter</strong>
                   with
-                  <strong>Android App Links and iOS Universal Links</strong>
+                  <strong> Android App Links and iOS Universal Links </strong>
                   for deep linking and seamless user journeys.
                 </li>
 
                 <li>
                   Integrated
-                  <strong
-                    >Firebase Authentication, Cloud Firestore, FCM, Crashlytics,
-                    Google Sign-In, and Google Maps</strong
-                  >
+                  <strong>
+                    Firebase Authentication, Cloud Firestore, FCM, Crashlytics,
+                    Google Sign-In, and Google Maps
+                  </strong>
                   for authentication, real-time data, notifications, crash
                   monitoring, and location-based features.
                 </li>
 
                 <li>
                   Engineered secure payment integrations using
-                  <strong
-                    >Razorpay, Stripe, Paytm, and UPI through Flutter Method
-                    Channels</strong
+                  <strong>
+                    Razorpay, Stripe, Paytm, and UPI through Flutter Method
+                    Channels </strong
                   >.
                 </li>
 
                 <li>
                   Implemented
-                  <strong
-                    >fingerprint and biometric authentication, MPIN
+                  <strong>
+                    fingerprint and biometric authentication, MPIN
                     authentication, secure local storage, and
-                    screenshot/screen-recording prevention</strong
-                  >
+                    screenshot/screen-recording prevention
+                  </strong>
                   for security-sensitive application flows.
                 </li>
 
@@ -1359,8 +1604,8 @@
 
                 <li>
                   Converted responsive websites into
-                  <strong
-                    >Android and iOS applications using Flutter WebView</strong
+                  <strong>
+                    Android and iOS applications using Flutter WebView </strong
                   >, including deep linking, JavaScript communication, and
                   native platform integration.
                 </li>
@@ -1370,15 +1615,16 @@
             <!-- JOB 3 -->
 
             <article class="experience-item">
-              <span class="experience-dot" aria-hidden="true"></span>
+              <span class="experience-dot"></span>
 
               <div class="experience-header">
                 <div>
                   <h3 class="job-title">Junior Flutter Developer</h3>
+
                   <div class="company">Syscryption Technology</div>
                 </div>
 
-                <span class="date">Jan 2022 &ndash; Jul 2022</span>
+                <span class="date"> Jan 2022 – Jul 2022 </span>
               </div>
 
               <ul class="job-list">
@@ -1398,12 +1644,14 @@
 
                 <li>
                   Optimized dependency management using
-                  <strong><code>Get.lazyPut()</code></strong>
+                  <strong>
+                    <code>Get.lazyPut()</code>
+                  </strong>
                   and managed
-                  <strong
-                    ><code>onInit()</code>, <code>onReady()</code>, and
-                    <code>onClose()</code></strong
-                  >
+                  <strong>
+                    <code>onInit()</code>, <code>onReady()</code>, and
+                    <code>onClose()</code>
+                  </strong>
                   controller lifecycle methods for efficient resource handling.
                 </li>
 
@@ -1423,22 +1671,24 @@
 
                 <li>
                   Integrated
-                  <strong>third-party Flutter packages and SDKs</strong>
+                  <strong> third-party Flutter packages and SDKs </strong>
                   to accelerate feature delivery and extend application
                   functionality.
                 </li>
 
                 <li>
                   Converted
-                  <strong
-                    >Figma designs into responsive Flutter interfaces</strong
-                  >
+                  <strong>
+                    Figma designs into responsive Flutter interfaces
+                  </strong>
                   with pixel-accurate layouts across different screen sizes.
                 </li>
 
                 <li>
                   Identified and resolved
-                  <strong>application bugs and performance bottlenecks</strong>
+                  <strong>
+                    application bugs and performance bottlenecks
+                  </strong>
                   to improve overall application stability.
                 </li>
               </ul>
@@ -1451,7 +1701,7 @@
         <section class="section" aria-labelledby="projects-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-grid-1x2" aria-hidden="true"></i>
+              <i class="bi bi-grid-1x2"></i>
             </div>
 
             <h2 class="section-title" id="projects-heading">
@@ -1468,14 +1718,13 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag"
-                      >Flutter &middot; OTT Platform</span
-                    >
+                    <span class="project-tag"> Flutter · OTT Platform </span>
+
                     <h3 class="project-title">Sense Wheel</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-play-btn" aria-hidden="true"></i>
+                    <i class="bi bi-play-btn"></i>
                   </div>
                 </div>
 
@@ -1485,10 +1734,10 @@
                   offline encrypted storage, and cross-platform responsive
                   experiences.
                   <br />
-                  <em
-                    >Tech: Flutter, Firebase, REST API, Video Streaming, Payment
-                    Integration, Responsive UI</em
-                  >
+                  <em>
+                    Tech: Flutter, Firebase, REST API, Video Streaming, Payment
+                    Integration, Responsive UI
+                  </em>
                 </p>
 
                 <a
@@ -1498,7 +1747,7 @@
                   rel="noopener noreferrer"
                 >
                   View on Play Store
-                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <i class="bi bi-arrow-up-right"></i>
                 </a>
               </article>
             </div>
@@ -1509,12 +1758,13 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag">Flutter &middot; Mobility</span>
+                    <span class="project-tag"> Flutter · Mobility </span>
+
                     <h3 class="project-title">JEEYO RIDE</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-car-front" aria-hidden="true"></i>
+                    <i class="bi bi-car-front"></i>
                   </div>
                 </div>
 
@@ -1523,10 +1773,10 @@
                   geofencing, route polylines, live location updates, and Google
                   Places autocomplete.
                   <br />
-                  <em
-                    >Tech: Flutter, Google Maps, Geofencing, REST API, Firebase,
-                    Real-Time Tracking</em
-                  >
+                  <em>
+                    Tech: Flutter, Google Maps, Geofencing, REST API, Firebase,
+                    Real-Time Tracking
+                  </em>
                 </p>
 
                 <a
@@ -1536,7 +1786,7 @@
                   rel="noopener noreferrer"
                 >
                   View on Play Store
-                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <i class="bi bi-arrow-up-right"></i>
                 </a>
               </article>
             </div>
@@ -1547,12 +1797,13 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag">Flutter &middot; Gaming</span>
+                    <span class="project-tag"> Flutter · Gaming </span>
+
                     <h3 class="project-title">Sanjeevani Gaming App</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-controller" aria-hidden="true"></i>
+                    <i class="bi bi-controller"></i>
                   </div>
                 </div>
 
@@ -1561,10 +1812,10 @@
                   real-time updates, payment integration, notifications, and
                   user account workflows.
                   <br />
-                  <em
-                    >Tech: Flutter, Firebase, REST API, Payment Gateway, Push
-                    Notifications</em
-                  >
+                  <em>
+                    Tech: Flutter, Firebase, REST API, Payment Gateway, Push
+                    Notifications
+                  </em>
                 </p>
 
                 <a
@@ -1574,7 +1825,7 @@
                   rel="noopener noreferrer"
                 >
                   View Live App
-                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <i class="bi bi-arrow-up-right"></i>
                 </a>
               </article>
             </div>
@@ -1585,12 +1836,13 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag">Flutter &middot; Services</span>
+                    <span class="project-tag"> Flutter · Services </span>
+
                     <h3 class="project-title">Vehicle Repair Service App</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    <i class="bi bi-tools"></i>
                   </div>
                 </div>
 
@@ -1599,10 +1851,10 @@
                   vehicle status tracking, service history management, and
                   connection with nearby mechanics.
                   <br />
-                  <em
-                    >Tech: Flutter, Dart, Firebase, REST API, Google Maps,
-                    Responsive UI</em
-                  >
+                  <em>
+                    Tech: Flutter, Dart, Firebase, REST API, Google Maps,
+                    Responsive UI
+                  </em>
                 </p>
 
                 <a
@@ -1612,7 +1864,7 @@
                   rel="noopener noreferrer"
                 >
                   View Source
-                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <i class="bi bi-arrow-up-right"></i>
                 </a>
               </article>
             </div>
@@ -1623,14 +1875,15 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag">Node.js &middot; PostgreSQL</span>
+                    <span class="project-tag"> Node.js · PostgreSQL </span>
+
                     <h3 class="project-title">
                       Vehicle Repair Service Backend
                     </h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-server" aria-hidden="true"></i>
+                    <i class="bi bi-server"></i>
                   </div>
                 </div>
 
@@ -1639,10 +1892,10 @@
                   protection, PostgreSQL connection pooling, Socket.IO real-time
                   communication, and file uploads.
                   <br />
-                  <em
-                    >Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT
-                    Authentication, Multer</em
-                  >
+                  <em>
+                    Tech: Node.js, Express.js, PostgreSQL, Socket.IO, JWT
+                    Authentication, Multer
+                  </em>
                 </p>
 
                 <a
@@ -1652,7 +1905,7 @@
                   rel="noopener noreferrer"
                 >
                   View Source
-                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <i class="bi bi-arrow-up-right"></i>
                 </a>
               </article>
             </div>
@@ -1663,12 +1916,13 @@
               <article class="project-card">
                 <div class="project-top">
                   <div>
-                    <span class="project-tag">Flutter &middot; Healthcare</span>
+                    <span class="project-tag"> Flutter · Healthcare </span>
+
                     <h3 class="project-title">Health Care</h3>
                   </div>
 
                   <div class="project-icon">
-                    <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+                    <i class="bi bi-heart-pulse"></i>
                   </div>
                 </div>
 
@@ -1677,10 +1931,10 @@
                   management, disease prevention, tracking features, and access
                   to essential healthcare services.
                   <br />
-                  <em
-                    >Tech: Flutter, Dart, Firebase, REST API, Google Maps,
-                    Responsive UI</em
-                  >
+                  <em>
+                    Tech: Flutter, Dart, Firebase, REST API, Google Maps,
+                    Responsive UI
+                  </em>
                 </p>
 
                 <a
@@ -1690,7 +1944,7 @@
                   rel="noopener noreferrer"
                 >
                   View Source
-                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                  <i class="bi bi-arrow-up-right"></i>
                 </a>
               </article>
             </div>
@@ -1702,7 +1956,7 @@
         <section class="section" aria-labelledby="education-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-mortarboard" aria-hidden="true"></i>
+              <i class="bi bi-mortarboard"></i>
             </div>
 
             <h2 class="section-title" id="education-heading">Education</h2>
@@ -1713,57 +1967,59 @@
           <div class="education-list">
             <div class="education-item">
               <div>
-                <div class="degree">
-                  M.C.S. &mdash; Master of Computer Science
-                </div>
+                <div class="degree">M.C.S. — Master of Computer Science</div>
+
                 <div class="school">Sarhad College, Pune</div>
               </div>
-              <div class="edu-year">2019 &ndash; 2021 &middot; 77%</div>
+
+              <div class="edu-year">2019 – 2021 · 77%</div>
             </div>
 
             <div class="education-item">
               <div>
-                <div class="degree">
-                  B.C.S. &mdash; Bachelor of Computer Science
-                </div>
+                <div class="degree">B.C.S. — Bachelor of Computer Science</div>
+
                 <div class="school">Vishwakarma College, Pune</div>
               </div>
-              <div class="edu-year">2015 &ndash; 2018</div>
+
+              <div class="edu-year">2015 – 2018</div>
             </div>
 
             <div class="education-item">
               <div>
-                <div class="degree">HSC &mdash; Class XII</div>
+                <div class="degree">HSC — Class XII</div>
+
                 <div class="school">
                   S.M.S. Mohite Patil Jr. College, Rahimatpur
                 </div>
               </div>
+
               <div class="edu-year">2015</div>
             </div>
 
             <div class="education-item">
               <div>
-                <div class="degree">SSC &mdash; Class X</div>
+                <div class="degree">SSC — Class X</div>
+
                 <div class="school">
                   Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
                 </div>
               </div>
-              <div class="edu-year">2013 &middot; 75%</div>
+
+              <div class="edu-year">2013 · 75%</div>
             </div>
           </div>
         </section>
 
-        <!-- ================= ADDITIONAL CREDENTIAL ================= -->
+        <!-- ================= CERTIFICATE ================= -->
 
         <section class="section" aria-labelledby="credential-heading">
           <div class="section-heading">
             <div class="section-icon">
-              <i class="bi bi-patch-check" aria-hidden="true"></i>
+              <i class="bi bi-patch-check"></i>
             </div>
 
-            <h2 class="section-title" id="credential-heading">
-              Certificate
-            </h2>
+            <h2 class="section-title" id="credential-heading">Certificate</h2>
 
             <div class="section-line"></div>
           </div>
@@ -1771,11 +2027,12 @@
           <div class="certificate">
             <div class="certificate-left">
               <div class="certificate-icon">
-                <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                <i class="bi bi-file-earmark-pdf"></i>
               </div>
 
               <div>
                 <div class="certificate-title">Internship Certificate</div>
+
                 <div class="certificate-subtitle">
                   Certificate verification document
                 </div>
@@ -1789,13 +2046,24 @@
               rel="noopener noreferrer"
             >
               View PDF
-              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              <i class="bi bi-arrow-up-right"></i>
             </a>
           </div>
         </section>
       </main>
 
-      
+      <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+      <footer class="resume-footer">
+        <div>
+          <span class="footer-name">Sunil Shedge</span>
+          · Senior Flutter Developer
+        </div>
+
+        <div>Flutter · Dart · Android · iOS · Backend · Cloud · CI/CD</div>
+      </footer>
     </div>
   </body>
 </html>
