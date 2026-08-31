@@ -1,3 +1,6 @@
+Absolutely — here is a **premium, polished single-file HTML resume** based on
+your content. It keeps all your details, improves hierarchy/spacing/visual
+design, and is responsive + A4 print friendly. ```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +11,8 @@
       name="description"
       content="Sunil Shedge — Senior Flutter Developer with 4+ years of experience building production Android, iOS, Web and backend applications."
     />
-    <meta name="theme-color" content="#0b1220" />
+
+    <meta name="theme-color" content="#07111f" />
     <meta name="color-scheme" content="light" />
 
     <title>Sunil Shedge | Senior Flutter Developer</title>
@@ -41,15 +45,17 @@
 
     <style>
       :root {
+        --navy: #07111f;
+        --navy-2: #0d1728;
         --ink: #101828;
-        --ink-2: #1d2939;
+        --ink-soft: #1d2939;
         --text: #344054;
         --muted: #667085;
 
         --teal: #0d9488;
         --teal-dark: #0f766e;
-        --teal-light: #ccfbf1;
-        --teal-soft: #f0fdfa;
+        --teal-bright: #2dd4bf;
+        --teal-soft: #ecfdf9;
 
         --gold: #f59e0b;
         --gold-dark: #a16207;
@@ -59,18 +65,18 @@
         --blue-soft: #eff6ff;
 
         --border: #e4e7ec;
-        --border-dark: #d0d5dd;
+        --border-light: #edf0f3;
 
         --paper: #ffffff;
-        --page: #edf1f5;
-        --surface: #f8fafc;
+        --page: #eef2f6;
 
-        --radius-sm: 8px;
+        --radius-sm: 9px;
         --radius-md: 14px;
-        --radius-lg: 20px;
+        --radius-lg: 22px;
 
         --shadow:
-          0 30px 80px rgba(16, 24, 40, 0.1), 0 8px 24px rgba(16, 24, 40, 0.05);
+          0 40px 100px rgba(16, 24, 40, 0.12),
+          0 12px 35px rgba(16, 24, 40, 0.06);
       }
 
       * {
@@ -83,28 +89,26 @@
 
       body {
         margin: 0;
-        padding: 44px 20px;
+        padding: 45px 20px;
         background:
           radial-gradient(
-            circle at 5% 0%,
-            rgba(13, 148, 136, 0.1),
+            circle at 3% 0%,
+            rgba(13, 148, 136, 0.12),
             transparent 25%
           ),
           radial-gradient(
-            circle at 95% 10%,
-            rgba(37, 99, 235, 0.06),
-            transparent 22%
+            circle at 97% 7%,
+            rgba(37, 99, 235, 0.08),
+            transparent 23%
           ),
-          var(--page);
+          linear-gradient(135deg, #eef2f6, #f7f9fb);
         color: var(--text);
         font-family: "DM Sans", sans-serif;
         line-height: 1.6;
       }
 
-      
-
       ::selection {
-        background: var(--teal-light);
+        background: #ccfbf1;
         color: var(--teal-dark);
       }
 
@@ -113,8 +117,7 @@
         text-decoration: none;
       }
 
-      a:focus-visible,
-      button:focus-visible {
+      a:focus-visible {
         outline: 3px solid rgba(13, 148, 136, 0.35);
         outline-offset: 4px;
       }
@@ -122,13 +125,12 @@
       h1,
       h2,
       h3,
-      h4,
-      h5 {
+      h4 {
         font-family: "Manrope", sans-serif;
       }
 
       /* =========================================================
-       PAGE
+       RESUME
     ========================================================= */
 
       .resume {
@@ -136,7 +138,7 @@
         margin: 0 auto;
         overflow: hidden;
         background: var(--paper);
-        border: 1px solid rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.9);
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow);
       }
@@ -148,43 +150,44 @@
       .hero {
         position: relative;
         overflow: hidden;
-        padding: 58px 64px 52px;
+        padding: 58px 64px 54px;
         color: #fff;
         background:
           radial-gradient(
-            circle at 90% 15%,
-            rgba(20, 184, 166, 0.22),
-            transparent 27%
+            circle at 84% 15%,
+            rgba(45, 212, 191, 0.2),
+            transparent 24%
           ),
           radial-gradient(
-            circle at 12% 110%,
-            rgba(245, 158, 11, 0.1),
-            transparent 30%
+            circle at 13% 105%,
+            rgba(245, 158, 11, 0.12),
+            transparent 28%
           ),
-          linear-gradient(135deg, #080d18 0%, #101827 54%, #0f172a 100%);
+          linear-gradient(135deg, #050b15 0%, #0a1424 48%, #0d182a 100%);
       }
 
       .hero::before {
         content: "";
         position: absolute;
-        width: 420px;
-        height: 420px;
-        right: -190px;
-        top: -260px;
-        border: 1px solid rgba(94, 234, 212, 0.15);
+        width: 460px;
+        height: 460px;
+        right: -230px;
+        top: -300px;
+        border: 1px solid rgba(94, 234, 212, 0.16);
         border-radius: 50%;
         box-shadow:
           0 0 0 55px rgba(94, 234, 212, 0.025),
-          0 0 0 110px rgba(94, 234, 212, 0.018);
+          0 0 0 110px rgba(94, 234, 212, 0.018),
+          0 0 0 165px rgba(94, 234, 212, 0.012);
       }
 
       .hero::after {
         content: "";
         position: absolute;
         left: -130px;
-        bottom: -210px;
-        width: 330px;
-        height: 330px;
+        bottom: -250px;
+        width: 390px;
+        height: 390px;
         border-radius: 50%;
         background: rgba(245, 158, 11, 0.045);
       }
@@ -207,15 +210,16 @@
         align-items: center;
         gap: 9px;
         width: fit-content;
-        padding: 7px 12px;
+        padding: 8px 13px;
         border: 1px solid rgba(255, 255, 255, 0.13);
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.055);
         color: #d1fae5;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 800;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.85px;
         text-transform: uppercase;
+        backdrop-filter: blur(10px);
       }
 
       .availability-dot {
@@ -224,14 +228,14 @@
         flex: 0 0 7px;
         border-radius: 50%;
         background: #34d399;
-        box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.11);
+        box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.1);
       }
 
       .hero-label {
         color: #94a3b8;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 700;
-        letter-spacing: 1.7px;
+        letter-spacing: 1.8px;
         text-transform: uppercase;
       }
 
@@ -239,26 +243,37 @@
         max-width: 900px;
         margin: 0;
         color: #fff;
-        font-size: clamp(3rem, 7vw, 5.8rem);
+        font-size: clamp(3.2rem, 7vw, 6rem);
         font-weight: 800;
-        letter-spacing: -4px;
-        line-height: 0.96;
+        letter-spacing: -5px;
+        line-height: 0.93;
       }
 
       .role {
-        margin-top: 19px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
         color: #5eead4;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 800;
-        letter-spacing: 2.8px;
+        letter-spacing: 2.6px;
         text-transform: uppercase;
       }
 
+      .role::before {
+        content: "";
+        width: 35px;
+        height: 2px;
+        background: var(--teal-bright);
+        border-radius: 999px;
+      }
+
       .hero-description {
-        max-width: 850px;
+        max-width: 860px;
         margin: 22px 0 0;
         color: #cbd5e1;
-        font-size: 13px;
+        font-size: 12.5px;
         line-height: 1.9;
       }
 
@@ -267,11 +282,10 @@
     ========================================================= */
 
       .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(6, auto);
-        justify-content: start;
+        display: flex;
+        flex-wrap: wrap;
         gap: 8px;
-        margin-top: 29px;
+        margin-top: 30px;
       }
 
       .contact-item {
@@ -280,11 +294,11 @@
         gap: 8px;
         min-height: 36px;
         padding: 8px 11px;
-        border: 1px solid rgba(255, 255, 255, 0.11);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 9px;
-        background: rgba(255, 255, 255, 0.055);
+        background: rgba(255, 255, 255, 0.045);
         color: #dbe4ee;
-        font-size: 10px;
+        font-size: 9.5px;
         font-weight: 600;
         transition:
           transform 0.2s ease,
@@ -294,13 +308,13 @@
 
       .contact-item i {
         color: #5eead4;
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .contact-item:hover {
         transform: translateY(-2px);
         border-color: rgba(94, 234, 212, 0.3);
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.095);
         color: #fff;
       }
 
@@ -309,11 +323,11 @@
     ========================================================= */
 
       .main {
-        padding: 48px 64px 58px;
+        padding: 50px 64px 60px;
       }
 
       .section {
-        margin-bottom: 45px;
+        margin-bottom: 47px;
       }
 
       .section:last-child {
@@ -324,29 +338,31 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        margin-bottom: 19px;
+        margin-bottom: 20px;
       }
 
       .section-icon {
+        position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 36px;
         height: 36px;
         flex: 0 0 36px;
-        border: 1px solid #ccfbf1;
+        border: 1px solid #bff7eb;
         border-radius: 10px;
-        background: var(--teal-soft);
+        background: linear-gradient(135deg, #ecfdf9, #f7fffd);
         color: var(--teal-dark);
         font-size: 15px;
+        box-shadow: 0 5px 15px rgba(13, 148, 136, 0.07);
       }
 
       .section-title {
         margin: 0;
         color: var(--ink);
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 800;
-        letter-spacing: 1.8px;
+        letter-spacing: 1.9px;
         text-transform: uppercase;
       }
 
@@ -354,11 +370,7 @@
         flex: 1;
         height: 1px;
         margin-left: 3px;
-        background: linear-gradient(
-          90deg,
-          var(--border-dark),
-          rgba(208, 213, 221, 0)
-        );
+        background: linear-gradient(90deg, #d0d5dd, rgba(208, 213, 221, 0));
       }
 
       /* =========================================================
@@ -368,16 +380,17 @@
       .summary-box {
         position: relative;
         overflow: hidden;
-        padding: 23px 25px 23px 27px;
-        border: 1px solid #d1fae5;
+        padding: 25px 27px 25px 29px;
+        border: 1px solid #c8f2e8;
         border-radius: var(--radius-md);
         background:
           radial-gradient(
             circle at 100% 0%,
-            rgba(13, 148, 136, 0.07),
-            transparent 30%
+            rgba(13, 148, 136, 0.08),
+            transparent 32%
           ),
           linear-gradient(135deg, #f0fdfa, #ffffff);
+        box-shadow: 0 8px 24px rgba(13, 148, 136, 0.045);
       }
 
       .summary-box::before {
@@ -387,13 +400,13 @@
         top: 0;
         bottom: 0;
         width: 4px;
-        background: linear-gradient(180deg, var(--teal), #14b8a6);
+        background: linear-gradient(180deg, #0d9488, #2dd4bf);
       }
 
       .summary-box p {
         margin: 0;
         color: #344054;
-        font-size: 12.5px;
+        font-size: 12px;
         line-height: 1.9;
       }
 
@@ -418,18 +431,33 @@
       }
 
       .stat {
+        position: relative;
+        overflow: hidden;
         padding: 17px;
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
         background: #fff;
         transition:
           transform 0.2s ease,
-          box-shadow 0.2s ease;
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .stat::after {
+        content: "";
+        position: absolute;
+        right: -30px;
+        bottom: -30px;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        background: rgba(13, 148, 136, 0.035);
       }
 
       .stat:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(16, 24, 40, 0.06);
+        transform: translateY(-3px);
+        border-color: #b7eee4;
+        box-shadow: 0 12px 30px rgba(16, 24, 40, 0.07);
       }
 
       .stat-number {
@@ -443,9 +471,9 @@
       .stat-label {
         margin-top: 2px;
         color: var(--muted);
-        font-size: 9px;
+        font-size: 8.5px;
         font-weight: 700;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.45px;
         text-transform: uppercase;
       }
 
@@ -457,6 +485,7 @@
         overflow: hidden;
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
+        box-shadow: 0 5px 20px rgba(16, 24, 40, 0.025);
       }
 
       .skill-row {
@@ -473,7 +502,7 @@
       }
 
       .skill-row:hover {
-        background: #fafcff;
+        background: #fafdfd;
       }
 
       .skill-label {
@@ -481,7 +510,7 @@
         align-items: flex-start;
         gap: 9px;
         color: var(--ink);
-        font-size: 10.5px;
+        font-size: 10px;
         font-weight: 800;
       }
 
@@ -507,7 +536,7 @@
         border-radius: 6px;
         background: #f8fafc;
         color: #475467;
-        font-size: 9px;
+        font-size: 8.7px;
         font-weight: 600;
       }
 
@@ -533,13 +562,13 @@
         bottom: 8px;
         left: 14px;
         width: 1px;
-        background: linear-gradient(180deg, #99f6e4, #e2e8f0 80%);
+        background: linear-gradient(180deg, #7ddbd0, #dbe4e9 85%);
       }
 
       .experience-item {
         position: relative;
         padding-left: 48px;
-        margin-bottom: 37px;
+        margin-bottom: 38px;
       }
 
       .experience-item:last-child {
@@ -558,7 +587,7 @@
         background: var(--teal);
         box-shadow:
           0 0 0 1px #99f6e4,
-          0 0 0 5px #f0fdfa;
+          0 0 0 5px #effcf9;
       }
 
       .experience-header {
@@ -574,13 +603,13 @@
         color: var(--ink);
         font-size: 15px;
         font-weight: 800;
-        letter-spacing: -0.2px;
+        letter-spacing: -0.25px;
       }
 
       .company {
         margin-top: 4px;
         color: var(--teal-dark);
-        font-size: 10.5px;
+        font-size: 10px;
         font-weight: 800;
       }
 
@@ -591,9 +620,9 @@
         border-radius: 7px;
         background: var(--gold-soft);
         color: var(--gold-dark);
-        font-size: 8.5px;
+        font-size: 8px;
         font-weight: 800;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.45px;
         text-transform: uppercase;
       }
 
@@ -606,8 +635,8 @@
         padding-left: 3px;
         margin-bottom: 7px;
         color: #475467;
-        font-size: 11.2px;
-        line-height: 1.7;
+        font-size: 10.8px;
+        line-height: 1.72;
       }
 
       .job-list li:last-child {
@@ -629,7 +658,7 @@
         border-radius: 4px;
         background: #f8fafc;
         color: #334155;
-        font-size: 9px;
+        font-size: 8.5px;
       }
 
       /* =========================================================
@@ -650,13 +679,25 @@
           border-color 0.22s ease;
       }
 
+      .project-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--teal), #5eead4, transparent);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
       .project-card::after {
         content: "";
         position: absolute;
-        right: -40px;
-        bottom: -55px;
-        width: 130px;
-        height: 130px;
+        right: -45px;
+        bottom: -60px;
+        width: 135px;
+        height: 135px;
         border-radius: 50%;
         background: rgba(13, 148, 136, 0.035);
         pointer-events: none;
@@ -666,8 +707,12 @@
         transform: translateY(-4px);
         border-color: #99f6e4;
         box-shadow:
-          0 18px 40px rgba(15, 118, 110, 0.09),
+          0 20px 42px rgba(15, 118, 110, 0.09),
           0 4px 12px rgba(16, 24, 40, 0.04);
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
       }
 
       .project-top {
@@ -695,7 +740,7 @@
       .project-tag {
         display: block;
         color: var(--gold-dark);
-        font-size: 8px;
+        font-size: 7.7px;
         font-weight: 800;
         letter-spacing: 1.1px;
         text-transform: uppercase;
@@ -704,7 +749,7 @@
       .project-title {
         margin: 4px 0 0;
         color: var(--ink);
-        font-size: 13px;
+        font-size: 12.8px;
         font-weight: 800;
         line-height: 1.35;
       }
@@ -712,7 +757,7 @@
       .project-description {
         margin: 0 0 14px;
         color: var(--muted);
-        font-size: 10.3px;
+        font-size: 9.9px;
         line-height: 1.7;
       }
 
@@ -723,11 +768,13 @@
       }
 
       .project-link {
+        position: relative;
+        z-index: 3;
         display: inline-flex;
         align-items: center;
         gap: 6px;
         color: var(--teal-dark);
-        font-size: 9.5px;
+        font-size: 9.2px;
         font-weight: 800;
         transition: color 0.2s ease;
       }
@@ -769,25 +816,25 @@
       }
 
       .education-item:hover {
-        background: #fafcff;
+        background: #fafdfd;
       }
 
       .degree {
         color: var(--ink);
-        font-size: 10.5px;
+        font-size: 10.3px;
         font-weight: 800;
       }
 
       .school {
         margin-top: 3px;
         color: var(--muted);
-        font-size: 9.5px;
+        font-size: 9.2px;
       }
 
       .edu-year {
         white-space: nowrap;
         color: var(--muted);
-        font-size: 8.5px;
+        font-size: 8.2px;
         font-weight: 800;
       }
 
@@ -828,14 +875,14 @@
 
       .certificate-title {
         color: var(--ink);
-        font-size: 10.5px;
+        font-size: 10.3px;
         font-weight: 800;
       }
 
       .certificate-subtitle {
         margin-top: 2px;
         color: var(--muted);
-        font-size: 8.5px;
+        font-size: 8.2px;
       }
 
       /* =========================================================
@@ -851,7 +898,7 @@
         border-top: 1px solid var(--border);
         background: #f8fafc;
         color: var(--muted);
-        font-size: 8.5px;
+        font-size: 8.2px;
       }
 
       .footer-name {
@@ -877,10 +924,6 @@
         .resume-footer {
           padding-left: 42px;
           padding-right: 42px;
-        }
-
-        .contact-grid {
-          grid-template-columns: repeat(3, auto);
         }
       }
 
@@ -914,17 +957,18 @@
         }
 
         .role {
-          font-size: 10px;
-          letter-spacing: 1.8px;
+          font-size: 9.5px;
+          letter-spacing: 1.6px;
           line-height: 1.7;
         }
 
         .hero-description {
-          font-size: 11.5px;
+          font-size: 11px;
           line-height: 1.8;
         }
 
         .contact-grid {
+          display: grid;
           grid-template-columns: 1fr;
           gap: 7px;
         }
@@ -996,7 +1040,7 @@
       @media print {
         @page {
           size: A4;
-          margin: 6mm;
+          margin: 5mm;
         }
 
         html,
@@ -1022,17 +1066,15 @@
         }
 
         .hero {
-          padding: 38px 46px 34px;
-          break-inside: avoid;
+          padding: 35px 42px 31px;
         }
 
         .main {
-          padding: 32px 46px 40px;
+          padding: 30px 42px 35px;
         }
 
         .section {
-          break-inside: auto;
-          margin-bottom: 30px;
+          margin-bottom: 27px;
         }
 
         .section-heading,
@@ -1054,7 +1096,7 @@
         }
 
         .resume-footer {
-          padding: 14px 46px;
+          padding: 13px 42px;
         }
 
         a {
@@ -1172,8 +1214,10 @@
               with live deployments on the Google Play Store and Apple App
               Store. Strong expertise in
               <strong>
-                Flutter, Dart, BLoC,Riverpod,GETX,Provider,Push Notification FCM/One Signal, REST APIs, Firebase, Google Maps, Razorpay,
-                Stripe, UPI, biometric authentication, WebView, and CI/CD </strong
+                Flutter, Dart, BLoC, Riverpod, GetX, Provider, Push
+                Notifications, FCM, OneSignal, REST APIs, Firebase, Google Maps,
+                Razorpay, Stripe, UPI, biometric authentication, WebView, and
+                CI/CD </strong
               >, with a strong focus on clean architecture, performance
               optimization, application security, and reliable production
               delivery.
@@ -1245,12 +1289,12 @@
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary">Clean Architecture</span>
-                <span class="skill-badge primary">BLoC</span>
+                <span class="skill-badge primary"> Clean Architecture </span>
+                <span class="skill-badge primary"> BLoC </span>
                 <span class="skill-badge">MVVM</span>
                 <span class="skill-badge">SOLID Principles</span>
                 <span class="skill-badge">Repository Pattern</span>
-                <span class="skill-badge">Dependency Injection</span>
+                <span class="skill-badge"> Dependency Injection </span>
               </div>
             </div>
 
@@ -1299,11 +1343,11 @@
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary">REST APIs</span>
-                <span class="skill-badge">JWT Authentication</span>
+                <span class="skill-badge primary"> REST APIs </span>
+                <span class="skill-badge"> JWT Authentication </span>
                 <span class="skill-badge">OAuth</span>
-                <span class="skill-badge">Firebase Authentication</span>
-                <span class="skill-badge">Role-Based Access Control</span>
+                <span class="skill-badge"> Firebase Authentication </span>
+                <span class="skill-badge"> Role-Based Access Control </span>
               </div>
             </div>
 
@@ -1320,7 +1364,7 @@
                 <span class="skill-badge primary">Stripe</span>
                 <span class="skill-badge">UPI Integration</span>
                 <span class="skill-badge">Paytm</span>
-                <span class="skill-badge">Flutter Method Channels</span>
+                <span class="skill-badge"> Flutter Method Channels </span>
               </div>
             </div>
 
@@ -1354,12 +1398,12 @@
                 <span class="skill-badge primary">
                   Biometric Authentication
                 </span>
-                <span class="skill-badge">Fingerprint Authentication</span>
+                <span class="skill-badge"> Fingerprint Authentication </span>
                 <span class="skill-badge">local_auth</span>
-                <span class="skill-badge">MPIN Authentication</span>
-                <span class="skill-badge">Secure Storage</span>
-                <span class="skill-badge">Screenshot Prevention</span>
-                <span class="skill-badge">Screen Recording Prevention</span>
+                <span class="skill-badge"> MPIN Authentication </span>
+                <span class="skill-badge"> Secure Storage </span>
+                <span class="skill-badge"> Screenshot Prevention </span>
+                <span class="skill-badge"> Screen Recording Prevention </span>
               </div>
             </div>
 
@@ -1372,13 +1416,13 @@
               </div>
 
               <div class="skill-content">
-                <span class="skill-badge primary">Google Maps</span>
-                <span class="skill-badge">Google ML Kit</span>
-                <span class="skill-badge">Deep Linking</span>
-                <span class="skill-badge">Android App Links</span>
-                <span class="skill-badge">iOS Universal Links</span>
-                <span class="skill-badge">Barcode Scanning</span>
-                <span class="skill-badge">Google Ads</span>
+                <span class="skill-badge primary"> Google Maps </span>
+                <span class="skill-badge"> Google ML Kit </span>
+                <span class="skill-badge"> Deep Linking </span>
+                <span class="skill-badge"> Android App Links </span>
+                <span class="skill-badge"> iOS Universal Links </span>
+                <span class="skill-badge"> Barcode Scanning </span>
+                <span class="skill-badge"> Google Ads </span>
               </div>
             </div>
 
@@ -2060,7 +2104,7 @@
 
       <footer class="resume-footer">
         <div>
-          <span class="footer-name">Sunil Shedge</span>
+          <span class="footer-name"> Sunil Shedge </span>
           · Senior Flutter Developer
         </div>
 
