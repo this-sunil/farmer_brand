@@ -1,2654 +1,4164 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio - Sunil Shedge</title>
-    <link
-      rel="icon"
-      href="https://avatars.githubusercontent.com/u/51407211?s=400&u=751977b12a298feec34e25b58e74f25994c12922&v=4"
-    />
-    <meta property="og:title" content="My Portfolio" />
-    <meta
-      property="og:image"
-      content="https://farmer-brand.vercel.app/preview.png"
-    />
-    <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="public/css/custom.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bitter&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
-    <!-- Bootstrap Icons CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css" />
-    <link rel="stylesheet" href="public/css/animate.css" />
-    <script
-      disable-devtool-auto
-      src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
-    ></script>
-    <script>
-      DisableDevtool({
-        ondevtoolopen: (type, next) => {
-          alert(
-            "Developer tools are open! This action is logged. Type: " + type,
-          );
-          next();
-        },
-      });
+  <title>Sunil Shedge | Senior Flutter Developer | 4+ Years Experience</title>
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const animatedElements = document.querySelectorAll(".animated");
+  <meta
+    name="description"
+    content="Sunil Shedge — Senior Flutter Developer with 4+ years of experience building production-ready Android, iOS and Web applications using Flutter, Dart, Node.js, PostgreSQL, Firebase, REST APIs, payments, maps, CI/CD and AI."
+  >
 
-        animatedElements.forEach((el) => {
-          el.style.visibility = "hidden";
-        });
+  <meta name="author" content="Sunil Shedge">
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const el = entry.target;
+  <link
+    rel="icon"
+    href="https://avatars.githubusercontent.com/u/51407211?s=400&v=4"
+  >
 
-                el.style.visibility = "visible";
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-                // Restart animation
-                el.classList.remove("animated");
-                void el.offsetWidth;
-                el.classList.add("animated");
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-                observer.unobserve(el); // animate once
-              }
-            });
-          },
-          { threshold: 0.2 },
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #07090d;
+      --bg-soft: #0c1016;
+      --card: #10151d;
+      --card-2: #131a23;
+
+      --border: #232d39;
+      --border-light: #303c49;
+
+      --text: #f5f7fa;
+      --muted: #929eac;
+      --muted-2: #6f7b88;
+
+      --green: #b8f34a;
+      --green-dark: #8fc72d;
+
+      --cyan: #51dfcf;
+      --purple: #9d83ff;
+      --orange: #ffae69;
+      --red: #ff6d7a;
+      --blue: #5fa6ff;
+
+      --container: 1240px;
+
+      --radius: 22px;
+
+      --shadow:
+        0 30px 90px rgba(0, 0, 0, 0.45);
+
+      --font-main:
+        "DM Sans",
+        sans-serif;
+
+      --font-heading:
+        "Space Grotesk",
+        sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      background:
+        radial-gradient(
+          circle at 80% 0%,
+          rgba(184, 243, 74, 0.08),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(81, 223, 207, 0.07),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--text);
+
+      font-family: var(--font-main);
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(
+        var(--container),
+        calc(100% - 40px)
+      );
+
+      margin: auto;
+    }
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+
+      top: 14px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: min(
+        1180px,
+        calc(100% - 28px)
+      );
+
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+
+      padding: 10px 12px;
+
+      border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.08
+      );
+
+      background: rgba(
+        9,
+        13,
+        18,
+        0.82
+      );
+
+      backdrop-filter: blur(20px);
+
+      border-radius: 18px;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+
+      font-size: 1.15rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+
+      padding: 8px 10px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      margin-left: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 4px;
+    }
+
+    .nav-links a {
+      color: #aab5c2;
+
+      font-size: 0.82rem;
+
+      font-weight: 600;
+
+      padding: 9px 11px;
+
+      border-radius: 10px;
+
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+
+      background: #17202a;
+    }
+
+    .nav-links .hire-btn {
+      color: #081006;
+
+      background: var(--green);
+
+      font-weight: 800;
+
+      margin-left: 6px;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      margin-left: auto;
+
+      background: none;
+
+      border: 0;
+
+      color: white;
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: grid;
+
+      align-items: center;
+
+      padding:
+        150px
+        0
+        90px;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.25fr
+        0.75fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .availability {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding:
+        7px
+        12px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid
+        rgba(
+          184,
+          243,
+          74,
+          0.25
         );
 
-        animatedElements.forEach((el) => observer.observe(el));
-      });
-      let visits = localStorage.getItem("portfolioVisits") || 0;
+      background:
+        rgba(
+          184,
+          243,
+          74,
+          0.07
+        );
 
-      // Increment the count
-      visits = parseInt(visits) + 1;
+      color: #d9fca2;
 
-      // Store it back
-      localStorage.setItem("portfolioVisits", visits);
+      font-size: 0.77rem;
 
-      // Show the count on page
-      document.addEventListener("DOMContentLoaded", () => {
-        const counter = document.getElementById("visitCount");
-        if (counter) counter.innerText = `${visits} Views`;
-      });
+      font-weight: 700;
+    }
 
-      $(document).ready(function () {
-        function setThemeIcon() {
-          if ($("body").hasClass("dark-theme")) {
-            $("#themeToggle i").removeClass("fa-moon").addClass("fa-sun");
-          } else {
-            $("#themeToggle i").removeClass("fa-sun").addClass("fa-moon");
-          }
-        }
+    .status-dot {
+      width: 8px;
 
-        // Load saved theme
-        if (localStorage.getItem("theme") === "dark") {
-          $("body").addClass("dark-theme");
-        }
+      height: 8px;
 
-        setThemeIcon();
+      border-radius: 50%;
 
-        $("#themeToggle").click(function () {
-          $("body").toggleClass("dark-theme");
+      background: var(--green);
 
-          if ($("body").hasClass("dark-theme")) {
-            //localStorage.setItem("theme", "dark");
-          } else {
-            //localStorage.setItem("theme", "light");
-          }
+      box-shadow:
+        0 0 18px
+        var(--green);
+    }
 
-          setThemeIcon();
-        });
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <style>
-      :root {
-        --primary-dark: #1f2937;
-        --accent: #5b3fa5;
-        --accent-2: #1da6b8;
-        --bg-body: #eef2f7;
-        --text-main: #0f172a;
-        --text-muted: #64748b;
-        --sidebar-bg: #f8fafc;
-        --card-bg: #ffffff;
-        --border-soft: #e2e8f0;
+    .hero h1 {
+      margin:
+        25px
+        0
+        16px;
+
+      font-family:
+        var(--font-heading);
+
+      font-size:
+        clamp(
+          3.3rem,
+          8vw,
+          7.5rem
+        );
+
+      line-height: 0.9;
+
+      letter-spacing: -0.075em;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-role {
+      font-size:
+        clamp(
+          1.1rem,
+          2vw,
+          1.55rem
+        );
+
+      font-weight: 700;
+
+      color: #e3e9ef;
+    }
+
+    .hero-description {
+      max-width: 780px;
+
+      margin:
+        23px
+        0;
+
+      color: var(--muted);
+
+      font-size: 1.04rem;
+    }
+
+    .hero-tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .hero-tag {
+      padding:
+        6px
+        10px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 999px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.025
+        );
+
+      color: #c1ccd7;
+
+      font-size: 0.76rem;
+    }
+
+    .hero-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding:
+        12px
+        16px;
+
+      border-radius: 13px;
+
+      border:
+        1px solid
+        var(--border);
+
+      font-size: 0.84rem;
+
+      font-weight: 800;
+
+      transition:
+        0.25s
+        ease;
+    }
+
+    .btn:hover {
+      transform:
+        translateY(-3px);
+
+      border-color:
+        var(--border-light);
+    }
+
+    .btn-primary {
+      color: #081006;
+
+      background: var(--green);
+
+      border-color: var(--green);
+    }
+
+    .btn-outline {
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.025
+        );
+    }
+
+    .profile-area {
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+    }
+
+    .profile-card {
+      width:
+        min(
+          380px,
+          100%
+        );
+
+      padding: 17px;
+
+      border:
+        1px solid
+        #293644;
+
+      background:
+        linear-gradient(
+          145deg,
+          #141c25,
+          #0a0f15
+        );
+
+      border-radius: 30px;
+
+      box-shadow: var(--shadow);
+
+      transform:
+        rotate(2deg);
+    }
+
+    .profile-card img {
+      width: 100%;
+
+      aspect-ratio: 1;
+
+      object-fit: cover;
+
+      border-radius: 22px;
+    }
+
+    .floating-card {
+      position: absolute;
+
+      padding:
+        10px
+        13px;
+
+      border:
+        1px solid
+        #2b3947;
+
+      border-radius: 15px;
+
+      background:
+        rgba(
+          14,
+          21,
+          29,
+          0.94
+        );
+
+      box-shadow:
+        0
+        18px
+        45px
+        rgba(
+          0,
+          0,
+          0,
+          0.45
+        );
+
+      font-size: 0.78rem;
+
+      font-weight: 800;
+    }
+
+    .floating-card.one {
+      left: -25px;
+
+      bottom: 45px;
+
+      color: var(--cyan);
+    }
+
+    .floating-card.two {
+      right: -15px;
+
+      top: 45px;
+
+      color: #cbbfff;
+    }
+
+    /* =========================================================
+       SECTION
+    ========================================================= */
+
+    section {
+      padding:
+        105px
+        0;
+    }
+
+    .section-heading {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: end;
+
+      gap: 35px;
+
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      color: var(--green);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin-top: 9px;
+
+      font-family:
+        var(--font-heading);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.6rem
+        );
+
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+    }
+
+    .section-description {
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: 0.94rem;
+    }
+
+    /* =========================================================
+       STATS
+    ========================================================= */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #111821,
+          #0c1117
+        );
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 20px;
+    }
+
+    .stat strong {
+      display: block;
+
+      font-family:
+        var(--font-heading);
+
+      font-size: 2rem;
+
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+
+      font-size: 0.8rem;
+    }
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .grid-2 {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 16px;
+
+      margin-top: 16px;
+    }
+
+    .card {
+      padding: 27px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #111821,
+          #0b1016
+        );
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius);
+
+      transition:
+        transform
+        0.3s
+        ease,
+        border-color
+        0.3s
+        ease;
+    }
+
+    .card:hover {
+      transform:
+        translateY(-4px);
+
+      border-color:
+        #354454;
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+
+      font-family:
+        var(--font-heading);
+
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+    }
+
+    .card-icon {
+      color: var(--green);
+
+      font-size: 1.55rem;
+
+      margin-bottom: 18px;
+    }
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .timeline {
+      position: relative;
+
+      display: grid;
+
+      gap: 17px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 17px;
+
+      top: 18px;
+
+      bottom: 18px;
+
+      width: 1px;
+
+      background:
+        #2a3541;
+    }
+
+    .experience {
+      position: relative;
+
+      padding-left: 57px;
+    }
+
+    .experience::before {
+      content: "";
+
+      position: absolute;
+
+      left: 11px;
+
+      top: 29px;
+
+      width: 13px;
+
+      height: 13px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0
+        0
+        0
+        6px
+        rgba(
+          184,
+          243,
+          74,
+          0.10
+        );
+    }
+
+    .experience-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      gap: 20px;
+    }
+
+    .experience-title {
+      margin: 0 !important;
+
+      font-size: 1.3rem !important;
+    }
+
+    .company {
+      margin-top: 4px;
+
+      color: var(--cyan);
+
+      font-weight: 700;
+    }
+
+    .date {
+      color: var(--muted-2);
+
+      white-space: nowrap;
+
+      font-size: 0.78rem;
+
+      font-weight: 700;
+    }
+
+    .experience ul {
+      margin-top: 18px;
+
+      padding-left: 20px;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    .experience li {
+      margin: 8px 0;
+    }
+
+    .highlight {
+      color: var(--green);
+
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 16px;
+    }
+
+    .skill-card h3 {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 16px;
+    }
+
+    .skill-card h3 small {
+      color: var(--muted-2);
+
+      font-size: 0.68rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+    }
+
+    .skill-tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .skill-tags span {
+      padding:
+        7px
+        10px;
+
+      background:
+        #151d26;
+
+      border:
+        1px solid
+        #283543;
+
+      border-radius: 10px;
+
+      color: #c5d0dc;
+
+      font-size: 0.77rem;
+    }
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .projects {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 17px;
+    }
+
+    .project {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 360px;
+    }
+
+    .project-number {
+      color: #586575;
+
+      font-family:
+        var(--font-heading);
+
+      font-size: 0.76rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+    }
+
+    .project-type {
+      display: inline-block;
+
+      margin-top: 12px;
+
+      padding:
+        5px
+        9px;
+
+      border-radius: 999px;
+
+      color: var(--green);
+
+      background:
+        rgba(
+          184,
+          243,
+          74,
+          0.07
+        );
+
+      border:
+        1px solid
+        rgba(
+          184,
+          243,
+          74,
+          0.16
+        );
+
+      font-size: 0.7rem;
+
+      font-weight: 800;
+    }
+
+    .project h3 {
+      margin:
+        14px
+        0
+        8px;
+
+      font-family:
+        var(--font-heading);
+
+      font-size: 1.5rem;
+    }
+
+    .project-description {
+      color: var(--muted);
+
+      font-size: 0.87rem;
+    }
+
+    .project-section {
+      margin-top: 19px;
+    }
+
+    .project-section-title {
+      color: #e8edf2;
+
+      font-size: 0.73rem;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.09em;
+
+      margin-bottom: 7px;
+    }
+
+    .project-features {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+    .project-features span {
+      padding:
+        5px
+        8px;
+
+      color: #b8c4cf;
+
+      background:
+        #0a1016;
+
+      border:
+        1px solid
+        #263441;
+
+      border-radius: 8px;
+
+      font-size: 0.7rem;
+    }
+
+    .project-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 22px;
+    }
+
+    .project-actions a {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding:
+        8px
+        11px;
+
+      border-radius: 10px;
+
+      background: var(--green);
+
+      color: #081006;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+    }
+
+    .project-actions a.secondary {
+      color: white;
+
+      background:
+        #17212b;
+
+      border:
+        1px solid
+        #2a3947;
+    }
+
+    /* =========================================================
+       VIDEO / WORK PREVIEW
+    ========================================================= */
+
+    .preview-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 17px;
+    }
+
+    .preview-card {
+      overflow: hidden;
+
+      padding: 0;
+    }
+
+    .preview-card iframe,
+    .preview-card video {
+      display: block;
+
+      width: 100%;
+
+      height: 260px;
+
+      border: 0;
+
+      background: black;
+    }
+
+    .preview-body {
+      padding: 22px;
+    }
+
+    .preview-body h3 {
+      font-family:
+        var(--font-heading);
+
+      font-size: 1.05rem;
+    }
+
+    .preview-body p {
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 0.83rem;
+    }
+
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
+
+    .education-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 16px;
+    }
+
+    .education {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 15px;
+    }
+
+    .education-icon {
+      min-width: 56px;
+
+      height: 56px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 15px;
+
+      color: var(--green);
+
+      background:
+        rgba(
+          184,
+          243,
+          74,
+          0.08
+        );
+
+      border:
+        1px solid
+        rgba(
+          184,
+          243,
+          74,
+          0.15
+        );
+
+      font-weight: 800;
+    }
+
+    .education h3 {
+      margin: 0;
+
+      font-size: 1rem;
+    }
+
+    .education p {
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 43px;
+
+      height: 43px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 13px;
+
+      color: var(--green);
+
+      background:
+        rgba(
+          184,
+          243,
+          74,
+          0.08
+        );
+
+      font-size: 1.2rem;
+    }
+
+    .contact-item small {
+      display: block;
+
+      color: var(--muted-2);
+
+      font-size: 0.7rem;
+    }
+
+    .contact-item strong {
+      font-size: 0.86rem;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      border-top:
+        1px solid
+        var(--border);
+
+      padding:
+        30px
+        0;
+
+      color: var(--muted-2);
+
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    /* =========================================================
+       ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity
+        0.7s
+        ease,
+        transform
+        0.7s
+        ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+
+      transform: none;
+    }
+
+    .back-top {
+      position: fixed;
+
+      right: 22px;
+
+      bottom: 22px;
+
+      width: 44px;
+
+      height: 44px;
+
+      display: none;
+
+      place-items: center;
+
+      z-index: 999;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      color: #081006;
+
+      background: var(--green);
+
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
       }
 
-      * {
-        box-sizing: border-box;
+      .profile-area {
+        order: -1;
       }
+
+      .profile-card {
+        width: 300px;
+      }
+
+      .stats {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 760px) {
+
+      .container {
+        width:
+          calc(100% - 26px);
+      }
+
+      .navbar {
+        top: 8px;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 61px;
+
+        left: 0;
+
+        right: 0;
+
+        flex-direction: column;
+
+        padding: 10px;
+
+        background:
+          #0b1016;
+
+        border:
+          1px solid
+          var(--border);
+
+        border-radius: 15px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero h1 {
+        font-size: 4.3rem;
+      }
+
+      .grid-2,
+      .skills-grid,
+      .projects,
+      .preview-grid,
+      .education-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 15px;
+      }
+
+      .experience-header {
+        display: block;
+      }
+
+      .date {
+        display: block;
+
+        margin-top: 7px;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-inner span {
+        display: block;
+
+        margin: 5px 0;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+    }
+
+    @media print {
 
       body {
-        margin: 0;
+        background: white;
 
-        font-family: "Inter", sans-serif;
-        color: var(--text-main);
-        padding: 40px 0;
-      }
-      .navbar{
-        background: rgba(15, 27, 45, .92) !important;
-        backdrop-filter: blur(8px);
+        color: black;
       }
 
-      .resume-card {
-        max-width: 1140px;
-        margin: 0 auto;
-        background: var(--card-bg);
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: 0 25px 80px rgba(2, 6, 23, 0.14);
-        border: 1px solid #e7ecf5;
+      .navbar,
+      .back-top,
+      .hero-actions {
+        display: none !important;
       }
 
-      .header-section {
-        padding: 56px 48px 36px;
-        color: #fff;
-        background: linear-gradient(130deg, #111827, #1f2937 45%, #334155);
-        position: relative;
+      .hero {
+        min-height: auto;
+
+        padding: 30px 0;
       }
 
-      .header-section::after {
-        content: "";
-        position: absolute;
-        right: -60px;
-        top: -70px;
-        width: 240px;
-        height: 240px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(29, 166, 184, 0.35),
-          transparent 65%
-        );
-        pointer-events: none;
+      .hero-grid {
+        grid-template-columns: 1fr;
       }
 
-      .name-title {
-        font-family: "DM Serif Display", serif;
-        font-size: clamp(2.2rem, 6vw, 4rem);
-        line-height: 1.05;
-        margin: 0 0 8px;
-        letter-spacing: -0.6px;
-        color: #7de1ee;
+      .profile-area {
+        display: none;
       }
 
-      .sub-title {
-        display: inline-block;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-size: 0.78rem;
-        color: #dbeafe;
-        margin-bottom: 26px;
+      section {
+        padding: 35px 0;
       }
 
-      .contact-grid-single-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      .card,
+      .stat {
+        background: white;
+
+        border-color: #ddd;
       }
 
-      .contact-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 0.82rem;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.92);
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: 0.2s ease;
+      .card p,
+      .section-description,
+      .experience ul {
+        color: #333;
       }
 
-      .contact-item i {
-        color: #7de1ee;
-        font-size: 15px;
+      .reveal {
+        opacity: 1;
+
+        transform: none;
       }
 
-      .contact-item:hover {
-        color: #fff;
-        transform: translateY(-1px);
-        background: rgba(255, 255, 255, 0.15);
-      }
+    }
 
-      .sidebar {
-        background: linear-gradient(180deg, #f8fafc, #f3f7fc);
-        border-right: 1px solid var(--border-soft);
-        padding: 42px 28px;
-      }
+  </style>
+</head>
 
-      .main-body {
-        padding: 42px 36px 46px;
-      }
+<body>
 
-      .section-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: #111827;
-        margin-bottom: 18px;
-        position: relative;
-      }
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-      .section-label::before {
-        content: "";
-        width: 26px;
-        height: 3px;
-        border-radius: 2px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      }
+<nav class="navbar">
 
-      .skill-name {
-        display: block;
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: #1e293b;
-        margin-bottom: 6px;
-      }
+  <a href="#top" class="logo">
+    SUNIL<span>.DEV</span>
+  </a>
 
-      .progress {
-        height: 7px;
-        border-radius: 999px;
-        background: #e2e8f0;
-        margin-bottom: 14px;
-      }
-
-      .progress-bar {
-        border-radius: 999px;
-        background: linear-gradient(90deg, #5b3fa5, #1da6b8);
-      }
-
-      .summary-text {
-        font-size: 0.98rem;
-        line-height: 1.8;
-        color: #334155;
-        margin: 0;
-        padding: 14px 18px;
-        border-radius: 10px;
-        background: #f8fafc;
-        border: 1px dashed #d6e1ee;
-      }
-
-      .exp-block {
-        margin-bottom: 30px;
-        padding: 18px 18px 12px;
-        border: 1px solid #edf1f7;
-        border-radius: 12px;
-        background: #fff;
-      }
-
-      .exp-title {
-        margin-bottom: 5px;
-        font-size: 1.08rem;
-        font-weight: 800;
-        color: #0f172a;
-      }
-
-      .exp-meta {
-        font-size: 0.84rem;
-        font-weight: 700;
-        color: var(--accent);
-        margin-bottom: 10px;
-      }
-
-      .responsibility-list {
-        padding-left: 16px;
-        margin-bottom: 0;
-      }
-
-      .responsibility-list li {
-        color: #475569;
-        font-size: 0.92rem;
-        margin-bottom: 8px;
-        line-height: 1.55;
-      }
-
-      .project-card {
-        background: #fff;
-        border: 1px solid #e8eef6;
-        border-radius: 14px;
-        padding: 18px;
-        transition: 0.25s ease;
-        box-shadow: none !important;
-        height: 100%;
-      }
-
-      .project-card:hover {
-        transform: translateY(-3px);
-        border-color: #cfd9e8;
-        box-shadow: none !important;
-      }
-
-      .project-title {
-        font-size: 1rem;
-        font-weight: 800;
-        color: #0f172a;
-        margin-bottom: 6px;
-      }
-
-      .project-desc {
-        font-size: 0.87rem;
-        color: #64748b;
-        margin-bottom: 12px;
-      }
-
-      .project-chip {
-        font-size: 0.72rem;
-        background: #eef2ff;
-        color: #4338ca;
-        border: 1px solid #dbe2ff;
-        border-radius: 999px;
-        padding: 3px 9px;
-      }
-
-      .btn-premium {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: linear-gradient(120deg, #1f2937, #374151);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 0.74rem;
-        font-weight: 700;
-        text-decoration: none;
-        padding: 8px 13px;
-        transition: 0.2s ease;
-      }
-
-      .btn-premium:hover {
-        color: #fff;
-        transform: translateY(-1px);
-        background: linear-gradient(120deg, #5b3fa5, #3f2f8d);
-      }
-
-      .certificate-box {
-        border: 1px solid #e8eef6;
-        border-radius: 12px;
-        background: #f8fafc;
-        padding: 14px 16px;
-      }
-
-      .footer-note {
-        margin-top: 12px;
-        padding-top: 16px;
-        border-top: 1px dashed #dce4ee;
-      }
-
-      @media (max-width: 991px) {
-        .sidebar {
-          border-right: none;
-          border-bottom: 1px solid var(--border-soft);
-        }
-
-        .main-body {
-          padding: 30px 22px 36px;
-        }
-
-        .header-section {
-          padding: 44px 24px 28px;
-        }
-      }
-
-      @media print {
-        body {
-          padding: 0;
-          background: #fff;
-        }
-
-        .resume-card {
-          max-width: 100%;
-          border-radius: 0;
-          box-shadow: none;
-        }
-
-        .btn-premium {
-          display: none !important;
-        }
-      }
-    </style>
-  </head>
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#menu"
-    data-bs-offset="100"
-    tabindex="0"
+  <button
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-label="Open navigation"
   >
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-2xl position-fixed top-0 left-0 right-0 w-100 shadow-navbar"
-      data-theme="dark"
+    <i class="bi bi-list"></i>
+  </button>
+
+  <div class="nav-links" id="navLinks">
+
+    <a href="#about">About</a>
+
+    <a href="#experience">
+      Experience
+    </a>
+
+    <a href="#skills">
+      Skills
+    </a>
+
+    <a href="#projects">
+      Projects
+    </a>
+
+    <a href="#preview">
+      Work
+    </a>
+
+    <a href="#education">
+      Education
+    </a>
+
+    <a
+      href="#contact"
+      class="hire-btn"
     >
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-4" href="#">
-          <span class="text-white">SUNIL.</span
-          ><span class="text-primary">DEV</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          data-bs-target="#menu"
-          data-bs-toggle="collapse"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="menu">
-          <ul class="navbar-nav ms-auto gap">
-            <li class="nav-item">
-              <a href="#about" class="nav-link text-white px-3 py-2 rounded"
-                >About</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                href="#experience"
-                class="nav-link text-white px-3 py-2 rounded"
-                >Experience</a
-              >
-            </li>
+      Hire Me
+    </a>
 
-            <li class="nav-item">
-              <a href="#skills" class="nav-link text-white px-3 py-2 rounded"
-                >Skill</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#education" class="nav-link text-white px-3 py-2 rounded"
-                >Education</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#preview" class="nav-link text-white px-3 py-2 rounded"
-                >Work Preview</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#projects" class="nav-link text-white px-3 py-2 rounded"
-                >Project</a
-              >
-            </li>
+  </div>
 
-            <!-- <div class="px-3 gx-3">
-              <button id="themeToggle" class="theme-btn">
-                <i class="fas fa-moon"></i>
-              </button>
-            </div> -->
-          </ul>
-        </div>
-      </div>
-    </nav>
+</nav>
 
-    <section class="about-me" id="about">
-      <div class="profile">
-        <img
-          src="https://avatars.githubusercontent.com/u/51407211?s=400&u=751977b12a298feec34e25b58e74f25994c12922&v=4"
-          alt="Profile Photo"
-        />
+
+<main id="top">
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="reveal">
+
+      <div class="availability">
+
+        <span class="status-dot"></span>
+
+        Available for Senior Flutter Opportunities
+
       </div>
 
-      <h1 class="about-title animated fadeIn bounceIn text-info">
-        Sunil Shedge
+      <h1>
+        Sunil
+        <span>Shedge.</span>
       </h1>
 
-      <p class="about-description fs-3">
-        I'm
-        <strong class="typing-text text-info">Senior Flutter Developer</strong>
-      </p>
+      <div class="hero-role">
 
-      <p class="about-description">
-        <strong>I have 4+ years of experience</strong>
-        building scalable, secure, and high-performance Android and iOS
-        applications.
-      </p>
+        Senior Flutter Developer
+        · Mobile Application Engineer
+        · Full Stack Developer
 
-      <p class="about-description animated fadeIn jello text-justify">
-        I specialize in
-        <strong class="text-info">
-          Flutter, Dart, BLoC, REST APIs, Firebase, Google Maps, Razorpay, UPI,
-          Biometric Authentication, WebView, and GetX </strong
-        >, with a strong focus on clean architecture, performance optimization,
-        application security, responsive UI/UX, and delivering reliable,
-        production-ready mobile experiences.
-      </p>
-
-      <div class="container-fluid">
-        <div class="row text-center">
-          <!-- GitHub -->
-          <div class="col-md-3 mb-3">
-            <a
-              href="https://github.com/this-sunil"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-github text-decoration-none"
-            >
-              <i class="fab fa-github-alt"></i>
-              <span class="card-title">GitHub</span>
-            </a>
-          </div>
-
-          <!-- LinkedIn -->
-          <div class="col-md-3 mb-3">
-            <a
-              href="https://www.linkedin.com/in/sunilshedge"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-linkedin text-decoration-none"
-            >
-              <i class="fab fa-linkedin-in"></i>
-              <span class="card-title">LinkedIn</span>
-            </a>
-          </div>
-
-          <!-- Contact -->
-          <div class="col-md-3 mb-3">
-            <a
-              href="tel:+918668796251"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-phone text-decoration-none"
-            >
-              <i class="fas fa-phone"></i>
-              <span class="card-title">Contact</span>
-            </a>
-          </div>
-
-          <!-- Resume -->
-          <div class="col-md-3 mb-3">
-            <a
-              href="https://farmer-brand.vercel.app/resume"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="d-flex justify-content-center align-items-center gap-2 btns btns-resume text-decoration-none"
-            >
-              <i class="fas fa-download"></i>
-              <span class="card-title">Resume</span>
-            </a>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <section class="experience-section py-5 bg-light" id="experience">
-      <!-- Section Header -->
-      <div class="text-center mb-5">
-        <span
-          class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill fs-7 text-uppercase tracking-wider"
-          >Career Path</span
+      <p class="hero-description">
+
+        4+ years of professional experience building
+        scalable, secure and production-ready
+        Android, iOS and Web applications.
+
+        Specialized in Flutter, Dart, modern
+        architecture, REST APIs, Firebase,
+        PostgreSQL, payments, maps, CI/CD,
+        backend development and AI integrations.
+
+      </p>
+
+      <div class="hero-tags">
+
+        <span class="hero-tag">Flutter</span>
+        <span class="hero-tag">Dart</span>
+        <span class="hero-tag">BLoC</span>
+        <span class="hero-tag">Riverpod</span>
+        <span class="hero-tag">GetX</span>
+        <span class="hero-tag">Node.js</span>
+        <span class="hero-tag">PostgreSQL</span>
+        <span class="hero-tag">Firebase</span>
+        <span class="hero-tag">REST API</span>
+        <span class="hero-tag">JWT</span>
+        <span class="hero-tag">Payments</span>
+        <span class="hero-tag">Google Maps</span>
+        <span class="hero-tag">CI/CD</span>
+        <span class="hero-tag">AI</span>
+
+      </div>
+
+      <div class="hero-actions">
+
+        <a
+          href="#projects"
+          class="btn btn-primary"
         >
-        <h2 class="display-5 fw-bold text-dark mt-2 mb-3">
-          Professional Experience
+          <i class="bi bi-grid-3x3-gap"></i>
+          Explore My Work
+        </a>
+
+        <a
+          href="https://farmer-brand.vercel.app/resume"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          <i class="bi bi-file-earmark-person"></i>
+          View Resume
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/sunilshedge"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          <i class="bi bi-linkedin"></i>
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/this-sunil"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-area reveal">
+
+      <div class="profile-card">
+
+        <img
+          src="https://avatars.githubusercontent.com/u/51407211?s=400&v=4"
+          alt="Sunil Shedge"
+        >
+
+      </div>
+
+      <div class="floating-card one">
+
+        <i class="bi bi-phone"></i>
+
+        Flutter · Dart
+
+      </div>
+
+      <div class="floating-card two">
+
+        <i class="bi bi-shield-check"></i>
+
+        4+ Years · Production
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          01 · Profile
+        </div>
+
+        <h2>
+          Engineering
+          that ships.
         </h2>
-        <div
-          class="bg-primary mx-auto rounded-pill"
-          style="width: 60px; height: 4px"
-        ></div>
+
       </div>
 
-      <div class="container-fluid">
-        <div class="col-md-12">
-          <!-- Experience 1: Full Stack Developer (Self-Employed) -->
-          <article class="card border-0 shadow-lg rounded-4 mb-5">
-            <div class="card-body p-4 p-md-5">
-              <div
-                class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-4 pb-3 border-bottom"
-              >
-                <div class="mb-3 mb-md-0">
-                  <h3
-                    class="h3 fw-bold text-dark mb-2 d-flex align-items-center gap-2"
-                  >
-                    <span
-                      class="p-2 bg-primary-subtle text-primary rounded-3 fs-5 d-inline-flex align-items-center justify-content-center"
-                      style="width: 42px; height: 42px"
-                    >
-                      <i class="fa-solid fa-layer-group"></i>
-                    </span>
-                    Full Stack Developer
-                  </h3>
-                  <div
-                    class="company mb-0 d-flex flex-wrap align-items-center gap-3 text-muted"
-                  >
-                    <span class="fw-medium"
-                      ><i class="fa-solid fa-briefcase text-primary me-1"></i>
-                      Self Employment</span
-                    >
-                    <a
-                      href="https://github.com/this-sunil/vehicle-repair-service"
-                      class="btn btn-outline-primary btn-sm rounded-pill px-3 shadow-sm fw-medium"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fa-brands fa-github me-1"></i> Source Code
-                    </a>
-                  </div>
-                </div>
-                <span
-                  class="badge bg-dark text-white fs-6 fw-medium px-3 py-2 rounded-pill shadow-sm align-self-start"
-                >
-                  <i class="fa-regular fa-calendar me-1"></i>
-                  <time datetime="2025-04">April 2025</time> – Present
-                </span>
-              </div>
+      <p class="section-description">
 
-              <h6
-                class="text-uppercase text-primary fw-bold mb-4 tracking-wider fs-7"
-              >
-                Key Responsibilities
-              </h6>
+        Full-cycle software engineering —
+        from pixel-perfect Flutter interfaces
+        to backend APIs, security, payments,
+        real-time features and automated releases.
 
-              <ul class="list-group list-group-flush border-0">
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-code"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Full Stack Architecture</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Developed end-to-end mobile solutions using
-                      <span class="fw-bold text-dark">Flutter</span> with
-                      <span class="fw-bold text-dark"
-                        >Node.js and PostgreSQL</span
-                      >
-                      backends.</span
-                    >
-                  </div>
-                </li>
+      </p>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-shield-halved"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Security & API</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Built secure
-                      <span class="fw-bold text-dark">RESTful APIs</span>
-                      utilizing
-                      <span class="fw-bold text-dark"
-                        >JWT authentication and Role-Based Access Control
-                        (RBAC)</span
-                      >; implemented
-                      <span class="fw-bold text-dark"
-                        >.env-based environment configuration</span
-                      >
-                      to securely manage sensitive credentials and API
-                      keys.</span
-                    >
-                  </div>
-                </li>
+    </div>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Crash Reporting, SPM & Stability</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Resolved
-                      <span class="fw-bold text-dark"
-                        >iOS build and crash issues</span
-                      >
-                      in Xcode by troubleshooting CocoaPods dependency conflicts
-                      and Runner configuration errors; migrated dependencies
-                      from
-                      <span class="fw-bold text-dark"
-                        >CocoaPods to Swift Package Manager (SPM)</span
-                      >. Identified and fixed
-                      <span class="fw-bold text-dark">ANR issues</span> to
-                      improve app performance and stability.</span
-                    >
-                  </div>
-                </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >OTA Updates</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Delivered over-the-air (OTA) updates using
-                      <span class="fw-bold text-dark">Shorebird</span>, enabling
-                      hotfix deployments without requiring users to download a
-                      new app version.</span
-                    >
-                  </div>
-                </li>
+    <div class="stats reveal">
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-database"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Database Optimization</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Designed complex
-                      <span class="fw-bold text-dark">PostgreSQL schemas</span>
-                      with optimized query performance and indexing
-                      strategies.</span
-                    >
-                  </div>
-                </li>
+      <div class="stat">
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-money-bill-trend-up"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Monetization & Payments</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Seamlessly integrated
-                      <span class="fw-bold text-dark">AdMob</span> and
-                      international payment gateways to maximize revenue
-                      streams.</span
-                    >
-                  </div>
-                </li>
-              </ul>
+        <strong>4+ yrs</strong>
+
+        <span>
+          Professional Flutter development
+        </span>
+
+      </div>
+
+      <div class="stat">
+
+        <strong>15+</strong>
+
+        <span>
+          Mobile applications developed
+        </span>
+
+      </div>
+
+      <div class="stat">
+
+        <strong>1,000+</strong>
+
+        <span>
+          Users served across production apps
+        </span>
+
+      </div>
+
+      <div class="stat">
+
+        <strong>35%</strong>
+
+        <span>
+          Documented load-time reduction
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid-2">
+
+      <article class="card reveal">
+
+        <div class="card-icon">
+          <i class="bi bi-phone"></i>
+        </div>
+
+        <h3>
+          Cross-Platform Mobile
+        </h3>
+
+        <p>
+
+          Flutter and Dart applications for
+          Android, iOS and Web using Clean
+          Architecture, MVVM, SOLID principles,
+          reusable widgets and production-focused
+          performance optimization.
+
+        </p>
+
+      </article>
+
+
+      <article class="card reveal">
+
+        <div class="card-icon">
+          <i class="bi bi-server"></i>
+        </div>
+
+        <h3>
+          Full-Stack Development
+        </h3>
+
+        <p>
+
+          Node.js, Express.js and PostgreSQL
+          backend systems with JWT authentication,
+          RBAC, secure environment configuration,
+          REST APIs, database optimization and
+          Socket.IO real-time communication.
+
+        </p>
+
+      </article>
+
+
+      <article class="card reveal">
+
+        <div class="card-icon">
+          <i class="bi bi-credit-card"></i>
+        </div>
+
+        <h3>
+          Payments & Fintech
+        </h3>
+
+        <p>
+
+          Experience integrating Razorpay,
+          Stripe, Paytm, PayUmoney and native
+          UPI through Method Channels, alongside
+          subscription and monetization workflows.
+
+        </p>
+
+      </article>
+
+
+      <article class="card reveal">
+
+        <div class="card-icon">
+          <i class="bi bi-rocket-takeoff"></i>
+        </div>
+
+        <h3>
+          CI/CD & Production
+        </h3>
+
+        <p>
+
+          GitHub Actions, Fastlane, Codemagic,
+          Shorebird OTA releases, crash analysis,
+          iOS dependency migration and production
+          troubleshooting.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          02 · Experience
+        </div>
+
+        <h2>
+          Professional
+          journey.
+        </h2>
+
+      </div>
+
+      <p class="section-description">
+
+        Detailed experience across Flutter,
+        backend engineering, architecture,
+        performance, security, payments,
+        CI/CD and production support.
+
+      </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <!-- SELF EMPLOYMENT -->
+
+      <article class="card experience reveal">
+
+        <div class="experience-header">
+
+          <div>
+
+            <h3 class="experience-title">
+              Full Stack Developer
+            </h3>
+
+            <div class="company">
+              Self Employment
             </div>
-          </article>
 
-          <!-- Experience 2: Senior Flutter Developer -->
-          <article class="card border-0 shadow-lg rounded-4 mb-5">
-            <div class="card-body p-4 p-md-5">
-              <div
-                class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-4 pb-3 border-bottom"
-              >
-                <div class="mb-3 mb-md-0">
-                  <h3
-                    class="h3 fw-bold text-dark mb-2 d-flex align-items-center gap-3"
-                  >
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D4D0BAQFU45Zv34HXzw/company-logo_200_200/company-logo_200_200/0/1696926111988?e=2147483647&v=beta&t=Tzq9QTxpRTrZe5l0iX7zBch7XIZsZGB01BP_4cKgTZ0"
-                      width="44"
-                      height="44"
-                      class="rounded-3 shadow-sm object-fit-cover"
-                      alt="Sunra Softtech Logo"
-                    />
-                    Sunra Softtech Pvt. Ltd.
-                  </h3>
-                  <p
-                    class="company mb-0 text-muted fs-6 fw-medium d-flex align-items-center gap-2"
-                  >
-                    <i class="fa-solid fa-building text-primary"></i> Senior
-                    Flutter Developer
-                  </p>
-                </div>
-                <span
-                  class="badge bg-dark text-white fs-6 fw-medium px-3 py-2 rounded-pill shadow-sm align-self-start"
-                >
-                  <i class="fa-regular fa-calendar me-1"></i>
-                  <time datetime="2022-07">July 2022</time> –
-                  <time datetime="2025-04">April 2025</time>
-                </span>
-              </div>
+          </div>
 
-              <h6
-                class="text-uppercase text-primary fw-bold mb-4 tracking-wider fs-7"
-              >
-                Key Responsibilities
-              </h6>
+          <div class="date">
+            APR 2025 — PRESENT
+          </div>
 
-              <ul class="list-group list-group-flush border-0">
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Multi-Platform Architecture & Optimization</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Architected a multi-platform Flutter app (Android, iOS,
-                      Web) serving 1,000+ users, reducing load time by
-                    </span>
-                    <span
-                      class="badge bg-success-subtle text-success border border-success-subtle fw-semibold px-2 py-1 rounded-pill ms-1"
-                      >-35% Load Time</span
-                    >
-                  </div>
-                </li>
+        </div>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-diagram-project"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Clean Architecture & BLoC</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Implemented Clean Architecture and BLoC state management
-                      across core modules while utilizing Mixins for reusable
-                      logic, cutting bug resolution time by
-                    </span>
-                    <span
-                      class="badge bg-success-subtle text-success border border-success-subtle fw-semibold px-2 py-1 rounded-pill ms-1"
-                      >-50% Resolution Time</span
-                    >
-                  </div>
-                </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-gears"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Automated CI/CD Pipelines</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Built automated build and release pipelines using
-                      <span class="fw-bold text-dark"
-                        >CodeMagic, Fastlane, and GitHub Actions</span
-                      >, reducing release cycles from 5 days to 1 day.</span
-                    >
-                  </div>
-                </li>
+        <ul>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-gauge-high"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Performance & Rendering</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Optimized app performance and eliminated unnecessary
-                      rebuilds using
-                      <span class="fw-bold text-dark"
-                        >const, RepaintBoundary, lazy loading, asset
-                        optimization</span
-                      >, app size reduction via
-                      <span class="fw-bold text-dark">ProGuard rules</span>, and
-                      Null Safety best practices.</span
-                    >
-                  </div>
-                </li>
+          <li>
+            <b>Full Stack Architecture:</b>
+            Developed end-to-end mobile solutions
+            using Flutter with Node.js and
+            PostgreSQL backends.
+          </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-route"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Dynamic Navigation & Deep Linking</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Implemented
-                      <span class="fw-bold text-dark">GoRouter</span> for
-                      scalable, declarative routing and configured
-                      <span class="fw-bold text-dark"
-                        >Deep Linking (Android App Links & iOS Universal
-                        Links)</span
-                      >
-                      for seamless user journeys.</span
-                    >
-                  </div>
-                </li>
+          <li>
+            <b>Security & API:</b>
+            Built secure RESTful APIs using JWT
+            authentication and Role-Based Access
+            Control (RBAC).
+          </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-fire"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Firebase Services & Maps</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Integrated
-                      <span class="fw-bold text-dark"
-                        >Firebase Phone Auth, Cloud Firestore, Crashlytics,
-                        Google Sign-In</span
-                      >, and
-                      <span class="fw-bold text-dark">Google Maps API</span>
-                      (Markers & Polylines).</span
-                    >
-                  </div>
-                </li>
+          <li>
+            <b>Environment Security:</b>
+            Used environment-based configuration
+            for sensitive credentials, secrets
+            and API keys.
+          </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-credit-card"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Fintech & Payment Integration</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Engineered secure payment solutions integrating
-                      <span class="fw-bold text-dark"
-                        >Razorpay, Stripe, Paytm</span
-                      >, and native
-                      <span class="fw-bold text-dark"
-                        >UPI via Method Channels</span
-                      >.</span
-                    >
-                  </div>
-                </li>
+          <li>
+            <b>Crash Reporting & Stability:</b>
+            Resolved iOS build and crash issues,
+            Xcode configuration problems,
+            CocoaPods conflicts and Runner errors.
+          </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start border-top"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-language"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Multilingual & Engagement</span
-                    >
-                    <span class="text-muted fs-6"
-                      >Expanded global market reach with multilingual support
-                      via
-                      <span class="fw-bold text-dark"
-                        >Google ML Kit Translation</span
-                      >
-                      and integrated
-                      <span class="fw-bold text-dark"
-                        >Firebase Cloud Messaging (FCM)</span
-                      >
-                      for real-time push notifications.</span
-                    >
-                  </div>
-                </li>
+          <li>
+            <b>ANR Resolution:</b>
+            Identified and fixed Android
+            Application Not Responding issues.
+          </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-shield-halved"></i>
-                  </div>
+          <li>
+            <b>SPM Migration:</b>
+            Migrated iOS dependencies from
+            CocoaPods to Swift Package Manager.
+          </li>
 
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1">
-                      Security & Authentication
-                    </span>
+          <li>
+            <b>OTA Updates:</b>
+            Delivered hotfixes through Shorebird
+            without requiring users to install
+            a complete new application release.
+          </li>
 
-                    <span class="text-muted fs-6">
-                      Implemented Fingerprint / Biometric Authentication using
-                      <code>local_auth</code>, MPIN Authentication, Secure App
-                      Storage, and Screen Recording / Screenshot Prevention for
-                      enhanced app security.
-                    </span>
-                  </div>
-                </li>
+          <li>
+            <b>Database Optimization:</b>
+            Designed PostgreSQL schemas with
+            indexing and query-performance
+            optimization.
+          </li>
 
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-globe"></i>
-                  </div>
+          <li>
+            <b>Monetization:</b>
+            Integrated AdMob and international
+            payment gateways.
+          </li>
 
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1">
-                      Website to Mobile App Conversion
-                    </span>
+        </ul>
 
-                    <span class="text-muted fs-6">
-                      Converted responsive websites into Android and iOS mobile
-                      applications using Flutter WebView, providing a seamless
-                      mobile experience with native app integration and
-                      optimized navigation.
-                    </span>
-                  </div>
-                </li>
-              </ul>
+      </article>
+
+
+      <!-- SUNRA -->
+
+      <article class="card experience reveal">
+
+        <div class="experience-header">
+
+          <div>
+
+            <h3 class="experience-title">
+              Senior Flutter Developer
+            </h3>
+
+            <div class="company">
+              Sunra Softtech Pvt. Ltd.
             </div>
-          </article>
 
-          <!-- Experience 3: Junior Flutter Developer -->
-          <article class="card border-0 shadow-lg rounded-4 mb-5">
-            <div class="card-body p-4 p-md-5">
-              <div
-                class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-4 pb-3 border-bottom"
-              >
-                <div class="mb-3 mb-md-0">
-                  <h3
-                    class="h3 fw-bold text-dark mb-2 d-flex align-items-center gap-3"
-                  >
-                    <img
-                      src="https://media.glassdoor.com/sqll/2403414/syscryption-squarelogo-1639651774893.png"
-                      width="44"
-                      height="44"
-                      class="rounded-3 shadow-sm object-fit-cover"
-                      alt="Syscryption Logo"
-                    />
-                    Syscryption Technology Pvt. Ltd.
-                  </h3>
-                  <p
-                    class="company mb-0 text-muted fs-6 fw-medium d-flex align-items-center gap-2"
-                  >
-                    <i class="fa-solid fa-building text-primary"></i> Junior
-                    Flutter Developer
-                  </p>
-                </div>
-                <span
-                  class="badge bg-dark text-white fs-6 fw-medium px-3 py-2 rounded-pill shadow-sm align-self-start"
-                >
-                  <i class="fa-regular fa-calendar me-1"></i>
-                  <time datetime="2022-01">Jan 2022</time> –
-                  <time datetime="2022-07">Jul 2022</time>
-                </span>
-              </div>
+          </div>
 
-              <h6
-                class="text-uppercase text-primary fw-bold mb-4 tracking-wider fs-7"
-              >
-                Key Responsibilities
-              </h6>
+          <div class="date">
+            JUL 2022 — APR 2025
+          </div>
 
-              <ul class="list-group list-group-flush border-0">
-                <!-- REST API Integration -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-cloud-arrow-down"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >REST API Integration</span
-                    >
-                    <span class="text-muted fs-6">
-                      Accelerated feature development by integrating
-                      <span class="fw-bold text-dark">RESTful APIs</span> and
-                      establishing efficient data flow across application
-                      modules.
-                    </span>
-                  </div>
-                </li>
+        </div>
 
-                <!-- Application Stability & Performance -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-gauge-high"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Application Stability & Performance</span
-                    >
-                    <span class="text-muted fs-6">
-                      Improved
-                      <span class="fw-bold text-dark"
-                        >application stability</span
-                      >
-                      by identifying and resolving critical bugs, memory issues,
-                      and performance bottlenecks.
-                    </span>
-                  </div>
-                </li>
 
-                <!-- GetX Architecture -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-cubes"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >GetX Architecture & State Management</span
-                    >
-                    <span class="text-muted fs-6">
-                      Implemented
-                      <span class="fw-bold text-dark">GetX architecture</span>
-                      for routing, state management, and dependency injection in
-                      scalable applications. Managed controller lifecycles
-                      (<span class="fw-bold text-dark"
-                        >onInit, onReady, onClose</span
-                      >) for optimal resource handling.
-                    </span>
-                  </div>
-                </li>
+        <ul>
 
-                <!-- Dependency Injection -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-memory"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Dependency & Memory Optimization</span
-                    >
-                    <span class="text-muted fs-6">
-                      Optimized dependency management using
-                      <span class="fw-bold text-dark"
-                        ><code>Get.lazyPut()</code></span
-                      >
-                      and efficient controller lifecycle handling to reduce
-                      unnecessary memory usage.
-                    </span>
-                  </div>
-                </li>
+          <li>
+            <b>Multi-Platform Architecture:</b>
+            Architected Android, iOS and Web
+            Flutter applications serving
+            <span class="highlight">
+              1,000+ users
+            </span>
+            and reducing load time by
+            <span class="highlight">
+              35%
+            </span>.
+          </li>
 
-                <!-- Clean API Architecture -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-layer-group"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Clean API Architecture</span
-                    >
-                    <span class="text-muted fs-6">
-                      Structured
-                      <span class="fw-bold text-dark"
-                        >REST API integration</span
-                      >
-                      within GetX controllers while maintaining clear separation
-                      between UI, business logic, and data layers.
-                    </span>
-                  </div>
-                </li>
+          <li>
+            <b>Clean Architecture & BLoC:</b>
+            Implemented Clean Architecture,
+            BLoC and reusable Mixins across
+            core application modules.
+          </li>
 
-                <!-- Barcode Scanning -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-barcode"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Real-Time Barcode Scanning</span
-                    >
-                    <span class="text-muted fs-6">
-                      Developed
-                      <span class="fw-bold text-dark"
-                        >real-time barcode scanning</span
-                      >
-                      using device camera capabilities to capture and process
-                      product information efficiently.
-                    </span>
-                  </div>
-                </li>
+          <li>
+            <b>Bug Resolution:</b>
+            Reduced bug-resolution time by
+            approximately
+            <span class="highlight">
+              50%
+            </span>
+            through structured architecture
+            and reusable business logic.
+          </li>
 
-                <!-- Third Party Integration -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-puzzle-piece"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Third-Party Integrations</span
-                    >
-                    <span class="text-muted fs-6">
-                      Integrated
-                      <span class="fw-bold text-dark"
-                        >third-party Flutter packages and SDKs</span
-                      >
-                      to accelerate feature delivery and extend application
-                      functionality.
-                    </span>
-                  </div>
-                </li>
+          <li>
+            <b>CI/CD:</b>
+            Built automated release pipelines
+            using Codemagic, Fastlane and
+            GitHub Actions.
+          </li>
 
-                <!-- Google Maps -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-solid fa-map-location-dot"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Google Maps Integration</span
-                    >
-                    <span class="text-muted fs-6">
-                      Implemented
-                      <span class="fw-bold text-dark"
-                        >Google Maps integration</span
-                      >
-                      for location-based services, interactive maps, and
-                      map-driven user experiences.
-                    </span>
-                  </div>
-                </li>
+          <li>
+            Reduced release cycles from
+            <span class="highlight">
+              5 days to 1 day
+            </span>.
+          </li>
 
-                <!-- Figma to Flutter -->
-                <li
-                  class="list-group-item bg-transparent border-0 px-0 py-3 d-flex gap-3 align-items-start"
-                >
-                  <div
-                    class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 40px; height: 40px"
-                  >
-                    <i class="fa-brands fa-figma"></i>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark fs-6 mb-1"
-                      >Figma to Flutter UI Development</span
-                    >
-                    <span class="text-muted fs-6">
-                      Converted
-                      <span class="fw-bold text-dark"
-                        >Figma designs into pixel-accurate, responsive Flutter
-                        UI</span
-                      >, ensuring consistent layouts across different screen
-                      sizes and devices.
-                    </span>
-                  </div>
-                </li>
-              </ul>
+          <li>
+            <b>Performance:</b>
+            Applied const constructors,
+            RepaintBoundary, lazy loading,
+            asset optimization, ProGuard and
+            Dart Null Safety.
+          </li>
+
+          <li>
+            <b>Navigation:</b>
+            Implemented GoRouter with Android
+            App Links and iOS Universal Links.
+          </li>
+
+          <li>
+            <b>Firebase:</b>
+            Integrated Firebase Phone Auth,
+            Firestore, Crashlytics and
+            Google Sign-In.
+          </li>
+
+          <li>
+            <b>Maps:</b>
+            Implemented Google Maps markers,
+            polylines and location-based flows.
+          </li>
+
+          <li>
+            <b>Fintech:</b>
+            Integrated Razorpay, Stripe,
+            Paytm and native UPI using
+            Flutter Method Channels.
+          </li>
+
+          <li>
+            <b>Localization:</b>
+            Integrated Google ML Kit Translation.
+          </li>
+
+          <li>
+            <b>Notifications:</b>
+            Implemented Firebase Cloud Messaging
+            for push notifications.
+          </li>
+
+          <li>
+            <b>Security:</b>
+            Implemented biometric authentication
+            using local_auth, MPIN authentication,
+            secure storage and screenshot /
+            screen-recording prevention.
+          </li>
+
+          <li>
+            <b>WebView:</b>
+            Converted responsive websites into
+            Android and iOS applications with
+            native integration and optimized
+            navigation.
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- SYSCRYPTION -->
+
+      <article class="card experience reveal">
+
+        <div class="experience-header">
+
+          <div>
+
+            <h3 class="experience-title">
+              Junior Flutter Developer
+            </h3>
+
+            <div class="company">
+              Syscryption Technology
             </div>
-          </article>
 
-          <!-- Internship Card -->
-          <article
-            class="card border-0 shadow-lg rounded-4 bg-gradient"
-            style="
-              background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            "
+          </div>
+
+          <div class="date">
+            JAN 2022 — JUL 2022
+          </div>
+
+        </div>
+
+
+        <ul>
+
+          <li>
+            Integrated RESTful APIs across
+            multiple application modules.
+          </li>
+
+          <li>
+            Identified and resolved critical
+            bugs, memory issues and performance
+            bottlenecks.
+          </li>
+
+          <li>
+            Implemented GetX for routing,
+            state management and dependency
+            injection.
+          </li>
+
+          <li>
+            Optimized dependency management
+            with Get.lazyPut().
+          </li>
+
+          <li>
+            Structured REST API integrations
+            inside GetX controllers.
+          </li>
+
+          <li>
+            Managed onInit, onReady and onClose
+            controller lifecycle methods.
+          </li>
+
+          <li>
+            Developed real-time barcode scanning
+            using device camera.
+          </li>
+
+          <li>
+            Integrated third-party Flutter
+            packages and SDKs.
+          </li>
+
+          <li>
+            Integrated Google Maps for
+            location-based features.
+          </li>
+
+          <li>
+            Converted Figma designs into
+            pixel-accurate responsive
+            Flutter interfaces.
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- INTERNSHIP -->
+
+      <article class="card experience reveal">
+
+        <div class="experience-header">
+
+          <div>
+
+            <h3 class="experience-title">
+              Flutter Developer Intern
+            </h3>
+
+            <div class="company">
+              6-Month Internship
+            </div>
+
+          </div>
+
+          <div class="date">
+            DEC 2020 — JUN 2021
+          </div>
+
+        </div>
+
+
+        <ul>
+
+          <li>
+            Gained practical Flutter development
+            experience.
+          </li>
+
+          <li>
+            Worked with REST API integration.
+          </li>
+
+          <li>
+            Collaborated with backend
+            development workflows.
+          </li>
+
+        </ul>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
+            target="_blank"
+            class="btn btn-primary"
           >
-            <div class="card-body p-4 p-md-5 text-center">
-              <div class="mb-3">
-                <span
-                  class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-semibold fs-7 text-uppercase tracking-wider"
-                >
-                  <i class="fa-solid fa-certificate me-1"></i> Internship
-                  Completed
-                </span>
-              </div>
 
-              <h3 class="fw-bold text-dark mb-3">
-                Flutter Developer Internship
-              </h3>
+            <i class="bi bi-award"></i>
 
-              <p class="text-muted fs-6 mb-3 mx-auto" style="max-width: 650px">
-                Successfully completed a 6-month internship program gaining
-                hands-on experience in Flutter development, REST API
-                integration, and backend collaboration.
-              </p>
+            Internship Certificate
 
-              <p class="fw-semibold text-dark fs-6 mb-4">
-                Duration: Dec 2020 – June 2021
-              </p>
+          </a>
 
-              <div>
-                <a
-                  href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm fw-medium fs-6"
-                >
-                  <i class="fa-solid fa-download me-2"></i> Download Certificate
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h4 class="section-title">Technical Skills</h4>
-      <!-- Frontend Skills -->
-      <div class="rows">
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#E44D26">
-              <div class="number">70%</div>
-              <img
-                src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png"
-                alt="HTML"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">HTML</h4>
-          </div>
         </div>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#2965F1">
-              <div class="number">70%</div>
-              <img
-                src="https://miro.medium.com/v2/0*GpOUO1n2m49hMkbh.jpg"
-                alt="CSS"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">CSS</h4>
-          </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          03 · Technical Stack
         </div>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#7B2FF7">
-              <div class="number">70%</div>
-              <img
-                src="https://icons.getbootstrap.com/assets/img/icons-hero@2x.png"
-                alt="Bootstrap"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Bootstrap</h4>
-          </div>
-        </div>
+        <h2>
+          Tools I build with.
+        </h2>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="75" data-color="#F7DF1E">
-              <div class="number">75%</div>
-              <img
-                src="https://www.pragimtech.com/wp-content/uploads/2019/03/java-script.jpg"
-                alt="JavaScript"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">JavaScript</h4>
-          </div>
-        </div>
-
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#0868AC">
-              <div class="number">70%</div>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIoRzMF9XwkEZwEkVw_pJgrmpUgoATbGwcg&s"
-                alt="jQuery"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">jQuery</h4>
-          </div>
-        </div>
       </div>
 
-      <!-- Backend / Frameworks -->
-      <div class="rows">
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="65" data-color="orange">
-              <div class="number">65%</div>
-              <img
-                src="https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png"
-                alt="Node JS"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Node JS</h4>
-          </div>
+      <p class="section-description">
+
+        A recruiter-friendly view of the
+        technologies used across mobile,
+        backend, databases, cloud, payments,
+        DevOps and AI workflows.
+
+      </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Flutter & Dart
+          <small>Core</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>Flutter</span>
+          <span>Dart</span>
+          <span>Android</span>
+          <span>iOS</span>
+          <span>Flutter Web</span>
+          <span>Responsive UI</span>
+          <span>Custom Widgets</span>
+
         </div>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="60" data-color="green">
-              <div class="number">60%</div>
-              <img
-                src="https://raw.githubusercontent.com/xpertpk/express-snippets/main/icon.png"
-                alt="Express JS"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Express JS</h4>
-          </div>
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          State Management
+          <small>Architecture</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>BLoC</span>
+          <span>Riverpod</span>
+          <span>Provider</span>
+          <span>GetX</span>
+
         </div>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="80" data-color="#42A5F5">
-              <div class="number">80%</div>
-              <img
-                src="https://www.daily.co/blog/content/images/2023/07/Flutter-feature.png"
-                alt="Flutter"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Flutter</h4>
-          </div>
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Architecture
+          <small>Engineering</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>Clean Architecture</span>
+          <span>MVVM</span>
+          <span>SOLID</span>
+          <span>Modular Architecture</span>
+          <span>Reusable Widgets</span>
+          <span>Repository Pattern</span>
+
         </div>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#00B4AB">
-              <div class="number">70%</div>
-              <img
-                src="https://delicate-dawn-ac25646e6d.media.strapiapp.com/logo_lockup_dart_horizontal_58caae257c.png"
-                alt="Dart"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Dart</h4>
-          </div>
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Backend
+          <small>Full Stack</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>REST API</span>
+          <span>JWT</span>
+          <span>RBAC</span>
+          <span>Socket.IO</span>
+          <span>Bcrypt</span>
+          <span>Multer</span>
+          <span>CORS</span>
+
         </div>
 
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="#336791">
-              <div class="number">70%</div>
-              <img
-                src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png"
-                alt="PostgreSQL"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">PostgreSQL</h4>
-          </div>
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Databases
+          <small>Data</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>PostgreSQL</span>
+          <span>Firebase</span>
+          <span>Cloud Firestore</span>
+          <span>Supabase</span>
+          <span>SQLite</span>
+          <span>Hive</span>
+          <span>MongoDB</span>
+
         </div>
+
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Payments
+          <small>Fintech</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>Razorpay</span>
+          <span>Stripe</span>
+          <span>Paytm</span>
+          <span>PayUmoney</span>
+          <span>UPI</span>
+          <span>Method Channels</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Firebase & Cloud
+          <small>Services</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>Firebase Auth</span>
+          <span>FCM</span>
+          <span>Crashlytics</span>
+          <span>Firestore</span>
+          <span>Google Sign-In</span>
+          <span>Google Maps</span>
+          <span>ML Kit</span>
+          <span>OneSignal</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          DevOps
+          <small>Production</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>GitHub Actions</span>
+          <span>Fastlane</span>
+          <span>Codemagic</span>
+          <span>Shorebird</span>
+          <span>Sentry.io</span>
+          <span>CI/CD</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          AI & Developer Tools
+          <small>Modern Workflow</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>ChatGPT</span>
+          <span>Gemini</span>
+          <span>GitHub Copilot</span>
+          <span>Cursor</span>
+          <span>AI Chatbot Development</span>
+          <span>Postman</span>
+          <span>Android Studio</span>
+          <span>VS Code</span>
+          <span>Figma</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="card skill-card reveal">
+
+        <h3>
+          Web Technologies
+          <small>Additional</small>
+        </h3>
+
+        <div class="skill-tags">
+
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Bootstrap</span>
+          <span>JavaScript</span>
+          <span>jQuery</span>
+          <span>C</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          04 · Projects
+        </div>
+
+        <h2>
+          Production projects.
+        </h2>
+
       </div>
-      <div class="rows">
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="70" data-color="orange">
-              <div class="number">70%</div>
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/firebase/firebase.png"
-                alt="Firebase"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">Firebase</h4>
-          </div>
+
+      <p class="section-description">
+
+        Detailed project information instead
+        of generic screenshot cards — showing
+        what the product does, the engineering
+        responsibilities and technologies used.
+
+      </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+      <!-- SENSE WHEEL -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 01
         </div>
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="60" data-color="violet">
-              <div class="number">60%</div>
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/c/c.png"
-                alt="C"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">C</h4>
-          </div>
-        </div>
-        <div class="cards" style="background-color: #333945">
-          <div class="cards-image">
-            <div class="circle" data-degree="60" data-color="pink">
-              <div class="number">60%</div>
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/mongodb/mongodb.png"
-                alt="MongoDB"
-                class="circle-img"
-              />
-            </div>
-          </div>
-          <div class="cards-body">
-            <h4 class="headline text-white">MongoDB</h4>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="tools" class="tools-section p-5">
-      <h4 class="section-title">Tools</h4>
+        <span class="project-type">
+          OTT PLATFORM
+        </span>
 
-      <div class="col-md-8">
-        <div class="tools-grid">
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/android-studio/android-studio.png"
-                alt="Android Studio"
-              />
-            </div>
-            <h2>Android Studio</h2>
-          </div>
+        <h3>
+          Sense Wheel
+        </h3>
 
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
-                alt="Postman"
-              />
-            </div>
-            <h2>Postman</h2>
-          </div>
+        <p class="project-description">
 
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://raw.githubusercontent.com/github/explore/master/topics/visual-studio-code/visual-studio-code.png"
-                alt="VS Code"
-              />
-            </div>
-            <h2>Visual Studio Code</h2>
-          </div>
+          Cross-platform OTT streaming
+          application designed for subscription
+          based digital content consumption,
+          secure access and smooth video
+          playback.
 
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://www.vectorlogo.zone/logos/github/github-icon.svg"
-                alt="GitHub"
-              />
-            </div>
-            <h2>GitHub</h2>
-          </div>
-
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://www.vectorlogo.zone/logos/slack/slack-icon.svg"
-                alt="Slack"
-              />
-            </div>
-            <h2>Slack</h2>
-          </div>
-
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://freebiehive.com/wp-content/uploads/2023/06/Microsoft-Teams-Icon-PNG.jpg"
-                alt="Microsoft Teams"
-              />
-            </div>
-            <h2>Microsoft Teams</h2>
-          </div>
-
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg"
-                alt="Figma"
-              />
-            </div>
-            <h2>Figma</h2>
-          </div>
-          <div class="tool-card">
-            <div class="icon-wrapper">
-              <img
-                src="https://www.bgr.com/bgr/tech/google-warns-users-not-to-share-personal-information-with-gemini/Google-Gemini.jpg"
-                alt="Google Gemini"
-              />
-            </div>
-            <h2>Gemini</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="education" class="education-section">
-      <h2 class="text-info">🎓 Education</h2>
-
-      <div class="edu-cards">
-        <h3>M.C.S.</h3>
-        <p class="institute">
-          Sarhad College of Arts, Commerce and Science, Pune
         </p>
-        <p class="details">2019 – 2021 • 77%</p>
-      </div>
 
-      <div class="edu-cards">
-        <h3>B.C.S.</h3>
-        <p class="institute">
-          Vishwakarma College of Arts, Commerce and Science, Pune
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Key Features
+          </div>
+
+          <div class="project-features">
+
+            <span>Subscription</span>
+            <span>Online Playback</span>
+            <span>Offline Playback</span>
+            <span>HD Video</span>
+            <span>Encrypted Local Storage</span>
+            <span>Push Notifications</span>
+            <span>Progress Sync</span>
+            <span>Continue Watching</span>
+            <span>Lottie Animations</span>
+            <span>Screen Recording Prevention</span>
+            <span>Single Device Login</span>
+            <span>Secure Streaming</span>
+            <span>AdMob</span>
+            <span>Rewarded Ads</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Firebase</span>
+            <span>REST API</span>
+            <span>Payments</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
+            target="_blank"
+          >
+            <i class="bi bi-google-play"></i>
+            Live App
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- JEEYO -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 02
+        </div>
+
+        <span class="project-type">
+          RIDE BOOKING
+        </span>
+
+        <h3>
+          JEEYO RIDE
+        </h3>
+
+        <p class="project-description">
+
+          Ride-booking application focused on
+          real-time location tracking, driver
+          management and map-based navigation.
+
         </p>
-        <p class="details">2015 – 2018</p>
-      </div>
 
-      <div class="edu-cards">
-        <h3>HSC (XII)</h3>
-        <p class="institute">S.M.S. Mohite Patil Jr. College, Rahimatpur</p>
-        <p class="details">2015</p>
-      </div>
+        <div class="project-section">
 
-      <div class="edu-cards">
-        <h3>SSC (X)</h3>
-        <p class="institute">
-          Dr. V.G. Kakasaheb Paranjape Vidyalaya, Rahimatpur
+          <div class="project-section-title">
+            Key Features
+          </div>
+
+          <div class="project-features">
+
+            <span>Ride Booking</span>
+            <span>Real-time Tracking</span>
+            <span>Google Maps</span>
+            <span>Map Polylines</span>
+            <span>Geofencing</span>
+            <span>Driver Management</span>
+            <span>Live Location</span>
+            <span>Route Tracking</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Google Maps</span>
+            <span>Firebase</span>
+            <span>REST API</span>
+            <span>Realtime</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
+            target="_blank"
+          >
+
+            <i class="bi bi-google-play"></i>
+
+            Live App
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- SANJEEVANI -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 03
+        </div>
+
+        <span class="project-type">
+          GAMING & WALLET
+        </span>
+
+        <h3>
+          Sanjeevani Gaming
+        </h3>
+
+        <p class="project-description">
+
+          Online gaming application with
+          wallet management, payment workflows,
+          push notifications and real-time
+          application updates.
+
         </p>
-        <p class="details">2013 • 75%</p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Key Features
+          </div>
+
+          <div class="project-features">
+
+            <span>Gaming</span>
+            <span>Wallet</span>
+            <span>Payments</span>
+            <span>Secure Authentication</span>
+            <span>Push Notifications</span>
+            <span>Realtime Updates</span>
+            <span>FCM</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Firebase</span>
+            <span>FCM</span>
+            <span>Payments</span>
+            <span>REST API</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://sanjivani999.in/download"
+            target="_blank"
+          >
+
+            <i class="bi bi-download"></i>
+
+            Download
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- VEHICLE -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 04
+        </div>
+
+        <span class="project-type">
+          SERVICE BOOKING
+        </span>
+
+        <h3>
+          Vehicle Repair Service
+        </h3>
+
+        <p class="project-description">
+
+          Vehicle repair and service-booking
+          platform allowing users to find
+          mechanics, book repairs, track service
+          progress and maintain service history.
+
+        </p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Key Features
+          </div>
+
+          <div class="project-features">
+
+            <span>Repair Booking</span>
+            <span>Nearby Mechanics</span>
+            <span>Service Tracking</span>
+            <span>Service History</span>
+            <span>Google Maps</span>
+            <span>REST APIs</span>
+            <span>Notifications</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>PostgreSQL</span>
+            <span>JWT</span>
+            <span>Socket.IO</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://github.com/this-sunil/vehiclerepairservice"
+            target="_blank"
+          >
+
+            <i class="bi bi-github"></i>
+
+            Source Code
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- BACKEND -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 05
+        </div>
+
+        <span class="project-type">
+          BACKEND SYSTEM
+        </span>
+
+        <h3>
+          Vehicle Repair Backend
+        </h3>
+
+        <p class="project-description">
+
+          Backend service supporting the vehicle
+          repair platform with authentication,
+          database access, real-time communication,
+          file uploads and protected API routes.
+
+        </p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Backend Responsibilities
+          </div>
+
+          <div class="project-features">
+
+            <span>JWT Authentication</span>
+            <span>Protected Middleware</span>
+            <span>PostgreSQL Pool</span>
+            <span>Socket.IO</span>
+            <span>Multer Uploads</span>
+            <span>Bcrypt</span>
+            <span>CORS</span>
+            <span>REST API</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>PostgreSQL</span>
+            <span>Socket.IO</span>
+            <span>JWT</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://github.com/this-sunil/vehicle-repair-service"
+            target="_blank"
+          >
+
+            <i class="bi bi-github"></i>
+
+            GitHub
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- FARMHOUSE -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 06
+        </div>
+
+        <span class="project-type">
+          BOOKING PLATFORM
+        </span>
+
+        <h3>
+          Farmhouse Booking Platform
+        </h3>
+
+        <p class="project-description">
+
+          Premium farm-stay booking application
+          designed for discovering properties,
+          checking availability, managing
+          reservations and delivering a smooth
+          guest booking experience.
+
+        </p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Key Features
+          </div>
+
+          <div class="project-features">
+
+            <span>Property Discovery</span>
+            <span>Availability</span>
+            <span>Booking</span>
+            <span>Reservations</span>
+            <span>Authentication</span>
+            <span>Secure Payments</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>PostgreSQL</span>
+            <span>REST API</span>
+            <span>JWT</span>
+            <span>Razorpay</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- HEALTH CARE -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 07
+        </div>
+
+        <span class="project-type">
+          HEALTH CARE
+        </span>
+
+        <h3>
+          Health Care
+        </h3>
+
+        <p class="project-description">
+
+          Healthcare-oriented Flutter application
+          included in the project portfolio,
+          demonstrating responsive application
+          development and backend/API integration.
+
+        </p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Firebase</span>
+            <span>REST API</span>
+            <span>Google Maps</span>
+            <span>Responsive UI</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- GREEN LIFE -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 08
+        </div>
+
+        <span class="project-type">
+          ENVIRONMENT / LIFESTYLE
+        </span>
+
+        <h3>
+          Green Life
+        </h3>
+
+        <p class="project-description">
+
+          Eco-friendly lifestyle and environmental
+          awareness project covering tree
+          plantation, waste management, recycling,
+          sustainability awareness and community
+          participation.
+
+        </p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Technology
+          </div>
+
+          <div class="project-features">
+
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Firebase</span>
+            <span>REST API</span>
+            <span>Google Maps</span>
+            <span>Responsive UI</span>
+
+          </div>
+
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://github.com/this-sunil/greenlife"
+            target="_blank"
+            class="secondary"
+          >
+
+            <i class="bi bi-github"></i>
+
+            Source Code
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AUTH -->
+
+      <article class="card project reveal">
+
+        <div class="project-number">
+          PROJECT 09
+        </div>
+
+        <span class="project-type">
+          AUTHENTICATION / ARCHITECTURE
+        </span>
+
+        <h3>
+          Flutter + Node.js + JWT
+        </h3>
+
+        <p class="project-description">
+
+          Full-stack authentication workflow
+          demonstrating production-oriented
+          architecture, secure token handling,
+          state management and typed error
+          handling.
+
+        </p>
+
+        <div class="project-section">
+
+          <div class="project-section-title">
+            Engineering
+          </div>
+
+          <div class="project-features">
+
+            <span>BLoC</span>
+            <span>MVVM</span>
+            <span>SOLID</span>
+            <span>Clean Architecture</span>
+            <span>JWT</span>
+            <span>REST API</span>
+            <span>either_dart</span>
+            <span>Reusable Widgets</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WORK PREVIEW
+========================================================= -->
+
+<section id="preview">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          05 · Work Preview
+        </div>
+
+        <h2>
+          Engineering in motion.
+        </h2>
+
       </div>
-    </section>
 
-    <section id="preview">
-      <!-- Bootstrap Icons -->
+      <p class="section-description">
 
-      <div class="container-fluid">
-        <h4 class="section-title">Work Preview</h4>
+        Video demonstrations and technical
+        walkthroughs from the original portfolio.
 
-        <div class="video-container z-n1">
-          <!-- ================= AUTH APP ================= -->
-          <div class="video-cards">
-            <iframe
-              width="100%"
-              height="300"
-              src="https://www.youtube.com/embed/UY0vvIER8DI"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
+      </p>
 
-            <div class="cards-content">
-              <div class="cards-title">
-                Flutter + Node.js + JWT Authentication
-              </div>
+    </div>
 
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark m-1">Flutter</span>
-                <span class="badge bg-warning text-dark m-1">Dart</span>
-                <span class="badge bg-dark m-1">Node.js</span>
-                <span class="badge bg-success text-light m-1">JWT</span>
-              </div>
 
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2">
-                      <i class="bi bi-check-circle"></i>
-                    </span>
-                    BLoC State Management
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2">
-                      <i class="bi bi-check-circle"></i>
-                    </span>
-                    MVVM Architecture Pattern
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2">
-                      <i class="bi bi-check-circle"></i>
-                    </span>
-                    SOLID Principles Implementation
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2">
-                      <i class="bi bi-check-circle"></i>
-                    </span>
-                    Clean Architecture
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2">
-                      <i class="bi bi-check-circle"></i>
-                    </span>
-                    Type-Safe Error Handling with either_dart
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2">
-                      <i class="bi bi-check-circle"></i>
-                    </span>
-                    Reusable & Modular Widgets
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <div class="preview-grid">
 
-          <div class="video-cards">
-            <iframe
-              width="100%"
-              height="300"
-              src="https://www.youtube.com/embed/eQEQKQBNdYA?si=ehizK-jvh5FdsgX8"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
 
-            <div class="cards-content">
-              <div class="cards-title">
-                Building a Secure Backend with Node.js & PostgreSQL (REST API)
-              </div>
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark m-1">Nodejs</span>
-                <span class="badge bg-warning text-dark m-1">Express js</span>
-                <span class="badge bg-dark m-1">Bcrypt</span>
-                <span class="badge bg-success text-light m-1"
-                  >JWT authentication</span
-                >
-                <span class="badge bg-danger text-light m-1">Multer</span>
-                <span class="badge bg-info text-dark m-1">Cors</span>
-              </div>
+      <article class="card preview-card reveal">
 
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >JWT-based authentication
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >bcrypt password encryption
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >RESTful API with Express.js
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >PostgreSQL database integration
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >CORS-enabled API communication
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <iframe
+          src="https://www.youtube.com/embed/UY0vvIER8DI"
+          title="Flutter Node.js JWT Authentication"
+          allowfullscreen
+        ></iframe>
 
-          <!-- ================= TURN BY TURN ================= -->
-          <div class="video-cards">
-            <iframe
-              width="100%"
-              height="300"
-              src="https://www.youtube.com/embed/KyMtUvTrKJc?si=XoFWlZfXFw_IvSCB"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
+        <div class="preview-body">
 
-            <div class="cards-content">
-              <div class="cards-title">Turn By Turn Navigation</div>
+          <h3>
+            Flutter + Node.js + JWT Authentication
+          </h3>
 
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark m-1">Flutter</span>
-                <span class="badge bg-warning text-dark m-1">Dart</span>
-                <span class="badge bg-info m-1">Geolocator</span>
-                <span class="badge bg-dark m-1">Google Maps</span>
-              </div>
+          <p>
 
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Google Maps & Directions API
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Real-time GPS tracking
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Dynamic polyline rerouting
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Smooth camera animation
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Maneuver-based navigation
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            BLoC, MVVM, SOLID, Clean Architecture,
+            either_dart and reusable modular widgets.
 
-          <!-- ================= AI CHATBOT ================= -->
-          <div class="video-cards">
-            <iframe
-              width="100%"
-              height="300"
-              src="https://www.youtube.com/embed/PVwa6DaeKsg?si=zwivCwug0CRqtPfg"
-              title="YouTube video player"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+          </p>
 
-            <div class="cards-content">
-              <div class="cards-title">
-                AI Chatbot with Flutter & Gemini API
-              </div>
-
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-info text-dark m-1">Flutter</span>
-                <span class="badge bg-warning text-dark m-1">Dart</span>
-                <span class="badge bg-dark m-1">Gemini API</span>
-              </div>
-
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >AI-powered real-time chat
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Prompt-based responses
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Fast and responsive UI
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Scalable AI integration
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- ================= VEHICLE SERVICE ================= -->
-          <div class="video-cards">
-            <iframe
-              width="100%"
-              height="300"
-              src="https://www.youtube.com/embed/fXcrOBtX2Ac?si=U0x2VW5GC6rw_tm3"
-              title="YouTube video player"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-
-            <div class="cards-content">
-              <div class="cards-title">Vehicle Repair Service</div>
-
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary m-1">Node.js</span>
-                <span class="badge bg-secondary m-1">Express.js</span>
-                <span class="badge bg-success m-1">REST API</span>
-                <span class="badge bg-info text-dark m-1">Flutter</span>
-                <span class="badge bg-warning text-dark m-1">Dart</span>
-                <span class="badge bg-dark m-1">PostgreSQL</span>
-              </div>
-
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Service booking & tracking
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Mechanic assignment system
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Vehicle service history
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Scalable backend APIs
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- ================= SENSE WHEEL ================= -->
-          <div class="video-cards">
-            <video
-              src="https://ik.imagekit.io/wtvwfegms/sense-wheel.mp4?updatedAt=1766758405039"
-              controls
-            ></video>
-            <div class="cards-content">
-              <div class="cards-title">Sense Wheel (OTT Platform)</div>
-
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary m-1">Flutter</span>
-                <span class="badge bg-secondary m-1">Dart</span>
-                <span class="badge bg-success m-1">Firebase</span>
-                <span class="badge bg-dark m-1">Push Notification</span>
-                <span class="badge bg-info text-dark m-1">Sqflite</span>
-                <span class="badge bg-warning text-dark m-1">Bloc</span>
-              </div>
-
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >OTT video streaming platform
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Smooth video playback
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Push notifications
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Offline local storage
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- ================= FARMER APP ================= -->
-          <div class="video-cards">
-            <iframe
-              width="100%"
-              height="300"
-              src="https://www.youtube.com/embed/pZfW-9a-PkE?si=pCOZzotiEFvdZLmc"
-              title="YouTube video player"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-
-            <div class="cards-content">
-              <div class="cards-title">Farmer Application</div>
-
-              <div class="card-subtitle mb-2 w-100">
-                <span class="badge bg-primary m-1">Node.js</span>
-                <span class="badge bg-secondary m-1">Express.js</span>
-                <span class="badge bg-success m-1">REST API</span>
-                <span class="badge bg-info text-dark m-1">Flutter</span>
-                <span class="badge bg-warning text-dark m-1">Dart</span>
-                <span class="badge bg-dark m-1">PostgreSQL</span>
-              </div>
-
-              <div class="cards-description">
-                <span class="badge bg-primary mb-2">
-                  <i class="bi bi-stars"></i> Key Highlights
-                </span>
-                <ul class="mt-2 list-unstyled">
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Agriculture e-commerce platform
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Product browsing & ordering
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Farmer-friendly UI
-                  </li>
-                  <li>
-                    <span class="badge bg-success me-2"
-                      ><i class="bi bi-check-circle"></i></span
-                    >Secure backend APIs
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
+
+      </article>
+
+
+      <article class="card preview-card reveal">
+
+        <iframe
+          src="https://www.youtube.com/embed/eQEQKQBNdYA"
+          title="Node.js PostgreSQL REST API"
+          allowfullscreen
+        ></iframe>
+
+        <div class="preview-body">
+
+          <h3>
+            Node.js + PostgreSQL REST API
+          </h3>
+
+          <p>
+
+            JWT authentication, bcrypt password
+            encryption, Express REST APIs,
+            PostgreSQL and CORS.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card preview-card reveal">
+
+        <iframe
+          src="https://www.youtube.com/embed/KyMtUvTrKJc"
+          title="Turn By Turn Navigation"
+          allowfullscreen
+        ></iframe>
+
+        <div class="preview-body">
+
+          <h3>
+            Turn By Turn Navigation
+          </h3>
+
+          <p>
+
+            Google Maps, Directions API,
+            real-time GPS tracking, dynamic
+            polyline rerouting, camera animation
+            and maneuver-based navigation.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card preview-card reveal">
+
+        <iframe
+          src="https://www.youtube.com/embed/PVwa6DaeKsg"
+          title="AI Chatbot Flutter Gemini"
+          allowfullscreen
+        ></iframe>
+
+        <div class="preview-body">
+
+          <h3>
+            AI Chatbot with Flutter & Gemini API
+          </h3>
+
+          <p>
+
+            AI-powered real-time chat,
+            prompt-based responses,
+            responsive UI and scalable AI
+            integration.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card preview-card reveal">
+
+        <iframe
+          src="https://www.youtube.com/embed/fXcrOBtX2Ac"
+          title="Vehicle Repair Service"
+          allowfullscreen
+        ></iframe>
+
+        <div class="preview-body">
+
+          <h3>
+            Vehicle Repair Service
+          </h3>
+
+          <p>
+
+            Service booking, mechanic assignment,
+            repair tracking, vehicle history and
+            scalable backend APIs.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card preview-card reveal">
+
+        <video
+          controls
+          preload="metadata"
+          src="https://ik.imagekit.io/wtvwfegms/sense-wheel.mp4?updatedAt=1766758405039"
+        ></video>
+
+        <div class="preview-body">
+
+          <h3>
+            Sense Wheel — OTT Platform
+          </h3>
+
+          <p>
+
+            OTT streaming, smooth playback,
+            push notifications and offline
+            local storage.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card preview-card reveal">
+
+        <iframe
+          src="https://www.youtube.com/embed/pZfW-9a-PkE"
+          title="Farmer Application"
+          allowfullscreen
+        ></iframe>
+
+        <div class="preview-body">
+
+          <h3>
+            Farmer Application
+          </h3>
+
+          <p>
+
+            Agriculture-focused application
+            with product browsing, ordering,
+            farmer-friendly UI and backend APIs.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          06 · Education
+        </div>
+
+        <h2>
+          Academic foundation.
+        </h2>
+
       </div>
-    </section>
 
-    <section id="projects" class="p-5">
-      <h4 class="text-center"><strong>My Projects</strong></h4>
+      <p class="section-description">
 
-      <!-- Changed g-5 to g-2 to sharply decrease the vertical gap -->
-      <div class="row g-2">
-        <!-- Sense Wheel -->
-        <div class="col-lg-6 col-md-6 p-2">
-          <article class="project-card h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h5 class="project-title mb-0">Sense Wheel (OTT Platform)</h5>
-              <span class="project-chip">Flutter</span>
-            </div>
+        Complete academic history.
 
-            <p class="project-desc">
-              Developed a cross-platform OTT streaming application with secure
-              user authentication, subscription plans, online/offline video
-              playback, content management, encrypted local storage, and
-              seamless HD video streaming.
-            </p>
+      </p>
 
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-dark">Flutter</span>
-              <span class="badge bg-dark">Firebase</span>
-              <span class="badge bg-dark">REST API</span>
-              <span class="badge bg-dark">Video Streaming</span>
-              <span class="badge bg-dark">Payment Gateway</span>
-              <span class="badge bg-dark">Responsive UI</span>
-            </div>
+    </div>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
-              target="_blank"
-              class="btn-premium mt-3"
-            >
-              <i class="bi bi-google-play me-2"></i>Live App
-            </a>
-          </article>
+
+    <div class="education-grid">
+
+
+      <article class="card education reveal">
+
+        <div class="education-icon">
+          MCS
         </div>
 
-        <!-- Jeeyo Ride -->
-        <div class="col-lg-6 col-md-6 p-2">
-          <article class="project-card h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h5 class="project-title mb-0">JEEYO RIDE</h5>
-              <span class="project-chip">Flutter</span>
-            </div>
+        <div>
 
-            <p class="project-desc">
-              Ride booking and mobility application with real-time ride
-              tracking, Google Maps integration, route polylines, geofencing,
-              live location, driver management, and secure payment features.
-            </p>
+          <h3>
+            Master of Computer Science
+          </h3>
 
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-dark">Flutter</span>
-              <span class="badge bg-dark">Firebase</span>
-              <span class="badge bg-dark">Google Maps</span>
-              <span class="badge bg-dark">Geofencing</span>
-              <span class="badge bg-dark">REST API</span>
-              <span class="badge bg-dark">Realtime Tracking</span>
-            </div>
+          <p>
+            Sarhad College of Arts,
+            Commerce and Science, Pune
+          </p>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
-              target="_blank"
-              class="btn-premium mt-3"
-            >
-              <i class="bi bi-google-play me-2"></i>Live App
-            </a>
-          </article>
+          <p>
+            2019 — 2021 · 77%
+          </p>
+
         </div>
 
-        <!-- Gaming -->
-        <div class="col-lg-6 col-md-6 p-2">
-          <article class="project-card h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h5 class="project-title mb-0">Sanjeevani Gaming</h5>
-              <span class="project-chip">Flutter</span>
-            </div>
+      </article>
 
-            <p class="project-desc">
-              Online gaming application featuring wallet management, payment
-              gateway integration, secure authentication, push notifications,
-              real-time updates, and smooth user experience.
-            </p>
 
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-dark">Flutter</span>
-              <span class="badge bg-dark">Firebase</span>
-              <span class="badge bg-dark">REST API</span>
-              <span class="badge bg-dark">Payment Gateway</span>
-              <span class="badge bg-dark">Push Notification</span>
-            </div>
+      <article class="card education reveal">
 
-            <a
-              href="https://sanjivani999.in/download"
-              target="_blank"
-              class="btn-premium mt-3"
-            >
-              <i class="bi bi-download me-2"></i>Live App
-            </a>
-          </article>
+        <div class="education-icon">
+          BCS
         </div>
 
-        <!-- Vehicle Repair -->
-        <div class="col-lg-6 col-md-6 p-2">
-          <article class="project-card h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h5 class="project-title mb-0">Vehicle Repair Service</h5>
-              <span class="project-chip">Flutter</span>
-            </div>
+        <div>
 
-            <p class="project-desc">
-              Mobile application that allows users to book vehicle repair
-              services, locate nearby mechanics, manage service history, track
-              repair status, and receive instant service updates.
-            </p>
+          <h3>
+            Bachelor of Computer Science
+          </h3>
 
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-dark">Flutter</span>
-              <span class="badge bg-dark">Firebase</span>
-              <span class="badge bg-dark">Google Maps</span>
-              <span class="badge bg-dark">REST API</span>
-              <span class="badge bg-dark">Responsive UI</span>
-            </div>
+          <p>
+            Vishwakarma College of Arts,
+            Commerce and Science, Pune
+          </p>
 
-            <a
-              href="https://github.com/this-sunil/vehiclerepairservice"
-              target="_blank"
-              class="btn-premium mt-3"
-            >
-              <i class="bi bi-github me-2"></i>Source Code
-            </a>
-          </article>
+          <p>
+            2015 — 2018
+          </p>
+
         </div>
 
-        <!-- Backend -->
-        <div class="col-lg-6 col-md-6 p-2">
-          <article class="project-card h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h5 class="project-title mb-0">Vehicle Repair Backend</h5>
-              <span class="project-chip">Node.js</span>
-            </div>
+      </article>
 
-            <p class="project-desc">
-              Developed a scalable backend using Node.js, Express.js,
-              PostgreSQL, JWT authentication, Socket.IO, Multer, and REST APIs
-              for secure, real-time communication and data management.
-            </p>
 
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-dark">Node.js</span>
-              <span class="badge bg-dark">Express.js</span>
-              <span class="badge bg-dark">PostgreSQL</span>
-              <span class="badge bg-dark">Socket.IO</span>
-              <span class="badge bg-dark">JWT</span>
-              <span class="badge bg-dark">Multer</span>
-            </div>
+      <article class="card education reveal">
 
-            <a
-              href="https://github.com/this-sunil/vehicle-repair-service"
-              target="_blank"
-              class="btn-premium mt-3"
-            >
-              <i class="bi bi-github me-2"></i>Source Code
-            </a>
-          </article>
+        <div class="education-icon">
+          XII
         </div>
 
-        <!-- Green Life -->
-        <div class="col-lg-6 col-md-6 p-2">
-          <article class="project-card h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h5 class="project-title mb-0">Health Care</h5>
-              <span class="project-chip">Flutter</span>
-            </div>
+        <div>
 
-            <p class="project-desc">
-              Eco-friendly lifestyle application that encourages sustainable
-              living by promoting tree plantation, waste management, recycling,
-              environmental awareness, and community participation through an
-              intuitive mobile interface.
-            </p>
+          <h3>
+            Higher Secondary
+          </h3>
 
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-dark">Flutter</span>
-              <span class="badge bg-dark">Firebase</span>
-              <span class="badge bg-dark">REST API</span>
-              <span class="badge bg-dark">Google Maps</span>
-              <span class="badge bg-dark">Responsive UI</span>
-            </div>
+          <p>
+            S.M.S. Mohite Patil Jr. College,
+            Rahimatpur
+          </p>
 
-            <a
-              href="https://github.com/this-sunil/greenlife"
-              target="_blank"
-              class="btn-premium mt-3"
-            >
-              <i class="bi bi-github me-2"></i>Source Code
-            </a>
-          </article>
+          <p>
+            2015
+          </p>
+
         </div>
+
+      </article>
+
+
+      <article class="card education reveal">
+
+        <div class="education-icon">
+          X
+        </div>
+
+        <div>
+
+          <h3>
+            Secondary School
+          </h3>
+
+          <p>
+            Dr. V.G. Kakasaheb Paranjape
+            Vidyalaya, Rahimatpur
+          </p>
+
+          <p>
+            2013 · 75%
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <article
+      class="card reveal"
+      style="margin-top:16px"
+    >
+
+      <div class="card-icon">
+        <i class="bi bi-award"></i>
       </div>
-    </section>
 
-    <!-- <section id="projects" class="py-5">
-    
-     <h4 class="text-center">My Projects</h4>
-    <div class="list-tile-project">
-        <div class="tile-top-row">
-            <div class="leading-icon"><img class="img-fluid" src="https://play-lh.googleusercontent.com/-PXmmMmrQJ2ruYjjK-whO06I5ufnrxlVvVYCgKXWDqTA4I7NMd9vhVqv3xJwC8X-7n4d4oT-j4MQceSVd-Oqayo=w480-h960-rw"></img></div>
-            <div class="title-section">
-                <h2>SENSE WHEEL</h2>
-                <p>OTT Streaming Platform • Flutter • Node.js</p>
-            </div>
-            <div class="trailing-action">
-                <a href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" class="btn-install">INSTALL</a>
-            </div>
+      <h3>
+        Flutter Developer Internship Certificate
+      </h3>
+
+      <p>
+        Internship period:
+        December 2020 — June 2021
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          href="https://github.com/this-sunil/farmer_brand/raw/33533d806314b95fc386ae371e2f1528979387f4/src/public/certificate.pdf"
+          target="_blank"
+          class="btn btn-primary"
+        >
+
+          <i class="bi bi-file-earmark-pdf"></i>
+
+          View Certificate
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div>
+
+        <div class="section-kicker">
+          07 · Contact
         </div>
-        
-        <div class="tile-body-grid">
-            <div class="feature-col">
-                <h5>Core Streaming</h5>
-                <ul>
-                    <li>Smart Search & Filters</li>
-                    <li>Download for Offline viewing</li>
-                    <li>Progress Sync (Continue Watching)</li>
-                    <li>Lottie JSON Animations</li>
-                </ul>
-            </div>
-            <div class="feature-col">
-                <h5>Security & DRM</h5>
-                <ul>
-                    <li>Screen Rec/Screenshot Prevention</li>
-                    <li>Prevent Screen Sleep</li>
-                    <li>Single-Device Login Sync</li>
-                    <li>Secure Streaming Architecture</li>
-                </ul>
-            </div>
-            <div class="feature-col">
-                <h5>Monetization</h5>
-                <ul>
-                    <li>Method Channel Payments</li>
-                    <li>Subscription Access Control</li>
-                    <li>Google AdMob Integration</li>
-                    <li>Rewarded/Interstitial Ads</li>
-                </ul>
-            </div>
-        </div>
+
+        <h2>
+          Let's build something
+          production-ready.
+        </h2>
+
+      </div>
+
+      <p class="section-description">
+
+        Open to Senior Flutter Developer,
+        Flutter Developer, Mobile Application
+        Engineer and Full Stack opportunities.
+
+      </p>
+
     </div>
 
-    <div class="list-tile-project">
-        <div class="tile-top-row">
-            <div class="leading-icon"><img class="img-fluid" src="https://play-lh.googleusercontent.com/nFsO87NihT6U07dgbpbPQP1jHW3bfmWPr6JE3M9rVATAI21S4cvYY4I43aa5x6N0lQ=w480-h960-rw"></img></div>
-            <div class="title-section">
-                <h2>JEEYO RIDE</h2>
-                <p>Ride Booking • Google Maps • Real-time Tracking</p>
-            </div>
-            <div class="trailing-action">
-                <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" class="btn-install">INSTALL</a>
-            </div>
+
+    <div class="contact-grid">
+
+
+      <a
+        class="card contact-item reveal"
+        href="mailto:swarajya888@gmail.com"
+      >
+
+        <div class="contact-icon">
+          <i class="bi bi-envelope"></i>
         </div>
-        
-        <div class="tile-body-grid">
-            <div class="feature-col">
-                <h5>Maps Integration</h5>
-                <ul>
-                    <li>Place Auto-complete Search</li>
-                    <li>Live Marker & Polyline Logic</li>
-                    <li>Real-time Driver Tracking</li>
-                    <li>Background Location Sync</li>
-                </ul>
-            </div>
-            <div class="feature-col">
-                <h5>Driver Management</h5>
-                <ul>
-                    <li>Geofencing Nearby Drivers</li>
-                    <li>Status Alert Notifications</li>
-                    <li>Ride Safety Protocols</li>
-                </ul>
-            </div>
-            <div class="feature-col">
-                <h5>System Updates</h5>
-                <ul>
-                    <li>Firebase Push Notifications</li>
-                    <li>In-App Upgrade System</li>
-                    <li>Forced Upgrade Support</li>
-                </ul>
-            </div>
+
+        <div>
+
+          <small>Email</small>
+
+          <strong>
+            swarajya888@gmail.com
+          </strong>
+
         </div>
+
+      </a>
+
+
+      <a
+        class="card contact-item reveal"
+        href="tel:+918668796251"
+      >
+
+        <div class="contact-icon">
+          <i class="bi bi-telephone"></i>
+        </div>
+
+        <div>
+
+          <small>Phone</small>
+
+          <strong>
+            +91 8668796251
+          </strong>
+
+        </div>
+
+      </a>
+
+
+      <a
+        class="card contact-item reveal"
+        href="https://www.linkedin.com/in/sunilshedge"
+        target="_blank"
+      >
+
+        <div class="contact-icon">
+          <i class="bi bi-linkedin"></i>
+        </div>
+
+        <div>
+
+          <small>LinkedIn</small>
+
+          <strong>
+            linkedin.com/in/sunilshedge
+          </strong>
+
+        </div>
+
+      </a>
+
+
+      <a
+        class="card contact-item reveal"
+        href="https://github.com/this-sunil"
+        target="_blank"
+      >
+
+        <div class="contact-icon">
+          <i class="bi bi-github"></i>
+        </div>
+
+        <div>
+
+          <small>GitHub</small>
+
+          <strong>
+            github.com/this-sunil
+          </strong>
+
+        </div>
+
+      </a>
+
+
+      <a
+        class="card contact-item reveal"
+        href="https://farmer-brand.vercel.app/"
+        target="_blank"
+      >
+
+        <div class="contact-icon">
+          <i class="bi bi-globe2"></i>
+        </div>
+
+        <div>
+
+          <small>Portfolio</small>
+
+          <strong>
+            farmer-brand.vercel.app
+          </strong>
+
+        </div>
+
+      </a>
+
+
+      <a
+        class="card contact-item reveal"
+        href="https://farmer-brand.vercel.app/resume"
+        target="_blank"
+      >
+
+        <div class="contact-icon">
+          <i class="bi bi-file-earmark-person"></i>
+        </div>
+
+        <div>
+
+          <small>Resume</small>
+
+          <strong>
+            Open Resume
+          </strong>
+
+        </div>
+
+      </a>
+
     </div>
 
-  <div class="list-tile-project">
-    <div class="tile-top-row">
-        <div class="leading-icon"><img class="img-fluid" src="public/css/logo.png"></img></div>
-        <div class="title-section">
-            <h2>VEHICLE REPAIR SERVICE</h2>
-            <p>Full Stack • Flutter • Node.js • PostgreSQL</p>
-        </div>
-        <div class="trailing-action">
-            <a href="https://github.com/this-sunil/vehicle-repair-service" class="btn-install">VIEW Source</a>
-        </div>
-    </div>
-    
-    <div class="tile-body-grid">
-        <div class="feature-col">
-            <h5>Architecture & Security</h5>
-            <ul>
-                <li><strong>Full Stack:</strong> End-to-end solutions using Node.js & PostgreSQL.</li>
-                <li><strong>RBAC & JWT:</strong> Secure access for Admins, Mechanics, and Customers.</li>
-                <li><strong>Env Config:</strong> Secure .env management for API keys & Gateway credentials.</li>
-            </ul>
-        </div>
+  </div>
 
-        <div class="feature-col">
-            <h5>Stability & Performance</h5>
-            <ul>
-                <li><strong>Xcode/Android Fixes:</strong> Resolved CocoaPods conflicts & build runner errors.</li>
-                <li><strong>ANR Optimization:</strong> Identified and fixed ANR issues for 99.9% app stability.</li>
-                <li><strong>Schema Logic:</strong> Optimized Postgres queries for complex service histories.</li>
-            </ul>
-        </div>
+</section>
 
-        <div class="feature-col">
-            <h5>Monetization & OTA</h5>
-            <ul>
-                <li><strong>Shorebird OTA:</strong> Hotfix deployments without App Store re-submissions.</li>
-                <li><strong>Payments:</strong> Seamless International Payment Gateway integration.</li>
-                <li><strong>AdMob:</strong> Native ad placement for optimized revenue generation.</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-   
+</main>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-  </section> -->
+<footer>
 
-    <div class="scroll-top">
-      <button id="scrollTopBtn" class="fa fa-angle-up"></button>
-    </div>
+  <div class="container footer-inner">
 
-    <script src="bootstrap-js/bootstrap.min.js"></script>
-    <script>
-      // document.addEventListener("DOMContentLoaded", () => {
-      //   function autoScrollToBottom() {
-      //     const speed = 16;
+    <span>
+      © 2026 Sunil Shedge
+    </span>
 
-      //     function scroll() {
-      //       window.scrollBy(0, speed);
+    <span>
+      Senior Flutter Developer · Mobile · Backend · Cloud · CI/CD
+    </span>
 
-      //       if (window.innerHeight + window.scrollY < document.body.scrollHeight) {
-      //         requestAnimationFrame(scroll);
-      //       }
-      //     }
+    <span>
+      Pune, Maharashtra, India
+    </span>
 
-      //     requestAnimationFrame(scroll);
-      //   }
+  </div>
 
-      //   autoScrollToBottom();
-      // });
-      // window.scrollTo({
-      //   top: document.body.scrollHeight,
-      //   behavior: "smooth"
-      // });
+</footer>
 
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      const scrollWrapper = document.querySelector(".scroll-top");
 
-      window.addEventListener("scroll", () => {
-        scrollWrapper.style.display = window.scrollY > 300 ? "block" : "none";
-      });
+<!-- BACK TO TOP -->
 
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({
+<button
+  class="back-top"
+  id="backTop"
+  aria-label="Back to top"
+>
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+  /* =========================================================
+     MOBILE NAVIGATION
+  ========================================================= */
+
+  const mobileMenu =
+    document.getElementById(
+      "mobileMenu"
+    );
+
+  const navLinks =
+    document.getElementById(
+      "navLinks"
+    );
+
+  mobileMenu.addEventListener(
+    "click",
+    function () {
+
+      navLinks.classList.toggle(
+        "open"
+      );
+
+    }
+  );
+
+
+  navLinks
+    .querySelectorAll("a")
+    .forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove(
+              "open"
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================= */
+
+  const revealObserver =
+    new IntersectionObserver(
+      function (entries) {
+
+        entries.forEach(
+          function (entry) {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "show"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      ".reveal"
+    )
+    .forEach(
+      function (element) {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     BACK TO TOP
+  ========================================================= */
+
+  const backTop =
+    document.getElementById(
+      "backTop"
+    );
+
+
+  window.addEventListener(
+    "scroll",
+    function () {
+
+      if (
+        window.scrollY > 500
+      ) {
+
+        backTop.style.display =
+          "grid";
+
+      } else {
+
+        backTop.style.display =
+          "none";
+
+      }
+
+    }
+  );
+
+
+  backTop.addEventListener(
+    "click",
+    function () {
+
+      window.scrollTo(
+        {
           top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const circles = document.querySelectorAll(".circle");
-        const skillsSection = document.getElementById("skills");
-        let animated = false; // prevent multiple animations
-
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top < window.innerHeight && rect.bottom >= 0;
+          behavior: "smooth"
         }
+      );
 
-        function animateCircles() {
-          if (animated) return;
-          if (!isInViewport(skillsSection)) return;
+    }
+  );
 
-          circles.forEach((circle) => {
-            let degree = 0;
-            const targetDegree = parseInt(circle.getAttribute("data-degree"));
-            const color = circle.getAttribute("data-color");
-            const number = circle.querySelector(".number");
 
-            const interval = setInterval(() => {
-              degree++;
-              if (degree > targetDegree) {
-                clearInterval(interval);
-                return;
-              }
-              circle.style.background = `conic-gradient(${color} ${degree}%, #222 ${degree}%)`;
-              //if (number) number.innerHTML = `${degree}<span>%</span>`;
-            }, 20); // smaller number = faster animation
-          });
+  /* =========================================================
+     ACTIVE NAVIGATION
+  ========================================================= */
 
-          animated = true; // prevent re-animation
+  const sections =
+    document.querySelectorAll(
+      "main section"
+    );
+
+  const navigationItems =
+    document.querySelectorAll(
+      ".nav-links a"
+    );
+
+
+  window.addEventListener(
+    "scroll",
+    function () {
+
+      let current = "";
+
+      sections.forEach(
+        function (section) {
+
+          const sectionTop =
+            section.offsetTop - 180;
+
+          if (
+            window.scrollY >=
+            sectionTop
+          ) {
+
+            current =
+              section.getAttribute(
+                "id"
+              );
+
+          }
+
         }
+      );
 
-        // listen for scroll
-        window.addEventListener("scroll", animateCircles);
 
-        // also check on page load in case section is already visible
-        animateCircles();
-      });
-    </script>
+      navigationItems.forEach(
+        function (item) {
 
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
+          item.classList.remove(
+            "active"
+          );
 
-      /* SECTION FADE IN */
-      gsap.utils.toArray("section").forEach((section) => {
-        gsap.from(section, {
-          opacity: 0,
-          y: 2,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none forwards",
-          },
-        });
-      });
+          if (
+            item.getAttribute(
+              "href"
+            ) === "#" + current
+          ) {
 
-      /* CARD ANIMATION */
+            item.classList.add(
+              "active"
+            );
 
-      let scrollInterval = setInterval(() => {
-        window.scrollBy(0, 2);
-      }, 16); // ~60fps
+          }
 
-      $(document).on("click", function () {
-        clearInterval(scrollInterval);
-      });
-    </script>
-    <script></script>
-  </body>
+        }
+      );
+
+    }
+  );
+
+</script>
+
+</body>
 </html>
+
