@@ -72,12 +72,12 @@
         --radius: 20px;
 
         --shadow: 0 20px 60px rgba(7, 17, 13, 0.07);
-
         --shadow-small: 0 8px 30px rgba(7, 17, 13, 0.06);
 
         --font-body: "DM Sans", sans-serif;
         --font-heading: "Manrope", sans-serif;
 
+        /* Preview */
         --preview-bg: #f4f7f5;
         --preview-surface: #ffffff;
         --preview-soft: #f8faf9;
@@ -85,12 +85,12 @@
         --preview-text-soft: #52625a;
         --preview-muted: #7b8982;
         --preview-border: #e4ebe7;
+
         --preview-primary: #19b86b;
         --preview-primary-dark: #07864b;
         --preview-primary-soft: #e8f8ef;
 
         --preview-shadow-sm: 0 8px 25px rgba(16, 32, 25, 0.06);
-
         --preview-shadow-lg: 0 25px 70px rgba(16, 32, 25, 0.12);
 
         --preview-radius-lg: 24px;
@@ -281,6 +281,7 @@
 
       .nav-contact {
         display: inline-flex !important;
+
         align-items: center;
         justify-content: center;
 
@@ -475,6 +476,7 @@
         border-radius: 10px;
 
         font-size: 14px;
+
         font-weight: 800;
 
         transition:
@@ -569,6 +571,7 @@
         background: rgba(255, 255, 255, 0.055);
 
         backdrop-filter: blur(20px);
+
         -webkit-backdrop-filter: blur(20px);
 
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
@@ -578,6 +581,7 @@
         display: flex;
 
         align-items: center;
+
         justify-content: space-between;
 
         gap: 15px;
@@ -588,6 +592,7 @@
         height: 75px;
 
         display: grid;
+
         place-items: center;
 
         border: 3px solid rgba(184, 223, 85, 0.35);
@@ -932,6 +937,7 @@
         height: 29px;
 
         display: grid;
+
         place-items: center;
 
         flex: 0 0 auto;
@@ -991,6 +997,7 @@
         height: 35px;
 
         display: grid;
+
         place-items: center;
 
         border-radius: 10px;
@@ -1338,6 +1345,7 @@
         height: 50px;
 
         display: grid;
+
         place-items: center;
 
         margin-top: 12px;
@@ -1797,6 +1805,7 @@
         height: 37px;
 
         display: grid;
+
         place-items: center;
 
         border-radius: 10px;
@@ -1879,6 +1888,7 @@
         height: 50px;
 
         display: grid;
+
         place-items: center;
 
         flex: 0 0 auto;
@@ -2095,6 +2105,7 @@
         height: 30px;
 
         display: grid;
+
         place-items: center;
 
         border: 1px solid var(--border);
@@ -2155,6 +2166,7 @@
         height: 42px;
 
         display: grid;
+
         place-items: center;
 
         border: 1px solid var(--border);
@@ -2201,6 +2213,790 @@
       }
 
       /* =========================================================
+   WORK PREVIEW
+========================================================= */
+
+      #preview {
+        position: relative;
+
+        overflow: hidden;
+
+        /*
+    Reduced from 110px.
+    Keeps the section more compact.
+  */
+        padding: 90px 0;
+
+        background:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(25, 184, 107, 0.1),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(66, 133, 244, 0.08),
+            transparent 25%
+          ),
+          var(--preview-bg);
+      }
+
+      /* =========================================================
+   PREVIEW CONTAINER
+========================================================= */
+
+      #preview .preview-container {
+        width: min(1380px, calc(100% - 48px));
+
+        margin: 0 auto;
+      }
+
+      /* =========================================================
+   PREVIEW HEADER
+========================================================= */
+
+      #preview .preview-header {
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: space-between;
+
+        gap: 40px;
+
+        /*
+    Reduced from 55px.
+  */
+        margin-bottom: 40px;
+      }
+
+      #preview .preview-eyebrow {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 8px 14px;
+
+        margin-bottom: 15px;
+
+        border: 1px solid rgba(25, 184, 107, 0.16);
+
+        border-radius: 999px;
+
+        background: var(--preview-primary-soft);
+
+        color: var(--preview-primary-dark);
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
+      }
+
+      #preview .preview-eyebrow i {
+        font-size: 14px;
+      }
+
+      #preview .preview-title {
+        max-width: 800px;
+
+        margin: 0 0 15px;
+
+        color: var(--preview-text);
+
+        font-size: clamp(38px, 5vw, 68px);
+
+        line-height: 1.02;
+
+        letter-spacing: -0.045em;
+
+        font-weight: 900;
+      }
+
+      #preview .preview-title span {
+        color: var(--preview-primary);
+      }
+
+      #preview .preview-description {
+        max-width: 760px;
+
+        margin: 0;
+
+        color: var(--preview-text-soft);
+
+        font-size: 16px;
+
+        line-height: 1.7;
+      }
+
+      /* =========================================================
+   PROJECT COUNT
+========================================================= */
+
+      #preview .project-count {
+        flex: 0 0 auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 16px 20px;
+
+        border: 1px solid var(--preview-border);
+
+        border-radius: var(--preview-radius-md);
+
+        background: rgba(255, 255, 255, 0.88);
+
+        box-shadow: var(--preview-shadow-sm);
+
+        backdrop-filter: blur(12px);
+      }
+
+      #preview .project-count-icon {
+        display: grid;
+
+        place-items: center;
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 14px;
+
+        background: var(--preview-primary-soft);
+
+        color: var(--preview-primary);
+
+        font-size: 20px;
+      }
+
+      #preview .project-count strong {
+        display: block;
+
+        margin-bottom: 4px;
+
+        color: var(--preview-text);
+
+        font-size: 21px;
+
+        line-height: 1;
+
+        font-weight: 900;
+      }
+
+      #preview .project-count small {
+        color: var(--preview-muted);
+
+        font-size: 11px;
+
+        font-weight: 600;
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT GRID
+========================================================= */
+
+      #preview .projects-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 24px;
+
+        /*
+    Important:
+    Prevent grid stretching from producing
+    artificial equal-height cards.
+  */
+        align-items: start;
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT CARD
+========================================================= */
+
+      #preview .project-card {
+        position: relative;
+
+        display: flex;
+
+        flex-direction: column;
+
+        min-width: 0;
+
+        /*
+    Requested minimum height.
+  */
+        min-height: 350px;
+
+        /*
+    Do not force equal height.
+  */
+        height: auto;
+
+        overflow: hidden;
+
+        border: 1px solid var(--preview-border);
+
+        border-radius: var(--preview-radius-lg);
+
+        background: var(--preview-surface);
+
+        box-shadow: var(--preview-shadow-sm);
+
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      #preview .project-card:hover {
+        transform: translateY(-7px);
+
+        border-color: rgba(25, 184, 107, 0.3);
+
+        box-shadow: var(--preview-shadow-lg);
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT MEDIA
+========================================================= */
+
+      #preview .project-media {
+        position: relative;
+
+        width: 100%;
+
+        /*
+    Removed aspect-ratio: 16/9.
+    Fixed height prevents unnecessarily tall cards.
+  */
+        height: 185px;
+
+        min-height: 185px;
+
+        overflow: hidden;
+
+        background: #07110d;
+      }
+
+      #preview .project-media iframe,
+      #preview .project-media video,
+      #preview .project-media img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        border: 0;
+
+        object-fit: cover;
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT NUMBER
+========================================================= */
+
+      #preview .project-number {
+        position: absolute;
+
+        top: 13px;
+        left: 13px;
+
+        z-index: 2;
+
+        padding: 6px 10px;
+
+        border: 1px solid rgba(255, 255, 255, 0.22);
+
+        border-radius: 999px;
+
+        background: rgba(0, 0, 0, 0.62);
+
+        color: #ffffff;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.08em;
+
+        backdrop-filter: blur(12px);
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT BODY
+========================================================= */
+
+      #preview .project-body {
+        display: flex;
+
+        flex-direction: column;
+
+        /*
+    Removed flex: 1.
+    This prevents the body from stretching
+    into unnecessary empty space.
+  */
+        flex: none;
+
+        min-height: 165px;
+
+        margin: 0;
+
+        padding: 14px 16px 16px;
+
+        gap: 0;
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT TOP
+========================================================= */
+
+      #preview .project-top {
+        display: flex;
+
+        align-items: flex-start;
+
+        justify-content: space-between;
+
+        gap: 12px;
+
+        margin: 0;
+
+        padding: 0;
+      }
+
+      /* =========================================================
+   PREVIEW CATEGORY
+========================================================= */
+
+      #preview .project-category {
+        display: inline-flex;
+
+        align-items: center;
+
+        width: fit-content;
+
+        padding: 6px 10px;
+
+        margin: 0;
+
+        border-radius: 999px;
+
+        background: var(--preview-primary-soft);
+
+        color: var(--preview-primary-dark);
+
+        font-size: 9px;
+
+        line-height: 1.2;
+
+        font-weight: 800;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
+      }
+
+      /* =========================================================
+   PREVIEW TITLE
+========================================================= */
+
+      #preview .project-title {
+        margin: 9px 0 0;
+
+        color: var(--preview-text);
+
+        font-size: 19px;
+
+        line-height: 1.2;
+
+        letter-spacing: -0.025em;
+
+        font-weight: 850;
+      }
+
+      /* =========================================================
+   PREVIEW TYPE
+========================================================= */
+
+      #preview .project-type {
+        flex: 0 0 auto;
+
+        padding: 6px 10px;
+
+        border-radius: 999px;
+
+        background: #f2f5f3;
+
+        color: var(--preview-text-soft);
+
+        font-size: 10px;
+
+        line-height: 1.2;
+
+        font-weight: 800;
+
+        white-space: nowrap;
+      }
+
+      /* =========================================================
+   PREVIEW DESCRIPTION
+========================================================= */
+
+      #preview .project-description {
+        margin: 7px 0 0;
+
+        color: var(--preview-text-soft);
+
+        font-size: 11px;
+
+        line-height: 1.5;
+      }
+
+      /* =========================================================
+   PREVIEW TECH STACK
+========================================================= */
+
+      #preview .tech-stack {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+
+        margin: 10px 0 0;
+
+        padding: 0;
+      }
+
+      #preview .tech {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 5px 8px;
+
+        border: 1px solid var(--preview-border);
+
+        border-radius: 999px;
+
+        background: #ffffff;
+
+        color: #47564f;
+
+        font-size: 9px;
+
+        line-height: 1.2;
+
+        font-weight: 700;
+
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      #preview .tech:hover {
+        transform: translateY(-1px);
+
+        border-color: rgba(25, 184, 107, 0.35);
+      }
+
+      #preview .tech-dot {
+        width: 5px;
+        height: 5px;
+
+        flex: 0 0 auto;
+
+        border-radius: 50%;
+
+        background: var(--preview-primary);
+      }
+
+      /* =========================================================
+   PREVIEW HIGHLIGHTS
+========================================================= */
+
+      #preview .highlights {
+        /*
+    THIS IS THE MAIN GAP FIX.
+
+    Old:
+      margin-top: auto;
+
+    New:
+      normal spacing.
+
+    This prevents the highlights block from
+    being pushed to the bottom of a stretched card.
+  */
+        margin: 12px 0 0;
+
+        padding: 12px;
+
+        border: 1px solid #e9eeeb;
+
+        border-radius: 13px;
+
+        background: var(--preview-soft);
+      }
+
+      #preview .highlight-header {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        margin: 0 0 9px;
+
+        padding: 0;
+      }
+
+      #preview .highlight-icon {
+        display: grid;
+
+        place-items: center;
+
+        width: 28px;
+        height: 28px;
+
+        flex: 0 0 auto;
+
+        border-radius: 8px;
+
+        background: var(--preview-text);
+
+        color: #ffffff;
+
+        font-size: 12px;
+      }
+
+      #preview .highlight-header strong {
+        color: var(--preview-text);
+
+        font-size: 11px;
+
+        line-height: 1.2;
+
+        font-weight: 800;
+      }
+
+      #preview .highlight-list {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        margin: 0;
+
+        padding: 0;
+
+        list-style: none;
+      }
+
+      #preview .highlight-list li {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 7px;
+
+        margin: 0;
+
+        padding: 0;
+
+        color: var(--preview-text-soft);
+
+        font-size: 10px;
+
+        line-height: 1.4;
+      }
+
+      #preview .highlight-list i {
+        flex: 0 0 auto;
+
+        margin-top: 2px;
+
+        color: var(--preview-primary);
+
+        font-size: 11px;
+      }
+
+      /* =========================================================
+   PREVIEW PROJECT ACCENTS
+========================================================= */
+
+      #preview .project-card:nth-child(2) .project-category {
+        background: #eef1f5;
+
+        color: #3d4b59;
+      }
+
+      #preview .project-card:nth-child(3) .project-category {
+        background: #edf5ff;
+
+        color: #3977c9;
+      }
+
+      #preview .project-card:nth-child(4) .project-category {
+        background: #f1edff;
+
+        color: #735bd0;
+      }
+
+      #preview .project-card:nth-child(5) .project-category {
+        background: #fff4e7;
+
+        color: #d47a21;
+      }
+
+      #preview .project-card:nth-child(6) .project-category {
+        background: #fff0f2;
+
+        color: #cf4757;
+      }
+
+      /* =========================================================
+   PREVIEW CTA
+========================================================= */
+
+      #preview .preview-cta {
+        position: relative;
+
+        overflow: hidden;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 30px;
+
+        margin-top: 55px;
+
+        padding: 38px 42px;
+
+        border-radius: 25px;
+
+        background:
+          radial-gradient(
+            circle at 85% 50%,
+            rgba(25, 184, 107, 0.28),
+            transparent 35%
+          ),
+          #0a1711;
+
+        box-shadow: var(--preview-shadow-lg);
+      }
+
+      #preview .preview-cta-content {
+        position: relative;
+
+        z-index: 1;
+      }
+
+      #preview .cta-badge {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 7px 12px;
+
+        margin-bottom: 12px;
+
+        border-radius: 999px;
+
+        background: rgba(25, 184, 107, 0.15);
+
+        color: #65e5a5;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
+      }
+
+      #preview .preview-cta h3 {
+        margin: 0 0 7px;
+
+        color: #ffffff;
+
+        font-size: clamp(24px, 3vw, 36px);
+
+        line-height: 1.15;
+
+        letter-spacing: -0.025em;
+      }
+
+      #preview .preview-cta p {
+        max-width: 650px;
+
+        margin: 0;
+
+        color: #9aa9a1;
+
+        font-size: 13px;
+
+        line-height: 1.65;
+      }
+
+      #preview .cta-button {
+        position: relative;
+
+        z-index: 1;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 13px 20px;
+
+        border-radius: 999px;
+
+        background: var(--preview-primary);
+
+        color: #06130c;
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        text-decoration: none;
+
+        white-space: nowrap;
+
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+
+      #preview .cta-button:hover {
+        transform: translateX(3px);
+
+        background: #35d984;
+      }
+
+      /* =========================================================
    LARGE TABLET
 ========================================================= */
 
@@ -2219,6 +3015,24 @@
 
         .project-top {
           grid-template-columns: 160px 1fr;
+        }
+
+        /* Preview */
+
+        #preview .projects-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        #preview .preview-header {
+          align-items: flex-start;
+
+          flex-direction: column;
+
+          gap: 25px;
+        }
+
+        #preview .project-card {
+          min-height: 350px;
         }
       }
 
@@ -2306,6 +3120,7 @@
           background: rgba(8, 19, 14, 0.97);
 
           backdrop-filter: blur(20px);
+
           -webkit-backdrop-filter: blur(20px);
         }
 
@@ -2367,6 +3182,40 @@
 
         .contact-grid {
           grid-template-columns: 1fr;
+        }
+
+        /* Preview */
+
+        #preview .projects-grid {
+          grid-template-columns: 1fr;
+
+          gap: 20px;
+        }
+
+        #preview .project-card {
+          min-height: 350px;
+        }
+
+        #preview .project-media {
+          height: 190px;
+
+          min-height: 190px;
+        }
+
+        #preview .preview-cta {
+          align-items: flex-start;
+
+          flex-direction: column;
+
+          padding: 30px 24px;
+
+          margin-top: 40px;
+        }
+
+        #preview .cta-button {
+          width: 100%;
+
+          justify-content: center;
         }
       }
 
@@ -2727,6 +3576,128 @@
         .footer-text {
           font-size: 10px;
         }
+
+        /* =========================================================
+     PREVIEW MOBILE
+  ========================================================= */
+
+        #preview {
+          padding: 65px 0;
+        }
+
+        #preview .preview-container {
+          width: calc(100% - 28px);
+        }
+
+        #preview .preview-header {
+          gap: 18px;
+
+          margin-bottom: 28px;
+        }
+
+        #preview .preview-eyebrow {
+          padding: 7px 11px;
+
+          font-size: 10px;
+        }
+
+        #preview .preview-title {
+          font-size: 38px;
+
+          letter-spacing: -0.04em;
+        }
+
+        #preview .preview-description {
+          font-size: 14px;
+
+          line-height: 1.65;
+        }
+
+        #preview .project-count {
+          width: 100%;
+
+          padding: 13px 15px;
+        }
+
+        #preview .project-count-icon {
+          width: 42px;
+          height: 42px;
+
+          font-size: 18px;
+        }
+
+        #preview .project-count strong {
+          font-size: 19px;
+        }
+
+        #preview .project-card {
+          /*
+      Minimum stays 350px.
+    */
+          min-height: 350px;
+
+          border-radius: 20px;
+        }
+
+        #preview .project-media {
+          height: 180px;
+
+          min-height: 180px;
+        }
+
+        #preview .project-body {
+          padding: 14px 15px 16px;
+        }
+
+        #preview .project-title {
+          font-size: 18px;
+        }
+
+        #preview .project-description {
+          font-size: 11px;
+
+          line-height: 1.5;
+        }
+
+        #preview .tech-stack {
+          gap: 4px;
+
+          margin-top: 9px;
+        }
+
+        #preview .tech {
+          padding: 5px 7px;
+
+          font-size: 8.5px;
+        }
+
+        #preview .highlights {
+          padding: 11px;
+
+          margin-top: 11px;
+        }
+
+        #preview .highlight-list {
+          gap: 5px;
+        }
+
+        #preview .highlight-list li {
+          font-size: 9.5px;
+        }
+
+        #preview .preview-cta {
+          padding: 27px 20px;
+
+          margin-top: 35px;
+        }
+
+        #preview .preview-cta h3 {
+          font-size: 26px;
+        }
+
+        #preview .preview-cta p {
+          font-size: 12px;
+        }
       }
 
       /* =========================================================
@@ -2779,6 +3750,38 @@
         .section-title {
           font-size: 27px;
         }
+
+        /* Preview */
+
+        #preview .preview-title {
+          font-size: 34px;
+        }
+
+        #preview .project-card {
+          min-height: 350px;
+        }
+
+        #preview .project-media {
+          height: 170px;
+
+          min-height: 170px;
+        }
+
+        #preview .project-body {
+          padding: 13px 14px 15px;
+        }
+
+        #preview .project-title {
+          font-size: 17px;
+        }
+
+        #preview .project-description {
+          font-size: 10.5px;
+        }
+
+        #preview .highlight-list li {
+          font-size: 9px;
+        }
       }
 
       /* =========================================================
@@ -2804,8 +3807,11 @@
         *::before,
         *::after {
           animation-duration: 0.01ms !important;
+
           animation-iteration-count: 1 !important;
+
           transition-duration: 0.01ms !important;
+
           scroll-behavior: auto !important;
         }
 
@@ -2875,656 +3881,37 @@
 
           transform: none;
         }
-      }
-      /* =========================================================
-   WORK PREVIEW
-========================================================= */
 
-      /* =========================================================
-   SECTION
-========================================================= */
+        /* Preview print */
 
-      #preview {
-        position: relative;
-        overflow: hidden;
-        padding: 110px 0;
-        background:
-          radial-gradient(
-            circle at 10% 10%,
-            rgba(25, 184, 107, 0.1),
-            transparent 28%
-          ),
-          radial-gradient(
-            circle at 90% 20%,
-            rgba(66, 133, 244, 0.08),
-            transparent 25%
-          ),
-          var(--preview-bg);
-      }
-
-      #preview .preview-container {
-        width: min(1380px, calc(100% - 48px));
-        margin: 0 auto;
-      }
-
-      /* =========================================================
-   HEADER
-========================================================= */
-
-      #preview .preview-header {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 40px;
-        margin-bottom: 55px;
-      }
-
-      #preview .preview-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-
-        padding: 9px 15px;
-        margin-bottom: 18px;
-
-        border: 1px solid rgba(25, 184, 107, 0.16);
-        border-radius: 999px;
-
-        background: var(--preview-primary-soft);
-        color: var(--preview-primary-dark);
-
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      #preview .preview-eyebrow i {
-        font-size: 15px;
-      }
-
-      #preview .preview-title {
-        max-width: 800px;
-
-        margin: 0 0 18px;
-
-        color: var(--preview-text);
-
-        font-size: clamp(38px, 5vw, 68px);
-        line-height: 1.02;
-        letter-spacing: -0.045em;
-
-        font-weight: 900;
-      }
-
-      #preview .preview-title span {
-        color: var(--preview-primary);
-      }
-
-      #preview .preview-description {
-        max-width: 760px;
-
-        margin: 0;
-
-        color: var(--preview-text-soft);
-
-        font-size: 17px;
-        line-height: 1.8;
-      }
-
-      #preview .project-count {
-        flex: 0 0 auto;
-
-        display: flex;
-        align-items: center;
-        gap: 16px;
-
-        padding: 18px 22px;
-
-        border: 1px solid var(--preview-border);
-        border-radius: var(--preview-radius-md);
-
-        background: rgba(255, 255, 255, 0.88);
-
-        box-shadow: var(--preview-shadow-sm);
-
-        backdrop-filter: blur(12px);
-      }
-
-      #preview .project-count-icon {
-        display: grid;
-        place-items: center;
-
-        width: 52px;
-        height: 52px;
-
-        border-radius: 15px;
-
-        background: var(--preview-primary-soft);
-        color: var(--preview-primary);
-
-        font-size: 22px;
-      }
-
-      #preview .project-count strong {
-        display: block;
-
-        margin-bottom: 5px;
-
-        color: var(--preview-text);
-
-        font-size: 22px;
-        line-height: 1;
-      }
-
-      #preview .project-count small {
-        color: var(--preview-muted);
-
-        font-size: 12px;
-        font-weight: 600;
-      }
-
-      /* =========================================================
-   PROJECT GRID
-========================================================= */
-
-      #preview .projects-grid {
-        display: grid;
-
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-
-        gap: 28px;
-      }
-
-      /* =========================================================
-   PROJECT CARD
-========================================================= */
-
-      #preview .project-card {
-        position: relative;
-
-        display: flex;
-        flex-direction: column;
-
-        min-width: 0;
-        overflow: hidden;
-
-        border: 1px solid var(--preview-border);
-        border-radius: var(--preview-radius-lg);
-
-        background: var(--preview-surface);
-
-        box-shadow: var(--preview-shadow-sm);
-
-        transition:
-          transform 0.35s ease,
-          box-shadow 0.35s ease,
-          border-color 0.35s ease;
-      }
-
-      #preview .project-card:hover {
-        transform: translateY(-9px);
-
-        border-color: rgba(25, 184, 107, 0.3);
-
-        box-shadow: var(--preview-shadow-lg);
-      }
-
-      /* =========================================================
-   PROJECT MEDIA
-========================================================= */
-
-      #preview .project-media {
-        position: relative;
-
-        aspect-ratio: 16/9;
-
-        overflow: hidden;
-
-        background: #07110d;
-      }
-
-      #preview .project-media iframe,
-      #preview .project-media video {
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        border: 0;
-
-        object-fit: cover;
-      }
-
-      #preview .project-number {
-        position: absolute;
-
-        top: 15px;
-        left: 15px;
-
-        z-index: 2;
-
-        padding: 7px 11px;
-
-        border: 1px solid rgba(255, 255, 255, 0.22);
-
-        border-radius: 999px;
-
-        background: rgba(0, 0, 0, 0.62);
-
-        color: #fff;
-
-        font-size: 11px;
-        font-weight: 800;
-
-        letter-spacing: 0.08em;
-
-        backdrop-filter: blur(12px);
-      }
-
-      /* =========================================================
-   PROJECT BODY
-========================================================= */
-
-      #preview .project-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-
-        padding: 12px;
-      }
-
-      #preview .project-top {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 15px;
-        
-      }
-
-      #preview .project-category {
-        display: inline-flex;
-
-        width: fit-content;
-
-        padding: 7px 11px;
-        
-
-        border-radius: 999px;
-
-        background: var(--preview-primary-soft);
-        color: var(--preview-primary-dark);
-
-        font-size: 10px;
-        font-weight: 800;
-
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      #preview .project-title {
-        margin: 0;
-
-        color: var(--preview-text);
-
-        font-size: 22px;
-        line-height: 1.25;
-
-        letter-spacing: -0.025em;
-
-        font-weight: 850;
-      }
-
-      #preview .project-type {
-        flex: 0 0 auto;
-
-        padding: 7px 12px;
-
-        border-radius: 999px;
-
-        background: #f2f5f3;
-        color: var(--preview-text-soft);
-
-        font-size: 11px;
-        font-weight: 800;
-
-        white-space: nowrap;
-      }
-
-      /* =========================================================
-   TECH STACK
-========================================================= */
-
-      #preview .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-
-        gap: 8px;
-
-       
-      }
-
-      #preview .tech {
-        display: inline-flex;
-        align-items: center;
-
-        gap: 6px;
-
-        padding: 7px 11px;
-
-        border: 1px solid var(--preview-border);
-
-        border-radius: 999px;
-
-        background: #fff;
-
-        color: #47564f;
-
-        font-size: 11px;
-        font-weight: 700;
-
-        transition:
-          border-color 0.25s ease,
-          transform 0.25s ease;
-      }
-
-      #preview .tech:hover {
-        transform: translateY(-2px);
-
-        border-color: rgba(25, 184, 107, 0.35);
-      }
-
-      #preview .tech-dot {
-        width: 6px;
-        height: 6px;
-
-        border-radius: 50%;
-
-        background: var(--preview-primary);
-      }
-
-      /* =========================================================
-   HIGHLIGHTS
-========================================================= */
-
-      #preview .highlights {
-        margin-top: auto;
-
-        padding: 18px;
-
-        border: 1px solid #e9eeeb;
-
-        border-radius: 18px;
-
-        background: var(--preview-soft);
-      }
-
-      #preview .highlight-header {
-        display: flex;
-        align-items: center;
-
-        gap: 10px;
-
-        margin-bottom: 15px;
-      }
-
-      #preview .highlight-icon {
-        display: grid;
-        place-items: center;
-
-        width: 34px;
-        height: 34px;
-
-        border-radius: 10px;
-
-        background: var(--preview-text);
-        color: #fff;
-
-        font-size: 14px;
-      }
-
-      #preview .highlight-header strong {
-        color: var(--preview-text);
-
-        font-size: 13px;
-        font-weight: 800;
-      }
-
-      #preview .highlight-list {
-        display: flex;
-        flex-direction: column;
-
-        gap: 10px;
-
-        margin: 0;
-        padding: 0;
-
-        list-style: none;
-      }
-
-      #preview .highlight-list li {
-        display: flex;
-        align-items: flex-start;
-
-        gap: 9px;
-
-        color: var(--preview-text-soft);
-
-        font-size: 12px;
-        line-height: 1.5;
-      }
-
-      #preview .highlight-list i {
-        flex: 0 0 auto;
-
-        margin-top: 2px;
-
-        color: var(--preview-primary);
-
-        font-size: 13px;
-      }
-
-      /* =========================================================
-   PROJECT ACCENTS
-========================================================= */
-
-      #preview .project-card:nth-child(2) .project-category {
-        background: #eef1f5;
-        color: #3d4b59;
-      }
-
-      #preview .project-card:nth-child(3) .project-category {
-        background: #edf5ff;
-        color: #3977c9;
-      }
-
-      #preview .project-card:nth-child(4) .project-category {
-        background: #f1edff;
-        color: #735bd0;
-      }
-
-      #preview .project-card:nth-child(5) .project-category {
-        background: #fff4e7;
-        color: #d47a21;
-      }
-
-      #preview .project-card:nth-child(6) .project-category {
-        background: #fff0f2;
-        color: #cf4757;
-      }
-
-      /* =========================================================
-   CTA
-========================================================= */
-
-      #preview .preview-cta {
-        position: relative;
-
-        overflow: hidden;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        gap: 30px;
-
-        margin-top: 70px;
-        padding: 42px 48px;
-
-        border-radius: 28px;
-
-        background:
-          radial-gradient(
-            circle at 85% 50%,
-            rgba(25, 184, 107, 0.28),
-            transparent 35%
-          ),
-          #0a1711;
-
-        box-shadow: var(--preview-shadow-lg);
-      }
-
-      #preview .preview-cta-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      #preview .cta-badge {
-        display: inline-flex;
-        align-items: center;
-
-        gap: 7px;
-
-        padding: 8px 13px;
-        margin-bottom: 14px;
-
-        border-radius: 999px;
-
-        background: rgba(25, 184, 107, 0.15);
-
-        color: #65e5a5;
-
-        font-size: 11px;
-        font-weight: 800;
-
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      #preview .preview-cta h3 {
-        margin: 0 0 8px;
-
-        color: #fff;
-
-        font-size: clamp(25px, 3vw, 38px);
-
-        line-height: 1.15;
-
-        letter-spacing: -0.025em;
-      }
-
-      #preview .preview-cta p {
-        max-width: 650px;
-
-        margin: 0;
-
-        color: #9aa9a1;
-
-        font-size: 14px;
-        line-height: 1.7;
-      }
-
-      #preview .cta-button {
-        position: relative;
-        z-index: 1;
-
-        display: inline-flex;
-        align-items: center;
-
-        gap: 10px;
-
-        padding: 14px 22px;
-
-        border-radius: 999px;
-
-        background: var(--preview-primary);
-        color: #06130c;
-
-        font-size: 13px;
-        font-weight: 800;
-
-        text-decoration: none;
-
-        white-space: nowrap;
-
-        transition:
-          transform 0.25s ease,
-          background 0.25s ease;
-      }
-
-      #preview .cta-button:hover {
-        transform: translateX(4px);
-
-        background: #35d984;
-      }
-
-      /* =========================================================
-   RESPONSIVE
-========================================================= */
-
-      @media (max-width: 1100px) {
-        #preview .projects-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        #preview .preview-header {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-      }
-
-      @media (max-width: 700px) {
         #preview {
-          padding: 75px 0;
-        }
-
-        #preview .preview-container {
-          width: min(100% - 28px, 1380px);
-        }
-
-        #preview .preview-title {
-          font-size: 42px;
-        }
-
-        #preview .preview-description {
-          font-size: 15px;
+          padding: 30px 0;
         }
 
         #preview .projects-grid {
-          grid-template-columns: 1fr;
-          gap: 22px;
+          grid-template-columns: repeat(2, 1fr);
+
+          gap: 15px;
         }
 
-        #preview .project-body {
-          padding: 22px;
+        #preview .project-card {
+          min-height: 350px;
+
+          break-inside: avoid;
+
+          box-shadow: none;
         }
 
-        #preview .project-title {
-          font-size: 20px;
+        #preview .project-media {
+          height: 160px;
+
+          min-height: 160px;
         }
 
         #preview .preview-cta {
-          align-items: flex-start;
-          flex-direction: column;
+          margin-top: 30px;
 
-          padding: 32px 25px;
-
-          margin-top: 45px;
-        }
-
-        #preview .cta-button {
-          width: 100%;
-          justify-content: center;
+          padding: 25px;
         }
       }
     </style>
@@ -4323,7 +4710,7 @@
                   </li>
 
                   <li>
-                    Developed barcode scanning functionality using device camera
+                    Developed <strong>barcode scanning functionality</strong> using device camera
                     capabilities.
                   </li>
 
@@ -4333,7 +4720,7 @@
                     for location-based functionality.
                   </li>
 
-                  <li>Integrated third-party Flutter packages and SDKs.</li>
+                  <li>Integrated <strong>third-party</strong> Flutter packages and SDKs.</li>
 
                   <li>
                     Converted
@@ -5907,7 +6294,7 @@
 
                   <iframe
                     src="https://www.youtube.com/embed/KyMtUvTrKJc?si=XoFWlZfXFw_IvSCB"
-                    title="Turn By Turn Navigation"
+                    title="Integrated Real-Time 3D Turn-by-Turn Navigation using Google Maps SDK"
                     allowfullscreen
                   >
                   </iframe>
@@ -5918,7 +6305,7 @@
                     <div>
                       <div class="project-category">Navigation</div>
 
-                      <h3 class="project-title">Turn By Turn Navigation</h3>
+                      <h3 class="project-title">Integrated Real-Time 3D Turn-by-Turn Navigation using Google Maps SDK</h3>
                     </div>
 
                     <span class="project-type">Maps</span>
@@ -6204,28 +6591,6 @@
                   </div>
                 </div>
               </article>
-            </div>
-
-            <!-- CTA -->
-            <div class="preview-cta">
-              <div class="preview-cta-content">
-                <div class="cta-badge">
-                  <i class="bi bi-rocket-takeoff"></i>
-                  Let's Build
-                </div>
-
-                <h3>Have a challenging product idea?</h3>
-
-                <p>
-                  Let's turn complex requirements into scalable,
-                  production-ready Flutter and backend solutions.
-                </p>
-              </div>
-
-              <a href="#contact" class="cta-button">
-                Start a Conversation
-                <i class="bi bi-arrow-right"></i>
-              </a>
             </div>
           </div>
         </section>
