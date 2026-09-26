@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Sunil Shedge | Senior Flutter Developer</title>
-
-  <meta
-    name="description"
-    content="Sunil Shedge - Senior Flutter Developer with 4+ years of experience building production-ready Android, iOS and Web applications, backend systems, APIs, cloud integrations, payment systems and CI/CD pipelines."
-  />
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Sunil Shedge | Senior Flutter Developer
+  </title>
+  <meta content="Sunil Shedge - Senior Flutter Developer with 4+ years of experience building production-ready Android, iOS and Web applications, backend systems, APIs, cloud integrations, payment systems and CI/CD pipelines." name="description"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
   <style>
-    :root {
+   :root {
       --indigo: #4338ca;
       --indigo-dark: #312e81;
       --indigo-deep: #1e1b4b;
@@ -961,1997 +945,1535 @@
         width: 100%;
       }
     }
+
+    /* =========================================================
+       RESUME ORDER / PRINT STABILITY
+    ========================================================== */
+
+    .resume-card[id="experience"],
+    .resume-card[id="projects"],
+    .resume-card[id="skills"] {
+      break-inside: auto;
+    }
+
+    @media print {
+      .resume-header,
+      .resume-card {
+        page-break-inside: avoid;
+      }
+
+      #experience,
+      #projects,
+      #skills {
+        page-break-inside: auto;
+      }
+
+      .experience-item,
+      .project-card,
+      .skill-group {
+        page-break-inside: avoid;
+      }
+    }
   </style>
-</head>
-
-<body>
-
-<div class="resume-wrapper">
-
-  <!-- =========================================================
-       HEADER
-  ========================================================== -->
-
-  <header class="resume-header">
-
+ </head>
+ <body>
+  <div class="resume-wrapper">
+   <header class="resume-header">
     <div class="header-content">
-
-      <h1 class="name">
-        Sunil Shedge
-      </h1>
-
-      <div class="designation">
-        Senior Flutter Developer
-      </div>
-
-      <p class="header-description">
-        Senior Flutter Developer with 4+ years of experience building
+     <h1 class="name">
+      Sunil Shedge
+     </h1>
+     <div class="designation">
+      Senior Flutter Developer
+     </div>
+     <p class="header-description">
+      Senior Flutter Developer with 4+ years of experience building
         production-ready Android, iOS and Web applications, backend systems,
         REST APIs, cloud integrations, payment systems, authentication,
         security and CI/CD pipelines.
-      </p>
-
-      <div class="contact-grid">
-
-        <a
-          class="contact-item"
-          href="mailto:swarajya888@gmail.com"
-        >
-          <i class="bi bi-envelope"></i>
-          swarajya888@gmail.com
-        </a>
-
-        <a
-          class="contact-item"
-          href="tel:+918668796251"
-        >
-          <i class="bi bi-phone"></i>
-          +91 8668796251
-        </a>
-
-        <span class="contact-item">
-          <i class="bi bi-geo-alt"></i>
-          Pune, Maharashtra, India
-        </span>
-
-        <a
-          class="contact-item"
-          href="https://linkedin.com/in/sunilshedge"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-linkedin"></i>
-          linkedin.com/in/sunilshedge
-        </a>
-
-        <a
-          class="contact-item"
-          href="https://github.com/this-sunil"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-github"></i>
-          github.com/this-sunil
-        </a>
-
-      </div>
-
+     </p>
+     <div class="contact-grid">
+      <a class="contact-item" href="mailto:swarajya888@gmail.com">
+       <i class="bi bi-envelope">
+       </i>
+       swarajya888@gmail.com
+      </a>
+      <a class="contact-item" href="tel:+918668796251">
+       <i class="bi bi-phone">
+       </i>
+       +91 8668796251
+      </a>
+      <span class="contact-item">
+       <i class="bi bi-geo-alt">
+       </i>
+       Pune, Maharashtra, India
+      </span>
+      <a class="contact-item" href="https://linkedin.com/in/sunilshedge" rel="noopener noreferrer" target="_blank">
+       <i class="bi bi-linkedin">
+       </i>
+       linkedin.com/in/sunilshedge
+      </a>
+      <a class="contact-item" href="https://github.com/this-sunil" rel="noopener noreferrer" target="_blank">
+       <i class="bi bi-github">
+       </i>
+       github.com/this-sunil
+      </a>
+     </div>
     </div>
-
-  </header>
-
-
-  <!-- =========================================================
-       1. PROFESSIONAL SUMMARY
-  ========================================================== -->
-
-  <section class="resume-card">
-
+   </header>
+   <section class="resume-card" id="summary">
     <div class="section-heading">
-
-      <div class="section-icon">
-        <i class="bi bi-person-badge"></i>
-      </div>
-
-      <h2 class="section-title">
-        Professional Summary
-      </h2>
-
-      <div class="section-line"></div>
-
+     <div class="section-icon">
+      <i class="bi bi-person-badge">
+      </i>
+     </div>
+     <h2 class="section-title">
+      Professional Summary
+     </h2>
+     <div class="section-line">
+     </div>
     </div>
-
     <p class="summary">
-
-      <strong>
-        Senior Flutter Developer with 4+ years of professional experience
-      </strong>
-      delivering scalable and production-ready applications across
-      <strong>Android, iOS and Flutter Web</strong>. Experienced in designing
+     <strong>
+      Senior Flutter Developer with 4+ years of professional experience
+     </strong>
+     delivering scalable and production-ready applications across
+     <strong>
+      Android, iOS and Flutter Web
+     </strong>
+     . Experienced in designing
       maintainable application architectures using
-      <strong>
-        Clean Architecture, BLoC, MVVM, SOLID, Repository Pattern and
+     <strong>
+      Clean Architecture, BLoC, MVVM, SOLID, Repository Pattern and
         Dependency Injection
-      </strong>.
+     </strong>
+     .
       Strong backend experience with
-      <strong>
-        Node.js, Express.js and PostgreSQL
-      </strong>,
+     <strong>
+      Node.js, Express.js and PostgreSQL
+     </strong>
+     ,
       including REST API development, JWT authentication, RBAC and database
       optimization. Hands-on experience integrating
-      <strong>
-        Firebase, Razorpay, Stripe, UPI, Paytm, Google Maps, Google ML Kit,
+     <strong>
+      Firebase, Razorpay, Stripe, UPI, Paytm, Google Maps, Google ML Kit,
         WebView, biometric authentication and push notifications
-      </strong>.
+     </strong>
+     .
       Experienced in
-      <strong>
-        iOS development, Xcode, CocoaPods, Swift Package Manager,
+     <strong>
+      iOS development, Xcode, CocoaPods, Swift Package Manager,
         signing, provisioning, App Store releases and native platform
         integration
-      </strong>.
+     </strong>
+     .
       Strong experience with
-      <strong>
-        unit testing, widget testing, integration testing,
+     <strong>
+      unit testing, widget testing, integration testing,
         production debugging, crash analysis, performance optimization
         and CI/CD
-      </strong>
-      using Codemagic, Fastlane, GitHub Actions and Shorebird.
-
+     </strong>
+     using Codemagic, Fastlane, GitHub Actions and Shorebird.
     </p>
-
-  </section>
-
-
-  <!-- =========================================================
-       2. CORE TECHNICAL SKILLS
-  ========================================================== -->
-
-  <section class="resume-card">
-
+   </section>
+   <section class="resume-card" id="skills">
     <div class="section-heading">
-
-      <div class="section-icon">
-        <i class="bi bi-code-slash"></i>
-      </div>
-
-      <h2 class="section-title">
-        Core Technical Skills
-      </h2>
-
-      <div class="section-line"></div>
-
+     <div class="section-icon">
+      <i class="bi bi-code-slash">
+      </i>
+     </div>
+     <h2 class="section-title">
+      Core Technical Skills
+     </h2>
+     <div class="section-line">
+     </div>
     </div>
-
-
     <div class="row g-3">
-
-
-      <!-- Mobile -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-phone"></i>
-            Mobile &amp; Frontend
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Flutter
-            </span>
-
-            <span class="skill-pill primary">
-              Dart
-            </span>
-
-            <span class="skill-pill primary">
-              Android
-            </span>
-
-            <span class="skill-pill primary">
-              iOS
-            </span>
-
-            <span class="skill-pill primary">
-              Flutter Web
-            </span>
-
-            <span class="skill-pill">
-              Responsive UI
-            </span>
-
-            <span class="skill-pill">
-              WebView
-            </span>
-
-            <span class="skill-pill">
-              JavaScript Bridge
-            </span>
-
-            <span class="skill-pill">
-              Native Platform Integration
-            </span>
-
-          </div>
-
-        </div>
-
+     <!-- Mobile -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-phone">
+        </i>
+        Mobile &amp; Frontend
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Flutter
+        </span>
+        <span class="skill-pill primary">
+         Dart
+        </span>
+        <span class="skill-pill primary">
+         Android
+        </span>
+        <span class="skill-pill primary">
+         iOS
+        </span>
+        <span class="skill-pill primary">
+         Flutter Web
+        </span>
+        <span class="skill-pill">
+         Responsive UI
+        </span>
+        <span class="skill-pill">
+         WebView
+        </span>
+        <span class="skill-pill">
+         JavaScript Bridge
+        </span>
+        <span class="skill-pill">
+         Native Platform Integration
+        </span>
+       </div>
       </div>
-
-
-      <!-- Architecture -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-diagram-3"></i>
-            Architecture &amp; State Management
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Clean Architecture
-            </span>
-
-            <span class="skill-pill primary">
-              BLoC
-            </span>
-
-            <span class="skill-pill primary">
-              MVVM
-            </span>
-
-            <span class="skill-pill">
-              SOLID
-            </span>
-
-            <span class="skill-pill">
-              Repository Pattern
-            </span>
-
-            <span class="skill-pill">
-              Dependency Injection
-            </span>
-
-            <span class="skill-pill">
-              GetX
-            </span>
-
-            <span class="skill-pill">
-              Provider
-            </span>
-
-            <span class="skill-pill">
-              Riverpod
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Architecture -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-diagram-3">
+        </i>
+        Architecture &amp; State Management
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Clean Architecture
+        </span>
+        <span class="skill-pill primary">
+         BLoC
+        </span>
+        <span class="skill-pill primary">
+         MVVM
+        </span>
+        <span class="skill-pill">
+         SOLID
+        </span>
+        <span class="skill-pill">
+         Repository Pattern
+        </span>
+        <span class="skill-pill">
+         Dependency Injection
+        </span>
+        <span class="skill-pill">
+         GetX
+        </span>
+        <span class="skill-pill">
+         Provider
+        </span>
+        <span class="skill-pill">
+         Riverpod
+        </span>
+       </div>
       </div>
-
-
-      <!-- Backend -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-server"></i>
-            Backend &amp; Database
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Node.js
-            </span>
-
-            <span class="skill-pill primary">
-              Express.js
-            </span>
-
-            <span class="skill-pill primary">
-              PostgreSQL
-            </span>
-
-            <span class="skill-pill">
-              REST APIs
-            </span>
-
-            <span class="skill-pill">
-              JWT
-            </span>
-
-            <span class="skill-pill">
-              RBAC
-            </span>
-
-            <span class="skill-pill">
-              SQLite
-            </span>
-
-            <span class="skill-pill">
-              Hive
-            </span>
-
-            <span class="skill-pill">
-              Supabase
-            </span>
-
-            <span class="skill-pill">
-              Database Optimization
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Backend -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-server">
+        </i>
+        Backend &amp; Database
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Node.js
+        </span>
+        <span class="skill-pill primary">
+         Express.js
+        </span>
+        <span class="skill-pill primary">
+         PostgreSQL
+        </span>
+        <span class="skill-pill">
+         REST APIs
+        </span>
+        <span class="skill-pill">
+         JWT
+        </span>
+        <span class="skill-pill">
+         RBAC
+        </span>
+        <span class="skill-pill">
+         SQLite
+        </span>
+        <span class="skill-pill">
+         Hive
+        </span>
+        <span class="skill-pill">
+         Supabase
+        </span>
+        <span class="skill-pill">
+         Database Optimization
+        </span>
+       </div>
       </div>
-
-
-      <!-- Firebase -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-cloud"></i>
-            Cloud &amp; Firebase
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Firebase Authentication
-            </span>
-
-            <span class="skill-pill primary">
-              Cloud Firestore
-            </span>
-
-            <span class="skill-pill">
-              Firebase Cloud Messaging
-            </span>
-
-            <span class="skill-pill">
-              Crashlytics
-            </span>
-
-            <span class="skill-pill">
-              Google Sign-In
-            </span>
-
-            <span class="skill-pill">
-              OneSignal
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Firebase -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-cloud">
+        </i>
+        Cloud &amp; Firebase
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Firebase Authentication
+        </span>
+        <span class="skill-pill primary">
+         Cloud Firestore
+        </span>
+        <span class="skill-pill">
+         Firebase Cloud Messaging
+        </span>
+        <span class="skill-pill">
+         Crashlytics
+        </span>
+        <span class="skill-pill">
+         Google Sign-In
+        </span>
+        <span class="skill-pill">
+         OneSignal
+        </span>
+       </div>
       </div>
-
-
-      <!-- iOS -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-apple"></i>
-            iOS Development
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Xcode
-            </span>
-
-            <span class="skill-pill primary">
-              CocoaPods
-            </span>
-
-            <span class="skill-pill primary">
-              Swift Package Manager
-            </span>
-
-            <span class="skill-pill">
-              iOS Build &amp; Archive
-            </span>
-
-            <span class="skill-pill">
-              App Store Release
-            </span>
-
-            <span class="skill-pill">
-              Provisioning Profiles
-            </span>
-
-            <span class="skill-pill">
-              Certificates &amp; Signing
-            </span>
-
-            <span class="skill-pill">
-              Info.plist
-            </span>
-
-            <span class="skill-pill">
-              Universal Links
-            </span>
-
-            <span class="skill-pill">
-              iOS Native Integration
-            </span>
-
-            <span class="skill-pill">
-              Method Channels
-            </span>
-
-            <span class="skill-pill">
-              iOS Dependency Management
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- iOS -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-apple">
+        </i>
+        iOS Development
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Xcode
+        </span>
+        <span class="skill-pill primary">
+         CocoaPods
+        </span>
+        <span class="skill-pill primary">
+         Swift Package Manager
+        </span>
+        <span class="skill-pill">
+         iOS Build &amp; Archive
+        </span>
+        <span class="skill-pill">
+         App Store Release
+        </span>
+        <span class="skill-pill">
+         Provisioning Profiles
+        </span>
+        <span class="skill-pill">
+         Certificates &amp; Signing
+        </span>
+        <span class="skill-pill">
+         Info.plist
+        </span>
+        <span class="skill-pill">
+         Universal Links
+        </span>
+        <span class="skill-pill">
+         iOS Native Integration
+        </span>
+        <span class="skill-pill">
+         Method Channels
+        </span>
+        <span class="skill-pill">
+         iOS Dependency Management
+        </span>
+       </div>
       </div>
-
-
-      <!-- Security -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-shield-lock"></i>
-            Authentication &amp; Security
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              JWT
-            </span>
-
-            <span class="skill-pill primary">
-              OAuth
-            </span>
-
-            <span class="skill-pill primary">
-              RBAC
-            </span>
-
-            <span class="skill-pill">
-              Biometric Authentication
-            </span>
-
-            <span class="skill-pill">
-              MPIN
-            </span>
-
-            <span class="skill-pill">
-              Secure Storage
-            </span>
-
-            <span class="skill-pill">
-              Screenshot Prevention
-            </span>
-
-            <span class="skill-pill">
-              Screen Recording Prevention
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Security -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-shield-lock">
+        </i>
+        Authentication &amp; Security
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         JWT
+        </span>
+        <span class="skill-pill primary">
+         OAuth
+        </span>
+        <span class="skill-pill primary">
+         RBAC
+        </span>
+        <span class="skill-pill">
+         Biometric Authentication
+        </span>
+        <span class="skill-pill">
+         MPIN
+        </span>
+        <span class="skill-pill">
+         Secure Storage
+        </span>
+        <span class="skill-pill">
+         Screenshot Prevention
+        </span>
+        <span class="skill-pill">
+         Screen Recording Prevention
+        </span>
+       </div>
       </div>
-
-
-      <!-- Payments -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-credit-card"></i>
-            Payments &amp; Fintech
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Razorpay
-            </span>
-
-            <span class="skill-pill primary">
-              Stripe
-            </span>
-
-            <span class="skill-pill primary">
-              Paytm
-            </span>
-
-            <span class="skill-pill primary">
-              UPI
-            </span>
-
-            <span class="skill-pill">
-              Method Channels
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Payments -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-credit-card">
+        </i>
+        Payments &amp; Fintech
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Razorpay
+        </span>
+        <span class="skill-pill primary">
+         Stripe
+        </span>
+        <span class="skill-pill primary">
+         Paytm
+        </span>
+        <span class="skill-pill primary">
+         UPI
+        </span>
+        <span class="skill-pill">
+         Method Channels
+        </span>
+       </div>
       </div>
-
-
-      <!-- APIs -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-puzzle"></i>
-            APIs &amp; Integrations
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Dio
-            </span>
-
-            <span class="skill-pill">
-              REST API
-            </span>
-
-            <span class="skill-pill">
-              Google Maps
-            </span>
-
-            <span class="skill-pill">
-              Google ML Kit
-            </span>
-
-            <span class="skill-pill">
-              Barcode Scanner
-            </span>
-
-            <span class="skill-pill">
-              App Links
-            </span>
-
-            <span class="skill-pill">
-              Universal Links
-            </span>
-
-            <span class="skill-pill">
-              WebView
-            </span>
-
-            <span class="skill-pill">
-              Deep Linking
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- APIs -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-puzzle">
+        </i>
+        APIs &amp; Integrations
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Dio
+        </span>
+        <span class="skill-pill">
+         REST API
+        </span>
+        <span class="skill-pill">
+         Google Maps
+        </span>
+        <span class="skill-pill">
+         Google ML Kit
+        </span>
+        <span class="skill-pill">
+         Barcode Scanner
+        </span>
+        <span class="skill-pill">
+         App Links
+        </span>
+        <span class="skill-pill">
+         Universal Links
+        </span>
+        <span class="skill-pill">
+         WebView
+        </span>
+        <span class="skill-pill">
+         Deep Linking
+        </span>
+       </div>
       </div>
-
-
-      <!-- Testing -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-check2-square"></i>
-            Testing &amp; Quality
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Unit Testing
-            </span>
-
-            <span class="skill-pill primary">
-              Widget Testing
-            </span>
-
-            <span class="skill-pill primary">
-              Integration Testing
-            </span>
-
-            <span class="skill-pill">
-              Testable Architecture
-            </span>
-
-            <span class="skill-pill">
-              API Testing
-            </span>
-
-            <span class="skill-pill">
-              Regression Testing
-            </span>
-
-            <span class="skill-pill">
-              Production Debugging
-            </span>
-
-            <span class="skill-pill">
-              Crash Analysis
-            </span>
-
-            <span class="skill-pill">
-              Error Handling
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Testing -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-check2-square">
+        </i>
+        Testing &amp; Quality
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Unit Testing
+        </span>
+        <span class="skill-pill primary">
+         Widget Testing
+        </span>
+        <span class="skill-pill primary">
+         Integration Testing
+        </span>
+        <span class="skill-pill">
+         Testable Architecture
+        </span>
+        <span class="skill-pill">
+         API Testing
+        </span>
+        <span class="skill-pill">
+         Regression Testing
+        </span>
+        <span class="skill-pill">
+         Production Debugging
+        </span>
+        <span class="skill-pill">
+         Crash Analysis
+        </span>
+        <span class="skill-pill">
+         Error Handling
+        </span>
+       </div>
       </div>
-
-
-      <!-- CI/CD -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-git"></i>
-            CI/CD &amp; Release Engineering
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              GitHub Actions
-            </span>
-
-            <span class="skill-pill primary">
-              Codemagic
-            </span>
-
-            <span class="skill-pill primary">
-              Fastlane
-            </span>
-
-            <span class="skill-pill">
-              Shorebird
-            </span>
-
-            <span class="skill-pill">
-              Sentry
-            </span>
-
-            <span class="skill-pill">
-              Crashlytics
-            </span>
-
-            <span class="skill-pill">
-              App Store Release
-            </span>
-
-            <span class="skill-pill">
-              Play Store Release
-            </span>
-
-            <span class="skill-pill">
-              Docker
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- CI/CD -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-git">
+        </i>
+        CI/CD &amp; Release Engineering
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         GitHub Actions
+        </span>
+        <span class="skill-pill primary">
+         Codemagic
+        </span>
+        <span class="skill-pill primary">
+         Fastlane
+        </span>
+        <span class="skill-pill">
+         Shorebird
+        </span>
+        <span class="skill-pill">
+         Sentry
+        </span>
+        <span class="skill-pill">
+         Crashlytics
+        </span>
+        <span class="skill-pill">
+         App Store Release
+        </span>
+        <span class="skill-pill">
+         Play Store Release
+        </span>
+        <span class="skill-pill">
+         Docker
+        </span>
+       </div>
       </div>
-
-
-      <!-- Tools -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-tools"></i>
-            Development Tools
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill primary">
-              Android Studio
-            </span>
-
-            <span class="skill-pill primary">
-              VS Code
-            </span>
-
-            <span class="skill-pill primary">
-              Xcode
-            </span>
-
-            <span class="skill-pill">
-              Postman
-            </span>
-
-            <span class="skill-pill">
-              Git
-            </span>
-
-            <span class="skill-pill">
-              GitHub
-            </span>
-
-            <span class="skill-pill">
-              GitHub Copilot
-            </span>
-
-            <span class="skill-pill">
-              Cursor
-            </span>
-
-            <span class="skill-pill">
-              ChatGPT
-            </span>
-
-            <span class="skill-pill">
-              Gemini
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Tools -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-tools">
+        </i>
+        Development Tools
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill primary">
+         Android Studio
+        </span>
+        <span class="skill-pill primary">
+         VS Code
+        </span>
+        <span class="skill-pill primary">
+         Xcode
+        </span>
+        <span class="skill-pill">
+         Postman
+        </span>
+        <span class="skill-pill">
+         Git
+        </span>
+        <span class="skill-pill">
+         GitHub
+        </span>
+        <span class="skill-pill">
+         GitHub Copilot
+        </span>
+        <span class="skill-pill">
+         Cursor
+        </span>
+        <span class="skill-pill">
+         ChatGPT
+        </span>
+        <span class="skill-pill">
+         Gemini
+        </span>
+       </div>
       </div>
-
-
-      <!-- Additional -->
-
-      <div class="col-lg-6">
-
-        <div class="skill-group">
-
-          <div class="skill-heading">
-            <i class="bi bi-stars"></i>
-            Additional Technologies
-          </div>
-
-          <div class="skill-list">
-
-            <span class="skill-pill">
-              Google Ads
-            </span>
-
-            <span class="skill-pill">
-              AdMob
-            </span>
-
-            <span class="skill-pill">
-              ML Kit Translation
-            </span>
-
-            <span class="skill-pill">
-              Geofencing
-            </span>
-
-            <span class="skill-pill">
-              Live Tracking
-            </span>
-
-            <span class="skill-pill">
-              Offline Storage
-            </span>
-
-            <span class="skill-pill">
-              Localization
-            </span>
-
-          </div>
-
-        </div>
-
+     </div>
+     <!-- Additional -->
+     <div class="col-lg-6">
+      <div class="skill-group">
+       <div class="skill-heading">
+        <i class="bi bi-stars">
+        </i>
+        Additional Technologies
+       </div>
+       <div class="skill-list">
+        <span class="skill-pill">
+         Google Ads
+        </span>
+        <span class="skill-pill">
+         AdMob
+        </span>
+        <span class="skill-pill">
+         ML Kit Translation
+        </span>
+        <span class="skill-pill">
+         Geofencing
+        </span>
+        <span class="skill-pill">
+         Live Tracking
+        </span>
+        <span class="skill-pill">
+         Offline Storage
+        </span>
+        <span class="skill-pill">
+         Localization
+        </span>
+       </div>
       </div>
-
+     </div>
     </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       3. EDUCATION
-  ========================================================== -->
-
-  <section class="resume-card education-section">
-
+   </section>
+   <section class="resume-card" id="experience">
     <div class="section-heading">
-
-      <div class="section-icon">
-        <i class="bi bi-mortarboard"></i>
-      </div>
-
-      <h2 class="section-title">
-        Education
-      </h2>
-
+     <div class="section-icon">
+      <i class="bi bi-briefcase">
+      </i>
+     </div>
+     <h2 class="section-title">
+      Professional Experience
+     </h2>
+     <div class="section-line">
+     </div>
     </div>
-
-
-    <div class="education-list">
-
-      <!-- M.C.S. -->
-
-      <div class="education-item">
-
-        <div class="education-content">
-
-          <h3 class="degree">
-            Master of Computer Science (M.C.S.)
-          </h3>
-
-          <div class="institution">
-            Sarhad College, Pune
-          </div>
-
-          <div class="education-details">
-            Percentage: 77%
-          </div>
-
-        </div>
-
-        <div class="education-date">
-          2019 – 2021
-        </div>
-
+    <!-- SELF EMPLOYMENT -->
+    <article class="experience-item">
+     <div class="job-header">
+      <div>
+       <h3 class="job-title">
+        Full Stack Developer
+       </h3>
+       <div class="company">
+        Self Employment
+       </div>
       </div>
-
-
-      <!-- B.C.S. -->
-
-      <div class="education-item">
-
-        <div class="education-content">
-
-          <h3 class="degree">
-            Bachelor of Computer Science (B.C.S.)
-          </h3>
-
-          <div class="institution">
-            Vishwakarma College, Pune
-          </div>
-
-        </div>
-
-        <div class="education-date">
-          2015 – 2018
-        </div>
-
+      <div class="date-badge">
+       Apr 2025 &ndash; Present
       </div>
-
-
-      <!-- HSC -->
-
-      <div class="education-item">
-
-        <div class="education-content">
-
-          <h3 class="degree">
-            Higher Secondary Certificate (HSC)
-          </h3>
-
-          <div class="institution">
-            S.M.S. Mohite Patil Jr. College, Rahimatpur
-          </div>
-
-        </div>
-
-        <div class="education-date">
-          2015
-        </div>
-
+     </div>
+     <ul class="experience-list">
+      <li>
+       Develop and maintain production-ready applications using
+       <strong>
+        Flutter, Node.js, Express.js and PostgreSQL
+       </strong>
+       across Android, iOS and web platforms.
+      </li>
+      <li>
+       Design and develop secure backend APIs with
+       <strong>
+        JWT authentication, Role-Based Access Control (RBAC),
+            environment-based configuration and structured API responses.
+       </strong>
+      </li>
+      <li>
+       Build scalable Flutter applications using
+       <strong>
+        Clean Architecture, BLoC, Riverpod, Repository Pattern
+            and Dependency Injection.
+       </strong>
+      </li>
+      <li>
+       Implement authentication, authorization, secure storage,
+          payment workflows and third-party service integrations.
+      </li>
+      <li>
+       Troubleshoot complex
+       <strong>
+        iOS CocoaPods, Xcode, dependency, build, signing,
+            runtime and platform-specific issues.
+       </strong>
+      </li>
+      <li>
+       Work on iOS dependency migration from
+       <strong>
+        CocoaPods to Swift Package Manager (SPM)
+       </strong>
+       where package support is available.
+      </li>
+      <li>
+       Implement
+       <strong>
+        Shorebird over-the-air updates
+       </strong>
+       for faster production fixes and application releases.
+      </li>
+      <li>
+       Optimize
+       <strong>
+        PostgreSQL queries, database operations and API response
+            performance
+       </strong>
+       for production backend systems.
+      </li>
+      <li>
+       Integrate
+       <strong>
+        Razorpay, Stripe and Google AdMob
+       </strong>
+       into production Flutter applications.
+      </li>
+      <li>
+       Debug production issues involving
+       <strong>
+        crashes, ANRs, API failures, dependency conflicts,
+            platform-specific behavior and release builds.
+       </strong>
+      </li>
+      <li>
+       Implement application security, authentication flows,
+          API error handling and production monitoring.
+      </li>
+     </ul>
+    </article>
+    <!-- SUNRA SOFTTECH -->
+    <article class="experience-item">
+     <div class="job-header">
+      <div>
+       <h3 class="job-title">
+        Senior Flutter Developer
+       </h3>
+       <div class="company">
+        Sunra Softtech Pvt. Ltd.
+       </div>
       </div>
-
-
-      <!-- SSC -->
-
-      <div class="education-item">
-
-        <div class="education-content">
-
-          <h3 class="degree">
-            Secondary School Certificate (SSC)
-          </h3>
-
-          <div class="institution">
-            Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
-          </div>
-
-          <div class="education-details">
-            Percentage: 75%
-          </div>
-
-        </div>
-
-        <div class="education-date">
-          2013
-        </div>
-
+      <div class="date-badge">
+       Jul 2022 &ndash; Apr 2025
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       4. SELECTED PROJECTS
-  ========================================================== -->
-
-  <section class="resume-card">
-
-  <div class="section-heading">
-
-    <div class="section-icon">
-      <i class="bi bi-grid-1x2"></i>
-    </div>
-
-    <h2 class="section-title">
+     </div>
+     <ul class="experience-list">
+      <li>
+       Developed and maintained production-ready Flutter applications
+          for
+       <strong>
+        Android, iOS and Flutter Web
+       </strong>
+       using
+          Dart and scalable application architecture.
+      </li>
+      <li>
+       Improved application loading performance by approximately
+       <strong>
+        35%
+       </strong>
+       through lazy loading, asset optimization,
+          widget optimization, efficient rendering and architectural
+          improvements.
+      </li>
+      <li>
+       Implemented scalable application architecture using
+       <strong>
+        Clean Architecture, BLoC, SOLID principles,
+            Repository Pattern and Dependency Injection.
+       </strong>
+      </li>
+      <li>
+       Improved debugging and issue-resolution efficiency by approximately
+       <strong>
+        50%
+       </strong>
+       through structured logging, crash analysis,
+          reusable components and systematic debugging workflows.
+      </li>
+      <li>
+       Built and maintained CI/CD release pipelines using
+       <strong>
+        Codemagic, Fastlane and GitHub Actions
+       </strong>
+       ,
+          reducing release cycles from approximately
+       <strong>
+        5 days to 1 day
+       </strong>
+       .
+      </li>
+      <li>
+       Developed, configured and maintained
+       <strong>
+        iOS applications using Xcode
+       </strong>
+       ,
+          including build configuration, debugging, archive generation
+          and App Store release workflows.
+      </li>
+      <li>
+       Managed iOS dependencies using
+       <strong>
+        CocoaPods
+       </strong>
+       and worked on
+       <strong>
+        Swift Package Manager (SPM)
+       </strong>
+       migration and package compatibility where supported.
+      </li>
+      <li>
+       Handled
+       <strong>
+        iOS provisioning profiles, certificates, signing,
+            bundle configuration and release build configuration
+       </strong>
+       for production applications.
+      </li>
+      <li>
+       Worked with
+       <strong>
+        Info.plist, iOS permissions, URL schemes, application
+            configuration and platform-specific settings
+       </strong>
+       required for Flutter applications.
+      </li>
+      <li>
+       Troubleshot complex
+       <strong>
+        Xcode build failures, CocoaPods dependency conflicts,
+            package compatibility issues, signing problems, runtime
+            crashes and release/archive issues.
+       </strong>
+      </li>
+      <li>
+       Integrated native iOS functionality with Flutter using
+       <strong>
+        Method Channels
+       </strong>
+       and handled platform-specific Android/iOS implementations.
+      </li>
+      <li>
+       Implemented and maintained
+       <strong>
+        iOS Universal Links
+       </strong>
+       along with Android App Links for deep-linking workflows.
+      </li>
+      <li>
+       Supported
+       <strong>
+        iOS push notifications, Firebase integration,
+            APNs-related configuration and production notification
+            troubleshooting.
+       </strong>
+      </li>
+      <li>
+       Prepared and managed
+       <strong>
+        iOS App Store production releases
+       </strong>
+       including archive, validation, signing and release workflows.
+      </li>
+      <li>
+       Improved runtime and rendering performance using
+       <strong>
+        const constructors, RepaintBoundary, lazy loading,
+            asset optimization, null safety and ProGuard configuration.
+       </strong>
+      </li>
+      <li>
+       Implemented application navigation and deep linking using
+       <strong>
+        GoRouter, Android App Links and iOS Universal Links.
+       </strong>
+      </li>
+      <li>
+       Integrated
+       <strong>
+        Firebase Authentication, Cloud Firestore,
+            Firebase Cloud Messaging, Crashlytics,
+            Google Sign-In and Google Maps.
+       </strong>
+      </li>
+      <li>
+       Integrated payment systems including
+       <strong>
+        Razorpay, Stripe, Paytm and UPI
+       </strong>
+       ,
+          including native Android/iOS communication through
+       <strong>
+        Method Channels
+       </strong>
+       .
+      </li>
+      <li>
+       Implemented
+       <strong>
+        biometric authentication, MPIN, secure storage,
+            screenshot prevention and screen-recording prevention
+       </strong>
+       for security-sensitive applications.
+      </li>
+      <li>
+       Integrated
+       <strong>
+        Google ML Kit Translation
+       </strong>
+       and multilingual application functionality.
+      </li>
+      <li>
+       Developed WebView-based experiences with
+       <strong>
+        JavaScript communication and native Android/iOS
+            platform integration.
+       </strong>
+      </li>
+      <li>
+       Worked with
+       <strong>
+        Unit Testing, Widget Testing and Integration Testing
+       </strong>
+       for Flutter application quality and regression prevention.
+      </li>
+      <li>
+       Implemented structured error handling, API validation,
+          production debugging and crash monitoring using
+       <strong>
+        Crashlytics and Sentry.
+       </strong>
+      </li>
+      <li>
+       Collaborated with
+       <strong>
+        UI/UX designers, backend developers, QA engineers
+            and product teams
+       </strong>
+       throughout development and release cycles.
+      </li>
+      <li>
+       Managed production application releases across
+       <strong>
+        Google Play Store and Apple App Store
+       </strong>
+       while troubleshooting platform-specific release issues.
+      </li>
+     </ul>
+    </article>
+    <!-- SYSCRYPTION -->
+    <article class="experience-item">
+     <div class="job-header">
+      <div>
+       <h3 class="job-title">
+        Junior Flutter Developer
+       </h3>
+       <div class="company">
+        Syscryption Technology
+       </div>
+      </div>
+      <div class="date-badge">
+       Jan 2022 &ndash; Jul 2022
+      </div>
+     </div>
+     <ul class="experience-list">
+      <li>
+       Developed Flutter applications and reusable UI components
+          for
+       <strong>
+        Android and iOS
+       </strong>
+       .
+      </li>
+      <li>
+       Integrated REST APIs and handled asynchronous API communication,
+          response parsing, loading states, success states and error states.
+      </li>
+      <li>
+       Implemented application navigation and dependency injection
+          using
+       <strong>
+        GetX
+       </strong>
+       .
+      </li>
+      <li>
+       Used
+       <strong>
+        Get.lazyPut, onInit, onReady and onClose
+       </strong>
+       for controller lifecycle and dependency management.
+      </li>
+      <li>
+       Implemented barcode scanning and
+       <strong>
+        Google Maps and location-based functionality
+       </strong>
+       .
+      </li>
+      <li>
+       Converted Figma designs into
+       <strong>
+        responsive Flutter interfaces
+       </strong>
+       following reusable UI component patterns.
+      </li>
+      <li>
+       Worked with API integration, JSON parsing and
+          application-level error handling.
+      </li>
+     </ul>
+    </article>
+   </section>
+   <section class="resume-card" id="projects">
+    <div class="section-heading">
+     <div class="section-icon">
+      <i class="bi bi-grid-1x2">
+      </i>
+     </div>
+     <h2 class="section-title">
       Selected Projects
-    </h2>
-
-    <div class="section-line"></div>
-
-  </div>
-
-
-  <div class="project-grid">
-
-
-    <!-- =====================================================
+     </h2>
+     <div class="section-line">
+     </div>
+    </div>
+    <div class="project-grid">
+     <!-- =====================================================
          PROJECT 01 · BOOKMYFARM
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          BookMyFarm
-        </h3>
-
-        <span class="project-type">
-          Mobile
-        </span>
-
+       <h3 class="project-title">
+        BookMyFarm
+       </h3>
+       <span class="project-type">
+        Mobile
+       </span>
       </div>
-
       <p class="project-description">
-        Farmhouse and villa booking application with production mobile
+       Farmhouse and villa booking application with production mobile
         deployment. Worked on Flutter application development,
         responsive interfaces, API integration, booking workflows,
         property-related functionality and Android/iOS deployment.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Dart</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Android</span>
-        <span class="tech-tag">iOS</span>
-        <span class="tech-tag">Booking</span>
-        <span class="tech-tag">Maps</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        Dart
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Android
+       </span>
+       <span class="tech-tag">
+        iOS
+       </span>
+       <span class="tech-tag">
+        Booking
+       </span>
+       <span class="tech-tag">
+        Maps
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://play.google.com/store/apps/details?id=com.app.bookmyfarm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-google-play"></i>
-          Play Store
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
-        <a
-          class="project-link"
-          href="https://apps.apple.com/in/app/bookmyfarm-villas-farmhouse/id6747479573"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-apple"></i>
-          App Store
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
+       <a class="project-link" href="https://play.google.com/store/apps/details?id=com.app.bookmyfarm" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-google-play">
+        </i>
+        Play Store
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
+       <a class="project-link" href="https://apps.apple.com/in/app/bookmyfarm-villas-farmhouse/id6747479573" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-apple">
+        </i>
+        App Store
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 02 · SENSE WHEEL
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          Sense Wheel
-        </h3>
-
-        <span class="project-type">
-          OTT
-        </span>
-
+       <h3 class="project-title">
+        Sense Wheel
+       </h3>
+       <span class="project-type">
+        OTT
+       </span>
       </div>
-
       <p class="project-description">
-        Flutter-based OTT and streaming application with authentication,
+       Flutter-based OTT and streaming application with authentication,
         content streaming, subscriptions, payment integration and
         offline functionality.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">BLoC</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Streaming</span>
-        <span class="tech-tag">Subscriptions</span>
-        <span class="tech-tag">Payments</span>
-        <span class="tech-tag">Offline</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        BLoC
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Streaming
+       </span>
+       <span class="tech-tag">
+        Subscriptions
+       </span>
+       <span class="tech-tag">
+        Payments
+       </span>
+       <span class="tech-tag">
+        Offline
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://play.google.com/store/apps/details?id=com.sensewheel.mt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-google-play"></i>
-          Play Store
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
+       <a class="project-link" href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-google-play">
+        </i>
+        Play Store
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 03 · JEEYO RIDE
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          JEEYO RIDE
-        </h3>
-
-        <span class="project-type">
-          Mobility
-        </span>
-
+       <h3 class="project-title">
+        JEEYO RIDE
+       </h3>
+       <span class="project-type">
+        Mobility
+       </span>
       </div>
-
       <p class="project-description">
-        Ride and mobility application implementing Google Maps,
+       Ride and mobility application implementing Google Maps,
         geofencing, location-based functionality, live tracking
         and API-driven ride workflows.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Google Maps</span>
-        <span class="tech-tag">Geofencing</span>
-        <span class="tech-tag">Live Tracking</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Firebase</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        Google Maps
+       </span>
+       <span class="tech-tag">
+        Geofencing
+       </span>
+       <span class="tech-tag">
+        Live Tracking
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Firebase
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-google-play"></i>
-          Play Store
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
+       <a class="project-link" href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-google-play">
+        </i>
+        Play Store
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 04 · SANJEEVANI
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          Sanjeevani
-        </h3>
-
-        <span class="project-type">
-          Gaming
-        </span>
-
+       <h3 class="project-title">
+        Sanjeevani
+       </h3>
+       <span class="project-type">
+        Gaming
+       </span>
       </div>
-
       <p class="project-description">
-        Gaming application with wallet-related functionality,
+       Gaming application with wallet-related functionality,
         user transactions, API integration and application-specific
         game workflows.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Wallet</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Payments</span>
-        <span class="tech-tag">Transactions</span>
-        <span class="tech-tag">Firebase</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        Wallet
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Payments
+       </span>
+       <span class="tech-tag">
+        Transactions
+       </span>
+       <span class="tech-tag">
+        Firebase
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://ik.imagekit.io/wtvwfegms/sanjeevani.mp4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-box-arrow-up-right"></i>
-          Live App
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
-       
-
+       <a class="project-link" href="https://ik.imagekit.io/wtvwfegms/sanjeevani.mp4" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-box-arrow-up-right">
+        </i>
+        Live App
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 05 · VEHICLE REPAIR SERVICE
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          Vehicle Repair Service
-        </h3>
-
-        <span class="project-type">
-          Full Stack
-        </span>
-
+       <h3 class="project-title">
+        Vehicle Repair Service
+       </h3>
+       <span class="project-type">
+        Full Stack
+       </span>
       </div>
-
       <p class="project-description">
-        Vehicle repair service application developed with Flutter
+       Vehicle repair service application developed with Flutter
         frontend and Node.js backend services for managing
         vehicle-service workflows, REST APIs and database operations.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Node.js</span>
-        <span class="tech-tag">Express.js</span>
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Firebase</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        Node.js
+       </span>
+       <span class="tech-tag">
+        Express.js
+       </span>
+       <span class="tech-tag">
+        PostgreSQL
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Firebase
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://github.com/this-sunil/vehiclerepairservice"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-github"></i>
-          Frontend
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
+       <a class="project-link" href="https://github.com/this-sunil/vehiclerepairservice" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-github">
+        </i>
+        Frontend
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 06 · HEALTH CARE
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          Health Care
-        </h3>
-
-        <span class="project-type">
-          Healthcare
-        </span>
-
+       <h3 class="project-title">
+        Health Care
+       </h3>
+       <span class="project-type">
+        Healthcare
+       </span>
       </div>
-
       <p class="project-description">
-        Healthcare-focused Flutter application with Firebase,
+       Healthcare-focused Flutter application with Firebase,
         REST API integration and structured application architecture.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">Dart</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Firebase</span>
-        <span class="tech-tag">Google Maps</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        Dart
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Firebase
+       </span>
+       <span class="tech-tag">
+        Google Maps
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://github.com/this-sunil/greenlife"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-github"></i>
-          GitHub
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
+       <a class="project-link" href="https://github.com/this-sunil/greenlife" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-github">
+        </i>
+        GitHub
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 07 · GROW KNOWLEDGE
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          Grow Knowledge
-        </h3>
-
-        <span class="project-type">
-          Education
-        </span>
-
+       <h3 class="project-title">
+        Grow Knowledge
+       </h3>
+       <span class="project-type">
+        Education
+       </span>
       </div>
-
       <p class="project-description">
-        Educational quiz application with GoRouter navigation,
+       Educational quiz application with GoRouter navigation,
         leaderboard functionality, document upload, Aadhaar/PAN
         verification workflows and REST API integration.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Flutter</span>
-        <span class="tech-tag">GoRouter</span>
-        <span class="tech-tag">REST API</span>
-        <span class="tech-tag">Leaderboard</span>
-        <span class="tech-tag">Aadhaar/PAN</span>
-        <span class="tech-tag">Document Upload</span>
-
+       <span class="tech-tag">
+        Flutter
+       </span>
+       <span class="tech-tag">
+        GoRouter
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
+       <span class="tech-tag">
+        Leaderboard
+       </span>
+       <span class="tech-tag">
+        Aadhaar/PAN
+       </span>
+       <span class="tech-tag">
+        Document Upload
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://github.com/this-sunil/growknowledgequiz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-github"></i>
-          GitHub
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
+       <a class="project-link" href="https://github.com/this-sunil/growknowledgequiz" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-github">
+        </i>
+        GitHub
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-    <!-- =====================================================
+     </article>
+     <!-- =====================================================
          PROJECT 08 · NODE BACKEND
     ====================================================== -->
-
-    <article class="project-card">
-
+     <article class="project-card">
       <div class="project-title-row">
-
-        <h3 class="project-title">
-          Node.js Backend Systems
-        </h3>
-
-        <span class="project-type">
-          Backend
-        </span>
-
+       <h3 class="project-title">
+        Node.js Backend Systems
+       </h3>
+       <span class="project-type">
+        Backend
+       </span>
       </div>
-
       <p class="project-description">
-        Backend development using Node.js and Express.js with PostgreSQL,
+       Backend development using Node.js and Express.js with PostgreSQL,
         JWT authentication, RBAC, REST APIs, database operations,
         environment configuration and production backend services.
       </p>
-
       <div class="tech-tags">
-
-        <span class="tech-tag">Node.js</span>
-        <span class="tech-tag">Express.js</span>
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">JWT</span>
-        <span class="tech-tag">RBAC</span>
-        <span class="tech-tag">REST API</span>
-
+       <span class="tech-tag">
+        Node.js
+       </span>
+       <span class="tech-tag">
+        Express.js
+       </span>
+       <span class="tech-tag">
+        PostgreSQL
+       </span>
+       <span class="tech-tag">
+        JWT
+       </span>
+       <span class="tech-tag">
+        RBAC
+       </span>
+       <span class="tech-tag">
+        REST API
+       </span>
       </div>
-
       <div class="project-links">
-
-        <a
-          class="project-link"
-          href="https://github.com/this-sunil/vehicle-repair-service"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-github"></i>
-          Backend GitHub
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-
+       <a class="project-link" href="https://github.com/this-sunil/vehicle-repair-service" rel="noopener noreferrer" target="_blank">
+        <i class="bi bi-github">
+        </i>
+        Backend GitHub
+        <i class="bi bi-arrow-up-right">
+        </i>
+       </a>
       </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-  <!-- =========================================================
-       5. INTERNSHIP
-  ========================================================== -->
-
-  <section class="resume-card">
-
-    <div class="section-heading">
-
-      <div class="section-icon">
-        <i class="bi bi-person-workspace"></i>
-      </div>
-
-      <h2 class="section-title">
-        Internship
-      </h2>
-
-      <div class="section-line"></div>
-
+     </article>
     </div>
-
-
+   </section>
+   <section class="resume-card education-section" id="education">
+    <div class="section-heading">
+     <div class="section-icon">
+      <i class="bi bi-mortarboard">
+      </i>
+     </div>
+     <h2 class="section-title">
+      Education
+     </h2>
+    </div>
+    <div class="education-list">
+     <!-- M.C.S. -->
+     <div class="education-item">
+      <div class="education-content">
+       <h3 class="degree">
+        Master of Computer Science (M.C.S.)
+       </h3>
+       <div class="institution">
+        Sarhad College, Pune
+       </div>
+       <div class="education-details">
+        Percentage: 77%
+       </div>
+      </div>
+      <div class="education-date">
+       2019 &ndash; 2021
+      </div>
+     </div>
+     <!-- B.C.S. -->
+     <div class="education-item">
+      <div class="education-content">
+       <h3 class="degree">
+        Bachelor of Computer Science (B.C.S.)
+       </h3>
+       <div class="institution">
+        Vishwakarma College, Pune
+       </div>
+      </div>
+      <div class="education-date">
+       2015 &ndash; 2018
+      </div>
+     </div>
+     <!-- HSC -->
+     <div class="education-item">
+      <div class="education-content">
+       <h3 class="degree">
+        Higher Secondary Certificate (HSC)
+       </h3>
+       <div class="institution">
+        S.M.S. Mohite Patil Jr. College, Rahimatpur
+       </div>
+      </div>
+      <div class="education-date">
+       2015
+      </div>
+     </div>
+     <!-- SSC -->
+     <div class="education-item">
+      <div class="education-content">
+       <h3 class="degree">
+        Secondary School Certificate (SSC)
+       </h3>
+       <div class="institution">
+        Dr. V.G. Kakasaheb Vidyalaya, Rahimatpur
+       </div>
+       <div class="education-details">
+        Percentage: 75%
+       </div>
+      </div>
+      <div class="education-date">
+       2013
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="resume-card" id="internship">
+    <div class="section-heading">
+     <div class="section-icon">
+      <i class="bi bi-person-workspace">
+      </i>
+     </div>
+     <h2 class="section-title">
+      Internship
+     </h2>
+     <div class="section-line">
+     </div>
+    </div>
     <div class="internship-box">
-
-      <h3 class="internship-title">
-        Software Development Internship
-      </h3>
-
-      <p class="internship-description">
-        Completed software development internship training with practical
+     <h3 class="internship-title">
+      Software Development Internship
+     </h3>
+     <p class="internship-description">
+      Completed software development internship training with practical
         exposure to application development, programming fundamentals,
         software development workflows, debugging, development tools and
         project-based implementation. Gained practical experience in
         programming concepts, application development and software
         engineering practices. Internship certificate available as
         supporting documentation.
-      </p>
-
+     </p>
     </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       6. PROFESSIONAL EXPERIENCE
-  ========================================================== -->
-
-  <section class="resume-card">
-
+   </section>
+   <section class="resume-card" id="links">
     <div class="section-heading">
-
-      <div class="section-icon">
-        <i class="bi bi-briefcase"></i>
-      </div>
-
-      <h2 class="section-title">
-        Professional Experience
-      </h2>
-
-      <div class="section-line"></div>
-
+     <div class="section-icon">
+      <i class="bi bi-link-45deg">
+      </i>
+     </div>
+     <h2 class="section-title">
+      Professional Links
+     </h2>
+     <div class="section-line">
+     </div>
     </div>
-
-
-    <!-- SELF EMPLOYMENT -->
-
-    <article class="experience-item">
-
-      <div class="job-header">
-
-        <div>
-
-          <h3 class="job-title">
-            Full Stack Developer
-          </h3>
-
-          <div class="company">
-            Self Employment
-          </div>
-
-        </div>
-
-        <div class="date-badge">
-          Apr 2025 – Present
-        </div>
-
-      </div>
-
-
-      <ul class="experience-list">
-
-        <li>
-          Develop and maintain production-ready applications using
-          <strong>
-            Flutter, Node.js, Express.js and PostgreSQL
-          </strong>
-          across Android, iOS and web platforms.
-        </li>
-
-        <li>
-          Design and develop secure backend APIs with
-          <strong>
-            JWT authentication, Role-Based Access Control (RBAC),
-            environment-based configuration and structured API responses.
-          </strong>
-        </li>
-
-        <li>
-          Build scalable Flutter applications using
-          <strong>
-            Clean Architecture, BLoC, Riverpod, Repository Pattern
-            and Dependency Injection.
-          </strong>
-        </li>
-
-        <li>
-          Implement authentication, authorization, secure storage,
-          payment workflows and third-party service integrations.
-        </li>
-
-        <li>
-          Troubleshoot complex
-          <strong>
-            iOS CocoaPods, Xcode, dependency, build, signing,
-            runtime and platform-specific issues.
-          </strong>
-        </li>
-
-        <li>
-          Work on iOS dependency migration from
-          <strong>
-            CocoaPods to Swift Package Manager (SPM)
-          </strong>
-          where package support is available.
-        </li>
-
-        <li>
-          Implement
-          <strong>
-            Shorebird over-the-air updates
-          </strong>
-          for faster production fixes and application releases.
-        </li>
-
-        <li>
-          Optimize
-          <strong>
-            PostgreSQL queries, database operations and API response
-            performance
-          </strong>
-          for production backend systems.
-        </li>
-
-        <li>
-          Integrate
-          <strong>
-            Razorpay, Stripe and Google AdMob
-          </strong>
-          into production Flutter applications.
-        </li>
-
-        <li>
-          Debug production issues involving
-          <strong>
-            crashes, ANRs, API failures, dependency conflicts,
-            platform-specific behavior and release builds.
-          </strong>
-        </li>
-
-        <li>
-          Implement application security, authentication flows,
-          API error handling and production monitoring.
-        </li>
-
-      </ul>
-
-    </article>
-
-
-    <!-- SUNRA SOFTTECH -->
-
-    <article class="experience-item">
-
-      <div class="job-header">
-
-        <div>
-
-          <h3 class="job-title">
-            Senior Flutter Developer
-          </h3>
-
-          <div class="company">
-            Sunra Softtech Pvt. Ltd.
-          </div>
-
-        </div>
-
-        <div class="date-badge">
-          Jul 2022 – Apr 2025
-        </div>
-
-      </div>
-
-
-      <ul class="experience-list">
-
-        <li>
-          Developed and maintained production-ready Flutter applications
-          for <strong>Android, iOS and Flutter Web</strong> using
-          Dart and scalable application architecture.
-        </li>
-
-        <li>
-          Improved application loading performance by approximately
-          <strong>35%</strong> through lazy loading, asset optimization,
-          widget optimization, efficient rendering and architectural
-          improvements.
-        </li>
-
-        <li>
-          Implemented scalable application architecture using
-          <strong>
-            Clean Architecture, BLoC, SOLID principles,
-            Repository Pattern and Dependency Injection.
-          </strong>
-        </li>
-
-        <li>
-          Improved debugging and issue-resolution efficiency by approximately
-          <strong>50%</strong> through structured logging, crash analysis,
-          reusable components and systematic debugging workflows.
-        </li>
-
-        <li>
-          Built and maintained CI/CD release pipelines using
-          <strong>
-            Codemagic, Fastlane and GitHub Actions
-          </strong>,
-          reducing release cycles from approximately
-          <strong>5 days to 1 day</strong>.
-        </li>
-
-        <li>
-          Developed, configured and maintained
-          <strong>
-            iOS applications using Xcode
-          </strong>,
-          including build configuration, debugging, archive generation
-          and App Store release workflows.
-        </li>
-
-        <li>
-          Managed iOS dependencies using
-          <strong>
-            CocoaPods
-          </strong>
-          and worked on
-          <strong>
-            Swift Package Manager (SPM)
-          </strong>
-          migration and package compatibility where supported.
-        </li>
-
-        <li>
-          Handled
-          <strong>
-            iOS provisioning profiles, certificates, signing,
-            bundle configuration and release build configuration
-          </strong>
-          for production applications.
-        </li>
-
-        <li>
-          Worked with
-          <strong>
-            Info.plist, iOS permissions, URL schemes, application
-            configuration and platform-specific settings
-          </strong>
-          required for Flutter applications.
-        </li>
-
-        <li>
-          Troubleshot complex
-          <strong>
-            Xcode build failures, CocoaPods dependency conflicts,
-            package compatibility issues, signing problems, runtime
-            crashes and release/archive issues.
-          </strong>
-        </li>
-
-        <li>
-          Integrated native iOS functionality with Flutter using
-          <strong>
-            Method Channels
-          </strong>
-          and handled platform-specific Android/iOS implementations.
-        </li>
-
-        <li>
-          Implemented and maintained
-          <strong>
-            iOS Universal Links
-          </strong>
-          along with Android App Links for deep-linking workflows.
-        </li>
-
-        <li>
-          Supported
-          <strong>
-            iOS push notifications, Firebase integration,
-            APNs-related configuration and production notification
-            troubleshooting.
-          </strong>
-        </li>
-
-        <li>
-          Prepared and managed
-          <strong>
-            iOS App Store production releases
-          </strong>
-          including archive, validation, signing and release workflows.
-        </li>
-
-        <li>
-          Improved runtime and rendering performance using
-          <strong>
-            const constructors, RepaintBoundary, lazy loading,
-            asset optimization, null safety and ProGuard configuration.
-          </strong>
-        </li>
-
-        <li>
-          Implemented application navigation and deep linking using
-          <strong>
-            GoRouter, Android App Links and iOS Universal Links.
-          </strong>
-        </li>
-
-        <li>
-          Integrated
-          <strong>
-            Firebase Authentication, Cloud Firestore,
-            Firebase Cloud Messaging, Crashlytics,
-            Google Sign-In and Google Maps.
-          </strong>
-        </li>
-
-        <li>
-          Integrated payment systems including
-          <strong>
-            Razorpay, Stripe, Paytm and UPI
-          </strong>,
-          including native Android/iOS communication through
-          <strong>Method Channels</strong>.
-        </li>
-
-        <li>
-          Implemented
-          <strong>
-            biometric authentication, MPIN, secure storage,
-            screenshot prevention and screen-recording prevention
-          </strong>
-          for security-sensitive applications.
-        </li>
-
-        <li>
-          Integrated
-          <strong>
-            Google ML Kit Translation
-          </strong>
-          and multilingual application functionality.
-        </li>
-
-        <li>
-          Developed WebView-based experiences with
-          <strong>
-            JavaScript communication and native Android/iOS
-            platform integration.
-          </strong>
-        </li>
-
-        <li>
-          Worked with
-          <strong>
-            Unit Testing, Widget Testing and Integration Testing
-          </strong>
-          for Flutter application quality and regression prevention.
-        </li>
-
-        <li>
-          Implemented structured error handling, API validation,
-          production debugging and crash monitoring using
-          <strong>
-            Crashlytics and Sentry.
-          </strong>
-        </li>
-
-        <li>
-          Collaborated with
-          <strong>
-            UI/UX designers, backend developers, QA engineers
-            and product teams
-          </strong>
-          throughout development and release cycles.
-        </li>
-
-        <li>
-          Managed production application releases across
-          <strong>
-            Google Play Store and Apple App Store
-          </strong>
-          while troubleshooting platform-specific release issues.
-        </li>
-
-      </ul>
-
-    </article>
-
-
-    <!-- SYSCRYPTION -->
-
-    <article class="experience-item">
-
-      <div class="job-header">
-
-        <div>
-
-          <h3 class="job-title">
-            Junior Flutter Developer
-          </h3>
-
-          <div class="company">
-            Syscryption Technology
-          </div>
-
-        </div>
-
-        <div class="date-badge">
-          Jan 2022 – Jul 2022
-        </div>
-
-      </div>
-
-
-      <ul class="experience-list">
-
-        <li>
-          Developed Flutter applications and reusable UI components
-          for <strong>Android and iOS</strong>.
-        </li>
-
-        <li>
-          Integrated REST APIs and handled asynchronous API communication,
-          response parsing, loading states, success states and error states.
-        </li>
-
-        <li>
-          Implemented application navigation and dependency injection
-          using <strong>GetX</strong>.
-        </li>
-
-        <li>
-          Used
-          <strong>
-            Get.lazyPut, onInit, onReady and onClose
-          </strong>
-          for controller lifecycle and dependency management.
-        </li>
-
-        <li>
-          Implemented barcode scanning and
-          <strong>Google Maps and location-based functionality</strong>.
-        </li>
-
-        <li>
-          Converted Figma designs into
-          <strong>responsive Flutter interfaces</strong>
-          following reusable UI component patterns.
-        </li>
-
-        <li>
-          Worked with API integration, JSON parsing and
-          application-level error handling.
-        </li>
-
-      </ul>
-
-    </article>
-
-  </section>
-
-
-  <!-- =========================================================
-       PROFESSIONAL LINKS
-  ========================================================== -->
-
-  <section class="resume-card">
-
-    <div class="section-heading">
-
-      <div class="section-icon">
-        <i class="bi bi-link-45deg"></i>
-      </div>
-
-      <h2 class="section-title">
-        Professional Links
-      </h2>
-
-      <div class="section-line"></div>
-
-    </div>
-
-
     <div class="links-grid">
-
-      <a
-        class="profile-link"
-        href="https://linkedin.com/in/sunilshedge"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="bi bi-linkedin"></i>
-
-        <span>
-          linkedin.com/in/sunilshedge
-        </span>
-
-      </a>
-
-
-      <a
-        class="profile-link"
-        href="https://github.com/this-sunil"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="bi bi-github"></i>
-
-        <span>
-          github.com/this-sunil
-        </span>
-
-      </a>
-
-
-      <a
-        class="profile-link"
-        href="https://farmer-brand.vercel.app/portfolio"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="bi bi-globe2"></i>
-
-        <span>
-          portfolio
-        </span>
-
-      </a>
-
+     <a class="profile-link" href="https://linkedin.com/in/sunilshedge" rel="noopener noreferrer" target="_blank">
+      <i class="bi bi-linkedin">
+      </i>
+      <span>
+       linkedin.com/in/sunilshedge
+      </span>
+     </a>
+     <a class="profile-link" href="https://github.com/this-sunil" rel="noopener noreferrer" target="_blank">
+      <i class="bi bi-github">
+      </i>
+      <span>
+       github.com/this-sunil
+      </span>
+     </a>
+     <a class="profile-link" href="https://farmer-brand.vercel.app/portfolio" rel="noopener noreferrer" target="_blank">
+      <i class="bi bi-globe2">
+      </i>
+      <span>
+       portfolio
+      </span>
+     </a>
     </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
-  <footer class="resume-footer">
-
-    Sunil Shedge · Senior Flutter Developer · Pune, Maharashtra
-
-  </footer>
-
-</div>
-
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-</body>
+   </section>
+   <footer class="resume-footer">
+    Sunil Shedge &middot; Senior Flutter Developer &middot; Pune, Maharashtra
+   </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+ </body>
 </html>
