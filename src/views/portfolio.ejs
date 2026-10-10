@@ -1069,11 +1069,7 @@
     #preview {
       position: relative;
       overflow: hidden;
-      padding: 90px 0;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(29,191,115,0.08), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(66,133,244,0.06), transparent 25%),
-        var(--preview-bg);
+      
     }
 
     #preview .preview-container {
@@ -2616,7 +2612,8 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
+      
+     <!-- PROJECTS -->
       <section class="section" id="projects">
         <div class="section-header reveal">
           <div>
@@ -2638,12 +2635,337 @@
         </div>
 
         <div class="projects">
-          <!-- Project cards remain the same as previous version -->
-          <!-- (BookMyFarm, Sense Wheel, JEEYO RIDE, Sanjeevani, Vehicle Repair, Backend, Health Care, Grow Knowledge) -->
-          <!-- For brevity in this response, the full project cards from the previous message are kept exactly the same -->
+          <!-- Project 1: BookMyFarm -->
+          <article class="project-card featured reveal" data-category="flutter service">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 01 · Featured</div>
+                <div class="project-symbol"><i class="bi bi-house-heart"></i></div>
+                <div class="project-category">Flutter · Real Estate</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>Firebase</span><span>REST API</span><span>Google Maps</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">BookMyFarm: Villas & Farmhouse</h3>
+                    <div class="project-subtitle">Farmhouse Property Discovery & Booking Platform</div>
+                  </div>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <a href="https://play.google.com/store/apps/details?id=com.app.bookmyfarm" target="_blank" rel="noopener noreferrer" class="project-button">
+                      Android <i class="bi bi-google-play"></i>
+                    </a>
+                    <a href="https://apps.apple.com/in/app/bookmyfarm-villas-farmhouse/id6747479573" target="_blank" rel="noopener noreferrer" class="project-button">
+                      iOS <i class="bi bi-apple"></i>
+                    </a>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Developed a cross-platform <strong>Flutter real estate application focused on farmhouse and property discovery</strong>, allowing users to explore properties, view detailed information, search and filter listings, check locations, and manage interactions through a responsive mobile application.
+                </p>
+                <div class="project-detail-grid">
+                  <div class="project-detail">
+                    <div class="detail-title"><i class="bi bi-buildings"></i> Property Listing</div>
+                    <div class="detail-text">Farmhouse and real estate property listings with structured information.</div>
+                  </div>
+                  <div class="project-detail">
+                    <div class="detail-title"><i class="bi bi-geo-alt"></i> Location</div>
+                    <div class="detail-text">Property location, map-based discovery using Google Maps.</div>
+                  </div>
+                  <div class="project-detail">
+                    <div class="detail-title"><i class="bi bi-search"></i> Search & Filters</div>
+                    <div class="detail-text">Location, price and property-based filtering for refined discovery.</div>
+                  </div>
+                  <div class="project-detail">
+                    <div class="detail-title"><i class="bi bi-chat-dots"></i> Interaction</div>
+                    <div class="detail-text">Property enquiry and user interaction workflows.</div>
+                  </div>
+                </div>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Dart</span>
+                    <span class="technology">Firebase</span>
+                    <span class="technology">REST API</span>
+                    <span class="technology">Google Maps</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-house-check-fill"></i> Android / iOS</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Sense Wheel -->
+          <article class="project-card reveal" data-category="flutter">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 02</div>
+                <div class="project-symbol"><i class="bi bi-play-circle"></i></div>
+                <div class="project-category">Flutter · OTT Platform</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>Firebase</span><span>REST API</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">Sense Wheel</h3>
+                    <div class="project-subtitle">OTT Streaming Platform</div>
+                  </div>
+                  <a href="https://play.google.com/store/apps/details?id=com.sensewheel.mt" target="_blank" rel="noopener noreferrer" class="project-button">
+                    Play Store <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed a cross-platform <strong>Flutter OTT streaming application</strong> for Android and iOS, providing authentication, content discovery, video streaming, subscription management, payment workflows, and offline content handling.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Dart</span>
+                    <span class="technology">Firebase</span>
+                    <span class="technology">REST API</span>
+                    <span class="technology">Video Streaming</span>
+                    <span class="technology">Payment Integration</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-check-circle-fill"></i> Android / iOS</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: JEEYO RIDE -->
+          <article class="project-card reveal" data-category="flutter service">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 03</div>
+                <div class="project-symbol"><i class="bi bi-car-front"></i></div>
+                <div class="project-category">Flutter · Mobility</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>Maps</span><span>Firebase</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">JEEYO RIDE</h3>
+                    <div class="project-subtitle">Real-Time Mobility & Ride Tracking</div>
+                  </div>
+                  <a href="https://play.google.com/store/apps/details?id=com.jeeyoride.mt" target="_blank" rel="noopener noreferrer" class="project-button">
+                    Play Store <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed a Flutter-based mobility application focused on <strong>real-time ride tracking, live location updates, route visualization, and location-based services</strong>.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Google Maps</span>
+                    <span class="technology">Geofencing</span>
+                    <span class="technology">REST API</span>
+                    <span class="technology">Firebase</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-geo-fill"></i> Location Platform</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Sanjeevani Gaming -->
+          <article class="project-card reveal" data-category="flutter gaming">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 04</div>
+                <div class="project-symbol"><i class="bi bi-controller"></i></div>
+                <div class="project-category">Flutter · Gaming</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>REST API</span><span>Firebase</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">Sanjeevani Gaming App</h3>
+                    <div class="project-subtitle">Cross-Platform Gaming Application</div>
+                  </div>
+                  <a href="https://ik.imagekit.io/wtvwfegms/sanjeevani.mp4" target="_blank" rel="noopener noreferrer" class="project-button">
+                    Demo <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed a cross-platform <strong>Flutter and Dart application</strong> containing user authentication, profile management, game/number selection, result history, wallet management, transaction history, and push notifications.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Dart</span>
+                    <span class="technology">Firebase</span>
+                    <span class="technology">REST API</span>
+                    <span class="technology">Payment Gateway</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-controller"></i> Gaming Category</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Vehicle Repair Service -->
+          <article class="project-card reveal" data-category="flutter service">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 05</div>
+                <div class="project-symbol"><i class="bi bi-tools"></i></div>
+                <div class="project-category">Flutter · Service Platform</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>Firebase</span><span>Maps</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">Vehicle Repair Service</h3>
+                    <div class="project-subtitle">Vehicle Service & Mechanic Platform</div>
+                  </div>
+                  <a href="https://github.com/this-sunil/vehiclerepairservice.git" target="_blank" rel="noopener noreferrer" class="project-button">
+                    GitHub <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed a Flutter-based vehicle service application that provides users with <strong>vehicle management, repair booking, service request tracking, service history, and nearby mechanic discovery</strong>.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Dart</span>
+                    <span class="technology">Firebase</span>
+                    <span class="technology">Google Maps</span>
+                    <span class="technology">REST API</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-tools"></i> Service Platform</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Backend -->
+          <article class="project-card reveal" data-category="backend service">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 06</div>
+                <div class="project-symbol"><i class="bi bi-database"></i></div>
+                <div class="project-category">Node.js · PostgreSQL</div>
+                <div class="project-mini-tags">
+                  <span>Node.js</span><span>PostgreSQL</span><span>Socket.IO</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">Vehicle Repair Service Backend</h3>
+                    <div class="project-subtitle">REST API & Real-Time Backend</div>
+                  </div>
+                  <a href="https://github.com/this-sunil/vehicle-repair-service" target="_blank" rel="noopener noreferrer" class="project-button">
+                    GitHub <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed the backend using <strong>Node.js, Express.js, and PostgreSQL</strong>. Provides secure authentication, protected routes, database operations, real-time communication, and file upload functionality.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Node.js</span>
+                    <span class="technology">Express.js</span>
+                    <span class="technology">PostgreSQL</span>
+                    <span class="technology">Socket.IO</span>
+                    <span class="technology">JWT</span>
+                    <span class="technology">Multer</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-server"></i> Backend Engineering</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: Health Care -->
+          <article class="project-card reveal" data-category="flutter health">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 07</div>
+                <div class="project-symbol"><i class="bi bi-heart-pulse"></i></div>
+                <div class="project-category">Flutter · Healthcare</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>Firebase</span><span>Maps</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">Health Care</h3>
+                    <div class="project-subtitle">Healthcare & Lifestyle Application</div>
+                  </div>
+                  <a href="https://github.com/this-sunil/greenlife" target="_blank" rel="noopener noreferrer" class="project-button">
+                    GitHub <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed a Flutter healthcare application focused on <strong>healthy lifestyle management, disease prevention, health tracking, and access to essential healthcare services</strong>.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Dart</span>
+                    <span class="technology">Firebase</span>
+                    <span class="technology">Google Maps</span>
+                    <span class="technology">REST API</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-heart-pulse"></i> Healthcare</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Grow Knowledge -->
+          <article class="project-card featured reveal" data-category="flutter">
+            <div class="project-top">
+              <aside class="project-sidebar">
+                <div class="project-number">Project 08</div>
+                <div class="project-symbol"><i class="bi bi-trophy"></i></div>
+                <div class="project-category">Flutter · Quiz & Contest</div>
+                <div class="project-mini-tags">
+                  <span>Flutter</span><span>GoRouter</span><span>REST API</span>
+                </div>
+              </aside>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <div>
+                    <h3 class="project-title">Grow Knowledge</h3>
+                    <div class="project-subtitle">Quiz, Contest & Ranking Platform</div>
+                  </div>
+                  <a href="https://github.com/this-sunil/growknowledgequiz.git" target="_blank" rel="noopener noreferrer" class="project-button">
+                    GitHub <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+                <p class="project-description">
+                  Developed a <strong>cross-platform quiz and contest application</strong> using Flutter and Dart. Provides complete contest participation flow: registration, login, contest discovery, joining contests, attempting questions, submitting answers, viewing results, rankings, and leaderboard.
+                </p>
+                <div class="project-bottom">
+                  <div class="project-tech">
+                    <span class="technology">Flutter</span>
+                    <span class="technology">Dart</span>
+                    <span class="technology">GoRouter</span>
+                    <span class="technology">REST API</span>
+                    <span class="technology">Firebase</span>
+                  </div>
+                  <div class="project-result"><i class="bi bi-trophy-fill"></i> Quiz / Contest Platform</div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
-    </div>
+   
 
     <!-- =========================================================
          WORK PREVIEWS (YouTube + Video section)
