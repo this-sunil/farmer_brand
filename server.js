@@ -14,7 +14,7 @@ import favFarmerRoute from "./src/routes/favRoute.js";
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-dotenv.config({ debug: false, encoding: "utf-8", override: true ,quiet:true});
+dotenv.config({ debug: false, encoding: "utf-8", quiet:true });
 
 app.use(cors({
     methods:["GET","POST","PUT","DELETE"],
@@ -56,7 +56,7 @@ app.get('/portfolio', (req, res) => {
   return res.render('portfolio');
 });
 app.get('/port', (req, res) => {
-  return res.render('port');
+  return res.redirect('/portfolio');
 });
 
 app.use(limiter);
@@ -70,8 +70,12 @@ app.use("/api",farmerRoute);
 app.use("/api",productRoute);
 app.use("/api",favFarmerRoute);
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Server Started Running http://localhost:${process.env.PORT}`);
-});
+export default app;
+
+if (!process.env.VERCEL) {
+    app.listen(process.env.PORT,()=>{
+        console.log(`Server Started Running http://localhost:${process.env.PORT}`);
+    });
+}
 
 
