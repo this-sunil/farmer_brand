@@ -2,14 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
-import rateLimit from 'express-rate-limit';
-import authRoute from "./src/routes/authRoute.js";
-import postRoute from "./src/routes/postRoute.js";
-import bannerRoute from "./src/routes/bannerRoute.js"
-import notificationRoute from "./src/routes/notificationRoute.js";
-import farmerRoute from "./src/routes/farmerRoute.js";
-import productRoute from "./src/routes/productRoute.js";
-import favFarmerRoute from "./src/routes/favRoute.js";
+// import rateLimit from 'express-rate-limit';
+// import authRoute from "./src/routes/authRoute.js";
+// import postRoute from "./src/routes/postRoute.js";
+// import bannerRoute from "./src/routes/bannerRoute.js"
+// import notificationRoute from "./src/routes/notificationRoute.js";
+// import farmerRoute from "./src/routes/farmerRoute.js";
+// import productRoute from "./src/routes/productRoute.js";
+// import favFarmerRoute from "./src/routes/favRoute.js";
 
 const app=express();
 app.use(express.json());
@@ -24,19 +24,19 @@ app.use(cors({
     credentials:true
 }));
 
-const limiter=rateLimit({
- windowMs:1*60*1000,
- limit:5,
- standardHeaders: 'draft-8',
- legacyHeaders:false,
- ipv6Subnet: 56,
- handler:(req,res,next,options)=>{
-    return res.status(429).json({
-        status:false,
-        msg:"Too may request please try again later"
-    });
- }
-});
+// const limiter=rateLimit({
+//  windowMs:1*60*1000,
+//  limit:5,
+//  standardHeaders: 'draft-8',
+//  legacyHeaders:false,
+//  ipv6Subnet: 56,
+//  handler:(req,res,next,options)=>{
+//     return res.status(429).json({
+//         status:false,
+//         msg:"Too may request please try again later"
+//     });
+//  }
+// });
 
 
 app.use("/upload",express.static(path.join(process.cwd(),"/upload")));
@@ -59,23 +59,19 @@ app.get('/port', (req, res) => {
   return res.redirect('/portfolio');
 });
 
-app.use(limiter);
+//app.use(limiter);
 // TODO: Routing
 
-app.use("/api",authRoute);
-app.use("/api",postRoute);
-app.use("/api",bannerRoute);
-app.use("/api",notificationRoute);
-app.use("/api",farmerRoute);
-app.use("/api",productRoute);
-app.use("/api",favFarmerRoute);
+// app.use("/api",authRoute);
+// app.use("/api",postRoute);
+// app.use("/api",bannerRoute);
+// app.use("/api",notificationRoute);
+// app.use("/api",farmerRoute);
+// app.use("/api",productRoute);
+// app.use("/api",favFarmerRoute);
 
-export default app;
-
-if (!process.env.VERCEL) {
-    app.listen(process.env.PORT,()=>{
+ app.listen(process.env.PORT,()=>{
         console.log(`Server Started Running http://localhost:${process.env.PORT}`);
     });
-}
 
 

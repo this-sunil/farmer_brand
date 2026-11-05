@@ -10,7 +10,8 @@ dotenv.config({debug:true,encoding:"utf-8"});
 const pool=new Pool({
     connectionString:process.env.POSTGRES_URL,
     ssl:{
-        rejectUnauthorized:false
+        rejectUnauthorized:false,
+        
     }
 });
 
