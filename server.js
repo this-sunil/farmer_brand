@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
+
 // import rateLimit from 'express-rate-limit';
 // import authRoute from "./src/routes/authRoute.js";
 // import postRoute from "./src/routes/postRoute.js";
@@ -72,6 +73,6 @@ app.get('/port', (req, res) => {
 
  app.listen(process.env.PORT,()=>{
         console.log(`Server Started Running http://localhost:${process.env.PORT}`);
-    });
+});
 
 
